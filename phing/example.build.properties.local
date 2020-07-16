@@ -1,0 +1,31 @@
+# Drupal configuration
+# --------------------
+
+# Database settings.
+drupal.db.type = mysql
+drupal.db.name = caecm
+drupal.db.user = caecm
+drupal.db.password = caecm
+drupal.db.host = db
+drupal.db.port = 3306
+drupal.db.url = ${drupal.db.type}://${drupal.db.user}:${drupal.db.password}@${drupal.db.host}:${drupal.db.port}/${drupal.db.name}
+
+# Admin user.
+drupal.admin.username = admin
+drupal.admin.password = admin
+drupal.admin.email = admin@example.com
+
+# The base URL to use in Behat tests.
+behat.base_url = ${drupal.base_url}
+
+# GIT branch for project to deploy
+# --------------------
+# project.git.branch = develop
+
+# Database import on deploy (TRUE or FALSE)
+# -------------------
+db.deploy.import = FALSE
+
+# Assets staging
+# -------------------
+assets.staging.enable = FALSE

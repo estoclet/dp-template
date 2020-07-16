@@ -1,0 +1,34 @@
+version: '3.1'
+services:
+  web:
+    image: osiolabs/drupaldevwithdocker-php:7.4
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    volumes:
+      - .:/var/www:cached
+    environment:
+      APACHE_DOCROOT_DIR: /var/www/htdocs
+    ports:
+      - "80:80"
+  db:
+    image: wodby/mariadb
+    restart: always
+    volumes:
+      - ./db-dump/dbdump-staging:/var/mysql/backups:delegated
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: caecm
+      MYSQL_USER: caecm
+      MYSQL_PASSWORD: caecm
+    ports:
+      - "3306:3306"
+  pma:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_USER: caecm
+      PMA_PASSWORD: caecm
+      PHP_UPLOAD_MAX_FILESIZE: 1G
+      PHP_MAX_INPUT_VARS: 1G
+    ports:
+     - "8001:80"

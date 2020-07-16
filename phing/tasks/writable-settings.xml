@@ -1,0 +1,18 @@
+<project name="writable-settings" default="writable-settings">
+  
+  <!-- Make the settings folder writeable so that the installer can copy settings.php. -->
+  <target name="writable-settings-folder">
+      <chmod mode="0755" failonerror="true" verbose="true" quiet="false" file="${website.settings.dir}" />
+  </target>
+  
+  <!-- Make settings.php writeable so that the installer save it. -->
+  <target name="writable-settings-php">
+      <if>
+          <available file="${website.settings.php}" type="file" property="website.settings.php.available" />
+          <then>
+              <chmod mode="0644" failonerror="false" verbose="true" quiet="false" file="${website.settings.php}" />
+          </then>
+      </if>
+  </target>
+  
+</project>

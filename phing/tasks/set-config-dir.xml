@@ -1,0 +1,34 @@
+<project name="set-config-dir" default="set-config-dir">
+
+  <!-- Set another directory for the configuration sync folder. -->
+  <target name="set-config-dir">
+      <exec command="if [ -d '${website.config.path}/${website.config.directory}' ]; then echo 'true'; else echo 'false'; fi;" outputProperty="output.IS_DIRECTORY_EXISTS" />
+      <if>
+          <equals arg1="${output.IS_DIRECTORY_EXISTS}" arg2="false" />
+          <then>
+              <!-- Create directory for configuration files -->
+              <mkdir dir="${website.config.path}/${website.config.directory}" />
+          </then>
+      </if>
+      <if>
+          <available file="${website.settings.php}" type="file" property="website.settings.php.available" />
+          <then>
+              <chmod mode="0775" failonerror="false" verbose="true" quiet="false" file="${website.settings.php}" />
+              <reflexive>
+                  <fileset dir="${website.settings.dir}">
+                      <include pattern="settings.php" />
+                  </fileset>
+                  <filterchain>
+                      <replaceregexp>
+                          <regexp 
+                              pattern="\$config_directories\[\'sync\'\]\ =\ 'sites(.*)" 
+                              replace="\$config_directories['sync'] = '${website.config.path}/${website.config.directory}';" />
+                      </replaceregexp>
+                  </filterchain>
+              </reflexive>
+              <chmod mode="0444" failonerror="false" verbose="true" quiet="false" file="${website.settings.php}" />
+          </then>
+      </if>
+  </target>
+  
+</project>

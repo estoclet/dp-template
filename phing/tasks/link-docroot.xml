@@ -1,0 +1,10 @@
+<project name="link-docroot" default="link-docroot"> 
+
+<!-- Link the site root to the document root of the webserver. -->
+    <target
+        name="link-docroot"
+        description="Create a symlink from the site root to the webserver document root.">
+        <symlink link="${server.docroot}" target="${website.drupal.dir}" overwrite="true" />
+    </target>
+    
+</project>

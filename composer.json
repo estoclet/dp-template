@@ -1,0 +1,139 @@
+{
+    "name": "drupal/recommended-project",
+    "description": "Project template for Drupal 8 projects with a relocated document root",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/drupal",
+    "support": {
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+        "chat": "https://www.drupal.org/node/314178"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "pfrenssen/phpcs-pre-push",
+                "version": "1.0",
+                "type": "git-hook",
+                "source": {
+                    "url": "https://gist.github.com/498fc52fea3f965f6640.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "_comment": "The PhingDrushTask module does not currently have a D8 release and is not available on https://packages.drupal.org/8. See https://www.drupal.org/node/2817131.",
+            "type": "vcs",
+            "url": "git@github.com:pfrenssen/phingdrushtask.git"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "composer/installers": "^1.2",
+        "drupal/admin_toolbar": "^2.3",
+        "drupal/console": "^1.9",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-project-message": "^8.8",
+        "drupal/core-recommended": "^8.8",
+        "drupal/diff": "^1.0",
+        "drupal/features": "^3.11",
+        "drupal/login_history": "^1.0",
+        "drupal/login_security": "^1.5",
+        "drupal/masquerade": "^2.0@beta",
+        "drupal/mass_pwreset": "^1.0@alpha",
+        "drupal/moderation_dashboard": "^1.0@beta",
+        "drupal/r4032login": "^1.1",
+        "drupal/session_limit": "^1.0@beta",
+        "drupal/username_enumeration_prevention": "^1.1",
+        "drush/drush": "^10.3"
+    },
+    "require-dev": {
+        "behat/mink": "^1.8",
+        "behat/mink-goutte-driver": "^1.2",
+        "drupal/coder": "^8.3",
+        "drupal/config_update": "^1.7",
+        "drupal/devel": "^4.0",
+        "drupal/drupal-extension": "^4.1",
+        "drupal/phingdrushtask": "dev-7.x-2.x",
+        "drupal/seckit": "^1.2",
+        "drupal/security_review": "^1.0@alpha",
+        "jcalderonzumba/gastonjs": "^1.2",
+        "jcalderonzumba/mink-phantomjs-driver": "^0.3.3",
+        "mikey179/vfsstream": "^1.6",
+        "phing/phing": "^2.16",
+        "phpunit/phpunit": "^8.5"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Drupal\\DrupalProject\\": "tests/src",
+            "DrupalProject\\": "src"
+        },
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ]
+    },
+    "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "htdocs/"
+            }
+        },
+        "installer-paths": {
+            "htdocs/core": ["type:drupal-core"],
+            "htdocs/libraries/{$name}": ["type:drupal-library"],
+            "htdocs/modules/contrib/{$name}": ["type:drupal-module"],
+            "htdocs/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "htdocs/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/contrib/{$name}": ["type:drupal-drush"],
+            "htdocs/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "htdocs/themes/custom/{$name}": ["type:drupal-custom-theme"]
+        },
+        "drupal-core-project-message": {
+            "include-keys": ["homepage", "support"],
+            "post-create-project-cmd-message": [
+                "<bg=blue;fg=white>                                                         </>",
+                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
+                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
+                "<bg=blue;fg=white>                                                         </>",
+                "",
+                "<bg=yellow;fg=black>Next steps</>:",
+
+                "  * Install the site: https://www.drupal.org/docs/8/install",
+                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
+                "  * Get support: https://www.drupal.org/support",
+                "  * Get involved with the Drupal community:",
+                "      https://www.drupal.org/getting-involved",
+                "  * Remove the plugin that prints this message:",
+                "      composer remove drupal/core-project-message"
+            ]
+        }
+    }
+}

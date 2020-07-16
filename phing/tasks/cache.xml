@@ -1,0 +1,15 @@
+<project name="cache" default="cache">
+
+    <!-- Clear cache. -->
+    <target name="clear-cache">
+        <echo msg="Clear cache drupal............................." />
+        <drush
+                command="cr"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+        </drush>
+    </target>
+
+</project>
+

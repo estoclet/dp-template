@@ -1,0 +1,46 @@
+<project name="setup-php-codesniffer" default="setup-php-codesniffer">
+  
+    <!-- Set up PHP CodeSniffer. -->
+    <target name="setup-php-codesniffer" description="Generate the configuration file for PHP CodeSniffer.">
+        <if>
+            <available file="${phpcs.config}" type="file" property="phpcs.config.available" />
+            <then>
+                <echo message="Deleting existing PHP Codesniffer default configuration file." />
+                <delete file="${phpcs.config}" failonerror="false" />
+            </then>
+        </if>
+        <if>
+            <available file="${phpcs.global.config}" type="file" property="phpcs.global.config.available" />
+            <then>
+                <echo message="Deleting existing PHP Codesniffer global configuration file." />
+                <delete file="${phpcs.global.config}" failonerror="false" />
+            </then>
+        </if>
+        <phpcodesnifferconfiguration
+            configFile="${phpcs.config}"
+            extensions="${phpcs.extensions}"
+            files="${phpcs.files}"
+            globalConfig="${phpcs.global.config}"
+            ignorePatterns="${phpcs.ignore}"
+            report="${phpcs.report}"
+            showProgress="${phpcs.progress}"
+            showSniffCodes="${phpcs.sniffcodes}"
+            standard="${phpcs.standard}"
+        />
+
+        <phingcall target="disable-pre-push"/>
+        <!-- Set up the git pre-push hook. -->
+        <if>
+            <equals arg1="${phpcs.prepush.enable}" arg2="1" />
+            <then>
+                <symlink link="${phpcs.prepush.destination}" target="${phpcs.prepush.source}" overwrite="true" />
+            </then>
+        </if>
+    </target>
+    
+   <!-- Disable the PHP CodeSniffer pre-push hook. -->
+    <target name="disable-pre-push" description="Disable the coding standards check when pushing to a git repository.">
+        <delete file="${phpcs.prepush.destination}" failonerror="false" />
+    </target>
+  
+</project>

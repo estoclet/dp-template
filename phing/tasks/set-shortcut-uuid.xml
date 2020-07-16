@@ -1,0 +1,22 @@
+<project name="set-shortcut-uuid" default="set-shortcut-uuid">
+  
+  <!-- Synchronise the site uuid". -->
+  <target name="set-shortcut-uuid">
+      <if>
+          <isset property="shortcut.uuid" />
+          <then>
+              <drush
+                  command="config-set"
+                  assume="yes"
+                  root="${website.drupal.dir}"
+                  bin="${drush.bin}"
+                  verbose="${drush.verbose}">
+                  <param>"shortcut.set.default"</param>
+                  <param>"uuid"</param>
+                  <param>${shortcut.uuid}</param>
+              </drush>
+          </then>
+      </if>
+  </target>
+  
+</project>

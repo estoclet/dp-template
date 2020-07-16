@@ -1,0 +1,8 @@
+<project name="writable-files" default="writable-files">
+  
+  <!-- Make the settings folder writeable so that the installer can copy settings.php. -->
+  <target name="writable-files-folder">
+      <chmod mode="0775" failonerror="true" verbose="true" quiet="false" file="${website.files.dir}" />
+  </target>
+  
+</project>

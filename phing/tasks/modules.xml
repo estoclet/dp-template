@@ -1,0 +1,37 @@
+<project name="modules" default="modules"> 
+
+    <!-- Enable development modules. -->
+    <target name="enable-dev-modules">
+        <foreach list="${drupal.modules.dev}" param="module" target="enable-module" delimiter=" " />
+    </target>
+
+    <!-- Enable a module. -->
+    <target name="enable-module">
+        <drush
+            command="pm-enable"
+            assume="yes"
+            root="${website.drupal.dir}"
+            bin="${drush.bin}"
+            verbose="${drush.verbose}">
+            <param>${module}</param>
+        </drush>
+    </target>
+    
+    <!-- Uninstall no-prod modules. -->
+    <target name="uninstall-noprod-modules">
+        <foreach list="${drupal.modules.noprod}" param="module" target="uninstall-module" delimiter=" " />
+    </target>
+    
+    <!-- uninstall a module. -->
+    <target name="uninstall-module">
+        <drush
+            command="pm-uninstall"
+            assume="yes"
+            root="${website.drupal.dir}"
+            bin="${drush.bin}"
+            verbose="${drush.verbose}">
+            <param>${module}</param>
+        </drush>
+    </target>
+    
+</project>

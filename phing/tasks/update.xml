@@ -1,0 +1,24 @@
+<project name="update" default="update">
+
+    <!-- Drush update database. -->
+    <target name="drush-updb">
+        <echo msg="Drush update database........................" />
+        <drush
+                command="updb"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+        </drush>
+    </target>
+    <!-- Drush update database. -->
+    <target name="drush-entup">
+        <echo msg="Drush update database........................" />
+        <drush
+                command="entup"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+        </drush>
+    </target>
+    
+</project>
