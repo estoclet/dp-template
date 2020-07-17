@@ -33,7 +33,7 @@ The instructions assume that you have already installed [Docker](https://docs.do
 In order to get started be sure to clone this project onto your Docker Host. Create a directory on your host. Please note that the webservices will inherit the name from the directory you create. If you create a folder named test. Then the services will all be named test_web_1, test_db_1, test_pma_1.
 
     
-    git clone ssh://git@bitbucket-p.internal.epo.org:7999/dcminfotel/dp-template.git .
+    git clone https://github.com/estoclet/dp-template.git .
     
 
 # How to get up and running
