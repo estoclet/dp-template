@@ -7,7 +7,7 @@ services:
     volumes:
       - .:/var/www:cached
     environment:
-      APACHE_DOCROOT_DIR: /var/www/htdocs
+      APACHE_DOCROOT_DIR: /var/www/web
     ports:
       - "80:80"
   db:
