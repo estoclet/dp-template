@@ -1,20 +1,53 @@
-version: '3.1'
+version: '3.7'
 services:
   web:
-    image: wodby/drupal-php:7.4
-    stdin_open: true # docker run -i
-    tty: true        # docker run -t
-    volumes:
-      - .:/var/www/html:cached
+    image: wodby/apache:2-4.3.2
+    depends_on:
+    - php
     environment:
-      APACHE_DOCROOT_DIR: /var/www/html/web
-    ports:
-      - "80:80"
+      APACHE_LOG_LEVEL: debug
+      APACHE_BACKEND_HOST: php
+      APACHE_VHOST_PRESET: php
+      APACHE_DOCUMENT_ROOT: /var/www/html/web
+    volumes:
+    - ./:/var/www/html:cached
+## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/drupal/local#docker-for-mac
+#    - mutagen:/var/www/html
+
+  php:
+    image: wodby/drupal-php:7.4-dev
+    environment:
+      PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
+#      PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S opensmtpd:25
+#      DB_HOST: $DB_HOST
+#      DB_PORT: $DB_PORT
+#      DB_USER: $DB_USER
+#      DB_PASSWORD: $DB_PASSWORD
+#      DB_NAME: $DB_NAME
+#      DB_DRIVER: $DB_DRIVER
+#      PHP_FPM_USER: wodby
+#      PHP_FPM_GROUP: wodby
+#      COLUMNS: 80 # Set 80 columns for docker exec -it.
+#      # Read instructions at https://wodby.com/docs/stacks/php/local/#xdebug
+#      PHP_XDEBUG: 1
+#      PHP_XDEBUG_DEFAULT_ENABLE: 1
+#      PHP_XDEBUG_REMOTE_CONNECT_BACK: 0
+#      PHP_IDE_CONFIG: serverName=my-ide
+#      PHP_XDEBUG_IDEKEY: "my-ide"
+#      PHP_XDEBUG_REMOTE_HOST: host.docker.internal # Docker 18.03+ Mac/Win
+#      PHP_XDEBUG_REMOTE_HOST: 172.17.0.1 # Linux
+#      PHP_XDEBUG_REMOTE_HOST: 10.254.254.254 # macOS, Docker < 18.03
+#      PHP_XDEBUG_REMOTE_HOST: 10.0.75.1 # Windows, Docker < 18.03
+#      PHP_XDEBUG_REMOTE_LOG: /tmp/php-xdebug.log
+#      # PHPUnit Drupal testing configurations
+#      SIMPLETEST_BASE_URL: "http://nginx"
+#      SIMPLETEST_DB: "${DB_DRIVER}://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}#tests_"
+#      MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName":"chrome","goog:chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://chrome:9515"]'
+    volumes:
+    - ./:/var/www/html:cached
   db:
     image: wodby/mariadb
     restart: always
-    volumes:
-      - ./db-dump/dbdump-staging:/var/mysql/backups:delegated
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: caecm
