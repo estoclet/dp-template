@@ -3,7 +3,9 @@ services:
   web:
     image: osiolabs/drupaldevwithdocker-php:7.4
     volumes:
-      - ./docroot:/var/www/html:cached
+      - ./:/var/www/html:cached
+    environment:
+      APACHE_DOCROOT_DIR: /var/www/html/docroot
     ports:
       - "80:80"
   db:
