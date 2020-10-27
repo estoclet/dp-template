@@ -1,13 +1,13 @@
 version: '3.1'
 services:
   web:
-    image: osiolabs/drupaldevwithdocker-php:7.4
+    image: wodby/drupal-php:7.4
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     volumes:
-      - .:/var/www:cached
+      - .:/var/www/html:cached
     environment:
-      APACHE_DOCROOT_DIR: /var/www/web
+      APACHE_DOCROOT_DIR: /var/www/html/web
     ports:
       - "80:80"
   db:
