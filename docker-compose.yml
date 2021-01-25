@@ -1,15 +1,15 @@
-version: '3'
+version: "3"
 services:
   web:
     image: osiolabs/drupaldevwithdocker-php:7.4
     volumes:
-      - ./:/var/www/html:cached
+      - .:/var/www/html:cached
     environment:
       APACHE_DOCROOT_DIR: /var/www/html/docroot
     ports:
       - "80:80"
   db:
-    image: osiolabs/drupaldevwithdocker-mysql
+    image: mariadb
     volumes:
       - ./db-backups:/var/mysql/backups:delegated
     environment:
@@ -28,4 +28,4 @@ services:
       PHP_UPLOAD_MAX_FILESIZE: 1G
       PHP_MAX_INPUT_VARS: 1G
     ports:
-     - "8001:80"
+      - "8001:80"
