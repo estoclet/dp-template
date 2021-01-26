@@ -19,6 +19,8 @@ services:
   mydrupal_site:
     build: . #this is telling docker-composer to use Dockerfile from the main directory
     container_name: $WEB_NAME
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
     volumes:
       - ./docroot:/var/www/html
       - ./config:/home/config
