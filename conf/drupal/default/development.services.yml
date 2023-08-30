@@ -1,0 +1,26 @@
+# See https://git.drupalcode.org/project/drupal/blob/HEAD/sites/development.services.yml
+
+parameters:
+  # http.response.debug_cacheability_headers: true
+  twig.config:
+    debug: true
+    # When overriding a parameter, it is overridden completely, so need to
+    # redefine all the keys.
+    allowed_file_extensions:
+      - css
+      - html
+      - js
+      - svg
+      - twig
+  renderer.config:
+    debug: true
+    # When overriding a parameter, it is overridden completely, so need to
+    # redefine all the keys.
+    required_cache_contexts: [ 'languages:language_interface', 'theme', 'user.permissions' ]
+    auto_placeholder_conditions:
+      max-age: 0
+      contexts: [ 'session', 'user' ]
+      tags: [ ]
+services:
+  cache.backend.null:
+    class: Drupal\Core\Cache\NullBackendFactory

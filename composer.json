@@ -1,0 +1,222 @@
+{
+    "name": "florenttorregrosa/docker-drupal-project",
+    "description": "Drupal project template with Docker environment.",
+    "license": "GPL-2.0-or-later",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Florent Torregrosa",
+            "homepage": "https://gitlab.com/FlorentTorregrosa"
+        }
+    ],
+    "homepage": "https://gitlab.com/florenttorregrosa-drupal/docker-drupal-project",
+    "support": {
+        "issues": "https://gitlab.com/florenttorregrosa-drupal/docker-drupal-project/-/issues",
+        "source": "https://gitlab.com/florenttorregrosa-drupal/docker-drupal-project",
+        "docs": "https://gitlab.com/florenttorregrosa-drupal/docker-drupal-project/-/blob/HEAD/README.md"
+    },
+    "require": {
+        "composer/installers": "2.*",
+        "cweagans/composer-patches": "1.*",
+        "drupal-composer/drupal-l10n": "2.*",
+        "drupal-composer/drupal-paranoia": "1.*",
+        "drupal/admin_toolbar": "3.3.0",
+        "drupal/config_filter": "1.10.0",
+        "drupal/config_split": "1.9.0",
+        "drupal/core-composer-scaffold": "9.5.5",
+        "drupal/core-recommended": "9.5.5",
+        "drupal/core-vendor-hardening": "9.5.5",
+        "drupal/health_check": "3.0.0",
+        "drupal/purge": "3.4.0",
+        "drupal/redis": "1.6.0",
+        "drupal/search_api": "1.28.0",
+        "drupal/search_api_solr": "4.2.10",
+        "drupal/varnish_purge": "2.1.0",
+        "drush/drush": "11.5.1",
+        "oomphinc/composer-installers-extender": "2.*",
+        "vlucas/phpdotenv": "5.*",
+        "webflo/drupal-finder": "1.*",
+        "wikimedia/composer-merge-plugin": "2.*"
+    },
+    "require-dev": {
+        "drupal-composer/drupal-security-advisories": "9.x-dev",
+        "drupal/coder": "8.3.*",
+        "drupal/config_devel": "1.*",
+        "drupal/config_inspector": "2.*",
+        "drupal/core-dev": "9.5.5",
+        "drupal/devel": "5.*",
+        "drupal/devel_a11y": "1.*",
+        "drupal/devel_php": "1.*",
+        "drupal/drupal-extension": "4.*",
+        "drupal/examples": "4.*",
+        "drupal/renderviz": "1.*",
+        "drupal/speedboxes": "1.*",
+        "drupal/upgrade_status": "4.*",
+        "drupol/phpcsfixer-configs-drupal": "2.*",
+        "florenttorregrosa/phpcs_drupal": "1.*",
+        "mglaman/phpstan-drupal": "1.*",
+        "mortenson/psalm-plugin-drupal": "dev-master",
+        "palantirnet/drupal-rector": "0.*",
+        "phpmd/phpmd": "2.*",
+        "phpro/grumphp": "1.*",
+        "phpspec/prophecy-phpunit": "2.*",
+        "phpstan/extension-installer": "1.*",
+        "phpstan/phpstan-deprecation-rules": "1.*",
+        "phpstan/phpstan-phpunit": "1.*",
+        "povils/phpmnd": "2.*",
+        "roave/security-advisories": "dev-master",
+        "sebastian/phpcpd": "6.*"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
+        "files": [
+            "load.environment.php"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "composer/package-versions-deprecated": true,
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal-composer/drupal-l10n": true,
+            "drupal-composer/drupal-paranoia": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-vendor-hardening": true,
+            "oomphinc/composer-installers-extender": true,
+            "phpro/grumphp": true,
+            "phpstan/extension-installer": true,
+            "wikimedia/composer-merge-plugin": true
+        },
+        "discard-changes": true,
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.1"
+        },
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "composer-exit-on-patch-failure": true,
+        "drupal-l10n": {
+            "destination": "translations/contrib",
+            "languages": [
+                "fr"
+            ]
+        },
+        "drupal-paranoia": {
+            "app-dir": "app",
+            "excludes": [
+                "core/install.php",
+                "core/rebuild.php",
+                "core/modules/statistics/statistics.php"
+            ],
+            "web-dir": "www"
+        },
+        "drupal-scaffold": {
+            "file-mapping": {
+                "[project-root]/.gitattributes": false,
+                "[web-root]/.csslintrc": false,
+                "[web-root]/.eslintrc.json": false,
+                "[web-root]/INSTALL.txt": false,
+                "[web-root]/README.md": false,
+                "[web-root]/example.gitignore": false,
+                "[web-root]/modules/README.txt": false,
+                "[web-root]/profiles/README.txt": false,
+                "[web-root]/sites/README.txt": false,
+                "[web-root]/themes/README.txt": false,
+                "[web-root]/update.php": false,
+                "[web-root]/web.config": false
+            },
+            "gitignore": false,
+            "locations": {
+                "web-root": "./app"
+            }
+        },
+        "grumphp": {
+            "config-default-path": "scripts/quality/grumphp/grumphp.yml"
+        },
+        "installer-paths": {
+            "app/core": [
+                "type:drupal-core"
+            ],
+            "app/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
+            "app/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "app/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "app/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "app/profiles/custom/{$name}": [
+                "type:drupal-custom-profile"
+            ],
+            "app/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "app/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "drush/Commands/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
+        },
+        "installer-types": [
+            "bower-asset",
+            "npm-asset"
+        ],
+        "merge-plugin": {
+            "include": [
+                "app/modules/custom/*/composer.json",
+                "app/profiles/custom/*/composer.json",
+                "app/themes/custom/*/composer.json"
+            ],
+            "merge-extra": true,
+            "merge-extra-deep": true,
+            "merge-scripts": true
+        },
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "patches": {
+            "drupal/core": {
+                "1 - Ensure correct signature for setUp(), tearDown(), setUpBeforeClass(), and assertPostConditions() methods - https://www.drupal.org/project/drupal/issues/3182103#comment-14902208": "https://www.drupal.org/files/issues/2023-02-02/3182103-40_0.patch"
+            }
+        }
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ]
+    }
+}
