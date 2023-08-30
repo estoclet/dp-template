@@ -1,0 +1,8 @@
+# Replaces serialization by Igbinary serialization.
+services:
+  cache.backend.redis:
+    class: Drupal\redis\Cache\CacheBackendFactory
+    arguments:
+      - '@redis.factory'
+      - '@cache_tags.invalidator.checksum'
+      - '@serialization.igbinary_gz'

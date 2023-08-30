@@ -1,0 +1,9 @@
+{
+  "extends": ["./.stylelintrc.json"],
+  "customSyntax": "postcss-scss",
+  "rules": {
+    "annotation-no-unknown": null,
+    "at-rule-no-unknown": null,
+    "no-invalid-position-at-import-rule": null
+  }
+}

@@ -6,7 +6,7 @@
 # Assets compilation had been done.
 
 usage() {
-  printf "package-finalize.sh [integ|staging|preprod|prod] [branch|tag] [9.x|1.0.0]\n"
+  printf "package-finalize.sh [integ|staging|preprod|prod] [branch|tag] [10.x|1.0.0]\n"
 }
 
 environment=''

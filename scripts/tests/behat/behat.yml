@@ -1,0 +1,52 @@
+# https://behat-drupal-extension.readthedocs.io/en/latest/
+
+default:
+  suites:
+    default:
+      contexts:
+        - Drupal\DrupalExtension\Context\BatchContext
+        - Drupal\DrupalExtension\Context\ConfigContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MailContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\RandomContext
+        - FeatureContext
+  extensions:
+    Behat\MinkExtension:
+      # Defined in profile.
+      # base_url:
+      browserkit_http: ~
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal'
+      # Defined in BEHAT_PARAMS environment variable.
+      # drupal:
+      #   drupal_root:
+      region_map:
+        # This region does not have a wrapper container in Olivero.
+        header: '.site-header__inner__container'
+        # This region does not have a wrapper container in Olivero.
+        primary_menu: '.primary-nav__menu'
+        secondary_menu: '.region--secondary-menu'
+        hero: '.region--hero'
+        highlighted: '.region--highlighted'
+        breadcrumb: '.region--breadcrumb'
+        social: '.social-bar__inner'
+        content_above: '.region--content-above'
+        content: '.region--content'
+        sidebar: '.region--sidebar'
+        content_below: '.region--content-below'
+        footer_top: '.region--footer-top'
+        footer_bottom: '.region--footer-bottom'
+
+docker-dev:
+  extensions:
+    Drupal\MinkExtension:
+      base_url: 'http://web'
+
+gitlab-ci:
+  extensions:
+    Drupal\MinkExtension:
+      base_url: 'http://localhost:8888'

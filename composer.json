@@ -23,15 +23,12 @@
         "drupal/admin_toolbar": "3.3.0",
         "drupal/config_filter": "1.10.0",
         "drupal/config_split": "1.9.0",
-        "drupal/core-composer-scaffold": "9.5.5",
-        "drupal/core-recommended": "9.5.5",
-        "drupal/core-vendor-hardening": "9.5.5",
+        "drupal/core-composer-scaffold": "10.0.7",
+        "drupal/core-recommended": "10.0.7",
+        "drupal/core-vendor-hardening": "10.0.7",
         "drupal/health_check": "3.0.0",
-        "drupal/purge": "3.4.0",
+        "drupal/igbinary": "2.0.x-dev#8daeabe7a6bf4cb608638e1c10c4d8a4b85431ab",
         "drupal/redis": "1.6.0",
-        "drupal/search_api": "1.28.0",
-        "drupal/search_api_solr": "4.2.10",
-        "drupal/varnish_purge": "2.1.0",
         "drush/drush": "11.5.1",
         "oomphinc/composer-installers-extender": "2.*",
         "vlucas/phpdotenv": "5.*",
@@ -43,16 +40,17 @@
         "drupal/coder": "8.3.*",
         "drupal/config_devel": "1.*",
         "drupal/config_inspector": "2.*",
-        "drupal/core-dev": "9.5.5",
+        "drupal/core-dev": "10.0.7",
         "drupal/devel": "5.*",
         "drupal/devel_a11y": "1.*",
         "drupal/devel_php": "1.*",
-        "drupal/drupal-extension": "4.*",
+        "drupal/drupal-extension": "5.*",
         "drupal/examples": "4.*",
         "drupal/renderviz": "1.*",
         "drupal/speedboxes": "1.*",
         "drupal/upgrade_status": "4.*",
         "drupol/phpcsfixer-configs-drupal": "2.*",
+        "ely/php-code-style": "0.*",
         "florenttorregrosa/phpcs_drupal": "1.*",
         "mglaman/phpstan-drupal": "1.*",
         "mortenson/psalm-plugin-drupal": "dev-master",
@@ -63,7 +61,7 @@
         "phpstan/extension-installer": "1.*",
         "phpstan/phpstan-deprecation-rules": "1.*",
         "phpstan/phpstan-phpunit": "1.*",
-        "povils/phpmnd": "2.*",
+        "povils/phpmnd": "3.*",
         "roave/security-advisories": "dev-master",
         "sebastian/phpcpd": "6.*"
     },
@@ -79,6 +77,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
+        "psr-4": {
+            "Drupal\\igbinary\\": "app/modules/contrib/igbinary/src"
+        },
         "classmap": [
             "scripts/composer/ScriptHandler.php"
         ],
@@ -101,6 +102,7 @@
             "phpstan/extension-installer": true,
             "wikimedia/composer-merge-plugin": true
         },
+        "apcu-autoloader": true,
         "discard-changes": true,
         "optimize-autoloader": true,
         "platform": {
@@ -199,11 +201,7 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
-        "patches": {
-            "drupal/core": {
-                "1 - Ensure correct signature for setUp(), tearDown(), setUpBeforeClass(), and assertPostConditions() methods - https://www.drupal.org/project/drupal/issues/3182103#comment-14902208": "https://www.drupal.org/files/issues/2023-02-02/3182103-40_0.patch"
-            }
-        }
+        "patches": {}
     },
     "scripts": {
         "pre-install-cmd": [

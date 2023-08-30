@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 usage() {
-  printf "package-composer-install.sh [integ|staging|preprod|prod] [9.x|1.0.0]\n"
+  printf "package-composer-install.sh [integ|staging|preprod|prod] [10.x|1.0.0]\n"
 }
 
 environment=''

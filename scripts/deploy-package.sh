@@ -2,7 +2,7 @@
 # shellcheck disable=SC2029
 
 usage() {
-  printf "deploy-package.sh [integ|staging|preprod|prod] [9.x-2021-04-23-10h07m23s|1.0.0]\n"
+  printf "deploy-package.sh [integ|staging|preprod|prod] [10.x-2021-04-23-10h07m23s|1.0.0]\n"
 }
 
 environment=''

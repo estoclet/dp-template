@@ -131,7 +131,7 @@ docker-fix-permissions: ## Fix directories permissions.
 ################################################################################
 
 .PHONY: generate-package
-generate-package: ## Generate a package. Example: make generate-package TARGET_ENVIRONMENT=prod VERSION_TYPE=branch TARGET_VERSION=9.x
+generate-package: ## Generate a package. Example: make generate-package TARGET_ENVIRONMENT=prod VERSION_TYPE=branch TARGET_VERSION=10.x
 	@$(DOCKER_COMPOSE_COMMAND) exec web bash -c "cd ${PROJECT_PATH} && rm -rf ./build"
 	mkdir -p ./build/${TARGET_VERSION}
 
@@ -155,12 +155,12 @@ generate-package: ## Generate a package. Example: make generate-package TARGET_E
 	./scripts/package-finalize.sh ${TARGET_ENVIRONMENT} ${VERSION_TYPE} ${TARGET_VERSION}
 
 .PHONY: deploy-package
-deploy-package: ## Deploy a package. Example: make deploy-package TARGET_ENVIRONMENT=prod PACKAGE_NAME=9.x-2021-04-23-10h07m23s
+deploy-package: ## Deploy a package. Example: make deploy-package TARGET_ENVIRONMENT=prod PACKAGE_NAME=10.x-2021-04-23-10h07m23s
 	./scripts/deploy-package.sh ${TARGET_ENVIRONMENT} ${PACKAGE_NAME}
 	./scripts/fix-permissions.sh ${TARGET_ENVIRONMENT} ${PACKAGE_NAME}
 
 .PHONY: enable-release
-enable-release: ## Enable a release. Example: make enable-release TARGET_ENVIRONMENT=prod PACKAGE_NAME=9.x-2021-04-23-10h07m23s SELECTED_SITE=all
+enable-release: ## Enable a release. Example: make enable-release TARGET_ENVIRONMENT=prod PACKAGE_NAME=10.x-2021-04-23-10h07m23s SELECTED_SITE=all
 	${MAKE} make-backup TARGET_ENVIRONMENT=${TARGET_ENVIRONMENT} SELECTED_SITE=${SELECTED_SITE}
 	${MAKE} make-symlink TARGET_ENVIRONMENT=${TARGET_ENVIRONMENT} PACKAGE_NAME=${PACKAGE_NAME} SELECTED_SITE=${SELECTED_SITE}
 	./scripts/update.sh ${TARGET_ENVIRONMENT} ${SELECTED_SITE}
@@ -170,7 +170,7 @@ site-install: ## Install the selected site. Example: make site-install TARGET_EN
 	./scripts/install.sh ${TARGET_ENVIRONMENT} ${SELECTED_SITE}
 
 .PHONY: make-symlink
-make-symlink: ## Make a symlink to a release. Example: make make-symlink TARGET_ENVIRONMENT=prod PACKAGE_NAME=9.x-2021-04-23-10h07m23s SELECTED_SITE=all
+make-symlink: ## Make a symlink to a release. Example: make make-symlink TARGET_ENVIRONMENT=prod PACKAGE_NAME=10.x-2021-04-23-10h07m23s SELECTED_SITE=all
 	./scripts/make-symlink.sh ${TARGET_ENVIRONMENT} ${PACKAGE_NAME} ${SELECTED_SITE}
 
 .PHONY: make-backup
@@ -247,7 +247,6 @@ quality-phpmnd: ## Launch PHP MND on project sources.
 		./vendor/bin/phpmnd \
 		--extensions=all \
 		--hint \
-		--non-zero-exit-on-violation \
 		--suffixes="inc,info,install,module,php,profile,test,theme" \
 		--exclude=tests \
 		--ignore-funcs=intval,floatval,strval \
@@ -313,10 +312,9 @@ quality-css: ## Launch Stylelint.
 
 .PHONY: quality-sass
 quality-sass: ## Launch Stylelint on sass/scss code.
-	# Fix postcss-scss version, until core update postcss to version 8.
 	@$(DOCKER_COMPOSE_COMMAND) exec node /bin/sh -c 'cd $(PROJECT_PATH) && \
 		yarn --cwd ${APP_PATH}/core install && \
-		yarn --cwd ${APP_PATH}/core add --dev postcss-scss@2.1.1 && \
+		yarn --cwd ${APP_PATH}/core add --dev postcss-scss && \
 		${APP_PATH}/core/node_modules/.bin/stylelint \
 			--config ${PROJECT_PATH}/scripts/quality/sasslint/.stylelintrc.json \
 			--config-basedir ${APP_PATH}/core/ \
@@ -333,6 +331,7 @@ quality-js: ## Launch ESLint for non-compiled JS.
 		${APP_PATH}/core/node_modules/.bin/eslint \
 			--config ${APP_PATH}/core/.eslintrc.legacy.json \
 			--no-error-on-unmatched-pattern \
+			--max-warnings 0 \
 			--ignore-path "$(PROJECT_PATH)/scripts/quality/eslint/.eslintignore" \
 			"${APP_PATH}/modules/custom/**/*.js" \
 			"${APP_PATH}/profiles/custom/**/*.js" \
@@ -346,6 +345,7 @@ quality-js-es6: ## Launch ESLint for ES6 JS.
 		${APP_PATH}/core/node_modules/.bin/eslint \
 			--config ${APP_PATH}/core/.eslintrc.json \
 			--no-error-on-unmatched-pattern \
+			--max-warnings 0 \
 			--ignore-path "$(PROJECT_PATH)/scripts/quality/eslint_es6/.eslintignore" \
 			"${APP_PATH}/modules/custom/**/*.es6.js" \
 			"${APP_PATH}/profiles/custom/**/*.es6.js" \
@@ -386,6 +386,7 @@ quality-yaml: ## Launch ESLint for YAML.
 		./node_modules/.bin/eslint \
 			--config ./.eslintrc.json \
 			--no-error-on-unmatched-pattern \
+			--max-warnings 0 \
 			--ext .yml \
 			"${PROJECT_PATH}/app/modules/custom" \
 			"${PROJECT_PATH}/app/profiles/custom" \
@@ -482,10 +483,9 @@ quality-fix-css: ## Launch Stylelint fixer.
 
 .PHONY: quality-fix-sass
 quality-fix-sass: ## Launch Stylelint fixer on sass/scss code.
-	# Fix postcss-scss version, until core update postcss to version 8.
 	@$(DOCKER_COMPOSE_COMMAND) exec node /bin/sh -c 'cd $(PROJECT_PATH) && \
 		yarn --cwd ${APP_PATH}/core install && \
-		yarn --cwd ${APP_PATH}/core add --dev postcss-scss@2.1.1 && \
+		yarn --cwd ${APP_PATH}/core add --dev postcss-scss && \
 		${APP_PATH}/core/node_modules/.bin/stylelint \
 			--config ${PROJECT_PATH}/scripts/quality/sasslint/.stylelintrc.json \
 			--config-basedir ${APP_PATH}/core/ \

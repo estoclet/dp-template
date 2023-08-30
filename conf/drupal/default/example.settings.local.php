@@ -99,6 +99,8 @@ $config['system.performance']['js']['preprocess'] = TRUE;
 
 $settings['cache_prefix'] = $_ENV['DRUPAL_SITE_DEFAULT_CACHE_PREFIX'];
 $settings['cache']['default'] = $_ENV['DRUPAL_SITE_DEFAULT_CACHE_DEFAULT'];
+$settings['cache']['bins']['bootstrap'] = 'cache.backend.chainedfast';
+$settings['cache']['bins']['discovery'] = 'cache.backend.chainedfast';
 
 // Redis.
 if (isset($_ENV['DRUPAL_SITE_DEFAULT_REDIS']) && $_ENV['DRUPAL_SITE_DEFAULT_REDIS'] === 'yes') {
@@ -114,6 +116,12 @@ if (isset($_ENV['DRUPAL_SITE_DEFAULT_REDIS']) && $_ENV['DRUPAL_SITE_DEFAULT_REDI
 
   $settings['container_yamls'][] = 'modules/contrib/redis/redis.services.yml';
   $settings['container_yamls'][] = 'modules/contrib/redis/example.services.yml';
+
+  // Igbinary (currently only used for Redis).
+  if (isset($_ENV['DRUPAL_SITE_DEFAULT_IGBINARY']) && $_ENV['DRUPAL_SITE_DEFAULT_IGBINARY'] === 'yes') {
+    $settings['container_yamls'][] = 'modules/contrib/igbinary/igbinary.services.yml';
+    $settings['container_yamls'][] = $app_root . '/../conf/drupal/igbinary.services.yml';
+  }
 }
 
 // Varnish.
@@ -122,6 +130,11 @@ $config['varnish_purger.settings.varnish']['port'] = (int) $_ENV['VARNISH_PORT']
 
 // Errors.
 $config['system.logging']['error_level'] = 'hide';
+
+// Update.
+$config['update.settings']['check']['disabled_extensions'] = TRUE;
+$config['update.settings']['check']['interval_days'] = 7;
+$config['update.settings']['notification']['emails'] = [];
 
 // Services.
 $settings['container_yamls'][] = $app_root . '/../conf/drupal/' . $_ENV['DRUPAL_SITE_DEFAULT_FOLDER_NAME'] . '/services.yml';
