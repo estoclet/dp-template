@@ -2,18 +2,6 @@
 
 A Drupal project template with Docker environment.
 
-## Branches
-
-* [10.x](https://gitlab.com/florenttorregrosa-drupal/docker-drupal-project/-/tree/10.x): Branch for Drupal 10. Default branch.
-* [9.x](https://gitlab.com/florenttorregrosa-drupal/docker-drupal-project/-/tree/9.x): Branch for Drupal 9.
-* [ci-tests](https://gitlab.com/florenttorregrosa-drupal/docker-drupal-project/-/tree/ci-tests): Branch to have failing tests and ensure they detect errors.
-* [ci-tests-example](https://gitlab.com/florenttorregrosa-drupal/docker-drupal-project/-/tree/ci-tests-example): Branch to have some examples of custom config/code and tests written against it.
-* [ci-contrib](https://gitlab.com/florenttorregrosa-drupal/docker-drupal-project/-/tree/ci-contrib): To monitor projects I maintain/co-maintain on Drupal.org and be able to apply additional quality tools not present on Drupal.org.
-* [ci-contrib-smile](https://gitlab.com/florenttorregrosa-drupal/docker-drupal-project/-/tree/ci-contrib-smile): To monitor projects I maintain/co-maintain on Drupal.org sponsored by [Smile](https://www.smile.eu) and be able to apply additional quality tools not present on Drupal.org.
-* [setup-entity-share](https://gitlab.com/florenttorregrosa-drupal/docker-drupal-project/-/tree/setup-entity-share): Adaptation into a multi-site for [Entity Share](https://www.drupal.org/project/entity_share) development/testing/demonstration.
-
-All branches are rebased against the `10.x` branch.
-
 ## Documentation
 
 See the [docs](docs) folder for detailed documentation:
