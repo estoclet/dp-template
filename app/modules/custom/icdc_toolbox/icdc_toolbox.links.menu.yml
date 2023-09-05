@@ -1,0 +1,13 @@
+icdc_toolbox.icdc_admin_menu:
+  title: 'CDC'
+  route_name: icdc_toolbox.icdc_toolbox_admin_controller_icdc_admin_menu
+  description: 'Paramétrage des pages CDC'
+  parent: system.admin
+  weight: 99
+
+icdc_toolbox.icdc_admin_menu_version:
+  title: 'Version'
+  route_name: icdc_toolbox.version
+  description: 'Version'
+  parent: icdc_toolbox.icdc_admin_menu
+  weight: 99

@@ -1,0 +1,146 @@
+uuid: aeebe5b0-af28-473d-8ef8-fd5865751641
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.node.accueil.full
+    - core.entity_view_display.node.dossier.full
+    - core.entity_view_display.node.page.full
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.restricted_html
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.image_svg
+    - media.type.instagram
+    - media.type.twitter
+    - media.type.video
+    - node.type.accueil
+    - node.type.actualite
+    - node.type.article
+    - node.type.blog
+    - node.type.dossier
+    - node.type.gouvernance
+    - node.type.page
+    - node.type.parcours_de_vie
+    - taxonomy.vocabulary.blog_tag
+    - taxonomy.vocabulary.course_of_life
+    - taxonomy.vocabulary.decision_tree
+    - taxonomy.vocabulary.decision_tree_sponsorship
+    - taxonomy.vocabulary.expertise_area
+    - taxonomy.vocabulary.investor
+    - taxonomy.vocabulary.thematique
+  module:
+    - block_content
+    - content_translation
+    - contextual
+    - entity_clone
+    - filter
+    - icdc_toolbox
+    - icdc_users
+    - layout_builder
+    - locale
+    - media
+    - menu_link_content
+    - node
+    - scheduler
+    - taxonomy
+id: editor
+label: Rédacteur
+weight: 3
+is_admin: null
+permissions:
+  - 'access contextual links'
+  - 'access taxonomy overview'
+  - 'clone media entity'
+  - 'clone node entity'
+  - 'configure all accueil node layout overrides'
+  - 'configure all dossier node layout overrides'
+  - 'configure all page node layout overrides'
+  - 'configure editable accueil node layout overrides'
+  - 'configure editable dossier node layout overrides'
+  - 'configure editable page node layout overrides'
+  - 'create actualite content'
+  - 'create and edit custom blocks'
+  - 'create article content'
+  - 'create blog content'
+  - 'create content translations'
+  - 'create dossier content'
+  - 'create gouvernance content'
+  - 'create image_svg media'
+  - 'create page content'
+  - 'create parcours_de_vie content'
+  - 'create terms in course_of_life'
+  - 'create terms in decision_tree'
+  - 'create terms in decision_tree_sponsorship'
+  - 'delete any actualite content'
+  - 'delete any article content'
+  - 'delete content translations'
+  - 'delete own accueil content'
+  - 'delete own actualite content'
+  - 'delete own article content'
+  - 'delete own blog content'
+  - 'delete own dossier content'
+  - 'delete own gouvernance content'
+  - 'delete own page content'
+  - 'edit any actualite content'
+  - 'edit any article content'
+  - 'edit any audio media'
+  - 'edit any document media'
+  - 'edit any dossier content'
+  - 'edit any gouvernance content'
+  - 'edit any image media'
+  - 'edit any image_svg media'
+  - 'edit any instagram media'
+  - 'edit any page content'
+  - 'edit any parcours_de_vie content'
+  - 'edit any twitter media'
+  - 'edit any video media'
+  - 'edit own accueil content'
+  - 'edit own actualite content'
+  - 'edit own article content'
+  - 'edit own blog content'
+  - 'edit own dossier content'
+  - 'edit own gouvernance content'
+  - 'edit own page content'
+  - 'edit own parcours_de_vie content'
+  - 'icdc toolbox clear cache'
+  - 'revert actualite revisions'
+  - 'revert article revisions'
+  - 'revert dossier revisions'
+  - 'revert gouvernance revisions'
+  - 'revert page revisions'
+  - 'revert parcours_de_vie revisions'
+  - 'schedule publishing of nodes'
+  - 'set user password'
+  - 'translate accueil node'
+  - 'translate actualite node'
+  - 'translate any entity'
+  - 'translate article node'
+  - 'translate block_content'
+  - 'translate blog node'
+  - 'translate blog_tag taxonomy_term'
+  - 'translate course_of_life taxonomy_term'
+  - 'translate decision_tree taxonomy_term'
+  - 'translate decision_tree_sponsorship taxonomy_term'
+  - 'translate dossier node'
+  - 'translate expertise_area taxonomy_term'
+  - 'translate interface'
+  - 'translate investor taxonomy_term'
+  - 'translate menu_link_content'
+  - 'translate page node'
+  - 'translate parcours_de_vie node'
+  - 'translate thematique taxonomy_term'
+  - 'update content translations'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'view actualite revisions'
+  - 'view article revisions'
+  - 'view blog revisions'
+  - 'view dossier revisions'
+  - 'view gouvernance revisions'
+  - 'view page revisions'
+  - 'view parcours_de_vie revisions'
+  - 'view scheduled content'

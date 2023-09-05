@@ -1,0 +1,19 @@
+uuid: e5c0c52f-1ac7-45c8-ae43-4db5717fdf89
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_audio_id
+    - media.type.audio
+id: media.audio.field_media_audio_id
+field_name: field_media_audio_id
+entity_type: media
+bundle: audio
+label: Identifiant
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,25 @@
+uuid: 7d52a352-f0f5-49a0-bc89-70779cf6b227
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_image_type
+    - media.type.image
+  module:
+    - options
+_core:
+  default_config_hash: Sq-q_wILg6WBiPyG1zXdGUJI_FwPUjqsHRjJLuJ0oAE
+id: media.image.field_media_image_type
+field_name: field_media_image_type
+entity_type: media
+bundle: image
+label: 'Type d''image'
+description: 'Dans le cas d''une image informative un texte de remplacement doit obligatoirement être renseigné afin de faciliter la compréhension en terme d''accessibilté.'
+required: true
+translatable: false
+default_value:
+  -
+    value: informative
+default_value_callback: ''
+settings: {  }
+field_type: list_string

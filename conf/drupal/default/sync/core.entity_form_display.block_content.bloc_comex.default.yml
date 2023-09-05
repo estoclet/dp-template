@@ -1,0 +1,65 @@
+uuid: a5abb9a0-1723-40a1-b75c-fb705276deb3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_comex
+    - field.field.block_content.bloc_comex.field_animation
+    - field.field.block_content.bloc_comex.field_gouvernance_references
+    - field.field.block_content.bloc_comex.field_link
+    - field.field.block_content.bloc_comex.field_responsive
+  module:
+    - link
+    - workbench_moderation
+id: block_content.bloc_comex.default
+targetEntityType: block_content
+bundle: bloc_comex
+mode: default
+content:
+  field_animation:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_gouvernance_references:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_responsive:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

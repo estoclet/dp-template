@@ -1,0 +1,19 @@
+uuid: 75964caa-9b58-4867-8080-325f4eb1629a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_page_type
+    - node.type.webform
+id: node.webform.field_site_page_type
+field_name: field_site_page_type
+entity_type: node
+bundle: webform
+label: 'Site page type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

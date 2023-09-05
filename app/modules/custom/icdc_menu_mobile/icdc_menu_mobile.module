@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_menu_mobile.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_menu_mobile_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the mini_sites module.
+    case 'help.page.icdc_menu_mobile':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('ICDC Menu mobile') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function icdc_menu_mobile_theme() {
+  return [
+    'icdc_menu_mobile_block' => [
+      'variables' => [
+        'search' => '',
+        'main' => '',
+        'menuprofil' => '',
+      ],
+      'render element' => 'children',
+    ],
+  ];
+}

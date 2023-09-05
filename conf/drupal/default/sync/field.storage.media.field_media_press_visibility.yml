@@ -1,0 +1,20 @@
+uuid: a3e82107-d73d-4f71-8dfd-9813f9ba7aac
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: JHu0sGghPMsNAcawk61qUQu-OS0JMsSjsd9ytqwf2wg
+id: media.field_media_press_visibility
+field_name: field_media_press_visibility
+entity_type: media
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

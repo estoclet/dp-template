@@ -1,0 +1,29 @@
+uuid: 36aeb2a4-573a-4fca-b4d9-61d578f05e28
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+    - options
+_core:
+  default_config_hash: xkS9MMLq982MJgsiQPioOYV5tmObUVgpLTIntmUYR3c
+id: media.field_media_image_type
+field_name: field_media_image_type
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: informative
+      label: 'Image informative'
+    -
+      value: decorative
+      label: 'Image décorative'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,33 @@
+label: Media
+display:
+  default:
+    display_title: Default
+    display_options:
+      title: Media
+      fields:
+        thumbnail__target_id:
+          label: Thumbnail
+        name:
+          label: 'Nom du média'
+        uid:
+          label: Author
+      empty:
+        area_text_custom:
+          content: 'No media available.'
+      filters:
+        name:
+          expose:
+            label: 'Nom du média'
+        status:
+          expose:
+            label: Vrai
+          group_info:
+            label: 'Statut de publication'
+        langcode:
+          expose:
+            label: Language
+  media_page_list:
+    display_title: Media
+    display_options:
+      menu:
+        title: Media

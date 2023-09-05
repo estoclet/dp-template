@@ -1,0 +1,19 @@
+uuid: c8821471-f06f-41a9-b349-34818fd3b809
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_key_label
+    - paragraphs.paragraphs_type.pg_chiffre
+id: paragraph.pg_chiffre.field_pg_key_label
+field_name: field_pg_key_label
+entity_type: paragraph
+bundle: pg_chiffre
+label: Libellé
+description: 'Saisissez le texte accompagnant le chiffre.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

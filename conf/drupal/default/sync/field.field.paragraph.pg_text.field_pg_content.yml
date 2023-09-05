@@ -1,0 +1,23 @@
+uuid: 423947e0-6673-45dd-89b7-20d0b956aa70
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_content
+    - paragraphs.paragraphs_type.pg_text
+  module:
+    - text
+_core:
+  default_config_hash: UlUtDY6u9q8DbqqsWS537TwDbMSUl4r_M9pDjJJsXyw
+id: paragraph.pg_text.field_pg_content
+field_name: field_pg_content
+entity_type: paragraph
+bundle: pg_text
+label: Contenu
+description: 'Saisissez le contenu de l''encart.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

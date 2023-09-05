@@ -1,0 +1,1180 @@
+uuid: 66d88754-d3f3-4d19-8e76-820214fd5d8b
+langcode: fr
+status: open
+dependencies:
+  module:
+    - antibot
+    - honeypot
+    - icdc_form_mediation
+    - webform_product
+third_party_settings:
+  antibot:
+    antibot: true
+  honeypot:
+    honeypot: true
+    time_restriction: true
+  webform_product:
+    statut:
+      options:
+        Famille: ''
+        Employeur: ''
+        'Avocat ou Notaire': ''
+        Mandataire: ''
+        'Autre Médiateur': ''
+        'Président de la République': ''
+        'Défenseur des Droits': ''
+    votre_demande_concerne:
+      options:
+        Retraite: ''
+        'Mon Compte Formation': ''
+        Ciclade: ''
+        Consignations: ''
+        'Agence bancaire': ''
+        Logement: ''
+        Filiales: ''
+        'Prêt de la Mission Sociale Groupe': ''
+        Autre: ''
+    l_objet_de_votre_demande_cic_morale:
+      options:
+        'Comptes bancaires inactifs': ''
+        'Problème d''accessibilité, Problème technique': ''
+        'Problème d’accès à l’information': ''
+        Autre: ''
+    l_objet_de_votre_demande_cic_part:
+      options:
+        'Comptes bancaires inactifs': ''
+        'Assurance vie': ''
+        'Bons (capitalisation/ porteur)': ''
+        Succession: ''
+        'Problème d''accessibilité, Problème technique': ''
+        'Problème d’accès à l’information': ''
+        Autre: ''
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: mediation_caisse
+title: 'Formulaire de saisine de la médiation'
+description: ''
+category: ''
+elements: |-
+  reference_client_id:
+    '#type': hidden
+    '#title': 'N° de dossier Médiation'
+  legal_notices:
+    '#type': processed_text
+    '#text': |
+      <h3><span>Information</span></h3>
+
+      <p><span>Les informations recueillies via le présent formulaire font l’objet d’un traitement de données à caractère personnel, mis en œuvre à des fins de gérer à l'amiable les litiges entre personnes physiques ou représentantes de personnes morales et les entités du Groupe CDC par la Caisse des Dépôts, sise au 56 rue de Lille 75 007 en qualité de responsable de traitement.</span></p>
+
+      <p><span>Pour plus d’information </span><a href="https://www.caissedesdepots.fr/donnees-personnelles-et-cookies/notice-information-mediation"><span>veuillez-vous référer à la mention d’information</span></a></p>
+    '#format': email_html
+  markup:
+    '#type': webform_markup
+    '#markup': '<strong>Tous les champs pr&eacute;c&eacute;d&eacute;s d&#39;une &eacute;toile (<span class=''red''>*</span>) sont obligatoires</strong>'
+    '#equal_stepwise_validate': 0
+    '#equal_components':
+      reference_client_id: 0
+      votre_demande_concerne: 0
+      votre_caisse_de_retraite: 0
+      precisez_la_caisse: 0
+      filiale_concernee: 0
+      precisez_la_filiale: 0
+      precisez_demande: 0
+      vous_etes_field: 0
+      vous_etes: 0
+      vous_etes_mcf: 0
+      vous_etes_ciclade: 0
+      vous_etes_consignations: 0
+      vous_etes_agence: 0
+      vous_etes_logement: 0
+      vous_etes_ch_autre: 0
+      vous_etes_autre: 0
+      l_objet_de_votre_demande_field: 0
+      l_objet_de_votre_demande_retraite: 0
+      l_objet_de_votre_demande: 0
+      l_objet_de_votre_demande_mcf_orga: 0
+      l_objet_de_votre_demande_mcf_employeur: 0
+      l_objet_de_votre_demande_autres: 0
+      l_objet_de_votre_demande_cic_morale: 0
+      l_objet_de_votre_demande_cic_part: 0
+      l_objet_de_votre_demande_con: 0
+      l_objet_de_votre_demande_agence: 0
+      l_objet_de_votre_demande_log: 0
+      l_objet_de_votre_demande_log_autre: 0
+      l_objet_de_votre_demande_ch_autre: 0
+      l_objet_de_votre_demande_autre: 0
+      message_description: 0
+      mediation_entity_status_date: 0
+      mediation_multi_date: 0
+      mediation_reference_client: 0
+      mediation_numero_dossier: 0
+      statut: 0
+      civilite: 0
+      firstname: 0
+      lastname: 0
+      date_de_naissance: 0
+      lieu_de_naissance: 0
+      adresse_comlete: 0
+      code_postal_5_chiffres_exemple_75013_: 0
+      ville: 0
+      pays: 0
+      email: 0
+    '#compare': 0
+    '#compare_components': ''
+    '#compare_components_operator': ''
+    '#compare_components_custom_error': ''
+    '#some_of_several': 0
+    '#some_of_several_components':
+      reference_client_id: 0
+      votre_demande_concerne: 0
+      votre_caisse_de_retraite: 0
+      precisez_la_caisse: 0
+      filiale_concernee: 0
+      precisez_la_filiale: 0
+      precisez_demande: 0
+      vous_etes_field: 0
+      vous_etes: 0
+      vous_etes_mcf: 0
+      vous_etes_ciclade: 0
+      vous_etes_consignations: 0
+      vous_etes_agence: 0
+      vous_etes_logement: 0
+      vous_etes_ch_autre: 0
+      vous_etes_autre: 0
+      l_objet_de_votre_demande_field: 0
+      l_objet_de_votre_demande_retraite: 0
+      l_objet_de_votre_demande: 0
+      l_objet_de_votre_demande_mcf_orga: 0
+      l_objet_de_votre_demande_mcf_employeur: 0
+      l_objet_de_votre_demande_autres: 0
+      l_objet_de_votre_demande_cic_morale: 0
+      l_objet_de_votre_demande_cic_part: 0
+      l_objet_de_votre_demande_con: 0
+      l_objet_de_votre_demande_agence: 0
+      l_objet_de_votre_demande_log: 0
+      l_objet_de_votre_demande_log_autre: 0
+      l_objet_de_votre_demande_ch_autre: 0
+      l_objet_de_votre_demande_autre: 0
+      message_description: 0
+      mediation_entity_status_date: 0
+      mediation_multi_date: 0
+      mediation_reference_client: 0
+      mediation_numero_dossier: 0
+      statut: 0
+      civilite: 0
+      firstname: 0
+      lastname: 0
+      date_de_naissance: 0
+      lieu_de_naissance: 0
+      adresse_comlete: 0
+      code_postal_5_chiffres_exemple_75013_: 0
+      ville: 0
+      pays: 0
+      email: 0
+    '#some_of_several_components_completed': ''
+    '#some_of_several_final_validation': 0
+  mediation_container_etape_1:
+    '#type': fieldset
+    '#title': 'Etape 1 : Aidez-nous à qualifier votre demande'
+    votre_demande_concerne:
+      '#type': select
+      '#title': 'Votre demande concerne :'
+      '#options':
+        Retraite: Retraite
+        'Mon Compte Formation': 'Mon Compte Formation'
+        Ciclade: Ciclade
+        Consignations: Consignations
+        'Agence bancaire': 'Agence bancaire'
+        Logement: Logement
+        Filiales: Filiales
+        'Prêt de la Mission Sociale Groupe': 'Prêt de la Mission Sociale Groupe'
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez le thème de votre demande.'
+    votre_caisse_de_retraite:
+      '#type': select
+      '#title': 'Votre caisse de retraite :'
+      '#options':
+        'CNRACL dont FAS': 'CNRACL dont FAS'
+        IRCANTEC: IRCANTEC
+        'Caisse des Mines': 'Caisse des Mines'
+        FSPOEIE: FSPOEIE
+        RAFP: RAFP
+        FIPHFP: FIPHFP
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez renseigner votre caisse de retraite.'
+      '#states':
+        visible:
+          ':input[name="votre_demande_concerne"]':
+            value: Retraite
+    precisez_la_caisse:
+      '#type': textfield
+      '#title': 'Précisez la caisse :'
+      '#required': true
+      '#required_error': 'Veuillez précisez votre caisse de retraite.'
+      '#states':
+        visible:
+          ':input[name="votre_caisse_de_retraite"]':
+            value: Autre
+    filiale_concernee:
+      '#type': select
+      '#title': 'Précisez la filiale concernée :'
+      '#options':
+        'La Poste / La Banque Postale': 'La Poste / La Banque Postale'
+        Bpifrance: Bpifrance
+        Transdev: Transdev
+        'La Compagnie des Alpes': 'La Compagnie des Alpes'
+        'CNP Assurances': 'CNP Assurances'
+        'Théâtre des Champs Elysées': 'Théâtre des Champs Elysées'
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez la filiale concernée.'
+      '#states':
+        visible:
+          ':input[name="votre_demande_concerne"]':
+            value: Filiales
+    precisez_la_filiale:
+      '#type': textfield
+      '#title': 'Précisez la filiale :'
+      '#required': true
+      '#required_error': 'Veuillez précisez la filiale.'
+      '#states':
+        visible:
+          ':input[name="filiale_concernee"]':
+            value: Autre
+    precisez_demande:
+      '#type': textfield
+      '#title': 'Précisez :'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="votre_demande_concerne"]':
+            value: Autre
+      '#admin_title': 'Précisez votre demande :'
+    vous_etes_field:
+      '#type': hidden
+      '#title': 'Vous êtes :'
+    vous_etes:
+      '#type': select
+      '#title': 'Vous êtes :'
+      '#options':
+        'Particulier retraité': 'Particulier retraité'
+        'Particulier en activité': 'Particulier en activité'
+        Autre: Autre
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="votre_demande_concerne"]':
+            value: Retraite
+    vous_etes_mcf:
+      '#type': select
+      '#title': 'Vous êtes :'
+      '#options':
+        Particulier: Particulier
+        Elu: Elu
+        'Organisme de formation': 'Organisme de formation'
+        Employeur: Employeur
+        Autre: Autre
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="votre_demande_concerne"]':
+            value: 'Mon Compte Formation'
+    vous_etes_ciclade:
+      '#type': select
+      '#title': 'Vous êtes :'
+      '#options':
+        Particulier: Particulier
+        'Personne morale': 'Personne morale'
+        'Professionnel du Droit (Notaire, Avocat, Huissier...)': 'Professionnel du Droit'
+        Autre: Autre
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="votre_demande_concerne"]':
+            value: Ciclade
+    vous_etes_consignations:
+      '#type': select
+      '#title': 'Vous êtes :'
+      '#options':
+        'Détenteur d''une consignation': 'Détenteur d''une consignation'
+        'Allocation rentée scolaire': 'Allocation rentée scolaire'
+        'Ancien Enfant du spectacle ou du mannequinat (ESM)': 'Ancien Enfant du spectacle ou du mannequinat (ESM)'
+        'Mineur compétiteur de jeux vidéo': 'Mineur compétiteur de jeux vidéo'
+        'Personne morale': 'Personne morale'
+        Autre: Autre
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="votre_demande_concerne"]':
+            value: Consignations
+    vous_etes_agence:
+      '#type': select
+      '#title': 'Vous êtes :'
+      '#options':
+        Particulier: Particulier
+        'Profession juridique (Huissier, Notaire)': 'Profession juridique'
+        Autre: Autre
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="votre_demande_concerne"]':
+            value: 'Agence bancaire'
+    vous_etes_logement:
+      '#type': select
+      '#title': 'Vous êtes :'
+      '#options':
+        'Locataire CDC Habitat': 'Locataire CDC Habitat'
+        'Locataire Investimmo': 'Locataire Investimmo'
+        Autre: Autre
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="votre_demande_concerne"]':
+            value: Logement
+    vous_etes_ch_autre:
+      '#type': textfield
+      '#title': 'Vous êtes :'
+      '#states':
+        visible:
+          ':input[name="votre_demande_concerne"]':
+            value: Autre
+      '#required': true
+    vous_etes_autre:
+      '#type': textfield
+      '#title': 'Précisez :'
+      '#required': true
+      '#states':
+        visible:
+          - ':input[name="vous_etes_mcf"]':
+              value: Autre
+          - xor
+          - ':input[name="vous_etes_ciclade"]':
+              value: Autre
+          - xor
+          - ':input[name="vous_etes_consignations"]':
+              value: Autre
+          - xor
+          - ':input[name="vous_etes_logement"]':
+              value: Autre
+          - xor
+          - ':input[name="vous_etes"]':
+              value: Autre
+          - xor
+          - ':input[name="vous_etes_agence"]':
+              value: Autre
+      '#admin_title': 'Précisez qui vous êtes :'
+    disclaimer_agence:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="vous_etes_agence"]':
+            value: Particulier
+      '#text': |
+        <p><strong class="red">Si votre demande concerne l'agence bancaire de la Caisse des Dépôts et que vous êtes un particulier, merci de vous adresser à la <a href="/mediation-de-la-consommation-du-groupe-caisse-des-depots">Médiation de la Consommation</a>.</strong></p>
+      '#format': full_html
+    disclaimer_filiale:
+      '#type': processed_text
+      '#states':
+        visible:
+          - ':input[name="filiale_concernee"]':
+              value: 'CNP Assurances'
+          - xor
+          - ':input[name="filiale_concernee"]':
+              value: Transdev
+          - xor
+          - ':input[name="filiale_concernee"]':
+              value: 'La Compagnie des Alpes'
+          - xor
+          - ':input[name="filiale_concernee"]':
+              value: 'Théâtre des Champs Elysées'
+      '#text': |
+        <p><strong class="red">Vous êtes dans un cas de médiation de la consommation. <a href="/mediation-de-la-consommation-du-groupe-caisse-des-depots">Cliquez ici pour être redirigé vers le formulaire adéquat.</a></strong></p>
+      '#format': full_html
+    disclaimer_mission_sociale:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="votre_demande_concerne"]':
+            value: 'Prêt de la Mission Sociale Groupe'
+      '#text': |
+        <p><strong class="red">Vous êtes dans un cas de médiation de la consommation. <a href="/mediation-de-la-consommation-du-groupe-caisse-des-depots">Cliquez ici pour être redirigé vers le formulaire adéquat.</a></strong></p>
+      '#format': full_html
+    disclaimer_banque_postale:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="filiale_concernee"]':
+            value: 'La Poste / La Banque Postale'
+      '#text': |
+        <p><strong class="red">Si vous êtes un particulier (personne physique), vous êtes dans un cas de médiation de la consommation. <a href="/mediation-de-la-consommation-du-groupe-caisse-des-depots">Cliquez ici pour être redirigé vers le formulaire adéquat.</a></strong></p>
+      '#format': full_html
+    l_objet_de_votre_demande_field:
+      '#type': hidden
+      '#title': 'L''objet de votre demande :'
+    l_objet_de_votre_demande_retraite:
+      '#type': select
+      '#title': 'L''objet de votre demande :'
+      '#options':
+        'Pension de réversion': 'Pension de réversion'
+        'Aide sociale': 'Aide sociale'
+        'Pension de retraite': 'Pension de retraite'
+        'Préparation de la retraite': 'Préparation de la retraite'
+        'Contestation de la pension versée': 'Contestation de la pension versée'
+        'Résident à l''étranger': 'Résident à l''étranger'
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez l''objet de votre demande.'
+      '#states':
+        visible:
+          - ':input[name="vous_etes"]':
+              value: 'Particulier retraité'
+          - xor
+          - ':input[name="vous_etes"]':
+              value: 'Particulier en activité'
+          - xor
+          - ':input[name="vous_etes"]':
+              value: Autre
+    l_objet_de_votre_demande:
+      '#type': select
+      '#title': 'L''objet de votre demande :'
+      '#options':
+        'Mes droits à formation': 'Mes droits à formation'
+        'Problème d''accessibilité, Problème technique': 'Problème d''accessibilité, Problème technique'
+        'Demande de formation': 'Demande de formation'
+        'Validation de formation': 'Validation de formation'
+        'Report de formation': 'Report de formation'
+        'Annulation / Remboursement de formation': 'Annulation / Remboursement de formation'
+        'Formation non satisfaisante': 'Formation non satisfaisante'
+        'Fraude à la formation': 'Fraude à la formation'
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez l''objet de votre demande.'
+      '#states':
+        visible:
+          - ':input[name="vous_etes_mcf"]':
+              value: Particulier
+          - xor
+          - ':input[name="vous_etes_mcf"]':
+              value: Elu
+    l_objet_de_votre_demande_mcf_orga:
+      '#type': select
+      '#title': 'L''objet de votre demande :'
+      '#options':
+        'Facture impayée': 'Facture impayée'
+        'Impossibilité de contacter l''EDOF (Espace d''Echange des Organismes de Formations)': 'Impossibilité de contacter l''EDOF (Espace d''Echange des Organismes de Formations)'
+        'Contestation d''un contrôle et d''une sanction': 'Contestation d''un contrôle et d''une sanction'
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez l''objet de votre demande.'
+      '#states':
+        visible:
+          ':input[name="vous_etes_mcf"]':
+            value: 'Organisme de formation'
+    l_objet_de_votre_demande_mcf_employeur:
+      '#type': select
+      '#title': 'L''objet de votre demande :'
+      '#options':
+        'Abondement du compte d''un collaborateur': 'Abondement du compte d''un collaborateur'
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez l''objet de votre demande.'
+      '#states':
+        visible:
+          ':input[name="vous_etes_mcf"]':
+            value: Employeur
+    l_objet_de_votre_demande_autres:
+      '#type': select
+      '#title': 'L''objet de votre demande :'
+      '#options':
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez l''objet de votre demande.'
+      '#states':
+        visible:
+          ':input[name="vous_etes_mcf"]':
+            value: Autre
+    l_objet_de_votre_demande_cic_morale:
+      '#type': select
+      '#title': 'L''objet de votre demande :'
+      '#options':
+        'Comptes bancaires inactifs': 'Comptes bancaires inactifs'
+        'Problème d''accessibilité, Problème technique': 'Problème d''accessibilité, Problème technique'
+        'Problème d’accès à l’information': 'Problème d’accès à l’information'
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez l''objet de votre demande.'
+      '#states':
+        visible:
+          ':input[name="vous_etes_ciclade"]':
+            value: 'Personne morale'
+    l_objet_de_votre_demande_cic_part:
+      '#type': select
+      '#title': 'L''objet de votre demande :'
+      '#options':
+        'Comptes bancaires inactifs': 'Comptes bancaires inactifs'
+        'Assurance vie': 'Assurance vie'
+        'Bons (capitalisation/ porteur)': 'Bons (capitalisation/ porteur)'
+        Succession: Succession
+        'Problème d''accessibilité, Problème technique': 'Problème d''accessibilité, Problème technique'
+        'Problème d’accès à l’information': 'Problème d’accès à l’information'
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez l''objet de votre demande.'
+      '#states':
+        visible:
+          - ':input[name="vous_etes_ciclade"]':
+              value: Particulier
+          - xor
+          - ':input[name="vous_etes_ciclade"]':
+              value: 'Professionnel du Droit (Notaire, Avocat, Huissier...)'
+          - xor
+          - ':input[name="vous_etes_ciclade"]':
+              value: Autre
+    l_objet_de_votre_demande_con:
+      '#type': select
+      '#title': 'L''objet de votre demande :'
+      '#options':
+        'Demande d''information sur le processus': 'Demande d''information sur le processus'
+        Versement: Versement
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez l''objet de votre demande.'
+      '#states':
+        visible:
+          ':input[name="vous_etes_consignations"]':
+            filled: true
+    l_objet_de_votre_demande_agence:
+      '#type': select
+      '#title': 'L''objet de votre demande :'
+      '#options':
+        Virement: Virement
+        'Virement erroné': 'Virement erroné'
+        Chèque: Chèque
+        'Demande d''information sur le processus': 'Demande d''information sur le processus'
+        Clôture: Clôture
+        Contestation: Contestation
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez l''objet de votre demande.'
+      '#states':
+        visible:
+          - ':input[name="vous_etes_agence"]':
+              value: 'Profession juridique (Huissier, Notaire)'
+          - xor
+          - ':input[name="vous_etes_agence"]':
+              value: Autre
+    l_objet_de_votre_demande_log:
+      '#type': select
+      '#title': 'L''objet de votre demande :'
+      '#options':
+        'Dégât Matériel': 'Dégât Matériel'
+        Loyer: Loyer
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez l''objet de votre demande.'
+      '#states':
+        visible:
+          - ':input[name="vous_etes_logement"]':
+              value: 'Locataire CDC Habitat'
+          - xor
+          - ':input[name="vous_etes_logement"]':
+              value: 'Locataire Investimmo'
+    l_objet_de_votre_demande_log_autre:
+      '#type': select
+      '#title': 'L''objet de votre demande :'
+      '#options':
+        'Litiges locataires': 'Litiges locataires'
+        Autre: Autre
+      '#required': true
+      '#required_error': 'Veuillez précisez l''objet de votre demande.'
+      '#states':
+        visible:
+          ':input[name="vous_etes_logement"]':
+            value: Autre
+    l_objet_de_votre_demande_ch_autre:
+      '#type': textfield
+      '#title': 'L''objet de votre demande :'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="votre_demande_concerne"]':
+            value: Autre
+    l_objet_de_votre_demande_autre:
+      '#type': textfield
+      '#title': Précisez
+      '#required': true
+      '#required_error': 'Veuillez précisez l''objet de votre demande.'
+      '#states':
+        visible:
+          - ':input[name="l_objet_de_votre_demande_autres"]':
+              value: Autre
+          - xor
+          - ':input[name="l_objet_de_votre_demande"]':
+              value: Autre
+          - xor
+          - ':input[name="l_objet_de_votre_demande_mcf_orga"]':
+              value: Autre
+          - xor
+          - ':input[name="l_objet_de_votre_demande_mcf_employeur"]':
+              value: Autre
+          - xor
+          - ':input[name="l_objet_de_votre_demande_cic_morale"]':
+              value: Autre
+          - xor
+          - ':input[name="l_objet_de_votre_demande_cic_part"]':
+              value: Autre
+          - xor
+          - ':input[name="l_objet_de_votre_demande_con"]':
+              value: Autre
+          - xor
+          - ':input[name="l_objet_de_votre_demande_log_autre"]':
+              value: Autre
+          - xor
+          - ':input[name="l_objet_de_votre_demande_retraite"]':
+              value: Autre
+          - xor
+          - ':input[name="l_objet_de_votre_demande_agence"]':
+              value: Autre
+      '#admin_title': 'Précisez l''objet de votre demande :'
+    test_radio:
+      '#type': radios
+      '#title': 'Passer à l''étape suivante'
+      '#options':
+        oui: oui
+        non: non
+      '#default_value': non
+      '#wrapper_attributes':
+        style: 'display:none;'
+    next_step:
+      '#type': processed_text
+      '#states':
+        invisible-slide:
+          - ':input[name="test_radio"]':
+              value: oui
+          - xor
+          - ':input[name="vous_etes_agence"]':
+              value: Particulier
+          - xor
+          - ':input[name="filiale_concernee"]':
+              value: 'CNP Assurances'
+          - xor
+          - ':input[name="filiale_concernee"]':
+              value: Transdev
+          - xor
+          - ':input[name="filiale_concernee"]':
+              value: 'La Compagnie des Alpes'
+          - xor
+          - ':input[name="filiale_concernee"]':
+              value: 'Théâtre des Champs Elysées'
+      '#text': |
+        <p><button class="btn-primary" id="nextstep" type="button">Je valide et je passe à l'étape suivante</button></p>
+      '#format': full_html
+  mediation_container_etape_2:
+    '#type': fieldset
+    '#title': 'Etape 2 : Apportez-nous quelques précisions qui nous aideront à mieux traiter votre demande'
+    '#states':
+      invisible:
+        ':input[name="test_radio"]':
+          value: non
+    '#attributes':
+      style: 'display:none'
+    message_description:
+      '#type': textarea
+      '#title': 'Décrivez votre litige. Pensez à mettre toutes les références :'
+      '#required': true
+      '#required_error': 'Veuillez décrire votre litige.'
+    avez_vous_deja_effectue_des_demarches_aupres_de_l_entite_concern:
+      '#type': radios
+      '#title': 'Avez-vous déjà effectué des démarches auprès de l''entité concernée ?'
+      '#options':
+        entite1: 'Une fois'
+        entite2: 'Plusieurs fois'
+        entite!3: 'Pas encore'
+      '#required': true
+      '#required_error': 'Veuillez préciser si vous avez déjà effectué des démarches auprès de l''entité concernée.'
+    mediation_entity_status_date:
+      '#type': date
+      '#title': 'A quelle date ? (JJ/MM/AAAA)'
+      '#states':
+        invisible:
+          - ':input[name="avez_vous_deja_effectue_des_demarches_aupres_de_l_entite_concern"]':
+              value: entite2
+          - xor
+          - ':input[name="avez_vous_deja_effectue_des_demarches_aupres_de_l_entite_concern"]':
+              value: entite!3
+      '#datepicker': true
+      '#datepicker_button': true
+      '#date_date_format': d/m/Y
+    mediation_multi_date:
+      '#type': textfield
+      '#title': 'A quelles dates ? (JJ/MM/AAAA) séparé par des virgules'
+      '#states':
+        invisible:
+          ':input[name="avez_vous_deja_effectue_des_demarches_aupres_de_l_entite_concern"]':
+            '!value': entite2
+    mediation_reference_client:
+      '#type': textfield
+      '#title': 'Référence client :'
+    mediation_numero_dossier:
+      '#type': textfield
+      '#title': 'Renseignez votre numéro de dossier si vous en avez un :'
+    test_radio_2:
+      '#type': radios
+      '#title': 'Passer à l''étape suivante'
+      '#options':
+        oui: oui
+        non: non
+      '#default_value': non
+      '#wrapper_attributes':
+        style: 'display:none;'
+    next_step2:
+      '#type': processed_text
+      '#states':
+        invisible-slide:
+          ':input[name="test_radio_2"]':
+            value: oui
+      '#text': |
+        <p><button class="btn-primary" id="nextstep2" type="button">Je valide et je passe à l'étape suivante</button></p>
+      '#format': full_html
+  mediation_container_etape_3:
+    '#type': fieldset
+    '#title': 'Etape 3 : Votre identité et vos coordonnées'
+    '#states':
+      invisible:
+        - ':input[name="test_radio"]':
+            value: non
+        - xor
+        - ':input[name="test_radio_2"]':
+            value: non
+    '#attributes':
+      style: 'display:none'
+    vous_intervenez_pour_autrui:
+      '#type': radios
+      '#title': 'Vous intervenez pour autrui ?'
+      '#options':
+        oui: oui
+        non: non
+      '#required': true
+      '#required_error': 'Veuillez précisez si vous intervenez pour autrui.'
+    message_ipa:
+      '#type': webform_message
+      '#states':
+        visible:
+          ':input[name="vous_intervenez_pour_autrui"]':
+            value: oui
+      '#message_type': info
+      '#message_message': '<p><span style="font-family:&quot;Calibri&quot;,sans-serif;font-size:11.0pt;mso-ansi-language:FR;mso-bidi-language:AR-SA;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-language:EN-US;">Informations sur la personne IPA (qui Intervient Pour Autrui).</span></p>'
+    statut:
+      '#type': select
+      '#title': 'Statut de la personne IPA'
+      '#options':
+        Famille: Famille
+        Employeur: Employeur
+        'Avocat ou Notaire': 'Avocat ou Notaire'
+        Mandataire: Mandataire
+        'Autre Médiateur': 'Autre Médiateur'
+        'Président de la République': 'Président de la République'
+        'Défenseur des Droits': 'Défenseur des Droits'
+      '#required': true
+      '#required_error': 'Veuillez renseigner le statut.'
+      '#states':
+        visible:
+          ':input[name="vous_intervenez_pour_autrui"]':
+            value: oui
+    civilite_ipa:
+      '#type': select
+      '#title': 'Civilité de la personne IPA'
+      '#options':
+        M.: M.
+        Mme: Mme
+      '#required': true
+      '#required_error': 'Veuillez renseigner votre civilité.'
+      '#states':
+        visible:
+          ':input[name="vous_intervenez_pour_autrui"]':
+            value: oui
+    lastname_ipa:
+      '#type': textfield
+      '#title': 'Nom de la personne IPA :'
+      '#required': true
+      '#required_error': 'Veuillez renseigner votre nom.'
+      '#states':
+        visible:
+          ':input[name="vous_intervenez_pour_autrui"]':
+            value: oui
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    firstname_ipa:
+      '#type': textfield
+      '#title': 'Prénom(s) (dans l’ordre de l’état civil) de la personne IPA :'
+      '#required': true
+      '#required_error': 'Veuillez renseigner votre prénom.'
+      '#states':
+        visible:
+          ':input[name="vous_intervenez_pour_autrui"]':
+            value: oui
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    email_ipa:
+      '#type': webform_email_confirm
+      '#title': 'Courriel de la personne IPA (exemple : nomprenom@domain.com) :'
+      '#required': true
+      '#required_error': 'Veuillez renseigner votre courriel.'
+      '#pattern': '\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b'
+      '#pattern_error': 'Veuillez saisir une adresse email valide.'
+      '#states':
+        visible:
+          ':input[name="vous_intervenez_pour_autrui"]':
+            value: oui
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      '#confirm__title': 'Vérification courriel (A noter que ce courriel est important pour vous contacter) :'
+    disclaimer_civilite:
+      '#type': webform_message
+      '#states':
+        visible:
+          ':input[name="vous_intervenez_pour_autrui"]':
+            value: oui
+      '#message_type': info
+      '#message_message': '<p><span style="font-family:&quot;Calibri&quot;,sans-serif;font-size:11.0pt;mso-ansi-language:FR;mso-bidi-language:AR-SA;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-language:EN-US;">Informations sur la personne pour laquelle vous intervenez.&nbsp;</span></p>'
+    civilite:
+      '#type': select
+      '#title': Civilité
+      '#options':
+        M.: M.
+        Mme: Mme
+      '#required': true
+      '#required_error': 'Veuillez renseigner votre civilité.'
+    lastname:
+      '#type': textfield
+      '#title': 'Nom :'
+      '#required': true
+      '#required_error': 'Veuillez renseigner votre nom.'
+    firstname:
+      '#type': textfield
+      '#title': 'Prénom(s) (dans l''ordre de l''état civil) :'
+      '#required': true
+      '#required_error': 'Veuillez renseigner vos prénoms.'
+    date_de_naissance:
+      '#type': date
+      '#title': 'Date de naissance (JJ/MM/AAAA) :'
+      '#required': true
+      '#datepicker': true
+      '#datepicker_button': true
+      '#date_date_format': d/m/Y
+    lieu_de_naissance:
+      '#type': textfield
+      '#title': 'Lieu de naissance :'
+      '#required': true
+      '#required_error': 'Veuillez renseigner votre lieu de naissance.'
+    adresse_comlete:
+      '#type': textfield
+      '#title': 'Adresse complète :'
+      '#required': true
+      '#required_error': 'Veuillez renseigner votre adresse complete.'
+    code_postal_5_chiffres_exemple_75013_:
+      '#type': textfield
+      '#title': 'Code postal (5 chiffres - Exemple : 75013) :'
+      '#required': true
+      '#pattern': '^((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3}$'
+      '#pattern_error': 'Veuillez saisir un code postal valide.'
+    ville:
+      '#type': textfield
+      '#title': 'Ville :'
+      '#required': true
+      '#required_error': 'Veuillez renseigner votre ville.'
+    pays:
+      '#type': textfield
+      '#title': 'Pays :'
+      '#required': true
+      '#required_error': 'Veuillez renseigner votre pays.'
+    email:
+      '#type': webform_email_confirm
+      '#title': 'Courriel (exemple : nomprenom@domain.com) :'
+      '#required': true
+      '#required_error': 'Veuillez renseigner votre courriel.'
+      '#pattern': '\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b'
+      '#pattern_error': 'Veuillez saisir une adresse email valide.'
+      '#confirm__title': 'Vérification courriel (A noter que ce courriel est important pour vous contacter) :'
+    phone:
+      '#type': tel
+      '#title': 'Téléphone (10 chiffres - Exemple : 0123456789) :'
+      '#pattern': '^0[1-9]([-. ]?[0-9]{2}){4}$'
+      '#pattern_error': 'Veuillez saisir un numéro de téléphone valide.'
+      '#required': true
+    attached_file:
+      '#type': managed_file
+      '#title': 'Joindre un fichier :'
+      '#multiple': 5
+      '#file_help': help
+      '#file_placeholder': |-
+        <ul>
+        	<li>Les fichiers doivent peser moins de 10<strong>&nbsp;Mo</strong>.</li>
+        	<li>Extensions autoris&eacute;es : <strong>gif, jpg, png, txt, pdf</strong>.</li>
+        </ul>
+      '#max_filesize': '2'
+      '#file_extensions': 'gif jpg png txt pdf'
+    charte:
+      '#type': checkbox
+      '#title': 'En cochant cette case vous acceptez les principes de la Charte de la Médiatrice'
+      '#required': true
+    actions:
+      '#type': webform_actions
+      '#title': 'Submit button(s)'
+      '#states':
+        invisible-slide:
+          ':input[name="test_radio"]':
+            value: non
+          ':input[name="test_radio_2"]':
+            value: non
+      '#submit__label': 'Confirmer ma demande'
+      '#update__label': 'Modifier ma demande'
+      '#preview_prev_hide': true
+      '#preview_next__label': 'Je souhaite envoyer ma demande'
+css: ''
+javascript: "(function ($, Drupal) {'use strict';$(document).ready(function(){\r\n  'use strict';\r\n  \r\n  $('#edit-submit').html('Confirmer ma demande');  \r\n  \r\n  $(document).on('click', '#but_webform_sub_ok', function() {\r\n     $('#webform-submission-mediation-caisse-add-form').submit();\r\n  });\r\n  \r\n  $(\"#but_webform_sub_ko\").button().click(function(){\r\n    $('#myModal').modal('toggle');\r\n  }); \r\n  \r\n  $(\"#but_webform_mod_close\").button().click(function(){\r\n    $('#myModal').modal('toggle');\r\n    $('#exitModal').modal('toggle');\r\n  }); \r\n  \r\n  \r\n  $(':submit[id=\"edit-submit\"]').on('click', function(e){\r\n    $('#myModal').modal('show');\r\n      e.preventDefault();\r\n  });\r\n  \r\n  $(\"#edit-actions-exit-form\").on('click', function(e){\r\n    $('#exitModal').modal('show');\r\n    e.preventDefault();\r\n  });\r\n  \r\n  $(\"#but_webform_exit_ko\").button().click(function(){\r\n    $('#exitModal').modal('toggle');\r\n  });   \r\n  \r\n  $(\"#but_webform_exit_ok\").button().click(function(){\r\n    $('#exitModal').modal('toggle');\r\n    var url = \"/\";    \r\n    $(location).attr('href',url);\r\n  });   \r\n    \r\n   $(\"#nextstep\").button().click(function(){\r\n        if (document.getElementById('edit-test-radio-non').checked){\r\n          document.getElementById(\"edit-test-radio-oui\").click();\r\n          $('html, body').animate({\r\n              scrollTop: $(\"#edit-mediation-container-etape-2\").offset().top - 150\r\n          }, 2000);\r\n        }\r\n        else{\r\n          document.getElementById(\"edit-test-radio-non\").click();\r\n        };\r\n    });\r\n  \r\n   $(\"#nextstep2\").button().click(function(){\r\n        if (document.getElementById('edit-test-radio-2-non').checked){\r\n          document.getElementById(\"edit-test-radio-2-oui\").click();\r\n          $('html, body').animate({\r\n              scrollTop: $(\"#edit-mediation-container-etape-3\").offset().top - 150\r\n          }, 2000);\r\n        }\r\n        else{\r\n          document.getElementById(\"edit-test-radio-2-non\").click();\r\n        }\r\n    });  \r\n  \r\n   var vous_etes_field = $(\"[name='vous_etes_field']\");\r\n   var obj_demande_field = $(\"[name='l_objet_de_votre_demande_field']\");\r\n  \r\n   var vous_etes_select1 = $(\"#edit-vous-etes\");\r\n   function ab1() { vous_etes_field.val(vous_etes_select1.val())}\r\n   vous_etes_select1.change(ab1); \r\n\r\n   var vous_etes_select2 = $(\"#edit-vous-etes-mcf\");\r\n   function ab2() { vous_etes_field.val(vous_etes_select2.val())}\r\n   vous_etes_select2.change(ab2);  \r\n  \r\n   var vous_etes_select3 = $(\"#edit-vous-etes-ciclade\");\r\n   function ab3() { vous_etes_field.val(vous_etes_select3.val())}\r\n   vous_etes_select3.change(ab3);  \r\n  \r\n   var vous_etes_select4 = $(\"#edit-vous-etes-consignations\");\r\n   function ab4() { vous_etes_field.val(vous_etes_select4.val())}\r\n   vous_etes_select4.change(ab4);  \r\n  \r\n   var vous_etes_select5 = $(\"#edit-vous-etes-agence\");\r\n   function ab5() { vous_etes_field.val(vous_etes_select5.val())}\r\n   vous_etes_select5.change(ab5);    \r\n  \r\n   var vous_etes_select6 = $(\"#edit-vous-etes-logement\");\r\n   function ab6() { vous_etes_field.val(vous_etes_select6.val())}\r\n   vous_etes_select6.change(ab6);    \r\n  \r\n   var vous_etes7 = $(\"#edit-vous-etes-ch-autre\");\r\n   function ab7() { vous_etes_field.val(vous_etes7.val())}\r\n   vous_etes7.change(ab7);    \r\n\r\n   var obj_demande_select1 = $(\"#edit-l-objet-de-votre-demande-retraite\");\r\n   function ab_obj1() { obj_demande_field.val(obj_demande_select1.val())}\r\n   obj_demande_select1.change(ab_obj1);\r\n\r\n   var obj_demande_select2 = $(\"#edit-l-objet-de-votre-demande\");\r\n   function ab_obj2() { obj_demande_field.val(obj_demande_select2.val())}\r\n   obj_demande_select2.change(ab_obj2);\r\n\r\n   var obj_demande_select3 = $(\"#edit-l-objet-de-votre-demande-mcf-orga\");\r\n   function ab_obj3() { obj_demande_field.val(obj_demande_select3.val())}\r\n   obj_demande_select3.change(ab_obj3);\r\n\r\n   var obj_demande_select4 = $(\"#edit-l-objet-de-votre-demande-mcf-employeur\");\r\n   function ab_obj4() { obj_demande_field.val(obj_demande_select4.val())}\r\n   obj_demande_select4.change(ab_obj4);\r\n\r\n   var obj_demande_select5 = $(\"#edit-l-objet-de-votre-demande-autres\");\r\n   function ab_obj5() { obj_demande_field.val(obj_demande_select5.val())}\r\n   obj_demande_select5.change(ab_obj5);\r\n\r\n   var obj_demande_select6 = $(\"#edit-l-objet-de-votre-demande-cic-morale\");\r\n   function ab_obj6() { obj_demande_field.val(obj_demande_select6.val())}\r\n   obj_demande_select6.change(ab_obj6);\r\n\r\n   var obj_demande_select7 = $(\"#edit-l-objet-de-votre-demande-cic-part\");\r\n   function ab_obj7() { obj_demande_field.val(obj_demande_select7.val())}\r\n   obj_demande_select7.change(ab_obj7);\r\n\r\n   var obj_demande_select8 = $(\"#edit-l-objet-de-votre-demande-con\");\r\n   function ab_obj8() { obj_demande_field.val(obj_demande_select8.val())}\r\n   obj_demande_select8.change(ab_obj8);\r\n\r\n   var obj_demande_select9 = $(\"#edit-l-objet-de-votre-demande-agence\");\r\n   function ab_obj9() { obj_demande_field.val(obj_demande_select9.val())}\r\n   obj_demande_select9.change(ab_obj9);\r\n\r\n   var obj_demande_select10 = $(\"#edit-l-objet-de-votre-demande-log\");\r\n   function ab_obj10() { obj_demande_field.val(obj_demande_select10.val())}\r\n   obj_demande_select10.change(ab_obj10);\r\n\r\n   var obj_demande_select11 = $(\"#edit-l-objet-de-votre-demande-log-autre\");\r\n   function ab_obj11() { obj_demande_field.val(obj_demande_select11.val())}\r\n   obj_demande_select11.change(ab_obj11);\r\n  \r\n   var obj_demande12 = $(\"#edit-l-objet-de-votre-demande-ch-autre\");\r\n   function ab_obj12() { obj_demande_field.val(obj_demande12.val())}\r\n   obj_demande12.change(ab_obj12);    \r\n  \r\n\r\n});  \r\n})(jQuery, Drupal);"
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /mediation-groupe-caisse-des-depots
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: true
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 2
+  preview_label: 'Synthèse et confirmation de votre saisine'
+  preview_title: 'Synthèse et confirmation de votre saisine'
+  preview_message: 'Retrouvez ci-dessous la synth&egrave;se de&nbsp;tous les &eacute;l&eacute;ments&nbsp;de votre demande de contact aupr&egrave;s de la M&eacute;diation du groupe&nbsp;Caisse des D&eacute;p&ocirc;ts.'
+  preview_attributes: {  }
+  preview_excluded_elements:
+    reference_client_id: reference_client_id
+    vous_etes_field: vous_etes_field
+    l_objet_de_votre_demande_field: l_objet_de_votre_demande_field
+    test_radio: test_radio
+    test_radio_2: test_radio_2
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: 'Confirmation de votre saisine'
+  confirmation_message: "Votre requ&ecirc;te a bien &eacute;t&eacute; transmise &agrave; la m&eacute;diation du groupe Caisse des D&eacute;p&ocirc;ts.<br />\r\nVotre num&eacute;ro de dossier est le suivant :&nbsp;<strong>[webform_submission:values:reference_client_id]</strong>.<br />\r\nMerci de le rappeler lors de tout &eacute;change avec l&#39;&eacute;quipe de la M&eacute;diation.<br />\r\n<a href=\"/mediation/que-fait-la-mediatrice-quand-vous-lavez-saisie\">Que fait la m&eacute;diatrice quand vous l&rsquo;avez saisie ?</a>"
+  confirmation_attributes: {  }
+  confirmation_back: false
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: completed
+  purge_days: 365
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  ajout_d_une_reference_dossier:
+    id: 'Add Treatment'
+    handler_id: ajout_d_une_reference_dossier
+    label: 'Ajout d''une référence dossier'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings: {  }
+  courriel:
+    id: email
+    handler_id: courriel
+    label: Courriel
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: mediatrice@caissedesdepots.fr
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Saisine_[webform_submission:values:reference_client_id]_[webform_submission:values:lastname]_[webform_submission:values:firstname]'
+      body: "La saisine ci-dessous vient d&rsquo;&ecirc;tre soumise pour traitement\r\n<p>Submitted on [webform_submission:created]</p>\r\n\r\n<p>Submitted by: [webform_submission:user]</p>\r\n\r\n<p>Submitted values are:</p>\r\n[webform_submission:values]"
+      excluded_elements:
+        markup: markup
+        vous_etes_field: vous_etes_field
+        l_objet_de_votre_demande_field: l_objet_de_votre_demande_field
+        test_radio: test_radio
+        next_step: next_step
+        test_radio_2: test_radio_2
+        next_step2: next_step2
+        charte: charte
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

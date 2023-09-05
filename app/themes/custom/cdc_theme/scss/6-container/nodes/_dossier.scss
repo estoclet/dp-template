@@ -1,0 +1,164 @@
+$faisceau-width: 808px;
+
+.node--type-dossier {
+  &.node--view-mode-header {
+    position: relative;
+    background-size: cover !important;
+    background-position: center center;
+    overflow: hidden;
+    padding: 0 !important;
+    margin-top: -132px;
+    z-index: -1;
+    border-bottom: 1px solid white;
+    height: 520px;
+
+
+    @media (min-width: $screen-xs-min) {
+      height: 640px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      margin-top: -140px;
+      height: 720px;
+    }
+
+    @media (min-width:  $screen-md-min) {
+      height: 860px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      height: 845px;
+    }
+
+    @media (min-width: $screen-xl-min) {
+      height: 945px;
+    }
+
+    .wrapper-xxl {
+      top: 6rem;
+      height: 560px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, .8) 100%);
+
+      @media (min-width:  $screen-xs-min) {
+        top: 20rem;
+        background: none;
+      }
+
+      @media (min-width:  $screen-sm-min) {
+        top: 20rem;
+        height: 560px;
+      }
+
+      @media (min-width:  $screen-md-min) {
+        top: 26rem;
+        height: 606px;
+      }
+
+      @media (min-width:  $screen-lg-min) {
+        top: 24rem;
+      }
+
+      @media (min-width: $screen-xl-min) {
+        top: 34rem;
+      }
+    }
+
+    svg {
+      fill: rgba(255, 255, 255, .9);
+      overflow: visible;
+      max-width: 100%;
+      max-height: 100%;
+      width: 808px;
+      height: 606px;
+    }
+
+    .wrapper-image,
+    .wrapper-texte {
+      overflow: visible;
+      width: 100%;
+      max-width: $faisceau-width;
+
+      @media (max-width: $faisceau-width) {
+        max-width: 100%;
+      }
+
+    }
+
+    .wrapper-image {
+      position: absolute;
+      z-index: 1;
+      bottom: -1rem;
+      display: none;
+
+      @media (min-width: $screen-xs-min) {
+        display: block;
+      }
+
+    }
+
+    .wrapper-texte {
+      position: relative;
+      z-index: 2;
+      padding-top: 2rem;
+      margin-top: 132px;
+
+      @media (min-width: $screen-xs-min) {
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+
+    .highlighted-content {
+      padding-right: 1.5rem;
+      width: 80%;
+      max-width: 450px;
+      margin: 0 auto;
+
+      @media (min-width: $screen-xs-min) {
+        position: absolute;
+        width: 62%;
+        top: 11rem;
+        right: 3rem;
+      }
+
+      @media (min-width: $screen-sm-min) {
+        top: 4rem;
+        width: 80%;
+      }
+
+      @media (min-width: $screen-md-min) {
+        top: 10rem;
+      }
+
+
+      .field--name-field-pg-title,
+      .field--name-field-pg-chapo {
+        position: relative;
+        z-index: 10;
+      }
+
+    }
+  }
+
+  &.node--view-mode-bounce {
+    padding-bottom: 6rem;
+
+    .field--name-field-node-references {
+      & > .field--items {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .field--item {
+          &:nth-of-type(1) {
+            & + .field--item {
+              &:before {
+                top: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

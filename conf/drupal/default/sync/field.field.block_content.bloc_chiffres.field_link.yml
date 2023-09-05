@@ -1,0 +1,23 @@
+uuid: 6f41c6b2-6773-403b-8417-b030495b5f03
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_chiffres
+    - field.storage.block_content.field_link
+  module:
+    - link
+id: block_content.bloc_chiffres.field_link
+field_name: field_link
+entity_type: block_content
+bundle: bloc_chiffres
+label: Lien
+description: 'Renseignez un lien pour rediriger l’internaute.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

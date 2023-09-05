@@ -1,0 +1,58 @@
+uuid: 7d0be90c-f16e-4516-a44a-739cad88aaf4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pg_chiffre.field_pg_key_figure
+    - field.field.paragraph.pg_chiffre.field_pg_key_figure_alt
+    - field.field.paragraph.pg_chiffre.field_pg_key_label
+    - field.field.paragraph.pg_chiffre.paragraph_view_mode
+    - paragraphs.paragraphs_type.pg_chiffre
+  module:
+    - field_formatter_class
+    - number_formatter
+id: paragraph.pg_chiffre.default
+targetEntityType: paragraph
+bundle: pg_chiffre
+mode: default
+content:
+  field_pg_key_figure:
+    type: useless_zeros_formatter
+    label: hidden
+    settings:
+      thousand_separator: "\t"
+      decimal_separator: ','
+      scale: '0'
+      prefix_suffix: 0
+    third_party_settings:
+      field_formatter_class:
+        class: chiffre
+    weight: 1
+    region: content
+  field_pg_key_figure_alt:
+    type: useless_zeros_formatter
+    label: hidden
+    settings:
+      thousand_separator: "\t"
+      decimal_separator: ','
+      scale: '1'
+      prefix_suffix: 0
+    third_party_settings:
+      field_formatter_class:
+        class: chiffre
+    weight: 0
+    region: content
+  field_pg_key_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  paragraph_view_mode: true
+  search_api_excerpt: true

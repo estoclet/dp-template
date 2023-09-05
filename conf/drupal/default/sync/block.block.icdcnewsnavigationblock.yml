@@ -1,0 +1,28 @@
+uuid: 2656c02d-9710-4703-b5a4-46926e191c92
+langcode: fr
+status: true
+dependencies:
+  module:
+    - icdc_actualites_nav
+    - node
+  theme:
+    - cdc_theme
+id: icdcnewsnavigationblock
+theme: cdc_theme
+region: content_bottom
+weight: 0
+provider: null
+plugin: icdc_news_nav_block
+settings:
+  id: icdc_news_nav_block
+  label: 'ICDC News Navigation Block'
+  label_display: '0'
+  provider: icdc_actualites_nav
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      actualite: actualite

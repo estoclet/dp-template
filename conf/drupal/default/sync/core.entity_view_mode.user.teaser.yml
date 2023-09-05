@@ -1,0 +1,10 @@
+uuid: 05282b63-75ef-4609-9ca1-cfabf33c653f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.teaser
+label: Accroche
+targetEntityType: user
+cache: true

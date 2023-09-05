@@ -1,0 +1,59 @@
+uuid: 40141439-8833-4778-adf6-6060b7ad19a8
+langcode: fr
+status: true
+dependencies: {  }
+id: carre
+label: Carré
+body:
+  value: "<drupal-entity data-align=\"center\" data-embed-button=\"image_wysiwyg\" data-entity-embed-display=\"view_mode:media.wysiwyg\" data-entity-type=\"media\" data-entity-uuid=\"43b34b25-4a19-418f-a80d-b5a077221c92\"></drupal-entity>\r\n\r\n<p class=\"text-align-center\"><a class=\"more-link\" href=\"www.youtube.com\" rel=\" noopener\" target=\"_blank\">Pour le savoir, c'est par ici</a></p>\r\n"
+  format: full_html
+pages: ''
+auto_open: true
+open_modal_on_element_click: ''
+ok_label_button: 'Ne plus montrer cette fenêtre'
+top_right_button_label: x
+left_label_button: Dismiss
+enable_dont_show_again_option: true
+dont_show_again_label: Merci
+modal_size: modal-md
+modal_video_link: ''
+close_modal_esc_key: true
+close_modal_clicking_outside: true
+roles:
+  anonymous: '0'
+  authenticated: '0'
+  administrator: '0'
+  editor: '0'
+  restricted_editor: '0'
+  editorial_manager: '0'
+  blog_editor: '0'
+type: page
+delay_display: '0'
+enable_custom_cookie_expiration: false
+custom_cookie_expiration_time: 10000
+enable_show_on_height: null
+height_offset: null
+height_offset_touch: start
+published: false
+insert_horizontal_line_header: true
+insert_horizontal_line_footer: true
+enable_modal_header: false
+enable_modal_footer: false
+display_title: true
+display_button_x_close: true
+top_right_button_class: null
+modal_class: ''
+header_class: null
+footer_class: null
+enable_left_button: false
+ok_button_class: null
+left_button_class: null
+parameters: ''
+enable_right_button: true
+languages_to_show:
+  fr: fr
+redirect_link: ''
+enable_redirect_link: false
+modal_page_auto_hide: false
+modal_page_auto_hide_delay: '5'
+modal_page_show_once: false

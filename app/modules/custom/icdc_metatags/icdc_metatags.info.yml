@@ -1,0 +1,7 @@
+name: 'ICDC Metatags'
+type: module
+description: 'Manage metatags custom token.'
+core_version_requirement: ^8 || ^9
+package: 'ICDC'
+dependencies:
+  - metatag

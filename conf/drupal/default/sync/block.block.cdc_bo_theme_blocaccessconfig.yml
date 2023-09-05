@@ -1,0 +1,20 @@
+uuid: 2e3d9b51-4c31-4db9-afe3-32af9d3a26a6
+langcode: fr
+status: true
+dependencies:
+  module:
+    - access_config
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_blocaccessconfig
+theme: cdc_bo_theme
+region: sidebar_first
+weight: -16
+provider: null
+plugin: access_config
+settings:
+  id: access_config
+  label: 'Bloc Access Config'
+  label_display: '0'
+  provider: access_config
+visibility: {  }

@@ -1,0 +1,42 @@
+<?php
+
+use Drupal\Core\File\FileSystemInterface;
+use Drupal\file\Entity\File;
+
+/**
+ * @file
+ * Install functions for the icdc_statics_blocks module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+
+function icdc_statics_blocks_install()
+{
+  $extension_list = \Drupal::service('extension.list.module');
+  $filepath = $extension_list->getPath('icdc_statics_blocks') . '/images/logo_olympic.png';
+  $destination_path = 'public://';
+  /**
+   * * @var \Drupal\Core\File\FileSystemInterface $file_system
+   * */
+  $file_system = \Drupal::service('file_system');
+  $file_system->prepareDirectory($destination_path, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+  $file_system->copy($filepath, $destination_path . '/' . basename($filepath), FileSystemInterface::EXISTS_REPLACE);
+
+  $file = File::create(
+    [
+      'filename' => basename($filepath),
+      'uri' => 'public://my-dir/' . basename($filepath),
+      'status' => 1,
+      'uid' => 1,
+    ]
+  );
+  $file->save();
+
+  /**
+   * * @var \Drupal\file\FileUsage\DatabaseFileUsageBackend $file_usage
+   * */
+  $file_usage = \Drupal::service('file.usage');
+  $file_usage->add($file, 'icdc_statics_blocks', 'node', 1);
+}

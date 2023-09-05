@@ -1,0 +1,15 @@
+uuid: 136ca906-862d-48e4-8637-5ce5ddd9d9bb
+langcode: fr
+status: true
+dependencies: {  }
+name: miniature
+label: 'Miniature (largeur 200px)'
+effects:
+  03e26b12-d41c-42aa-8af9-71fa03f6deec:
+    uuid: 03e26b12-d41c-42aa-8af9-71fa03f6deec
+    id: image_scale
+    weight: 2
+    data:
+      width: 200
+      height: null
+      upscale: true

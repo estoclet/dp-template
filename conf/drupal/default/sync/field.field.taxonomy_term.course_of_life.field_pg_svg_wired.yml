@@ -1,0 +1,28 @@
+uuid: 6111c0ed-5743-4aab-9ea7-cfb35c356f10
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pg_svg_wired
+    - media.type.image_svg
+    - taxonomy.vocabulary.course_of_life
+id: taxonomy_term.course_of_life.field_pg_svg_wired
+field_name: field_pg_svg_wired
+entity_type: taxonomy_term
+bundle: course_of_life
+label: 'SVG filaire'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image_svg: image_svg
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

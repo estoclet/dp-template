@@ -1,0 +1,19 @@
+<div class="wrapper-a-lire-aussi wrapper-large">
+  {% if title %}
+    <h2>{{ title }}</h2>
+  {% endif %}
+  {% if prev or next %}
+    <div class="actualite-reference">
+      <div class="actualite-reference-item actualite-previous-node">
+      {% if prev %}
+        <h3><a class="link-arrow" href="{{ prev_url }}" aria-hidden="true" tabindex="-1"><i class="cdcicon cdcicon-chevron"></i></a>{{ prev }}</h3>
+      {% endif %}
+      </div>
+      <div class="actualite-reference-item actualite-next-node">
+      {% if next %}
+        <h3><a class="link-arrow" href="{{ next_url }}" aria-hidden="true" tabindex="-1"><i class="cdcicon cdcicon-chevron"></i></a>{{ next }}</h3>
+      {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>

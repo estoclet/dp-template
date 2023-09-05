@@ -1,0 +1,37 @@
+uuid: 2d737f6a-beb9-4fd0-a9b3-eed42a17a1ad
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.player
+    - field.field.paragraph.pg_insert_audio.field_pg_audio_references
+    - field.field.paragraph.pg_insert_audio.field_pg_chapo
+    - field.field.paragraph.pg_insert_audio.field_pg_title
+    - field.field.paragraph.pg_insert_audio.field_responsive
+    - field.field.paragraph.pg_insert_audio.paragraph_view_mode
+    - paragraphs.paragraphs_type.pg_insert_audio
+  module:
+    - entity_dynamic_rendering
+id: paragraph.pg_insert_audio.player
+targetEntityType: paragraph
+bundle: pg_insert_audio
+mode: player
+content:
+  field_pg_audio_references:
+    type: entity_reference_entity_dynamic_rendering
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_pg_chapo: true
+  field_pg_title: true
+  field_responsive: true
+  paragraph_view_mode: true
+  search_api_excerpt: true

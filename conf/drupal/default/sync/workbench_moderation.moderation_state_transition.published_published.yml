@@ -1,0 +1,13 @@
+uuid: cfd23c3f-c70a-40a3-bacf-264596db538f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.published
+_core:
+  default_config_hash: fAcec0ABnHQUhr8wXigy5e9n-byT_C1EnWWqjKY_ENE
+id: published_published
+label: Publié
+stateFrom: published
+stateTo: published
+weight: -3

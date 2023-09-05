@@ -1,0 +1,10 @@
+uuid: 592282e2-c4d5-44cb-adb3-f00f9e1c3e58
+langcode: fr
+status: true
+dependencies: {  }
+id: init_content
+label: 'Initialisation des contenus'
+description: 'Initialisation des contenus'
+source_type: csv
+module: null
+shared_configuration: null

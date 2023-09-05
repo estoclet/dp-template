@@ -1,0 +1,13 @@
+{
+    "name": "mini_sites",
+    "type": "drupal-module",
+    "description": "Mini sites",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/mini_sites",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/mini_sites",
+        "source": "http://cgit.drupalcode.org/mini_sites"
+    }
+}

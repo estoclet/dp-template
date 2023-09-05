@@ -1,0 +1,27 @@
+uuid: 6b77920e-0d73-4f47-b6bd-d8040fea629b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - cdc_bo_theme
+_core:
+  default_config_hash: h06zhb3xV9_2_3Zy9NsyylL7YBaEDlMwMEqNwAn8kMo
+id: cdc_bo_theme_footer
+theme: cdc_bo_theme
+region: sidebar_first
+weight: -14
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Menu Pied de page'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

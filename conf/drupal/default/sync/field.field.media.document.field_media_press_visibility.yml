@@ -1,0 +1,25 @@
+uuid: 7cd6b258-2ffd-45b2-a447-ffbaff0f225d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_press_visibility
+    - media.type.document
+_core:
+  default_config_hash: 1cNLomsLfpxFy-38BGz7t3HxhGl0HfqkCC6_iFoNgtQ
+id: media.document.field_media_press_visibility
+field_name: field_media_press_visibility
+entity_type: media
+bundle: document
+label: 'Afficher dans l''espace presse'
+description: 'Cochez l''option si le document doit remonter dans l’espace presse.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

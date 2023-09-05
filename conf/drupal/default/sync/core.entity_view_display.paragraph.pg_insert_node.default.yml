@@ -1,0 +1,64 @@
+uuid: 6ce47ad2-225d-467d-8dc3-bac76926d0ef
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pg_insert_node.field_pg_chapo
+    - field.field.paragraph.pg_insert_node.field_pg_node_references
+    - field.field.paragraph.pg_insert_node.field_pg_title
+    - field.field.paragraph.pg_insert_node.field_pg_view_mode
+    - field.field.paragraph.pg_insert_node.field_responsive
+    - paragraphs.paragraphs_type.pg_insert_node
+  module:
+    - entity_dynamic_rendering
+    - field_formatter_class
+    - text
+id: paragraph.pg_insert_node.default
+targetEntityType: paragraph
+bundle: pg_insert_node
+mode: default
+content:
+  field_pg_chapo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_pg_node_references:
+    type: entity_reference_entity_dynamic_rendering
+    label: hidden
+    settings:
+      view_mode: highlighted
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+  field_pg_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_responsive:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_pg_view_mode: true
+  search_api_excerpt: true

@@ -1,0 +1,19 @@
+uuid: fa100e54-deb0-4cdc-b554-b48d3ecac461
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_contact
+    - field.storage.block_content.field_phone
+id: block_content.bloc_contact.field_phone
+field_name: field_phone
+entity_type: block_content
+bundle: bloc_contact
+label: Téléphone
+description: 'Renseignez le téléphone du contact.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

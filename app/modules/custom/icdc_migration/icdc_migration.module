@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_migration.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Site\Settings;
+/**
+ * Implements hook_help().
+ */
+function icdc_migration_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_migration module.
+    case 'help.page.icdc_migration':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('ICDC Migrate initial content from csv') . '</p>';
+      return $output;
+
+    default:
+  }
+}

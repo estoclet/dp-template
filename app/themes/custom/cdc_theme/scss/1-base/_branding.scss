@@ -1,0 +1,179 @@
+
+/**
+ * @file
+ * Branding Styling
+ */
+$logo-xl-width: 17rem;
+$logo-l-width: 14rem;
+$logo-m-width: 14rem;
+$logo-s-width: 11rem;
+$logo-xs-width: 6.5rem;
+$slogan-xl-width: 68rem;
+$slogan-l-width: 52rem;
+$slogan-m-width: 52rem;
+$slogan-s-width: 43rem;
+$slogan-xs-width: 23rem;
+$slogan-xl-margin: 6rem;
+$slogan-l-margin: 6rem;
+$slogan-m-margin: 6rem;
+$slogan-s-margin: 4rem;
+$slogan-xs-margin: 2rem;
+
+/* ---------------- DEFAULT ----------------- */
+.branding-home {
+  position: relative;
+  display: inline-block;
+  overflow-x: visible;
+  width: $logo-xl-width;
+
+  @media (max-width: $screen-lg-max) {
+    width: $logo-l-width;
+  }
+
+  @media (max-width: $screen-md-max) {
+    width: $logo-m-width;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    width: $logo-s-width;
+  }
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: top;
+  height: auto;
+  margin: 0;
+
+  & + .slogan {
+    margin: 0;
+  }
+
+  // Front
+  &.logo-large {
+    display: block;
+    width: $logo-xs-width;
+
+    @media (min-width: $screen-sm-min) {
+      width: $logo-s-width;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: $logo-m-width;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      width: $logo-l-width;
+    }
+
+    @media (min-width: $screen-xl-min) {
+      width: $logo-xl-width;
+    }
+
+    img {
+      min-width: $logo-xs-width;
+
+      @media (min-width: $screen-sm-min) {
+        min-width: $logo-s-width;
+      }
+
+      @media (min-width: $screen-md-min) {
+        min-width: $logo-m-width;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        min-width: $logo-l-width;
+      }
+
+      @media (min-width: $screen-xl-min) {
+        min-width: $logo-xl-width; // ne doit pas être inférieur
+      }
+    }
+
+    & + .slogan-large {
+      display: block;
+      width: $slogan-xs-width;
+      margin-top: $slogan-xs-margin;
+      margin-left: $logo-xs-width;
+
+      @media (min-width: $screen-sm-min) {
+        width: $slogan-s-width;
+        margin-top: $slogan-s-margin;
+        margin-left: $logo-s-width;
+      }
+
+      @media (min-width: $screen-md-min) {
+        width: $slogan-m-width;
+        margin-top: $slogan-m-margin;
+        margin-left: $logo-m-width;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        width: $slogan-l-width;
+        margin-top: $slogan-l-margin;
+        margin-left: $logo-l-width;
+      }
+
+      @media (min-width: $screen-xl-min) {
+        width: $slogan-xl-width;
+        margin-bottom: $slogan-m-margin;
+        margin-top: $slogan-xl-margin; // calculer en fonction de la taille du logo
+        margin-left: $logo-xl-width;
+      }
+
+      img {
+        min-width: $slogan-xs-width; // ne doit pas être inférieur
+        margin-bottom: 3rem;
+
+        @media (min-width: $screen-sm-min) {
+          min-width: $slogan-s-width;
+        }
+
+        @media (min-width: $screen-md-min) {
+          min-width: $slogan-m-width;
+        }
+
+        @media (min-width: $screen-lg-min) {
+          min-width: $slogan-l-width;
+        }
+
+        @media (min-width: $screen-xl-min) {
+          min-width: $slogan-xl-width;
+        }
+      }
+    }
+  }
+
+  // Par défaut
+  &.logo-small {
+    width: $logo-xs-width;
+    margin-right: $slogan-xs-margin;
+
+    & + .slogan {
+      display: inline-block;
+      margin-right: 3rem;
+
+      @media (min-width: $screen-sm-min) {
+        margin-right: 1.5rem;
+      }
+
+      @media (min-width: $screen-md-min) {
+        margin-right: 3rem;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        margin-right: 5rem;
+      }
+
+      @media (min-width: $screen-xl-min) {
+        margin-right: 10rem;
+      }
+    }
+
+
+
+    img {
+      min-width: $logo-xs-width; // ne doit pas être inférieur
+    }
+  }
+}

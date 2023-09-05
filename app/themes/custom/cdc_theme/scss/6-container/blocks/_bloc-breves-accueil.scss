@@ -1,0 +1,34 @@
+.page-node-type-accueil {
+  section[class*='block-views-blocknews-'] {
+    margin-top: 2rem;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 20vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 10%;
+      padding-left: 10%;
+      height: 100%;
+    }
+  }
+
+  .node--type-actualite {
+    &.node--view-mode-contextual-feed {
+      margin-bottom: 5rem;
+
+      > div{
+        display: flex;
+        flex-flow: column wrap;
+      }
+      .infos{
+        order: 0;
+      }
+      h3 {
+        margin: 0;
+        padding: 0;
+        order:1;
+      }
+    }
+  }
+}

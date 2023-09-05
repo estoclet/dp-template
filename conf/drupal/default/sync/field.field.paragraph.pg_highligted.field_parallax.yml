@@ -1,0 +1,23 @@
+uuid: 9e4cab79-e996-4a6e-b387-1369b8d51f1e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_parallax
+    - paragraphs.paragraphs_type.pg_highligted
+id: paragraph.pg_highligted.field_parallax
+field_name: field_parallax
+entity_type: paragraph
+bundle: pg_highligted
+label: 'Désactiver le parallaxe'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

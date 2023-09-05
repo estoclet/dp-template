@@ -1,0 +1,21 @@
+uuid: 2139233d-db38-471f-ae4b-0c5fde06385a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site
+    - node.type.actualite
+id: node.actualite.field_site
+field_name: field_site
+entity_type: node
+bundle: actualite
+label: Site
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:mini_site'
+  handler_settings: {  }
+field_type: entity_reference

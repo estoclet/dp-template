@@ -1,0 +1,27 @@
+uuid: 018987f7-cb09-4cc4-928c-5d1ef79a3a85
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menu_tag
+    - node.type.page
+id: node.page.field_menu_tag
+field_name: field_menu_tag
+entity_type: node
+bundle: page
+label: 'Menu Tag'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:menu_link_content'
+  handler_settings:
+    target_bundles:
+      menu_link_content: menu_link_content
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,36 @@
+/****************
+VARIABLES
+*****************/
+
+//Parametres
+$padding-tabs: 1rem;
+$border-width-tabs: 1px;
+$border-style-tabs: solid;
+$border-color-tabs: $black;
+$border-color-tabs-active: $black $black $white;
+
+//Couleurs
+$color-tabs: $black;
+$color-tabs-active: $black;
+$bg-tabs-active: $white;
+
+.nav-tabs {
+  text-transform: capitalize;
+
+  li {
+
+    a {
+      padding: $padding-tabs;
+      color: $color-tabs;
+      border-width: $border-width-tabs;
+      border-style: $border-style-tabs;
+      border-color: $border-color-tabs;
+      background-color: $white;
+
+      &.active {
+        border-color: $border-color-tabs-active;
+        background-color: $bg-tabs-active;
+      }
+    }
+  }
+}

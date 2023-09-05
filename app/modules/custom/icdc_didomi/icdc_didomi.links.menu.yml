@@ -1,0 +1,6 @@
+icdc_didomi.settings_form:
+  title: 'ICDC Didomi Settings'
+  route_name: icdc_didomi.settings_form
+  description: 'Configure the website integration with Didomi Consent Management Platform.'
+  parent: system.admin_config_system
+  weight: 99

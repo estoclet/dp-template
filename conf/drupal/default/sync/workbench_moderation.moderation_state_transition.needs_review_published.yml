@@ -1,0 +1,14 @@
+uuid: a9bf6ed2-f09e-4ff3-bb3e-3138d6ff985f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.needs_review
+    - workbench_moderation.moderation_state.published
+_core:
+  default_config_hash: VXyoFvRkXMLJtm0BpblTlBBrGiznxeDSoycaEEYsBVM
+id: needs_review_published
+label: Publié
+stateFrom: needs_review
+stateTo: published
+weight: -2

@@ -1,0 +1,55 @@
+uuid: 6d99fa50-cbac-4256-b32d-8699b7e7a5fc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pg_insert_image.field_pg_chapo
+    - field.field.paragraph.pg_insert_image.field_pg_image_references
+    - field.field.paragraph.pg_insert_image.field_pg_title
+    - field.field.paragraph.pg_insert_image.field_pg_view_mode
+    - field.field.paragraph.pg_insert_image.field_responsive
+    - field.field.paragraph.pg_insert_image.paragraph_view_mode
+    - paragraphs.paragraphs_type.pg_insert_image
+  module:
+    - entity_dynamic_rendering
+    - field_formatter_class
+    - text
+id: paragraph.pg_insert_image.default
+targetEntityType: paragraph
+bundle: pg_insert_image
+mode: default
+content:
+  field_pg_chapo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  field_pg_image_references:
+    type: entity_reference_entity_dynamic_rendering
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_pg_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_pg_view_mode: true
+  field_responsive: true
+  paragraph_view_mode: true
+  search_api_excerpt: true

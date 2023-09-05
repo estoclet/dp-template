@@ -1,0 +1,20 @@
+uuid: e77db2e1-0a96-46d1-ac13-36e925404087
+langcode: fr
+status: true
+dependencies:
+  config:
+    - mini_sites.mini_site_type.mini_site
+id: mini_site.mini_site.user_id
+field_name: user_id
+entity_type: mini_site
+bundle: mini_site
+label: 'Écrit par'
+description: 'The user ID of author of the Mini site entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

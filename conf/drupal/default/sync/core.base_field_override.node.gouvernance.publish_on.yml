@@ -1,0 +1,18 @@
+uuid: f9da43a4-8932-4a46-8e12-88c5bfbb93c1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.gouvernance
+id: node.gouvernance.publish_on
+field_name: publish_on
+entity_type: node
+bundle: gouvernance
+label: 'Publish on'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

@@ -1,0 +1,18 @@
+uuid: 1d977da2-7a58-4474-a30b-d98afa8534b0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.gouvernance
+id: node.gouvernance.unpublish_on
+field_name: unpublish_on
+entity_type: node
+bundle: gouvernance
+label: 'Unpublish on'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

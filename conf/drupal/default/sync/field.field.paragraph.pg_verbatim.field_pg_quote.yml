@@ -1,0 +1,21 @@
+uuid: 8d8f79f7-ae11-4bfd-b2a0-054b983d2784
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_quote
+    - paragraphs.paragraphs_type.pg_verbatim
+_core:
+  default_config_hash: m_X68ANCVfjJDUsrfdlK0pyIW9hqwQ6IHBNv4FQPN4M
+id: paragraph.pg_verbatim.field_pg_quote
+field_name: field_pg_quote
+entity_type: paragraph
+bundle: pg_verbatim
+label: Citation
+description: 'Veuillez saisir le texte de la citation.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

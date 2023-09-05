@@ -1,0 +1,94 @@
+uuid: e6069339-b926-4a50-b284-e2db933d0fce
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.flat_color
+    - field.field.paragraph.pg_highligted.field_background_color
+    - field.field.paragraph.pg_highligted.field_parallax
+    - field.field.paragraph.pg_highligted.field_pg_chapo
+    - field.field.paragraph.pg_highligted.field_pg_link
+    - field.field.paragraph.pg_highligted.field_pg_media_reference
+    - field.field.paragraph.pg_highligted.field_pg_title
+    - field.field.paragraph.pg_highligted.field_pg_view_mode
+    - field.field.paragraph.pg_highligted.field_responsive
+    - paragraphs.paragraphs_type.pg_highligted
+  module:
+    - color_field
+    - field_formatter_class
+    - link
+    - text
+id: paragraph.pg_highligted.flat_color
+targetEntityType: paragraph
+bundle: pg_highligted
+mode: flat_color
+content:
+  field_background_color:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
+  field_parallax:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 5
+    region: content
+  field_pg_chapo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_pg_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_pg_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_responsive:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 4
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_pg_media_reference: true
+  field_pg_view_mode: true
+  search_api_excerpt: true

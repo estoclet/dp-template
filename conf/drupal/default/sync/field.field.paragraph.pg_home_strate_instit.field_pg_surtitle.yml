@@ -1,0 +1,19 @@
+uuid: 0a18b105-f0dc-42f1-b7e6-1ffe5f4ce41a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_surtitle
+    - paragraphs.paragraphs_type.pg_home_strate_instit
+id: paragraph.pg_home_strate_instit.field_pg_surtitle
+field_name: field_pg_surtitle
+entity_type: paragraph
+bundle: pg_home_strate_instit
+label: Surtitre
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

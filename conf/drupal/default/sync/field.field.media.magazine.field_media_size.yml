@@ -1,0 +1,23 @@
+uuid: eb633988-a689-4508-b2da-0febb6af3970
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_size
+    - media.type.magazine
+id: media.magazine.field_media_size
+field_name: field_media_size
+entity_type: media
+bundle: magazine
+label: 'Poids du fichier'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,31 @@
+uuid: b16b3e4f-5ebf-427d-813c-6cea03810573
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.menu-galaxie
+  module:
+    - menu_block
+  theme:
+    - cdc_theme
+id: menugalaxie
+theme: cdc_theme
+region: navigation
+weight: -21
+provider: null
+plugin: 'menu_block:menu-galaxie'
+settings:
+  id: 'menu_block:menu-galaxie'
+  label: 'Menu galaxie'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'menu-galaxie:'
+  suggestion: menu_galaxie
+visibility: {  }

@@ -1,0 +1,17 @@
+node_type_field_site:
+  node_types:
+    accueil: accueil
+    actualite: actualite
+    article: article
+    list_posts_minisite: list_posts_minisite
+    page: page
+    webform: webform
+block_ids:
+  - blocaccessconfig
+  - informationslegales
+  - entityviewcontenu
+  - minisitemenu
+  - messages
+  - cdc_theme_local_tasks
+  - cdc_theme_local_actions
+langcode: fr

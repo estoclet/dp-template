@@ -1,0 +1,31 @@
+uuid: 115b3dd8-eb86-495d-a686-25eb48498f88
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.menu-rs
+  module:
+    - menu_block
+  theme:
+    - cdc_theme
+id: reseauxsociaux
+theme: cdc_theme
+region: footer_second
+weight: -21
+provider: null
+plugin: 'menu_block:menu-rs'
+settings:
+  id: 'menu_block:menu-rs'
+  label: 'Réseaux Sociaux'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'menu-rs:'
+  suggestion: menu_rs
+visibility: {  }

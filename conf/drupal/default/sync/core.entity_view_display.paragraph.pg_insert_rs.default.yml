@@ -1,0 +1,41 @@
+uuid: 5a384bb6-cc1f-4152-8a6d-72b2afc47e29
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pg_insert_rs.field_pg_media_reference
+    - field.field.paragraph.pg_insert_rs.field_responsive
+    - paragraphs.paragraphs_type.pg_insert_rs
+  module:
+    - field_formatter_class
+id: paragraph.pg_insert_rs.default
+targetEntityType: paragraph
+bundle: pg_insert_rs
+mode: default
+content:
+  field_pg_media_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_responsive:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

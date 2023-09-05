@@ -1,0 +1,11 @@
+uuid: 91e1b1b0-3173-40f2-9fb0-716a394f7fb4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.rubrique_v2
+id: node.rubrique_v2
+target_entity_type_id: node
+target_bundle: rubrique_v2
+default_langcode: site_default
+language_alterable: false

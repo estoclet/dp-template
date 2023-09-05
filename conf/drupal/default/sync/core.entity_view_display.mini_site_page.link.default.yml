@@ -1,0 +1,45 @@
+uuid: cf17c968-f30d-4da5-a8c9-3525e8f336b4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.mini_site_page.link.field_libelle
+    - field.field.mini_site_page.link.field_link
+    - mini_sites.mini_site_page_type.link
+  module:
+    - link
+_core:
+  default_config_hash: lGE7pRgItspihglkEpEa3J9pyphGzJHcvSNRELyL5uU
+id: mini_site_page.link.default
+targetEntityType: mini_site_page
+bundle: link
+mode: default
+content:
+  field_libelle:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

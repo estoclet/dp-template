@@ -1,0 +1,39 @@
+/**
+ * @file
+ * Breadcrumb Styling
+ */
+.breadcrumb {
+  @extend %breadcrumb;
+  padding: 0;
+  margin-bottom: 0;
+  background-color: transparent;
+  color: $noir-web;
+
+  .breadcrumb-list {
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+      list-style: none;
+
+      a {
+        color: $gris-fonce;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          color: $couleur-rouge;
+        }
+      }
+
+      & + li {
+        &:before {
+          display: inline-block;
+          content: '/';
+          padding: 0 .75rem;
+          color: $couleur-rouge;
+        }
+      }
+    }
+  }
+}

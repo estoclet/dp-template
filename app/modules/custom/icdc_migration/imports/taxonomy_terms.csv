@@ -1,0 +1,68 @@
+id;vid;name;weight;parent
+1;blog_tag;Biodiversité;0;0
+2;blog_tag;Mobilité;0;0
+3;blog_tag;Habitat;0;0
+4;blog_tag;Insertion;0;0
+5;blog_tag;Handicap;0;0
+6;blog_tag;IOT;0;0
+7;blog_tag;Transition énergétique;0;0
+8;blog_tag;Epargne;0;0
+9;doctype;Rapport;0;0
+10;doctype;Etudes;0;0
+11;doctype;Publications;0;0
+12;doctype;Bilan;0;0
+13;doctype;Appel à projet;0;0
+14;doctype;Communiqué de presse;0;0
+15;doctype;Dossier de presse;0;0
+16;doctype;Concours;0;0
+17;entite;Caisse des Dépôts;0;0
+18;entite;Banque des Territoires;0;17
+19;entite;Filiales;0;0
+20;entite;Bpifrance;0;19
+21;entite;CDC Biodiversité;0;19
+22;entite;CDC Habitat;0;19
+23;entite;CNP Assurances;0;19
+24;entite;CNR;0;19
+25;entite;Compagnie des Alpes;0;19
+26;entite;Egis;0;19
+27;entite;ICADE;0;19
+28;entite;Informatique CDC;0;19
+29;entite;Transdev;0;19
+30;entite;SCET;0;19
+31;entite;SFIL;0;19
+32;entite;Société forestière;0;19
+33;entite;STOA;0;19
+34;expertise_area;Territoires;0;0
+35;expertise_area;Macro-économie & finance;0;0
+36;expertise_area;Cohésion sociale;0;0
+37;expertise_area;Climat & environnement;0;0
+38;expertise_area;Innovation et numérique;0;0
+39;investor;Comptes annuels;0;0
+40;investor;Emprunts réalisés;0;0
+41;investor;Programmes d'émission;0;0
+42;perimeter;Equipe digitale;0;0
+43;perimeter;Equipe éditoriale;0;0
+44;perimeter;Equipe blog;0;0
+45;perimeter;Equipe mécénat;0;0
+46;perimeter;Equipe presse;0;0
+47;perimeter;Equipe investisseurs;0;0
+48;perimeter;Equipe RH;0;0
+49;perimeter;Médiation;0;0
+50;perimeter;Archives et patrimoine;0;0
+51;perimeter;Programme d'investissement d'avenir;0;0
+52;perimeter;Institut pour la recherche;0;0
+53;thematique;Immobilier et logement;0;0
+54;thematique;Retraites;0;0
+55;thematique;Formation;0;0
+56;thematique;Numérique;0;0
+57;thematique;Mobilité;0;0
+58;thematique;Bancaire;0;0
+59;thematique;Energie et environnement;0;0
+60;thematique;Climat;0;0
+61;thematique;Investissement;0;0
+62;thematique;Vieillissement;0;0
+63;thematique;Entreprise;0;0
+64;thematique;Tourisme et loisirs;0;0
+65;thematique;Territoires;0;0
+66;thematique;Mécénat;0;0
+67;thematique;Parcours de vie;0;0

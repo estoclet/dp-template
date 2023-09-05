@@ -1,0 +1,89 @@
+<?php
+
+/**
+ * @file
+ * Provide hook update and install for icdc_node_weight_order.install
+ */
+use Drupal\Core\Database\Database;
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see hook_schema()
+ *
+ * @ingroup icdc_node_weight_order
+ */
+function icdc_node_weight_order_schema() {
+  $schema['icdc_node_weight_order_keywords'] = array(
+    'description' => 'Stores icdc_node_weight_order keywords.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'not null' => TRUE
+      ),
+      'keywords' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+    ),
+    'primary key' => array('id'),
+    'unique keys' => array(
+      'keywords' => array('keywords'),
+    ),
+  );
+
+  $schema['icdc_node_weight_order_nodes'] = array(
+    'description' => 'Stores icdc_node_weight_order relates to keywords.',
+    'fields' => array(
+      'nid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'kid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'weight' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('nid', 'kid'),
+    'indexes' => array(
+      'nid' => array('nid'),
+      'kid' => array('kid')
+    ),
+    'foreign keys' => array(
+      'node' => array(
+        'table' => 'node',
+        'columns' => array(
+          'nid' => 'nid',
+        ),
+      ),
+      'keyword' => array(
+        'table' => 'icdc_node_weight_order_keywords',
+        'columns' => array(
+          'kid' => 'kid',
+        ),
+      ),
+    ),
+  );
+
+  return $schema;
+}
+
+function icdc_node_weight_order_update_8001(&$sandbox) {
+  $defs = icdc_node_weight_order_schema();
+  foreach($defs as $table => $def) {
+    $schema = Database::getConnection()->schema();
+    $schema->createTable($table, $def);
+  }
+}

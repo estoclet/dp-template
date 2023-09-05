@@ -1,0 +1,20 @@
+uuid: d2b8d28c-f743-4b37-ab12-b3f692229fff
+langcode: fr
+status: true
+dependencies:
+  config:
+    - media.type.image_svg
+  module:
+    - path
+id: media.image_svg.path
+field_name: path
+entity_type: media
+bundle: image_svg
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

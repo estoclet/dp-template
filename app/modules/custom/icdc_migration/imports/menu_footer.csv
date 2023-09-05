@@ -1,0 +1,16 @@
+id;title;description;node;target;weight;expanded;enabled;parent
+1;Informations;;0;_self;0;1;1;0
+2;Appels d'offres publics;;6;_self;0;0;1;1
+3;Arrêtés de délégations;;7;_self;1;0;1;1
+4;Arrêtés d'organisation;;8;_self;2;0;1;1
+5;Confiance numérique;;9;_self;3;0;1;1
+6;Politique de vote;;10;_self;4;0;1;1
+7;Services & sites;;0;_self;1;1;1;0
+8;Programme d'investissement d'avenir;;11;_self;0;0;1;7
+9;Archives et patrimoine;;12;_self;1;0;1;7
+10;Compte personnel de formation;;13;_self;2;0;1;7
+11;Ciclade;;14;_self;3;0;1;7
+12;Contact;;0;_self;2;1;1;0
+13;Nous contacter;;15;_self;0;0;1;12
+14;Médiation;;16;_self;1;0;1;12
+15;Médiation de la consommation;;17;_self;2;0;1;12

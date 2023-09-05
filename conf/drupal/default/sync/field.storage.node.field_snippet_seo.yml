@@ -1,0 +1,21 @@
+uuid: 3f3e191f-c75a-4e74-8e89-127ab169a497
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: hwnfw77CP2iSDBQPb9I5EdP2K5xLHmB4iJGuHYzeMRs
+id: node.field_snippet_seo
+field_name: field_snippet_seo
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

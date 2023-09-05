@@ -1,0 +1,21 @@
+uuid: 3acbc269-d884-456a-a34d-fef5e2a6400b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_quote_info
+    - paragraphs.paragraphs_type.pg_verbatim
+_core:
+  default_config_hash: ADnxszI_mCEv-Xi1QtU6PGC_jHUg1wi-viLqakLT5xE
+id: paragraph.pg_verbatim.field_pg_quote_info
+field_name: field_pg_quote_info
+entity_type: paragraph
+bundle: pg_verbatim
+label: 'Contexte et/ou Fonction'
+description: 'Saisissez le contexte de la citation (exemple: Propos tenu lors de la conférence XXXX en mars 2019.) ou la fonction de la personne citée. '
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

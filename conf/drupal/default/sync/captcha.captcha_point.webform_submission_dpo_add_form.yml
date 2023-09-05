@@ -1,0 +1,7 @@
+uuid: 4b8198a0-f6e2-4df2-a4c6-baefec2c30d4
+langcode: fr
+status: false
+dependencies: {  }
+formId: webform_submission_dpo_add_form
+captchaType: recaptcha/reCAPTCHA
+label: webform_submission_dpo_add_form

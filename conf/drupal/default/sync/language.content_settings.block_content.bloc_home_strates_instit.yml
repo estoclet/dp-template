@@ -1,0 +1,18 @@
+uuid: 77e4e58f-5e02-46f7-95b2-ab82edb9387c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_home_strates_instit
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.bloc_home_strates_instit
+target_entity_type_id: block_content
+target_bundle: bloc_home_strates_instit
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,21 @@
+uuid: fa2a1a87-2240-4db9-a839-12962ca99569
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thematic_references
+    - node.type.dossier
+id: node.dossier.field_thematic_references
+field_name: field_thematic_references
+entity_type: node
+bundle: dossier
+label: Thématiques
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings: {  }
+field_type: entity_reference

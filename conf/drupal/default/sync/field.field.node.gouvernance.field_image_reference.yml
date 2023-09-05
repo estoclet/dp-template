@@ -1,0 +1,28 @@
+uuid: a5db9c4e-2786-4165-9bd7-dcb8bfec4b31
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_reference
+    - media.type.image
+    - node.type.gouvernance
+id: node.gouvernance.field_image_reference
+field_name: field_image_reference
+entity_type: node
+bundle: gouvernance
+label: Portrait
+description: 'Ajouter l''image portrait associée à la personne.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

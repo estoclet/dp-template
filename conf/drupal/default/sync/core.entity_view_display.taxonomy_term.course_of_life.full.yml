@@ -1,0 +1,37 @@
+uuid: dee8ce1b-9c63-4a24-9cb4-1d3d95745f40
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.course_of_life.field_block_terms
+    - field.field.taxonomy_term.course_of_life.field_custom_text
+    - field.field.taxonomy_term.course_of_life.field_pg_chapo
+    - field.field.taxonomy_term.course_of_life.field_pg_context
+    - field.field.taxonomy_term.course_of_life.field_pg_svg_illustrated
+    - field.field.taxonomy_term.course_of_life.field_pg_svg_wired
+    - taxonomy.vocabulary.course_of_life
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.course_of_life.full
+targetEntityType: taxonomy_term
+bundle: course_of_life
+mode: full
+content: {  }
+hidden:
+  description: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_block_terms: true
+  field_custom_text: true
+  field_pg_chapo: true
+  field_pg_context: true
+  field_pg_svg_illustrated: true
+  field_pg_svg_wired: true
+  langcode: true
+  search_api_excerpt: true

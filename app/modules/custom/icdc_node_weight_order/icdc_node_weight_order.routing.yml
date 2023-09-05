@@ -1,0 +1,40 @@
+icdc_node_weight_order.admin_search:
+  path: '/admin/cdc/search'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Moteur de recherche'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+icdc_node_weight_order.admin_order:
+  path: '/admin/cdc/search/icdc-node-order'
+  defaults:
+    _form: 'Drupal\icdc_node_weight_order\Form\IcdcNodeOrder'
+    _title: 'Élévation des contenus'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+icdc_node_weight_order.admin_order_manage_keywords:
+  path: '/admin/cdc/search/icdc-node-order/manage/{idKeyword}'
+  defaults:
+    _form: 'Drupal\icdc_node_weight_order\Form\IcdcNodeOrder'
+    _title: 'Élévation des contenus'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+
+icdc_node_weight_order.admin_order_delete_keywords:
+  path: '/admin/cdc/search/icdc-node-order/delete/{idKeyword}'
+  defaults:
+    _form: 'Drupal\icdc_node_weight_order\Form\IcdcDeleteKeywords'
+    _title_callback: '\Drupal\settings_tray\Block\BlockEntitySettingTrayForm::title'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

@@ -1,0 +1,20 @@
+uuid: bf454756-61ff-4494-90b5-b8c376f4a93f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: Dg97-r_ZyPwJoOr32iduLezInMi9j_jVRsa3I1FZbAI
+id: media.field_media_search_visibility
+field_name: field_media_search_visibility
+entity_type: media
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

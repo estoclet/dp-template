@@ -1,0 +1,11 @@
+uuid: 3f328644-9f5f-41dc-8a04-5be5285355e9
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8dsYXZd96PMvZBehkVScsJ-m68CRP3ZXEaJWazDpZAg
+id: pg_verbatim
+label: Verbatim
+icon_uuid: null
+description: 'Une citation contextualisée avec une mise en forme pré-formatée.'
+behavior_plugins: {  }

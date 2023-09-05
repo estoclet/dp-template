@@ -1,0 +1,5 @@
+icdc_toolbox:
+  version: VERSION
+  css:
+    theme:
+      css/icdc_toolbox.icons.theme.css: {}

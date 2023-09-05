@@ -1,0 +1,644 @@
+$icomoon-font-family: 'cdc-icons' !default;
+$icomoon-font-path: '../fonts/cdc-icons' !default;
+
+$cdcicon-date: '\e94d';
+$cdcicon-check: '\e94b';
+$cdcicon-moins: '\e949';
+$cdcicon-plus: '\e94a';
+$cdcicon-more: '\e948';
+$cdcicon-type-article: '\e944';
+$cdcicon-type-etude: '\e945';
+$cdcicon-type-podcast: '\e946';
+$cdcicon-type-video: '\e947';
+$cdcicon-partager: '\e943';
+$cdcicon-web: '\e93c';
+$cdcicon-vieillissement: '\e93a';
+$cdcicon-tuto-video: '\e938';
+$cdcicon-tourisme: '\e937';
+$cdcicon-share: '\e936';
+$cdcicon-sante: '\e935';
+$cdcicon-rss: '\e934';
+$cdcicon-retraite: '\e933';
+$cdcicon-relation-citoyen: '\e932';
+$cdcicon-reinitialiser: '\e931';
+$cdcicon-protection-fonds-patrimoine: '\e930';
+$cdcicon-pro-droit: '\e92f';
+$cdcicon-placement-financier-immo: '\e92e';
+$cdcicon-numerique: '\e92d';
+$cdcicon-news: '\e92c';
+$cdcicon-mobilite: '\e92b';
+$cdcicon-marker: '\e92a';
+$cdcicon-loupe-2: '\e942';
+$cdcicon-loupe: '\e929';
+$cdcicon-logement: '\e928';
+$cdcicon-lien-ext: '\e926';
+$cdcicon-infrastructures: '\e925';
+$cdcicon-infra-numeriques: '\e924';
+$cdcicon-handicap: '\e923';
+$cdcicon-habitat: '\e922';
+$cdcicon-gouvernance: '\e921';
+$cdcicon-france: '\e920';
+$cdcicon-francais: '\e91f';
+$cdcicon-fracture-territoriale: '\e91e';
+$cdcicon-formation: '\e91d';
+$cdcicon-foret: '\e91c';
+$cdcicon-finance-vert: '\e91b';
+$cdcicon-finance-tech: '\e91a';
+$cdcicon-financer-investir: '\e919';
+$cdcicon-environnement: '\e917';
+$cdcicon-entreprise-green: '\e916';
+$cdcicon-entreprise: '\e915';
+$cdcicon-energie: '\e914';
+$cdcicon-eco-connaissance: '\e913';
+$cdcicon-download: '\e912';
+$cdcicon-double-chevron: '\e911';
+$cdcicon-dev-economique: '\e910';
+$cdcicon-data: '\e90f';
+$cdcicon-croix: '\e90e';
+$cdcicon-contact: '\e90d';
+$cdcicon-config: '\e90c';
+$cdcicon-compte: '\e90b';
+$cdcicon-cohesion-sociale: '\e90a';
+$cdcicon-chevron: '\e909';
+$cdcicon-carte: '\e908';
+$cdcicon-calendrier: '\e907';
+$cdcicon-burgermenu: '\e906';
+$cdcicon-biodiversite: '\e905';
+$cdcicon-arrow: '\e904';
+$cdcicon-aide: '\e903';
+$cdcicon-aide-2: '\e941';
+$cdcicon-agri-durable: '\e902';
+$cdcicon-agenda: '\e901';
+$cdcicon-voir: '\e93b';
+$cdcicon-accessibilite: '\e900';
+$cdcicon-accessibilite-2: '\e940';
+$cdcicon-viadeo: '\e93f';
+$cdcicon-linkedin: '\e927';
+$cdcicon-instagram: '\e93e';
+$cdcicon-fb: '\e918';
+$cdcicon-youtube: '\e93d';
+$cdcicon-twitter: '\e939';
+$cdcicon-close: '\e94c';
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?jzkxlf');
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?jzkxlf#iefix') format('embedded-opentype'), // sass-lint:disable-line no-duplicate-properties
+  url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?jzkxlf') format('truetype'),
+  url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?jzkxlf') format('woff'),
+  url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?jzkxlf##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.cdcicon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important; // sass-lint:disable-line no-important
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
+  -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
+}
+
+.cdcicon-date {
+  &:before {
+    content: $cdcicon-date;
+  }
+}
+
+.cdcicon-check {
+  &:before {
+    content: $cdcicon-check;
+    color: #fff;
+  }
+}
+
+.cdcicon-moins {
+  &:before {
+    content: $cdcicon-moins;
+  }
+}
+
+.cdcicon-plus {
+  &:before {
+    content: $cdcicon-plus;
+  }
+}
+
+.cdcicon-more {
+  &:before {
+    content: $cdcicon-more;
+  }
+}
+
+.cdcicon-type-article {
+  &:before {
+    content: $cdcicon-type-article;
+  }
+}
+
+.cdcicon-type-etude {
+  &:before {
+    content: $cdcicon-type-etude;
+  }
+}
+
+.cdcicon-type-podcast {
+  &:before {
+    content: $cdcicon-type-podcast;
+  }
+}
+
+.cdcicon-type-video {
+  &:before {
+    content: $cdcicon-type-video;
+  }
+}
+
+.cdcicon-partager {
+  &:before {
+    content: $cdcicon-partager;
+  }
+}
+
+.cdcicon-web {
+  &:before {
+    content: $cdcicon-web;
+  }
+}
+
+.cdcicon-vieillissement {
+  &:before {
+    content: $cdcicon-vieillissement;
+  }
+}
+
+.cdcicon-tuto-video {
+  &:before {
+    content: $cdcicon-tuto-video;
+  }
+}
+
+.cdcicon-tourisme {
+  &:before {
+    content: $cdcicon-tourisme;
+  }
+}
+
+.cdcicon-share {
+  &:before {
+    content: $cdcicon-share;
+  }
+}
+
+.cdcicon-sante {
+  &:before {
+    content: $cdcicon-sante;
+  }
+}
+
+.cdcicon-rss {
+  &:before {
+    content: $cdcicon-rss;
+  }
+}
+
+
+.cdcicon-retraite {
+  &:before {
+    content: $cdcicon-retraite;
+  }
+}
+
+.cdcicon-relation-citoyen {
+  &:before {
+    content: $cdcicon-relation-citoyen;
+  }
+}
+
+.cdcicon-reinitialiser {
+  &:before {
+    content: $cdcicon-reinitialiser;
+  }
+}
+
+.cdcicon-protection-fonds-patrimoine {
+  &:before {
+    content: $cdcicon-protection-fonds-patrimoine;
+  }
+}
+
+.cdcicon-pro-droit {
+  &:before {
+    content: $cdcicon-pro-droit;
+  }
+}
+
+.cdcicon-placement-financier-immo {
+  &:before {
+    content: $cdcicon-placement-financier-immo;
+  }
+}
+
+.cdcicon-numerique {
+  &:before {
+    content: $cdcicon-numerique;
+  }
+}
+
+.cdcicon-news {
+  &:before {
+    content: $cdcicon-news;
+  }
+}
+
+.cdcicon-mobilite {
+  &:before {
+    content: $cdcicon-mobilite;
+  }
+}
+
+.cdcicon-marker {
+  &:before {
+    content: $cdcicon-marker;
+  }
+}
+
+.cdcicon-loupe-2 {
+  &:before {
+    content: $cdcicon-loupe-2;
+  }
+}
+
+.cdcicon-loupe {
+  &:before {
+    content: $cdcicon-loupe;
+  }
+}
+
+.cdcicon-logement {
+  &:before {
+    content: $cdcicon-logement;
+  }
+}
+
+.cdcicon-lien-ext {
+  &:before {
+    content: $cdcicon-lien-ext;
+  }
+}
+
+.cdcicon-infrastructures {
+  &:before {
+    content: $cdcicon-infrastructures;
+  }
+}
+
+.cdcicon-infra-numeriques {
+  &:before {
+    content: $cdcicon-infra-numeriques;
+  }
+}
+
+.cdcicon-handicap {
+  &:before {
+    content: $cdcicon-handicap;
+  }
+}
+
+.cdcicon-habitat {
+  &:before {
+    content: $cdcicon-habitat;
+  }
+}
+
+.cdcicon-gouvernance {
+  &:before {
+    content: $cdcicon-gouvernance;
+  }
+}
+
+.cdcicon-france {
+  &:before {
+    content: $cdcicon-france;
+  }
+}
+
+.cdcicon-francais {
+  &:before {
+    content: $cdcicon-francais;
+  }
+}
+
+.cdcicon-fracture-territoriale {
+  &:before {
+    content: $cdcicon-fracture-territoriale;
+  }
+}
+
+.cdcicon-formation {
+  &:before {
+    content: $cdcicon-formation;
+  }
+}
+
+.cdcicon-foret {
+  &:before {
+    content: $cdcicon-foret;
+  }
+}
+
+.cdcicon-finance-vert {
+  &:before {
+    content: $cdcicon-finance-vert;
+  }
+}
+
+.cdcicon-finance-tech {
+  &:before {
+    content: $cdcicon-finance-tech;
+  }
+}
+
+.cdcicon-financer-investir {
+  &:before {
+    content: $cdcicon-financer-investir;
+  }
+}
+
+.cdcicon-environnement {
+  &:before {
+    content: $cdcicon-environnement;
+  }
+}
+
+.cdcicon-entreprise-green {
+  &:before {
+    content: $cdcicon-entreprise-green;
+  }
+}
+
+.cdcicon-entreprise {
+  &:before {
+    content: $cdcicon-entreprise;
+  }
+}
+
+.cdcicon-energie {
+  &:before {
+    content: $cdcicon-energie;
+  }
+}
+
+.cdcicon-eco-connaissance {
+  &:before {
+    content: $cdcicon-eco-connaissance;
+  }
+}
+
+.cdcicon-download {
+  &:before {
+    content: $cdcicon-download;
+  }
+}
+
+.cdcicon-double-chevron {
+  &:before {
+    content: $cdcicon-double-chevron;
+  }
+}
+
+.cdcicon-dev-economique {
+  &:before {
+    content: $cdcicon-dev-economique;
+  }
+}
+
+.cdcicon-data {
+  &:before {
+    content: $cdcicon-data;
+  }
+}
+
+.cdcicon-croix {
+
+  &:before {
+    content: $cdcicon-croix;
+  }
+
+  &:hover {
+    &:before {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.cdcicon-contact {
+  &:before {
+    content: $cdcicon-contact;
+  }
+}
+
+.cdcicon-config {
+  &:before {
+    content: $cdcicon-config;
+  }
+}
+
+.cdcicon-compte {
+  &:before {
+    content: $cdcicon-compte;
+  }
+}
+
+.cdcicon-cohesion-sociale {
+  &:before {
+    content: $cdcicon-cohesion-sociale;
+  }
+}
+
+.cdcicon-chevron {
+  &:before {
+    content: $cdcicon-chevron;
+  }
+}
+
+.cdcicon-carte {
+  &:before {
+    content: $cdcicon-carte;
+  }
+}
+
+.cdcicon-calendrier {
+  &:before {
+    content: $cdcicon-calendrier;
+  }
+}
+
+.cdcicon-burgermenu {
+  &:before {
+    content: $cdcicon-burgermenu;
+  }
+}
+
+.cdcicon-biodiversite {
+  &:before {
+    content: $cdcicon-biodiversite;
+  }
+}
+
+.cdcicon-arrow {
+  &:before {
+    content: $cdcicon-arrow;
+  }
+}
+
+.cdcicon-aide {
+  &:before {
+    content: $cdcicon-aide;
+  }
+}
+
+.cdcicon-aide-2 {
+  &:before {
+    content: $cdcicon-aide-2;
+  }
+}
+
+.cdcicon-agri-durable {
+  &:before {
+    content: $cdcicon-agri-durable;
+  }
+}
+
+.cdcicon-agenda {
+  &:before {
+    content: $cdcicon-agenda;
+  }
+}
+
+.cdcicon-voir {
+  &:before {
+    content: $cdcicon-voir;
+  }
+}
+
+.cdcicon-accessibilite {
+  &:before {
+    content: $cdcicon-accessibilite;
+  }
+}
+
+.cdcicon-accessibilite-2 {
+  &:before {
+    content: $cdcicon-accessibilite-2;
+  }
+}
+
+.cdcicon-viadeo {
+  &:before {
+    content: $cdcicon-viadeo;
+  }
+}
+
+.cdcicon-linkedin {
+  &:before {
+    content: $cdcicon-linkedin;
+  }
+}
+
+.cdcicon-instagram {
+  &:before {
+    content: $cdcicon-instagram;
+  }
+}
+
+.cdcicon-fb {
+  &:before {
+    content: $cdcicon-fb;
+  }
+}
+
+.cdcicon-youtube {
+  &:before {
+    content: $cdcicon-youtube;
+  }
+}
+
+.cdcicon-twitter {
+  &:before {
+    content: $cdcicon-twitter;
+  }
+}
+
+.cdcicon-close {
+  &:before {
+    content: $cdcicon-close;
+  }
+}
+
+
+%picto-user-linkedin {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  width: 34px;
+  height: 34px;
+
+  a {
+
+    &.icon {
+      text-align: center;
+      line-height: 34px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0e76a8;
+      border-radius: 5px;
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        background: #0b5e86;
+        text-decoration: none;
+        color: $white;
+      }
+
+      .cdcicon-linkedin {
+        color: $white;
+      }
+    }
+  }
+}
+
+svg {
+  &.ext,
+  &.mailto {
+    width: 2rem;
+    height: 2rem;
+    padding-right: .3em;
+    fill: none;
+    font-weight: normal;
+    padding-left: .15em;
+    font-size: 1rem;
+    margin-left: 5px !important;
+    color: inherit;
+    line-height: inherit;
+    display: inline-block;
+    vertical-align: baseline;
+
+    path {
+      stroke: $gris-fonce;
+      stroke-width: 2;
+    }
+  }
+}

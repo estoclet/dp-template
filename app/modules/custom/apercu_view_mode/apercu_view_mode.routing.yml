@@ -1,0 +1,16 @@
+apercu_view_mode.apercu:
+  path: '/apercu/{node}/{viewMode}'
+  defaults:
+    _controller: '\Drupal\apercu_view_mode\Controller\ApercuViewModeController::content'
+  requirements:
+    _permission: 'access'
+
+apercu_view_mode.form:
+  path: '/admin/apercu'
+  defaults:
+    _form: '\Drupal\apercu_view_mode\Form\ApercuForm'
+    _title: 'Apercu'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

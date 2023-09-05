@@ -1,0 +1,89 @@
+uuid: 390a41d1-ea8d-4bd6-abe9-db2ccce3152d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_d_entete_bandeau
+    - field.field.block_content.bloc_d_entete_bandeau.field_chapo
+    - field.field.block_content.bloc_d_entete_bandeau.field_color_primary_bandeau
+    - field.field.block_content.bloc_d_entete_bandeau.field_color_secondary
+    - field.field.block_content.bloc_d_entete_bandeau.field_dark_header_checkbox
+    - field.field.block_content.bloc_d_entete_bandeau.field_media_bandeau
+    - field.field.block_content.bloc_d_entete_bandeau.field_no_margin_bandeau
+    - field.field.block_content.bloc_d_entete_bandeau.field_type_dentete
+  module:
+    - color_field
+    - options
+    - text
+id: block_content.bloc_d_entete_bandeau.default
+targetEntityType: block_content
+bundle: bloc_d_entete_bandeau
+mode: default
+content:
+  field_chapo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_color_primary_bandeau:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_color_secondary:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_dark_header_checkbox:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_bandeau:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_no_margin_bandeau:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_type_dentete:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

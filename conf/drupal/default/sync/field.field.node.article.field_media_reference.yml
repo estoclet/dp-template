@@ -1,0 +1,28 @@
+uuid: 6ffc1992-280f-4148-af40-faa7f1c9d889
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_reference
+    - media.type.image
+    - node.type.article
+id: node.article.field_media_reference
+field_name: field_media_reference
+entity_type: node
+bundle: article
+label: 'Image de l’entête'
+description: '<p>Ajoutez l’image qui sera affichée dans l’entête de la page.</p>'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,12 @@
+<div data-blocked-content="{{children['#provider_data'].vendor.id}}">
+	<span class="icon icon-refus ftz-6 mb-2.5" aria-hidden="true"></span>
+	<p class="d-sm-block text-center lead">{{children['#provider_data'].notice.content|raw|t}}</p>
+	<p class="mt-2">
+		<button class="js-preferences-show btn btn-secondary" onclick="Didomi.preferences.show('vendors');">{{children['#provider_data'].notice.button|raw|t}}</button>
+	</p>
+</div>
+
+
+<script type="didomi/html" data-vendor="{{children['#provider_data'].vendor.id}}">
+	{{children}}
+</script>

@@ -1,0 +1,23 @@
+uuid: 42083fc8-5368-460d-8325-4275c1608c88
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_d_entete_bandeau
+    - field.storage.block_content.field_dark_header_checkbox
+id: block_content.bloc_d_entete_bandeau.field_dark_header_checkbox
+field_name: field_dark_header_checkbox
+entity_type: block_content
+bundle: bloc_d_entete_bandeau
+label: 'Entête à couleur inversée'
+description: 'Inversez la couleur de l’entête dans le cas d’une entête immersive utilisant une image sombre.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

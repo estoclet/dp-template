@@ -1,0 +1,22 @@
+uuid: 6b64baa7-d350-46bd-a094-c01946185c4b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_background_color
+    - node.type.article
+  module:
+    - color_field
+id: node.article.field_background_color
+field_name: field_background_color
+entity_type: node
+bundle: article
+label: 'Couleur de fond'
+description: 'Sélectionnez la couleur d''arrière-plan de l''entête.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

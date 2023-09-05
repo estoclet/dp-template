@@ -1,0 +1,69 @@
+uuid: 619af930-8a90-431d-8450-91448f6ce06a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pg_verbatim.field_pg_image_reference
+    - field.field.paragraph.pg_verbatim.field_pg_quote
+    - field.field.paragraph.pg_verbatim.field_pg_quote_credit
+    - field.field.paragraph.pg_verbatim.field_pg_quote_info
+    - field.field.paragraph.pg_verbatim.field_responsive
+    - paragraphs.paragraphs_type.pg_verbatim
+  module:
+    - field_formatter_class
+id: paragraph.pg_verbatim.default
+targetEntityType: paragraph
+bundle: pg_verbatim
+mode: default
+content:
+  field_pg_image_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: portrait
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: .image-rounded
+    weight: 0
+    region: content
+  field_pg_quote:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_pg_quote_credit:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_pg_quote_info:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_responsive:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 4
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

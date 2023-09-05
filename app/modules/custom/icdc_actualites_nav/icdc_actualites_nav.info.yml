@@ -1,0 +1,7 @@
+name: 'icdc_actualites_nav'
+type: module
+description: 'ICDC News Navigation block'
+core_version_requirement: ^8 || ^9
+package: 'ICDC'
+'interface translation project': icdc_actualites_nav
+'interface translation server pattern': modules/custom/icdc_actualites_nav/translations/icdc_actualites_nav-%language.po

@@ -1,0 +1,24 @@
+uuid: 15a46e4e-2904-42f3-8ed7-523cbb72dddc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - webform.webform.dpo
+id: export
+label: Export
+task_type: export_email_results
+result_set_type: all_submissions
+task_settings:
+  exporter: delimited
+  exporter_settings:
+    delimiter: ;
+    excel: true
+  email_addresses: doromano@gmail.com
+  storage_type: filesystem
+  delete_submissions: false
+  include_attachments: true
+result_set_settings: {  }
+interval:
+  amount: 1
+  multiplier: 86400
+webform: dpo

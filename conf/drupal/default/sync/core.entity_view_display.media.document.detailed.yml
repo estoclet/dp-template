@@ -1,0 +1,102 @@
+uuid: 9b57f08e-45d8-4461-8b32-851ce4ebc84a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.detailed
+    - field.field.media.document.field_media_date
+    - field.field.media.document.field_media_description
+    - field.field.media.document.field_media_doctype_reference
+    - field.field.media.document.field_media_entite_references
+    - field.field.media.document.field_media_file
+    - field.field.media.document.field_media_investor_reference
+    - field.field.media.document.field_media_investor_visibility
+    - field.field.media.document.field_media_mine
+    - field.field.media.document.field_media_perimeter_reference
+    - field.field.media.document.field_media_press_references
+    - field.field.media.document.field_media_press_visibility
+    - field.field.media.document.field_media_search_visibility
+    - field.field.media.document.field_media_size
+    - field.field.media.document.field_media_theque_visibility
+    - media.type.document
+  module:
+    - field_formatter_class
+    - file
+    - number_formatter
+id: media.document.detailed
+targetEntityType: media
+bundle: document
+mode: detailed
+content:
+  field_media_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_media_file:
+    type: file_url_plain
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_mine:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_press_references:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: link
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 5
+    region: content
+  field_media_size:
+    type: useless_zeros_formatter
+    label: hidden
+    settings:
+      thousand_separator: "\t"
+      decimal_separator: .
+      scale: '0'
+      prefix_suffix: '1'
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_date: true
+  field_media_doctype_reference: true
+  field_media_entite_references: true
+  field_media_investor_reference: true
+  field_media_investor_visibility: true
+  field_media_perimeter_reference: true
+  field_media_press_visibility: true
+  field_media_search_visibility: true
+  field_media_theque_visibility: true
+  langcode: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

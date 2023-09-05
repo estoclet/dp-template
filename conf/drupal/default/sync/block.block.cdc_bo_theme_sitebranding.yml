@@ -1,0 +1,23 @@
+uuid: 9b543350-cbdd-4885-babb-074a3f1c4745
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_sitebranding
+theme: cdc_bo_theme
+region: header
+weight: -20
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: true
+visibility: {  }

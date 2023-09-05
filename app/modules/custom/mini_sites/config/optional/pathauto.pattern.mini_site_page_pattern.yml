@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - pathauto
+  module:
+    - mini_sites
+id: mini_site_page_pattern
+label: 'Mini site page pattern'
+type: 'canonical_entities:mini_site_page'
+pattern: '[mini_site_page:mini_site:entity:name]/[mini_site_page:parents:join-path]/[mini_site_page:name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

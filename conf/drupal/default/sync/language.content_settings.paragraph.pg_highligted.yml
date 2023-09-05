@@ -1,0 +1,18 @@
+uuid: eb419e85-75d7-4063-a684-606491f719ed
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_highligted
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: paragraph.pg_highligted
+target_entity_type_id: paragraph
+target_bundle: pg_highligted
+default_langcode: site_default
+language_alterable: true

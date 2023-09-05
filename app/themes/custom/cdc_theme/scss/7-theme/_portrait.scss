@@ -1,0 +1,67 @@
+.wrapper-verbatim {
+  display: flex;
+}
+
+.portrait-verbatim {
+  max-width: 25%;
+  margin: 0 auto;
+
+  @media (min-width: $screen-sm-min) {
+    max-width: 33%;
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+
+  & + div {
+    box-sizing: border-box;
+    max-width: 85%;
+    padding-left: 20px;
+
+    @media (min-width: $screen-sm-min) {
+      max-width: 67%;
+      padding-left: 45px;
+    }
+
+    blockquote {
+      margin-bottom: 30px;
+    }
+
+  }
+}
+
+.content-verbatim {
+  .auteur {
+    margin-top: 30px;
+  }
+
+  .auteur,
+  .small {
+    padding-left: 65px;
+  }
+}
+
+.block {
+  .paragraph--type--pg-verbatim {
+    .wrapper-verbatim {
+      @media (min-width: $screen-sm-min) {
+        justify-content: inherit;
+      }
+    }
+
+    .portrait-verbatim {
+      max-width: 490px;
+
+      & + .content-verbatim {
+        max-width: 890px;
+        margin-left: 65px;
+      }
+    }
+
+  }
+}

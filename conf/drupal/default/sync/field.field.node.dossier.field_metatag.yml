@@ -1,0 +1,21 @@
+uuid: 5cf3a523-f331-4aa2-8279-9a2d6168c9cc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.dossier
+  module:
+    - metatag
+id: node.dossier.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: dossier
+label: Métadonnées
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

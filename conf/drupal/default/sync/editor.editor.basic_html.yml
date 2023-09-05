@@ -1,0 +1,83 @@
+uuid: c07e1e04-0fd6-4a5d-8957-14b522f71dae
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ckeditor
+_core:
+  default_config_hash: AqlPmO16LvJI4D0Ih6u4GFQIzqr5OnLgAUSjcUGWk2g
+format: basic_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - RemoveFormat
+            - Superscript
+            - Subscript
+            - SpecialChar
+            - Format
+            - Styles
+        -
+          name: Linking
+          items:
+            - Anchor
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Grille
+          items:
+            - ShowBlocks
+            - WidgetTemplateMenu
+            - widgetbootstrapLeftCol
+            - widgetbootstrapRightCol
+            - widgetbootstrapTwoCol
+            - widgetbootstrapThreeCol
+        -
+          name: Media
+          items:
+            - Blockquote
+            - Table
+            - image_wysiwyg
+            - document_wysiwyg
+        -
+          name: Tools
+          items:
+            - Undo
+            - Redo
+            - Cut
+            - Copy
+            - Paste
+            - PasteText
+            - Source
+            - Language
+            - A11ychecker
+            - Maximize
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: "p.chapo|Chapo\r\nspan.tag|Tag\r\np.caption|Légende\r\np.label|Label\r\na.more-link|Lien bouton\r\na.btn--primary|Bouton primaire\r\na.btn--secondary|Bouton secondaire\r\ndiv.chiffre|Chiffre\r\ndiv.color__white|Texte blanc"
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: contribution
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

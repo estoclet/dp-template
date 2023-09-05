@@ -1,0 +1,27 @@
+.icdc-investors-modal {
+  .modal {
+    .modal-body {
+      padding-bottom: 8rem;
+
+      @media (max-width: $screen-lg-max) {
+        padding-bottom: 6rem;
+      }
+
+      @media (max-width: $screen-md-max) {
+        padding-bottom: 4rem;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        padding-bottom: 3rem;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        padding-bottom: 2rem;
+      }
+    }
+
+    .btn {
+      white-space: inherit;
+    }
+  }
+}

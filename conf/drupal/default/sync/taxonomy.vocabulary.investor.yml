@@ -1,0 +1,10 @@
+uuid: 06baaea0-09e2-44cf-9e52-b08dd703290e
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: o6LI3Ng-V6neUWwFhImieX1DYwC-HGJ_HttMc--taJs
+name: 'Document Investisseur'
+vid: investor
+description: 'Définir les types de documents investisseurs'
+weight: 0

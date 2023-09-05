@@ -1,0 +1,17 @@
+uuid: fa213323-9743-4ad9-8bb9-26a84dba3182
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.focal_point
+  module:
+    - crop
+name: crop_front
+label: 'Crop Front'
+effects:
+  a4e4390b-3ece-46b5-9386-e52bf8563023:
+    uuid: a4e4390b-3ece-46b5-9386-e52bf8563023
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: focal_point

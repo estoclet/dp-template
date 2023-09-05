@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains video_embed_keepeek.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function video_embed_keepeek_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the video_embed_keepeek module.
+    case 'help.page.video_embed_keepeek':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}

@@ -1,0 +1,36 @@
+uuid: e2583105-46ac-42bc-b08d-4f0ecb2464e7
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: Contenu
+tags:
+  canonical_url: '[current-page:url:absolute]'
+  content_language: '[node:langcode]'
+  image_src: '[node:field_image_teaser_reference:entity:field_media_image:thumbnail_xl]'
+  shortlink: '[current-page:url:unaliased]'
+  title: '[node:title] | [site:name]'
+  description: '[node:field_chapo]'
+  robots: 'index, follow'
+  og_site_name: '[site:name]'
+  og_title: '[node:title]'
+  og_type: website
+  og_updated_time: '[node:changed:html_datetime]'
+  og_url: '[current-page:url:absolute]'
+  og_description: '[node:field_snippet_seo]'
+  og_image: '[node:field_image_teaser_reference:entity:field_media_image:thumbnail_xl]'
+  og_image_alt: '[node:field_image_teaser_reference:entity:field_media_image:alt]'
+  og_image_height: '[node:field_image_teaser_reference:entity:field_media_image:thumbnail_xl:height]'
+  og_image_width: '[node:field_image_teaser_reference:entity:field_media_image:thumbnail_xl:width]'
+  twitter_cards_page_url: '[current-page:url:absolute]'
+  twitter_cards_site_id: '@caissedesdepots'
+  twitter_cards_title: '[node:field_short_title]'
+  twitter_cards_type: summary
+  twitter_cards_image: '[node:field_image_teaser_reference:entity:field_media_image:miniature]'
+  twitter_cards_description: '[node:field_snippet_seo]'
+  twitter_cards_image_alt: '[node:field_image_teaser_reference:entity:field_media_image:miniature:alt]'
+  twitter_cards_image_height: '[node:field_image_teaser_reference:entity:field_media_image:miniature:height]'
+  twitter_cards_image_width: '[node:field_image_teaser_reference:entity:field_media_image:miniature:width]'
+  twitter_cards_site: '@caissedesdepots'

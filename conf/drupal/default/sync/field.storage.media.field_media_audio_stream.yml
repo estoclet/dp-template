@@ -1,0 +1,19 @@
+uuid: d0bb9d79-59ab-4458-8a05-5a589d62dfac
+langcode: fr
+status: true
+dependencies:
+  module:
+    - link
+    - media
+id: media.field_media_audio_stream
+field_name: field_media_audio_stream
+entity_type: media
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

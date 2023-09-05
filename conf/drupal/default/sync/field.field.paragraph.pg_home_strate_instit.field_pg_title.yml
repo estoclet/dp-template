@@ -1,0 +1,19 @@
+uuid: 7f5b8eaa-08bc-4393-9f5e-aaa8553345bf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_title
+    - paragraphs.paragraphs_type.pg_home_strate_instit
+id: paragraph.pg_home_strate_instit.field_pg_title
+field_name: field_pg_title
+entity_type: paragraph
+bundle: pg_home_strate_instit
+label: Titre
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

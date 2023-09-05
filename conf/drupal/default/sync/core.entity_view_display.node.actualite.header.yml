@@ -1,0 +1,92 @@
+uuid: b0b5fcb7-bb27-47da-ba44-4747ea455d1c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.header
+    - field.field.node.actualite.field_chapo
+    - field.field.node.actualite.field_entite_references
+    - field.field.node.actualite.field_image_teaser_reference
+    - field.field.node.actualite.field_interval_date
+    - field.field.node.actualite.field_media_reference
+    - field.field.node.actualite.field_metatag
+    - field.field.node.actualite.field_paragraphs
+    - field.field.node.actualite.field_short_title
+    - field.field.node.actualite.field_site
+    - field.field.node.actualite.field_site_page
+    - field.field.node.actualite.field_site_page_type
+    - field.field.node.actualite.field_snippet_seo
+    - field.field.node.actualite.field_sommaire
+    - field.field.node.actualite.field_thematic_references
+    - node.type.actualite
+  module:
+    - datetime_range
+    - field_formatter_class
+    - user
+id: node.actualite.header
+targetEntityType: node
+bundle: actualite
+mode: header
+content:
+  field_entite_references:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
+  field_interval_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: date_full_simple
+      separator: '-'
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+  field_media_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: header
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  field_thematic_references:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_chapo: true
+  field_image_teaser_reference: true
+  field_metatag: true
+  field_paragraphs: true
+  field_short_title: true
+  field_site: true
+  field_site_page: true
+  field_site_page_type: true
+  field_snippet_seo: true
+  field_sommaire: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

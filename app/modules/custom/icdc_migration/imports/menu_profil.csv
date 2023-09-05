@@ -1,0 +1,5 @@
+id;title;description;node;target;weight;enabled;parent
+1;Candidat;Espace candidat;37;_self;0;1;0
+2;Presse;Espace journaliste;38;_self;1;1;0
+3;Investisseurs;Espace investisseur;39;_self;2;1;0
+4;Mécénat;Espace porteur de projet;40;_self;3;1;0

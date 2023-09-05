@@ -1,0 +1,7 @@
+icdc_decision_tree.sponsorship_decision_tree_controller_page:
+  path: '/sponsorship-decision-tree'
+  defaults:
+    _controller: '\Drupal\icdc_decision_tree\Controller\SponsorshipDecisionTreeController::page'
+    _title_callback: '\Drupal\icdc_decision_tree\Controller\SponsorshipDecisionTreeController::getTitle'
+  requirements:
+    _permission: 'access content'

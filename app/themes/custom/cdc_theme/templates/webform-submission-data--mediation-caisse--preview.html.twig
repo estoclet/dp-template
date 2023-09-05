@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Default theme implementation for webform submission data.
+ *
+ * Available variables:
+ * - webform_submission: The webform submission.
+ * - webform: The webform.
+ *
+ * @see template_preprocess_webform_submission_data()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'webform-submission-data',
+    'webform-submission-data--webform-' ~ webform.id()|clean_class,
+    view_mode ? 'webform-submission-data--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+<div class="modal fade" id="myModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" type="button" id="but_webform_mod_close">
+					<span>×</span>
+				</button>
+			</div>
+
+			<div class="modal-body">
+				<p>Vous êtes sur le point de confirmer votre demande de médiation.</p>
+        <p>L'ensemble des données saisies sera envoyé à la médiation du groupe Caisse des Dépôts.</p>
+        <p>Vous ne serez ensuite plus en mesure d'effectuer des modifications.</p>
+			</div>
+
+			<div class="modal-footer">
+				<button class="webform-button--submit button button--primary js-form-submit form-submit btn-primary btn" data-drupal-selector="edit-submit" type="submit" id="edit-submit2" name="op" value="Submit">{{ 'Oui, je souhaite confirmer ma demande'|t}}</button>
+				<button class="btn btn-default" type="button" id="but_webform_sub_ko" name="webform_sub_ko">{{ 'Je souhaite effectuer des modifications'|t }}</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<div{{attributes.addClass(classes)}}>
+	{{ elements }}
+</div>

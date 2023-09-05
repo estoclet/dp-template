@@ -1,0 +1,7 @@
+name: 'ICDC Social Simple'
+type: module
+description: 'Module about ICDC social simple shared'
+core_version_requirement: ^8 || ^9
+package: 'ICDC'
+dependencies:
+  - social_simple

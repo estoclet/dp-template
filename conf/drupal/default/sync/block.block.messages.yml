@@ -1,0 +1,28 @@
+uuid: a3fb9018-a49d-4a72-ab0a-61b5d1dd3299
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - cdc_theme
+id: messages
+theme: cdc_theme
+region: highlighted
+weight: -17
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Messages de statut'
+  label_display: '0'
+  provider: system
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator

@@ -1,0 +1,16 @@
+uuid: f9614d48-f6eb-4659-bbb8-ba376f26c703
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - taxonomy.vocabulary.expertise_area
+id: taxonomy_nav
+label: 'Taxonomy nav'
+vocabulary: expertise_area
+menu: main
+expanded: false
+depth: 0
+menu_parent: 'main:views_view:views.blog.page_accueil_blog'
+description_field_name: description
+use_term_weight_order: true

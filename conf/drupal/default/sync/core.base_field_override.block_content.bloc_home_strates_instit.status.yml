@@ -1,0 +1,22 @@
+uuid: b613f254-9320-4594-85e7-b738378d156a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_home_strates_instit
+id: block_content.bloc_home_strates_instit.status
+field_name: status
+entity_type: block_content
+bundle: bloc_home_strates_instit
+label: Publié
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

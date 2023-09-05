@@ -1,0 +1,27 @@
+id;title;description;node;target;weight;enabled;expanded;parent
+1;Le Groupe;Le Groupe Caisse des Dépôts;0;_self;0;1;1;0
+2;Unique;;0;_self;0;1;1;1
+3;Identité;;0;_self;0;1;1;2
+4;Carte d'identité;;18;_self;0;1;0;3
+5;Gouvernance;;0;_self;1;1;1;2
+6;Utile;;0;_self;1;1;1;1
+7;Avec vous au quotidien;;19;_self;0;1;0;6
+8;Engagé;;0;_self;2;1;1;1
+9;Notre ambition;;0;_self;0;1;1;8
+10;Manifeste;;20;_self;0;1;0;9
+11;Nos engagements;;0;_self;1;1;1;8
+12;Attractivité des territoires;;21;_self;0;1;0;11
+13;Cohésion sociale;;22;_self;1;1;0;11
+14;Développement économique;;23;_self;2;1;0;11
+15;Climat et environnement;;24;_self;3;1;0;11
+16;XXX;;25;_self;4;1;0;11
+17;XXX;;26;_self;4;1;0;11
+18;Modèle;;27;_self;0;1;0;5
+19;Commission de surveillance;;28;_self;1;1;0;5
+20;Comex;;29;_self;2;1;0;5
+21;Organigramme;;30;_self;3;1;0;5
+22;Arrêtés d'organisation;;31;_self;4;1;0;5
+23;Arrêtés de délégation de pouvoirs;;32;_self;5;1;0;5
+24;Arrêtés de délégation de signature;;33;_self;6;1;0;5
+25;Autres arrêtés;;34;_self;7;1;0;5
+26;A suivre;;35;_self;1;1;1;0

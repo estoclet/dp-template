@@ -1,0 +1,39 @@
+uuid: 4a963224-8c85-4903-b56e-0fa7d1997c86
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+label: Contribution
+id: contribution
+description: 'Paramètres Linkit  appliquées à la contribution.'
+matchers:
+  0d72b68b-6645-4c36-9dc3-39c202cdeb43:
+    id: 'entity:node'
+    uuid: 0d72b68b-6645-4c36-9dc3-39c202cdeb43
+    settings:
+      metadata: ''
+      bundles:
+        actualite: actualite
+        article: article
+        blog: blog
+        dossier: dossier
+        gouvernance: gouvernance
+        page: page
+        parcours_de_vie: parcours_de_vie
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 100
+      include_unpublished: false
+    weight: 0
+  26119a4f-1241-4adc-b4bb-cfe2ff99f1cd:
+    id: 'entity:media'
+    uuid: 26119a4f-1241-4adc-b4bb-cfe2ff99f1cd
+    settings:
+      metadata: ''
+      bundles:
+        document: document
+      group_by_bundle: false
+      substitution_type: canonical
+      limit: 100
+    weight: 0

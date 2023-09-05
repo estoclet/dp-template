@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: link
+label: 'Link'
+mini_site: null
+weight: null

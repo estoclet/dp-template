@@ -1,0 +1,11 @@
+uuid: fe162c93-1e2c-4e94-9aec-77a01cbd4952
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.list_posts_minisite
+id: node.list_posts_minisite
+target_entity_type_id: node
+target_bundle: list_posts_minisite
+default_langcode: site_default
+language_alterable: false

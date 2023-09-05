@@ -1,0 +1,13 @@
+{
+    "name": "apercu_view_mode",
+    "type": "drupal-module",
+    "description": "Permet de pouvoir visualiser un mode de rendu d'un type de contenu.",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/apercu_view_mode",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/apercu_view_mode",
+        "source": "http://cgit.drupalcode.org/apercu_view_mode"
+    }
+}

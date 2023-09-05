@@ -1,0 +1,58 @@
+uuid: 0867f58f-dbfd-4d6c-addd-883099fcb71e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_swipe_horizontal
+    - field.field.block_content.bloc_swipe_horizontal.field_animation
+    - field.field.block_content.bloc_swipe_horizontal.field_responsive
+    - field.field.block_content.bloc_swipe_horizontal.field_wysiwyg_custom
+  module:
+    - paragraphs
+    - workbench_moderation
+id: block_content.bloc_swipe_horizontal.default
+targetEntityType: block_content
+bundle: bloc_swipe_horizontal
+mode: default
+content:
+  field_animation:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_responsive:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_wysiwyg_custom:
+    type: entity_reference_paragraphs
+    weight: 3
+    region: content
+    settings:
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: wysiwyg_personnalise
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

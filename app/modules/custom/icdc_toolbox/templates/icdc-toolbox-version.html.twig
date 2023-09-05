@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a section of the help page.
+ *
+ * Available variables:
+ * - title: The section title.
+ * - description: The description text for the section.
+ * - links: Links to display in the section.
+ * - empty: Text to display if there are no links.
+ *
+ * @ingroup themeable
+ */
+#}
+<h2>Version actuelle :</h2>
+<p>
+  {% if version %}
+    {{ version }}{% if version_date %}, buildée le {{ version_date }}{% endif %}
+  {% else %}
+    Non renseignée
+  {% endif %}
+</p>
+

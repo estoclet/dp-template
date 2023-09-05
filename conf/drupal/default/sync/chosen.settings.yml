@@ -1,0 +1,22 @@
+_core:
+  default_config_hash: exRaKE0s6uZbfQrl_2WFEcTlc_1t81xEqCLuCCteUSk
+langcode: fr
+minimum_single: 0
+minimum_multiple: 0
+disable_search_threshold: 0
+minimum_width: 250
+max_shown_results: null
+use_relative_width: false
+jquery_selector: 'select#edit-field-entite-references, select#edit-field-thematic-references, select#edit-field-expertise-references'
+search_contains: true
+disable_search: false
+allow_single_deselect: true
+disabled_themes:
+  bartik: bartik
+  seven: '0'
+  bootstrap: '0'
+  cdc_theme: '0'
+chosen_include: 2
+placeholder_text_multiple: 'Choisissez une ou plusieurs options'
+placeholder_text_single: 'Choisissez une option'
+no_results_text: 'Aucun résultat trouvé'

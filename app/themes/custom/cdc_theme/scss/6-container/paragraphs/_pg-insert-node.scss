@@ -1,0 +1,49 @@
+.paragraph--type--pg-insert-node {
+  &.paragraph--view-mode--default {
+    .row {
+      & > .item {
+        & + .item {
+          @extend %responsive-large--margin-top;
+        }
+      }
+    }
+  }
+
+  .field--name-field-pg-chapo {
+    margin-bottom: 40px;
+  }
+
+  .wrapper-large {
+    & > .row {
+      .item + .item {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+/* Contenus transverses Rubrique */
+.block {
+  .paragraph--type--pg-insert-node {
+    &.paragraph--view-mode--default {
+      .wrapper {
+        & > .row {
+          & > div {
+            &[class^='col'] {
+              &:nth-of-type(2n) {
+                .node {
+                  .row {
+                    @media (min-width: $screen-md-min) {
+                      display: flex;
+                      flex-direction: row-reverse;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

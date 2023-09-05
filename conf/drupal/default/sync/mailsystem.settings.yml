@@ -1,0 +1,16 @@
+_core:
+  default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
+langcode: fr
+theme: current
+defaults:
+  sender: swiftmailer
+  formatter: swiftmailer
+modules:
+  swiftmailer:
+    none:
+      sender: swiftmailer
+      formatter: swiftmailer
+  webform:
+    none:
+      sender: swiftmailer
+      formatter: swiftmailer

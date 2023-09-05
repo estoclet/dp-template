@@ -1,0 +1,7 @@
+name: 'ICDC Didomi Embed'
+type: module
+description: 'Integration Embed code with Didomi Consent Management Platform.'
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+dependencies:
+  - icdc_didomi

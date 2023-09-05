@@ -1,0 +1,22 @@
+uuid: b0478fc6-d951-408a-bab8-d4953b8c59c0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+_core:
+  default_config_hash: 0PtcBmQICeVjY9vgHuevuENowmWY-pBuYRPdEtnvkGk
+id: paragraph.field_pg_image_references
+field_name: field_pg_image_references
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

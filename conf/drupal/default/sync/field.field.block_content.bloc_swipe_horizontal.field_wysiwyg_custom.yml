@@ -1,0 +1,70 @@
+uuid: 0a689486-62c4-4c9f-b452-0b9aa3c058a2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_swipe_horizontal
+    - field.storage.block_content.field_wysiwyg_custom
+    - paragraphs.paragraphs_type.wysiwyg_personnalise
+  module:
+    - entity_reference_revisions
+id: block_content.bloc_swipe_horizontal.field_wysiwyg_custom
+field_name: field_wysiwyg_custom
+entity_type: block_content
+bundle: bloc_swipe_horizontal
+label: Contenu
+description: 'Ajoutez des slides. Pour chaque slide, saisissez le texte et renseignez la couleur d''arrière-plan si nécessaire.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      wysiwyg_personnalise: wysiwyg_personnalise
+    negate: 0
+    target_bundles_drag_drop:
+      pg_advanced_text:
+        weight: 13
+        enabled: false
+      pg_chiffre:
+        weight: 14
+        enabled: false
+      pg_highligted:
+        weight: 15
+        enabled: false
+      pg_home_strate_instit:
+        weight: 18
+        enabled: false
+      pg_insert_audio:
+        weight: 16
+        enabled: false
+      pg_insert_document:
+        weight: 17
+        enabled: false
+      pg_insert_image:
+        weight: 18
+        enabled: false
+      pg_insert_node:
+        weight: 19
+        enabled: false
+      pg_insert_rs:
+        weight: 20
+        enabled: false
+      pg_insert_video:
+        weight: 21
+        enabled: false
+      pg_text:
+        weight: 22
+        enabled: false
+      pg_verbatim:
+        weight: 23
+        enabled: false
+      story:
+        weight: 27
+        enabled: false
+      wysiwyg_personnalise:
+        weight: 24
+        enabled: true
+field_type: entity_reference_revisions

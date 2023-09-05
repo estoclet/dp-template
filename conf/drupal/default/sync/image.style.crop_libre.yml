@@ -1,0 +1,25 @@
+uuid: 9dca1b5d-a32b-4cf1-9fa6-bc24ca6ee919
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.ratio_libre
+  module:
+    - crop
+name: crop_libre
+label: 'Crop libre XL (max-width: 1560px)'
+effects:
+  0c2b9c2c-0d15-4f29-905d-9f441fd2834c:
+    uuid: 0c2b9c2c-0d15-4f29-905d-9f441fd2834c
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: ratio_libre
+  082cd075-343f-4bad-a55d-91bbcdcf55ea:
+    uuid: 082cd075-343f-4bad-a55d-91bbcdcf55ea
+    id: image_scale
+    weight: 2
+    data:
+      width: 1560
+      height: null
+      upscale: false

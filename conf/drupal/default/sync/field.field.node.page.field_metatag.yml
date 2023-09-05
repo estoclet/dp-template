@@ -1,0 +1,21 @@
+uuid: 4bbc88a1-5af3-4a3d-962b-4edc7fbbbe12
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.page
+  module:
+    - metatag
+id: node.page.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: page
+label: Métadonnées
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

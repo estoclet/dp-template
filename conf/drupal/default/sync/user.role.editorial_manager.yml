@@ -1,0 +1,275 @@
+uuid: 3a1b589c-0db2-4f6d-9ed3-1830538230b1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.node.accueil.full
+    - core.entity_view_display.node.dossier.full
+    - core.entity_view_display.node.page.full
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.restricted_html
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.image_svg
+    - media.type.instagram
+    - media.type.twitter
+    - media.type.video
+    - node.type.accueil
+    - node.type.actualite
+    - node.type.article
+    - node.type.blog
+    - node.type.dossier
+    - node.type.gouvernance
+    - node.type.page
+    - node.type.parcours_de_vie
+    - taxonomy.vocabulary.blog_tag
+    - taxonomy.vocabulary.course_of_life
+    - taxonomy.vocabulary.decision_tree
+    - taxonomy.vocabulary.decision_tree_sponsorship
+    - taxonomy.vocabulary.doctype
+    - taxonomy.vocabulary.entite
+    - taxonomy.vocabulary.expertise_area
+    - taxonomy.vocabulary.investor
+    - taxonomy.vocabulary.perimeter
+    - taxonomy.vocabulary.thematique
+  module:
+    - block
+    - block_content
+    - content_translation
+    - contextual
+    - entity_clone
+    - field_ui
+    - file_delete
+    - filter
+    - icdc_toolbox
+    - layout_builder
+    - locale
+    - media
+    - menu_link_attributes
+    - menu_link_content
+    - mini_sites
+    - modal_page
+    - node
+    - path
+    - redirect
+    - role_delegation
+    - scheduler
+    - system
+    - taxonomy
+id: editorial_manager
+label: 'Responsable éditorial'
+weight: 5
+is_admin: null
+permissions:
+  - 'access contextual links'
+  - 'access taxonomy overview'
+  - 'access user profiles'
+  - 'add mini site entities'
+  - 'add mini site page entities'
+  - 'administer blocks'
+  - 'administer media'
+  - 'administer menu'
+  - 'administer mini site entities'
+  - 'administer mini site page entities'
+  - 'administer mini_site display'
+  - 'administer mini_site fields'
+  - 'administer mini_site form display'
+  - 'administer mini_site_page display'
+  - 'administer mini_site_page fields'
+  - 'administer mini_site_page form display'
+  - 'administer modal page'
+  - 'administer nodes'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'assign blog_editor role'
+  - 'assign editor role'
+  - 'assign editorial_manager role'
+  - 'assign restricted_editor role'
+  - 'basic create entities'
+  - 'basic delete any entities'
+  - 'basic delete own entities'
+  - 'basic edit any entities'
+  - 'basic edit own entities'
+  - 'clone media entity'
+  - 'clone node entity'
+  - 'configure all accueil node layout overrides'
+  - 'configure all dossier node layout overrides'
+  - 'configure all page node layout overrides'
+  - 'configure any layout'
+  - 'configure editable accueil node layout overrides'
+  - 'configure editable dossier node layout overrides'
+  - 'configure editable page node layout overrides'
+  - 'content create entities'
+  - 'content delete any entities'
+  - 'content delete own entities'
+  - 'content edit any entities'
+  - 'content edit own entities'
+  - 'create accueil content'
+  - 'create actualite content'
+  - 'create and edit custom blocks'
+  - 'create article content'
+  - 'create blog content'
+  - 'create content translations'
+  - 'create dossier content'
+  - 'create gouvernance content'
+  - 'create image_svg media'
+  - 'create page content'
+  - 'create parcours_de_vie content'
+  - 'create terms in blog_tag'
+  - 'create terms in course_of_life'
+  - 'create terms in decision_tree'
+  - 'create terms in decision_tree_sponsorship'
+  - 'create terms in doctype'
+  - 'create terms in entite'
+  - 'create terms in expertise_area'
+  - 'create terms in investor'
+  - 'create terms in perimeter'
+  - 'create terms in thematique'
+  - 'create url aliases'
+  - 'delete accueil revisions'
+  - 'delete actualite revisions'
+  - 'delete all revisions'
+  - 'delete any accueil content'
+  - 'delete any actualite content'
+  - 'delete any article content'
+  - 'delete any audio media'
+  - 'delete any blog content'
+  - 'delete any document media'
+  - 'delete any dossier content'
+  - 'delete any gouvernance content'
+  - 'delete any image media'
+  - 'delete any image_svg media'
+  - 'delete any instagram media'
+  - 'delete any media'
+  - 'delete any page content'
+  - 'delete any parcours_de_vie content'
+  - 'delete any twitter media'
+  - 'delete any video media'
+  - 'delete article revisions'
+  - 'delete blog revisions'
+  - 'delete content translations'
+  - 'delete dossier revisions'
+  - 'delete files'
+  - 'delete gouvernance revisions'
+  - 'delete mini site entities'
+  - 'delete mini site page entities'
+  - 'delete own actualite content'
+  - 'delete own article content'
+  - 'delete own blog content'
+  - 'delete own gouvernance content'
+  - 'delete own page content'
+  - 'delete page revisions'
+  - 'delete parcours_de_vie revisions'
+  - 'delete terms in blog_tag'
+  - 'delete terms in course_of_life'
+  - 'delete terms in decision_tree'
+  - 'delete terms in decision_tree_sponsorship'
+  - 'delete terms in doctype'
+  - 'delete terms in entite'
+  - 'delete terms in expertise_area'
+  - 'delete terms in investor'
+  - 'delete terms in perimeter'
+  - 'delete terms in thematique'
+  - 'edit any accueil content'
+  - 'edit any actualite content'
+  - 'edit any article content'
+  - 'edit any audio media'
+  - 'edit any blog content'
+  - 'edit any document media'
+  - 'edit any dossier content'
+  - 'edit any gouvernance content'
+  - 'edit any image media'
+  - 'edit any image_svg media'
+  - 'edit any instagram media'
+  - 'edit any page content'
+  - 'edit any parcours_de_vie content'
+  - 'edit any twitter media'
+  - 'edit any video media'
+  - 'edit mini site entities'
+  - 'edit mini site page entities'
+  - 'edit own accueil content'
+  - 'edit own actualite content'
+  - 'edit own article content'
+  - 'edit own blog content'
+  - 'edit own dossier content'
+  - 'edit own gouvernance content'
+  - 'edit own page content'
+  - 'edit own parcours_de_vie content'
+  - 'edit terms in blog_tag'
+  - 'edit terms in course_of_life'
+  - 'edit terms in decision_tree'
+  - 'edit terms in decision_tree_sponsorship'
+  - 'edit terms in doctype'
+  - 'edit terms in entite'
+  - 'edit terms in expertise_area'
+  - 'edit terms in investor'
+  - 'edit terms in perimeter'
+  - 'edit terms in thematique'
+  - 'icdc toolbox clear cache'
+  - 'link create entities'
+  - 'link delete any entities'
+  - 'link delete own entities'
+  - 'link edit any entities'
+  - 'link edit own entities'
+  - 'mini_site create entities'
+  - 'mini_site delete any entities'
+  - 'mini_site delete own entities'
+  - 'mini_site edit any entities'
+  - 'mini_site edit own entities'
+  - 'news_list create entities'
+  - 'news_list delete any entities'
+  - 'news_list delete own entities'
+  - 'news_list edit any entities'
+  - 'news_list edit own entities'
+  - 'revert accueil revisions'
+  - 'revert actualite revisions'
+  - 'revert all revisions'
+  - 'revert article revisions'
+  - 'revert blog revisions'
+  - 'revert dossier revisions'
+  - 'revert gouvernance revisions'
+  - 'revert page revisions'
+  - 'revert parcours_de_vie revisions'
+  - 'schedule publishing of nodes'
+  - 'translate accueil node'
+  - 'translate actualite node'
+  - 'translate any entity'
+  - 'translate article node'
+  - 'translate block_content'
+  - 'translate blog node'
+  - 'translate blog_tag taxonomy_term'
+  - 'translate course_of_life taxonomy_term'
+  - 'translate decision_tree taxonomy_term'
+  - 'translate decision_tree_sponsorship taxonomy_term'
+  - 'translate dossier node'
+  - 'translate expertise_area taxonomy_term'
+  - 'translate interface'
+  - 'translate investor taxonomy_term'
+  - 'translate menu_link_content'
+  - 'translate page node'
+  - 'translate parcours_de_vie node'
+  - 'translate thematique taxonomy_term'
+  - 'update any media'
+  - 'update content translations'
+  - 'use menu link attributes'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'view accueil revisions'
+  - 'view actualite revisions'
+  - 'view all revisions'
+  - 'view article revisions'
+  - 'view blog revisions'
+  - 'view dossier revisions'
+  - 'view gouvernance revisions'
+  - 'view page revisions'
+  - 'view parcours_de_vie revisions'
+  - 'view published mini site entities'
+  - 'view published mini site page entities'
+  - 'view scheduled content'
+  - 'view unpublished mini site entities'
+  - 'view unpublished mini site page entities'

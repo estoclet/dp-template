@@ -1,0 +1,20 @@
+uuid: b18fb0dd-130c-4c58-9f8d-633ebf97e09d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+    - user
+id: user.field_media_reference
+field_name: field_media_reference
+entity_type: user
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

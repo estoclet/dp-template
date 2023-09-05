@@ -1,0 +1,8 @@
+type: module
+name: iCDC Style Options
+description: Provide an API to reuse style options throughout the Drupal ecosystem.
+core_version_requirement: ^9 || ^10
+version: '1.0.0'
+project: 'ICDC'
+dependencies:
+  - style_options

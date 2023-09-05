@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a two-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if '50-50' in attributes|render|render %}
+  {% set col1class = "col-md-6" %}
+  {% set col2class = "col-md-6" %}
+{% elseif '33-67' in attributes|render|render %}
+  {% set col1class = "col-md-4" %}
+  {% set col2class = "col-md-8" %}
+{% elseif '67-33' in attributes|render|render %}
+  {% set col1class = "col-md-8" %}
+  {% set col2class = "col-md-4" %}
+{% elseif  '25-75' in attributes|render|render %}
+  {% set col1class = "col-md-3" %}
+  {% set col2class = "col-md-9" %}
+{% elseif  '75-25' in attributes|render|render %}
+  {% set col1class = "col-md-9" %}
+  {% set col2class = "col-md-3" %}
+{% endif %}
+
+{%
+set classes = [
+'layout',
+'row',
+'wrapper-large',
+'container-not-fluid'
+]
+%}
+
+{% if content %}
+<div{{ attributes.addClass(classes) }}>
+  {% if content.first %}
+    <div {{ region_attributes.first.addClass('layout__region', 'layout__region--first', col1class ) }}>
+    {{ content.first }}
+    </div>
+  {% endif %}
+  {% if content.second %}
+    <div {{ region_attributes.second.addClass('layout__region', 'layout__region--second', col2class ) }}>
+      {{ content.second }}
+    </div>
+  {% endif %}
+  </div>
+{% endif %}

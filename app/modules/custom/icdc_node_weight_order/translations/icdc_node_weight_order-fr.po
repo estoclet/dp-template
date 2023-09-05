@@ -1,0 +1,46 @@
+# French translation of Facets (8.x-1.4)
+# Copyright (c) 2019 by the French translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ICDC Node Weight Order (8.x-1.0)\n"
+"POT-Creation-Date: 2019-12-17 12:00+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+msgid "Add weight to node and interface to order them easily"
+msgstr "Ordonner les contenus par poid facilement"
+
+msgid "Are you sure you want to delete keyword \"%keywords\" ?"
+msgstr "Êtes-vous sûr de vouloir supprimer le mot-clé \"%keywords\" ?"
+
+msgid "Add keywords"
+msgstr "Ajouter un mot-clé"
+
+msgid "Sorry, There are no keywords!"
+msgstr "Désolé, il n'y a pas de mot-clé !"
+
+msgid "Sorry, There are no items!"
+msgstr "Désolé, il n'y a aucun élément."
+
+msgid "Weight for @title"
+msgstr "Poid du contenu @title"
+
+msgid "@label keyword already exist"
+msgstr "Le mot-clé @label existe déjà"
+
+msgid "ICDC Node Weight Order field"
+msgstr "Champ ICDC Node Weight Order"
+
+msgid "A ICDC Node Weight Order field"
+msgstr "Un champ ICDC Node Weight Order"
+
+msgid "Input exposed filter"
+msgstr "Filtre exposé"
+
+msgid "Input filter for nested sort param."
+msgstr "Filtre exposé pour le paramètre de tri."

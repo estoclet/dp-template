@@ -1,0 +1,12 @@
+uuid: 441d6b73-cff6-4f47-bc0b-c817127132ab
+langcode: fr
+status: true
+dependencies: {  }
+label: 'WYSIWYG Ratio 4:3'
+id: ratio_4_3
+description: ''
+aspect_ratio: '4:3'
+soft_limit_width: 320
+soft_limit_height: 240
+hard_limit_width: null
+hard_limit_height: null

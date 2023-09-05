@@ -1,0 +1,19 @@
+uuid: 7e3d2a06-e1c1-4446-9f6b-1e7ddc9298cd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_function
+    - node.type.gouvernance
+id: node.gouvernance.field_function
+field_name: field_function
+entity_type: node
+bundle: gouvernance
+label: Fonction
+description: 'Saisissez la fonction de cette personne.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

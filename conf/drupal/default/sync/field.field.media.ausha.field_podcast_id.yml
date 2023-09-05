@@ -1,0 +1,19 @@
+uuid: 12732c29-dee2-4ff0-9729-7a8a6594b4e2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_podcast_id
+    - media.type.ausha
+id: media.ausha.field_podcast_id
+field_name: field_podcast_id
+entity_type: media
+bundle: ausha
+label: 'Podcast ID'
+description: 'Le Podcast ID est obligatoire pour permettre à Drupal d''extraire les données de l''API Ausha. Il se trouve dans le code collé dans le champs "Embed HMTL", sous le nom de "podcastId". Par exemple, pour "podcastId=owXG3C4dY4gj", veuillez coller ici : "owXG3C4dY4gj".'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 47106de1-6eef-4123-ae71-1dd67c620721
+langcode: fr
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - cdc_theme
+id: selecteurdelanguecontenu
+theme: cdc_theme
+region: navigation
+weight: -17
+provider: null
+plugin: 'language_block:language_content'
+settings:
+  id: 'language_block:language_content'
+  label: 'Sélecteur de langue (Contenu)'
+  label_display: '0'
+  provider: language
+visibility: {  }

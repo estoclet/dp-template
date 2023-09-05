@@ -1,0 +1,297 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_blog.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\user\Entity\User;
+use Drupal\views\ViewExecutable;
+use Drupal\icdc_blog\Form\IcdcTheyPublish;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Breadcrumb\Breadcrumb;
+
+
+/**
+ * Implements hook_help().
+ */
+function icdc_blog_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_investors module.
+    case 'help.page.icdc_blog':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Manage blog.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function icdc_blog_views_data_alter(&$data) {
+
+  if (isset($data['user__field_user_lastname'])) {
+    $field_slug = $data['user__field_user_lastname']['field_user_lastname'];
+    // Create a new views argument for reading slug arguments and interpreting
+    // them as user.
+    $data['user__field_user_lastname']['field_user_lastname_entity_id'] = [
+      'group' => $field_slug['group'],
+      'title' => t('Custom: Has user with slug'),
+      'title short' => t('Slug'),
+      'help' => $field_slug['help'],
+      'argument' => [
+        'table' => 'user__field_user_lastname',
+        'field' => 'entity_id',
+        'id' => 'custom_user_slug',
+        'zero is null' => TRUE,
+      ],
+    ];
+  }
+}
+
+/**
+ * Implements hook_views_pre_render
+ * @param ViewExecutable $view
+ */
+function icdc_blog_views_pre_render(ViewExecutable $view) {
+
+  switch ($view->id()) {
+    case 'blog':
+
+      if($view->current_display == 'page_blog_author') {
+        foreach ($view->argument as $arg) {
+          if ($arg->getPluginId() != 'custom_user_slug') {
+            continue;
+          }
+          /** @var \Drupal\user\Entity\UserInterface $author */
+          $author = User::load($arg->getValue());
+          break;
+        }
+        if (isset($author)) {
+          $view->setTitle(t('Tout les articles de '.$author->field_user_firstname->value.' '.$author->field_user_lastname->value));
+        }
+        $results = $view->result;
+        foreach ($results as $key => $result) {
+          if (!$result->_entity->get('field_auteur_secondaire')->isEmpty()) {
+            if(count($result->_entity->get('field_auteur_secondaire')->getValue()) > 1) {
+              unset($results[$key]);
+            }
+          }
+        }
+        $view->result = $results;
+      }
+
+      $current_display = $view->current_display;
+      switch ($current_display) {
+        case 'page_blog_by_article_type':
+          if(isset($view->argument['field_blog_type_list_value'])) {
+            $title = $view->argument['field_blog_type_list_value']->getValue();
+            $view->setTitle($title);
+          }
+          break;
+        case 'page_blog_by_label_cdc':
+          if(isset($view->argument['field_cdc_label_select_value'])) {
+            $title = $view->argument['field_cdc_label_select_value']->getValue();
+            $view->setTitle($title);
+          }
+          break;
+        case 'attachment_first_page_1' :
+          $results = $view->result;
+          foreach ($results as $key => $result) {
+            if (!$result->_entity->get('field_auteur_secondaire')->isEmpty()) {
+              if(count($result->_entity->get('field_auteur_secondaire')->getValue()) < 2) {
+                unset($results[$key]);
+              }
+            }
+          }
+          $view->result = $results;
+          break;
+      }
+      break;
+
+    case 'blog_auteur_secondaire':
+      if ($view->current_display == 'block') {
+        foreach ($view->argument as $arg) {
+          if ($arg->getPluginId() != 'custom_user_slug') {
+            continue;
+          }
+          /** @var \Drupal\user\Entity\UserInterface $author */
+          $author = User::load($arg->getValue());
+
+          break;
+        }
+      }
+      break;
+
+    case 'they_publish':
+      if($view->current_display == 'block_master') {
+        // Re-order results in the argument's order.
+        $view_arguments = explode('+', $view->args[0]);
+        $new_result_order =[];
+
+        foreach ($view_arguments as $uid) {
+          foreach ($view->result as $result) {
+            if ($result->uid == $uid) {
+              $new_result_order[] = $result;
+            }
+          }
+        }
+        $view->result = $new_result_order;
+      }
+      break;
+  }
+}
+
+/**
+ * Convert slug to uid.
+ *
+ * @param $slug
+ *    Slug with format firstname-lastname.
+ *
+ * @return int|false
+ *   A user ID, Or FALSE if the result don't match.
+ */
+function _icdc_blog_get_uid_from_slug($slug) {
+
+  if (strpos($slug, '_') === FALSE) {
+    return FALSE;
+  }
+  list($firstName, $lastName) = explode('_', $slug);
+  // Build query to get user.
+  $query = \Drupal::entityQuery('user')
+    ->condition('status', 1);
+  if ($firstName) {
+    $query->condition('field_user_firstname', $firstName);
+  }
+  if ($lastName) {
+    $query->condition('field_user_lastname', $lastName);
+  }
+  $uids = $query->execute();
+  return $uids ? reset($uids) : FALSE;
+}
+
+/**
+ * Implements hook_preprocess_views_view_unformatted
+ * @param $variables
+ */
+function icdc_blog_preprocess_views_view_unformatted(&$variables) {
+  $term = FALSE;
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+  $view_id = $view->storage->id();
+  if ($view_id == 'blog') {
+    // Default display : Highlight + Teaser
+    $variables['blog_highlight'] = TRUE;
+    $displays = ['page_taxonomy_blog', 'page_blog_by_tag', 'attachment_first_page_blog_highlighted'];
+    if (in_array($view->current_display, $displays)) {
+      $variables['blog_highlight'] = FALSE;
+      foreach ($view->argument as $arg) {
+        if ($arg->getPluginId() != 'taxonomy_index_tid') {
+          continue;
+        }
+        if ($tid = $arg->getValue()) {
+          /** @var \Drupal\taxonomy\Entity\Term $term */
+          $term = Term::load($tid);
+          break;
+        }
+      }
+
+      if ($term !== FALSE) {
+        $term = \Drupal::service('entity.repository')->getTranslationFromContext($term);
+        $variables['term_description'] = $term->description->value;
+        $variables['term_name'] = $term->name->value;
+      }
+    }
+  }
+}
+
+/**
+ * Utility: find term by name and vid.
+ * @param null $name
+ *  Term name
+ * @param null $vid
+ *  Term vid
+ * @return int
+ *  Term id or 0 if none.
+ */
+function icdc_blog_getTidByName($name = NULL, $vid = NULL) {
+  $query = \Drupal::entityQuery('taxonomy_term');
+  $db_connection = \Drupal\Core\Database\Database::getConnection();
+  if (!empty($name)) {
+    //deals with urls containing specials characters and replaced by -
+    $query->condition('name', str_replace('-', '_', $db_connection->escapeLike($name)), 'LIKE');
+  }
+  if (!empty($vid)) {
+    $query->condition('vid', $vid);
+  }
+
+  $terms = $query->execute();
+  $term = reset($terms);
+
+  return !empty($term) ? (int) $term : 0;
+}
+
+/**
+ * Implements hook_views_pre_view().
+ *
+ * Used to set custom config for authors in view contextual filters.
+ */
+function icdc_blog_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  if ($view->id() == "they_publish" && $display_id == "block_master") {
+    $authors = [];
+    $authors_config = \Drupal::configFactory()->get(IcdcTheyPublish::CONFIG_NAME);
+    for ($number = 1; $number <= IcdcTheyPublish::AUTHORS_NUMBER; $number++) {
+      $authors[] = $authors_config->get('author_' . $number);
+    }
+    $authors = array_filter($authors);
+    if (!empty($authors)) {
+      $arguments = implode("+", $authors);
+      $view->args[0] = $arguments;
+    }
+  }
+}
+
+
+/**
+ * Implements hook_system_breadcrumb_alter().
+ */
+function icdc_blog_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatchInterface $route_match, array $context) {
+  // Remove duplicated "blog" links in breadcrumb
+  if (!empty($breadcrumb)) {
+    // Get Route
+    $current_path = \Drupal::service('path.current')->getPath();
+    $url_object = \Drupal::service('path.validator')->getUrlIfValid($current_path);
+    if ($url_object !== FALSE) {
+      $route_name = $url_object->getRouteName();
+      if (strpos($route_name, 'view.blog.page_blog') !== FALSE) {
+        // Get Links
+        $links = $breadcrumb->getLinks();
+        $first_count = count($links);
+        $in_array_blog = [];
+        foreach($links as $key => $link) {
+          $text = $link->getText()->__toString();
+          // If duplicated, remove last blog link
+          if($text == 'Blog' && in_array($text, $in_array_blog)) {
+            unset($links[$key]);
+          }
+          $in_array_blog[] = $link->getText();
+        }
+        // If remove action, apply change to breadcrumb
+        $second_count = count($links);
+        if($second_count < $first_count) {
+          $breadcrumb = new Breadcrumb();
+          $breadcrumb->setLinks($links);
+        }
+      }
+    }
+  }
+}
+
+
+
+

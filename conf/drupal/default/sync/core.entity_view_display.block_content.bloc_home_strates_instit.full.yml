@@ -1,0 +1,57 @@
+uuid: dbba77bf-5246-421e-b589-47dbf35dc46e
+langcode: fr
+status: false
+dependencies:
+  config:
+    - block_content.type.bloc_home_strates_instit
+    - core.entity_view_mode.block_content.full
+    - field.field.block_content.bloc_home_strates_instit.field_paragraph_ref_strate_1
+    - field.field.block_content.bloc_home_strates_instit.field_paragraph_ref_strate_2
+    - field.field.block_content.bloc_home_strates_instit.field_paragraph_ref_strate_3
+    - field.field.block_content.bloc_home_strates_instit.field_responsive
+  module:
+    - entity_reference_revisions
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: block_content.bloc_home_strates_instit.full
+targetEntityType: block_content
+bundle: bloc_home_strates_instit
+mode: full
+content:
+  field_paragraph_ref_strate_1:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_paragraph_ref_strate_2:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_paragraph_ref_strate_3:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_responsive: true
+  langcode: true
+  search_api_excerpt: true

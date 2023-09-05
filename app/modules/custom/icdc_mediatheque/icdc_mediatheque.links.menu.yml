@@ -1,0 +1,6 @@
+system.ausha_api:
+  title: 'Ausha API'
+  description: 'Administer Ausha API connector'
+  route_name: icdc_mediatheque.ausha_api
+  parent: system.admin_config_search
+  weight: 99

@@ -1,0 +1,12 @@
+mini_sites.overview:
+  version: VERSION
+  js:
+    js/mini_sites.js: {}
+  css:
+    component:
+      css/mini_sites.theme.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.tabledrag

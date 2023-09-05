@@ -1,0 +1,19 @@
+uuid: 9491ca31-cd60-42ce-9e6b-7a083b0fbfa9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+    - text
+id: media.field_instagram_legende
+field_name: field_instagram_legende
+entity_type: media
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

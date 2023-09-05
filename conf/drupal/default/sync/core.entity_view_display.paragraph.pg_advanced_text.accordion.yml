@@ -1,0 +1,59 @@
+uuid: f6bc732a-5a00-429d-8e34-c60b4bb78073
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.accordion
+    - field.field.paragraph.pg_advanced_text.field_encart_textuel_sans_limite
+    - field.field.paragraph.pg_advanced_text.field_pg_content
+    - field.field.paragraph.pg_advanced_text.field_pg_title
+    - field.field.paragraph.pg_advanced_text.field_pg_view_mode
+    - field.field.paragraph.pg_advanced_text.field_responsive
+    - field.field.paragraph.pg_advanced_text.paragraph_view_mode
+    - paragraphs.paragraphs_type.pg_advanced_text
+  module:
+    - advanced_text_formatter
+id: paragraph.pg_advanced_text.accordion
+targetEntityType: paragraph
+bundle: pg_advanced_text
+mode: accordion
+content:
+  field_encart_textuel_sans_limite:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_pg_content:
+    type: advanced_text
+    label: hidden
+    settings:
+      trim_length: 600
+      ellipsis: 1
+      word_boundary: 1
+      token_replace: 0
+      filter: input
+      format: plain_text
+      allowed_html: '<a> <b> <br> <dd> <dl> <dt> <em> <i> <li> <ol> <p> <strong> <u> <ul>'
+      autop: 0
+      use_summary: 0
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_pg_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_pg_view_mode: true
+  field_responsive: true
+  paragraph_view_mode: true
+  search_api_excerpt: true

@@ -1,0 +1,19 @@
+uuid: 1986072d-81a1-4a5d-b8d5-5b35124fa292
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tree_keyword
+    - taxonomy.vocabulary.decision_tree
+id: taxonomy_term.decision_tree.field_tree_keyword
+field_name: field_tree_keyword
+entity_type: taxonomy_term
+bundle: decision_tree
+label: 'Mot de liaison'
+description: 'Renseignez le mot clé de liaison pour les termes enfants.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

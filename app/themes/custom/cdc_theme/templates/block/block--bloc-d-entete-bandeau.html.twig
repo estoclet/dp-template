@@ -1,0 +1,178 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - $block->subject: Block title.
+ * - $content: Block content.
+ * - $block->module: Module that generated the block.
+ * - $block->delta: An ID for the block, unique within each module.
+ * - $block->region: The block region embedding the current block.
+ * - $classes: String of classes that can be used to style contextually through
+ *   CSS. It can be manipulated through the variable $classes_array from
+ *   preprocess functions. The default values can be one or more of the
+ *   following:
+ *   - block: The current template type, i.e., "theming hook".
+ *   - block-[module]: The module generating the block. For example, the user
+ *     module is responsible for handling the default user navigation block. In
+ *     that case the class would be 'block-user'.
+ * - $title_prefix (array): An array containing additional output populated by
+ *   modules, intended to be displayed in front of the main title tag that
+ *   appears in the template.
+ * - $title_suffix (array): An array containing additional output populated by
+ *   modules, intended to be displayed after the main title tag that appears in
+ *   the template.
+ *
+ * Helper variables:
+ * - $classes_array: Array of html class attribute values. It is flattened
+ *   into a string within the variable $classes.
+ * - $block_zebra: Outputs 'odd' and 'even' dependent on each block region.
+ * - $zebra: Same output as $block_zebra but independent of any block region.
+ * - $block_id: Counter dependent on each block region.
+ * - $id: Same output as $block_id but independent of any block region.
+ * - $is_front: Flags true when presented in the front page.
+ * - $logged_in: Flags true when the current user is a logged-in member.
+ * - $is_admin: Flags true when the current user is an administrator.
+ * - $block_html_id: A valid HTML ID and guaranteed unique.
+ *
+ * @ingroup templates
+ *
+ * @see bootstrap_preprocess_block()
+ * @see template_preprocess()
+ * @see template_preprocess_block()
+ * @see bootstrap_process_block()
+ * @see template_process()
+ */
+#}
+{% set colorprimary = content.field_color_primary_bandeau|render|striptags|replace({"\n":'', "\r":''}) %}
+{% set colorsecondary = content.field_color_secondary|render|striptags|replace({"\n":'', "\r":''}) %}
+{% set headerType = content.field_type_dentete|render|striptags|trim %}
+{% set darkHeader = content.field_dark_header_checkbox|render|striptags|trim %}
+{% set classesHeader = "" %}
+{% set classesImmerssive = "" %}
+
+{%
+set classes = [
+'block',
+'block-' ~ configuration.provider|clean_class,
+'block-' ~ plugin_id|clean_class,
+'clearfix',
+'node--type-page',
+'node--view-mode-header-' ~ headerType|clean_class,
+'block-header-' ~ headerType|clean_class
+]
+%}
+{% if darkHeader != 'Désactivé' %}
+	{% set classesHeader = " couleur-inversee" %}
+{% endif %}
+{% if headerType == 'immersive' %}
+	{% set classesImmerssive = " entete-immersive" %}
+{% endif %}
+
+<section id="block-entityviewcontenu-bandeau" class="block block-ctools block-entity-viewnode clearfix{{ classesHeader }}{{ classesImmerssive }}">
+	{# ####################  Bloc immersive - DEBUT #################### #}
+	{% if headerType == 'immersive' %}
+		{% if 'field_no_margin_bandeau' in content|keys and 'block-header-immersive' in classes %}
+			{% if content.field_no_margin_bandeau['#items'].value == '1' %}
+				{% set classes = classes|merge(['no_margin_immersive']) %}
+
+			{% endif %}
+		{% endif %}
+		{% set bgimage  = file_url(content.field_media_bandeau[0]['#media'].field_media_image.entity.uri.value) %}
+
+		<header{{attributes.addClass(classes)}}
+			style="background-image:url('{{ bgimage }}');">
+			<!-- <header{{ attributes.addClass(classes) }}> -->
+			<div class="wrapper-large">
+				<h1 class="page-title">{{ content['#block_content'].label() }}</h1>
+				{{ content.field_chapo }}
+				{# Variables Crédits d'image #}
+				{# ici #}
+					{% if node.field_media_reference.entity.field_media_credential is not empty %}
+						<div class="field field--name-field-media-credential field--type-string field--label-inline text-right"> <div class="field--label">{{ 'Crédit'|t }}</div>
+							<div class="field--item">{{ node.field_media_bandeau.entity.field_media_credential.value }}</div>
+						</div>
+					{% endif %}
+			</div>
+		</header>
+	{% endif %}
+
+	{# ####################  Bloc immersive - FIN  #################### #}
+	{# ####################  Bloc bicolore - DEBUT #################### #}
+	{% if headerType == 'bicolore' %}
+		<header{{attributes.addClass(classes)}}>
+			<div class="svg-primary">
+				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 941 806" fill="none" role="img" aria-hidden="true">
+					<path clip-rule="evenodd" d="M599 0.000747371L941 342.001L941 1540L8.0938e-05 599.001L5.47548e-05 0.000773554L599 0.000747371Z" fill="{{ colorprimary }}"/>
+				</svg>
+			</div>
+			<div class="svg-secondary">
+				<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 941 806" fill="none" role="img" aria-hidden="true">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M941 447.942V1415.44L2.15072e-05 492.028L0 2.15522e-05L493.058 0L941 447.942Z" fill="url(#paint0_linear)"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M941 447.942V1415.44L2.15072e-05 492.028L0 2.15522e-05L493.058 0L941 447.942Z" fill="{{ colorsecondary }}"/>
+				</svg>
+			</div>
+			<div class="wrapper-large">
+				<h1 class="page-title">{{ content['#block_content'].label() }}</h1>
+				{{ content.field_chapo }}
+			</div>
+		</header>
+	{% endif %}
+	{# ####################  Bloc bicolore - FIN ################### #}
+	{# ####################  Bloc image - DEBUT  ################### #}
+	{% if headerType == 'image' %}
+		{% set bgimage  = file_url(content.field_media_bandeau[0]['#media'].field_media_image.entity.uri.value) %}
+		{% set imgwidth = content.field_media_bandeau[0]['#media'].field_media_image.width %}
+		{% set imgheight = content.field_media_bandeau[0]['#media'].field_media_image.height %}
+		{% if imgwidth < imgheight %}
+			{% set aspectratio = 'xMinYMid slice' %}
+		{% else %}
+			{% set aspectratio = 'xMidYMin slice' %}
+		{% endif %}
+		<header{{attributes.addClass(classes)}}>
+			<div class="svg-wrapper">
+				<div class="svg-image">
+					<svg viewbox="0 0 941 1541" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-hidden="true">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M599 0.989029L941 342.989L941 1540.99L1.99028e-05 599.99L-6.28036e-06 0.989055L599 0.989029Z" fill="url(#paint0_linear)"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M599 0.989029L941 342.989L941 1540.99L1.99028e-05 599.99L-6.28036e-06 0.989055L599 0.989029Z" fill="{{ colorprimary }}"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M941 448.931V1416.42L2.15072e-05 493.016L0 0.988303L493.058 0.988281L941 448.931Z" fill="url(#pattern0)"/>
+						<defs>
+							<pattern id="pattern0" patterncontentunits="objectBoundingBox" width="1" height="1">
+								<use xlink:href="#image0" transform="translate(-0.628137) scale(0.00136248 0.000905797)"/>
+							</pattern>
+							<linearGradient id="paint0_linear" x1="800.391" y1="230.366" x2="937.362" y2="1179.71" gradientunits="userSpaceOnUse">
+								<stop stop-color="{{ colorprimary }}"/>
+								<stop offset="1" stop-color="{{ colorprimary }}" stop-opacity="0.8"/>
+							</linearGradient>
+							<image id="image0" width="1656" height="1104" xlink:href="{{ bgimage }}" alt=""/>
+						</defs>
+					</svg>
+				</div>
+				{# Variables Crédits d'image #}
+				{# ici #}
+				{% if node.field_media_bandeau.entity.field_media_credential is not empty %}
+					<div class="field field--name-field-media-credential field--type-string field--label-inline text-right">
+						<div class="field--label">{{ 'Crédit'|t }}</div>
+						<div class="field--item">{{ node.field_media_bandeau.entity.field_media_credential.value }}</div>
+					</div>
+				{% endif %}
+			</div>
+			<div class="wrapper-large">
+				<h1 class="page-title">{{ content['#block_content'].label() }}</h1>
+				{{ content.field_chapo }}
+			</div>
+		</header>
+	{% endif %}
+	{# ####################  Bloc image - FIN    ################### #}
+	{# ####################  Bloc defaut - DEBUT ################### #}
+	{% if headerType == 'defaut' %}
+		<header{{ attributes.addClass(classes) }}>
+				<div class="wrapper-large">
+					<h1 class="page-title">{{ content['#block_content'].label() }}</h1>
+					{{ content.field_chapo }}
+				</div>
+		</header>
+	{% endif %}
+	{# ####################  Bloc defaut - FIN   ################### #}
+</section>

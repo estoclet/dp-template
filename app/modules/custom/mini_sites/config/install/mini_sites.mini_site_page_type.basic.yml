@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: basic
+label: 'Basic'
+mini_site: null
+weight: null

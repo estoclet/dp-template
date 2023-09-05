@@ -1,0 +1,31 @@
+display:
+  default:
+    display_options:
+      footer:
+        area:
+          content:
+            value: "<p>Edited something recently and it's not in this list? If a content type isn't revisioned and you didn't create it, it will not show up in this list when you edit it. You can find it in the 'Content I Can Edit' tab.</p>\r\n"
+            format: basic_html
+      empty:
+        area:
+          content:
+            format: basic_html
+            value: 'Vous n''avez créé ou modifié aucun contenu.'
+      fields:
+        changed:
+          label: 'Dernière mise à jour'
+      title: 'Mes modifications'
+  block_1:
+    display_options:
+      header:
+        area:
+          content:
+            format: basic_html
+            value: '<h3>Vos modifications les plus récentes</h3>'
+      use_more_text: 'Voir tout'
+      display_description: 'Les cinq dernières modifications apportées par cet utilisateur'
+    display_title: "\r\nBloc de vue d'ensemble"
+  embed_1:
+    display_options:
+      display_description: 'La vue intégrée à utiliser sur une page de destination'
+label: 'Workbench: Modifications par utilisateur'

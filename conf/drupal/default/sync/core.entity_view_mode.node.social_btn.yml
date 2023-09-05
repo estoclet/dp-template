@@ -1,0 +1,10 @@
+uuid: 8ed0773c-6bdd-4619-a1af-d66f621f4922
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.social_btn
+label: 'Social btn'
+targetEntityType: node
+cache: true

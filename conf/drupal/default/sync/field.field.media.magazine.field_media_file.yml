@@ -1,0 +1,27 @@
+uuid: 68941cf1-98ac-42e2-93fc-bd7456ea4abc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file
+    - media.type.magazine
+  module:
+    - file
+id: media.magazine.field_media_file
+field_name: field_media_file
+entity_type: media
+bundle: magazine
+label: Fichier
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+field_type: file

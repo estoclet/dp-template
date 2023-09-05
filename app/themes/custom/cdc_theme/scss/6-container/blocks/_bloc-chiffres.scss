@@ -1,0 +1,55 @@
+// Bloc Chiffres Clés
+.block-chiffre {
+  padding: 0 0 5rem;
+  margin-top: 90px;
+
+  .block-title {
+    margin-top: -.6em;
+  }
+
+  &.bg--dark {
+    .block-title {
+      margin-top: -1.2em;
+      color: $noir-web !important;
+    }
+  }
+
+  @media (max-width: $screen-lg-max) {
+    padding-bottom: 4rem;
+  }
+
+  @media (max-width: $screen-md-max) {
+    padding-bottom: 3rem;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    padding-bottom: 2rem;
+  }
+
+
+
+  .wrapper-content {
+    box-sizing: border-box;
+    width: 1380px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .row-chiffres5 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .field--name-field-link {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .chiffre,
+  .desc-chiffre {
+    text-align: center;
+  }
+}

@@ -1,0 +1,22 @@
+uuid: 606d8fb9-14e6-4768-861d-d672543bcb03
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_cta_dossier
+id: block_content.bloc_cta_dossier.status
+field_name: status
+entity_type: block_content
+bundle: bloc_cta_dossier
+label: Publié
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

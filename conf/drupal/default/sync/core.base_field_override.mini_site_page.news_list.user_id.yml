@@ -1,0 +1,20 @@
+uuid: 0ce42653-e792-4aef-85d1-9d01bf8b1dab
+langcode: fr
+status: true
+dependencies:
+  config:
+    - mini_sites.mini_site_page_type.news_list
+id: mini_site_page.news_list.user_id
+field_name: user_id
+entity_type: mini_site_page
+bundle: news_list
+label: 'Écrit par'
+description: 'The user ID of author of the Mini site page entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,25 @@
+uuid: d6222b1f-1570-4a41-a7dd-010c11627f19
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_posts_list
+    - node.type.list_posts_minisite
+  module:
+    - block_field
+id: node.list_posts_minisite.field_posts_list
+field_name: field_posts_list
+entity_type: node
+bundle: list_posts_minisite
+label: 'Ajouter la liste des actualités'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids:
+      'views_block:news-block_1': 'views_block:news-block_1'
+field_type: block_field

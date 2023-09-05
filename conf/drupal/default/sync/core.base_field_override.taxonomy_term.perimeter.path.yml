@@ -1,0 +1,20 @@
+uuid: 3d15ac08-10f0-44d8-a6c0-ed81632ca4ea
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.perimeter
+  module:
+    - path
+id: taxonomy_term.perimeter.path
+field_name: path
+entity_type: taxonomy_term
+bundle: perimeter
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

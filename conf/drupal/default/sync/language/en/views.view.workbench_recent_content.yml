@@ -1,0 +1,36 @@
+label: 'Workbench: Contenu récent'
+description: 'Page de présentation du contenu de Workbench.'
+display:
+  default:
+    display_options:
+      fields:
+        name:
+          label: Author
+        changed:
+          label: 'Dernière mise à jour'
+        edit_node:
+          text: modifier
+      title: 'Workbench: Contenu récent'
+      empty:
+        area:
+          content:
+            value: 'Il n''y a pas de contenu à modifier.'
+      use_more_text: 'Voir tout'
+  block_1:
+    display_title: "\r\nBloc de vue d'ensemble"
+    display_options:
+      display_description: 'Les dix articles les plus récents du site'
+      fields:
+        name:
+          label: Author
+        changed:
+          label: 'Dernière mise à jour'
+        edit_node:
+          text: modifier
+      header:
+        area:
+          content:
+            value: '<h3>Contenu récent</h3>'
+  embed_1:
+    display_options:
+      display_description: 'La vue intégrée à utiliser sur une page de destination'

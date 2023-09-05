@@ -1,0 +1,18 @@
+uuid: 400ddbf7-6910-4c9a-824d-e66b7f5e1089
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_cta_dossier
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.bloc_cta_dossier
+target_entity_type_id: block_content
+target_bundle: bloc_cta_dossier
+default_langcode: site_default
+language_alterable: false

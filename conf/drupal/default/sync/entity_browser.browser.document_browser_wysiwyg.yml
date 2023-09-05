@@ -1,0 +1,42 @@
+uuid: ddabc412-1057-4c88-bddd-7f824df4c5b6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.custom_media_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: document_browser_wysiwyg
+label: 'Navigateur de documents'
+display: iframe
+display_configuration:
+  width: 100%
+  height: '500'
+  link_text: 'Sélectionner ou créer un document'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  11668cea-90d0-4817-87d7-0bd31c45b19a:
+    id: view
+    uuid: 11668cea-90d0-4817-87d7-0bd31c45b19a
+    label: Lister
+    weight: 1
+    settings:
+      submit_text: Sélectionner
+      auto_select: false
+      view: custom_media_browser
+      view_display: media_entity_browser_document
+  d4497c94-b1e0-4d74-b0ca-2a9897bd79ea:
+    id: entity_form
+    uuid: d4497c94-b1e0-4d74-b0ca-2a9897bd79ea
+    label: Créer
+    weight: 2
+    settings:
+      submit_text: Sauvegarder
+      entity_type: media
+      bundle: document
+      form_mode: default

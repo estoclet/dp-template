@@ -1,0 +1,10 @@
+uuid: 63394769-1061-4db2-b3e4-e293132e391e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.header
+label: Entête
+targetEntityType: taxonomy_term
+cache: true

@@ -1,0 +1,9 @@
+_core:
+  default_config_hash: S6rQarWvkmKD23_sdFs_HQdHZbyd6KX58eINnvUL9n4
+langcode: fr
+system_match: ''
+system_prefix: ''
+system_regex: ''
+layout_match: "decision_tree_block\r\nicdc_menu_mobile\r\nicdc_news_nav_block\r\nviews_block:blog_term-block_view_blog_menu\r\nviews_block:header_parcours-block_1\r\nviews_block:header_parcours-block_2\r\nicdc_blog\r\ninline_block:bloc_entete\r\nlanguage_block:language_content\r\nmini_site_menu\r\nhelp_block\r\nprint_links\r\naccess_config\r\ndevel_switch_user\r\nwebform_block\r\nuser_login_block\r\nsystem_powered_by_block\r\nworkbench_block\r\nwebform_submission_limit_block\r\nviews_block:who_s_new-block_1\r\nviews_block:workbench_current_user-block_1\r\nviews_block:workbench_edited-block_1\r\nviews_block:they_publish-block_expertise_area\r\nviews_block:workbench_recent_content-block_1\r\nviews_block:content_recent-block_1\r\nviews_block:they_publish-block_master\r\nlocal_tasks_block\r\nlocal_actions_block\r\ninvestors_modal_block\r\nlanguage_block:language_interface\r\nnode_syndicate_block\r\nsearch_form_block\r\nshortcuts\r\nsocial_simple_block\r\nsystem_branding_block\r\nsystem_breadcrumb_block\r\nicdc_search_block\r\nicdc_facets_label_block\r\nsystem_main_block\r\nsystem_messages_block\r\ndecision_tree_button_block\r\nviews_block:read_also-block_read_also_homepage\r\nviews_block:who_s_online-who_s_online_block\r\nfield_block:node:page:field_bgcolor\r\nfield_block:node:page:field_site_reference\r\nfield_block:node:page:field_snippet_seo\r\nviews_block:actualite_nav-actualite_previous_node\r\nviews_block:actualite_nav-actualite_next_node"
+layout_prefix: "facet_block\r\nextra_field_block\r\nmenu_block\r\nentity_view\r\nfield_block\r\nsystem_menu_block"
+layout_regex: "/field_block:node:page:(.*)/\r\n/field_block:user:user:(.*)/\r\n/views_exposed_filter_block:(.*)/"

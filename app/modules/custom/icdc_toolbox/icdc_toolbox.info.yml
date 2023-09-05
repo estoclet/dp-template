@@ -1,0 +1,8 @@
+name: 'ICDC Toolbox'
+type: module
+description: 'CDC specific configurations.'
+core_version_requirement: ^8 || ^9
+package: 'ICDC'
+
+'interface translation project': icdc_toolbox
+'interface translation server pattern': modules/custom/icdc_toolbox/translations/icdc_toolbox-%language.po

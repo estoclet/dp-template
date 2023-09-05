@@ -1,0 +1,42 @@
+{#
+/**
+* @file
+* Default theme implementation to display a block.
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+{% set classes = [
+    'icdc-menu-mobile',
+    'main-menu-mobile',
+    'modal fade'
+] %}
+
+<div id="main-menu-mobile" {{ attributes.addClass(classes) }} role="dialog" aria-labelledby="block-mainnavigation-menu" aria-modal="true" tabindex="-1">
+  <div class="visually-hidden" id="block-mainnavigation-menu">Navigation principal</div>
+  <button id="js-mobile-menu-close" class="close" type="button" data-dismiss="modal" aria-label="Fermer le menu" title="Fermer">
+    <i class="cdcicon cdcicon-croix"></i>
+    <span class="sr-only">Fermer</span>
+  </button>
+  {{ search }}
+  {{ main }}
+  {{ menuprofil }}
+</div>
+<div id="menu-level3-panel" class="modal" role="dialog" aria-labelledby="block-mainnavigation-menu" aria-modal="true" tabindex="-1">
+  <span class="close"><i class="cdcicon cdcicon-croix"></i></span>
+  <div class="return-panel">&lt; Retour</div>
+  <ul class="menu navbar- navbar-main nav navbar-nav">
+    <li class="expanded dropdown">
+      <div class="menu-level--1">
+        <ul class="menu-level--1 dropdown-menu">
+          <li id="menu-panel" class="expanded dropdown"></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+

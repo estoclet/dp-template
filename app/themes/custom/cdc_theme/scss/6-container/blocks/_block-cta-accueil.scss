@@ -1,0 +1,60 @@
+.block-inline-blockbloc-cta-dossier {
+  position: relative;
+  height: 100vh;
+  min-height: 680px !important;
+  background-size: cover !important;
+  background-position: top center;
+  overflow: hidden;
+  padding: 0 !important;
+
+  svg {
+    fill: rgba(255, 255, 255, .9);
+    overflow: visible;
+  }
+
+  .wrapper-texte {
+    left: 0;
+    bottom: 0;
+    max-width: 100%;
+    width: 763px;
+    height: 541px;
+    background: none;
+    position: absolute;
+    overflow: hidden;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .highlighted-content {
+    position: absolute;
+    right: 1.5rem;
+    padding-right: 1.5rem;
+    top: 5rem;
+    width: 57%;
+
+    @media (max-width: $screen-xs-min) {
+      top: 3rem;
+    }
+
+    h2 {
+      margin: 1rem 0 0;
+    }
+
+    .field--name-field-pg-title,
+    .field--name-field-pg-chapo {
+      position: relative;
+      z-index: 10;
+
+      @media (min-width: $screen-lg-min) {
+        width: 85%;
+      }
+    }
+
+    .field--name-field-snippet-seo {
+
+      @media (max-width: $screen-xs-min) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+uuid: e1f9c7a8-8a09-41c7-af20-728224f3d987
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_insert_image
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: paragraph.pg_insert_image
+target_entity_type_id: paragraph
+target_bundle: pg_insert_image
+default_langcode: site_default
+language_alterable: true

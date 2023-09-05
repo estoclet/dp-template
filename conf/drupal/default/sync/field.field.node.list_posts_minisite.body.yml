@@ -1,0 +1,23 @@
+uuid: d3bc178d-58dc-40fc-9422-70500f73627b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.list_posts_minisite
+  module:
+    - text
+id: node.list_posts_minisite.body
+field_name: body
+entity_type: node
+bundle: list_posts_minisite
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

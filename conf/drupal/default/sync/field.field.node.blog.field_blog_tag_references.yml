@@ -1,0 +1,29 @@
+uuid: 264daed2-ff45-4664-9c1a-71d620b55848
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blog_tag_references
+    - node.type.blog
+    - taxonomy.vocabulary.blog_tag
+id: node.blog.field_blog_tag_references
+field_name: field_blog_tag_references
+entity_type: node
+bundle: blog
+label: 'Mots clés'
+description: 'Ajoutez un ou plusieurs mot(s) clé(s).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      blog_tag: blog_tag
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

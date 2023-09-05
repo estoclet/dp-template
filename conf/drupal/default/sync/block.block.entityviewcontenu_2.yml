@@ -1,0 +1,33 @@
+uuid: 64231138-81c2-47b0-b747-0fb494242e08
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ctools
+    - node
+  theme:
+    - cdc_theme
+id: entityviewcontenu_2
+theme: cdc_theme
+region: content_bottom
+weight: 0
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: 'Rebond Article/Dossier/Blog'
+  label_display: '0'
+  provider: ctools
+  view_mode: bounce
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      blog: blog
+      dossier: dossier

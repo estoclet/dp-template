@@ -1,0 +1,4 @@
+services:
+  icdc_didomi.container_manager:
+    class: Drupal\icdc_didomi\ContainerManager
+    arguments: ['@logger.factory','@config.factory']

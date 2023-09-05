@@ -1,0 +1,21 @@
+uuid: b4477951-2682-49f7-9c50-03f03dc93380
+langcode: en
+status: true
+dependencies:
+  module:
+    - mini_sites
+id: mini_site_page.field_libelle
+field_name: field_libelle
+entity_type: mini_site_page
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

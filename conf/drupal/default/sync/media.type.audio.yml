@@ -1,0 +1,24 @@
+uuid: 2ea6e826-2df0-4649-b7c1-8750762c01da
+langcode: fr
+status: true
+dependencies:
+  module:
+    - crop
+    - media_entity_soundcloud
+third_party_settings:
+  crop:
+    image_field: null
+id: audio
+label: Soundcloud
+description: ''
+source: soundcloud
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_link
+field_map:
+  track_id: field_media_audio_track
+  playlist_id: field_media_audio_playlist
+  source_id: field_media_audio_id
+  html: field_media_audio_embed
+  thumbnail_uri: field_media_audio_uri

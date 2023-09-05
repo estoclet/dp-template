@@ -1,0 +1,26 @@
+uuid: 65a91f82-da6e-47af-b58e-37504bdf2837
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.mini_site_page.field_content
+    - mini_sites.mini_site_page_type.content
+  module:
+    - mini_sites
+id: mini_site_page.content.field_content
+field_name: field_content
+entity_type: mini_site_page
+bundle: content
+label: Contenu
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'mini_site_content:node'
+  handler_settings:
+    sort:
+      field: title
+      direction: ASC
+field_type: mini_site_entity_reference

@@ -1,0 +1,32 @@
+// Bloc Comex
+.block-comex {
+  margin-top: 80px;
+
+  .field--name-field-gouvernance-references {
+    & > .field--item {
+      //max-width: 260px;
+      text-align: center;
+
+      img {
+        margin-bottom: 30px;
+        max-height: 410px;
+        object-fit: cover;
+      }
+
+      .small {
+        margin: 20px auto 0;
+        max-width: 80%;
+        white-space: normal;
+      }
+    }
+
+  }
+
+  .field--name-field-link {
+    text-align: center;
+
+    a {
+      @extend %more-link;
+    }
+  }
+}

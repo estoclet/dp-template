@@ -1,0 +1,10 @@
+uuid: 9ac35776-1e0e-4608-8ec5-7b03769ea10e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.right
+label: Droite
+targetEntityType: paragraph
+cache: true

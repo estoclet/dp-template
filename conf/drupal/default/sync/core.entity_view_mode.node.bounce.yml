@@ -1,0 +1,10 @@
+uuid: ee466ce4-30f4-4153-ae29-d5cf383fcfcd
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.bounce
+label: Rebond
+targetEntityType: node
+cache: true

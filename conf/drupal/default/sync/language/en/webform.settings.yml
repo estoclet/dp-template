@@ -1,0 +1,13 @@
+settings:
+  default_form_close_message: 'Sorry&hellip; This form is closed to new submissions.'
+  default_wizard_prev_button_label: Modifier
+  default_wizard_next_button_label: 'Next Page >'
+  default_preview_next_button_label: Aperçu
+  default_preview_prev_button_label: Modifier
+  default_preview_label: Aperçu
+  default_preview_message: 'Please review your submission. Your submission is not complete until you press the &quot;Submit&quot; button!'
+element:
+  default_more_title: Plus
+mail:
+  default_subject: 'Webform submission from: [webform_submission:source-entity]'
+  default_body_html: "<p>Submitted on [webform_submission:created]</p>\r\n<p>Submitted by: [webform_submission:user]</p>\r\n<p>Submitted values are:</p>\r\n[webform_submission:values]\r\n"

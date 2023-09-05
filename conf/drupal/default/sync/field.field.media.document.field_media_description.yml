@@ -1,0 +1,21 @@
+uuid: 3e2d9260-7052-4a1c-8949-cf7f926d4e94
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_description
+    - media.type.document
+_core:
+  default_config_hash: Smei3FSnJFXefGiXfsm3mtUsBXc3xNeqY5x154IDPfE
+id: media.document.field_media_description
+field_name: field_media_description
+entity_type: media
+bundle: document
+label: 'Description accessibilité'
+description: 'Saisissez une description du document afin d''aider les internautes. Ce texte sera lu à la place du document pour les personnes en situation d''handicap'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

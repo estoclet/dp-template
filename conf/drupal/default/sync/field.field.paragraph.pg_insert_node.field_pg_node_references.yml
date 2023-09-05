@@ -1,0 +1,34 @@
+uuid: 409d58bc-e284-4b13-8d7b-79518ee3406c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_node_references
+    - node.type.actualite
+    - node.type.article
+    - node.type.blog
+    - node.type.page
+    - paragraphs.paragraphs_type.pg_insert_node
+id: paragraph.pg_insert_node.field_pg_node_references
+field_name: field_pg_node_references
+entity_type: paragraph
+bundle: pg_insert_node
+label: Contenu(s)
+description: 'Sélectionnez dans le site le ou les contenus à afficher dans l''encart sous forme d''accroche.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      actualite: actualite
+      article: article
+      blog: blog
+      page: page
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: actualite
+field_type: entity_reference

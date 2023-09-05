@@ -1,0 +1,52 @@
+uuid: 6ae0cee5-11f0-42bd-ba38-83f72e745a95
+langcode: fr
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.socials_browser
+    - field.field.paragraph.pg_insert_rs.field_pg_media_reference
+    - field.field.paragraph.pg_insert_rs.field_responsive
+    - paragraphs.paragraphs_type.pg_insert_rs
+  module:
+    - entity_browser
+id: paragraph.pg_insert_rs.default
+targetEntityType: paragraph
+bundle: pg_insert_rs
+mode: default
+content:
+  field_pg_media_reference:
+    type: entity_browser_entity_reference
+    weight: 0
+    region: content
+    settings:
+      entity_browser: socials_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: default
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_responsive:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true

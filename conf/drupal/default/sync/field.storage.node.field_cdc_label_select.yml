@@ -1,0 +1,30 @@
+uuid: 79c69480-749a-47cf-ad77-08c53de3cf38
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_cdc_label_select
+field_name: field_cdc_label_select
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'CD''solutions'
+      label: 'CD''solutions'
+    -
+      value: 'CD''idées'
+      label: 'CD''idées'
+    -
+      value: 'CD''enjeux'
+      label: 'CD''enjeux'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

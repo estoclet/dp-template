@@ -1,0 +1,133 @@
+uuid: e322b435-6223-4d11-96ef-6e25a9673794
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list
+    - field.field.node.blog.field_auteur_secondaire
+    - field.field.node.blog.field_blog_tag_references
+    - field.field.node.blog.field_blog_type_list
+    - field.field.node.blog.field_cdc_label_select
+    - field.field.node.blog.field_chapo
+    - field.field.node.blog.field_expertise_references
+    - field.field.node.blog.field_image_teaser_reference
+    - field.field.node.blog.field_media_reference
+    - field.field.node.blog.field_metatag
+    - field.field.node.blog.field_node_references
+    - field.field.node.blog.field_paragraphs
+    - field.field.node.blog.field_reading_time
+    - field.field.node.blog.field_short_title
+    - field.field.node.blog.field_snippet_seo
+    - field.field.node.blog.field_sommaire
+    - node.type.blog
+  module:
+    - advanced_text_formatter
+    - field_formatter_class
+    - options
+    - user
+id: node.blog.list
+targetEntityType: node
+bundle: blog
+mode: list
+content:
+  field_blog_type_list:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  field_cdc_label_select:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_expertise_references:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 5
+    region: content
+  field_image_teaser_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+  field_short_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
+  field_snippet_seo:
+    type: advanced_text
+    label: hidden
+    settings:
+      trim_length: '230'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: php
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - em
+        - i
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 4
+    region: content
+  langcode:
+    type: language
+    label: hidden
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  social_simple_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_auteur_secondaire: true
+  field_blog_tag_references: true
+  field_chapo: true
+  field_color_primary: true
+  field_dark_header_checkbox: true
+  field_media_reference: true
+  field_metatag: true
+  field_node_references: true
+  field_paragraphs: true
+  field_reading_time: true
+  field_sommaire: true
+  links: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

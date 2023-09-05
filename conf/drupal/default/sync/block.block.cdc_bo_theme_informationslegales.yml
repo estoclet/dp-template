@@ -1,0 +1,31 @@
+uuid: 02fa58bd-b1bd-4c21-857a-0c7a544713bc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.menu-infos-legales
+  module:
+    - menu_block
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_informationslegales
+theme: cdc_bo_theme
+region: sidebar_first
+weight: -10
+provider: null
+plugin: 'menu_block:menu-infos-legales'
+settings:
+  id: 'menu_block:menu-infos-legales'
+  label: 'Informations légales'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'menu-infos-legales:'
+  suggestion: menu_infos_legales
+visibility: {  }

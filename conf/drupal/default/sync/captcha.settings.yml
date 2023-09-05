@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: pfrv6lPS72f5WG1UB4wHkgQV2invlHwVpaCy_mY-ClQ
+langcode: fr
+enable_globally: 0
+enable_globally_on_admin_routes: false
+default_challenge: recaptcha/reCAPTCHA
+description: 'Cette question sert à vérifier si vous êtes un visiteur humain ou non afin d''éviter les soumissions de pourriel (spam) automatisées.'
+title: CAPTCHA
+administration_mode: false
+administration_mode_on_admin_routes: false
+default_validation: 1
+persistence: 1
+enable_stats: false
+log_wrong_responses: false

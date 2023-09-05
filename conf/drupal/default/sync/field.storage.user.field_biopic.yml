@@ -1,0 +1,19 @@
+uuid: 0ba421c7-0f45-469a-b68a-a4a4d2a43e93
+langcode: en
+status: true
+dependencies:
+  module:
+    - text
+    - user
+id: user.field_biopic
+field_name: field_biopic
+entity_type: user
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

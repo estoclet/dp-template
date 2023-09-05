@@ -1,0 +1,28 @@
+uuid: 6fa6eeb3-9e4b-4eb2-822c-c554a2681887
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pg_svg_illustrated
+    - media.type.image_svg
+    - taxonomy.vocabulary.course_of_life
+id: taxonomy_term.course_of_life.field_pg_svg_illustrated
+field_name: field_pg_svg_illustrated
+entity_type: taxonomy_term
+bundle: course_of_life
+label: 'SVG illustré'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image_svg: image_svg
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

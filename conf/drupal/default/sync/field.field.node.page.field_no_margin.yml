@@ -1,0 +1,23 @@
+uuid: c867dac6-3a55-4c36-8bd4-58838de51239
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_no_margin
+    - node.type.page
+id: node.page.field_no_margin
+field_name: field_no_margin
+entity_type: node
+bundle: page
+label: 'Supprimer les marges'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

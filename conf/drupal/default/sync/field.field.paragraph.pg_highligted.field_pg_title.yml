@@ -1,0 +1,21 @@
+uuid: d397f674-123c-4695-aebc-f145e1e648d0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_title
+    - paragraphs.paragraphs_type.pg_highligted
+_core:
+  default_config_hash: DOnvtDW7VhUeWXYLQYmz4SPGPy1v-aVZ14A9XJZPgcs
+id: paragraph.pg_highligted.field_pg_title
+field_name: field_pg_title
+entity_type: paragraph
+bundle: pg_highligted
+label: 'Titre de l''encart'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: bc70e12c-03bf-45db-9e23-96ceed8fca22
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.course_of_life
+  module:
+    - path
+id: taxonomy_term.course_of_life.path
+field_name: path
+entity_type: taxonomy_term
+bundle: course_of_life
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

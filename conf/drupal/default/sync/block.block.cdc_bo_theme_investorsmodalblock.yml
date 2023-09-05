@@ -1,0 +1,20 @@
+uuid: 01715be7-13f2-467f-a009-96612dd741f0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - icdc_investors
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_investorsmodalblock
+theme: cdc_bo_theme
+region: content
+weight: -18
+provider: null
+plugin: investors_modal_block
+settings:
+  id: investors_modal_block
+  label: '[MODAL] Investisseurs'
+  label_display: '0'
+  provider: icdc_investors
+visibility: {  }

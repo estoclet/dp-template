@@ -1,0 +1,22 @@
+uuid: 767e01a2-75ae-4dbd-a744-d817200ded7a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+    - style_options
+id: section
+label: Section
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  layout_paragraphs:
+    enabled: true
+    available_layouts:
+      layout_onecol: 'Une colonne'
+      layout_twocol_section: 'Two column'
+      layout_threecol_section: 'Three column'
+      layout_fourcol_section: 'Four column'
+  style_options:
+    enabled: true

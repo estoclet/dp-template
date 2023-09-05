@@ -1,0 +1,22 @@
+_core:
+  default_config_hash: JTiHOl3PIo9Nyv7j53xwY5OwbwJWwCItksgv_X-NcbE
+langcode: fr
+settings:
+  library_url: ''
+  css_url: ''
+  crop_preview_image_style: upload_preview
+  crop_list:
+    focal_point: focal_point
+    ratio_16_9: ratio_16_9
+    ratio_1_1: ratio_1_1
+    ratio_2_3: ratio_2_3
+    ratio_3_2: ratio_3_2
+    ratio_4_3: ratio_4_3
+    ratio_libre: ratio_libre
+  crop_types_required:
+    focal_point: focal_point
+  warn_multiple_usages: true
+  show_default_crop: true
+  show_crop_area: false
+  notify_apply: false
+  notify_update: true

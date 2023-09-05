@@ -1,0 +1,25 @@
+uuid: 61938f84-c73f-4508-a774-ba8e31fd82cf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.ratio_16_9
+  module:
+    - crop
+name: crop_16_9_small
+label: 'Crop 16:9 small (max-width: 738px)'
+effects:
+  ad4c4a65-a8ae-495f-be4e-b678f5f1d6c8:
+    uuid: ad4c4a65-a8ae-495f-be4e-b678f5f1d6c8
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: ratio_16_9
+  082cd075-343f-4bad-a55d-91bbcdcf55ea:
+    uuid: 082cd075-343f-4bad-a55d-91bbcdcf55ea
+    id: image_scale
+    weight: 2
+    data:
+      width: 738
+      height: null
+      upscale: false

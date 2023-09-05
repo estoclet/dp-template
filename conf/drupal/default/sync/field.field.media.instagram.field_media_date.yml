@@ -1,0 +1,24 @@
+uuid: df9e155a-1770-4343-91b7-ecb3a5af06c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_date
+    - media.type.instagram
+  module:
+    - datetime
+id: media.instagram.field_media_date
+field_name: field_media_date
+entity_type: media
+bundle: instagram
+label: 'Date de référence du document'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

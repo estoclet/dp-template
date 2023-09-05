@@ -1,0 +1,7 @@
+name: 'ICDC Investors'
+type: module
+description: 'Manage investors modal for ICDC.'
+core_version_requirement: ^8 || ^9
+package: 'ICDC'
+dependencies:
+  - icdc_toolbox

@@ -1,0 +1,28 @@
+uuid: 20f5e5cb-914f-42bc-93e9-748e1c54df9a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_cta_dossier
+    - field.storage.block_content.field_media_reference
+    - media.type.image
+id: block_content.bloc_cta_dossier.field_media_reference
+field_name: field_media_reference
+entity_type: block_content
+bundle: bloc_cta_dossier
+label: 'Média d''illustration'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

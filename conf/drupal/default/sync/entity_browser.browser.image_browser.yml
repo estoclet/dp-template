@@ -1,0 +1,42 @@
+uuid: 7d41db11-9606-40fb-8383-e98b74c9b3f3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.custom_media_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: image_browser
+label: 'Navigateur d’images'
+display: modal
+display_configuration:
+  width: '1920'
+  height: '1200'
+  link_text: Ajouter
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  cb5f1357-edef-4e8f-b83d-86379b7fb47a:
+    id: view
+    uuid: cb5f1357-edef-4e8f-b83d-86379b7fb47a
+    label: Lister
+    weight: 1
+    settings:
+      submit_text: Sélectionner
+      auto_select: false
+      view: custom_media_browser
+      view_display: media_entity_browser_image
+  05ca48d1-98a6-4dfb-ada5-90834177e963:
+    id: entity_form
+    uuid: 05ca48d1-98a6-4dfb-ada5-90834177e963
+    label: Créer
+    weight: 2
+    settings:
+      submit_text: Sauvegarder
+      entity_type: media
+      bundle: image
+      form_mode: default

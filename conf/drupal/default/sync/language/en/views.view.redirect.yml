@@ -1,0 +1,18 @@
+display:
+  default:
+    display_options:
+      fields:
+        redirect_source__path:
+          label: 'A partir de'
+        created:
+          label: Créé
+      filters:
+        redirect_source__path:
+          expose:
+            label: 'A partir de'
+        redirect_redirect__uri:
+          expose:
+            label: À
+        language:
+          expose:
+            label: 'Langue initiale'

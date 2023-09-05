@@ -1,0 +1,26 @@
+uuid: 32b872a3-5bb7-4dff-aee7-397383d65b5d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block.block.views_block__content_parcours_block_1
+    - field.storage.taxonomy_term.field_block_terms
+    - taxonomy.vocabulary.course_of_life
+id: taxonomy_term.course_of_life.field_block_terms
+field_name: field_block_terms
+entity_type: taxonomy_term
+bundle: course_of_life
+label: 'Bloc - Nuage de termes'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 6f2b08de-7bd4-4671-aa8b-b506f9fb3ac9
+default_value_callback: ''
+settings:
+  handler: 'default:block'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

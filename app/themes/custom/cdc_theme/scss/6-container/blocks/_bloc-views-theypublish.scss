@@ -1,0 +1,26 @@
+// Bloc "Ils publient"
+section {
+  &[class*='block-views-blockthey-publish-block-'] {
+    @extend %large-wrapper;
+    padding-bottom: 50px;
+    margin-top: $vertical-gutter-large;
+    text-align: center;
+
+    .views-view-grid {
+      width: 100%;
+
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+    }
+    .more-link{
+      display: flex;
+      justify-content: space-around;
+      a{
+        @extend %more-link;
+      }
+    }
+  }
+}

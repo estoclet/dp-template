@@ -1,0 +1,430 @@
+/**
+ * @file
+ * Custom mixins
+ */
+
+@mixin clearfix {
+
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin img-hover-zoom {
+
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden; /* Removing this will break the effects */
+
+  img {
+    transform-origin: 0 0;
+    transition: transform .25s, visibility .25s ease-in;
+
+    &:hover,
+    &:active,
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@mixin img-hover-contrast {
+
+  img {
+    filter: contrast(100%);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+
+    img {
+      filter: contrast(100%);
+    }
+  }
+}
+
+@mixin progressive-underline ($current-color: $noir-web, $hover-color: $couleur-rouge) {
+
+  color: $current-color;
+  text-decoration: none;
+  background-image: linear-gradient($hover-color, $hover-color);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .3s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $hover-color;
+    text-decoration: none;
+    background-size: 100% 2px;
+  }
+}
+
+@mixin button-style-filling($primarycolor: $black, $secondarycolor: $white, $fadecolor: $gris-clair) {
+
+  $cross-fade-border-width: 1px;
+  $cross-fade-border-color: $primarycolor;
+  $sec-cross-fade-border-color: $fadecolor;
+  $cross-fade-button-padding: 15px 30px;
+  $cross-fade-text-color: $primarycolor;
+  $sec-cross-fade-text-color: $secondarycolor;
+  $cross-fade-border-radius: 0;
+  $cross-fade-background: $secondarycolor;
+  $sec-cross-fade-background: $fadecolor;
+  $cross-fade-transition-time: .75s;
+  display: inline-block;
+  padding: $cross-fade-button-padding;
+  background-color: transparent;
+  border: $cross-fade-border-width $cross-fade-border-color solid;
+  text-align: center;
+  text-decoration: none;
+  color: $cross-fade-text-color;
+  position: relative;
+  overflow: hidden;
+  transition: color $cross-fade-transition-time ease-in-out;
+  z-index: 1;
+  border-radius: $cross-fade-border-radius;
+  font-family: $body-font;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 1.3rem;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -25%;
+    width: 150%;
+    height: 100%;
+    background: rgba($sec-cross-fade-background, .9);
+    transition: transform $cross-fade-transition-time ease-in-out;
+    z-index: -1;
+  }
+
+  &:before {
+    transform: translate3d(100%, 0, 0) skew(20deg);
+    transform-origin: 0 0;
+  }
+
+  &:after {
+    transform: translate3d(-100%, 0, 0) skew(20deg);
+    transform-origin: 100% 100%;
+  }
+
+  &:hover {
+    color: $sec-cross-fade-text-color;
+    border-color: $sec-cross-fade-border-color;
+
+    &:before,
+    &:after {
+      transform: translate3d(0, 0, 0) skew(20deg);
+    }
+  }
+}
+
+@mixin button-draw($primarycolor: $noir-web, $secondarycolor: $couleur-rouge) {
+
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em 0;
+  padding: 1em 2em;
+  box-shadow: inset 0 0 0 2px $primarycolor;
+  color: $primarycolor;
+  font-size: inherit;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle;
+  transition: color .25s;
+  border-radius: 0;
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &:after {
+    top: 0;
+    left: 0;
+  }
+
+  &:hover {
+
+    color: $secondarycolor;
+    background: none;
+    text-decoration: none;
+
+    &::before,
+    &::after {
+      width: 100%;
+      height: 100%;
+    }
+
+    &::before {
+      border-top-color: $secondarycolor;
+      border-right-color: $secondarycolor;
+      transition: width .25s ease-out, height .25s ease-out .25s;
+    }
+
+    &::after {
+      border-bottom-color: $secondarycolor;
+      border-left-color: $secondarycolor;
+      transition: height .25s ease-out, width .25s ease-out .25s;
+    }
+
+  }
+
+  &:active,
+  &:focus {
+
+    background: none;
+
+    &::before {
+      border-top-color: $secondarycolor;
+      border-right-color: $secondarycolor;
+    }
+
+    &::after {
+      border-bottom-color: $secondarycolor;
+      border-left-color: $secondarycolor;
+    }
+  }
+
+  &:active {
+    &:focus {
+      background: none;
+    }
+  }
+}
+
+
+
+
+
+@mixin button-hg-acc_fond-gris {
+  border-color: $gray-acc-hg-contrast !important;
+
+  &::before,
+  &::after {
+    background-color: $gray-acc-hg-contrast;
+  }
+
+  &:hover {
+    color: $white-acc-hg-contrast !important;
+
+    &::before,
+    &::after {
+      background-color: $gray-acc-hg-contrast;
+    }
+
+    svg {
+      fill: $white-acc-hg-contrast;
+
+      path {
+        stroke: $white-acc-hg-contrast;
+      }
+    }
+  }
+
+  svg {
+    background: transparent !important;
+  }
+
+  &:focus {
+    outline-color: $gray-acc-hg-contrast !important;
+  }
+}
+
+@mixin button-hg-acc_fond-white {
+  border-color: $white-acc-hg-contrast !important;
+
+  &::before,
+  &::after {
+    background-color: $white-acc-hg-contrast;
+  }
+
+  &:hover {
+    color: $gray-acc-hg-contrast !important;
+
+    &::before,
+    &::after {
+      background-color: $white-acc-hg-contrast;
+    }
+
+    svg {
+      fill: $gray-acc-hg-contrast;
+
+      path {
+        stroke: $gray-acc-hg-contrast;
+      }
+    }
+  }
+
+  svg {
+    background: transparent !important;
+  }
+
+  &:focus {
+    outline-color: $white-acc-hg-contrast !important;
+  }
+}
+
+@mixin button-inv-acc_fond-navy {
+  border-color: $yellow-acc-inv-contrast !important;
+
+  &::before,
+  &::after {
+    background-color: $yellow-acc-inv-contrast;
+  }
+
+  &:hover {
+    color: $navy-acc-inv-contrast !important;
+
+    &::before,
+    &::after {
+      background-color: $yellow-acc-inv-contrast;
+    }
+
+    svg {
+      fill: $navy-acc-inv-contrast;
+
+      path {
+        stroke: $navy-acc-inv-contrast;
+      }
+    }
+  }
+
+  svg {
+    background: transparent !important;
+  }
+
+  &:focus {
+    outline-color: $yellow-acc-inv-contrast !important;
+  }
+}
+
+@mixin button-inv-acc_fond-yellow {
+  border-color: $navy-acc-inv-contrast !important;
+
+  &::before,
+  &::after {
+    background-color: $navy-acc-inv-contrast;
+  }
+
+  &:hover {
+    color: $yellow-acc-inv-contrast !important;
+
+    &::before,
+    &::after {
+      background-color: $navy-acc-inv-contrast;
+    }
+
+    svg {
+      fill: $yellow-acc-inv-contrast;
+
+      path {
+        stroke: $yellow-acc-inv-contrast;
+      }
+    }
+  }
+
+  svg {
+    background: transparent !important;
+  }
+
+  &:focus {
+    outline-color: $navy-acc-inv-contrast !important;
+  }
+}
+
+@mixin button-hg-acc_contrast {
+  border: 1px $white-acc-hg-contrast solid;
+
+  &:hover,
+  &:focus {
+    color: $gray-acc-hg-contrast !important;
+    background-color: $white-acc-hg-contrast !important;
+  }
+
+  &:focus {
+    outline: 2px solid $white-acc-hg-contrast;
+  }
+}
+
+@mixin button-inv-acc_contrast {
+  border: 1px $white-acc-hg-contrast solid;
+
+  &:hover,
+  &:focus {
+    color: $gray-acc-hg-contrast !important;
+    background-color: $white-acc-hg-contrast !important;
+  }
+
+  &:focus {
+    outline: 2px solid $white-acc-hg-contrast;
+  }
+}
+
+/* Viewport sized typography with minimum and maximum values
+   @author Eduardo Boucas (@eduardoboucas)
+   @param {Number}   $responsive  - Viewport-based size
+   @param {Number}   $min         - Minimum font size (px)
+   @param {Number}   $max         - Maximum font size (px)
+   (optional)
+   @param {Number}   $fallback    - Fallback for viewport-
+   based units (optional)
+   @example scss - 5vw font size (with 50px fallback),
+   minumum of 35px and maximum of 150px
+   @include responsive-font(5vw, 35px, 150px, 50px); */
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+
+  @if $fallback {
+    font-size: $fallback;
+  }
+
+  font-size: $responsive;
+}
+@mixin focus($color, $outline-value, $outline-width) {
+  outline: solid $outline-width $color;
+  outline-offset: $outline-value;
+}

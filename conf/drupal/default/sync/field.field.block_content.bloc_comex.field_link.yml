@@ -1,0 +1,23 @@
+uuid: 037bcd06-044c-4a4a-8045-1a49422e1a4a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_comex
+    - field.storage.block_content.field_link
+  module:
+    - link
+id: block_content.bloc_comex.field_link
+field_name: field_link
+entity_type: block_content
+bundle: bloc_comex
+label: Lien
+description: 'Renseignez un lien pour rediriger l’internaute.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

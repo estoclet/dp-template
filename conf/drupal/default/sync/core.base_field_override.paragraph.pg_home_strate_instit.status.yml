@@ -1,0 +1,22 @@
+uuid: 74b0f7bb-758d-4c2e-9932-7ca268abc77f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_home_strate_instit
+id: paragraph.pg_home_strate_instit.status
+field_name: status
+entity_type: paragraph
+bundle: pg_home_strate_instit
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

@@ -1,0 +1,269 @@
+.node--type-page {
+
+  &.node--view-mode-full {
+    @extend %responsive-large--margin-bottom;
+  }
+
+  &.node--view-mode-header {
+    box-sizing: border-box;
+
+    h1 {
+      max-width: 70%;
+      margin-left: 0;
+    }
+
+    .field--name-field-chapo {
+      @extend %responsive-large--margin-bottom;
+      width: 65%;
+      box-sizing: border-box;
+
+      @media (min-width: $screen-sm-min) {
+        // max-width: 627px;
+        max-width: 470px;
+        width: 50%;
+      }
+    }
+  }
+
+  // Entête immersive
+  &.node--view-mode-header-immersive {
+    position: relative;
+    margin-top: -150px;
+    padding-top: 150px;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    .field--name-field-media-credential{
+      text-shadow: 4px 4px 2px rgba(255, 255, 255, 1);
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      margin-top: -176px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      margin-top: -183px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: -150px;
+    }
+  }
+
+  // Entête faisceau bicolore
+  &.node--view-mode-header-bicolore {
+
+    vertical-align: top;
+
+    .svg-primary,
+    .svg-secondary {
+      position: absolute;
+      top: 0;
+      right: 0;
+      line-height: 0;
+      width: 160px;
+      max-width: 50%;
+      height: 262px;
+      max-height: 262px;
+      overflow: visible;
+      vertical-align: top;
+      text-align: right;
+
+      @media (min-width: $screen-xs-min) {
+        width: 240px;
+        height: 393px;
+        max-height: 393px;
+      }
+
+      @media (min-width: $screen-sm-min) {
+        width: 384px;
+        height: 629px;
+        max-height: 629px;
+      }
+
+      @media (min-width: $screen-md-min) {
+        width: 496px;
+        height: 812px;
+        max-height: 812px;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        max-width: 63%;
+        width: 720px;
+        height: 1179px;
+        max-height: 1179px;
+      }
+
+      @media (min-width: $screen-xl-min) {
+        width: 941px;
+        height: 1541px;
+        max-height: 1541px;
+      }
+
+      svg {
+        width: 100%;
+        height: auto;
+        max-width: 941px;
+        max-height: 1541px;
+        margin: 0;
+        overflow: visible;
+        vertical-align: top;
+      }
+    }
+
+    .svg-primary {
+      z-index: -2;
+    }
+
+    .svg-secondary {
+      z-index: -1;
+    }
+
+    .field--name-field-chapo {
+      padding-right: 2rem;
+    }
+
+  }
+
+  // Entête faisceau image
+  &.node--view-mode-header-image {
+
+    vertical-align: top;
+
+    .svg-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      line-height: 0;
+      width: 100px;
+      max-width: 50%;
+      height: 163px;
+      max-height: 262px;
+      padding-bottom: 100%;
+      overflow: visible;
+      vertical-align: top;
+      text-align: right;
+      z-index: -1;
+
+      .field--name-field-media-credential{
+        position: absolute;
+        right: 3rem;
+
+        @media (min-width: $screen-xs-min) {
+          opacity: 0;
+        }
+
+        @media (min-width: $screen-sm-min) {
+          opacity: 0;
+        }
+
+        @media (min-width: $screen-md-min) {
+          height: 812px;
+          max-height: 812px;
+          opacity: 1;
+        }
+
+        @media (min-width: $screen-lg-min) {
+          height: 1179px;
+          max-height: 1179px;
+          opacity: 1;
+        }
+
+        @media (min-width: $screen-xl-min) {
+          height: 1541px;
+          max-height: 1541px;
+          opacity: 1;
+        }
+
+      }
+
+      @media (min-width: $screen-xs-min) {
+        width: 240px;
+        height: 393px;
+        max-height: 393px;
+      }
+
+      @media (min-width: $screen-sm-min) {
+        width: 384px;
+        height: 629px;
+        max-height: 629px;
+      }
+
+      @media (min-width: $screen-md-min) {
+        width: 496px;
+        height: 812px;
+        max-height: 812px;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        max-width: 63%;
+        width: 720px;
+        height: 1179px;
+        max-height: 1179px;
+      }
+
+      @media (min-width: $screen-xl-min) {
+        width: 941px;
+        height: 1541px;
+        max-height: 1541px;
+      }
+    }
+
+    svg {
+      max-width: 100%;
+      width: 160px;
+      height: 262px;
+      margin: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      vertical-align: top;
+
+      @media (min-width: $screen-xs-min) {
+        width: 240px;
+        height: 393px;
+      }
+
+      @media (min-width: $screen-sm-min) {
+        width: 384px;
+        height: 629px;
+      }
+
+      @media (min-width: $screen-md-min) {
+        width: 496px;
+        height: 812px;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        width: 720px;
+        height: 1179px;
+      }
+
+      @media (min-width: $screen-xl-min) {
+        width: 941px;
+        height: 1541px;
+      }
+    }
+
+  }
+
+  /*&.node--view-mode-full {
+    & > .layout {
+      &:first-child {
+        & > .layout__region {
+          &:first-child {
+            & > .block-layout-builder {
+              &:first-child {
+                max-width: 50%;
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }*/
+}

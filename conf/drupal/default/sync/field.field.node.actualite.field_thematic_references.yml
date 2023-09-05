@@ -1,0 +1,29 @@
+uuid: 86328dc5-d766-48da-936b-8379315d2e7a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thematic_references
+    - node.type.actualite
+    - taxonomy.vocabulary.thematique
+id: node.actualite.field_thematic_references
+field_name: field_thematic_references
+entity_type: node
+bundle: actualite
+label: Thématiques
+description: 'Sélectionnez la ou les thématique(s) de cette actualité.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      thematique: thematique
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

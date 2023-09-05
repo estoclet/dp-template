@@ -1,0 +1,40 @@
+uuid: 27af80dc-d810-466f-9e5d-b67afa8dfa13
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pg_text.field_pg_content
+    - field.field.paragraph.pg_text.field_responsive
+    - paragraphs.paragraphs_type.pg_text
+  module:
+    - field_formatter_class
+    - text
+id: paragraph.pg_text.default
+targetEntityType: paragraph
+bundle: pg_text
+mode: default
+content:
+  field_pg_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_responsive:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

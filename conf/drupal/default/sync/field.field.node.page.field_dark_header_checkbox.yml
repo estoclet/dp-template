@@ -1,0 +1,23 @@
+uuid: 2581a853-3ae0-4f36-be2a-c4869778048e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dark_header_checkbox
+    - node.type.page
+id: node.page.field_dark_header_checkbox
+field_name: field_dark_header_checkbox
+entity_type: node
+bundle: page
+label: 'Entête à couleur inversée'
+description: 'Inversez la couleur de l’entête dans le cas d’une entête immersive utilisant une image sombre.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

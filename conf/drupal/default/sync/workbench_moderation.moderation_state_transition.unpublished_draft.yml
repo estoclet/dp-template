@@ -1,0 +1,12 @@
+uuid: 4cc712ba-8c00-4745-b64c-5ce2e7688d67
+langcode: fr
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.draft
+    - workbench_moderation.moderation_state.unpublished
+id: unpublished_draft
+label: Brouillon
+stateFrom: unpublished
+stateTo: draft
+weight: -8

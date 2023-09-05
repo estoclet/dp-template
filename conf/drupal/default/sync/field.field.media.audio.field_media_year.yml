@@ -1,0 +1,24 @@
+uuid: ed141561-321c-4ec6-b7cd-2ab87a6537fc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_year
+    - media.type.audio
+  module:
+    - datetime
+id: media.audio.field_media_year
+field_name: field_media_year
+entity_type: media
+bundle: audio
+label: 'Année de référence'
+description: 'Définissez l''année de référence du média si différente de l''année en cours.'
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

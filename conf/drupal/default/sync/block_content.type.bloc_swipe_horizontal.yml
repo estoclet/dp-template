@@ -1,0 +1,8 @@
+uuid: b7df788f-65c9-41df-862b-8b6fd1e49167
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_swipe_horizontal
+label: 'Bloc Swipe Horizontal'
+revision: 1
+description: 'Un bloc de type carrousel de contenu.'

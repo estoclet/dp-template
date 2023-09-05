@@ -1,0 +1,5 @@
+apercu.menu:
+  title: "Aperçu mode d'affichage"
+  route_name: apercu_view_mode.form
+  description: "Preview content in different display modes."
+  parent: system.admin_structure

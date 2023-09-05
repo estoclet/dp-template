@@ -1,0 +1,23 @@
+uuid: 2e036196-1373-4a01-b864-5ec2478fa5af
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_entete
+    - field.storage.block_content.field_responsive
+id: block_content.bloc_entete.field_responsive
+field_name: field_responsive
+entity_type: block_content
+bundle: bloc_entete
+label: 'Désactiver l''affichage en responsive'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

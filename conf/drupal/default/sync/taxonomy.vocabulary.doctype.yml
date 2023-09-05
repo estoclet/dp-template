@@ -1,0 +1,10 @@
+uuid: 140d92ef-2c40-4785-851e-7ce744cdccd3
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8fqyc6APWc6JuKdpBdleRP9CkANmBjYFuZRKa6ts5W0
+name: 'Type de document'
+vid: doctype
+description: 'Définir les types de documents'
+weight: 0

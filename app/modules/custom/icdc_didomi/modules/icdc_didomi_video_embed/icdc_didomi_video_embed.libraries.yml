@@ -1,0 +1,6 @@
+icdc_didomi_video_embed:
+  js:
+    js/icdc-didomi-video-embed.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

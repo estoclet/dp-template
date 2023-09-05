@@ -1,0 +1,25 @@
+uuid: bf40a696-d576-4c2b-856f-bf803188a4c1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_size
+    - media.type.image
+_core:
+  default_config_hash: WSm3Vh0rMU5opP17eY-vFYWIujf7BrB32sN9UZXuNTQ
+id: media.image.field_media_size
+field_name: field_media_size
+entity_type: media
+bundle: image
+label: 'Poids du fichier'
+description: 'Ne rien saisir. La valeur de ce champ sera renseignée automatiquement à la fin du téléchargement. Le poids du fichier envoyé est calculé par le système.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

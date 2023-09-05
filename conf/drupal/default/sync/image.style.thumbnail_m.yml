@@ -1,0 +1,17 @@
+uuid: bd8862be-8c9b-42d0-ba54-383c26331207
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: thumbnail_m
+label: 'Vignette M (768*512)'
+effects:
+  440f82f6-2339-427d-96d4-6b04849dadc6:
+    uuid: 440f82f6-2339-427d-96d4-6b04849dadc6
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 768
+      height: 512
+      crop_type: focal_point

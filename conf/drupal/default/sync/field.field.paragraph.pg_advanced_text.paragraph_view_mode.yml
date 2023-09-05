@@ -1,0 +1,21 @@
+uuid: 5623c724-ad58-4481-97b4-9b92938c7607
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.paragraph_view_mode
+    - paragraphs.paragraphs_type.pg_advanced_text
+  module:
+    - paragraph_view_mode
+id: paragraph.pg_advanced_text.paragraph_view_mode
+field_name: paragraph_view_mode
+entity_type: paragraph
+bundle: pg_advanced_text
+label: 'Paragraph view mode'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraph_view_mode

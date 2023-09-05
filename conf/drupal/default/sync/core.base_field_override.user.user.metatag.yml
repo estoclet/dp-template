@@ -1,0 +1,18 @@
+uuid: ed4a39ca-c9c3-4e58-8b8e-2303afb014ad
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.user.metatag
+field_name: metatag
+entity_type: user
+bundle: user
+label: 'Balises meta (Meta tags)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

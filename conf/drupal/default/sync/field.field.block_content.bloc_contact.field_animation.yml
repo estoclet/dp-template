@@ -1,0 +1,23 @@
+uuid: cc042d1e-743c-4141-8dba-95887b5882c6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_contact
+    - field.storage.block_content.field_animation
+id: block_content.bloc_contact.field_animation
+field_name: field_animation
+entity_type: block_content
+bundle: bloc_contact
+label: 'Animer le titre'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

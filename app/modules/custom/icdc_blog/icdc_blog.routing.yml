@@ -1,0 +1,9 @@
+icdc_blog.they_publish:
+  path: '/admin/cdc/search/they-publish'
+  defaults:
+    _form: 'Drupal\icdc_blog\Form\IcdcTheyPublish'
+    _title: 'Bloc "Ils publient"'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

@@ -1,0 +1,9 @@
+uuid: afac2730-24d9-4bef-bbf5-a952eb847b77
+langcode: fr
+status: true
+dependencies: {  }
+id: wysiwyg_personnalise
+label: 'Slide WYSIWYG'
+icon_uuid: null
+description: 'Slide dédiée au Bloc Swipe Horizontal permettant la saisie d''un contenu WYSIWYG et la configuration d''une couleur d''arrière-plan.'
+behavior_plugins: {  }

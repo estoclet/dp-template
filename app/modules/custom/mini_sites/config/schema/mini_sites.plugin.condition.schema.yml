@@ -1,0 +1,11 @@
+condition.plugin.mini_site_page_content:
+  type: condition.plugin
+  mapping:
+    mini_site_page_content:
+      type: string
+    mini_site_page_content_bundles:
+      type: sequence
+      sequence:
+        type: string
+    mini_site_page_content_home:
+      type: string

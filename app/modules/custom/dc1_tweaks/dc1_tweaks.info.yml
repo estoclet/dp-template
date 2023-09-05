@@ -1,0 +1,8 @@
+name: DC1 Tweaks
+description: 'Provides custom alteration for dc1 project.'
+type: module
+core: 8.x
+package: 'dc1'
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:file

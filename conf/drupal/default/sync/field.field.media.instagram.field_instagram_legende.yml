@@ -1,0 +1,21 @@
+uuid: 85c04f28-c6c5-4d80-94ab-3f58cf08fc17
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_instagram_legende
+    - media.type.instagram
+  module:
+    - text
+id: media.instagram.field_instagram_legende
+field_name: field_instagram_legende
+entity_type: media
+bundle: instagram
+label: 'Légende Instagram'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

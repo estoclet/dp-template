@@ -1,0 +1,140 @@
+uuid: 908b3d64-0186-4a27-9699-0dcbf1721bed
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.restricted_html
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.image_svg
+    - media.type.instagram
+    - media.type.twitter
+    - media.type.video
+    - node.type.accueil
+    - node.type.blog
+    - node.type.dossier
+    - node.type.gouvernance
+    - node.type.page
+    - node.type.parcours_de_vie
+  module:
+    - captcha
+    - commerce_checkout
+    - commerce_order
+    - commerce_payment
+    - commerce_product
+    - content_moderation
+    - content_translation
+    - entity_browser
+    - file
+    - filter
+    - icdc_toolbox
+    - media
+    - media_pdf_thumbnail
+    - mini_sites
+    - node
+    - paragraphs
+    - path
+    - quickedit
+    - system
+    - toolbar
+    - workbench
+    - workbench_moderation
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access all_browser entity browser pages'
+  - 'access audio_browser entity browser pages'
+  - 'access checkout'
+  - 'access content'
+  - 'access content overview'
+  - 'access document_browser entity browser pages'
+  - 'access document_browser_wysiwyg entity browser pages'
+  - 'access files overview'
+  - 'access image_browser entity browser pages'
+  - 'access image_browser_wysiwyg entity browser pages'
+  - 'access image_svg_browser entity browser pages'
+  - 'access in-place editing'
+  - 'access media overview'
+  - 'access multimedia_browser entity browser pages'
+  - 'access socials_browser entity browser pages'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access video_browser entity browser pages'
+  - 'access workbench'
+  - 'change own username'
+  - 'create audio media'
+  - 'create document media'
+  - 'create image media'
+  - 'create instagram media'
+  - 'create media'
+  - 'create twitter media'
+  - 'create url aliases'
+  - 'create video media'
+  - 'delete media'
+  - 'delete own accueil content'
+  - 'delete own audio media'
+  - 'delete own blog content'
+  - 'delete own document media'
+  - 'delete own dossier content'
+  - 'delete own gouvernance content'
+  - 'delete own image media'
+  - 'delete own image_svg media'
+  - 'delete own instagram media'
+  - 'delete own page content'
+  - 'delete own parcours_de_vie content'
+  - 'delete own twitter media'
+  - 'delete own video media'
+  - 'edit own audio media'
+  - 'edit own document media'
+  - 'edit own image media'
+  - 'edit own image_svg media'
+  - 'edit own instagram media'
+  - 'edit own twitter media'
+  - 'edit own video media'
+  - 'icdc toolbox clear cache'
+  - 'manage own commerce_payment_method'
+  - 'skip CAPTCHA'
+  - 'translate audio media'
+  - 'translate document media'
+  - 'translate image media'
+  - 'translate instagram media'
+  - 'translate twitter media'
+  - 'translate video media'
+  - 'update any media'
+  - 'update media'
+  - 'use archived_published transition'
+  - 'use draft_draft transition'
+  - 'use draft_needs_review transition'
+  - 'use draft_published transition'
+  - 'use needs_review_draft transition'
+  - 'use needs_review_needs_review transition'
+  - 'use needs_review_published transition'
+  - 'use published_archived transition'
+  - 'use published_draft transition'
+  - 'use published_published transition'
+  - 'use published_unpublished transition'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'use unpublished_draft transition'
+  - 'use unpublished_published transition'
+  - 'view all media revisions'
+  - 'view any unpublished content'
+  - 'view commerce_product'
+  - 'view latest version'
+  - 'view media'
+  - 'view own commerce_order'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view private pdf thumbnails'
+  - 'view published mini site page entities'
+  - 'view the administration theme'
+  - 'view unpublished paragraphs'

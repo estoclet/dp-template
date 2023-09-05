@@ -1,0 +1,43 @@
+/**
+ * @file
+ * Styles for system messages and progress bar.
+ */
+
+/* ---------------- Top of page link  -----------------*/
+.top-of-page {
+  a { // sass-lint:disable-line no-empty-rulesets
+
+  }
+}
+
+/* ---------------- Progress Bar Styling -----------------*/
+.progress { // sass-lint:disable-line no-empty-rulesets
+
+}
+
+.ajax-progress {
+
+  .throbber {
+
+    tr & { // sass-lint:disable-line no-empty-rulesets
+
+    }
+  }
+
+  .message { // sass-lint:disable-line no-empty-rulesets
+
+  }
+}
+
+/* ---------------- User Login Form Styling -----------------*/
+.user-login-form {
+  margin: 20px auto;
+
+  .forgot-password {
+    display: block;
+
+    a {
+      @extend %small;
+    }
+  }
+}

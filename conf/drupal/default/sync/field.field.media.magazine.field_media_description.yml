@@ -1,0 +1,19 @@
+uuid: 4596d2fb-c64c-48f9-9364-dd3383d6bef3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_description
+    - media.type.magazine
+id: media.magazine.field_media_description
+field_name: field_media_description
+entity_type: media
+bundle: magazine
+label: 'Description accessibilité'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

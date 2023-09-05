@@ -1,0 +1,35 @@
+/****************
+VARIABLES
+*****************/
+$margin-progress-wrapper: 2rem 0;
+
+$height-progress-bar: 1rem;
+$bg-fond-progress-bar: lighten($black, 80%);
+
+$bg-progress-bar: $couleur-rouge;
+
+$color-texte-progress-nb: $black;
+$margin-top-progress-nb: 2rem;
+
+
+.progress-wrapper {
+  margin: $margin-progress-wrapper;
+
+  .progress {
+    display: flex;
+    height: $height-progress-bar;
+    overflow: hidden;
+    background-color: $bg-fond-progress-bar;
+    box-shadow: inset 0 0.1rem 0.1rem rgba(34, 34, 34, 0.1); // sass-lint:disable-line leading-zero
+
+    .progress-bar {
+      background-color: $bg-progress-bar;
+    }
+
+  }
+
+  .progress-nb {
+    margin-top: $margin-top-progress-nb;
+    color: $color-texte-progress-nb;
+  }
+}

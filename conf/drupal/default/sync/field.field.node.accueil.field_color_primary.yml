@@ -1,0 +1,22 @@
+uuid: b6a57fae-0fa1-471f-9287-f9c0aeea8b99
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_color_primary
+    - node.type.accueil
+  module:
+    - color_field
+id: node.accueil.field_color_primary
+field_name: field_color_primary
+entity_type: node
+bundle: accueil
+label: 'Couleur primaire'
+description: 'Définissez la couleur primaire de l’entête. Couleur qui sera affichée en arrière-plan pour le faisceau.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

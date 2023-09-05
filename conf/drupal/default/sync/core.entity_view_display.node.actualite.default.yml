@@ -1,0 +1,79 @@
+uuid: 292ed85d-6832-4048-a681-b1b1831fbdba
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.actualite.field_chapo
+    - field.field.node.actualite.field_entite_references
+    - field.field.node.actualite.field_image_teaser_reference
+    - field.field.node.actualite.field_interval_date
+    - field.field.node.actualite.field_media_reference
+    - field.field.node.actualite.field_metatag
+    - field.field.node.actualite.field_paragraphs
+    - field.field.node.actualite.field_short_title
+    - field.field.node.actualite.field_site
+    - field.field.node.actualite.field_site_page
+    - field.field.node.actualite.field_site_page_type
+    - field.field.node.actualite.field_snippet_seo
+    - field.field.node.actualite.field_sommaire
+    - field.field.node.actualite.field_thematic_references
+    - node.type.actualite
+  module:
+    - entity_dynamic_rendering
+    - field_formatter_class
+    - text
+    - user
+id: node.actualite.default
+targetEntityType: node
+bundle: actualite
+mode: default
+content:
+  field_chapo:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  field_paragraphs:
+    type: entity_reference_revision_dynamic_rendering
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_sommaire:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  social_simple_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_entite_references: true
+  field_image_teaser_reference: true
+  field_interval_date: true
+  field_media_reference: true
+  field_metatag: true
+  field_short_title: true
+  field_site: true
+  field_site_page: true
+  field_site_page_type: true
+  field_snippet_seo: true
+  field_thematic_references: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

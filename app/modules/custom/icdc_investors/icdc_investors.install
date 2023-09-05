@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Add root term for decision tree.
+ */
+function icdc_investors_install() {
+  $state = \Drupal::state();
+
+  $state->set('icdc_investors_modal', [
+    'fr' => [
+      'input_page' => '',
+      'description' => '<p>Les pages suivantes contiennent des informations et documents qui sont transmis exclusivement à titre informatif. Ces informations et documents ne constituent pas une offre ou une invitation à souscrire ou à acheter des titres et n’entraînent aucune obligation qu’elle soit de nature contractuelle ou autre.</p><p>LES INFORMATIONS ET DOCUMENTS QUI SUIVENT NE SONT PAS DESTINES ET NE DOIVENT PAS ÊTRE VUS PAR OU DISTRIBUES A UN RESIDENT DES ETATS-UNIS D’AMERIQUE.</p><p>En cliquant ci-dessous pour entrer sur ce site, vous confirmez que vous n’êtes pas résident des Etats-Unis d’Amérique et que vous n’allez distribuer aucune information ou document de ce site à un résident des Etats-Unis d’Amérique.</p>',
+      'btn_resident_label' => 'Je suis résident des Etats-Unis d’Amérique',
+      'btn_non_resident_label' => 'JE NE SUIS PAS UN RESIDENT DES ETATS UNIS D’AMERIQUE ET J’ACCEPTE LES TERMES CI-DESSUS',
+    ],
+    'en' => [
+      'input_page' => '',
+      'description' => '<p>This website contains informations and documents which are for information purposes only. They do not constitute an offer nor an invitation to subscribe to or to purchase securities, nor are the information or documents contained thereon meant to serve as a basis for any kind of obligations, contractual or otherwise.</p><p>THE FOLLOWING INFORMATIONS AND DOCUMENTS ARE NOT DIRECTED AT AND MAY NOT BE VIEWED BY OR DISTRIBUTED TO ANY PERSON RESIDENT IN THE UNITED STATES OF AMERICA.</p><p>By entering the following parts of this website you confirm that you are not a resident of the United States of America and that you will not distribute any of the informations and documents contained thereon to any person resident in the United States of America.</p>',
+      'btn_resident_label' => 'I am a U.S. resident',
+      'btn_non_resident_label' => 'I AM NOT A U.S. RESIDENT AND AGREE WITH THE ABOVE TERMS',
+    ],
+  ]);
+}

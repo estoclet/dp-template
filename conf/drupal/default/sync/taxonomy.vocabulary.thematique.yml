@@ -1,0 +1,10 @@
+uuid: 2de0258a-df4d-4f21-9ad2-346cb227f20e
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 8l2Ay7MeZtA6e-xxfNJIFvdaoAwxDZGoTp2CXpAcb-c
+name: Thématique
+vid: thematique
+description: 'Définir les thématiques Caisse des Dépôts'
+weight: 0

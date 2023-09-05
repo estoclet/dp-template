@@ -1,0 +1,28 @@
+<div id="{{ id }}">
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="{{ '#collapse' ~ id }}" aria-expanded="false" aria-controls="{{ 'collapse' ~ id }}" id="{{ id }}">
+    {% if title %}{{ title }}{% endif %} <span class="cdcicon cdcicon-chevron" aria-hidden="true"></span><span class="sr-only">Déplier</span>
+  </button>
+  <div class="decision-tree-collapse collapse" id="{{ 'collapse' ~ id }}" aria-labelledby="{{ id }}">
+    <div>
+      {% for item in decision_tree %}
+        <div class="decision-tree-body" data-path="-{{ item.parents|join('-') }}-{{ item.id }}-" data-parent="{{ item.parent }}" data-id="{{ item.id }}">
+          <div class="leftList" id="leftList{{ item.id }}"><p>{{ item.label_left }}</p></div>
+          <div class="rightList">
+            <div class="item-open" id="itemOpen{{ item.id }}">
+              <button class="rebuildTree rebuildTreeOpen" type="button" id="itemOpenBtn{{ item.id }}" title="{{ item.title }}" aria-controls="itemClose{{ item.id }} ici" aria-hidden="true">{{ item.label_right }}</button>
+            </div>
+            <div class="item-close" id="itemClose{{ item.id }}" aria-labelledby="itemOpenBtn{{ item.id }}">
+              <div>
+                <p>{{ item.label_right }}</p>
+                <button class="rebuildTree rebuildTreeClose" aria-controls="itemClose{{ item.id }} la"><i class="cdcicon cdcicon-croix"></i><span class="sr-only">Fermer</span></button>
+              </div>
+              {% if item.link %}
+                <a class="cta" id="{{ item.link.title|replace({' ':'',"'":'' , '"':'','?':'', '!':'',':':'',',':'',';':'','/':'','+':'','à':'a','â':'a','é':'e','è':'e','ê':'e','ë':'e','ï':'i','ô':'o','ù':'u','ç':'c' })}}-{{ item.id }}" href="{{ item.link.uri }}">{{ item.link.title }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

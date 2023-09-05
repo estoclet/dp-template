@@ -1,0 +1,9 @@
+label: Archiver
+description: 'Tous les contenus, triés par mois.'
+display:
+  default:
+    display_title: Default
+    display_options:
+      title: 'Archive mensuelle'
+  block_1:
+    display_title: Bloc

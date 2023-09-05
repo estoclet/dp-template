@@ -1,0 +1,9 @@
+uuid: f2a935d8-b7a6-41e0-9e03-4428524178f5
+langcode: fr
+status: true
+dependencies: {  }
+id: node__parcours_de_vie
+label: 'Contenu: Parcours de vie'
+tags:
+  keywords: '[node:field_pg_tag_reference:entity:name]'
+  og_type: 'Parcours de vie'

@@ -1,0 +1,8 @@
+uuid: 65aa25a4-c784-4270-b584-df389e5c56af
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Tag Blog'
+vid: blog_tag
+description: 'Définir les mots-clés du blog d’experts.'
+weight: 0

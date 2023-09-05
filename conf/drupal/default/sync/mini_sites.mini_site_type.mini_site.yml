@@ -1,0 +1,12 @@
+uuid: 239b3156-c645-4d37-ba18-35c5245021cf
+langcode: fr
+status: true
+dependencies: {  }
+id: mini_site
+label: 'Mini Site'
+menu_type: null
+allow_page_type:
+  basic: 0
+  content: 0
+  link: 0
+  news_list: 0

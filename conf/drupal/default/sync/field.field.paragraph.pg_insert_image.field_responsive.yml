@@ -1,0 +1,23 @@
+uuid: 83139913-eb9c-4a58-9502-418b0b068a8e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_responsive
+    - paragraphs.paragraphs_type.pg_insert_image
+id: paragraph.pg_insert_image.field_responsive
+field_name: field_responsive
+entity_type: paragraph
+bundle: pg_insert_image
+label: 'Désactiver l''affichage en responsive'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

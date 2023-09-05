@@ -1,0 +1,113 @@
+.block-swipe-horizontal{
+  padding: 0 !important;
+  .paragraph--type--wysiwyg-personnalise{
+    .field--name-field-pg-content{
+      p,.embedded-entity{
+        margin: 0;
+      }
+    }
+  }
+}
+.block-inline-blockbloc-swipe-horizontal {
+  padding: 0;
+
+  .block-title{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .field--name-field-wysiwyg-custom {
+    display: flex;
+    flex-wrap: nowrap;
+
+    & > .field--item {
+      min-width: 280px;
+      max-width: 280px;
+      padding: 0;
+
+      @media (min-width: $screen-sm-min) {
+        min-width: 600px;
+        max-width: 600px;
+      }
+
+      @media (min-width: $screen-md-min) {
+        min-width: 800px;
+        max-width: 800px;
+      }
+    }
+  }
+
+  .paragraph {
+    margin-top: 0 !important;
+    height: 100%;
+  }
+
+  .paragraph-swipe-hozirontal-background {
+    padding: 20px;
+    padding-bottom: 90px;
+    height: 100%;
+  }
+
+}
+
+.mCustomScrollbar {
+  //Ascenceur
+  .mCSB_draggerContainer {
+    display: none;
+  }
+
+  //Boutons
+  .mCSB_scrollTools {
+    transform: translateY(-50%);
+    height: 0;
+    opacity: 1 !important;
+    bottom: 80px !important;
+
+    .mCSB_buttonLeft,
+    .mCSB_buttonRight {
+      width: auto;
+      height: auto;
+      opacity: 1;
+      background: none;
+      color: $noir-web;
+      text-decoration: none;
+      border: none;
+
+      &:before {
+        content: $cdcicon-chevron;
+        font-family: $icomoon-font-family;
+        color: $noir-web;
+        font-size: 1.2rem;
+        height: 5rem;
+        width: 5rem;
+        margin: 2rem;
+        border-radius: 50%;
+        background-color: $gris-clair;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &:hover:before{
+        color: $couleur-rouge;
+      }
+    }
+
+    .mCSB_buttonLeft {
+      &:before {
+        transform: rotate(90deg);
+      }
+    }
+
+    .mCSB_buttonRight {
+      &:before {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  //Content
+  .mCustomScrollBox {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

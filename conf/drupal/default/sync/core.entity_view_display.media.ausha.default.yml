@@ -1,0 +1,102 @@
+uuid: c9efc0e3-83bb-41c2-931d-793295ab7ea5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.media.ausha.field_media_audio_embed
+    - field.field.media.ausha.field_media_audio_id
+    - field.field.media.ausha.field_media_audio_playlist
+    - field.field.media.ausha.field_media_audio_stream
+    - field.field.media.ausha.field_media_audio_track
+    - field.field.media.ausha.field_media_audio_uri
+    - field.field.media.ausha.field_media_caption
+    - field.field.media.ausha.field_media_credential
+    - field.field.media.ausha.field_media_date
+    - field.field.media.ausha.field_media_link
+    - field.field.media.ausha.field_media_perimeter_reference
+    - field.field.media.ausha.field_media_theque_visibility
+    - field.field.media.ausha.field_media_year
+    - field.field.media.ausha.field_podcast_id
+    - media.type.ausha
+  module:
+    - datetime
+id: media.ausha.default
+targetEntityType: media
+bundle: ausha
+mode: default
+content:
+  field_media_audio_embed:
+    type: basic_string
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_caption:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_media_credential:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_perimeter_reference:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_media_theque_visibility:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_media_year:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_podcast_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_audio_id: true
+  field_media_audio_playlist: true
+  field_media_audio_stream: true
+  field_media_audio_track: true
+  field_media_audio_uri: true
+  field_media_date: true
+  field_media_link: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

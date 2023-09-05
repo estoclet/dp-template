@@ -1,0 +1,183 @@
+uuid: b5739a29-858f-4062-97f1-15ee6828fb96
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.media.audio.field_media_audio_embed
+    - field.field.media.audio.field_media_audio_id
+    - field.field.media.audio.field_media_audio_playlist
+    - field.field.media.audio.field_media_audio_track
+    - field.field.media.audio.field_media_audio_uri
+    - field.field.media.audio.field_media_caption
+    - field.field.media.audio.field_media_credential
+    - field.field.media.audio.field_media_date
+    - field.field.media.audio.field_media_link
+    - field.field.media.audio.field_media_perimeter_reference
+    - field.field.media.audio.field_media_theque_visibility
+    - field.field.media.audio.field_media_year
+    - media.type.audio
+  module:
+    - datetime
+    - field_group
+    - link
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_langue:
+      children:
+        - translation
+        - langcode
+      label: 'Gestion de la langue'
+      region: content
+      parent_name: ''
+      weight: 8
+      format_type: tab
+      format_settings:
+        classes: ''
+        id: ''
+        formatter: closed
+        description: 'Attention ne modifier uniquement que si ce média n''a pas vocation à être traduit. Pour traduire ce média en anglais passer par l''onglet Traduire.'
+        required_fields: true
+    group_visibility:
+      children:
+        - status
+        - field_media_theque_visibility
+      label: Visibilité
+      region: content
+      parent_name: ''
+      weight: 7
+      format_type: html_element
+      format_settings:
+        classes: ''
+        id: ''
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: collapsible
+        speed: fast
+        required_fields: true
+    group_classification:
+      children:
+        - field_media_perimeter_reference
+      label: Classification
+      region: content
+      parent_name: ''
+      weight: 6
+      format_type: tab
+      format_settings:
+        classes: ''
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+id: media.audio.default
+targetEntityType: media
+bundle: audio
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_caption:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 80
+      placeholder: ''
+    third_party_settings:
+      advanced_text_formatter:
+        show_token_tree: 0
+  field_media_credential:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_date:
+    type: datetime_default
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_media_perimeter_reference:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_theque_visibility:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_media_year:
+    type: datetime_datelist
+    weight: 5
+    region: content
+    settings:
+      increment: 15
+      date_order: DMY
+      time_type: none
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 13
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 10
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_media_audio_embed: true
+  field_media_audio_id: true
+  field_media_audio_playlist: true
+  field_media_audio_track: true
+  field_media_audio_uri: true
+  path: true

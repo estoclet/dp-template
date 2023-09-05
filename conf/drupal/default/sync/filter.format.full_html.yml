@@ -1,0 +1,120 @@
+uuid: 841068dc-7088-4957-8c5a-23a8e9f2230f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - blazy
+    - editor
+    - entity_embed
+    - linkit
+    - media
+    - slick
+_core:
+  default_config_hash: WNeK5FbcY8pXgEpbD_KgRzlF1-5PL3BJXwqaBctPTqw
+name: 'HTML complet'
+format: full_html
+weight: -10
+filters:
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 8
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: false
+    weight: 9
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 11
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<em> <strong class id> <cite> <blockquote cite> <code> <ul type id> <ol start type> <li id> <dl class> <div class id> <blockquote></blockquote><ul class id></ul><dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <img src alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption id> <p class id> <table id> <caption> <tbody id> <thead> <tfoot> <th> <td> <tr> <u> <sup> <sub> <a href hreflang name class target rel title data-entity-type data-entity-uuid data-entity-substitution id><iframe title width height src frameborder allowfullscreen allowtransparency style margin height frameborder align id> <span class id><drupal-entity data-entity-type data-entity-uuid data-entity-substitution data-view-mode data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button data-langcode alt title id><button class id type></button>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  blazy_filter:
+    id: blazy_filter
+    provider: blazy
+    status: false
+    weight: 3
+    settings:
+      media_switch: ''
+      hybrid_style: ''
+      box_style: ''
+      box_caption: ''
+      filter_tags:
+        img: img
+        iframe: iframe
+      use_data_uri: '0'
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
+    status: true
+    weight: 100
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 80
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: -11
+    settings:
+      title: false
+  slick_filter:
+    id: slick_filter
+    provider: slick
+    status: false
+    weight: 4
+    settings:
+      optionset: default
+      layout: ''
+      skin: ''
+      background: false
+      responsive_image_style: ''
+      image_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      optionset_thumbnail: ''
+      skin_thumbnail: ''
+      thumbnail_caption: ''
+      thumbnail_effect: ''
+      thumbnail_position: ''
+      override: false

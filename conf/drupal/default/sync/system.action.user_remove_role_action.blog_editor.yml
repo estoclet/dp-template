@@ -1,0 +1,14 @@
+uuid: 45c2a4b7-747d-43c9-963f-61ce5566bc9a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.blog_editor
+  module:
+    - user
+id: user_remove_role_action.blog_editor
+label: 'Enlever le rôle Rédacteur Blog des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: blog_editor

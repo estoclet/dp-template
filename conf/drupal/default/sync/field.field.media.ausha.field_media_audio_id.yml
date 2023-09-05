@@ -1,0 +1,19 @@
+uuid: 592dede7-b60c-41d1-9589-b32b8069bf25
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_audio_id
+    - media.type.ausha
+id: media.ausha.field_media_audio_id
+field_name: field_media_audio_id
+entity_type: media
+bundle: ausha
+label: Identifiant
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

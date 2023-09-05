@@ -1,0 +1,391 @@
+#icdcDecisionTree,
+#icdcSponsorshipDecisionTree {
+  &:focus{
+    @include focus($white, 0, 3px);
+  }
+
+  position: relative;
+  overflow: hidden;
+  background: $rouge-fond-acc;
+  text-align: center;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 0;
+    width: calc(100% + 64rem); // 1840px
+    height: 64rem; //64rem
+    background-color: rgba(255, 255, 255, .1);
+    transform: rotate(-45deg) translateY(-50%);
+    transform-origin: bottom center;
+
+    @media (max-width: $screen-sm-max) {
+      content: none;
+    }
+  }
+
+  @media (max-width: $screen-sm-max) {
+    padding: 0 1.5rem;
+  }
+
+  & > button {
+    @include responsive-font(3vw, 20px, 5.2rem, 25px);
+    font-family: $body-font;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-radius: 0;
+    border: 0;
+    text-align: center;
+    background: none;
+    white-space: inherit;
+    padding: 1.5rem 0;
+    line-height: 1.3;
+
+    @media (max-width: $screen-xs-max) {
+      height: auto;
+    }
+
+    &[aria-expanded='true'] {
+      @include responsive-font(6vw, 3rem, 5.2rem, 5.2rem);
+      font-size: 5.2rem;
+      display: inline-block;
+      position: relative;
+      white-space: normal;
+      text-align: center;
+      padding-top: 6rem;
+
+      @media (max-width: $screen-lg-max) {
+        margin-top: 4rem;
+      }
+
+      @media (max-width: $screen-md-max) {
+        margin-top: 3rem;
+        padding: 0 1.5rem;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        margin: 2rem auto;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        margin: 1.5rem auto;
+      }
+
+      .cdcicon {
+        transition: all .5s;
+        transform: rotate(-180deg);
+
+      }
+    }
+
+    &[aria-expanded='false'] {
+      height: 10.5rem;
+      font-size: 3.5rem;
+
+      @media (max-width: $screen-lg-max) {
+        font-size: 3rem;
+      }
+
+      @media (max-width: $screen-md-max) {
+        font-size: 2.5rem;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        font-size: 2rem;
+      }
+
+      .cdcicon {
+        transition: all .5s;
+      }
+    }
+
+
+    .cdcicon {
+      margin-left: 4rem;
+      display: inline-block;
+      max-width: 90%;
+      font-size: 1.5rem;
+
+      @media (max-width: $screen-lg-max) {
+        margin-left: 3rem;
+        font-size: 1.4rem;
+      }
+
+      @media (max-width: $screen-md-max) {
+        margin-left: 2rem;
+        font-size: 1.3rem;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        margin-left: 1.5rem;
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        min-width: 1rem;
+        font-size: 1rem;
+      }
+
+    }
+  }
+
+  .decision-tree-collapse {
+    position: relative;
+    z-index: 1;
+    color: $white;
+    font-family: $font-roboto;
+    font-size: 3rem;
+
+    @media (max-width: $screen-lg-max) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: $screen-md-max) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 1.5rem;
+    }
+
+    &[aria-expanded='true'],
+    &.in {
+      & > div {
+        padding-bottom: 20rem;
+
+        @media (min-width: $screen-sm-min) {
+          padding-top: 4rem;
+        }
+
+        @media (max-width: $screen-md-max) {
+          padding-bottom: 3rem;
+        }
+
+        @media (max-width: $screen-xs-max) {
+          padding-top: 1rem;
+        }
+      }
+    }
+
+    .decision-tree-body {
+      font-family: $body-font;
+      font-size: 2.3rem;
+
+      @media (min-width: $screen-sm-min) {
+        margin-bottom: 1rem;
+      }
+
+      @media (min-width: $screen-sm-min) {
+        display: flex;
+        justify-content: center;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        font-size: 1.8rem;
+      }
+
+      .leftList {
+        text-align: left;
+
+        @media (min-width: $screen-sm-min) {
+          margin-right: 1.5rem;
+          text-align: right;
+          width: 25%;
+        }
+
+        @media (min-width: $screen-md-min) {
+          margin-right: 3rem;
+        }
+
+        @media (max-width: $screen-xs-max) {
+          font-weight: 700;
+          margin-top: 10px;
+        }
+
+        p {
+          line-height: normal;
+          border-bottom: .4rem solid transparent;
+
+          @media (min-width: $screen-sm-min) {
+            margin: 0;
+          }
+
+          &:after {
+            @media (max-width: $screen-sm-max) {
+              content: ' :';
+            }
+          }
+        }
+      }
+
+      .rightList {
+        text-align: left;
+
+        @media (min-width: $screen-sm-min) {
+          width: 50%;
+        }
+
+        @media (max-width: $screen-xs-max) {
+          padding-left: 2rem;
+        }
+
+        button {
+          padding: 0;
+          background: none;
+          border: 0;
+          box-shadow: none;
+          border-bottom: .4rem solid transparent;
+          text-align: left;
+
+          &:hover,
+          &:focus {
+            text-decoration: none;
+            border-color: $white;
+          }
+
+          .cdcicon {
+            font-size: 1.5rem;
+
+            @media (max-width: $screen-lg-max) {
+              font-size: 1.4rem;
+            }
+
+            @media (max-width: $screen-md-max) {
+              font-size: 1.3rem;
+            }
+
+            @media (max-width: $screen-sm-max) {
+              font-size: 1.2rem;
+            }
+
+            @media (max-width: $screen-xs-max) {
+              font-size: 1rem;
+            }
+          }
+        }
+
+        .item-close,
+        .item-open {
+          display: flex;
+          align-items: center;
+
+          p {
+            margin-bottom: 0;
+            line-height: normal;
+            border-bottom: .4rem solid transparent;
+          }
+        }
+
+        .item-open {
+          display: none;
+        }
+
+        .item-close {
+          flex-direction: column;
+          align-items: flex-start;
+
+          & > div {
+            display: flex;
+          }
+
+          button {
+            margin-left: 2rem;
+          }
+        }
+
+        .cta {
+          margin-top: 1.5rem;
+        }
+
+        svg {
+          &.ext,
+          &.mailto {
+            path {
+              stroke: $white;
+            }
+          }
+        }
+
+        a {
+          @include button-style-filling($primarycolor: $white, $secondarycolor: $couleur-rouge, $fadecolor: $white);
+        }
+      }
+    }
+
+  }
+}
+
+#icdcSponsorshipDecisionTree {
+  background: $bleu-emeraude-clair;
+
+  .btn-primary {
+    color: $noir-web;
+  }
+
+  .decision-tree-collapse {
+    color: $noir-web;
+
+    .decision-tree-body {
+      button {
+        &:hover,
+        &:focus {
+          border-color: $noir-web !important;
+        }
+      }
+
+      a {
+        @include button-style-filling($primarycolor: $noir-web, $secondarycolor: $white, $fadecolor: $noir-web);
+        border: 1px $noir-web solid !important;
+        color: $noir-web !important;
+
+        &:before,
+        &:after {
+          background: $noir-web !important;
+        }
+
+        &:hover {
+          color: $white !important;
+          border-color: $noir-web !important;
+        }
+      }
+    }
+  }
+}
+
+
+//Accessibilité : contraste
+.a42-ac-high-contrast {
+  #icdcDecisionTree {
+    .decision-tree-collapse {
+      .decision-tree-body {
+        .rightList {
+          button {
+            &:focus {
+              border: 1px dashed $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.a42-ac-inv-contrast {
+  #icdcDecisionTree {
+    .decision-tree-collapse {
+      .decision-tree-body {
+        .rightList {
+          button {
+            &:focus {
+              border: 1px dashed #ff0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

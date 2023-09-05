@@ -1,0 +1,18 @@
+uuid: eb0bbc0b-d1ac-4608-ab24-a8ae9ee22cc3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_home_strates_instit
+id: block_content.bloc_home_strates_instit.info
+field_name: info
+entity_type: block_content
+bundle: bloc_home_strates_instit
+label: 'Description du bloc'
+description: 'Une brève description de votre bloc.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

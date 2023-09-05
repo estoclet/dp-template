@@ -1,0 +1,21 @@
+uuid: c7e73ce7-4ea9-4e22-9d8d-f7af07585a2c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.gouvernance
+  module:
+    - metatag
+id: node.gouvernance.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: gouvernance
+label: Métadonnées
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

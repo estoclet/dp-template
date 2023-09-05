@@ -1,0 +1,20 @@
+uuid: 9252962e-74d7-4f8e-b56f-41db260d2b7a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.perimeter
+id: taxonomy_term.perimeter.moderation_state
+field_name: moderation_state
+entity_type: taxonomy_term
+bundle: perimeter
+label: 'État de modération'
+description: 'L''état de modération de cet élément de contenu.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

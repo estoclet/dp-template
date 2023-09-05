@@ -1,0 +1,22 @@
+uuid: a2a66209-dcc5-4ae1-b10a-961246bd9245
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_insert_audio
+id: paragraph.pg_insert_audio.status
+field_name: status
+entity_type: paragraph
+bundle: pg_insert_audio
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

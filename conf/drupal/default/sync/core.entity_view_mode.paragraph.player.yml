@@ -1,0 +1,10 @@
+uuid: 8e3929d6-a054-4ab8-b2a3-1fa5d3f32311
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.player
+label: Player
+targetEntityType: paragraph
+cache: true

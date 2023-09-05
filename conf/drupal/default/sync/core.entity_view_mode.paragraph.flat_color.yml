@@ -1,0 +1,10 @@
+uuid: 704eef9d-391f-4d8b-bcfa-8b695dab20b1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.flat_color
+label: 'Aplat de couleur'
+targetEntityType: paragraph
+cache: true

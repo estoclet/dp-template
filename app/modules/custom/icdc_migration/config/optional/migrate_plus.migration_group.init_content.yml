@@ -1,0 +1,9 @@
+langcode: fr
+status: true
+dependencies: {  }
+id: init_content
+label: Initialisation des contenus
+description: 'Initialisation des contenus'
+source_type: csv
+module: null
+shared_configuration: null

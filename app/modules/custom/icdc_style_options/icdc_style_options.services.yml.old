@@ -1,0 +1,4 @@
+services:
+  plugin.manager.icdc_style_options:
+    class: \Drupal\icdc_style_options\IcdcStyleOptionPluginManager
+    parent: default_plugin_manager

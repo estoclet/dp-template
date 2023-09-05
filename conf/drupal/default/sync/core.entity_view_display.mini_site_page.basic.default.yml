@@ -1,0 +1,31 @@
+uuid: 08f6509f-8bb7-4a27-90b3-cbbf66a02738
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.mini_site_page.basic.field_body
+    - mini_sites.mini_site_page_type.basic
+  module:
+    - text
+_core:
+  default_config_hash: aCkAUTToBtUXA3qOe3rN-8-GOfC4vJHjLfQ-JEAnbmg
+id: mini_site_page.basic.default
+targetEntityType: mini_site_page
+bundle: basic
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

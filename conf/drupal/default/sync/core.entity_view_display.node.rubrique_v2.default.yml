@@ -1,0 +1,45 @@
+uuid: f5932aa5-100c-416f-8b14-e1137c4f7b7a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.rubrique_v2.body
+    - field.field.node.rubrique_v2.field_contenu
+    - node.type.rubrique_v2
+  module:
+    - field_formatter_class
+    - layout_builder
+    - layout_paragraphs
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.rubrique_v2.default
+targetEntityType: node
+bundle: rubrique_v2
+mode: default
+content:
+  field_contenu:
+    type: layout_paragraphs
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

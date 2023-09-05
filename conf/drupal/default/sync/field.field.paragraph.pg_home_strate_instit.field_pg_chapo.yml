@@ -1,0 +1,21 @@
+uuid: 05adbee5-1a8b-49ea-ac9c-d361b94c7a58
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_chapo
+    - paragraphs.paragraphs_type.pg_home_strate_instit
+  module:
+    - text
+id: paragraph.pg_home_strate_instit.field_pg_chapo
+field_name: field_pg_chapo
+entity_type: paragraph
+bundle: pg_home_strate_instit
+label: Chapô
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

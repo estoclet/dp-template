@@ -1,0 +1,23 @@
+uuid: f21634a4-c360-48a2-aa65-a09405bc5324
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_no_margin
+    - node.type.dossier
+id: node.dossier.field_no_margin
+field_name: field_no_margin
+entity_type: node
+bundle: dossier
+label: 'Supprimer les marges'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

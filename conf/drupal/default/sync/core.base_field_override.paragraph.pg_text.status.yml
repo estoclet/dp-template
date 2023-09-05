@@ -1,0 +1,22 @@
+uuid: bd66d2d6-cc79-41c6-95fa-80f06112d43b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_text
+id: paragraph.pg_text.status
+field_name: status
+entity_type: paragraph
+bundle: pg_text
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

@@ -1,0 +1,21 @@
+uuid: 23e48072-13b2-4002-8af3-4507093a036c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.paragraph_view_mode
+    - paragraphs.paragraphs_type.pg_insert_video
+  module:
+    - paragraph_view_mode
+id: paragraph.pg_insert_video.paragraph_view_mode
+field_name: paragraph_view_mode
+entity_type: paragraph
+bundle: pg_insert_video
+label: 'Paragraph view mode'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraph_view_mode

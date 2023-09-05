@@ -1,0 +1,243 @@
+<?php
+
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\pathauto\AliasStorageHelperInterface;
+
+/**
+ * Implements hook_install().
+ *
+ * @deprecated use Migration module instead to create content
+ */
+function icdc_site_deploy_install() {
+
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Delete all alias with pattern /blog/user/uid.
+ */
+function icdc_site_deploy_update_8701() {
+  // List all users.
+  $uids = \Drupal::entityQuery('user')
+    //->condition('status', 1)
+    ->condition('roles', 'blog_editor')
+    ->execute();
+  if ($uids) {
+    foreach($uids as $uid) {
+      $system_path = '/blog/user/' . $uid;
+      $loaded_path = \Drupal::service('path.alias_storage')->load(array('source' => $system_path));
+      if (is_array($loaded_path)) {
+        if ($delete = \Drupal::service('path.alias_storage')->delete(array('pid' => $loaded_path['pid']))) {
+          \Drupal::logger('icdc_site_deploy')
+            ->notice('L\'alias @alias Blog d\'expert a été correctement supprimé.', [
+              '@alias' => $loaded_path['alias'],
+            ]);
+        } else {
+          \Drupal::logger('icdc_site_deploy')
+            ->notice('L\'alias \"Blog d\'expert\" (".@alias.") n\'a pas pu être supprimé. Veuillez le supprimer à la main.', [
+              '@alias' => $loaded_path['alias'],
+            ]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Fix uninstall of module views_taxonomy_term_name_into_id.
+ */
+function icdc_site_deploy_update_8702(&$sandbox) {
+  $modules = [
+    'views_taxonomy_term_name_into_id',
+  ];
+  \Drupal::database()->delete('key_value')
+    ->condition('name', $modules, 'IN')
+    ->execute();
+}
+
+/**
+ * Remove field field_bgcolor.
+ */
+function icdc_site_deploy_update_8703(&$sandbox) {
+  $field = FieldConfig::loadByName('block_content', 'bloc_comex', 'field_bgcolor');
+  if (!empty($field)) {
+    $field->delete();
+  }
+}
+
+/**
+ * Remove field field_pv_tag_reference.
+ */
+function icdc_site_deploy_update_8704(&$sandbox) {
+  $field = FieldConfig::loadByName('node', 'parcours_de_vie', 'field_pv_tag_reference');
+  if (!empty($field)) {
+    $field->delete();
+  }
+}
+
+/**
+ * Add menu item for tarteaucitron.
+ */
+function icdc_site_deploy_update_8705(&$sandbox) {
+  \Drupal\menu_link_content\Entity\MenuLinkContent::create([
+    'title' => 'Gestion des cookies',
+    'menu_name' => 'menu-infos-legales',
+    'link' => [
+      'uri' => 'internal:#',
+      'options' => [
+        'attributes' => [
+          'class' => 'tarte-au-citron-open-modal',
+          'target' => '',
+        ],
+      ],
+    ],
+    'enabled' => TRUE,
+    'weight' => 99
+  ])->save();
+}
+
+/*
+ * Creates the required block for the Blog pages.
+ */
+function icdc_site_deploy_update_8706(&$sandbox) {
+  $default_content = [
+    // Keyed by entity type.
+    'block_content' => [
+      // Then by UUID.
+      '344e1037-21bf-41e4-896d-a6701b82c7d7' => [
+        'info' => 'Bloc entête (Listing du blog)',
+        'type' => 'bloc_entete',
+        'field_subtitle' => 'Sous titre',
+      ],
+    ],
+  ];
+  icdc_site_deploy_create_content($default_content);
+}
+
+/**
+ * Creates install content.
+ *
+ * @param array $content
+ *   Content keyed by entity-type and UUID.
+ */
+function icdc_site_deploy_create_content(array $content) {
+  foreach ($content as $entity_type_id => $items) {
+    $storage = \Drupal::entityTypeManager()->getStorage($entity_type_id);
+    foreach ($items as $uuid => $item) {
+      $entity = $storage->create($item + ['uuid' => $uuid]);
+      $entity->save();
+    }
+  }
+}
+
+/**
+ * Remove field field_pg_transcript.
+ */
+function icdc_site_deploy_update_8707(&$sandbox) {
+  $field = FieldConfig::loadByName('paragraph', 'story', 'field_pg_transcript');
+  if (!empty($field)) {
+    $field->delete();
+  }
+}
+
+/**
+ * Utility function to update alias.
+ */
+function icdc_site_deploy_regenerate_alias(&$sandbox, $types) {
+  $entities = [];
+  foreach ($types as $type) {
+    $entities[$type] = \Drupal::entityQuery($type)->execute();
+  }
+  if (count($entities) == 0) {
+    return;
+  }
+
+  $result = [];
+
+  foreach ($entities as $type => $entity_list) {
+    foreach ($entity_list as $entity_id) {
+      $result[] = [
+        'entity_type' => $type,
+        'id' => $entity_id,
+      ];
+    }
+  }
+
+  // Use the sandbox to store the information needed to track progression.
+  if (!isset($sandbox['current'])) {
+    $sandbox['current'] = 0;
+    $sandbox['max'] = count($result);
+  }
+
+  $limit = 20;
+  $result = array_slice($result, $sandbox['current'], $limit);
+
+  foreach ($result as $row) {
+    $entity_storage = \Drupal::entityTypeManager()->getStorage($row['entity_type']);
+    $entity = $entity_storage->load($row['id']);
+
+    // Update Entity URL alias.
+    \Drupal::service('pathauto.generator')->updateEntityAlias($entity, 'update');
+
+    // Update our progress information.
+    $sandbox['current']++;
+  }
+
+  $sandbox['#finished'] = empty($sandbox['max']) ? 1 : ($sandbox['current'] / $sandbox['max']);
+
+  if ($sandbox['#finished'] >= 1) {
+    return t('The batch URL Alias update is finished.');
+  }
+}
+
+/**
+ * Update alias for "taxonomy_term node user".
+ */
+function icdc_site_deploy_update_8708(&$sandbox) {
+  $types = [ 'node', 'user', 'taxonomy_term'];
+  icdc_site_deploy_regenerate_alias($sandbox, $types);
+}
+
+/**
+ * Update alias for "taxonomy_term tag_blog".
+ */
+function icdc_site_deploy_update_8709(&$sandbox) {
+  /**
+   * @var $pathauto_alias_storage AliasStorageHelperInterface
+   */
+  $pathauto_alias_storage = \Drupal::service('pathauto.alias_storage_helper');
+
+  $terms = \Drupal::entityTypeManager()
+    ->getStorage('taxonomy_term')
+    ->loadByProperties(['vid' => 'blog_tag']);
+
+  foreach($terms as $term) {
+    $pathauto_alias_storage->deleteEntityPathAll($term);
+  }
+  $types = [ 'node', 'user', 'taxonomy_term'];
+  icdc_site_deploy_regenerate_alias($sandbox, $types);
+}
+
+/**
+ * Fix extlink translation.
+ */
+function icdc_site_deploy_update_8710(&$sandbox) {
+  $chaine = '(link is external)';
+  $traduction = '(le lien est externe)';
+  $storage = \Drupal::service('locale.storage');
+  $string = $storage->findString(['source' => $chaine]);
+  if ($string === NULL) {
+    $string = new \Drupal\locale\SourceString();
+    $string->setString($chaine);
+    $string->setStorage($storage);
+    $string->save();
+  }
+
+  $storage->createTranslation(array(
+    'lid' => $string->lid,
+    'language' => 'fr',
+    'translation' => $traduction,
+  ))->save();
+}

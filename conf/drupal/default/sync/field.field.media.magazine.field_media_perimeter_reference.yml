@@ -1,0 +1,29 @@
+uuid: 368c600f-5e5e-4ab7-b4b4-b5cab28964c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_perimeter_reference
+    - media.type.magazine
+    - taxonomy.vocabulary.perimeter
+id: media.magazine.field_media_perimeter_reference
+field_name: field_media_perimeter_reference
+entity_type: media
+bundle: magazine
+label: 'Périmètre métier'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      perimeter: perimeter
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

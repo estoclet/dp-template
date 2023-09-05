@@ -1,4 +1,4 @@
-uuid: ffbc52e7-71ce-41a0-b58d-274419bcd29e
+uuid: 5f43d90d-ce3e-491e-bdee-587449081aa0
 langcode: fr
 status: false
 dependencies: {  }
@@ -6,22 +6,14 @@ id: dev
 label: Dev
 description: ''
 weight: 0
-folder: ../conf/drupal/default/dev
-module:
-  config_devel: 0
-  config_inspector: 0
-  dblog: 0
-  devel: 0
-  devel_a11y: 0
-  devel_generate: 0
-  devel_php: 0
-  purge_ui: 0
-  speedboxes: 0
-  update: 0
-  upgrade_status: 0
-  views_ui: 0
+folder: ../config/dev
+module: {  }
 theme: {  }
 blacklist: {  }
-graylist: {  }
+graylist:
+  - elasticsearch_connector.cluster.elastic
+  - webform.webform.admin
+  - webform.webform.mediation
+  - webform.webform.mediation_consomation
 graylist_dependents: true
-graylist_skip_equal: true
+graylist_skip_equal: false

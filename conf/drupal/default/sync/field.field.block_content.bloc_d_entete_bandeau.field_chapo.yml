@@ -1,0 +1,21 @@
+uuid: 0f919230-3e4d-4ef7-9efe-4eacf9ef94a1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_d_entete_bandeau
+    - field.storage.block_content.field_chapo
+  module:
+    - text
+id: block_content.bloc_d_entete_bandeau.field_chapo
+field_name: field_chapo
+entity_type: block_content
+bundle: bloc_d_entete_bandeau
+label: Chapô
+description: 'Saisissez le chapô de la page qui sera affiché dans l’entête.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

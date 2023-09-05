@@ -1,0 +1,63 @@
+uuid: c19c9ffa-8f0d-46c8-8c4f-3a4d9f35e6bb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_home_strates_instit
+    - field.field.block_content.bloc_home_strates_instit.field_paragraph_ref_strate_1
+    - field.field.block_content.bloc_home_strates_instit.field_paragraph_ref_strate_2
+    - field.field.block_content.bloc_home_strates_instit.field_paragraph_ref_strate_3
+    - field.field.block_content.bloc_home_strates_instit.field_responsive
+  module:
+    - entity_reference_revisions
+    - field_formatter_class
+id: block_content.bloc_home_strates_instit.default
+targetEntityType: block_content
+bundle: bloc_home_strates_instit
+mode: default
+content:
+  field_paragraph_ref_strate_1:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_paragraph_ref_strate_2:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_paragraph_ref_strate_3:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_responsive:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

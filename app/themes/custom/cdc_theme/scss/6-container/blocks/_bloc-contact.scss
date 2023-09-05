@@ -1,0 +1,74 @@
+// Bloc contact
+.block-contact {
+
+  .field--name-field-title {
+    @extend %heading1;
+  }
+
+  .wrapper-content {
+    padding: 0 20px;
+    margin-top: 40px;
+
+    @media (min-width: $screen-md-min) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+    }
+
+    .content-left {
+      &:not(.without-img) {
+        @media (min-width: $screen-md-min) {
+          max-width: 680px;
+          width: 50%;
+        }
+      }
+
+      .chapo-infos {
+        @media (min-width: $screen-md-min) {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .field--name-field-chapo {
+      @media (min-width: $screen-md-min) {
+        max-width: 360px;
+      }
+    }
+
+    .contact-infos {
+      @media (min-width: $screen-md-min) {
+        margin-left: 20px;
+      }
+    }
+
+    .field--name-field-media-reference {
+      margin-top: 20px;
+
+      @media (min-width: $screen-md-min) {
+        max-width: 550px;
+        margin-top: 0;
+        margin-left: 30px;
+      }
+    }
+  }
+
+  .field--name-field-link {
+    a {
+      @extend %more-link;
+    }
+  }
+}
+
+//SVG Mailto
+svg.mailto {
+  width: 18px;
+  height: 18px;
+  margin-left: 5px;
+}

@@ -1,0 +1,21 @@
+uuid: 11552ea6-25ca-4a41-8ef6-2f40a7377320
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_biopic
+  module:
+    - text
+    - user
+id: user.user.field_biopic
+field_name: field_biopic
+entity_type: user
+bundle: user
+label: Biopic
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

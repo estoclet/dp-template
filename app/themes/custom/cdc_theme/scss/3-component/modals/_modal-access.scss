@@ -1,0 +1,145 @@
+$top-modal-full-page: 0;
+$padding-modal-full-page: 20px ; // sass-lint:disable-line no-important
+$background-modal-content-full-page: rgba(255, 255, 255, 1);
+
+body {
+  &.a42-ac-active {
+    #a42-ac {
+      @media (min-width: $screen-sm-min) {
+        display: flex !important; // sass-lint:disable-line no-important
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @media (min-width: $screen-md-min) {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+#a42-ac {
+  top: $top-modal-full-page !important; // sass-lint:disable-line no-important -- height of pre-header
+  padding: $padding-modal-full-page !important; // sass-lint:disable-line no-important
+  width: 100% !important; // sass-lint:disable-line no-important
+  left: 0 !important; // sass-lint:disable-line no-important
+  margin: 0 !important; // sass-lint:disable-line no-important
+  height: 100%;
+  z-index: 111111;
+  background-color: $background-modal-content-full-page;
+
+  .a42-ac-close {
+    background: none;
+    width: 12rem;
+    height: 20px;
+    padding: 0;
+    top: 20px;
+    right: 40px;
+
+    .sr-only {
+      @extend %close-label;
+      position: relative !important; // sass-lint:disable-line no-important
+      width: auto !important; // sass-lint:disable-line no-important
+      clip: initial !important; // sass-lint:disable-line no-important
+      clip-path: initial !important; // sass-lint:disable-line no-important
+    }
+
+    &:after {
+      content: $cdcicon-croix !important; // sass-lint:disable-line no-important
+      font-family: $icomoon-font-family;
+      background: none !important; // sass-lint:disable-line no-important
+      color: $couleur-rouge;
+      font-size: 1.6rem;
+      left: 10px;
+    }
+  }
+
+  h1 {
+    @extend %heading1;
+    margin: 0;
+
+    @media (max-width: $screen-xs-max) {
+      margin-top: 30px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      width: 75%;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: 65%;
+    }
+
+    .chapo {
+      line-height: normal;
+    }
+  }
+
+  .a42-ac-content {
+    @media (min-width: $screen-sm-min) {
+      width: 75%;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: 65%;
+    }
+
+    .a42-ac-fieldset {
+      @extend %radio-btn-with-check;
+      width: 100%;
+      padding: 0;
+      margin: 0 0 20px;
+      background: none;
+      border: 0;
+      font-size: 1.2rem;
+
+      @media (min-width: $screen-sm-min) {
+        font-size: 1.3rem;
+      }
+
+      .a42-ac-legend {
+        @extend %heading3;
+        @extend %responsive-small--margin-bottom;
+        padding: 0;
+      }
+    }
+
+    #a42-ac-reinit {
+      margin-top: 20px;
+      text-align: right;
+
+      #btn-reinit {
+        padding: 0;
+        background: none;
+        border: 0;
+        text-decoration: underline;
+        font-size: 1.4rem;
+
+        @media (min-width: $screen-sm-min) {
+          font-size: 1.5rem;
+        }
+
+        @media (min-width: $screen-lg-min) {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+
+}
+
+//Overlay
+.a42-ac-active {
+
+  .a42-ac-overlay {
+    display: none;
+  }
+}
+
+//Bouton de base
+#a42-ac-button {
+  display: none;
+}
+
+
+

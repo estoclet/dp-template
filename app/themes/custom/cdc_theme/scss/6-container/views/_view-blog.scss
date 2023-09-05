@@ -1,0 +1,321 @@
+.view-blog {
+  .view-header {
+    .wrapper-user-header {
+      padding: 0 20px;
+
+      @media (min-width: $screen-lg-min) {
+        padding: 0;
+      }
+
+      .wrapper {
+        @media (min-width: $screen-md-min) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+      }
+
+      h2 {
+        margin: 0 0 30px;
+      }
+
+      .auteur-description {
+        width: 100%;
+        margin-top: 2rem;
+
+        // @media (min-width: $screen-md-min) {
+        //   min-width: 600px;
+        //   max-width: 600px;
+        // }
+
+        .auteur-avatar {
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+          min-width: 100px;
+          max-width: 100px;
+          margin-right: 60px;
+          background-size: cover;
+          background-position: center center;
+
+          @media (min-width: $screen-sm-min) {
+            width: 180px;
+            height: 180px;
+            min-width: 180px;
+            max-width: 180px;
+          }
+        }
+
+        .auteur {
+          padding-right: 40px;
+
+          .field--name-field-user-firstname, .field--name-field-user-lastname{
+            font-size: 2.4rem !important;
+
+            @media (min-width: $screen-sm-min) {
+              font-size: 2.6rem !important;
+            }
+
+            @media (min-width: $screen-lg-min) {
+              font-size: 2.8rem !important;
+            }
+          }
+        }
+
+        .auteur-infos {
+          @media (max-width: $screen-xs-max) {
+            padding-right: 40px;
+          }
+
+          .field--name-field-user-firstname {
+            @media (max-width: $screen-xs-max) {
+              margin-bottom: 0;
+            }
+          }
+
+          .auteur-linkedin {
+            position: relative;
+            margin-top: 20px;
+            right: 0;
+
+            svg.ext {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    //Page taxonomy
+    .view-blog-term {
+      .view-content {
+        max-width: inherit;
+        padding: 0;
+      }
+    }
+
+    //Voir tout
+    .more-link {
+      display: none;
+    }
+  }
+
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > .container {
+      @media (min-width: $screen-lg-min) {
+        width: 100%;
+        max-width: 1290px;
+      }
+    }
+
+    .wrapper-tag-desc {
+      margin-bottom: 40px;
+
+      h2 {
+        margin-top: 0;
+        font-weight: 700;
+        font-family: $body-font;
+      }
+    }
+  }
+
+  .view-footer {
+    background-color: $gris-clair;
+  }
+
+}
+
+.view-blog, .view-blog-authors,
+.block-facet-blockicdc-media-facet-type {
+  .menu--menu-blog,
+  .facets-widget-links {
+    width: 100%;
+    margin-bottom: 5rem;
+    text-align: center;
+    border-bottom: 1px solid $gris;
+
+    //Page taxonomy term
+    & > ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      display: inline-block;
+      padding: 0 1rem;
+
+      a {
+        @extend %menu-taxonomy-link;
+        position: relative;
+        display: inline-block;
+        padding: 1.5rem 0 2rem;
+        text-decoration: none;
+        font-size: 1.6rem;
+        @media (max-width: $screen-md-max) {
+          font-size: 1.5rem;
+        }
+      }
+
+      &:first-child{
+        position: relative;
+        padding-right: 0;
+        &:after{
+          content: "";
+          width: 1px;
+          background: $gris;
+          height: 3rem;
+          position: absolute;
+          top: 0.9rem;
+        }
+        a{
+          margin-right: 1rem;
+        }
+      }
+      &.all-authors-item{
+        position: relative;
+        padding-left: 0;
+        &:before{
+          content: "";
+          width: 1px;
+          background: $gris;
+          height: 3rem;
+          position: absolute;
+          top: 0.9rem;
+        }
+        a{
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+
+//Tous les auteurs
+.view-blog-authors {
+  .view-content {
+    .views-view-grid {
+      max-width: 1290px;
+      margin: 80px auto 0 auto;
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media (max-width: $screen-xs-max) {
+          justify-content: center;
+        }
+      }
+
+      .user-teaser {
+        margin-bottom: 80px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+//A lire aussi
+.wrapper-content-bottom {
+  h2 {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  section {
+    &.block-entity-viewnode {
+      width: 100%;
+
+      .field--name-field-node-references {
+        .field--item {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  .wrapper-content,
+  .node--view-mode-bounce .field--name-field-node-references {
+    display: flex;
+    justify-content: space-between;
+
+    .field--item {
+      &:nth-of-type(1) {
+        padding-right: 2rem;
+
+        & + .field--item {
+          position: relative;
+          padding-left: 2rem;
+
+          &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 50%;
+            background: $gris;
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        h4 {
+          flex-direction: row-reverse;
+          text-align: right;
+
+          a {
+            &.link-arrow {
+              margin-left: 50px;
+              margin-right: 0;
+              transform: rotate(-90deg);
+            }
+          }
+        }
+      }
+    }
+
+    .view,
+    .field--name-field-node-references {
+      .node {
+        a {
+          @extend %heading3;
+          display: inline-block;
+          max-width: 490px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+.page-node-type-article {
+  .wrapper-content-bottom {
+    .node--view-mode-bounce {
+      .field--name-field-node-references {
+        .field--item {
+          &:nth-of-type(1) {
+            & + .field--item {
+              &:before {
+                top: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.block-views-blockblog-term-block-view-blog-menu {
+  .more-link {
+    a {
+      @extend %menu-taxonomy-link;
+    }
+  }
+}

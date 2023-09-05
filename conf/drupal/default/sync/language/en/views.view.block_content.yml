@@ -1,0 +1,26 @@
+label: 'Bibliothèque de blocs personnalisés'
+description: 'Trouver et gérer les blocs personnalisés.'
+display:
+  default:
+    display_title: Default
+    display_options:
+      title: 'Bibliothèque de blocs personnalisés'
+      fields:
+        info:
+          label: 'Description du bloc'
+        type:
+          label: 'Type de bloc'
+      empty:
+        area_text_custom:
+          content: 'Il n''y a pas de bloc personnalisé disponible.'
+      filters:
+        info:
+          expose:
+            label: 'Description du bloc'
+        type:
+          expose:
+            label: 'Type de bloc'
+  page_1:
+    display_options:
+      menu:
+        title: 'Bibliothèque de blocs personnalisés'

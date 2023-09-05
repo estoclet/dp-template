@@ -1,0 +1,4 @@
+services:
+  icdc_tarte_au_citron.services_manager:
+    class: Drupal\icdc_tarte_au_citron\ServicesManager
+    parent: default_plugin_manager

@@ -1,0 +1,23 @@
+uuid: 8b13be15-64e8-4818-9630-1ec39509ee3c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_title
+    - node.type.page
+id: node.page.field_hide_title
+field_name: field_hide_title
+entity_type: node
+bundle: page
+label: 'Cacher le titre de la page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

@@ -1,0 +1,53 @@
+{#
+/**
+ * @file mini-site-menu.html.twig
+ * Default theme implementation to present Mini site menu.
+ *
+ * This template is used when viewing Mini site menu.
+ *
+ *
+ * Available variables:
+ * - home: direct link to mini site home
+ * - items: array of mini site page items
+ * - mini_site: mini site object
+ * - url: url to homepage
+ * - logo_1: first logo field
+ * - logo_2: second logo field
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_mini_site()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{# bgcolorclass = vide ou #xxxxxx #}
+{% set bgcolorclass = menu.mini_site.field_mini_site_color.color %}
+<div class="minisite-header" style="background-color: {{ bgcolorclass }}">
+  <div class="wrapper-xl">
+    <div class="minisite-header-top">
+      <div class="minisite-container-logo">
+        <a href="{{- menu.url -}}">{{- menu.logo_1 -}}</a>
+        <a href="{{- menu.url -}}">{{- menu.logo_2 -}}</a>
+      </div>
+      <div class="minisite-container-right">
+        <div class="site-name">{{ menu.mini_site.name.value }}</div>
+      </div>
+    </div>
+    {% if menu.content %}
+      <div class="minisite-container-menu">
+        {# <span>{{ language }}</span> #}
+        <button role="button" class="burger-menu" aria-controls="icdcmenumobile_minisite">
+          <span></span>Menu
+        </button>
+        <div id="icdcmenumobile_minisite" class="menu-minisite">
+          <span class="close">
+            <i class="cdcicon cdcicon-croix"></i>
+          </span>
+          {{- menu.content -}}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>

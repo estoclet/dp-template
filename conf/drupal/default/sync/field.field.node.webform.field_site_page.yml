@@ -1,0 +1,21 @@
+uuid: 2275e140-cf15-4620-92a7-23b822a03256
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_page
+    - node.type.webform
+id: node.webform.field_site_page
+field_name: field_site_page
+entity_type: node
+bundle: webform
+label: 'Site page'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:mini_site_page'
+  handler_settings: {  }
+field_type: entity_reference

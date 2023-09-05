@@ -1,0 +1,10 @@
+uuid: cd0df76f-8704-4d85-9135-67800906622c
+langcode: fr
+status: true
+dependencies: {  }
+id: pg_chiffre
+label: 'Chiffre clé'
+icon_uuid: null
+icon_default: null
+description: 'Un chiffre à ajouter dans le bloc chiffres clés.'
+behavior_plugins: {  }

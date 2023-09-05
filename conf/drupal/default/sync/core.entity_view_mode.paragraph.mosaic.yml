@@ -1,0 +1,10 @@
+uuid: 2373cfa0-689a-45c8-8719-b93936cfc6cf
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.mosaic
+label: Mosaïque
+targetEntityType: paragraph
+cache: true

@@ -1,0 +1,19 @@
+uuid: fddc4fb2-af9f-4fae-98d0-593be0c4a1f2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_instagram_username
+    - media.type.instagram
+id: media.instagram.field_instagram_username
+field_name: field_instagram_username
+entity_type: media
+bundle: instagram
+label: 'Auteur Instagram'
+description: 'Ne rien saisir. La valeur de ce champ sera renseignée automatiquement.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

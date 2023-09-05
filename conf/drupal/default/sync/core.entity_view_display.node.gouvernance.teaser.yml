@@ -1,0 +1,49 @@
+uuid: aaf3962c-24c4-4190-9640-0b3f54ad1ab3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.gouvernance.body
+    - field.field.node.gouvernance.field_function
+    - field.field.node.gouvernance.field_image_reference
+    - field.field.node.gouvernance.field_metatag
+    - node.type.gouvernance
+  module:
+    - field_formatter_class
+    - user
+id: node.gouvernance.teaser
+targetEntityType: node
+bundle: gouvernance
+mode: teaser
+content:
+  field_function:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_metatag: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

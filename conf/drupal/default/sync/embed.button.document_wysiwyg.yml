@@ -1,0 +1,31 @@
+uuid: 7eb024fc-b008-4d63-b457-0628417d040c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.detailed
+    - core.entity_view_mode.media.folded
+    - core.entity_view_mode.media.link
+    - entity_browser.browser.document_browser_wysiwyg
+    - media.type.document
+  module:
+    - entity_embed
+    - media
+label: 'Document WYSIWYG'
+id: document_wysiwyg
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - document
+  display_plugins:
+    - 'view_mode:media.detailed'
+    - 'view_mode:media.folded'
+    - 'view_mode:media.link'
+  entity_browser: document_browser_wysiwyg
+  entity_browser_settings:
+    display_review: false
+icon:
+  uri: 'public://embed_buttons/32x32[1]_1.png'
+  data: iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAABwUlEQVR4AcXVA6wkaRiG0bO2bdvx2rZ3bERj27atYGzbtm3bxj9251bNHezzVlV3dOJ8AI8aKkRuu08lTlMh1lb5WsImCtL5IMl1EwTb/C1B4wWvS7oGglmO2CdrYuBdF/avyh4H0FiQWk77HVLQ9dHAe/YJGrvuLGCZSQ4IglLRwF8OWWOSm88CZ2dKNPC5g/Yb4HrAY147td8F46OB+ywWFHFxb8YDqCfI7eLejQfcaYZgq4+SC/wtqGqpFf7ygacvFXjReMF8hwTBPlt180xc4CG1bBUs1E4h2awQzBFUjQc8bIQgmO8xwLsm2mmfzPGA8g6bI0gLgNt861PXxwMaCII2bpCwaOAZTZV1N8kFAP8bcJ3HPONpt3Li35PgPk951rPuiAbutMhGKwzzujnWWaKDu1Wz0zLL/RQHWCuPR21U0nw5PW+ZIuoY6wmPuzUOsNIY7ez0l0Wyo6Ge6tluhCLEAVboq7Sv3WalzGihiwbmSuOjOMBd1ksHbrdWPZltl059QyEOcIehfge3GmCuWUq7UQkt4wLc5Poz/24G3ODGaOB1cXv9LBB92hItnWBi5HGNWFMg+rwn3lCPAkcB9VpG0MSxMJIAAAAASUVORK5CYII=
+icon_uuid: null

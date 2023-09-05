@@ -1,0 +1,20 @@
+drupal.facets.collapsible-checkbox-widget:
+  version: VERSION
+  js:
+    js/collapsible-checkbox-widget.js: {}
+  dependencies:
+    - facets/widget
+
+icdc_facets.block-label:
+  version: VERSION
+  js:
+    js/icdc-facets-block-label.js: {}
+  dependencies:
+    - core/drupal.ajax
+
+icdc_facets.date_picker:
+  version: VERSION
+  js:
+    js/icdc-facets-datepicker.js: {}
+  dependencies:
+    - jquery_ui_datepicker/datepicker

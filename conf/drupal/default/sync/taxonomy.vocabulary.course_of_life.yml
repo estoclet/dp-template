@@ -1,0 +1,8 @@
+uuid: 50b435a3-ea9c-4d95-87e9-482c02293db9
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Parcours de vie'
+vid: course_of_life
+description: 'Définir les thématiques du parcours de vie'
+weight: 0

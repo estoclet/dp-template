@@ -1,0 +1,72 @@
+uuid: de32ffbe-9241-4105-b56c-5f25d18bbe5a
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.accueil.field_head_background
+    - field.field.node.accueil.field_head_image_reference
+    - field.field.node.accueil.field_head_link
+    - field.field.node.accueil.field_head_text
+    - field.field.node.accueil.field_head_title
+    - field.field.node.accueil.field_image_teaser_reference
+    - field.field.node.accueil.field_metatag
+    - field.field.node.accueil.field_short_title
+    - field.field.node.accueil.field_site
+    - field.field.node.accueil.field_site_page
+    - field.field.node.accueil.field_site_page_type
+    - field.field.node.accueil.field_snippet_seo
+    - field.field.node.accueil.layout_builder__layout
+    - node.type.accueil
+  module:
+    - field_formatter_class
+    - user
+id: node.accueil.teaser
+targetEntityType: node
+bundle: accueil
+mode: teaser
+content:
+  field_image_teaser_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  field_short_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_color_primary: true
+  field_head_background: true
+  field_head_image_reference: true
+  field_head_link: true
+  field_head_text: true
+  field_head_title: true
+  field_image_reference: true
+  field_media_reference: true
+  field_metatag: true
+  field_site: true
+  field_site_page: true
+  field_site_page_type: true
+  field_snippet_seo: true
+  langcode: true
+  layout_builder__layout: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

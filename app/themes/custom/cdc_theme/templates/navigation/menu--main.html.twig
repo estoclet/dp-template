@@ -1,0 +1,94 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ *
+ * Available variables:
+ * - classes: A list of classes to apply to the top level <ul> element.
+ * - dropdown_classes: A list of classes to apply to the dropdown <ul> element.
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *
+ * @ingroup templates
+ */
+#}
+{# extends "menu.html.twig" #}
+{%
+  set classes = [
+  'menu',
+  'navbar-' ~ menu_level|clean_class,
+  'navbar-' ~ menu_name|clean_class,
+  'nav',
+  'navbar-nav',
+]
+%}
+
+{% macro menu_links(items, attributes, menu_level, classes, dropdown_classes) %}
+  {% if items %}
+      {% if menu_level > 0 %}
+        <div{{ attributes.setAttribute('class', 'menu-level--' ~ menu_level) }}>
+        {% if menu_level == 1 %}
+          <button type="button" class="a42-ac-close">
+            <span class="sr-only">{{ 'close'|trans }}</span>
+          </button>
+        {% endif %}
+        {% if menu_level == 2 %}
+          <span class="caret-menu-level2"></span>
+        {% endif %}
+      {% endif %}
+    {% if menu_level == 1 %}
+      <div id="menu-level--1-titre" class="titre-menu-level-1"></div>
+    {% endif %}
+    <ul{{ attributes.addClass(menu_level == 0 ? classes : dropdown_classes) }}>
+      {% for item in items %}
+        {%
+          set item_classes = item.url.getOption('container_attributes').class | split(" ")
+        %}
+        {%
+          set nbr_items = loop.length
+        %}
+        {%
+          set item_classes = [
+          item.is_expanded and item.below ? 'expanded dropdown',
+          item.in_active_trail ? 'active active-trail',
+          loop.first ? 'first',
+          loop.last ? 'last',
+          'multi-colone',
+        ]
+        %}
+        <li{{ item.attributes.addClass(item_classes) }}>
+          {% set link_title = item.title %}
+          {% set link_attributes = item.link_attributes %}
+          {% if menu_level == 0 and item.is_expanded and item.below %}
+            {% set link_title %}{{ link_title }} <span class="caret"></span>{% endset %}
+            {% set link_attributes = link_attributes.addClass('dropdown-toggle').setAttribute('data-toggle', 'dropdown').setAttribute('role', 'button').setAttribute('tabindex', '0') %}
+          {% endif %}
+          {# Must use link() here so it triggers hook_link_alter(). #}
+          {% if menu_level == 1 %}
+            <button class="navbar-text" role="button" aria-expanded="false" {{ item.link_attributes }}>{{ link_title }}</button>
+          {% else %}
+            {{ link(link_title, item.url, link_attributes.addClass(item.in_active_trail ? 'active-trail').setAttribute('aria-label',item.in_active_trail ? link_title ~ ' - élément actif')) }}
+          {% endif %}
+          {% if item.below %}
+            {{ _self.menu_links(item.below, attributes.removeClass(classes), menu_level + 1, classes, dropdown_classes) }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+        {% if menu_level > 0 %}
+        </div>
+        {% endif %}
+  {% endif %}
+{% endmacro %}
+
+{#
+  Invoke the custom macro defined above. If classes were provided, use them.
+  This allows the template to be extended without having to also duplicate the
+  code above. @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ _self.menu_links(items, attributes, 0, classes ?: ['menu', 'menu--' ~ menu_name|clean_class, 'nav'], dropdown_classes ?: ['dropdown-menu']) }}

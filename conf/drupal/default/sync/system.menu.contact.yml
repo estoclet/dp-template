@@ -1,0 +1,8 @@
+uuid: 4077ef74-b230-42c3-baf5-80fbbe696a97
+langcode: fr
+status: true
+dependencies: {  }
+id: contact
+label: Contact
+description: ''
+locked: false

@@ -1,0 +1,83 @@
+uuid: b22d81a6-c2a5-4cfb-bbce-2b76deab9d24
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.mediatheque
+    - field.field.media.ausha.field_media_audio_embed
+    - field.field.media.ausha.field_media_audio_id
+    - field.field.media.ausha.field_media_audio_playlist
+    - field.field.media.ausha.field_media_audio_stream
+    - field.field.media.ausha.field_media_audio_track
+    - field.field.media.ausha.field_media_audio_uri
+    - field.field.media.ausha.field_media_caption
+    - field.field.media.ausha.field_media_credential
+    - field.field.media.ausha.field_media_date
+    - field.field.media.ausha.field_media_link
+    - field.field.media.ausha.field_media_perimeter_reference
+    - field.field.media.ausha.field_media_theque_visibility
+    - field.field.media.ausha.field_media_year
+    - field.field.media.ausha.field_podcast_id
+    - media.type.ausha
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.ausha.mediatheque
+targetEntityType: media
+bundle: ausha
+mode: mediatheque
+content:
+  field_media_audio_embed:
+    type: basic_string
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_caption:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_credential:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  name:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_audio_id: true
+  field_media_audio_playlist: true
+  field_media_audio_stream: true
+  field_media_audio_track: true
+  field_media_audio_uri: true
+  field_media_date: true
+  field_media_link: true
+  field_media_perimeter_reference: true
+  field_media_theque_visibility: true
+  field_media_year: true
+  field_podcast_id: true
+  langcode: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

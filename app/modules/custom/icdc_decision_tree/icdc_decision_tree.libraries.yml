@@ -1,0 +1,6 @@
+decision_tree:
+  js:
+    js/decision_tree.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings

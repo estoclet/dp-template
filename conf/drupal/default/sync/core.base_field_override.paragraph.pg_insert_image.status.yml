@@ -1,0 +1,22 @@
+uuid: 1135d15a-ebed-4c65-8a34-a4f7a8904d42
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_insert_image
+id: paragraph.pg_insert_image.status
+field_name: status
+entity_type: paragraph
+bundle: pg_insert_image
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

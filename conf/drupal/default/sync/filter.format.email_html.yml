@@ -1,0 +1,20 @@
+uuid: 6afaa5ea-1eba-4e0f-a96d-2394fdee4793
+langcode: fr
+status: true
+dependencies:
+  module:
+    - slick
+_core:
+  default_config_hash: u5MXordtBE3SIs1x4qEUEBUFctQ0jjSn2vbPtgxvXuM
+name: 'Email HTML'
+format: email_html
+weight: 0
+filters:
+  slick_filter:
+    id: slick_filter
+    provider: slick
+    status: false
+    weight: 4
+    settings:
+      optionset: default
+      media_switch: ''

@@ -1,0 +1,115 @@
+uuid: cefc4242-2769-46b7-a12e-c496bbae06fa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.paragraph.pg_highligted.field_background_color
+    - field.field.paragraph.pg_highligted.field_parallax
+    - field.field.paragraph.pg_highligted.field_pg_chapo
+    - field.field.paragraph.pg_highligted.field_pg_link
+    - field.field.paragraph.pg_highligted.field_pg_media_reference
+    - field.field.paragraph.pg_highligted.field_pg_title
+    - field.field.paragraph.pg_highligted.field_pg_view_mode
+    - field.field.paragraph.pg_highligted.field_responsive
+    - paragraphs.paragraphs_type.pg_highligted
+  module:
+    - advanced_text_formatter
+    - color_field
+    - entity_browser
+    - entity_dynamic_rendering
+    - link
+    - text
+id: paragraph.pg_highligted.default
+targetEntityType: paragraph
+bundle: pg_highligted
+mode: default
+content:
+  field_background_color:
+    type: color_field_widget_box
+    weight: 4
+    region: content
+    settings:
+      default_colors: '#FFFFFF, #F4F5F8, #05BEFA, #18D9C9, #FF666B, #FBA11B, #E30613, #1F1F1F, #32303A, #6E6E6E, #7A35B4, #1E46A0, #006462'
+    third_party_settings: {  }
+  field_parallax:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_pg_chapo:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_pg_link:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_pg_media_reference:
+    type: entity_browser_entity_reference
+    weight: 3
+    region: content
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: default
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_pg_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings:
+      advanced_text_formatter:
+        show_token_tree: 0
+  field_pg_view_mode:
+    type: view_mode_widget
+    weight: 2
+    region: content
+    settings:
+      restrict_view_modes:
+        default: default
+        background: background
+        flat_color: flat_color
+        left: left
+        right: right
+    third_party_settings: {  }
+  field_responsive:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true

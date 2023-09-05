@@ -1,0 +1,22 @@
+uuid: da4ffd7f-ac21-480b-ad3c-6eb68f0287c5
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+_core:
+  default_config_hash: PMsvfX-Q1WInDDWfyiJSo3-d5EQC1U_ARrR6uE0ttsE
+id: paragraph.field_pg_audio_references
+field_name: field_pg_audio_references
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

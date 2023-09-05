@@ -1,0 +1,23 @@
+uuid: 6efb66ec-631c-4eb7-b2d2-557a15ff68cc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_link
+    - paragraphs.paragraphs_type.pg_highligted
+  module:
+    - link
+id: paragraph.pg_highligted.field_pg_link
+field_name: field_pg_link
+entity_type: paragraph
+bundle: pg_highligted
+label: Lien
+description: 'Saisissez le lien de l''encart.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

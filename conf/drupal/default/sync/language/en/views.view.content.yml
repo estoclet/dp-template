@@ -1,0 +1,32 @@
+label: Contenu
+description: 'Trouver et gérer le contenu.'
+display:
+  default:
+    display_title: Default
+    display_options:
+      title: Contenu
+      fields:
+        type:
+          label: Type
+        name:
+          label: Author
+      empty:
+        area_text_custom:
+          content: 'Aucun contenu disponible.'
+      filters:
+        type:
+          expose:
+            label: Type
+        status:
+          group_info:
+            label: 'Statut de publication'
+        langcode:
+          expose:
+            label: Language
+  page_1:
+    display_options:
+      menu:
+        title: Contenu
+      tab_options:
+        title: Contenu
+        description: 'Trouver et gérer le contenu'

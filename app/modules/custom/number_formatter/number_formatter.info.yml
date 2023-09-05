@@ -1,0 +1,5 @@
+name: 'Number formatter'
+type: module
+description: 'Provide a formatter for number fields'
+core_version_requirement: ^8 || ^9
+package: 'Custom'

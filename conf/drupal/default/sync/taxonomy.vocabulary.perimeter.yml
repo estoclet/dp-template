@@ -1,0 +1,10 @@
+uuid: 8f2add32-8532-4e6e-b6bf-c52c2f6ce685
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: IS0rOz4xcEktgr4xGURSRWqlC-u71OL5-g4qzlczXCQ
+name: 'Périmètre métier'
+vid: perimeter
+description: 'Définir les périmètres métier Caisse des Dépôts'
+weight: 0

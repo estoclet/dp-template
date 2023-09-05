@@ -1,0 +1,10 @@
+uuid: cd6cb001-de34-4a98-9f5e-8811ef44c3d0
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: E8rvf3S2TDty4MHxR-ghhPB5UcR61WAPj1RKt6lBLaA
+id: draft
+label: Brouillon
+published: false
+default_revision: false

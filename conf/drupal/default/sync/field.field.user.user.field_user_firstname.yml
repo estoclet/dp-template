@@ -1,0 +1,20 @@
+uuid: d2e1baeb-deb9-4dad-8b0d-fc1cda6985ee
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_user_firstname
+  module:
+    - user
+id: user.user.field_user_firstname
+field_name: field_user_firstname
+entity_type: user
+bundle: user
+label: Prénom
+description: 'Renseignez le prénom.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

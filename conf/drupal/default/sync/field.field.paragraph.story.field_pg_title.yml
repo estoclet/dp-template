@@ -1,0 +1,19 @@
+uuid: f2eb5a5b-c8e4-49b6-880b-6a7da36175c0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_title
+    - paragraphs.paragraphs_type.story
+id: paragraph.story.field_pg_title
+field_name: field_pg_title
+entity_type: paragraph
+bundle: story
+label: Titre
+description: 'Ajouter le titre de la story.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

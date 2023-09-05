@@ -1,0 +1,20 @@
+uuid: d3ec2279-530a-4ddf-baba-260e92f0379d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - mini_sites.mini_site_page_type.link
+  module:
+    - path
+id: mini_site_page.link.path
+field_name: path
+entity_type: mini_site_page
+bundle: link
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

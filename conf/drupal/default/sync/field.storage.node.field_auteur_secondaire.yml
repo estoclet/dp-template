@@ -1,0 +1,20 @@
+uuid: ea368a09-b915-4c67-b9bb-4c7c343c44f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_auteur_secondaire
+field_name: field_auteur_secondaire
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,8 @@
+uuid: a4e6ece9-6498-4cfa-9e37-9ca3e90ee9c5
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_contact
+label: 'Bloc Contact'
+revision: 1
+description: 'Un bloc de contact.'

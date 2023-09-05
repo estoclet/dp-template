@@ -1,0 +1,18 @@
+uuid: f7cecc80-2380-40ae-8ba2-edbcd744ad92
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.course_of_life
+id: taxonomy_term.course_of_life.name
+field_name: name
+entity_type: taxonomy_term
+bundle: course_of_life
+label: Nom
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

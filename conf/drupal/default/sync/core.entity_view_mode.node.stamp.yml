@@ -1,0 +1,10 @@
+uuid: 10ada0ec-23af-4703-854b-311f3f6ae346
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.stamp
+label: Timbre
+targetEntityType: node
+cache: true

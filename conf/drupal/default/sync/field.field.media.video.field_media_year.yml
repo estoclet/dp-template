@@ -1,0 +1,24 @@
+uuid: abad095c-0dc6-4070-b070-64f69fc01273
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_year
+    - media.type.video
+  module:
+    - datetime
+id: media.video.field_media_year
+field_name: field_media_year
+entity_type: media
+bundle: video
+label: 'Année de référence'
+description: 'Définissez l''année de référence du média si différente de l''année en cours.'
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

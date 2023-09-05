@@ -1,0 +1,8 @@
+uuid: da53e671-cf5c-45e8-9fe9-649653b74192
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Territoire d''expertise'
+vid: expertise_area
+description: 'Définir les territoires d’expertise du blog d’experts.'
+weight: 0

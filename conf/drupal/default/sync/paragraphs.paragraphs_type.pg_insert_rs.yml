@@ -1,0 +1,9 @@
+uuid: 71f902d0-6c6f-45bf-ad6a-529a6c84c6c4
+langcode: fr
+status: true
+dependencies: {  }
+id: pg_insert_rs
+label: 'Publication réseau social'
+icon_uuid: null
+description: 'Un encart imbriquant une publication issue des réseaux sociaux Twitter ou Instagram.'
+behavior_plugins: {  }

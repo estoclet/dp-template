@@ -1,0 +1,18 @@
+uuid: c3278de8-c021-4c71-a0db-53e9768d1ed9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.gouvernance
+id: node.gouvernance.title
+field_name: title
+entity_type: node
+bundle: gouvernance
+label: 'Prénom Nom'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

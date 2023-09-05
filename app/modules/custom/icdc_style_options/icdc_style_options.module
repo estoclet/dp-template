@@ -1,0 +1,25 @@
+<?php
+
+use Drupal\paragraphs\Entity\ParagraphsType;
+
+/**
+ * @file
+ * Contains style_options.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function icdc_style_options_theme() {
+
+  return [
+    'icdc_style_options_media_background_image' => [
+      'variables' => [
+        'css_class' => NULL,
+        'file_url' => NULL,
+        'image' => NULL,
+      ],
+    ],
+  ];
+
+}

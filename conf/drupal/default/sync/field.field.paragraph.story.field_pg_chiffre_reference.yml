@@ -1,0 +1,67 @@
+uuid: 6b3cd1f2-362a-4583-9ac9-01939c258f34
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_chiffre_reference
+    - paragraphs.paragraphs_type.pg_chiffre
+    - paragraphs.paragraphs_type.story
+  module:
+    - entity_reference_revisions
+id: paragraph.story.field_pg_chiffre_reference
+field_name: field_pg_chiffre_reference
+entity_type: paragraph
+bundle: story
+label: Chiffre
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      pg_chiffre: pg_chiffre
+    negate: 0
+    target_bundles_drag_drop:
+      pg_advanced_text:
+        weight: 14
+        enabled: false
+      pg_chiffre:
+        weight: 15
+        enabled: true
+      pg_highligted:
+        weight: 16
+        enabled: false
+      pg_insert_audio:
+        weight: 17
+        enabled: false
+      pg_insert_document:
+        weight: 18
+        enabled: false
+      pg_insert_image:
+        weight: 19
+        enabled: false
+      pg_insert_node:
+        weight: 20
+        enabled: false
+      pg_insert_rs:
+        weight: 21
+        enabled: false
+      pg_insert_video:
+        weight: 22
+        enabled: false
+      pg_text:
+        weight: 23
+        enabled: false
+      pg_verbatim:
+        weight: 24
+        enabled: false
+      story:
+        weight: 25
+        enabled: false
+      wysiwyg_personnalise:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

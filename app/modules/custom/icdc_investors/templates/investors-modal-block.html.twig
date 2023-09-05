@@ -1,0 +1,29 @@
+{#
+/**
+* @file
+* Default theme implementation to display a block.
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+{% set classes = [
+  'icdc-investors-modal',
+] %}
+<div{{ attributes.addClass(classes) }}>
+  <!-- Modal -->
+  <div class="modal modal--full-page fade" id="icdcInvestorsModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          {{ description }}
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            {{ btn_non_resident_label }}
+          </button>
+          <a href="{{ url('<front>') }}" class="btn btn-primary">{{ btn_resident_label }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

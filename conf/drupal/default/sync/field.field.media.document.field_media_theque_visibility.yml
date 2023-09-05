@@ -1,0 +1,23 @@
+uuid: 130b7661-40b8-4bab-9a0f-ea11b447f20b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_theque_visibility
+    - media.type.document
+id: media.document.field_media_theque_visibility
+field_name: field_media_theque_visibility
+entity_type: media
+bundle: document
+label: 'Afficher dans la médiathèque'
+description: 'Cochez l''option pour remonter le média dans la médiathèque du site.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

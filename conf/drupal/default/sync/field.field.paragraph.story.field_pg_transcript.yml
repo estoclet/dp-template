@@ -1,0 +1,28 @@
+uuid: 7dc36645-5ec7-4dd3-b7c1-c0d1d48e6d6d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_transcript
+    - media.type.document
+    - paragraphs.paragraphs_type.story
+id: paragraph.story.field_pg_transcript
+field_name: field_pg_transcript
+entity_type: paragraph
+bundle: story
+label: Retranscription
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

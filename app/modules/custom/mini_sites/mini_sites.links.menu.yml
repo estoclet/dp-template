@@ -1,0 +1,51 @@
+# Mini site menu items definition
+entity.mini_site.collection:
+  title: 'Mini site'
+  route_name: entity.mini_site.collection
+  description: 'List Mini site entities'
+  parent: system.admin_content
+  weight: 100
+
+# Mini site type menu items definition
+entity.mini_site_type.collection:
+  title: 'Mini site'
+  route_name: entity.mini_site_type.collection
+  description: 'List Mini site bundles'
+  parent: system.admin_structure
+  weight: 99
+
+entity.mini_site_type.add_form:
+  title: 'Add Mini site'
+  route_name: entity.mini_site_type.add_form
+  description: 'Add a Mini site bundle'
+  parent: entity.mini_site_type.collection
+  weight: -1
+
+# Mini site page type menu items definition
+entity.mini_site_page_type.collection:
+  title: 'Mini Site Page'
+  route_name: entity.mini_site_page_type.collection
+  description: 'List Mini site page bundles'
+  parent: system.admin_structure
+  weight: 100
+
+entity.mini_site_page_type.add_form:
+  title: 'Add item'
+  route_name: entity.mini_site_page_type.add_form
+  description: 'Add item menu to navigation'
+  parent: entity.mini_site_page_type.collection
+  weight: -1
+
+
+mini_sites.admin_config_mini_sites:
+  route_name: mini_sites.admin_config_mini_sites
+  parent: system.admin_config
+  title: 'Mini Sites'
+  weight: -9
+
+mini_sites.admin_settings_form:
+  title: 'Mini sites module settings'
+  route_name: mini_sites.admin_settings_form
+  description: 'Configure the mini sites module'
+  parent: mini_sites.admin_config_mini_sites
+  weight: 0

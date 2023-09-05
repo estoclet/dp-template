@@ -1,0 +1,22 @@
+uuid: 7276c528-77db-452a-9588-1c09c4eba9a2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_d_entete_bandeau
+    - field.storage.block_content.field_color_primary_bandeau
+  module:
+    - color_field
+id: block_content.bloc_d_entete_bandeau.field_color_primary_bandeau
+field_name: field_color_primary_bandeau
+entity_type: block_content
+bundle: bloc_d_entete_bandeau
+label: 'Couleur primaire'
+description: 'Définissez la couleur primaire de l’entête. Couleur qui sera affichée en arrière-plan. Laissez vide si non requis. (exemple: entête par défaut et immersive).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

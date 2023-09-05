@@ -1,0 +1,21 @@
+uuid: e2b998dd-ecc7-44d6-b847-fb3a5209607c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_title
+    - paragraphs.paragraphs_type.pg_insert_node
+_core:
+  default_config_hash: thocJCLVOXNVGJKQ4ODZJLn9O8sNSyQvzmXbwHEFXDs
+id: paragraph.pg_insert_node.field_pg_title
+field_name: field_pg_title
+entity_type: paragraph
+bundle: pg_insert_node
+label: 'Titre de l''encart'
+description: 'Saisissez le titre de l''encart.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

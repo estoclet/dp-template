@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Default theme implementation to embed a Ausha url.
+ */
+#}
+<div{{ attributes }}>
+{% if media.field_media_audio_embed.isEmpty() != TRUE %}
+  <script type="didomi/html" data-vendor="c:auscha_cdc">
+    {{ media.field_media_audio_embed.value|raw }}
+  </script>
+  <p class="d-sm-block text-center lead">{{"Si vous souhaitez continuer et lire nos podcats,\nvous devez nous donner votre accord en cliquant sur le bouton ci-dessous."|t|nl2br}}</p>
+  <p class="mt-2">
+<button class="js-preferences-show btn btn-primary" onclick="Didomi.preferences.show('vendors');">{{"Voir les cookies"|t}}</button>
+
+  </p>
+{% endif %}
+  <div class="mediatheque-media-content">
+    {{ content.name }}
+    <p class="credit"><strong>{% trans %}Crédit{% endtrans %} :</strong> {{ media.field_media_credential.value }}</p>
+    <p class="legende">{{ media.field_media_caption.value }}</p>
+  </div>
+</div>

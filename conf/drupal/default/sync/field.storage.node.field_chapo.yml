@@ -1,0 +1,21 @@
+uuid: eb33aac3-4a16-4fba-998f-ad37c17ef468
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: rgFMFhXRFUN_oBuU1p3d3NOymuHEfErcCuqtFpSspzw
+id: node.field_chapo
+field_name: field_chapo
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

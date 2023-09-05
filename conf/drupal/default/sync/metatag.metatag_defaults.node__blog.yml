@@ -1,0 +1,10 @@
+uuid: cd3b1d78-dbd0-49cc-997e-1eb1ccd6593e
+langcode: fr
+status: true
+dependencies: {  }
+id: node__blog
+label: 'Contenu: Blog'
+tags:
+  keywords: '[node:field_expertise_references],[node:field_blog_tag_references]'
+  article_tag: '[node:field_entite_references],[node:field_thematic_references]'
+  og_type: article

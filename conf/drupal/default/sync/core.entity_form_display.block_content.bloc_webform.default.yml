@@ -1,0 +1,26 @@
+uuid: 0c4e1f20-e03a-46df-8239-285ec3a37677
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_webform
+    - field.field.block_content.bloc_webform.field_webform_integration
+  module:
+    - webform
+    - workbench_moderation
+id: block_content.bloc_webform.default
+targetEntityType: block_content
+bundle: bloc_webform
+mode: default
+content:
+  field_webform_integration:
+    type: webform_entity_reference_select
+    weight: 0
+    region: content
+    settings:
+      default_data: true
+      webforms: {  }
+    third_party_settings: {  }
+hidden:
+  info: true
+  langcode: true

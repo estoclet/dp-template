@@ -1,0 +1,10 @@
+uuid: 219055c8-b993-4461-9669-fde26f58b504
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: _lVD-RaxNGGv75UmWUP-wvvrjOgnZwVrRoB_xhyjs4Q
+id: menu-rs
+label: 'Réseaux Sociaux'
+description: 'Liens des comptes de réseaux sociaux.'
+locked: false

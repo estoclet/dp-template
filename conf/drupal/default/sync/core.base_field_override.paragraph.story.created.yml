@@ -1,0 +1,18 @@
+uuid: 1aeeac28-bcfd-4d3b-bbd6-00405b98e14f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.story
+id: paragraph.story.created
+field_name: created
+entity_type: paragraph
+bundle: story
+label: 'Écrit le'
+description: 'Heure de création du paragraphe.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

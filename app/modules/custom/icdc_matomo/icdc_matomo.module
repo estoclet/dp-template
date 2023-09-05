@@ -1,0 +1,156 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_matomo.module.
+ */
+
+use Drupal\node\NodeInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_matomo_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_matomo module.
+    case 'help.page.icdc_matomo':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Matomo implementation for ICDC') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements THEME_page_attachments().
+ */
+function icdc_matomo_page_attachments(array &$page) {
+
+  $route = \Drupal::routeMatch()->getRouteObject();
+
+  $is_admin = \Drupal::service('router.admin_context')->isAdminRoute($route);
+
+  if (!$is_admin) {
+
+    $matomo_attachements = [];
+
+    $tms = _icdc_matomo_tms();
+    if(!empty($tms)) {
+      //die('ok');
+      $matomo_tms_attachement = [
+        $tms,
+        'matomo-script',
+      ];
+    }
+
+    $tms_link = _icdc_matomo_tms_link();
+    if(!empty($tms_link)) {
+      $matomo_tms_link_attachement = [
+        $tms_link,
+        'matomo-script-link',
+      ];
+    }
+
+    $tms_link_prefetch = _icdc_matomo_tms_link_prefetch();
+    if(!empty($tms_link_prefetch)) {
+      $matomo_tms_link_prefetch_attachement = [
+        $tms_link_prefetch,
+        'matomo-script-link-prefetch',
+      ];
+    }
+
+    if(empty($page['#attached']['html_head'])){
+      $page['#attached']['html_head'] = [];
+    }
+
+    if(!empty($tms)) {
+      array_unshift($page['#attached']['html_head'] , $matomo_tms_attachement);
+    }
+    if(!empty($tms_link_prefetch)) {
+      array_unshift($page['#attached']['html_head'] , $matomo_tms_link_prefetch_attachement);
+    }
+    if(!empty($tms_link)) {
+      array_unshift($page['#attached']['html_head'] , $matomo_tms_link_attachement);
+    }
+  }
+}
+
+/**
+ * TMS.
+ */
+function _icdc_matomo_tms() {
+
+  $matomo_url_tms = '';
+  $matomo_conf = \Drupal::config('icdc_matomo.settings');
+  if ($matomo_conf) {
+    $matomo_url_tms = $matomo_conf->get('url_tms', FALSE);
+  }
+  if(!empty($matomo_url_tms)) {
+    $tms = [
+      '#type' => 'html_tag',
+      '#tag' => 'script',
+      '#value' => "var _mtm = _mtm || [];
+      _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src='" . $matomo_url_tms . "'; s.parentNode.insertBefore(g,s);",
+    ];
+    return $tms;
+  }
+}
+
+/**
+ * TMS link.
+ */
+function _icdc_matomo_tms_link() {
+
+  $matomo_url_tms = '';
+  $matomo_conf = \Drupal::config('icdc_matomo.settings');
+  if ($matomo_conf) {
+    $matomo_url_tms = $matomo_conf->get('url_tms', FALSE);
+  }
+  if(!empty($matomo_url_tms)) {
+    //<link rel="preload" href="https://yourpiwikdomain.com/piwik.js" onload="embedTracker()" type="script" crossorigin>
+    $tms = [
+      '#type' => 'html_tag',
+      '#tag' => 'link',
+      '#attributes' => [
+        'rel' => 'preload',
+        'href' => $matomo_url_tms,
+        'onload' => "embedTracker()",
+        'type' => "script",
+        'crossorigin' => "crossorigin",
+      ]
+    ];
+    return $tms;
+  }
+}
+
+/**
+ * TMS link prefetch.
+ */
+function _icdc_matomo_tms_link_prefetch() {
+
+  $matomo_domain_tms = '';
+  $matomo_conf = \Drupal::config('icdc_matomo.settings');
+
+  if ($matomo_conf) {
+    $matomo_domain_tms = $matomo_conf->get('domain_tms', FALSE);
+  }
+  if(!empty($matomo_domain_tms)) {
+    //<link rel="dns-prefetch" href="//example.innocraft.cloud">
+    $tms = [
+      '#type' => 'html_tag',
+      '#tag' => 'link',
+      '#attributes' => [
+        'rel' => 'dns-prefetch',
+        'href' => $matomo_domain_tms,
+      ]
+    ];
+    return $tms;
+  }
+}
+
+

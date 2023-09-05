@@ -1,0 +1,42 @@
+uuid: f90976c3-f65a-4f77-bfb2-96ca2b22e037
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.custom_media_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: document_browser
+label: 'Navigateur de documents'
+display: modal
+display_configuration:
+  width: '1920'
+  height: '1200'
+  link_text: Ajouter
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  56231534-5281-46b6-884a-a595be98a989:
+    id: view
+    uuid: 56231534-5281-46b6-884a-a595be98a989
+    label: Lister
+    weight: 1
+    settings:
+      submit_text: Sélectionner
+      auto_select: false
+      view: custom_media_browser
+      view_display: media_entity_browser_document
+  9c356578-05c9-4bb6-9210-bf6cc85bed05:
+    id: entity_form
+    uuid: 9c356578-05c9-4bb6-9210-bf6cc85bed05
+    label: Créer
+    weight: 2
+    settings:
+      submit_text: Sauvegarder
+      entity_type: media
+      bundle: document
+      form_mode: default

@@ -1,0 +1,19 @@
+uuid: 1525f343-c426-4e5f-ab3e-382479b722ca
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_media_audio_embed
+field_name: field_media_audio_embed
+entity_type: media
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

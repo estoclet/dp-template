@@ -1,0 +1,22 @@
+uuid: 19d2c1f3-0e1e-4da1-b489-eb3e282e15ff
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.gouvernance
+id: node.gouvernance.status
+field_name: status
+entity_type: node
+bundle: gouvernance
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

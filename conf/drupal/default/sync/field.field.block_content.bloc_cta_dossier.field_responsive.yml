@@ -1,0 +1,23 @@
+uuid: b0e83fba-e4b5-4d71-aa7c-d5fbd9e07da5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_cta_dossier
+    - field.storage.block_content.field_responsive
+id: block_content.bloc_cta_dossier.field_responsive
+field_name: field_responsive
+entity_type: block_content
+bundle: bloc_cta_dossier
+label: 'Désactiver l''affichage en responsive'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

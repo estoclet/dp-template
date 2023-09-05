@@ -1,0 +1,21 @@
+uuid: 17d39d3b-2ca4-4036-9297-9864adfc772a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_page
+    - node.type.page
+id: node.page.field_site_page
+field_name: field_site_page
+entity_type: node
+bundle: page
+label: 'Site page'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:mini_site_page'
+  handler_settings: {  }
+field_type: entity_reference

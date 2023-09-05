@@ -1,0 +1,44 @@
+uuid: aaf5d99a-f8d8-4ae8-93a0-2b0d548702fd
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ctools
+    - node
+    - system
+  theme:
+    - cdc_theme
+id: entityviewcontenu
+theme: cdc_theme
+region: highlighted
+weight: -21
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: 'Entête de contenu'
+  label_display: '0'
+  provider: ctools
+  view_mode: header
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      accueil: accueil
+      actualite: actualite
+      blog: blog
+      dossier: dossier
+      gouvernance: gouvernance
+      page: page
+      parcours_de_vie: parcours_de_vie
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: 'node/*/layout'

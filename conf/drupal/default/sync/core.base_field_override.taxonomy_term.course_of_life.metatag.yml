@@ -1,0 +1,18 @@
+uuid: b269c32e-7207-4da9-b5a6-6e5403c3de0e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.course_of_life
+id: taxonomy_term.course_of_life.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: course_of_life
+label: 'Balises meta (Meta tags)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

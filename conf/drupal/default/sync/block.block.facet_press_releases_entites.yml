@@ -1,0 +1,29 @@
+uuid: dd3e5257-9057-4485-b730-b9ee0cc656b2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - facets.facet.press_releases_entites
+  module:
+    - facets
+    - system
+  theme:
+    - cdc_theme
+id: facet_press_releases_entites
+theme: cdc_theme
+region: content_top
+weight: -14
+provider: null
+plugin: 'facet_block:press_releases_entites'
+settings:
+  id: 'facet_block:press_releases_entites'
+  label: 'FACETTE Communiqués de presse Entités'
+  label_display: '0'
+  provider: facets
+  block_id: facet_press_releases_entites
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /communiques-de-presse

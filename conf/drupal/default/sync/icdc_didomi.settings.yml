@@ -1,0 +1,8 @@
+icdc_didomi: null
+_core:
+  default_config_hash: K23w_o3Gn8lL37Bw5eA7qlju-cCwJDFwEvE9uPPoYuI
+langcode: fr
+public_api_key: dabda18d-ee95-4bc4-96f1-8e8587adf5a5
+paths_list_condition: DIDOMI_CONSENT_EXCLUDE_LISTED
+paths_list: ''
+publish: 1

@@ -1,0 +1,35 @@
+uuid: 18184ef3-e385-4148-b7d9-c91e53311484
+langcode: fr
+status: true
+dependencies:
+  module:
+    - mini_sites
+    - node
+id: alias_contenu_mini_sites
+label: 'Alias des contenus dans les mini sites'
+type: 'canonical_entities:node'
+pattern: '[node:field_site:entity:name]/[node:field_site_page:entity:parents:join-path]/[node:field_short_title]'
+selection_criteria:
+  cc58b2bf-ec7a-454b-97e0-bc90f53605be:
+    id: node_type
+    negate: false
+    uuid: cc58b2bf-ec7a-454b-97e0-bc90f53605be
+    context_mapping:
+      node: node
+    bundles:
+      accueil: accueil
+      actualite: actualite
+      article: article
+      page: page
+  799b6123-6b3e-45c0-aed8-e8a5ea944860:
+    id: mini_site_page_content
+    negate: false
+    uuid: 799b6123-6b3e-45c0-aed8-e8a5ea944860
+    context_mapping:
+      node: node
+    mini_site_page_content: 'yes'
+    mini_site_page_content_bundles: {  }
+    mini_site_page_content_home: 'no'
+selection_logic: and
+weight: -5
+relationships: {  }

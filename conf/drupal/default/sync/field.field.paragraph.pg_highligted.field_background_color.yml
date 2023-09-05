@@ -1,0 +1,22 @@
+uuid: 11bb2d7b-fe39-4c77-9342-d74a1af48698
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.pg_highligted
+  module:
+    - color_field
+id: paragraph.pg_highligted.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: pg_highligted
+label: 'Couleur de fond'
+description: 'Sélectionnez la couleur d''arrière-plan de la mise en avant. Ne rien saisir si non requis.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

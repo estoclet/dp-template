@@ -1,0 +1,22 @@
+uuid: e799751c-aa66-46e2-9a9f-3e37dde8809c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: KSFZ_tZGl02AaAnEncHMrayOzMp-IS-uLeMf8J48Wms
+id: media.field_media_height
+field_name: field_media_height
+entity_type: media
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

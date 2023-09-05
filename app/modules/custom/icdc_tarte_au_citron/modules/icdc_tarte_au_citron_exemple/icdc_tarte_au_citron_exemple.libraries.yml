@@ -1,0 +1,6 @@
+service_facebook_pixel:
+  version: 0
+  js:
+    js/service_facebook_pixel.js: {}
+  dependencies:
+    - icdc_tarte_au_citron/tarte_au_citron

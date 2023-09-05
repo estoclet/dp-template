@@ -1,0 +1,7 @@
+uuid: 17c63011-adbc-48ae-8228-e56b13f85088
+langcode: fr
+status: false
+dependencies: {  }
+formId: node_actualite_form
+captchaType: default
+label: null

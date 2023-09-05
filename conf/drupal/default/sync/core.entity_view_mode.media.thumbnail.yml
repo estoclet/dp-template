@@ -1,0 +1,10 @@
+uuid: 101208c9-de2c-44a9-bf84-cd687dc4c3d9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.thumbnail
+label: Vignette
+targetEntityType: media
+cache: true

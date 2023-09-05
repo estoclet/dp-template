@@ -1,0 +1,61 @@
+uuid: 7665e323-9afa-4613-9c80-d2e48d55e259
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_chiffres
+    - field.storage.block_content.field_paragraph_references
+    - paragraphs.paragraphs_type.pg_chiffre
+  module:
+    - entity_reference_revisions
+id: block_content.bloc_chiffres.field_paragraph_references
+field_name: field_paragraph_references
+entity_type: block_content
+bundle: bloc_chiffres
+label: 'Chiffre(s) clé(s)'
+description: 'Ajoutez un ou plusieurs chiffres clés (6 maximum). Le chiffre est accompagné d''un libellé.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      pg_chiffre: pg_chiffre
+    negate: 0
+    target_bundles_drag_drop:
+      pg_advanced_text:
+        weight: 11
+        enabled: false
+      pg_chiffre:
+        weight: 12
+        enabled: true
+      pg_highligted:
+        weight: 13
+        enabled: false
+      pg_insert_audio:
+        weight: 14
+        enabled: false
+      pg_insert_document:
+        weight: 15
+        enabled: false
+      pg_insert_image:
+        weight: 16
+        enabled: false
+      pg_insert_node:
+        weight: 17
+        enabled: false
+      pg_insert_rs:
+        weight: 19
+        enabled: false
+      pg_insert_video:
+        weight: 18
+        enabled: false
+      pg_text:
+        weight: 19
+        enabled: false
+      pg_verbatim:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,19 @@
+uuid: 3290bb13-998a-4423-b03e-36111ad4a0ea
+langcode: fr
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_pg_chapo
+field_name: field_pg_chapo
+entity_type: taxonomy_term
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

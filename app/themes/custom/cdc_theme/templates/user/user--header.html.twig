@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+
+{% set firstname = user.field_user_firstname.value %}
+{% set lastname = user.field_user_lastname.value %}
+{% set authorURL = path('view.blog.page_blog_author', { 'arg_0': (firstname ~ '_' ~ lastname)|drupal_escape })  %}
+{% set bgimage  = file_url(content.field_media_reference[0]['#media'].field_media_image.entity.uri.value) %}
+
+<article{{ attributes.addClass('wrapper-user-header') }}>
+  {% if content %}
+    <div class="wrapper wrapper-large">
+      <h2 class="block-title">{% trans  %} Tous les articles de {% endtrans %}</h2>
+      <div class="auteur-description">
+        <a href="{{ authorURL }}" rel="author" class="auteur-avatar" style="background-image: url({{ bgimage }})"><span class="sr-only">Avatar de l'auteur</span></a>
+        <div class="auteur-content">
+          <div class="auteur-infos">
+            <a href="{{ authorURL }}" rel="author">
+              <span class="auteur">{{ content.field_user_firstname }} {{ content.field_user_lastname }}</span>
+              <span class="auteur-fonction">{{ content.field_function }}</span>
+            </a>
+            {{ content.field_user_linkedin }}
+          </div>
+          <br />
+          <div class="auteur-biopic">
+            {{ content.field_biopic }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</article>

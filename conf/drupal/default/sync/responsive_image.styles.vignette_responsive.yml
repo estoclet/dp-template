@@ -1,0 +1,35 @@
+uuid: d318e4fa-78e0-4421-9b9e-6fb1b7ae290f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - image.style.thumbnail_l
+    - image.style.thumbnail_m
+    - image.style.thumbnail_s
+  theme:
+    - cdc_theme
+id: vignette_responsive
+label: 'Vignette responsive'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: thumbnail_l
+    breakpoint_id: cdc_theme.extra
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: thumbnail_l
+    breakpoint_id: cdc_theme.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: thumbnail_m
+    breakpoint_id: cdc_theme.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: thumbnail_s
+    breakpoint_id: cdc_theme.small
+    multiplier: 1x
+breakpoint_group: cdc_theme
+fallback_image_style: thumbnail_m

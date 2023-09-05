@@ -1,0 +1,25 @@
+uuid: 143ad3ee-8d16-469b-9fa7-cc09adc8a37f
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:bloc_entete:344e1037-21bf-41e4-896d-a6701b82c7d7'
+  module:
+    - block_content
+  theme:
+    - cdc_theme
+id: blocentetelistingdublog
+theme: cdc_theme
+region: hidden
+weight: -19
+provider: null
+plugin: 'block_content:344e1037-21bf-41e4-896d-a6701b82c7d7'
+settings:
+  id: 'block_content:344e1037-21bf-41e4-896d-a6701b82c7d7'
+  label: 'Bloc entête (Listing du blog)'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

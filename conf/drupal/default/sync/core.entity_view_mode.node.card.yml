@@ -1,0 +1,10 @@
+uuid: b45556ee-e437-4517-a129-eaccfde1bb85
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.card
+label: Carte
+targetEntityType: node
+cache: true

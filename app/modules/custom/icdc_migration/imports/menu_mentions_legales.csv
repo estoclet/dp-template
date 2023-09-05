@@ -1,0 +1,6 @@
+id;title;description;node;target;weight;enabled;parent
+1;Mentions légales;Mentions légales;1;_self;0;1;0
+2;Données personnelles;Données personnelles;2;_self;1;1;0
+3;CGU;CGU;3;_self;2;1;0
+4;Accessibilité;Accessibilité;4;_self;3;1;0
+5;Plan du site;Plan de site;5;_self;4;1;0

@@ -1,0 +1,20 @@
+uuid: c2caf213-52b1-453f-bb87-1951b1677e82
+langcode: fr
+status: true
+dependencies:
+  module:
+    - icdc_menu_mobile
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_icdcmenumobile
+theme: cdc_bo_theme
+region: header
+weight: -17
+provider: null
+plugin: icdc_menu_mobile
+settings:
+  id: icdc_menu_mobile
+  label: 'ICDC Menu mobile'
+  label_display: '0'
+  provider: icdc_menu_mobile
+visibility: {  }

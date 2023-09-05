@@ -1,0 +1,20 @@
+uuid: 99112f47-4b33-4ae0-b74a-7bc95cb68aa9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.gouvernance
+id: node.gouvernance.uid
+field_name: uid
+entity_type: node
+bundle: gouvernance
+label: 'Écrit par'
+description: 'Le nom d''utilisateur de l''auteur du contenu.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

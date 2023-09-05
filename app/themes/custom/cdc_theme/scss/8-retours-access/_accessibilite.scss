@@ -1,0 +1,856 @@
+:focus-visible,
+:focus {
+  @include focus-access;
+}
+
+.webform-submission-form .form-item.form-type-radio,
+.radio,
+.checkbox{
+  &:focus-within {
+    @include focus-access;
+    @include focus-access-offset;
+  }
+}
+
+.webform-submission-form input.form-control,
+.webform-submission-form textarea.form-control,
+.webform-submission-form select.form-control {
+  &:focus {
+    @include focus-access;
+  }
+}
+
+.path-webform {
+  .webform-submission-mediation-caisse-form,
+  .webform-submission-cdc-dev-solidaire-adhesion-don-form,
+  .webform-submission-cdc-dev-solidaire-don-express-form {
+    #edit-actions button {
+      &:focus {
+        @include focus-access;
+        @include focus-access-offset;
+      }
+    }
+  }
+}
+
+
+// ---- DEUX CONTRASTES ----
+//
+//
+.a42-ac-high-contrast,
+.a42-ac-inv-contrast {
+  .btn {
+    border: 0;
+  }
+
+  .logo.logo-large+.slogan-large,
+  .block-mini-site-menu .minisite-header .minisite-header-top .minisite-container-logo,
+  main .region-header .slogan {
+    img {
+      background-color: $white-acc-hg-contrast !important;
+    }
+  }
+
+  svg,
+  .highlighted-content,
+  .highlighted-content *,
+  .view-recherche .form-actions:before,
+  a.btn--primary,
+  a.btn--secondary,
+  nav div.menu-level--1,
+  &.page-node-type-accueil .block--bloc-paragraphe--pg-insert-video--full-display,
+  .block .paragraph--type--pg-insert-document.paragraph--view-mode--preview .wrapper-large>.row-mosaic {
+    background: transparent !important;
+  }
+
+  .icdc-search-block .modal .modal-body form .form-actions button,
+  .view-recherche .form-actions button {
+    &:focus {
+      outline-width: .3125rem;
+    }
+  }
+
+  .panel-group,
+  .accordion {
+    .panel,
+    .card {
+      border-color: transparent !important;
+    }
+  }
+
+  .doc-display a {
+    border-bottom: .25rem solid transparent !important;
+  }
+
+  #a42-ac-close {
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: initial;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .node--type-page {
+    &.node--view-mode-header-image,
+    &.node--view-mode-header-immersive {
+      z-index: 0;
+    }
+  }
+
+  .main-container-heading,
+  .main-container-heading + section {
+    position: relative;
+    z-index: 1;
+  }
+
+  #backtotop {
+    background-color: transparent !important;
+  }
+
+  section .block--bloc-paragraphe--pg-insert-video {
+    background-color: transparent !important;
+  }
+}
+
+
+
+
+// ---- CONTRASTE AUGMENTE ----
+//
+//
+
+.a42-ac-high-contrast {
+  :focus-visible,
+  :focus {
+    @include focus-access-hg-contrast;
+  }
+
+  .webform-submission-form .form-item.form-type-radio,
+  .radio,
+  .checkbox{
+    &:focus-within {
+      @include focus-access-hg-contrast;
+    }
+  }
+
+  .webform-submission-form input.form-control,
+  .webform-submission-form textarea.form-control,
+  .webform-submission-form select.form-control {
+    &:focus {
+      @include focus-access-hg-contrast;
+    }
+  }
+
+  .path-webform {
+    .webform-submission-mediation-caisse-form,
+    .webform-submission-cdc-dev-solidaire-adhesion-don-form,
+    .webform-submission-cdc-dev-solidaire-don-express-form {
+      #edit-actions button {
+        &:focus {
+          @include focus-access-hg-contrast;
+        }
+      }
+    }
+  }
+
+  #a42-ac .a42-ac-close:after {
+    color: $white-acc-hg-contrast !important;
+  }
+
+  h2 a,
+  h3 a,
+  h4 a {
+    background-image: linear-gradient($white, $white);
+  }
+
+  svg g polygon {
+    fill: $gray-acc-hg-contrast;
+  }
+
+  &.page-node-type-accueil .region-highlighted .block-entity-viewnode .node--type-accueil .header-text-home {
+    * {
+      background: transparent !important;
+    }
+
+    .field--name-field-head-link a {
+      &:hover {
+        color: $noir-web !important;
+
+        svg {
+          fill: $gray-acc-hg-contrast !important;
+
+          path {
+            stroke: $gray-acc-hg-contrast;
+          }
+        }
+      }
+
+      svg {
+        fill: $white-acc-hg-contrast !important;
+
+        path {
+          stroke: $white-acc-hg-contrast;
+        }
+      }
+    }
+  }
+
+  .block-inline-blockbloc-cta-dossier {
+    .highlighted-content,
+    .highlighted-content * {
+    background-color: $white-acc-hg-contrast !important;
+    color: $gray-acc-hg-contrast !important;
+    }
+
+    .highlighted-content {
+      a.more-link {
+        @include button-hg-acc_fond-gris;
+      }
+    }
+  }
+
+  .highlighted-content,
+  .highlighted-content * {
+    color: $gray-acc-hg-contrast !important;
+
+    a {
+      @include button-hg-acc_fond-gris;
+    }
+  }
+
+
+  div:not(.block-views-blockblog-term-block-view-blog-menu) .more-link>a {
+    @include button-hg-acc_fond-white;
+  }
+
+  .field--name-field-pg-link a {
+    @include button-hg-acc_fond-white;
+  }
+
+  #icdcDecisionTree .decision-tree-collapse .decision-tree-body,
+  #icdcSponsorshipDecisionTree .decision-tree-collapse .decision-tree-body {
+    .leftList p {
+      border: 0;
+    }
+
+    .rightList {
+      button{
+        border-bottom: .4rem solid transparent !important;
+
+        &:hover {
+          border-bottom-color: $white-acc-hg-contrast !important;
+        }
+      }
+
+      .cta {
+        @include button-hg-acc_fond-white;
+      }
+    }
+  }
+
+  .field--name-field-media-video-embed-field .video-embed-field-responsive-video .youtube_player button:hover {
+    background-color: $white-acc-hg-contrast !important;
+    color: $gray-acc-hg-contrast !important;
+  }
+
+  .breadcrumb .breadcrumb-list li+li:before {
+    color: $white-acc-hg-contrast;
+  }
+
+  p a:not(.more-link) {
+    background-image: linear-gradient($white-acc-hg-contrast, $white-acc-hg-contrast);
+  }
+
+  a.more-link {
+    @include button-hg-acc_fond-white;
+  }
+
+  a.btn--primary,
+  a.btn--secondary {
+    svg {
+      fill: $white-acc-hg-contrast;
+
+      path {
+        stroke: $white-acc-hg-contrast !important;
+      }
+    }
+
+    &:hover {
+      background-color: $white-acc-hg-contrast !important;
+      color: $gray-acc-hg-contrast !important;
+
+      svg {
+        fill: $gray-acc-hg-contrast;
+
+        path {
+          stroke: $gray-acc-hg-contrast !important;
+        }
+      }
+    }
+  }
+
+  .field--name-field-pg-content ul>li::before,
+  .node--type-gouvernance .field--name-body ul>li::before,
+  .block-wysiwyg .field--name-body ul>li::before {
+    background-color: $white-acc-hg-contrast;
+  }
+
+  .panel-group,
+  .accordion {
+    .panel,
+    .card {
+      .panel-heading,
+      .card-header {
+        a,
+        button {
+          &:before,
+          &:after {
+            background-color: $white-acc-hg-contrast;
+          }
+        }
+      }
+    }
+  }
+
+  .doc-display a:hover {
+      border-bottom-color: $white-acc-hg-contrast !important;
+  }
+
+  .layout.layout--twocol-section.layout--twocol-section--50-50.row.wrapper-large.container-not-fluid .field.field--name-body.field--type-text-with-summary.field--label-hidden.field--item img,
+  .paragraph--type--pg-highligted.paragraph--view-mode--right,
+  .paragraph--type--pg-highligted.paragraph--view-mode--default {
+    .wrapper-texte {
+      background-color: $white-acc-hg-contrast !important;
+    }
+  }
+
+  .field.field--name-field-pg-chapo.field--type-text-long.field--label-hidden.field--item {
+    a.more-link {
+      @include button-hg-acc_fond-gris;
+    }
+  }
+
+  .tns-parent .tns-nav button {
+    border-color: $white-acc-hg-contrast !important;
+
+    &.tns-nav-active {
+      background-color: $white-acc-hg-contrast !important;
+    }
+  }
+
+  .field.field--name-field-link.field--type-link.field--label-hidden.field--item a {
+    &::before,
+    &::after {
+      background-color: $white-acc-hg-contrast;
+    }
+
+    &:hover {
+      color: $gray-acc-hg-contrast !important;
+
+      &::before,
+      &::after {
+        background-color: $white-acc-hg-contrast;
+      }
+    }
+
+    &:focus {
+      outline-color: $white-acc-hg-contrast !important;
+    }
+  }
+
+  .view-blog,
+  .view-blog-authors,
+  .block-facet-blockicdc-media-facet-type {
+    .menu--menu-blog li a,
+    .facets-widget-links li a {
+      &:hover::after,
+      &:active::after,
+      &:focus::after,
+      &.active-trail::after {
+        background-color: $white-acc-hg-contrast;
+      }
+    }
+  }
+
+  .block-views-blockblog-term-block-view-blog-menu,
+  .block-mini-site-menu .minisite-header .minisite-container-menu ul,
+    li,
+    .more-link {
+      a {
+        color: $white-acc-hg-contrast !important;
+
+        &:hover:after,
+        &:active::after,
+        &:focus::after,
+        &.active-trail::after {
+          background-color: $white-acc-hg-contrast;
+        }
+      }
+    }
+
+  .blog-type+.blog-label:before {
+    color: $white-acc-hg-contrast;
+  }
+
+  &.page-node-type-webform,
+  &.path-webform {
+    .webform-submission-cdc-dev-solidaire-adhesion-don-form,
+    .webform-submission-cdc-dev-solidaire-don-express-form,
+    .webform-submission-mediation-caisse-form {
+      .form-required:after {
+        background-image: url(../images/required-hg-contrast.svg) !important;
+      }
+    }
+  }
+
+  .region-content,
+  .region-content-top,
+  #tarteaucitronRoot {
+    .btn-primary,
+    .form-submit,
+    .button--primary,
+    .btn--primary {
+      @include button-hg-acc_contrast;
+    }
+  }
+
+  .field--type-text-long a.btn--primary {
+    @include button-hg-acc_contrast;
+  }
+
+  .webform-confirmation-modal {
+    &--content a,
+    a {
+      @include button-hg-acc_contrast;
+    }
+  }
+
+  #drupal-off-canvas .inline-block {
+    &-create-button,
+    &-list__item {
+      @include button-hg-acc_contrast;
+    }
+  }
+
+  .wrapper-filtres .block-views .form-actions button,
+  .block-facets input[type='submit'] {
+    @include button-hg-acc_contrast;
+  }
+
+  .embedded-video,
+  .field--name-field-media-video-embed-field {
+    &>.player,
+    .video-embed-field-responsive-video {
+      .youtube_player button,
+      .keepeek_player button {
+        @include button-hg-acc_contrast;
+      }
+    }
+  }
+
+  #tarteaucitronRoot {
+    #tarteaucitronAlertBig button,
+    #tarteaucitron #tarteaucitronServices .tarteaucitronAllow {
+      @include button-hg-acc_contrast;
+    }
+  }
+}
+
+
+
+
+
+// ---- CONTRASTE INVERSE ----
+//
+//
+
+.a42-ac-inv-contrast {
+  :focus-visible,
+  :focus {
+    @include focus-access-inv-contrast;
+  }
+
+  .webform-submission-form .form-item.form-type-radio,
+  .radio,
+  .checkbox{
+    &:focus-within {
+      @include focus-access-inv-contrast;
+    }
+  }
+
+  .webform-submission-form input.form-control,
+  .webform-submission-form textarea.form-control,
+  .webform-submission-form select.form-control {
+    &:focus {
+      @include focus-access-inv-contrast;
+    }
+  }
+
+  .path-webform .webform-submission-mediation-caisse-form #edit-actions button,
+  .path-webform .webform-submission-cdc-dev-solidaire-adhesion-don-form #edit-actions button,
+  .path-webform .webform-submission-cdc-dev-solidaire-don-express-form #edit-actions button {
+    &:focus {
+      @include focus-access-inv-contrast;
+      @include focus-access-offset;
+    }
+  }
+
+  .webform-submission-form input[type='checkbox'] + label,
+  .webform-submission-form input[type='radio'] + label {
+    &::before {
+      background-color: transparent;
+      border: 2px solid $yellow-acc-inv-contrast;
+    }
+
+    &::after {
+      background-color: $yellow-acc-inv-contrast;
+    }
+  }
+
+  h2 a,
+  h3 a,
+  h4 a {
+    background-image: linear-gradient($yellow-acc-inv-contrast, $yellow-acc-inv-contrast);
+  }
+
+  svg g polygon {
+    fill: $navy-acc-inv-contrast;
+  }
+
+  .field.field--name-field-head-title.field--type-string.field--label-hidden.field--item,
+  .field.field--name-field-head-text.field--type-string-long.field--label-hidden.field--item {
+    color: $yellow-acc-inv-contrast !important;
+  }
+
+  &.page-node-type-accueil .region-highlighted .block-entity-viewnode .node--type-accueil .header-text-home {
+    * {
+      background: transparent !important;
+    }
+
+    .field--name-field-head-link a {
+      &::after,
+      &::before {
+        background-color: $yellow-acc-inv-contrast;
+      }
+
+      &:hover {
+        color: $navy-acc-inv-contrast !important;
+
+        &::after,
+        &::before {
+          background-color: $yellow-acc-inv-contrast;
+        }
+
+        svg {
+          fill: $navy-acc-inv-contrast !important;
+
+          path {
+            stroke: $navy-acc-inv-contrast;
+          }
+        }
+      }
+
+      svg {
+        fill: $navy-acc-inv-contrast !important;
+
+        path {
+          stroke: $yellow-acc-inv-contrast;
+        }
+      }
+
+      &:focus {
+        outline-color: $yellow-acc-inv-contrast !important;
+      }
+    }
+  }
+
+  .block-inline-blockbloc-cta-dossier {
+    .highlighted-content,
+    .highlighted-content * {
+      background-color: $yellow-acc-inv-contrast !important;
+      color: $navy-acc-inv-contrast !important;
+    }
+
+    .highlighted-content {
+      a.more-link {
+        @include button-inv-acc_fond-yellow;
+      }
+    }
+  }
+
+
+  div:not(.block-views-blockblog-term-block-view-blog-menu) .more-link>a {
+    @include button-inv-acc_fond-navy;
+  }
+
+  .field--name-field-pg-link a {
+    @include button-inv-acc_fond-navy;
+  }
+
+  #icdcDecisionTree .decision-tree-collapse .decision-tree-body,
+  #icdcSponsorshipDecisionTree .decision-tree-collapse .decision-tree-body {
+    .leftList p {
+      border: 0;
+    }
+
+    .rightList {
+      button {
+        border-bottom: .4rem solid transparent !important;
+
+        &:hover {
+          border-bottom-color: $yellow-acc-inv-contrast !important;
+        }
+      }
+
+      .cta {
+        @include button-inv-acc_fond-navy;
+      }
+    }
+  }
+
+  .field--name-field-media-video-embed-field .video-embed-field-responsive-video .youtube_player button:hover {
+    background-color: $yellow-acc-inv-contrast !important;
+    color: $navy-acc-inv-contrast !important;
+  }
+
+  .breadcrumb .breadcrumb-list li+li:before {
+    color: $yellow-acc-inv-contrast;
+  }
+
+  p a:not(.more-link) {
+    background-image: linear-gradient($yellow-acc-inv-contrast, $yellow-acc-inv-contrast);
+  }
+
+  .highlighted-content,
+  .highlighted-content * {
+    color: $navy-acc-inv-contrast !important;
+
+    a {
+      @include button-inv-acc_fond-yellow;
+    }
+  }
+
+  a.more-link {
+    @include button-inv-acc_fond-navy;
+  }
+
+  .view-recherche .form-actions:before {
+    color: $yellow-acc-inv-contrast;
+  }
+
+  a.btn--primary,
+  a.btn--secondary {
+    svg {
+      fill: $yellow-acc-inv-contrast;
+
+      path {
+        stroke: $yellow-acc-inv-contrast !important;
+      }
+    }
+
+    &:hover {
+      background-color: $yellow-acc-inv-contrast !important;
+      color: $navy-acc-inv-contrast !important;
+
+      svg {
+        fill: $navy-acc-inv-contrast;
+
+        path {
+          stroke: $navy-acc-inv-contrast !important;
+        }
+      }
+    }
+  }
+
+  .field--name-field-pg-content ul>li::before,
+  .node--type-gouvernance .field--name-body ul>li::before,
+  .block-wysiwyg .field--name-body ul>li::before {
+    background-color: $yellow-acc-inv-contrast;
+  }
+
+  .panel-group,
+  .accordion {
+    .panel,
+    .card {
+      .panel-heading,
+      .card-header {
+        a,
+        button {
+          &:before,
+          &:after {
+            background-color: $yellow-acc-inv-contrast;
+          }
+        }
+      }
+    }
+  }
+
+  .doc-display a:hover {
+      border-bottom-color: $yellow-acc-inv-contrast !important;
+  }
+
+  .layout.layout--twocol-section.layout--twocol-section--50-50.row.wrapper-large.container-not-fluid .field.field--name-body.field--type-text-with-summary.field--label-hidden.field--item img,
+  .paragraph--type--pg-highligted.paragraph--view-mode--right .wrapper-texte {
+    background-color: $yellow-acc-inv-contrast !important;
+  }
+
+  .field.field--name-field-pg-chapo.field--type-text-long.field--label-hidden.field--item {
+    a.more-link {
+      @include button-inv-acc_fond-yellow;
+    }
+  }
+
+  .tns-parent .tns-nav button {
+    border-color: $yellow-acc-inv-contrast !important;
+
+    &.tns-nav-active {
+      background-color: $yellow-acc-inv-contrast !important;
+    }
+  }
+
+  .field.field--name-field-link.field--type-link.field--label-hidden.field--item a {
+    &::before,
+    &::after {
+      background-color: $yellow-acc-inv-contrast;
+    }
+
+    &:hover {
+      color: $navy-acc-inv-contrast !important;
+
+      &::before,
+      &::after {
+        background-color: $yellow-acc-inv-contrast;
+      }
+    }
+
+    &:focus {
+      outline-color: $yellow-acc-inv-contrast !important;
+    }
+  }
+
+  .more-link.form-group a {
+    &::before,
+    &::after {
+      background-color: $yellow-acc-inv-contrast !important;
+    }
+  }
+
+  .view-blog,
+  .view-blog-authors,
+  .block-facet-blockicdc-media-facet-type {
+
+    .menu--menu-blog li a,
+    .facets-widget-links li a {
+
+      &:hover::after,
+      &:active::after,
+      &:focus::after,
+      &.active-trail::after {
+        background-color: $yellow-acc-inv-contrast;
+      }
+    }
+  }
+
+  .block-views-blockblog-term-block-view-blog-menu,
+  .block-mini-site-menu .minisite-header .minisite-container-menu ul,
+  li,
+  .more-link {
+    a {
+      color: $yellow-acc-inv-contrast !important;
+
+      &:hover:after,
+      &:active::after,
+      &:focus::after,
+      &.active-trail::after {
+        background-color: $yellow-acc-inv-contrast;
+      }
+    }
+  }
+
+  .blog-type+.blog-label:before {
+    color: $yellow-acc-inv-contrast;
+  }
+
+  &.page-node-type-webform,
+  &.path-webform {
+    .webform-submission-cdc-dev-solidaire-adhesion-don-form,
+    .webform-submission-cdc-dev-solidaire-don-express-form,
+    .webform-submission-mediation-caisse-form {
+      .form-required:after {
+        background-image: url(../images/required-inv-contrast.svg) !important;
+      }
+    }
+  }
+
+  #a42-ac-close {
+    &:after {
+      color: $yellow-acc-inv-contrast;
+    }
+  }
+
+  .paragraph--type--pg-highligted.paragraph--view-mode--default .wrapper-texte {
+    background-color: $yellow-acc-inv-contrast !important;
+  }
+
+  .region-content,
+  .region-content-top,
+  #tarteaucitronRoot {
+
+    .btn-primary,
+    .form-submit,
+    .button--primary,
+    .btn--primary {
+      @include button-inv-acc_contrast;
+    }
+  }
+
+  .field--type-text-long a.btn--primary {
+    @include button-inv-acc_contrast;
+  }
+
+  .webform-confirmation-modal {
+
+    &--content a,
+    a {
+      @include button-inv-acc_contrast;
+    }
+  }
+
+  #drupal-off-canvas .inline-block {
+
+    &-create-button,
+    &-list__item {
+      @include button-inv-acc_contrast;
+    }
+  }
+
+  .wrapper-filtres .block-views .form-actions button,
+  .block-facets input[type='submit'] {
+    @include button-inv-acc_contrast;
+  }
+
+  .embedded-video,
+  .field--name-field-media-video-embed-field {
+
+    &>.player,
+    .video-embed-field-responsive-video {
+
+      .youtube_player button,
+      .keepeek_player button {
+        @include button-inv-acc_contrast;
+      }
+    }
+  }
+
+  #tarteaucitronRoot {
+
+    #tarteaucitronAlertBig button,
+    #tarteaucitron #tarteaucitronServices .tarteaucitronAllow {
+      @include button-inv-acc_contrast;
+    }
+  }
+}

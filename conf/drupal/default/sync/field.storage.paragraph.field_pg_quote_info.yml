@@ -1,0 +1,23 @@
+uuid: a8a31a5b-040f-4565-af3c-f391f4d9273d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: ykQWaMxFLxjvpHF_eg21FqsPKiE-UiQyKcIiEWRVOgE
+id: paragraph.field_pg_quote_info
+field_name: field_pg_quote_info
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

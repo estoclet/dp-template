@@ -1,0 +1,8 @@
+uuid: eea980bd-6d91-4aa0-a834-40e93de27bc3
+langcode: fr
+status: true
+dependencies: {  }
+id: date_full_short
+label: 'Date complète abrégée'
+locked: false
+pattern: 'd M. Y'

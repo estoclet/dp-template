@@ -1,0 +1,22 @@
+uuid: 113b0f30-eff7-4566-868b-0c2d67e2b27e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_chiffres
+    - field.storage.block_content.field_background_color
+  module:
+    - color_field
+id: block_content.bloc_chiffres.field_background_color
+field_name: field_background_color
+entity_type: block_content
+bundle: bloc_chiffres
+label: 'Couleur d’arrière-plan'
+description: 'Définissez la couleur qui sera affichée en arrière-plan. Laissez vide si non requis.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

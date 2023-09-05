@@ -1,0 +1,41 @@
+uuid: 6f03d45d-2c9c-4175-abf7-4cc8edb33da0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.portrait
+    - core.entity_view_mode.media.thumbnail
+    - core.entity_view_mode.media.wysiwyg
+    - core.entity_view_mode.media.wysiwyg_ratio_16_9
+    - core.entity_view_mode.media.wysiwyg_ratio_1_1
+    - core.entity_view_mode.media.wysiwyg_ratio_2_3
+    - core.entity_view_mode.media.wysiwyg_ratio_3_2
+    - core.entity_view_mode.media.wysiwyg_ratio_4_3
+    - entity_browser.browser.image_browser_wysiwyg
+    - media.type.image
+  module:
+    - entity_embed
+    - media
+label: 'Image WYSIWYG'
+id: image_wysiwyg
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - image
+  display_plugins:
+    - 'view_mode:media.portrait'
+    - 'view_mode:media.thumbnail'
+    - 'view_mode:media.wysiwyg'
+    - 'view_mode:media.wysiwyg_ratio_16_9'
+    - 'view_mode:media.wysiwyg_ratio_1_1'
+    - 'view_mode:media.wysiwyg_ratio_2_3'
+    - 'view_mode:media.wysiwyg_ratio_3_2'
+    - 'view_mode:media.wysiwyg_ratio_4_3'
+  entity_browser: image_browser_wysiwyg
+  entity_browser_settings:
+    display_review: false
+icon:
+  uri: 'public://embed_buttons/image_0.png'
+  data: iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH4AsCDSEAgw7OCAAAAo1JREFUWMPFV7tu1UAQPbN3bIs2fEBKKviCFCkTQUtFi/kFCloK/gDpkpKKFop0KfIFUFHmA0iLYu/uDAVaM3evvbbzECNZ2vecc3bsGdPJyQnGTFV3+kS0ar5kdq9bvOuB7NYA1jBeDSCX9yGNrd+cYQKS2om1bY/NLzQCAJ5iW1IhOcoB3UY5HhnbozHHbqXznYW8eNd6iYtnJXNTEyEEANgSkRKRAth67+89QHdiwAYTM29VtTXzLTMTgNYG51rG1k9RAQAtEcE5Z529ztefn58jrSOiHVCqOqqYHSvGQDpARAYgOfPT09NFrKes9CX8NCz6p8JZvmiz2ew4XOI4EVNVONuxC7z3b0RkcCgiZ977Nr/3XPK1NqkAM8M51+Lvd4Gccy0zD07TvccY9xRomuYJgMsp1ha0m1pUsuRcRBBjhIgM+0IIuLm5+amqR0T0auoKZhWwjPInxogQwt649x6bzebK7P0sIo9LhNxS1lMq2TYzf1DVQwCDKkT0q+u6UfZFBbJgawFcee8ngTHzU1V9a2MkWdM0v/u+Hzt3OgbSc3FxAQBbVT2sqkqJ6Ch37r1HCOFH6otIft6juq6/jPkoVkQhBBwfH6uVW0QuAVymvNB1HZi5n7tCVX3ZNM2zvRgo3XVVVd8m5o7qulZmPqzr+iOAys7nCqSxvu+/p/Hh6vJkNCBz7kWM8fkUwBgjYoxXaZ99v1MM2KRFRAMwW8iMKnB9fQ0AX20ysrlgTK0xxoWYmM6GIoKDg4Muxjj08wPnzIKeI7A3WlXVOwD1Ym8jZkHnTx6se+k4hPB+TOJSlbxGEXtlQKEqHgORt+fK9iVnWwXuVHHm/wlL7V7+DefKrgcHcBf77wD+AOLlQlU6HAIcAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE2LTExLTAyVDEzOjMzOjAwKzAxOjAw1wGs7QAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNi0xMS0wMlQxMzozMzowMCswMTowMKZcFFEAAAAASUVORK5CYII=
+icon_uuid: null

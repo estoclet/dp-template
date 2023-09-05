@@ -1,0 +1,8 @@
+uuid: 1ea5d05f-61dd-458b-9198-56230f7ed6c7
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_chiffres
+label: 'Bloc Chiffres Clés'
+revision: 1
+description: 'Un bloc contenant 1 à  6 chiffres clés.'

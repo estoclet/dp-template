@@ -1,0 +1,40 @@
+uuid: be7d5cba-e852-4dd3-b036-d53db24753c8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.social_btn
+    - field.field.node.gouvernance.body
+    - field.field.node.gouvernance.field_function
+    - field.field.node.gouvernance.field_image_reference
+    - field.field.node.gouvernance.field_metatag
+    - node.type.gouvernance
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.gouvernance.social_btn
+targetEntityType: node
+bundle: gouvernance
+mode: social_btn
+content:
+  social_simple_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_function: true
+  field_image_reference: true
+  field_metatag: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

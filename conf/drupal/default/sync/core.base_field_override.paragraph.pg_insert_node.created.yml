@@ -1,0 +1,18 @@
+uuid: fa6ec1f9-847b-4ed4-aba9-8d61a23e127e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_insert_node
+id: paragraph.pg_insert_node.created
+field_name: created
+entity_type: paragraph
+bundle: pg_insert_node
+label: 'Écrit le'
+description: 'Heure de création du paragraphe.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

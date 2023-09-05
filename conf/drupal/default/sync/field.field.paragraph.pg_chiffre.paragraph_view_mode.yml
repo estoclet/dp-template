@@ -1,0 +1,21 @@
+uuid: 1d2d1941-5d16-4aa2-a9f8-d6862a38407a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.paragraph_view_mode
+    - paragraphs.paragraphs_type.pg_chiffre
+  module:
+    - paragraph_view_mode
+id: paragraph.pg_chiffre.paragraph_view_mode
+field_name: paragraph_view_mode
+entity_type: paragraph
+bundle: pg_chiffre
+label: 'Paragraph view mode'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraph_view_mode

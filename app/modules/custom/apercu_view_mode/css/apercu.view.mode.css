@@ -1,0 +1,13 @@
+.apercu-view-mode-iframe {
+  width: 100%;
+  border:none;
+}
+.apercu-view-mode-h3,i {
+  font-size: 1.5em;
+  color: red;
+  margin:5% 0;
+}
+.apercu-view-mode-hr{
+  background:black;
+  height:10px;
+}

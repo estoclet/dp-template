@@ -1,0 +1,18 @@
+uuid: c64d2b9f-b303-4caf-8939-84b7752632d2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.blog_tag
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.blog_tag
+target_entity_type_id: taxonomy_term
+target_bundle: blog_tag
+default_langcode: site_default
+language_alterable: false

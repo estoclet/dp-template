@@ -1,0 +1,14 @@
+langcode: fr
+attributes:
+  class:
+    label: ''
+    description: ''
+  id:
+    label: ''
+    description: ''
+  target:
+    label: ''
+    description: ''
+    options:
+      _blank: 'New window (_blank)'
+      _self: 'Same window (_self)'

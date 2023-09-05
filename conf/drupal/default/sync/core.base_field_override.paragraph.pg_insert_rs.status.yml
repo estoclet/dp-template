@@ -1,0 +1,22 @@
+uuid: fd65242a-b22d-4f43-b258-fbabb61f844d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_insert_rs
+id: paragraph.pg_insert_rs.status
+field_name: status
+entity_type: paragraph
+bundle: pg_insert_rs
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

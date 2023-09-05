@@ -1,0 +1,52 @@
+uuid: 14256a5e-3c2a-436a-8479-bbc1e776473d
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.player
+    - field.field.paragraph.pg_insert_video.field_pg_chapo
+    - field.field.paragraph.pg_insert_video.field_pg_title
+    - field.field.paragraph.pg_insert_video.field_pg_video_references
+    - field.field.paragraph.pg_insert_video.field_pg_view_mode
+    - field.field.paragraph.pg_insert_video.field_responsive
+    - field.field.paragraph.pg_insert_video.paragraph_view_mode
+    - paragraphs.paragraphs_type.pg_insert_video
+  module:
+    - text
+id: paragraph.pg_insert_video.player
+targetEntityType: paragraph
+bundle: pg_insert_video
+mode: player
+content:
+  field_pg_chapo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_pg_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_pg_video_references:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_pg_view_mode: true
+  field_responsive: true
+  paragraph_view_mode: true
+  search_api_excerpt: true

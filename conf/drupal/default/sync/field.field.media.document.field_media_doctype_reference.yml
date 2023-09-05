@@ -1,0 +1,31 @@
+uuid: ea9a5e6b-bd2f-4e03-b42d-b3c87ac68073
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_doctype_reference
+    - media.type.document
+    - taxonomy.vocabulary.doctype
+_core:
+  default_config_hash: M7RPOrV0cAPTUpPVViTNrhZ47DE7JbVziVrfrioUgoI
+id: media.document.field_media_doctype_reference
+field_name: field_media_doctype_reference
+entity_type: media
+bundle: document
+label: 'Type de document'
+description: 'Pour améliorer les fonctionnalités de recherche, veuillez sélectionner le type de document.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      doctype: doctype
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,27 @@
+uuid: f56d80c1-5a1d-4143-b24e-6f3d8974d334
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.mini_site.field_js_file
+    - mini_sites.mini_site_type.mini_site
+  module:
+    - file
+id: mini_site.mini_site.field_js_file
+field_name: field_js_file
+entity_type: mini_site
+bundle: mini_site
+label: 'Fichier javascript'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: mini-sites
+  file_extensions: 'js txt'
+  max_filesize: ''
+  description_field: false
+field_type: file

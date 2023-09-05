@@ -1,0 +1,24 @@
+uuid: ee59e9d4-3cd3-454d-9920-d3fb5ea761e0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.blog_term
+  module:
+    - views
+  theme:
+    - cdc_theme
+id: views_block__blog_term_block_view_blog_menu
+theme: cdc_theme
+region: hidden
+weight: 0
+provider: null
+plugin: 'views_block:blog_term-block_view_blog_menu'
+settings:
+  id: 'views_block:blog_term-block_view_blog_menu'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: f22ac4a2-8b72-4d3c-8cad-ea8ff5bf9f7c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - mini_sites
+    - node
+id: node.field_site
+field_name: field_site
+entity_type: node
+type: entity_reference
+settings:
+  target_type: mini_site
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

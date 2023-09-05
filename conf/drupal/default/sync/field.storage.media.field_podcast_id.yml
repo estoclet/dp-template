@@ -1,0 +1,21 @@
+uuid: 0ac8d1ea-b226-4fbe-8e21-e479680c5d1e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_podcast_id
+field_name: field_podcast_id
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

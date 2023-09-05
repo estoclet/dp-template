@@ -1,0 +1,7 @@
+uuid: b6121aa3-4736-40a8-9dcd-fea68d4eb0bf
+langcode: fr
+status: false
+dependencies: {  }
+formId: webform_submission_mediation_add_form
+captchaType: recaptcha/reCAPTCHA
+label: webform_submission_mediation_add_form

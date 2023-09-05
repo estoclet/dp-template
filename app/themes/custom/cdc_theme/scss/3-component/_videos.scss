@@ -1,0 +1,121 @@
+// Vidéo Responsive
+%video-container {
+  margin: 0 auto;
+  width: 100% !important;
+  height: auto !important;
+  padding: 0 0 56.25%;
+  position: relative;
+  text-align: center;
+  >div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  >p{
+    background: $noir-web;
+    &:first-of-type{
+      margin-bottom: 0;
+      padding-bottom: 1.25rem;
+    }
+  }
+}
+
+%video-content {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+.embedded-video,
+.field--name-field-media-video-embed-field {
+  & > .player,
+  .video-embed-field-responsive-video {
+    &:after {
+      display: none;
+    }
+
+    .youtube_player,
+    .keepeek_player {
+      @extend %video-container;
+
+      button {
+        @extend %btn-primary;
+      }
+
+      iframe {
+        @extend %video-content;
+      }
+    }
+
+
+  }
+}
+
+.node--type-article,
+.node--type-blog,
+.node--type-gouvernance,
+.node--type-actualite,
+.node--type-dossier,
+.page-node-type-page {
+  .field--name-field-media-link,
+  .field--type-video-embed-field {
+    &.field--label-hidden {
+      p{
+        text-align: center;
+        background-color: $black;
+        &:first-of-type {
+          margin-bottom: 0;
+          padding-bottom: 1.25rem;
+        }
+        &:last-of-type{
+          padding-bottom: 1.875rem;
+        }
+      }
+    }
+  }
+}
+.soundcloud-content,
+.ausha-content,
+div[class*="video-embed-field-"]{
+  p.lead{
+    text-align: center;
+    background-color: $black;
+    margin-bottom: 0;
+    padding-bottom: 1.25rem;
+    +p{
+      text-align: center;
+      background-color: $black;
+      padding-bottom: 1.875rem;
+      .btn-secondary,
+      .btn-primary{
+        &:focus{
+          @include focus($white, .2rem, 3px);
+        }
+      }
+    }
+  }
+}
+
+// .paragraph--type--pg-highligted{
+//   .container{
+//     width: 100% !important;
+//     padding: 0 !important;
+//     .field--name-field-pg-chapo{
+//       margin: 0;
+//     }
+//     .youtube_player{
+//       iframe{
+//         width: calc(100vw - 1.2rem);
+//         height: 56vw;
+//         max-height: calc(100vh - 17.5rem);
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,51 @@
+uuid: fde043d5-881b-4c6b-9f4b-d7b408a06dcf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wysiwyg_personnalise.field_background_color
+    - field.field.paragraph.wysiwyg_personnalise.field_pg_content
+    - field.field.paragraph.wysiwyg_personnalise.field_responsive
+    - paragraphs.paragraphs_type.wysiwyg_personnalise
+  module:
+    - color_field
+    - field_formatter_class
+    - text
+id: paragraph.wysiwyg_personnalise.default
+targetEntityType: paragraph
+bundle: wysiwyg_personnalise
+mode: default
+content:
+  field_background_color:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_pg_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_responsive:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

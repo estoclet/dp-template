@@ -1,0 +1,23 @@
+uuid: 78c4170d-5eba-40a6-a688-4b8beb98b2d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_search_visibility
+    - media.type.magazine
+id: media.magazine.field_media_search_visibility
+field_name: field_media_search_visibility
+entity_type: media
+bundle: magazine
+label: 'Afficher dans le moteur de recherche'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

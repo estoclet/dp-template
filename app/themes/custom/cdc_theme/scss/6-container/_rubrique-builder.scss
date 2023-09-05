@@ -1,0 +1,38 @@
+.page-node-type-rubrique-v2{
+  div[class*="video-embed-field-provider-"]{
+    background-color: $black;
+  }
+  .layout__region{
+    h2{
+      font-family: "Montserrat", sans-serif;
+      line-height: 1em;
+      font-weight: 700;
+      text-align: left;
+      font-size: 5.8rem;
+    }
+  }
+}
+
+.layout--onecol{
+  .layout--twocol-section,
+  .layout--threecol-section,
+  .layout--fourcol-section{
+    @media (min-width: $screen-sm-min){
+      .col-md-9 {
+        width: 75%;
+      }
+      .col-md-8 {
+        width: 66.66666667%;
+      }
+      .col-md-6{
+        width: 50%;
+      }
+      .col-md-4 {
+        width: 33.33333333%;
+      }
+      .col-md-3 {
+        width: 25%;
+      }
+    }
+  }
+}

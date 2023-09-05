@@ -1,0 +1,29 @@
+uuid: 54710874-f27e-42a6-860e-7375c0ffa900
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.mini_site_page.news_list.field_news_list
+    - mini_sites.mini_site_page_type.news_list
+  module:
+    - mini_sites
+id: mini_site_page.news_list.default
+targetEntityType: mini_site_page
+bundle: news_list
+mode: default
+content:
+  field_news_list:
+    type: mini_site_view_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

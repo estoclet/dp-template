@@ -1,0 +1,21 @@
+uuid: f9c82e4b-c1be-4489-bab6-237132dbb48f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+_core:
+  default_config_hash: 3RoW4cmOoKkINSzFj2NY484vx2BPvny0hbYn-yKiSOs
+id: paragraph.field_pg_chapo
+field_name: field_pg_chapo
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

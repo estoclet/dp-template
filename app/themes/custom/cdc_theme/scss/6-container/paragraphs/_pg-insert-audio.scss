@@ -1,0 +1,10 @@
+.paragraph--type--pg-insert-audio,
+.view-mediatheque,
+.paragraph--type--pg-text,
+.paragraph--type--pg-advanced-text {
+  .field--name-field-media-link {
+    iframe {
+      border: 0;
+    }
+  }
+}

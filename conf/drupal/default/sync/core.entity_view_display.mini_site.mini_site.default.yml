@@ -1,0 +1,81 @@
+uuid: 14cc531a-73bf-4af6-9126-380c4b6db093
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.mini_site.mini_site.field_css_file
+    - field.field.mini_site.mini_site.field_js_file
+    - field.field.mini_site.mini_site.field_logo_1
+    - field.field.mini_site.mini_site.field_logo_2
+    - field.field.mini_site.mini_site.field_mini_site_color
+    - mini_sites.mini_site_type.mini_site
+  module:
+    - color_field
+    - field_formatter_class
+    - svg_image
+id: mini_site.mini_site.default
+targetEntityType: mini_site
+bundle: mini_site
+mode: default
+content:
+  field_logo_1:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_logo_2:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_mini_site_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 4
+    region: content
+  mini_site_menu:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  mini_site_page_content:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_css_file: true
+  field_js_file: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  user_id: true

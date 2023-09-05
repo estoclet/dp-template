@@ -1,0 +1,162 @@
+.auteur,
+%auteur {
+  @extend %auteur-name;
+  margin-bottom: 10px;
+}
+
+//Blog
+.auteur-description {
+  position: relative;
+  display: flex;
+  margin-bottom: 4rem;
+
+  .auteur-infos {
+
+    & > a {
+      color: $noir-web;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $couleur-rouge;
+      }
+    }
+  }
+
+  img {
+    display: inline-block;
+    margin-right: 25px;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  .auteur {
+    margin-bottom: 0;
+  }
+
+  .auteur-entite {
+    font-weight: 700;
+    font-size: 1.4rem;
+
+    @media (max-width: $screen-xs-max) {
+      display: inline-block;
+      width: 80%;
+    }
+  }
+
+  .auteur-fonction {
+    font-size: 1.4rem;
+    margin-top: 15px;
+  }
+}
+
+.auteur-linkedin {
+  @extend %picto-user-linkedin;
+  svg.ext {
+    display: none;
+  }
+}
+
+.auteur-aside {
+  margin: 30px auto;
+  max-width: 140px;
+  min-width: 140px;
+  text-align: center;
+
+  @media (min-width: $screen-lg-min) {
+    margin: 0;
+  }
+
+  a {
+
+    @include img-hover-contrast;
+    color: $noir-web;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 30px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $couleur-rouge;
+      text-decoration: none;
+    }
+
+    img {
+      margin: 0 auto 5px;
+      width: 120px;
+      max-width: 100%;
+      object-fit: cover;
+      border: 2px solid $white;
+    }
+
+    .auteur {
+      font-size: 1.4rem;
+    }
+
+    &.auteur-lien {
+      & + .reading-time-value {
+        .field--label {
+          margin-top: 15px;
+          padding-top: 15px;
+          font-weight: 400;
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 1px;
+            width: 90%;
+            background: $noir-web;
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+
+
+  .reading-time-value {
+    padding-top: 20px;
+    border-top: 1px solid $gris-moyen;
+    .field--item {
+      display: inline-flex;
+      vertical-align: middle;
+      align-items: center;
+      padding: .2rem;
+      justify-content: center;
+      margin: 1rem auto 0;
+      min-width: 4.5rem;
+      min-height: 4.5rem;
+      border-radius: 50%;
+      border: 2px solid $noir-web;
+      font-size: 1.3rem;
+      font-weight: 700;
+      position: relative;
+
+      &::before {
+        content: '';
+        height: .5rem;
+        width: .3rem;
+        position: absolute;
+        top: 50%;
+        left: -.2rem;
+        transform: translateY(-50%);
+        background-color: $white;
+      }
+    }
+
+    .field--label {
+      @extend %small;
+      position: relative;
+    }
+
+  }
+}

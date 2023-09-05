@@ -1,0 +1,20 @@
+uuid: f07129bb-0916-46a6-9f07-b859cec603f4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - mini_sites.mini_site_page_type.content
+  module:
+    - path
+id: mini_site_page.content.path
+field_name: path
+entity_type: mini_site_page
+bundle: content
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

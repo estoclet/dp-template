@@ -1,0 +1,18 @@
+uuid: be6e188b-24ba-43a5-958e-74fb78380c67
+langcode: fr
+status: true
+dependencies:
+  config:
+    - media.type.image_svg
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: media.image_svg
+target_entity_type_id: media
+target_bundle: image_svg
+default_langcode: site_default
+language_alterable: false

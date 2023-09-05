@@ -1,0 +1,69 @@
+uuid: 914ad85f-8a04-4375-b9bb-cd8213ed69e7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pg_insert_node.field_pg_chapo
+    - field.field.paragraph.pg_insert_node.field_pg_node_references
+    - field.field.paragraph.pg_insert_node.field_pg_title
+    - field.field.paragraph.pg_insert_node.field_pg_view_mode
+    - field.field.paragraph.pg_insert_node.field_responsive
+    - paragraphs.paragraphs_type.pg_insert_node
+  module:
+    - entity_dynamic_rendering
+    - text
+id: paragraph.pg_insert_node.default
+targetEntityType: paragraph
+bundle: pg_insert_node
+mode: default
+content:
+  field_pg_chapo:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_pg_node_references:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pg_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pg_view_mode:
+    type: view_mode_widget
+    weight: 2
+    region: content
+    settings:
+      restrict_view_modes:
+        default: default
+        mosaic: mosaic
+    third_party_settings: {  }
+  field_responsive:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

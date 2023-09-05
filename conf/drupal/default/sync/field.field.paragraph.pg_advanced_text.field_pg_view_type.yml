@@ -1,0 +1,23 @@
+uuid: 1a3c4db3-bd1b-4759-9e61-7307471c8f7f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_view_type
+    - paragraphs.paragraphs_type.pg_advanced_text
+  module:
+    - paragraph_view_mode
+id: paragraph.pg_advanced_text.field_pg_view_type
+field_name: field_pg_view_type
+entity_type: paragraph
+bundle: pg_advanced_text
+label: 'Type d''affichage'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: paragraph_view_mode

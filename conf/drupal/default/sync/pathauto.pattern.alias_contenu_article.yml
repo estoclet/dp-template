@@ -1,0 +1,32 @@
+uuid: e2b86290-f09e-4d8c-989f-ca42a3d533ec
+langcode: fr
+status: true
+dependencies:
+  module:
+    - mini_sites
+    - node
+id: alias_contenu_article
+label: 'Alias des contenus de type Article'
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parent:parents]/[node:field_short_title]'
+selection_criteria:
+  10e59bb4-18bf-4cff-a57c-668e2256de92:
+    id: node_type
+    negate: false
+    uuid: 10e59bb4-18bf-4cff-a57c-668e2256de92
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+  44e0080d-d669-4ff9-a5ad-b17fd0f2b6e2:
+    id: mini_site_page_content
+    negate: false
+    uuid: 44e0080d-d669-4ff9-a5ad-b17fd0f2b6e2
+    context_mapping:
+      node: node
+    mini_site_page_content: 'no'
+    mini_site_page_content_bundles: {  }
+    mini_site_page_content_home: 'no'
+selection_logic: and
+weight: -5
+relationships: {  }

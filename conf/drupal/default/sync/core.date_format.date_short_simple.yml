@@ -1,0 +1,8 @@
+uuid: 4ccd83d5-e8fe-490a-8ea4-3d24dec1593a
+langcode: und
+status: true
+dependencies: {  }
+id: date_short_simple
+label: 'Date courte simple'
+locked: false
+pattern: 'd M.'

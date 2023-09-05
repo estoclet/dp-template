@@ -1,0 +1,39 @@
+uuid: 4bb37069-4eb0-4446-9590-e41aa22ebac4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.twitter.field_media_date
+    - field.field.media.twitter.field_media_link
+    - field.field.media.twitter.field_media_perimeter_reference
+    - field.field.media.twitter.field_media_year
+    - field.field.media.twitter.field_tweet_id
+    - field.field.media.twitter.field_twitter_user_information
+    - media.type.twitter
+id: media.twitter.media_library
+targetEntityType: media
+bundle: twitter
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_date: true
+  field_media_link: true
+  field_media_perimeter_reference: true
+  field_media_year: true
+  field_tweet_id: true
+  field_twitter_user_information: true
+  langcode: true
+  path: true
+  status: true
+  translation: true
+  uid: true

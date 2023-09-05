@@ -1,0 +1,23 @@
+uuid: ce2feae2-ace6-4bf4-81a6-f3c8cd3edbab
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_width
+    - media.type.image_svg
+id: media.image_svg.field_media_width
+field_name: field_media_width
+entity_type: media
+bundle: image_svg
+label: Largeur
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

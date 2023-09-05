@@ -1,0 +1,8 @@
+uuid: e29b0830-f4cd-4682-9946-535a8063c162
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_paragraphe
+label: 'Bloc Paragraphe'
+revision: 1
+description: 'Un bloc paragraphe pour utiliser un composant de page de type paragraph.'

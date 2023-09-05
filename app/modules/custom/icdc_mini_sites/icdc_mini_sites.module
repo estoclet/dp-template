@@ -1,0 +1,172 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_mini_sites.module.
+ */
+
+use Drupal\Core\Link;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\mini_sites\Entity\MiniSite;
+use Drupal\file\Entity\File;
+use Drupal\mini_sites\Entity\MiniSitePage;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_mini_sites_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the mini_sites module.
+    case 'help.page.icdc_mini_sites':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('ICDC Mini sites') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+/**
+ * Implements hook_library_info_build().
+ */
+function icdc_mini_sites_library_info_build() {
+  $query = \Drupal::entityQuery('mini_site')->condition('type', 'mini_site');
+  $res = $query->execute();
+  $mini_sites = MiniSite::loadMultiple($res);
+  $libraries = [];
+  foreach($mini_sites as $currentMiniSite) {
+    $jsFile = $cssFile = NULL;
+    if(!empty($currentMiniSite->get('field_js_file')->target_id)) {
+      $jsFile = File::load($currentMiniSite->get('field_js_file')->target_id);
+    }
+    if(!empty($currentMiniSite->get('field_css_file')->target_id)) {
+      $cssFile = File::load($currentMiniSite->get('field_css_file')->target_id);
+    }
+
+    if($jsFile || $cssFile) {
+      $libraries['mini_site_' . $currentMiniSite->id()] = array(
+        'version' => Drupal::VERSION
+      );
+      if($jsFile) {
+        $libraries['mini_site_' . $currentMiniSite->id()]['js'] = [
+          $jsFile->createFileUrl() => []
+        ];
+      }
+      if($cssFile) {
+        $libraries['mini_site_' . $currentMiniSite->id()]['css'] = [
+          'component' => [
+            $cssFile->createFileUrl() => []
+          ]
+        ];
+      }
+    }
+  }
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function icdc_mini_sites_preprocess(&$variables, $hook) {
+  if(in_array($hook, ['mini_site', 'mini_site_page']) || ($hook == 'node' && $variables['node']->hasField('field_site') && !empty($variables['node']->field_site->target_id))) {
+    $mini_site_id = NULL;
+    switch ($hook) {
+      case 'mini_site':
+        $mini_site_id = $variables['elements']['#mini_site']->id();
+        break;
+      case 'mini_site_page':
+        $mini_site_id = $variables['elements']['#mini_site_page']->getMiniSite()->id();
+        break;
+      case 'node':
+        $mini_site_id = $variables['node']->field_site->target_id;
+        break;
+      default:
+        break;
+    }
+
+    if(!empty($mini_site_id)) {
+      $variables['mini_site'] = MiniSite::load($mini_site_id);
+      $variables['#attached']['library'][] =  'icdc_mini_sites/mini_site_' . $mini_site_id;
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function icdc_mini_sites_mini_site_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  _icdc_mini_sites_submit_clear_cache();
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function icdc_mini_sites_mini_site_update(Drupal\Core\Entity\EntityInterface $entity) {
+  _icdc_mini_sites_submit_clear_cache();
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function icdc_mini_sites_mini_site_delete(Drupal\Core\Entity\EntityInterface $entity) {
+  _icdc_mini_sites_submit_clear_cache();
+}
+
+/**
+ * Clear library cache when save mini site form
+ */
+function _icdc_mini_sites_submit_clear_cache() {
+  /**
+   * @var $service \Drupal\Core\Asset\LibraryDiscovery
+   */
+  $service = \Drupal::getContainer()->get('library.discovery');
+  $service->clearCachedDefinitions();
+}
+
+/**
+ * Implements hook_theme().
+ */
+function icdc_mini_sites_theme($existing, $type, $theme, $path) {
+  return [
+    'mini_site_menu__mini_site' => [
+      'base hook' => 'mini_site_menu__mini_site',
+      'template' => 'mini-site-menu--mini-site',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_mini_site_page_menu_item_alter().
+ */
+function icdc_mini_sites_mini_site_page_menu_item_alter(&$linkObj, $currentItem, $active) {
+  $language = \Drupal::languageManager()->getCurrentLanguage(\Drupal\Core\Language\LanguageInterface::TYPE_CONTENT)->getId();
+  $variables['language'] = $language;
+
+  if($currentItem->type === 'content' && ($page = MiniSitePage::load($currentItem->id))) {
+    if ($page->hasTranslation($language)){
+      $translated_page = \Drupal::service('entity.repository')->getTranslationFromContext($page, $language);
+      $nid = $translated_page->field_content->target_id;
+      $linkObj = Link::createFromRoute($currentItem->name, 'entity.node.canonical', ['node' => $nid], ['attributes' => ['class' => $active ? 'active' : '']]);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function icdc_mini_sites_preprocess_mini_site_menu(&$variables) {
+  $language = \Drupal::languageManager()->getCurrentLanguage(\Drupal\Core\Language\LanguageInterface::TYPE_CONTENT)->getId();
+  $variables['language'] = $language;
+  if(!empty($variables['menu']['#mini_site'])) {
+    $variables['menu']['mini_site'] = $variables['menu']['#mini_site'];
+    $variables['menu']['url'] = Url::fromRoute('entity.node.canonical', ['node' => $variables['menu']['#mini_site']->home->target_id]);
+    $variables['menu']['logo_1'] = $variables['menu']['#mini_site']->field_logo_1->view(['label' => 'hidden']);
+    $variables['menu']['logo_2'] = $variables['menu']['#mini_site']->field_logo_2->view(['label' => 'hidden']);
+  }
+}

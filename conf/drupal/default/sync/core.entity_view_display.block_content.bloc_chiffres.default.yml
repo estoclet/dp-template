@@ -1,0 +1,94 @@
+uuid: a2f7c4df-f212-4063-a65a-16cc52a9fa1e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_chiffres
+    - field.field.block_content.bloc_chiffres.field_animation
+    - field.field.block_content.bloc_chiffres.field_background_color
+    - field.field.block_content.bloc_chiffres.field_chapo
+    - field.field.block_content.bloc_chiffres.field_color_primary
+    - field.field.block_content.bloc_chiffres.field_link
+    - field.field.block_content.bloc_chiffres.field_paragraph_references
+    - field.field.block_content.bloc_chiffres.field_responsive
+  module:
+    - color_field
+    - entity_reference_revisions
+    - field_formatter_class
+    - link
+    - text
+id: block_content.bloc_chiffres.default
+targetEntityType: block_content
+bundle: bloc_chiffres
+mode: default
+content:
+  field_animation:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 4
+    region: content
+  field_background_color:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_chapo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      field_formatter_class:
+        class: more-link
+    weight: 2
+    region: content
+  field_paragraph_references:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_responsive:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 5
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_color_primary: true
+  langcode: true
+  search_api_excerpt: true

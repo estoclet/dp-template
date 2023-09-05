@@ -1,0 +1,98 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - $block->subject: Block title.
+ * - $content: Block content.
+ * - $block->module: Module that generated the block.
+ * - $block->delta: An ID for the block, unique within each module.
+ * - $block->region: The block region embedding the current block.
+ * - $classes: String of classes that can be used to style contextually through
+ *   CSS. It can be manipulated through the variable $classes_array from
+ *   preprocess functions. The default values can be one or more of the
+ *   following:
+ *   - block: The current template type, i.e., "theming hook".
+ *   - block-[module]: The module generating the block. For example, the user
+ *     module is responsible for handling the default user navigation block. In
+ *     that case the class would be 'block-user'.
+ * - $title_prefix (array): An array containing additional output populated by
+ *   modules, intended to be displayed in front of the main title tag that
+ *   appears in the template.
+ * - $title_suffix (array): An array containing additional output populated by
+ *   modules, intended to be displayed after the main title tag that appears in
+ *   the template.
+ *
+ * Helper variables:
+ * - $classes_array: Array of html class attribute values. It is flattened
+ *   into a string within the variable $classes.
+ * - $block_zebra: Outputs 'odd' and 'even' dependent on each block region.
+ * - $zebra: Same output as $block_zebra but independent of any block region.
+ * - $block_id: Counter dependent on each block region.
+ * - $id: Same output as $block_id but independent of any block region.
+ * - $is_front: Flags true when presented in the front page.
+ * - $logged_in: Flags true when the current user is a logged-in member.
+ * - $is_admin: Flags true when the current user is an administrator.
+ * - $block_html_id: A valid HTML ID and guaranteed unique.
+ *
+ * @ingroup templates
+ *
+ * @see bootstrap_preprocess_block()
+ * @see template_preprocess()
+ * @see template_preprocess_block()
+ * @see bootstrap_process_block()
+ * @see template_process()
+ */
+#}
+{%
+set classes = [
+'block',
+'block-' ~ configuration.provider|clean_class,
+'block-' ~ plugin_id|clean_class,
+'clearfix',
+'block-entete-blog'
+]
+%}
+{% set bgimage  = file_url(content.field_media_reference[0]['#media'].field_media_image.entity.uri.value) %}
+{% set imgwidth = content.field_media_reference[0]['#media'].field_media_image.width %}
+{% set imgheight = content.field_media_reference[0]['#media'].field_media_image.height %}
+{% if  (imgheight < 1295) %}
+  {% set imgwidth = (imgwidth*1295)/imgheight %}
+  {% set imgheight = 1295 %}
+{% endif %}
+{% if 'field_responsive' in content|keys %}
+  {% if content.field_responsive['#items'].value == '1' %}
+    {% set classes = classes|merge(['not_responsive']) %}
+  {% endif %}
+{% endif %}
+<section{{ attributes.addClass(classes) }}>
+    <div class="wrapper-large">
+    {{ title_prefix }}
+    {% if label %}
+      <h1>{{ label }}</h1>
+    {% elseif content['#block_content'] %}
+      <h1>{{ content['#block_content'].label() }}</h1>
+    {% endif %}
+    {{ title_suffix.contextual_links }}
+    {% block content %}
+      <p>{{ content.field_subtitle }}</p>
+      {{ content.field_chapo }}
+    {% endblock %}
+  </div>
+  {% if bgimage is not empty %}
+    <div class="svg-secondary">
+      <div class="image-wrapper">
+        <svg viewBox="0 0 808 813" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-hidden="true">
+          <path d="M0 328.258L327.002 0.127411L808 0.127441V482.255L484.351 811.999L0 812.999V328.258Z" fill="url(#pattern0)"/>
+          <defs>
+            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use xlink:href="#image0" transform="translate(0 -0.296559) scale(0.00123762)"/>
+            </pattern>
+            <image id="image0" width="{{ imgwidth }}" height="{{ imgheight }}" xlink:href="{{ bgimage }}" alt="" />
+          </defs>
+        </svg>
+      </div>
+    </div>
+  {% endif %}
+</section>

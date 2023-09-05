@@ -1,0 +1,51 @@
+uuid: 9a828bcd-ecac-4e58-8857-da77022c4f82
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+    - social_simple
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: true
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: false
+  social_simple:
+    share: 1
+    title: Partager
+    networks:
+      twitter: twitter
+      facebook: facebook
+      linkedin: linkedin
+      mail: mail
+    hashtags: field_pg_tag_reference
+    forward_integration: null
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - draft
+      - needs_review
+      - unpublished
+    default_moderation_state: draft
+name: 'Parcours de vie'
+type: parcours_de_vie
+description: 'Ajouter un parcours de vie.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

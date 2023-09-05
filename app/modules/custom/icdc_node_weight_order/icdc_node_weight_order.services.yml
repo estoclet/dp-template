@@ -1,0 +1,4 @@
+services:
+  icdc_node_weight_order.node_weight_manager:
+    class: Drupal\icdc_node_weight_order\IcdcNodeWeightManager
+    arguments: ['@database']

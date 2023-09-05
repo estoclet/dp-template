@@ -1,0 +1,101 @@
+uuid: f743ef5b-5411-4210-8fbf-5a8526c0f6ee
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contenu
+    - node.type.rubrique_v2
+    - paragraphs.paragraphs_type.pg_advanced_text
+    - paragraphs.paragraphs_type.pg_chiffre
+    - paragraphs.paragraphs_type.pg_highligted
+    - paragraphs.paragraphs_type.pg_home_strate_instit
+    - paragraphs.paragraphs_type.pg_insert_audio
+    - paragraphs.paragraphs_type.pg_insert_document
+    - paragraphs.paragraphs_type.pg_insert_image
+    - paragraphs.paragraphs_type.pg_insert_node
+    - paragraphs.paragraphs_type.pg_insert_rs
+    - paragraphs.paragraphs_type.pg_insert_video
+    - paragraphs.paragraphs_type.pg_text
+    - paragraphs.paragraphs_type.pg_verbatim
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.story
+    - paragraphs.paragraphs_type.wysiwyg_personnalise
+  module:
+    - entity_reference_revisions
+id: node.rubrique_v2.field_contenu
+field_name: field_contenu
+entity_type: node
+bundle: rubrique_v2
+label: Contenu
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      section: section
+      pg_advanced_text: pg_advanced_text
+      pg_chiffre: pg_chiffre
+      pg_highligted: pg_highligted
+      pg_home_strate_instit: pg_home_strate_instit
+      pg_insert_audio: pg_insert_audio
+      pg_insert_document: pg_insert_document
+      pg_insert_image: pg_insert_image
+      pg_insert_node: pg_insert_node
+      pg_insert_rs: pg_insert_rs
+      pg_insert_video: pg_insert_video
+      pg_text: pg_text
+      pg_verbatim: pg_verbatim
+      story: story
+      wysiwyg_personnalise: wysiwyg_personnalise
+    negate: 0
+    target_bundles_drag_drop:
+      pg_advanced_text:
+        weight: -30
+        enabled: true
+      pg_chiffre:
+        weight: -29
+        enabled: true
+      pg_highligted:
+        weight: -28
+        enabled: true
+      pg_home_strate_instit:
+        weight: -27
+        enabled: true
+      pg_insert_audio:
+        weight: -26
+        enabled: true
+      pg_insert_document:
+        weight: -25
+        enabled: true
+      pg_insert_image:
+        weight: -24
+        enabled: true
+      pg_insert_node:
+        weight: -23
+        enabled: true
+      pg_insert_rs:
+        weight: -22
+        enabled: true
+      pg_insert_video:
+        weight: -21
+        enabled: true
+      pg_text:
+        weight: -20
+        enabled: true
+      pg_verbatim:
+        weight: -19
+        enabled: true
+      section:
+        weight: -31
+        enabled: true
+      story:
+        weight: -18
+        enabled: true
+      wysiwyg_personnalise:
+        weight: -17
+        enabled: true
+field_type: entity_reference_revisions

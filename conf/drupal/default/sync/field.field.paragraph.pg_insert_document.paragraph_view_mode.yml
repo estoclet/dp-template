@@ -1,0 +1,21 @@
+uuid: 75490c0e-5359-4a4a-ba86-4392e39ab4d9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.paragraph_view_mode
+    - paragraphs.paragraphs_type.pg_insert_document
+  module:
+    - paragraph_view_mode
+id: paragraph.pg_insert_document.paragraph_view_mode
+field_name: paragraph_view_mode
+entity_type: paragraph
+bundle: pg_insert_document
+label: 'Paragraph view mode'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraph_view_mode

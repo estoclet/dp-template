@@ -1,0 +1,8 @@
+uuid: dff01c53-f2f7-4c13-91f2-a89cf74cca87
+langcode: fr
+status: true
+dependencies: {  }
+name: Entité
+vid: entite
+description: 'Définir les entités du groupe Caisse des Dépôts'
+weight: 0

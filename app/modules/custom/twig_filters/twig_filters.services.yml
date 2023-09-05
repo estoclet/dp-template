@@ -1,0 +1,11 @@
+services:
+  twig_filters.format_file_size:
+    class: Drupal\twig_filters\TwigExtension\FormatFileSizeExtension
+    arguments: []
+    tags:
+      - { name: twig.extension }
+  twig_functions.get_color_class:
+    class: Drupal\twig_filters\TwigExtension\GetColorClassExtension
+    arguments: []
+    tags:
+      - { name: twig.extension }

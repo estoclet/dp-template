@@ -1,0 +1,20 @@
+uuid: 1a75ea9a-1600-435b-9bb8-11589b53393c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - workbench_moderation
+third_party_settings:
+  workbench_moderation:
+    enabled: false
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+      - unpublished
+    default_moderation_state: draft
+id: bloc_home_strates_instit
+label: 'Bloc strate institutionnelle accueil'
+revision: 1
+description: 'Un bloc avec 3 items illustrés, cliquables et animés au survol (dédié à la page d''accueil).'

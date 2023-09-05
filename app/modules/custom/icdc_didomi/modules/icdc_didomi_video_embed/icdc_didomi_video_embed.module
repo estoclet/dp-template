@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_didomi_video_embed.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_didomi_video_embed_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_didomi_video_embed module.
+    case 'help.page.icdc_didomi_video_embed':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Video Embed Integration with Didomi Consent Management Platform.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function icdc_didomi_video_embed_theme() {
+  return [
+    'icdc_didomi_video_embed' => [
+      'render element' => 'children',
+      'vendor' => NULL,
+    ],
+  ];
+}

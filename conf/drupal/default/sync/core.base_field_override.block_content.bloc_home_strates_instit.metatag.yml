@@ -1,0 +1,18 @@
+uuid: 4bd96bb9-1ea7-4d39-8836-6c6b667da769
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_home_strates_instit
+id: block_content.bloc_home_strates_instit.metatag
+field_name: metatag
+entity_type: block_content
+bundle: bloc_home_strates_instit
+label: 'Balises meta (Meta tags)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

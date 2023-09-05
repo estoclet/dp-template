@@ -1,0 +1,40 @@
+# https://hub.docker.com/r/library/node/tags/
+image: node:lts-alpine
+
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - test
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: build
+  script:
+    - npm ci
+
+testing_dev_css:
+  stage: test
+  script: 
+    - npm ci
+    - npm run dev:css
+  artifacts:
+    paths:
+      - projects/project1/css/
+      - projects/project2/css/
+
+testing_prod_css:
+  stage: test
+  script:  
+    - npm ci
+    - npm run prod:css
+  artifacts:
+    paths:
+      - projects/project1/css/
+      - projects/project2/css/

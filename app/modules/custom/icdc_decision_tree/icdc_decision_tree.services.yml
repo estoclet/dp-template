@@ -1,0 +1,3 @@
+services:
+  icdc_decision_tree:
+    class: Drupal\icdc_decision_tree\Service\DecisionTreeService

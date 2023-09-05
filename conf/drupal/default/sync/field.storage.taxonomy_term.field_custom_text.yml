@@ -1,0 +1,19 @@
+uuid: 617f7f95-4fa8-4b95-b608-ea5431a820da
+langcode: fr
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - text
+id: taxonomy_term.field_custom_text
+field_name: field_custom_text
+entity_type: taxonomy_term
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

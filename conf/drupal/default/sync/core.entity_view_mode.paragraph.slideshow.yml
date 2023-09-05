@@ -1,0 +1,10 @@
+uuid: 921ce708-92de-4891-b866-4e6aa22e5174
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.slideshow
+label: Diaporama
+targetEntityType: paragraph
+cache: true

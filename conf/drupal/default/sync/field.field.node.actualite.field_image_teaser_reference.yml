@@ -1,0 +1,30 @@
+uuid: 2ff4a8bc-c34b-49ff-9220-d6327f540a27
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_teaser_reference
+    - media.type.image
+    - node.type.actualite
+_core:
+  default_config_hash: eYAub3I_9e2LyUYyCd0CWfukQaaTrkM7WJGZBQchtkM
+id: node.actualite.field_image_teaser_reference
+field_name: field_image_teaser_reference
+entity_type: node
+bundle: actualite
+label: 'Vignette d''illustration'
+description: '<p>Ajoutez l''image qui sera affichée dans la remontée de cette page sur une autre page du site ainsi que sur les réseaux sociaux.</p>'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

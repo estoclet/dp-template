@@ -1,0 +1,66 @@
+uuid: b248583c-4ecc-4589-b892-be4beb65324e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_paragraphe
+    - field.field.block_content.bloc_paragraphe.field_animation
+    - field.field.block_content.bloc_paragraphe.field_no_margin
+    - field.field.block_content.bloc_paragraphe.field_paragraph_reference
+    - field.field.block_content.bloc_paragraphe.field_responsive
+  module:
+    - paragraphs
+    - workbench_moderation
+id: block_content.bloc_paragraphe.default
+targetEntityType: block_content
+bundle: bloc_paragraphe
+mode: default
+content:
+  field_animation:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_no_margin:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_paragraph_reference:
+    type: entity_reference_paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: composant
+      title_plural: composants
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  field_responsive:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

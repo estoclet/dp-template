@@ -1,0 +1,21 @@
+uuid: 60840a2e-c30d-498d-89bf-7c7cb17f501b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_content
+    - paragraphs.paragraphs_type.wysiwyg_personnalise
+  module:
+    - text
+id: paragraph.wysiwyg_personnalise.field_pg_content
+field_name: field_pg_content
+entity_type: paragraph
+bundle: wysiwyg_personnalise
+label: Contenu
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

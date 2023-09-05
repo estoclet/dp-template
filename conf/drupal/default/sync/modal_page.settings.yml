@@ -1,0 +1,4 @@
+langcode: fr
+bootstrap_version: 3x
+clear_caches_on_modal_save: true
+default_cookie_expiration: 10000

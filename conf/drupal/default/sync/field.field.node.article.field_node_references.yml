@@ -1,0 +1,27 @@
+uuid: 09125a35-eb6d-424f-8679-c0b2f969a6bd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_node_references
+    - node.type.article
+id: node.article.field_node_references
+field_name: field_node_references
+entity_type: node
+bundle: article
+label: 'Articles connexes'
+description: 'Sélectionnez les rebonds de pied de page parmi les articles du site.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

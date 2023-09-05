@@ -1,0 +1,53 @@
+uuid: df29e872-157f-4d1d-91c0-2c0432cc33f4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+    - social_simple
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  social_simple:
+    share: 1
+    title: Partager
+    networks:
+      twitter: twitter
+      facebook: facebook
+      linkedin: linkedin
+      mail: mail
+    hashtags: '0'
+    forward_integration: null
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+      - unpublished
+    default_moderation_state: draft
+_core:
+  default_config_hash: eIk8oSbEqC02AvGE-FP-3CrLL6g9Zg7C0I3x6mUdgp4
+name: Gouvernance
+type: gouvernance
+description: 'Ajouter un membre à la Gouvernance.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

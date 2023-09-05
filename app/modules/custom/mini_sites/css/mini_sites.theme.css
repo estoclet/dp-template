@@ -1,0 +1,10 @@
+
+.mini-site-pages-preview {
+  background-color: #eee;
+}
+.mini-site-pages-divider-top {
+  border-bottom: none;
+}
+.mini-site-pages-divider-bottom {
+  border-top: 1px dotted #ccc;
+}

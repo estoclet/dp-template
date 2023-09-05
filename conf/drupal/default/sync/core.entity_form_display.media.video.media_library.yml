@@ -1,0 +1,43 @@
+uuid: 5dc77d54-b5b4-4509-8865-785bdf1b0d2e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.video.field_media_caption
+    - field.field.media.video.field_media_credential
+    - field.field.media.video.field_media_date
+    - field.field.media.video.field_media_perimeter_reference
+    - field.field.media.video.field_media_theque_visibility
+    - field.field.media.video.field_media_video_embed_field
+    - field.field.media.video.field_media_year
+    - field.field.media.video.field_textual_transcription
+    - media.type.video
+id: media.video.media_library
+targetEntityType: media
+bundle: video
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_caption: true
+  field_media_credential: true
+  field_media_date: true
+  field_media_perimeter_reference: true
+  field_media_theque_visibility: true
+  field_media_video_embed_field: true
+  field_media_year: true
+  field_textual_transcription: true
+  langcode: true
+  path: true
+  status: true
+  translation: true
+  uid: true

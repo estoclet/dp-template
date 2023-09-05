@@ -1,0 +1,69 @@
+uuid: 5d6184f3-fddc-4943-84b0-b64c8fac5744
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.wysiwyg
+    - field.field.media.video.field_media_caption
+    - field.field.media.video.field_media_credential
+    - field.field.media.video.field_media_date
+    - field.field.media.video.field_media_perimeter_reference
+    - field.field.media.video.field_media_theque_visibility
+    - field.field.media.video.field_media_video_embed_field
+    - field.field.media.video.field_media_year
+    - field.field.media.video.field_textual_transcription
+    - media.type.video
+  module:
+    - icdc_didomi_video_embed
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.video.wysiwyg
+targetEntityType: media
+bundle: video
+mode: wysiwyg
+content:
+  field_media_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_credential:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_video_embed_field:
+    type: video_embed_field_formatter
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_date: true
+  field_media_perimeter_reference: true
+  field_media_theque_visibility: true
+  field_media_year: true
+  field_textual_transcription: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

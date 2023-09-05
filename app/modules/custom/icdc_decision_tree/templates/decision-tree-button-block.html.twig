@@ -1,0 +1,18 @@
+{#
+/**
+* @file
+* Default theme implementation to display a block.
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+{% set classes = [
+    'clear-both',
+] %}
+<div{{ attributes.addClass(classes) }}>
+  <a href="#icdcDecisionTree" class="btn btn-nude button-menu" id="btnIcdcDecisionTree">
+    <span class="cdcicon cdcicon-aide-2 button-menu__icon" aria-hidden="true"></span> <span class="button-menu__label">Aide</span>
+  </a>
+</div>

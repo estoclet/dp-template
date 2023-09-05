@@ -1,0 +1,21 @@
+uuid: fab6cf09-679e-4aa6-b38a-833748dc81ed
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+_core:
+  default_config_hash: OE7UBXjERKNIn0wSKyQB_xxm7NeC--Z8wr9olQ0Yqzc
+id: paragraph.field_pg_content
+field_name: field_pg_content
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

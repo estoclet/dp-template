@@ -1,0 +1,21 @@
+uuid: 9219c8cf-ae1e-4102-a863-d0f9367526ec
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dark_header_checkbox
+    - node.type.dossier
+id: node.dossier.field_dark_header_checkbox
+field_name: field_dark_header_checkbox
+entity_type: node
+bundle: dossier
+label: 'Entête à couleur inversée'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

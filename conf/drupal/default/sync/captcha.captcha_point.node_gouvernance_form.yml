@@ -1,0 +1,7 @@
+uuid: f7acd93a-b2b1-4457-b7db-5b28a2aa62e1
+langcode: fr
+status: false
+dependencies: {  }
+formId: node_gouvernance_form
+captchaType: default
+label: null

@@ -1,0 +1,110 @@
+.error-page {
+  background: $gris-clair;
+
+  .btn-back {
+    @extend %more-link;
+  }
+
+  &.paragraph--type--pg-highligted {
+    &.paragraph--view-mode--left {
+      .background-image-block__section {
+        @media (max-width: $screen-sm-max) {
+          padding-top: 0;
+        }
+      }
+
+      @media (max-width: $screen-sm-max) {
+        max-height: inherit;
+      }
+
+      .wrapper-right {
+        padding: 30px;
+
+        @media (min-width: $screen-md-min) {
+          margin-left: 50%;
+          width: 50%;
+          max-width: 627px;
+          min-height: 690px;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          text-align: right;
+        }
+
+        .small-word {
+          font-size: 2.8rem;
+          font-weight: 700;
+
+          div {
+            font-size: 2.3rem;
+            font-weight: 400;
+          }
+
+          & + div {
+            font-size: 15rem;
+            font-weight: 200;
+            line-height: 160px;
+
+            @media (min-width: $screen-md-min) {
+              font-size: 20rem;
+            }
+          }
+        }
+      }
+
+      .wrapper-texte {
+        position: inherit;
+        margin: 0;
+
+        @media (min-width: $screen-md-min) {
+          position: absolute;
+          top: 0;
+          bottom: inherit;
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          background: none;
+        }
+
+        @media (min-width: $screen-lg-min) {
+          max-width: 940px;
+        }
+
+        @media (min-width: $screen-md-min) and (max-width: $screen-lg-max) {
+          max-width: 940px;
+          width: 50%;
+        }
+
+        .highlighted-content {
+          @media (min-width: $screen-md-min) and (max-width: $screen-lg-max) {
+            left: 0;
+          }
+        }
+
+        .fond-svg {
+          @media (min-width: $screen-md-min) {
+            height: auto;
+            z-index: -1;
+          }
+        }
+
+        svg {
+          @media (min-width: $screen-md-min) {
+            margin-left: -600px;
+            width: 2590px;
+          }
+
+          @media (min-width: $screen-lg-min) {
+            margin-left: -350px;
+          }
+
+          @media (min-width: $screen-xl-min) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

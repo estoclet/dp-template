@@ -1,0 +1,22 @@
+uuid: ebd1c4ba-2f22-4097-9b40-7e1eb9123e4d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.entite
+id: taxonomy_term.entite.status
+field_name: status
+entity_type: taxonomy_term
+bundle: entite
+label: Publié
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

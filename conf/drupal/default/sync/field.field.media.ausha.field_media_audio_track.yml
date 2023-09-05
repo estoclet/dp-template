@@ -1,0 +1,19 @@
+uuid: 3cacd88e-2785-43aa-9e2f-ae9be4f8214f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_audio_track
+    - media.type.ausha
+id: media.ausha.field_media_audio_track
+field_name: field_media_audio_track
+entity_type: media
+bundle: ausha
+label: 'Track id'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

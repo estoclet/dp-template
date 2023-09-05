@@ -1,0 +1,14 @@
+{
+  "name": "drupal/entity_dynamic_rendering",
+  "type": "drupal-module",
+  "description": "This module allow users to select which view mode will be rendered when adding referenced entity into entity.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/entity_dynamic_rendering",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/entity_dynamic_rendering",
+    "source": "http://cgit.drupalcode.org/entity_dynamic_rendering"
+  },
+  "require": { }
+}

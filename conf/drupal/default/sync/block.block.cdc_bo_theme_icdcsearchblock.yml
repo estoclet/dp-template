@@ -1,0 +1,20 @@
+uuid: 149cd2aa-7ff6-4f09-88cf-cb344d6e7eb8
+langcode: fr
+status: true
+dependencies:
+  module:
+    - icdc_search
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_icdcsearchblock
+theme: cdc_bo_theme
+region: sidebar_first
+weight: -19
+provider: null
+plugin: icdc_search_block
+settings:
+  id: icdc_search_block
+  label: 'ICDC Search block'
+  label_display: '0'
+  provider: icdc_search
+visibility: {  }

@@ -1,0 +1,147 @@
+uuid: d91b6271-2ad1-457b-8be2-b5360173019e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.media.twitter.field_media_date
+    - field.field.media.twitter.field_media_link
+    - field.field.media.twitter.field_media_perimeter_reference
+    - field.field.media.twitter.field_media_year
+    - field.field.media.twitter.field_tweet_id
+    - field.field.media.twitter.field_twitter_user_information
+    - media.type.twitter
+  module:
+    - datetime
+    - field_group
+    - link
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_langue:
+      children:
+        - langcode
+        - translation
+      label: 'Gestion de la langue'
+      region: content
+      parent_name: ''
+      weight: 6
+      format_type: tab
+      format_settings:
+        classes: ''
+        id: ''
+        formatter: closed
+        description: 'Attention ne modifier uniquement que si ce média n''a pas vocation à être traduit. Pour traduire ce média en anglais passer par l''onglet Traduire.'
+        required_fields: true
+    group_visibility:
+      children:
+        - status
+      label: Visibilité
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: html_element
+      format_settings:
+        classes: ''
+        id: ''
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: collapsible
+        speed: fast
+        required_fields: true
+    group_classification:
+      children:
+        - field_media_perimeter_reference
+      label: Classification
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        id: ''
+        description: ''
+        required_fields: true
+id: media.twitter.default
+targetEntityType: media
+bundle: twitter
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_date:
+    type: datetime_default
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_media_perimeter_reference:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_year:
+    type: datetime_datelist
+    weight: 3
+    region: content
+    settings:
+      increment: 15
+      date_order: YMD
+      time_type: '24'
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 9
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 8
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_tweet_id: true
+  field_twitter_user_information: true
+  path: true

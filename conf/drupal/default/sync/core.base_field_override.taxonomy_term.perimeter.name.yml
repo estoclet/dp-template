@@ -1,0 +1,18 @@
+uuid: 6d96e237-ce0c-48e5-86e3-0fdf55df90f7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.perimeter
+id: taxonomy_term.perimeter.name
+field_name: name
+entity_type: taxonomy_term
+bundle: perimeter
+label: Nom
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

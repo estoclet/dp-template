@@ -1,0 +1,47 @@
+uuid: c2af5f1d-7a62-486e-9df9-90d02c933d1d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.wysiwyg
+    - field.field.media.twitter.field_media_date
+    - field.field.media.twitter.field_media_link
+    - field.field.media.twitter.field_media_perimeter_reference
+    - field.field.media.twitter.field_media_year
+    - field.field.media.twitter.field_tweet_id
+    - field.field.media.twitter.field_twitter_user_information
+    - media.type.twitter
+  module:
+    - layout_builder
+    - media_entity_twitter
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.twitter.wysiwyg
+targetEntityType: media
+bundle: twitter
+mode: wysiwyg
+content:
+  field_media_link:
+    type: twitter_embed
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_date: true
+  field_media_perimeter_reference: true
+  field_media_year: true
+  field_tweet_id: true
+  field_twitter_user_information: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

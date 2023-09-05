@@ -1,0 +1,23 @@
+uuid: 2e1d0e7a-a6f8-4fc1-a760-88658d68a3f7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_cta_dossier
+    - field.storage.block_content.field_display_date
+id: block_content.bloc_cta_dossier.field_display_date
+field_name: field_display_date
+entity_type: block_content
+bundle: bloc_cta_dossier
+label: 'Afficher la date de publication'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

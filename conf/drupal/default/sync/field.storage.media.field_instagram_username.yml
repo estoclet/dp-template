@@ -1,0 +1,21 @@
+uuid: 57d9bcee-a5fa-41d1-a00d-740dcad7a7a1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_instagram_username
+field_name: field_instagram_username
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

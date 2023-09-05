@@ -1,0 +1,20 @@
+_core:
+  default_config_hash: 40PEfTxDXrGIEMpBk7roSKP-AJXLYjgRbAbDEy0CBPM
+langcode: fr
+super_login:
+  login_text: 'Nom utilisateur ou adresse courriel'
+  forgot_pw_text: 'Mot de passe oublié ?'
+  capslock_msg: ''
+  new_account_text: 'Create new account'
+  login_title: 'Se connecter'
+  password_reset_title: 'Réinitialiser votre mot de passe'
+  back_link: 'Retour à la page de connexion.'
+  messages: true
+  css: true
+  button_theme: true
+  placeholder: true
+  autofocus: false
+  login_type: 0
+  capslock: false
+  login_placeholder: ''
+  pass_placeholder: ''

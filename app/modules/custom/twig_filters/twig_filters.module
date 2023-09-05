@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains twig_filters.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function twig_filters_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the twig_filters module.
+    case 'help.page.twig_filters':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Twig filters') . '</p>';
+      return $output;
+
+    default:
+  }
+}

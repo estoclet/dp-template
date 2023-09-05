@@ -1,0 +1,3 @@
+backoffice-display-field:
+  js:
+    js/backoffice-display-field.js: {}

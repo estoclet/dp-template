@@ -1,0 +1,103 @@
+//Mode affichage : apercu (avec vignette)
+.paragraph--type--pg-insert-document {
+  &.paragraph--view-mode--preview {
+
+    .container {
+
+      & > .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    .field--name-field-pg-chapo {
+      margin-bottom: 0;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .doc-display {
+      margin-top: 0;
+
+      a {
+        display: block;
+      }
+
+      .doc-img {
+        margin-bottom: 20px;
+        border: 4px solid $gris-clair;
+      }
+
+      .wrapper-name-icon {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &.paragraph--view-mode--default {
+    .field--name-field-pg-chapo {
+      @extend %responsive-medium--margin-bottom;
+    }
+  }
+}
+
+//Rubrique
+.block {
+  .doc-display {
+    &.doc-display-collapse {
+      .doc-link-detail {
+        & > a {
+          width: 100%;
+
+          @media (min-width: $screen-lg-min) {
+            min-width: 530px;
+          }
+
+          @media (min-width: $screen-xl-min) {
+            min-width: 600px;
+          }
+        }
+      }
+    }
+  }
+
+  .paragraph--type--pg-insert-document {
+    &.paragraph--type--pg-insert-document-2ref {
+      .row-mosaic {
+        & > div {
+          @media (min-width: $screen-sm-min) {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    &.paragraph--view-mode--preview {
+      .wrapper-large {
+        .col-sm-6 {
+          .row-mosaic {
+            @media (min-width: $screen-lg-min) {
+              padding-bottom: 4.5rem;
+              background: url('../images/fond-pdf-rubrique-2items.svg') no-repeat center bottom transparent;
+            }
+          }
+        }
+
+        & > .row-mosaic {
+          @media (min-width: $screen-sm-min) {
+            padding-bottom: 9.5rem;
+            background: url('../images/fond-pdf-rubrique-moreitems.svg') no-repeat right bottom transparent;
+          }
+        }
+      }
+
+      .doc-display {
+        max-width: 225px;
+        margin: 0 auto 30px;
+      }
+    }
+  }
+}

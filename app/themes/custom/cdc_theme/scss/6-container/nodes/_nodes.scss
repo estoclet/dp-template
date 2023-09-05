@@ -1,0 +1,182 @@
+/**
+ * @file
+ * Nodes Styling
+ */
+
+/* ---------------- DEFAULT -----------------*/
+.node {
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    padding-bottom: 1rem;
+  }
+
+}
+
+.node--view-mode-list {
+  margin-bottom: 40px;
+
+  .field--name-field-media-image {
+    @include img-hover-contrast;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: $screen-sm-max) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .social-buttons {
+    margin: 30px auto;
+  }
+
+  &.node--type-actualite {
+    .social-buttons {
+      margin-top: 50px;
+      // .social-buttons-title{
+      //   padding-left: 20px;
+      //   &:before{
+      //     left: 0;
+      //   }
+      // }
+    }
+  }
+
+  &.node--type-blog {
+    .social-buttons {
+      margin-top: 60px;
+    }
+  }
+  .article-info{
+    display: grid;
+    .infos{
+      grid-row: 1;
+    }
+  }
+  .infos {
+    margin-bottom: 2rem;
+    .tag{
+      margin-right: 1.5rem;
+    }
+
+    @media (max-width: $screen-md-max) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  h2 {
+    padding-bottom: 0;
+    margin-bottom: 20px;
+  }
+}
+
+:not(body.user-logged-in){
+  .messages-list {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .d-sm-none {
+    display: none !important;
+  }
+
+  .d-sm-inline {
+    display: inline !important;
+  }
+
+  .d-sm-inline-block {
+    display: inline-block !important;
+  }
+
+  .d-sm-block {
+    display: block !important;
+  }
+
+  .d-sm-table {
+    display: table !important;
+  }
+
+  .d-sm-table-row {
+    display: table-row !important;
+  }
+
+  .d-sm-table-cell {
+    display: table-cell !important;
+  }
+
+  .d-sm-flex {
+    display: flex !important;
+  }
+
+  .d-sm-inline-flex {
+    display: inline-flex !important;
+  }
+}
+
+.lead {
+  font-weight: 300;
+  color: #fff;
+  padding: 3rem 6rem 0rem;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.node--view-mode-highlighted {
+
+  .field--name-field-media-image {
+    @include img-hover-contrast;
+    margin-bottom: 2rem;
+
+    @media (max-width: $screen-md-max) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.node--view-mode-teaser {
+  @extend %responsive-large--margin-bottom;
+  max-width: 410px;
+  overflow: hidden;
+
+  .field--name-field-media-image {
+    @include img-hover-contrast;
+    margin-bottom: 2rem;
+
+    @media (max-width: $screen-md-max) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.node--view-mode-teaser,
+.node--view-mode-highlighted {
+
+  .field--name-field-media-image {
+    @include img-hover-contrast;
+  }
+
+  h2,
+  h3 {
+    margin-top: 0;
+  }
+
+  .infos {
+    margin-bottom: 20px;
+  }
+
+  .field--name-field-media-credential{
+    margin-top: -1.7rem;
+  }
+}
+
+//@import 'gouvernance';
+@import 'blog';
+@import 'article';
+@import 'actualite';
+@import 'page';
+@import 'dossier';
+@import 'accueil';
+@import 'gouvernance';
+@import 'parcours-vie';

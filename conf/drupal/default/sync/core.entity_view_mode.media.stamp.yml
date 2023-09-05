@@ -1,0 +1,10 @@
+uuid: 3eb66506-c586-424b-9042-952f47e32b9a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.stamp
+label: Macaron
+targetEntityType: media
+cache: true

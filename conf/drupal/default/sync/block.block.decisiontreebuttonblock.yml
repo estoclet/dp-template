@@ -1,0 +1,20 @@
+uuid: 6bcd46fa-2d52-476f-b613-ce3794af901f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - icdc_decision_tree
+  theme:
+    - cdc_theme
+id: decisiontreebuttonblock
+theme: cdc_theme
+region: navigation
+weight: -18
+provider: null
+plugin: decision_tree_button_block
+settings:
+  id: decision_tree_button_block
+  label: 'Decision tree button block'
+  label_display: '0'
+  provider: icdc_decision_tree
+visibility: {  }

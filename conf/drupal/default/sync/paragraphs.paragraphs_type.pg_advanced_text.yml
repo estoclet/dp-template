@@ -1,0 +1,16 @@
+uuid: 7a763b6c-2474-4de9-a3e5-cbed3d86cd81
+langcode: fr
+status: true
+dependencies:
+  module:
+    - style_options
+_core:
+  default_config_hash: gj_6XoRo_A1DNylIHcrOJu3x4IX3Y5tAQGhxqgwtT1g
+id: pg_advanced_text
+label: 'Encart textuel'
+icon_uuid: null
+icon_default: null
+description: 'Un encart textuel avec une mise en forme pré-formatée.'
+behavior_plugins:
+  style_options:
+    enabled: true

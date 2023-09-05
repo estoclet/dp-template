@@ -1,0 +1,12 @@
+uuid: 14cb4006-c705-45e6-9abf-c421d49397b8
+langcode: fr
+status: true
+dependencies: {  }
+label: 'WYSIWYG Ratio 3:2'
+id: ratio_3_2
+description: ''
+aspect_ratio: '3:2'
+soft_limit_width: 300
+soft_limit_height: 200
+hard_limit_width: null
+hard_limit_height: null

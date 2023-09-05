@@ -1,0 +1,22 @@
+uuid: 9f11f7d4-e89f-4d11-8ff3-0a9916dd5509
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.wysiwyg_personnalise
+  module:
+    - color_field
+id: paragraph.wysiwyg_personnalise.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: wysiwyg_personnalise
+label: 'Couleur de fond'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

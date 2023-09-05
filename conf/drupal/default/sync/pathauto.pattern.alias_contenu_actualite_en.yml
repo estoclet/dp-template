@@ -1,0 +1,43 @@
+uuid: 61faeea1-5799-45d2-907a-4257af9e3520
+langcode: fr
+status: true
+dependencies:
+  module:
+    - language
+    - mini_sites
+    - node
+id: alias_contenu_actualite_en
+label: 'Alias des contenus de type Actualité (en)'
+type: 'canonical_entities:node'
+pattern: 'news/[node:field_short_title]'
+selection_criteria:
+  fb738b89-c3a5-4455-917b-2fe3083ac828:
+    id: node_type
+    negate: false
+    uuid: fb738b89-c3a5-4455-917b-2fe3083ac828
+    context_mapping:
+      node: node
+    bundles:
+      actualite: actualite
+  949b2252-871f-4ee5-9c17-9f63aa5aac35:
+    id: language
+    negate: false
+    uuid: 949b2252-871f-4ee5-9c17-9f63aa5aac35
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      en: en
+  39901ee5-fa45-4aef-a492-ca4a62e749bd:
+    id: mini_site_page_content
+    negate: false
+    uuid: 39901ee5-fa45-4aef-a492-ca4a62e749bd
+    context_mapping:
+      node: node
+    mini_site_page_content: 'no'
+    mini_site_page_content_bundles: {  }
+    mini_site_page_content_home: 'no'
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Langue

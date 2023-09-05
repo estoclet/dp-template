@@ -1,0 +1,28 @@
+uuid: a17fa148-5697-4cea-af8d-41f49d05514d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_svg_illustrated
+    - media.type.image_svg
+    - paragraphs.paragraphs_type.story
+id: paragraph.story.field_pg_svg_illustrated
+field_name: field_pg_svg_illustrated
+entity_type: paragraph
+bundle: story
+label: 'SVG illustré'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image_svg: image_svg
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

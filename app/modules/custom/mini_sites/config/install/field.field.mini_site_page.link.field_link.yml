@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.mini_site_page.field_link
+    - mini_sites.mini_site_page_type.link
+  module:
+    - link
+id: mini_site_page.link.field_link
+field_name: field_link
+entity_type: mini_site_page
+bundle: link
+label: Link
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

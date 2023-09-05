@@ -1,0 +1,12 @@
+uuid: d4bfa91f-1fd0-48a4-865b-01adc9f7b31c
+langcode: en
+status: true
+dependencies: {  }
+id: search_api__views_page__mediatheque__page_1
+name: 'search_api:views_page__mediatheque__page_1'
+filter_key: ''
+url_processor: query_string
+breadcrumb:
+  active: false
+  before: true
+  group: false

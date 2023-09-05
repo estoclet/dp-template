@@ -1,0 +1,29 @@
+uuid: 78865f73-dcdc-4bad-a1fb-a883f6d875b8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_entite_references
+    - node.type.actualite
+    - taxonomy.vocabulary.entite
+id: node.actualite.field_entite_references
+field_name: field_entite_references
+entity_type: node
+bundle: actualite
+label: Entités
+description: 'Sélectionnez une ou plusieurs entité(s) du Groupe.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      entite: entite
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

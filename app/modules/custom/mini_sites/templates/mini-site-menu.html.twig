@@ -1,0 +1,27 @@
+{#
+/**
+ * @file mini-site-menu.html.twig
+ * Default theme implementation to present Mini site menu.
+ *
+ * This template is used when viewing Mini site menu.
+ *
+ *
+ * Available variables:
+ * - home: direct link to mini site home
+ * - items: array of mini site page items
+ * - mini_site: mini site object
+ * - mini_site_page: mini site page object
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_mini_site()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes }}>
+  {% if menu.content %}
+    {{- menu.content -}}
+  {% endif %}
+</div>
+

@@ -1,0 +1,7 @@
+name: 'Daterange formatter'
+type: module
+description: 'Provide a formatter for daterange fields'
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+'interface translation project': daterange_formatter
+'interface translation server pattern': modules/custom/daterange_formatter/translations/daterange_formatter-%language.po

@@ -1,0 +1,24 @@
+uuid: e2af1558-a2ab-4713-9fed-b5a03d61b218
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_date
+    - media.type.twitter
+  module:
+    - datetime
+id: media.twitter.field_media_date
+field_name: field_media_date
+entity_type: media
+bundle: twitter
+label: 'Date de référence du document'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

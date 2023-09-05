@@ -1,0 +1,21 @@
+uuid: f9dda923-d725-4d5d-b46d-b77400fbf235
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_entete
+    - field.storage.block_content.field_chapo
+  module:
+    - text
+id: block_content.bloc_entete.field_chapo
+field_name: field_chapo
+entity_type: block_content
+bundle: bloc_entete
+label: Chapô
+description: 'Renseignez si besoin le texte utilisé en chapô d’entête.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

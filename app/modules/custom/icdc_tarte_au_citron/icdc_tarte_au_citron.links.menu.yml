@@ -1,0 +1,17 @@
+icdc_tarte_au_citron.config:
+  title: 'Tarte au citron'
+  route_name: icdc_tarte_au_citron.config
+  description: 'Settings for Tarte au citron module'
+  parent: system.admin_config
+
+icdc_tarte_au_citron.services:
+  title: 'Settings for Tarte au citron module'
+  route_name: icdc_tarte_au_citron.services
+  description: 'Settings for Tarte au citron module'
+  parent: icdc_tarte_au_citron.config
+
+icdc_tarte_au_citron.edit_texts:
+  title: 'Texts settings for Tarte au citron module'
+  route_name: icdc_tarte_au_citron.edit_texts
+  description: 'Texts settings for Tarte au citron module'
+  parent: icdc_tarte_au_citron.config

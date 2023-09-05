@@ -1,0 +1,5 @@
+name: 'icdc_users'
+type: module
+description: 'User module management'
+core_version_requirement: ^8 || ^9
+package: 'Custom'

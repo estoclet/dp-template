@@ -1,0 +1,18 @@
+uuid: 3960db1f-0874-4985-8b19-17fae08a261d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.perimeter
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.perimeter
+target_entity_type_id: taxonomy_term
+target_bundle: perimeter
+default_langcode: site_default
+language_alterable: false

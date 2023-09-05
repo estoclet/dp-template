@@ -1,0 +1,10 @@
+uuid: bf2c50ce-3aec-4340-a487-528cf8c0a2ba
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.preview
+label: Aperçu
+targetEntityType: media
+cache: true

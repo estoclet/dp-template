@@ -1,0 +1,19 @@
+uuid: fbb7474d-1e0b-4092-b4d4-d9a305a6cd29
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_description
+    - paragraphs.paragraphs_type.story
+id: paragraph.story.field_pg_description
+field_name: field_pg_description
+entity_type: paragraph
+bundle: story
+label: 'Description personne'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

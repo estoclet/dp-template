@@ -1,0 +1,11 @@
+icdc_node_weight_order.admin_search:
+  title: 'Moteur de recherche'
+  route_name: icdc_node_weight_order.admin_search
+  parent: icdc_toolbox.icdc_admin_menu
+  description: 'Moteur de recherche.'
+
+icdc_node_weight_order.admin_search_order:
+  title: 'Élévation des contenus'
+  route_name: icdc_node_weight_order.admin_order
+  parent: icdc_node_weight_order.admin_search
+  weight: 99

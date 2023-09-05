@@ -1,0 +1,111 @@
+.view-mediatheque {
+  .view-content {
+    & > .views-row {
+      width: 293px;
+      margin-bottom: 40px;
+      background: $gris-clair;
+
+      .video-embed-field-responsive-video{
+        height: 160px;
+      }
+
+      .field--name-field-media-link {
+        padding: 10px;
+        &.field--label-hidden{
+          p{
+            background-color: $black;
+            &:first-of-type {
+              margin-bottom: 0;
+              padding-bottom: 1.25rem;
+            }
+          }
+        }
+      }
+
+      .field--name-field-media-image {
+        img {
+          max-width: 100%;
+          max-height: 415px;
+          object-fit: cover;
+        }
+      }
+
+      .doc-display {
+        margin-top: 0;
+
+        a {
+          display: block;
+        }
+
+        .doc-img {
+          img {
+            height: 415px;
+            width: 100%;
+            object-fit: cover;
+            border: 2px solid $gris-clair;
+          }
+        }
+      }
+
+      .mediatheque-media-content {
+        padding: 20px;
+
+        .field--name-name {
+          @extend %heading4;
+        }
+        .date{
+            margin: 5px 0;
+            color: $gris;
+        }
+      }
+    }
+  }
+}
+
+
+//Filtres
+.path-mediatheque {
+  .region-content-top {
+    padding: 0;
+    margin: 80px 0 60px;
+    background: none;
+    border-bottom: 1px solid $gris;
+
+    .wrapper-filtres {
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .block-facet-blockicdc-media-facet-type {
+      width: auto;
+      max-width: 100%;
+      margin: 0;
+
+      .facets-widget-links {
+        margin-bottom: 0;
+        text-align: left;
+        border-bottom: 0;
+
+        .facet-item__value {
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    .block-facet-blockicdc-media-facet-year {
+      margin: 0;
+      width: auto;
+
+      @media (max-width: $screen-xs-max) {
+        margin-bottom: 30px;
+      }
+
+      select {
+        padding: 5px 20px 5px 10px;
+        background: $gris-clair;
+        border: 0;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

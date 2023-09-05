@@ -1,0 +1,20 @@
+uuid: 2cdccc8a-8230-4e8f-b8d0-07a8d8c9f3ce
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_home_strates_instit
+id: block_content.bloc_home_strates_instit.moderation_state
+field_name: moderation_state
+entity_type: block_content
+bundle: bloc_home_strates_instit
+label: 'État de modération'
+description: 'L''état de modération de cet élément de contenu.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

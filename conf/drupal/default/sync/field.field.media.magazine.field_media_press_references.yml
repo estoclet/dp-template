@@ -1,0 +1,28 @@
+uuid: 0274784e-b3d8-4251-a371-ca0a6a0efba8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_press_references
+    - media.type.document
+    - media.type.magazine
+id: media.magazine.field_media_press_references
+field_name: field_media_press_references
+entity_type: media
+bundle: magazine
+label: 'Document(s) presse annexe(s)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

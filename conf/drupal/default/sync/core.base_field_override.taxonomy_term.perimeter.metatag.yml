@@ -1,0 +1,18 @@
+uuid: e735799f-0e4c-4083-be3a-2703406a63a0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.perimeter
+id: taxonomy_term.perimeter.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: perimeter
+label: 'Balises meta (Meta tags)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

@@ -1,0 +1,23 @@
+uuid: 64980794-044d-4099-82c4-77fb02f66bb0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_view_mode
+    - paragraphs.paragraphs_type.pg_highligted
+  module:
+    - entity_dynamic_rendering
+id: paragraph.pg_highligted.field_pg_view_mode
+field_name: field_pg_view_mode
+entity_type: paragraph
+bundle: pg_highligted
+label: 'Mode d''affichage'
+description: 'Choisissez le mode d''affichage de l''encart.'
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: view_mode_item

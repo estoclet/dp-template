@@ -1,0 +1,167 @@
+uuid: bfd142d9-0ea6-454a-a135-ede9c73ec487
+langcode: fr
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_browser
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_biopic
+    - field.field.user.user.field_entite_reference
+    - field.field.user.user.field_function
+    - field.field.user.user.field_last_password_reset
+    - field.field.user.user.field_media_reference
+    - field.field.user.user.field_password_expiration
+    - field.field.user.user.field_pending_expire_sent
+    - field.field.user.user.field_user_firstname
+    - field.field.user.user.field_user_lastname
+    - field.field.user.user.field_user_linkedin
+    - field.field.user.user.user_picture
+  module:
+    - datetime
+    - entity_browser
+    - field_group
+    - link
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_identity:
+      children:
+        - field_entite_reference
+        - field_user_firstname
+        - field_user_lastname
+        - field_function
+        - field_user_linkedin
+        - field_media_reference
+      label: Identité
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: tab
+      format_settings:
+        classes: ''
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_bo:
+      children:
+        - account
+        - field_password_expiration
+        - field_last_password_reset
+      label: 'Paramètres de connexion'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tab
+      format_settings:
+        classes: ''
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_biopic:
+    type: text_textarea
+    weight: 7
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_entite_reference:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_function:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_last_password_reset:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_reference:
+    type: entity_browser_entity_reference
+    weight: 6
+    region: content
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: stamp
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_password_expiration:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_user_firstname:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_user_lastname:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_user_linkedin:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: 'https://www.linkedin.com/'
+      placeholder_title: ''
+    third_party_settings: {  }
+  language:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  commerce_remote_id: true
+  contact: true
+  customer_profiles: true
+  field_pending_expire_sent: true
+  langcode: true
+  path: true
+  timezone: true
+  user_picture: true

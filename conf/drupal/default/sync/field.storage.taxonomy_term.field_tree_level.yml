@@ -1,0 +1,27 @@
+uuid: 9f4a8f0d-2c19-4bd4-a790-620833cc782a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_tree_level
+field_name: field_tree_level
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: parent
+      label: Parent
+    -
+      value: final
+      label: Final
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

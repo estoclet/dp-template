@@ -1,0 +1,25 @@
+uuid: c1419371-f4f2-4f9e-b9a3-a4d5b673a69f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.ratio_2_3
+  module:
+    - crop
+name: crop_2_3_medium
+label: 'Crop 2:3 medium (max-width: 962px)'
+effects:
+  9026c634-01f3-4590-b261-8af197e39b30:
+    uuid: 9026c634-01f3-4590-b261-8af197e39b30
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: ratio_2_3
+  082cd075-343f-4bad-a55d-91bbcdcf55ea:
+    uuid: 082cd075-343f-4bad-a55d-91bbcdcf55ea
+    id: image_scale
+    weight: 2
+    data:
+      width: 962
+      height: null
+      upscale: false

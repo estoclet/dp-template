@@ -1,0 +1,135 @@
+<?php
+
+use Drupal\Core\File\FileSystemInterface;
+use Drupal\migrate\MigrateExecutable;
+use Drupal\migrate\MigrateMessage;
+use Drupal\migrate\MigrateException;
+
+/**
+ * Implements hook_uninstall().
+ */
+function icdc_migration_uninstall() {
+  $migrations = [
+    'menu_blog',
+    'menu_footer',
+    'menu_galaxie',
+    'menu_galaxie_internal',
+    'menu_main',
+    'menu_main_external',
+    'menu_mentions_legales',
+    'menu_profil',
+    'menu_rs',
+    'nodes'
+  ];
+  $migrations = \Drupal::service('plugin.manager.migration')->createInstances($migrations);
+  foreach($migrations as $currentMigration) {
+    try {
+      $executable = new MigrateExecutable($currentMigration, new MigrateMessage());
+      $executable->rollback();
+    }
+    catch (MigrateException $e) {
+    }
+  }
+
+//  $configs = [
+//    'migrate_plus.migration.menu_blog',
+//    'migrate_plus.migration.menu_footer',
+//    'migrate_plus.migration.menu_galaxie',
+//    'migrate_plus.migration.menu_galaxie_internal',
+//    'migrate_plus.migration.menu_main',
+//    'migrate_plus.migration.menu_main_external',
+//    'migrate_plus.migration.menu_mentions_legales',
+//    'migrate_plus.migration.menu_profil',
+//    'migrate_plus.migration.menu_rs',
+//    'migrate_plus.migration.nodes',
+//    'migrate_plus.migration.taxonomy_terms',
+//    'migrate_plus.migration_group.init_content',
+//  ];
+//
+//  foreach ($configs as $currentConfig) {
+//    Drupal::configFactory()->getEditable($currentConfig)->delete();
+//  }
+}
+
+/**
+ * Copies the example file to the sites/default/files folder.
+ */
+function icdc_migration_install() {
+  $menus = [
+    'footer',
+    'main',
+    'menu-blog',
+    'menu-galaxie',
+    'menu-infos-legales',
+    'menu-profil',
+    'menu-rs'
+  ];
+  foreach($menus as $currentMenu) {
+    $query = \Drupal::entityQuery('menu_link_content');
+    $query->condition('menu_name', $currentMenu, 'LIKE');
+    $ids = $query->execute();
+    $storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+    $menuItems = $storage->loadMultiple($ids);
+    $storage->delete($menuItems);
+  }
+
+  $vocabularies = [
+    'blog_tag',
+    'doctype',
+    'entite',
+    'expertise_area',
+    'investor',
+    'perimeter',
+    'thematique',
+    'site',
+  ];
+  foreach($vocabularies as $currentVocabulary) {
+    $query = \Drupal::entityQuery('taxonomy_term');
+    $query->condition('vid', $currentVocabulary, 'LIKE');
+    $ids = $query->execute();
+    $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $terms = $storage->loadMultiple($ids);
+    $storage->delete($terms);
+  }
+
+  // Create the example file directory and ensure it's writable.
+  $directory = \Drupal::config('system.file')->get('default_scheme') . '://icdc_migration';
+  // TODO: remove after 8.6 is no longer supported in
+  // https://www.drupal.org/project/migrate_plus/issues/3035587
+  if (version_compare(\Drupal::VERSION, '8.7', '>=')) {
+    \Drupal::service('file_system')->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+  }
+  else {
+    \Drupal::service('file_system')->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+  }
+
+  $files = [
+    'menu_blog.csv',
+    'menu_footer.csv',
+    'menu_galaxie.csv',
+    'menu_galaxie_internal.csv',
+    'menu_main.csv',
+    'menu_main_external.csv',
+    'menu_mentions_legales.csv',
+    'menu_profil.csv',
+    'menu_rs.csv',
+    'nodes.csv',
+    'taxonomy_terms.csv',
+  ];
+
+  // Copy the example file to example directory.
+  $module_path = drupal_get_path('module', 'icdc_migration');
+  foreach($files as $currentFile) {
+    $file_source = $module_path . '/imports/' . $currentFile;
+    $file_destination = $directory . '/' . $currentFile;
+
+    // TODO: remove after 8.6 is no longer supported in
+    // https://www.drupal.org/project/migrate_plus/issues/3035587
+    if (version_compare(\Drupal::VERSION, '8.7', '>=')) {
+      \Drupal::service('file_system')->copy($file_source, $file_destination, FileSystemInterface::EXISTS_REPLACE);
+    }
+    else {
+      \Drupal::service('file_system')->copy($file_source, $file_destination, FileSystemInterface::EXISTS_REPLACE);
+    }
+  }
+}

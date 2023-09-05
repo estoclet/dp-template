@@ -1,0 +1,32 @@
+//HEADER
+.node--type-article {
+  &.node--view-mode-header {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-top: 15px;
+
+    @media (min-width: $screen-sm-min) {
+      min-height: 142px;
+    }
+
+    .background-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+    }
+
+    h1 {
+      &.page-title {
+        @extend %small-wrapper;
+        margin: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  &.node--view-mode-bounce {
+    padding-bottom: 6rem;
+  }
+}

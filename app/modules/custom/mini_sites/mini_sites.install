@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Install, uninstall and update hooks for Mini Sites module.
+ */
+
+use Drupal\user\RoleInterface;
+
+/**
+ * Implements hook_install().
+ */
+function mini_sites_install() {
+  // Grant the "view published" for mini site and mini site page entity permission to all users by default.
+  $permissions = [
+    'view published mini site page entities',
+    'view published'
+  ];
+  if (\Drupal::moduleHandler()->moduleExists('user')) {
+    user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, $permissions);
+    user_role_grant_permissions(RoleInterface::AUTHENTICATED_ID, $permissions);
+  }
+}
+

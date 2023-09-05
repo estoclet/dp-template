@@ -1,0 +1,43 @@
+add mini site entities:
+  title: 'Create new Mini site entities'
+
+administer mini site entities:
+  title: 'Administer Mini site entities'
+  description: 'Allow to access the administration form to configure Mini site entities.'
+  restrict access: true
+
+delete mini site entities:
+  title: 'Delete Mini site entities'
+
+edit mini site entities:
+  title: 'Edit Mini site entities'
+
+view published mini site entities:
+  title: 'View published Mini site entities'
+
+view unpublished mini site entities:
+  title: 'View unpublished Mini site entities'
+
+add mini site page entities:
+  title: 'Create new Mini site page entities'
+
+administer mini site page entities:
+  title: 'Administer Mini site page entities'
+  description: 'Allow to access the administration form to configure Mini site page entities.'
+  restrict access: true
+
+delete mini site page entities:
+  title: 'Delete Mini site page entities'
+
+edit mini site page entities:
+  title: 'Edit Mini site page entities'
+
+view published mini site page entities:
+  title: 'View published Mini site page entities'
+
+view unpublished mini site page entities:
+  title: 'View unpublished Mini site page entities'
+
+permission_callbacks:
+  - \Drupal\mini_sites\MiniSitePermissions::generatePermissions
+  - \Drupal\mini_sites\MiniSitePagePermissions::generatePermissions

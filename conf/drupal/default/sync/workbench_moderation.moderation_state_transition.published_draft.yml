@@ -1,0 +1,14 @@
+uuid: 5d4902ff-bbc7-4716-a2d6-bcd027d0f8cb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.draft
+    - workbench_moderation.moderation_state.published
+_core:
+  default_config_hash: TQ143829xVnYYG9-V9aR21XeuMzZh90savcViJtBp_s
+id: published_draft
+label: Brouillon
+stateFrom: published
+stateTo: draft
+weight: -7

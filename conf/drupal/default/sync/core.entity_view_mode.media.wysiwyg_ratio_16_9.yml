@@ -1,0 +1,10 @@
+uuid: a51c13c4-d7f9-4cbc-b684-2febcdc549c4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.wysiwyg_ratio_16_9
+label: 'WYSIWYG Recadrage 16:9'
+targetEntityType: media
+cache: true

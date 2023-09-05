@@ -1,0 +1,161 @@
+/****************
+VARIABLES
+*****************/
+
+//Head de la table
+$border-color-th-thead: $gris;
+$bg-th-thead: $gris;
+$color-th-thead: $white;
+
+//Body de la table
+$color-cellule-tbody: $noir-web;
+$border-width-cellule-tbody: 1px;
+$border-style-cellule-tbody: solid;
+$border-color-cellule-tbody: $gris-clair;
+$bg-tr-tbody: $white;
+$bg-th-tbody: $white;
+
+table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: 25px 0 40px;
+
+  caption {
+    color: $gris;
+  }
+
+  tr {
+    &:first-child {
+
+      th {
+        border-width: 1px 0;
+
+        /* top-left border-radius */
+        &:first-child {
+          border-top-left-radius: 2px;
+        }
+
+      }
+
+      td {
+        border-top-width: 1px;
+      }
+
+      th,
+      td {
+
+        /* top-right border-radius */
+        &:last-child {
+          border-top-right-radius: 2px;
+        }
+      }
+    }
+
+    th {
+      border-style: solid;
+      border-width: 0 0 1px;
+      padding: 1.7rem 2rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $color-th-thead;
+      background-color: $bg-th-thead;
+      border-color: $border-color-th-thead;
+    }
+
+    td {
+      border-style: solid;
+      border-width: 0 0 1px;
+      border-color: $gris-clair;
+      padding: 10px 20px;
+      background-color: $white;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: $gris;
+    }
+
+    &:last-child {
+
+      td {
+
+        /* bottom-left border-radius */
+        &:first-child {
+          border-bottom-left-radius: 2px;
+        }
+
+        /* bottom-right border-radius */
+        &:last-child {
+          border-bottom-right-radius: 2px;
+        }
+      }
+    }
+
+    & ~ tr {
+      &:last-child {
+
+        th {
+          &:first-child {
+            border-bottom-left-radius: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  thead {
+
+    & + tbody {
+
+      tr {
+
+        &:first-child {
+
+          th {
+
+            &:first-child {
+              border-top-width: 0;
+              border-top-left-radius: 0;
+            }
+          }
+
+          td {
+            border-top-width: 0;
+
+            &:last-child {
+              border-top-right-radius: 0;
+            }
+          }
+        }
+
+        td {
+          padding: 1.7rem 2rem;
+        }
+      }
+    }
+  }
+}
+
+.headings-wide-spacing-enabled {
+
+  table {
+
+    tr {
+
+      th {
+        letter-spacing: .25em;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,337 @@
+# French translation of Facets (8.x-1.4)
+# Copyright (c) 2019 by the French translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ICDC Tarte au citron (8.x-1.0)\n"
+"POT-Creation-Date: 2020-04-20 18:30+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+msgid "Manage features which use cookies (ads, social networks, videos, other contrib modules who print data in your pages)"
+msgstr "Pour gérer les différentes fonctionnalités déposant des cookies (publicités, boutons sociaux, vidéos, autres modules insérés sur les pages de votre site)"
+
+msgid "Settings for Tarte au citron module"
+msgstr "Paramétrer le module Tarte au citron"
+
+msgid "Texts settings for Tarte au citron module"
+msgstr "Paramétrer les textes du module Tarte au citron"
+
+msgid "Translate Tarte au citron"
+msgstr "Traduire Tarte au citron"
+
+msgid "Bypass Tarte au citron"
+msgstr "Outrepasser Tarte au citron"
+
+msgid "Administer Tarte au citron"
+msgstr "Administrer Tarte au citron"
+
+msgid "Parameters"
+msgstr "Paramètres"
+
+msgid "Open the panel with this hashtag."
+msgstr ""
+
+msgid "Hashtag"
+msgstr "Hashtag"
+
+msgid "Open the panel with this hashtag."
+msgstr "Ouvre le panneau avec ce hashtag."
+
+msgid "Cookie Name"
+msgstr "Nom du cookie"
+
+msgid "Cookie Name."
+msgstr "Nom du cookie."
+
+msgid "Orientation"
+msgstr "Orientation"
+
+msgid "Banner position (top - middle - bottom)."
+msgstr "Position de la banière (haut - centre - bas)"
+
+msgid "Top"
+msgstr "Haut"
+
+msgid "Middle"
+msgstr "Centre"
+
+msgid "Bottom"
+msgstr "Bas"
+
+msgid "Show alert small"
+msgstr "Afficher la petite alerte"
+
+msgid "Show the small banner on bottom right."
+msgstr "Afficher la petite banière en bas à droite."
+
+msgid "Cookies list"
+msgstr "Liste des cookies"
+
+msgid "Show the cookie list."
+msgstr "Afficher la liste des cookies."
+
+msgid "Adblocker"
+msgstr "Adblocker"
+
+msgid "Show a Warning if an adblocker is detected."
+msgstr "Afficher une alerte si un bloqueur de publicité est détecté"
+
+msgid "Accept All Cta"
+msgstr "Bouton Accepter tout"
+
+msgid "Show the accept all button when high Privacy on."
+msgstr "Afficher le bouton Accepter tout quand la confidentialité élevée est activée."
+
+msgid "High Privacy"
+msgstr "Confidentialité élevée"
+
+msgid "Disable auto consent."
+msgstr "Désactiver l'auto consentement"
+
+msgid "Handle browser do not track request"
+msgstr "Charger le navigateur de ne pas traquer les requêtes"
+
+msgid "If Do Not Track == 1, disallow all."
+msgstr "Si 'Ne pas traquer' == 1, désactiver tout."
+
+msgid "Remove credit"
+msgstr "Supprimer les crédits"
+
+msgid "Remove credit link."
+msgstr "Supprimer le lien vers les crédits."
+
+msgid "More info link"
+msgstr "Lien Plus d'infos"
+
+msgid "Show more info link."
+msgstr "Afficher le lien Plus d'infos."
+
+msgid "Use external css"
+msgstr "Utiliser un css externe"
+
+msgid "If not checked, the tarteaucitron.css file will be loaded. If you want to customize the appearance of tarte au citron component, add your own css file based on tarteaucitron.css in a module or theme."
+msgstr "Si non coché, le fichier tarteaucitron.css sera chargé. Si vous voulez customiser l'appararence de tarte au citron, ajouter votre propre css basé sur tarteaucitron.css dans un module ou un thème."
+
+msgid "Privacy Url"
+msgstr "Url de la confidentialité"
+
+msgid "Privacy policy."
+msgstr "Politique de confidentialité."
+
+msgid "relative path to privacy policy"
+msgstr "chemin relatif vers la politique de confidentialité"
+
+msgid "Read more link"
+msgstr "Lien en savoir plus"
+
+msgid "Change the default readmore link."
+msgstr "Changer le lien en savoir plus par défaut "
+
+msgid "Cookie Domain"
+msgstr "Domaine du cookie"
+
+msgid "Shared cookie for multisite."
+msgstr "Cookie partagé pour les multisites."
+
+msgid "Services"
+msgstr "Services"
+
+msgid "Services enabled"
+msgstr "Services activés"
+
+msgid "Services enabled."
+msgstr "Services activés."
+
+msgid "Services settings"
+msgstr "Paramétrages des services"
+
+msgid "YOUR-ID"
+msgstr "VOTRE-IDENTIFIANT"
+
+msgid "example: @filePath"
+msgstr "exemple: @filePath"
+
+msgid "<b>Important, you need to use english in the @destination column</b> and then translate the text on the <a href=\":translate\">User interface translation</a> page."
+msgstr "<b>Important, vous devez utiliser de l'anglais dans la colonne @destination </b> et ensuite traduire le texte via <a href=\":translate\">l'interface de traduction</a>."
+
+msgid "Enter the text that will be presented to your website users. The same text is used in both the cookie declaration and the consent dialog."
+msgstr "Entrer le texte qui sera présenté à vos utilisateurs. Le même texte sera utilisé dans la déclaration des cookies et dans la fenêtre de consentement."
+
+msgid "Your unique tracking account ID (can be found on the Integrations page)."
+msgstr "Votre identifiant unique de tracking (peut être trouvé dans la page Intégration)."
+
+msgid "Parameter for tarte au citron @serviceName service."
+msgstr "Paramètre pour le service @serviceName de tarte au citron."
+
+msgid "<p><strong>@varName</strong></p><p>You must implement the hook hook_icdc_tarte_au_citron_@pluginId_alter in a module and add a js file to define the function tarteaucitron.user.@functionName</p>"
+msgstr "<p><strong>@varName</strong></p><p>Vous devez implémenter le hook hook_icdc_tarte_au_citron_@pluginId_alter dans un module et ajouter un fichier javascript pour définir la fonction tarteaucitron.user.@functionName</p>"
+
+msgid "%name is required."
+msgstr "%name est obligatoire."
+
+msgid "Original"
+msgstr "Originale"
+
+msgid "Destination"
+msgstr "Destination"
+
+msgid "☝ 🍪"
+msgstr "☝ 🍪"
+
+msgid "Hello! This site is transparent and lets you chose the 3rd party services you want to allow."
+msgstr "Bonjour! Ce site joue la transparence et vous donne le choix des services tiers à activer."
+
+msgid "Please disable your adblocker to start customizing."
+msgstr "Merci de désactiver votre adblocker pour commencer la personnalisation."
+
+msgid "Refresh the page"
+msgstr "Recharger la page"
+
+msgid "By continuing to scroll,"
+msgstr "En continuant de défiler,"
+
+msgid "If you continue to browse this website,"
+msgstr "En poursuivant votre navigation,"
+
+msgid "you are allowing all third-party services"
+msgstr "vous acceptez l'utilisation de services tiers pouvant installer des cookies"
+
+msgid "This site uses cookies and gives you control over what you want to activate"
+msgstr "Ce site utilise des cookies et vous donne le contrôle sur ce que vous souhaitez activer"
+
+msgid "Manage services"
+msgstr "Gestion des services"
+
+msgid "OK, accept all"
+msgstr "OK, tout accepter"
+
+msgid "Personalize"
+msgstr "Personnaliser"
+
+msgid "Close"
+msgstr "Fermer"
+
+msgid "Privacy policy"
+msgstr "Politique de confidentialité"
+
+msgid "Preference for all services"
+msgstr "Préférences pour tous les services"
+
+msgid "Protecting your privacy"
+msgstr "Protection de votre vie privée"
+
+msgid "By allowing these third party services, you accept their cookies and the use of tracking technologies necessary for their proper functioning."
+msgstr "En autorisant ces services tiers, vous acceptez le dépôt et la lecture de cookies et l'utilisation de technologies de suivi nécessaires à leur bon fonctionnement."
+
+msgid "Allow"
+msgstr "Autoriser"
+
+msgid "Deny"
+msgstr "Interdire"
+
+msgid "This service does not use cookie."
+msgstr "Ce service ne dépose aucun cookie."
+
+msgid "This service can install"
+msgstr "Ce service peut déposer"
+
+msgid "This service has installed"
+msgstr "Ce service a déposé"
+
+msgid "This service has not installed any cookie."
+msgstr "Ce service n'a déposé aucun cookie."
+
+msgid "Read more"
+msgstr "En savoir plus"
+
+msgid "View the official website"
+msgstr "Voir le site officiel"
+
+msgid "Cookies manager by tarteaucitron.js"
+msgstr "Gestion des cookies par tarteaucitron.js"
+
+msgid "This website does not use any cookie requiring your consent."
+msgstr "Ce site n'utilise aucun cookie nécessitant votre consentement."
+
+msgid "Show/hide informations about cookie storage"
+msgstr "Afficher/masquer les informations sur le stockage des cookies"
+
+msgid "Cookies management panel"
+msgstr "Panneau de gestion des cookies"
+
+msgid "Cookie detail for"
+msgstr "Détail des cookies"
+
+msgid "on our site"
+msgstr "sur notre site"
+
+msgid "(new window)"
+msgstr "(nouvelle fenêtre)"
+
+msgid "Allow all cookies"
+msgstr "Autoriser tous les cookies"
+
+msgid "Deny all cookies"
+msgstr "Interdire tous les cookies"
+
+msgid "is disabled."
+msgstr "est désactivé."
+
+msgid "Advertising network"
+msgstr "Régies publicitaires"
+
+msgid "Ad networks can generate revenue by selling advertising space on the site."
+msgstr "Les régies publicitaires permettent de générer des revenus en commercialisant les espaces publicitaires du site."
+
+msgid "Audience measurement"
+msgstr "Mesure d'audience"
+
+msgid "The audience measurement services used to generate useful statistics attendance to improve the site."
+msgstr "Les services de mesure d'audience permettent de générer des statistiques de fréquentation utiles à l'amélioration du site."
+
+msgid "Social networks"
+msgstr "Réseaux sociaux"
+
+msgid "Social networks can improve the usability of the site and help to promote it via the shares."
+msgstr "Les réseaux sociaux permettent d'améliorer la convivialité du site et aident à sa promotion via les partages."
+
+msgid "Videos"
+msgstr "Vidéos"
+
+msgid "Video sharing services help to add rich media on the site and increase its visibility."
+msgstr "Les services de partage de vidéo permettent d'enrichir le site de contenu multimédia et augmentent sa visibilité."
+
+msgid "Comments"
+msgstr "Commentaires"
+
+msgid "Comments managers facilitate the filing of comments and fight against spam."
+msgstr "Les gestionnaires de commentaires facilitent le dépôt de vos commentaires et luttent contre le spam."
+
+msgid "Support"
+msgstr "Support"
+
+msgid "Support services allow you to get in touch with the site team and help to improve it."
+msgstr "Les services de support vous permettent d'entrer en contact avec l'équipe du site et d'aider à son amélioration."
+
+msgid "APIs"
+msgstr "APIs"
+
+msgid "APIs are used to load scripts: geolocation, search engines, translations, ..."
+msgstr "Les APIs permettent de charger des scripts : géolocalisation, moteurs de recherche, traductions, ..."
+
+msgid "Other"
+msgstr "Autre"
+
+msgid "Services to display web content."
+msgstr "Services visant à afficher du contenu web."
+
+msgid "Video %provider"
+msgstr "Vidéo %provider"
+
+msgid "I understand"
+msgstr "J'ai compris"

@@ -1,0 +1,14 @@
+uuid: 316ac72a-def2-4a1d-9245-7aae5bb8c744
+langcode: fr
+status: '1'
+dependencies: {  }
+cluster_id: elastic
+name: Elastic
+url: 'http://cl2vadb00983.cloud.cdc.fr:12020'
+options:
+  multiple_nodes_connection: false
+  use_authentication: 0
+  authentication_type: Basic
+  username: ''
+  password: ''
+  timeout: '3'

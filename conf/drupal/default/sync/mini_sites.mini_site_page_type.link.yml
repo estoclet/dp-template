@@ -1,0 +1,10 @@
+uuid: 2e3a8a8c-5f3e-4cb8-816e-3a1a0949cc45
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 89LC7K5_20GjJkQEGX0UgIuVmiou19vYunxhuI1Bl8Y
+id: link
+label: Link
+mini_site: null
+weight: null

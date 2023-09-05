@@ -1,0 +1,34 @@
+uuid: 239c30c9-9b59-46e1-96f0-fed1649af8dc
+langcode: fr
+status: true
+dependencies:
+  module:
+    - mini_sites
+    - node
+id: alias_contenu_dossier
+label: 'Alias des contenus de type Dossier'
+type: 'canonical_entities:node'
+pattern: 'dossier/[node:field_short_title]'
+selection_criteria:
+  f2ec066f-ffd4-4b2c-b4e9-8a5a36d5e62e:
+    id: node_type
+    negate: false
+    uuid: f2ec066f-ffd4-4b2c-b4e9-8a5a36d5e62e
+    context_mapping:
+      node: node
+    bundles:
+      dossier: dossier
+  1bc62d8a-337a-4026-85d4-b25da2c69fed:
+    id: mini_site_page_content
+    negate: false
+    uuid: 1bc62d8a-337a-4026-85d4-b25da2c69fed
+    context_mapping:
+      node: node
+    mini_site_page_content: 'no'
+    mini_site_page_content_bundles: {  }
+    mini_site_page_content_home: 'no'
+selection_logic: and
+weight: -5
+relationships:
+  'node:langcode:language':
+    label: Langue

@@ -1,0 +1,121 @@
+uuid: be410cd8-98c3-4be0-9a9c-18ebfa793b47
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlighted
+    - field.field.node.blog.field_auteur_secondaire
+    - field.field.node.blog.field_blog_tag_references
+    - field.field.node.blog.field_blog_type_list
+    - field.field.node.blog.field_cdc_label_select
+    - field.field.node.blog.field_chapo
+    - field.field.node.blog.field_expertise_references
+    - field.field.node.blog.field_image_teaser_reference
+    - field.field.node.blog.field_media_reference
+    - field.field.node.blog.field_metatag
+    - field.field.node.blog.field_node_references
+    - field.field.node.blog.field_paragraphs
+    - field.field.node.blog.field_reading_time
+    - field.field.node.blog.field_short_title
+    - field.field.node.blog.field_snippet_seo
+    - field.field.node.blog.field_sommaire
+    - node.type.blog
+  module:
+    - advanced_text_formatter
+    - field_formatter_class
+    - layout_builder
+    - options
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.blog.highlighted
+targetEntityType: node
+bundle: blog
+mode: highlighted
+content:
+  field_blog_type_list:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_cdc_label_select:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_expertise_references:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_image_teaser_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+  field_short_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_snippet_seo:
+    type: advanced_text
+    label: hidden
+    settings:
+      trim_length: '230'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: php
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - em
+        - i
+        - strong
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 4
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_auteur_secondaire: true
+  field_blog_tag_references: true
+  field_chapo: true
+  field_color_primary: true
+  field_dark_header_checkbox: true
+  field_media_reference: true
+  field_metatag: true
+  field_node_references: true
+  field_paragraphs: true
+  field_reading_time: true
+  field_sommaire: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

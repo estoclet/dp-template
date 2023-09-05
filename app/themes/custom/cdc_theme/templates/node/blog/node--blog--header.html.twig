@@ -1,0 +1,125 @@
+{#
+/**
+ * @file
+ * Bootstrap Barrio's theme implementation to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+{%
+set classes = [
+'node',
+'node--type-' ~ node.bundle|clean_class,
+node.isPromoted() ? 'node--promoted',
+node.isSticky() ? 'node--sticky',
+not node.isPublished() ? 'node--unpublished',
+view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+'clearfix',
+]
+%}
+{% set type = content.field_blog_type_list.0|render|striptags %}
+{% set bgimage  = file_url(content.field_media_reference[0]['#media'].field_media_image.entity.uri.value) %}
+<article{{attributes.addClass(classes)}}>
+	<div class="container-fluid">
+		<div class="wrapper-large">
+			<div class="wrapper-bg-image">
+				<div style="background-image:url('{{ bgimage }}');"></div>
+				{# Variables Crédits d'image #}
+				{# ici #}
+				{# {{ node.field_media_reference.entity.field_media_credential.value }} #}
+				{% if node.field_media_reference.entity.field_media_credential is not empty %}
+					<div class="field field--name-field-media-credential field--type-string field--label-inline">
+						<div class="field--label">{{ 'Crédit'|t }}</div>
+						<div class="field--item">{{ node.field_media_reference.entity.field_media_credential.value }}</div>
+					</div>
+				{% endif %}
+			</div>
+			<div class="header-content">
+				<div
+					class="infos">
+					{# Type d'article #}
+					<span class="tag blog-type icon-tag {{ type|lower|replace({'à':'a','á':'a','â':'a','ç':'c','é':'e','è':'e','ê':'e','ë':'e','ì':'i','í':'i','î':'i','ï':'i','ñ':'n','ò':'o','ó':'o','ô':'o','œ':'oe','ù':'u','ú':'u','û':'u','ü':'u','ý':'y','ÿ':'y'})  }}">
+						{% if type == 'étude' %}
+							<a href="{{ path('view.blog.page_blog_by_article_type', {'arg_0': 'study' }) }}" rel="type" title="{% trans %}Type{% endtrans %} {{ type|t }}">{{ type|t }}</a>
+						{% else %}
+							<a href="{{ path('view.blog.page_blog_by_article_type', {'arg_0': type }) }}" rel="type" title="{% trans %}Type{% endtrans %} {{ type|t }}">{{ type|t }}</a>
+						{% endif %}
+					</span>
+					{# Label CDC #}
+					<span class="tag blog-label">
+						<a href="{{ path('view.blog.page_blog_by_label_cdc', {'arg_0': content.field_cdc_label_select.0|render|striptags }) }}" rel="label" title="{% trans %}Label{% endtrans %} {{ content.field_cdc_label_select.0|render|striptags }}">{{ content.field_cdc_label_select.0|render|striptags }}</a>
+					</span>
+					<span class="date">{{ node.createdtime|format_date('date_full_short') }}</span>
+				</div>
+				<!-- end infos -->
+				<div {{attributes.addClass(classes)}}>
+					<h1 class="page-title heading1Light">{{ node.label }}</h1>
+				</div>
+				{% if node.field_expertise_references.entity.name.value is not empty %}
+					<ul class="thematic__list list-inline">
+						{% for thematic in node.field_expertise_references  %}
+							<li class="tag">
+								<a href="{{ path('view.blog.page_taxonomy_blog', {'arg_0': thematic.entity.name.value|icdc_blog_name_url }) }}" rel="tag" title="{% trans %}Catégorie{% endtrans %} {{ thematic.entity.name.value }}">{{ thematic.entity.name.value }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</div>
+			{% if content.field_media_reference.0 is not empty %}{% endif %}
+		</div>
+	</div>
+</article>
+

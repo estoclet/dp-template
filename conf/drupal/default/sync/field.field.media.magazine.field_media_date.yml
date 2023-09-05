@@ -1,0 +1,24 @@
+uuid: b6be9f37-0c2b-45ed-8abd-6437ab71fd60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_date
+    - media.type.magazine
+  module:
+    - datetime
+id: media.magazine.field_media_date
+field_name: field_media_date
+entity_type: media
+bundle: magazine
+label: 'Date de référence du document'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

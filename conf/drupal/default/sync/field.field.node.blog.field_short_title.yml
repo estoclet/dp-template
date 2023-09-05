@@ -1,0 +1,19 @@
+uuid: 123f1860-4a33-4279-9fc9-a223cb1daeb7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_title
+    - node.type.blog
+id: node.blog.field_short_title
+field_name: field_short_title
+entity_type: node
+bundle: blog
+label: 'Titre court'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

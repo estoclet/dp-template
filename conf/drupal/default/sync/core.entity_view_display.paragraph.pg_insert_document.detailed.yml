@@ -1,0 +1,56 @@
+uuid: bca7a9cc-fa43-4a96-b2a1-55a15f57b171
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.detailed
+    - field.field.paragraph.pg_insert_document.field_pg_chapo
+    - field.field.paragraph.pg_insert_document.field_pg_document_references
+    - field.field.paragraph.pg_insert_document.field_pg_title
+    - field.field.paragraph.pg_insert_document.field_pg_view_mode
+    - field.field.paragraph.pg_insert_document.field_responsive
+    - field.field.paragraph.pg_insert_document.paragraph_view_mode
+    - paragraphs.paragraphs_type.pg_insert_document
+  module:
+    - entity_dynamic_rendering
+    - field_formatter_class
+    - text
+id: paragraph.pg_insert_document.detailed
+targetEntityType: paragraph
+bundle: pg_insert_document
+mode: detailed
+content:
+  field_pg_chapo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_pg_document_references:
+    type: entity_reference_entity_dynamic_rendering
+    label: hidden
+    settings:
+      view_mode: detailed
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+  field_pg_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_pg_view_mode: true
+  field_responsive: true
+  paragraph_view_mode: true
+  search_api_excerpt: true

@@ -1,0 +1,10 @@
+uuid: 6276d158-68b2-4f6a-befa-379cc5d7d8f0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.folded
+label: Replié
+targetEntityType: media
+cache: true

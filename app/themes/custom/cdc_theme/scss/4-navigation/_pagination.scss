@@ -1,0 +1,199 @@
+/****************
+VARIABLES
+*****************/
+
+$margin-pagination: 0 0 4rem 0;
+
+$padding-link-pagination: .5rem .75rem;
+$color-link-pagination: $noir-web;
+$bg-link-pagination: $white;
+$border-width-link-pagination: 1px 1px 1px 1px;
+$border-style-link-pagination: solid;
+$border-color-link-pagination: #dee2e6;
+
+$color-link-pagination-active: $white;
+$bg-link-pagination-active: #007bff;
+$border-color-link-pagination-active: #007bff;
+
+$color-link-pagination-disabled: #6c757d;
+$bg-link-pagination-disabled: $white;
+$border-color-link-pagination-disabled: #dee2e6;
+
+
+.pagination {
+  margin: $margin-pagination;
+
+  @media (max-width: $screen-xs-max) {
+    position: relative;
+    padding: 0 30px;
+  }
+
+  li {
+    a {
+      padding: $padding-link-pagination;
+      color: $color-link-pagination;
+      background-color: $bg-link-pagination;
+      border-width: $border-width-link-pagination;
+      border-style: $border-style-link-pagination;
+      border-color: $border-color-link-pagination;
+    }
+
+    &.active {
+
+      a {
+        color: $color-link-pagination-active;
+        background-color: $bg-link-pagination-active;
+        border-color: $border-color-link-pagination-active;
+      }
+
+    }
+
+    &.disabled {
+
+      a {
+        color: $color-link-pagination-disabled;
+        pointer-events: none;
+        cursor: auto;
+        background-color: $bg-link-pagination-disabled;
+        border-color: $border-color-link-pagination-disabled;
+      }
+
+    }
+  }
+}
+
+//Pagination
+.pager-nav {
+
+  .pagination {
+    @media (max-width: $screen-xs-max) {
+      position: relative;
+      padding: 0 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    & > li {
+      a {
+        @extend %pagination-link;
+        margin: 0 15px;
+        background: none;
+        border: 0;
+        border-radius: 0;
+
+        &:hover,
+        &:focus,
+        &:active {
+          border-bottom: 2px solid $black;
+          background: none;
+          border-radius: 0;
+        }
+      }
+
+      &.active {
+
+        & > a {
+          border-bottom: 2px solid $black;
+          background: none;
+          border-radius: 0;
+          color: $black;
+
+          &:hover,
+          &:active,
+          &:focus {
+            border-bottom: 2px solid $black;
+            background: none;
+            border-radius: 0;
+            color: $black;
+          }
+        }
+      }
+
+      &.pager__item--last,
+      &.pager__item--first {
+        a {
+          &:before {
+            content: $cdcicon-chevron;
+            font-family: $icomoon-font-family;
+            display: block;
+          }
+
+          &:hover,
+          &:focus,
+          &:active {
+            border: 0;
+            color: $couleur-rouge;
+          }
+
+          span {
+            display: none;
+          }
+        }
+      }
+
+      &.pager__item--first {
+        @media (max-width: $screen-xs-max) {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        a {
+          @media (max-width: $screen-xs-max) {
+            margin-left: 0;
+          }
+
+          &:before {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      &.pager__item--last {
+        @media (max-width: $screen-xs-max) {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        a {
+          @media (max-width: $screen-xs-max) {
+            margin-right: 0;
+          }
+
+          &:before {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+
+      &.pager__item--previous,
+      &.pager__item--next {
+        a {
+          margin-top: 5px;
+          font-size: .5rem;
+
+          &:hover,
+          &:focus,
+          &:active {
+            border: 0;
+            color: $couleur-rouge;
+          }
+
+          &:before {
+            display: block;
+            content: $cdcicon-more;
+            font-family: $icomoon-font-family;
+          }
+
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

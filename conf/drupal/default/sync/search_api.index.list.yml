@@ -1,0 +1,243 @@
+uuid: 69d58689-19ea-49bd-9837-787986431e90
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_interval_date
+    - field.storage.media.field_media_date
+    - field.storage.media.field_media_investor_visibility
+    - field.storage.media.field_media_press_visibility
+    - field.storage.media.field_media_search_visibility
+    - field.storage.node.field_site
+    - field.storage.media.field_media_entite_references
+    - field.storage.node.field_thematic_references
+    - field.storage.node.field_entite_references
+    - search_api.server.elastic
+    - core.entity_view_mode.media.teaser
+    - core.entity_view_mode.node.list
+  module:
+    - media
+    - node
+    - taxonomy
+    - search_api
+    - icdc_facets
+    - icdc_mediatheque
+    - icdc_node_weight_order
+id: list
+name: Liste
+description: ''
+read_only: false
+field_settings:
+  bundle:
+    label: 'Type de média'
+    datasource_id: 'entity:media'
+    property_path: bundle
+    type: string
+    dependencies:
+      module:
+        - media
+  changed:
+    label: Modifié
+    datasource_id: 'entity:media'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - media
+  changed_1:
+    label: Modifié
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - node
+  created:
+    label: 'Écrit le'
+    datasource_id: 'entity:media'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - media
+  created_1:
+    label: 'Écrit le'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  end_value:
+    label: 'Dates » Valeur de la date de fin'
+    datasource_id: 'entity:node'
+    property_path: 'field_interval_date:end_value'
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_interval_date
+  field_interval_date:
+    label: Dates
+    datasource_id: 'entity:node'
+    property_path: field_interval_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_interval_date
+  field_media_date:
+    label: Date
+    datasource_id: 'entity:media'
+    property_path: field_media_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.media.field_media_date
+  field_media_investor_visibility:
+    label: 'Afficher dans l''espace investisseur'
+    datasource_id: 'entity:media'
+    property_path: field_media_investor_visibility
+    type: integer
+    dependencies:
+      config:
+        - field.storage.media.field_media_investor_visibility
+  field_media_press_visibility:
+    label: 'Afficher dans l''espace presse'
+    datasource_id: 'entity:media'
+    property_path: field_media_press_visibility
+    type: integer
+    dependencies:
+      config:
+        - field.storage.media.field_media_press_visibility
+  field_media_search_visibility:
+    label: 'Afficher dans le moteur de recherche'
+    datasource_id: 'entity:media'
+    property_path: field_media_search_visibility
+    type: integer
+    dependencies:
+      config:
+        - field.storage.media.field_media_search_visibility
+  field_site:
+    label: Site
+    datasource_id: 'entity:node'
+    property_path: field_site
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_site
+  icdc_facets_date_field:
+    label: 'ICDC Facets Date field'
+    property_path: icdc_facets_date_field
+    type: string
+    configuration:
+      field: 'entity:media/field_media_date'
+      granularity: 'Y'
+      date_format: ''
+  icdc_facets_date_range_field:
+    label: 'ICDC Facets Date Range field'
+    property_path: icdc_facets_date_range_field
+    type: string
+    configuration:
+      field: 'entity:node/field_interval_date'
+      granularity: 'Y'
+      date_format: ''
+  name:
+    label: 'Entités » Terme de taxonomie » Nom'
+    datasource_id: 'entity:media'
+    property_path: 'field_media_entite_references:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.media.field_media_entite_references
+      module:
+        - taxonomy
+  name_1:
+    label: 'Thématiques » Terme de taxonomie » Nom'
+    datasource_id: 'entity:node'
+    property_path: 'field_thematic_references:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_thematic_references
+      module:
+        - taxonomy
+  name_2:
+    label: 'Entités » Terme de taxonomie » Nom'
+    datasource_id: 'entity:node'
+    property_path: 'field_entite_references:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_entite_references
+      module:
+        - taxonomy
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: string
+    configuration:
+      roles:
+        - anonymous
+      view_mode:
+        'entity:media':
+          document: teaser
+        'entity:node':
+          actualite: list
+  status:
+    label: Publié
+    datasource_id: 'entity:media'
+    property_path: status
+    type: integer
+    dependencies:
+      module:
+        - media
+  status_1:
+    label: Publié
+    datasource_id: 'entity:node'
+    property_path: status
+    type: integer
+    dependencies:
+      module:
+        - node
+  type:
+    label: Type
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:media':
+    bundles:
+      default: false
+      selected:
+        - document
+    languages:
+      default: true
+      selected: {  }
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - actualite
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  icdc_facets_date_field: {  }
+  icdc_facets_date_range_field: {  }
+  icdc_node_order: {  }
+  language_with_fallback: {  }
+  media_facet_year: {  }
+  media_show_in_list: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+server: elastic

@@ -1,0 +1,91 @@
+uuid: 35585882-a783-4d8f-96df-1147551815d2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list
+    - field.field.node.parcours_de_vie.field_chapo
+    - field.field.node.parcours_de_vie.field_image_teaser_reference
+    - field.field.node.parcours_de_vie.field_metatag
+    - field.field.node.parcours_de_vie.field_pg_story
+    - field.field.node.parcours_de_vie.field_pg_svg_illustrated
+    - field.field.node.parcours_de_vie.field_pg_svg_wired
+    - field.field.node.parcours_de_vie.field_pg_tag_reference
+    - field.field.node.parcours_de_vie.field_short_title
+    - field.field.node.parcours_de_vie.field_snippet_seo
+    - node.type.parcours_de_vie
+  module:
+    - advanced_text_formatter
+    - field_formatter_class
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.parcours_de_vie.list
+targetEntityType: node
+bundle: parcours_de_vie
+mode: list
+content:
+  field_image_teaser_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+  field_short_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_snippet_seo:
+    type: advanced_text
+    label: hidden
+    settings:
+      trim_length: '230'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: php
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - em
+        - i
+        - strong
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+  social_simple_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_chapo: true
+  field_metatag: true
+  field_pg_story: true
+  field_pg_svg_illustrated: true
+  field_pg_svg_wired: true
+  field_pg_tag_reference: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

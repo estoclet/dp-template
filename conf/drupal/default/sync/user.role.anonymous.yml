@@ -1,0 +1,25 @@
+uuid: d7d0293b-51d7-4eca-94b9-fced65896c94
+langcode: fr
+status: true
+dependencies:
+  module:
+    - commerce_checkout
+    - commerce_product
+    - media
+    - mini_sites
+    - system
+    - video_embed_field
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access checkout'
+  - 'access content'
+  - 'access user profiles'
+  - 'never autoplay videos'
+  - 'view commerce_product'
+  - 'view media'
+  - 'view published mini site page entities'

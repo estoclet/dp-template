@@ -1,0 +1,31 @@
+uuid: 4eb67053-e836-4089-8469-ee86184e7839
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.contact
+  module:
+    - menu_block
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_contact
+theme: cdc_bo_theme
+region: sidebar_first
+weight: -20
+provider: null
+plugin: 'menu_block:contact'
+settings:
+  id: 'menu_block:contact'
+  label: Contact
+  label_display: visible
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'contact:'
+  suggestion: contact
+visibility: {  }

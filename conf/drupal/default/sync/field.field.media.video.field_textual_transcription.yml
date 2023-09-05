@@ -1,0 +1,21 @@
+uuid: 7a879b22-29cf-44b9-8613-6eaf334b74c0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_textual_transcription
+    - media.type.video
+  module:
+    - text
+id: media.video.field_textual_transcription
+field_name: field_textual_transcription
+entity_type: media
+bundle: video
+label: 'Retranscription textuelle'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

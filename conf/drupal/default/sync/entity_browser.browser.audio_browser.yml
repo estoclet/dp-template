@@ -1,0 +1,42 @@
+uuid: 3756f2f1-5a7a-40ac-b591-208179c2b8f7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.custom_media_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: audio_browser
+label: 'Navigateur audio'
+display: modal
+display_configuration:
+  width: '1920'
+  height: '1200'
+  link_text: Ajouter
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  2d7f6d6f-1521-4aec-918e-d5b0a0434dd6:
+    id: view
+    uuid: 2d7f6d6f-1521-4aec-918e-d5b0a0434dd6
+    label: Audio
+    weight: 1
+    settings:
+      submit_text: Sélectionner
+      auto_select: false
+      view: custom_media_browser
+      view_display: media_entity_browser_audio
+  e1c5d317-8aeb-4b2b-90ae-7c3ed364636c:
+    id: entity_form
+    uuid: e1c5d317-8aeb-4b2b-90ae-7c3ed364636c
+    label: Créer
+    weight: 2
+    settings:
+      submit_text: Sauvegarder
+      entity_type: media
+      bundle: audio
+      form_mode: default

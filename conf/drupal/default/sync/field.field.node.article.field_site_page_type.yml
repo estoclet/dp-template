@@ -1,0 +1,19 @@
+uuid: 80d05399-88e3-4325-b2b0-c158e315f376
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_page_type
+    - node.type.article
+id: node.article.field_site_page_type
+field_name: field_site_page_type
+entity_type: node
+bundle: article
+label: 'Site page type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

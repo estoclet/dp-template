@@ -1,0 +1,24 @@
+uuid: 14e79e08-3e55-4bf6-8773-22c3eb48c77f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - crop
+third_party_settings:
+  crop:
+    image_field: field_media_image
+_core:
+  default_config_hash: c_Bvr6nYQNKeK24Me1-q1BK6p52bJpHpyIMpDIX7__U
+id: image
+label: Image
+description: ''
+source: image
+queue_thumbnail_downloads: true
+new_revision: true
+source_configuration:
+  source_field: field_media_image
+field_map:
+  mimetype: field_media_mine
+  filesize: field_media_size
+  width: field_media_width
+  height: field_media_height

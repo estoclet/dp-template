@@ -1,0 +1,15 @@
+name: Commerce Systempay
+type: module
+description: Provides Systempay payment services integration for Drupal Commerce.
+package: Commerce (contrib)
+dependencies:
+  - commerce_payment
+
+# information about project
+version: "8.x-2.0.5"
+core: "8.x"
+core_version_requirement: ^8 || ^9
+project: "commerce_systempay"
+datestamp: "1612773362"
+interface translation project: commerce_systempay
+interface translation server pattern: modules/commerce_systempay/translations/systempay.%language.po

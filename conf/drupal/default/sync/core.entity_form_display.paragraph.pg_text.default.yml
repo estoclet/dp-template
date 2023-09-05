@@ -1,0 +1,44 @@
+uuid: bbcf9adc-5e5b-4545-83d2-9143c26236e5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pg_text.field_pg_content
+    - field.field.paragraph.pg_text.field_responsive
+    - paragraphs.paragraphs_type.pg_text
+  module:
+    - text
+id: paragraph.pg_text.default
+targetEntityType: paragraph
+bundle: pg_text
+mode: default
+content:
+  field_pg_content:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_responsive:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true

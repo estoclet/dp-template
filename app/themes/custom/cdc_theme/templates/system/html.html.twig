@@ -1,0 +1,163 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display the basic html structure of a single
+ * Drupal page.
+ *
+ * Variables:
+ * - $css: An array of CSS files for the current page.
+ * - $language: (object) The language the site is being displayed in.
+ *   $language->language contains its textual representation.
+ *   $language->dir contains the language direction. It will either be 'ltr' or
+ *   'rtl'.
+ * - $rdf_namespaces: All the RDF namespace prefixes used in the HTML document.
+ * - $grddl_profile: A GRDDL profile allowing agents to extract the RDF data.
+ * - $head_title: A modified version of the page title, for use in the TITLE
+ *   tag.
+ * - $head_title_array: (array) An associative array containing the string parts
+ *   that were used to generate the $head_title variable, already prepared to be
+ *   output as TITLE tag. The key/value pairs may contain one or more of the
+ *   following, depending on conditions:
+ *   - title: The title of the current page, if any.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site, if any, and if there is no title.
+ * - $head: Markup for the HEAD section (including meta tags, keyword tags, and
+ *   so on).
+ * - $styles: Style tags necessary to import all CSS files for the page.
+ * - $scripts: Script tags necessary to load the JavaScript files and settings
+ *   for the page.
+ * - $page_top: Initial markup from any modules that have altered the
+ *   page. This variable should always be output first, before all other dynamic
+ *   content.
+ * - $page: The rendered page content.
+ * - $page_bottom: Final closing markup from any modules that have altered the
+ *   page. This variable should always be output last, after all other dynamic
+ *   content.
+ * - $classes String of classes that can be used to style contextually through
+ *   CSS.
+ *
+ * @ingroup templates
+ *
+ * @see bootstrap_preprocess_html()
+ * @see template_preprocess()
+ * @see template_preprocess_html()
+ * @see template_process()
+ */
+#}
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+    theme.settings.navbar_position ? 'navbar-is-' ~ theme.settings.navbar_position,
+    theme.has_glyphicons ? 'has-glyphicons',
+  ]
+%}
+<!DOCTYPE html>
+<html {{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+
+<script type="text/javascript">
+	window.gdprAppliesGlobally = true;
+(function () {
+function a(e) {
+if (!window.frames[e]) {
+if (document.body && document.body.firstChild) {
+var t = document.body;
+var n = document.createElement("iframe");
+n.style.display = "none";
+n.name = e;
+n.title = e;
+t.insertBefore(n, t.firstChild)
+} else {
+setTimeout(function () {
+a(e)
+}, 5)
+}
+}
+}
+function e(n, r, o, c, s) {
+function e(e, t, n, a) {
+if (typeof n !== "function") {
+return
+}
+if (!window[r]) {
+window[r] = []
+}
+var i = false;
+if (s) {
+i = s(e, t, n)
+}
+if (! i) {
+window[r].push({command: e, parameter: t, callback: n, version: a})
+}
+}
+e.stub = true;
+function t(a) {
+if (!window[n] || window[n].stub !== true) {
+return
+}
+if (! a.data) {
+return
+}
+var i = typeof a.data === "string";
+var e;
+try {
+e = i ? JSON.parse(a.data) : a.data
+} catch (t) {
+return
+}
+if (e[o]) {
+var r = e[o];
+window[n](r.command, r.parameter, function (e, t) {
+var n = {};
+n[c] = {
+returnValue: e,
+success: t,
+callId: r.callId
+};
+a.source.postMessage(i ? JSON.stringify(n) : n, "*")
+}, r.version)
+}
+}
+if (typeof window[n] !== "function") {
+window[n] = e;
+if (window.addEventListener) {
+window.addEventListener("message", t, false)
+} else {
+window.attachEvent("onmessage", t)
+}
+}
+}
+e("__tcfapi", "__tcfapiBuffer", "__tcfapiCall", "__tcfapiReturn");
+a("__tcfapiLocator");
+// (function (e) {
+// var t = document.createElement("script");
+// t.id = "spcloader";
+// t.type = "text/javascript";
+// t.async = true;
+// t.src = "https://sdk.privacy-center.org/" + e + "/loader.js?target=" + document.location.hostname;
+// t.charset = "utf-8";
+// var n = document.getElementsByTagName("script")[0];
+// n.parentNode.insertBefore(t, n)
+// })("dabda18d-ee95-4bc4-96f1-8e8587adf5a5")
+})();
+</script>
+
+  </head>
+  <body{{ attributes.addClass(body_classes) }}>
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+    <!-- TOPAZE_DC1 -->
+  </body>
+</html>

@@ -1,0 +1,27 @@
+uuid: cde9bdc9-4642-485e-aba8-f26af07a5302
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_node_references
+    - node.type.dossier
+id: node.dossier.field_node_references
+field_name: field_node_references
+entity_type: node
+bundle: dossier
+label: 'Dossiers connexes'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      dossier: dossier
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: 8dd97595-99d2-47a7-8696-66397f1d5ae2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_mine
+    - media.type.magazine
+id: media.magazine.field_media_mine
+field_name: field_media_mine
+entity_type: media
+bundle: magazine
+label: 'Type Mime'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

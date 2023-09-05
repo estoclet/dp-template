@@ -1,0 +1,22 @@
+uuid: 23abc9c5-2a0b-4f4c-a8eb-9ef977d6e482
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cdc_theme
+_core:
+  default_config_hash: fNNLN48MSGSLiqwIFywCuxH2Dk_IxDbaP0kYhg_IPrg
+id: cdc_theme_content
+theme: cdc_theme
+region: content
+weight: -19
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenu de la page principale'
+  label_display: '0'
+  provider: system
+visibility: {  }

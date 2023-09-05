@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_mediatheque.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\media\MediaInterface;
+use Drupal\file\Entity\File;
+
+
+/**
+ * Implements hook_help().
+ */
+function icdc_mediatheque_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_mediatheque module.
+    case 'help.page.icdc_mediatheque':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Mediatheque for ICDC') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_media().
+ */
+function icdc_mediatheque_preprocess_media(&$variables) {
+  if ($variables['view_mode'] === 'media_library') {
+    /** @var \Drupal\media\MediaInterface $media */
+    $media = $variables['media'];
+    $variables['#cache']['contexts'][] = 'user.permissions';
+    $rel = $media->access('edit') ? 'edit-form' : 'canonical';
+    $variables['url'] = $media->toUrl($rel, [
+      'language' => $media->language(),
+    ]);
+    $variables += [
+      'preview_attributes' => new Attribute(),
+      'metadata_attributes' => new Attribute(),
+    ];
+    $variables['status'] = $media->isPublished();
+  }
+}
+
+function icdc_mediatheque_media_presave(MediaInterface $entity) {
+
+  if($entity->bundle->target_id == 'ausha') {
+    $ausha_service = \Drupal::service('icdc_mediatheque.ausha_api_service');
+    // Automatic PodcastId extract & feeding
+    if($entity->field_media_audio_embed->isEmpty() != TRUE) {
+      $iframe = $entity->field_media_audio_embed->value;
+      $podcast_id_position = strpos($iframe, "podcastId=");
+      $subchain = substr($iframe, $podcast_id_position);
+      $next_parameter_position = strpos($subchain, "&");
+      $podcast_public_id = substr($subchain, 10, ($next_parameter_position-10));
+      $entity->field_podcast_id = $podcast_public_id;
+    }
+    if($entity->field_podcast_id->isEmpty() != TRUE) {
+      $public_id = $entity->field_podcast_id->value;
+      // Get Podcast Object
+      $ausha_datas = $ausha_service->getPodcastDatas($public_id);
+
+      // Set Podcast Thumbnail
+      $thumbnail = isset($ausha_datas->image_url) && isset($ausha_datas->slug)
+      ?
+      $ausha_service->createThumbnails($ausha_datas->image_url, $ausha_datas->slug)
+      : [];
+
+      if(!empty($thumbnail)) {
+        $entity->thumbnail->target_id = $thumbnail['target_id'];
+        $entity->thumbnail->alt = $thumbnail['alt'];
+      }
+
+    }
+
+  }
+}

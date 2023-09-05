@@ -1,0 +1,10 @@
+uuid: ca6035ee-d3ec-4adb-989f-da9f8319fcdf
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.player
+label: Player
+targetEntityType: media
+cache: true

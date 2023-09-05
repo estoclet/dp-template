@@ -1,0 +1,18 @@
+uuid: d3031f63-c9b7-4fd3-96e8-ed21924c0621
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.magazine
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: media.magazine
+target_entity_type_id: media
+target_bundle: magazine
+default_langcode: site_default
+language_alterable: true

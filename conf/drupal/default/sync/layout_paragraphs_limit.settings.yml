@@ -1,0 +1,80 @@
+disallowed_types:
+  layout_onecol:
+    content:
+      negate: true
+      paragraph_types:
+        pg_advanced_text: pg_advanced_text
+        pg_insert_audio: pg_insert_audio
+        pg_insert_document: pg_insert_document
+        pg_insert_image: pg_insert_image
+        pg_insert_video: pg_insert_video
+  layout_twocol_section:
+    first:
+      negate: true
+      paragraph_types:
+        pg_advanced_text: pg_advanced_text
+        pg_insert_audio: pg_insert_audio
+        pg_insert_document: pg_insert_document
+        pg_insert_image: pg_insert_image
+        pg_insert_video: pg_insert_video
+    second:
+      negate: true
+      paragraph_types:
+        pg_advanced_text: pg_advanced_text
+        pg_insert_audio: pg_insert_audio
+        pg_insert_document: pg_insert_document
+        pg_insert_image: pg_insert_image
+        pg_insert_video: pg_insert_video
+  layout_threecol_section:
+    first:
+      negate: true
+      paragraph_types:
+        pg_advanced_text: pg_advanced_text
+        pg_insert_audio: pg_insert_audio
+        pg_insert_document: pg_insert_document
+        pg_insert_image: pg_insert_image
+        pg_insert_video: pg_insert_video
+    second:
+      negate: true
+      paragraph_types:
+        pg_advanced_text: pg_advanced_text
+        pg_insert_audio: pg_insert_audio
+        pg_insert_document: pg_insert_document
+        pg_insert_image: pg_insert_image
+        pg_insert_video: pg_insert_video
+    third:
+      negate: true
+      paragraph_types:
+        pg_advanced_text: pg_advanced_text
+        pg_insert_audio: pg_insert_audio
+        pg_insert_document: pg_insert_document
+        pg_insert_image: pg_insert_image
+        pg_insert_video: pg_insert_video
+  layout_fourcol_section:
+    first:
+      negate: true
+      paragraph_types: {  }
+    second:
+      negate: true
+      paragraph_types:
+        pg_advanced_text: pg_advanced_text
+        pg_insert_audio: pg_insert_audio
+        pg_insert_document: pg_insert_document
+        pg_insert_image: pg_insert_image
+        pg_insert_video: pg_insert_video
+    third:
+      negate: true
+      paragraph_types:
+        pg_advanced_text: pg_advanced_text
+        pg_insert_audio: pg_insert_audio
+        pg_insert_document: pg_insert_document
+        pg_insert_image: pg_insert_image
+        pg_insert_video: pg_insert_video
+    fourth:
+      negate: true
+      paragraph_types:
+        pg_advanced_text: pg_advanced_text
+        pg_insert_audio: pg_insert_audio
+        pg_insert_document: pg_insert_document
+        pg_insert_image: pg_insert_image
+        pg_insert_video: pg_insert_video

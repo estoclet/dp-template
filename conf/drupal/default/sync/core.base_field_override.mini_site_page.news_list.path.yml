@@ -1,0 +1,20 @@
+uuid: 9ef217a3-3da7-4c9b-8902-cb1be0017c86
+langcode: fr
+status: true
+dependencies:
+  config:
+    - mini_sites.mini_site_page_type.news_list
+  module:
+    - path
+id: mini_site_page.news_list.path
+field_name: path
+entity_type: mini_site_page
+bundle: news_list
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

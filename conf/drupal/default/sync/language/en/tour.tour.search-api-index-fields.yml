@@ -1,0 +1,9 @@
+tips:
+  search-api-index-fields-add:
+    label: 'Ajouter des champs'
+  search-api-index-fields-edit:
+    label: 'Modifier le champ'
+  search-api-index-fields-remove:
+    label: 'Retirer le champ'
+  search-api-index-fields-cancel:
+    label: 'Annuler les modifications'

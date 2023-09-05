@@ -1,0 +1,5 @@
+dc1_tweaks.admin.content_user:
+  title: 'Mon contenus'
+  route_name: dc1_tweaks.admin.content_user
+  description: 'Contenue par contributeur'
+  base_route: system.admin_content

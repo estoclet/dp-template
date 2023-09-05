@@ -1,0 +1,19 @@
+uuid: b9be5092-8184-4f8f-9439-dcbc7a2c8baf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_chapo
+    - node.type.parcours_de_vie
+id: node.parcours_de_vie.field_chapo
+field_name: field_chapo
+entity_type: node
+bundle: parcours_de_vie
+label: Chapô
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

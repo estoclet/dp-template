@@ -1,0 +1,21 @@
+uuid: 981cce0f-983d-40f0-8a85-2add92218006
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatag
+    - node.type.actualite
+  module:
+    - metatag
+id: node.actualite.field_metatag
+field_name: field_metatag
+entity_type: node
+bundle: actualite
+label: Métadonnées
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

@@ -1,0 +1,23 @@
+uuid: 198468f8-2a25-4d46-ac8c-5569bdfa05c6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_chiffres
+    - field.storage.block_content.field_animation
+id: block_content.bloc_chiffres.field_animation
+field_name: field_animation
+entity_type: block_content
+bundle: bloc_chiffres
+label: 'Animer le titre'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

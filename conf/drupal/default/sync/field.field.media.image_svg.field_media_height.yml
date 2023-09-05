@@ -1,0 +1,23 @@
+uuid: 2dfd0c78-939a-4b4c-bc28-ca0cc93a49e6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_height
+    - media.type.image_svg
+id: media.image_svg.field_media_height
+field_name: field_media_height
+entity_type: media
+bundle: image_svg
+label: Hauteur
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

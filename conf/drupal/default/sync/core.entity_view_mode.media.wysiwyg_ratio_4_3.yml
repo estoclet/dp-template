@@ -1,0 +1,10 @@
+uuid: 8130f41d-eea9-4041-ab8f-afbfaaa9b8d5
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.wysiwyg_ratio_4_3
+label: 'WYSIWYG Recadrage 4:3'
+targetEntityType: media
+cache: true

@@ -1,0 +1,29 @@
+/**
+ * @file
+ * Navigation Layout Styling
+ */
+
+.region-navigation {
+  @media (max-width: $screen-xs-max) {
+    display: flex;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .block-access-config,
+  .block-icdc-decision-tree,
+  .block-language {
+    @media (max-width: $screen-xs-max) {
+      display: inline-block;
+    }
+  }
+
+  .block-icdc-search {
+    @media (max-width: $screen-xs-max) {
+      display: none;
+    }
+  }
+}

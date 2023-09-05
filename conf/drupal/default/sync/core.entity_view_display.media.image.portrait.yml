@@ -1,0 +1,68 @@
+uuid: 9227116f-131b-4cd6-925a-bdb133b0666e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.portrait
+    - field.field.media.image.field_media_caption
+    - field.field.media.image.field_media_credential
+    - field.field.media.image.field_media_date
+    - field.field.media.image.field_media_description
+    - field.field.media.image.field_media_height
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_image_type
+    - field.field.media.image.field_media_mine
+    - field.field.media.image.field_media_perimeter_reference
+    - field.field.media.image.field_media_size
+    - field.field.media.image.field_media_theque_visibility
+    - field.field.media.image.field_media_width
+    - field.field.media.image.field_media_year
+    - image.style.portrait
+    - media.type.image
+  module:
+    - field_formatter_class
+    - svg_image
+id: media.image.portrait
+targetEntityType: media
+bundle: image
+mode: portrait
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: portrait
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: ''
+        height: ''
+      svg_render_as_image: true
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_caption: true
+  field_media_credential: true
+  field_media_date: true
+  field_media_description: true
+  field_media_height: true
+  field_media_image_type: true
+  field_media_mine: true
+  field_media_perimeter_reference: true
+  field_media_size: true
+  field_media_theque_visibility: true
+  field_media_width: true
+  field_media_year: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

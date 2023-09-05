@@ -1,0 +1,40 @@
+uuid: db53537e-a522-45f2-94d7-a068451ee3b8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.doctype
+  module:
+    - text
+    - workbench_moderation
+id: taxonomy_term.doctype.default
+targetEntityType: taxonomy_term
+bundle: doctype
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  path: true

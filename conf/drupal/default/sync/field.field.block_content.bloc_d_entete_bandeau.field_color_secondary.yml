@@ -1,0 +1,22 @@
+uuid: c0f3278a-eba1-4638-8023-f95a1f665117
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_d_entete_bandeau
+    - field.storage.block_content.field_color_secondary
+  module:
+    - color_field
+id: block_content.bloc_d_entete_bandeau.field_color_secondary
+field_name: field_color_secondary
+entity_type: block_content
+bundle: bloc_d_entete_bandeau
+label: 'Couleur secondaire'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

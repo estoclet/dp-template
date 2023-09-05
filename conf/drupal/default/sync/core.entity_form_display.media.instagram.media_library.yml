@@ -1,0 +1,49 @@
+uuid: a12be2ab-a083-4136-b68a-26e7cbc383d0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.instagram.field_copies_thumbnail
+    - field.field.media.instagram.field_instagram_id
+    - field.field.media.instagram.field_instagram_legende
+    - field.field.media.instagram.field_instagram_shortcode
+    - field.field.media.instagram.field_instagram_thumb_link
+    - field.field.media.instagram.field_instagram_type
+    - field.field.media.instagram.field_instagram_username
+    - field.field.media.instagram.field_media_date
+    - field.field.media.instagram.field_media_link
+    - field.field.media.instagram.field_media_perimeter_reference
+    - field.field.media.instagram.field_media_year
+    - media.type.instagram
+id: media.instagram.media_library
+targetEntityType: media
+bundle: instagram
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_copies_thumbnail: true
+  field_instagram_id: true
+  field_instagram_legende: true
+  field_instagram_shortcode: true
+  field_instagram_thumb_link: true
+  field_instagram_type: true
+  field_instagram_username: true
+  field_media_date: true
+  field_media_link: true
+  field_media_perimeter_reference: true
+  field_media_year: true
+  langcode: true
+  path: true
+  status: true
+  translation: true
+  uid: true

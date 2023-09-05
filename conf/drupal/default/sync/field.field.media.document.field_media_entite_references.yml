@@ -1,0 +1,29 @@
+uuid: 50f9ab85-c0de-4503-95e1-886014356e52
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_entite_references
+    - media.type.document
+    - taxonomy.vocabulary.entite
+id: media.document.field_media_entite_references
+field_name: field_media_entite_references
+entity_type: media
+bundle: document
+label: Entités
+description: 'Reliez ce document à une ou plusieurs entité(s) du Groupe.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      entite: entite
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: 343f0935-ce6f-4ff3-9506-85a69881216f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_pg_key_figure_alt
+field_name: field_pg_key_figure_alt
+entity_type: paragraph
+type: decimal
+settings:
+  precision: 10
+  scale: 1
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 1af1c927-fbc1-4c56-b0d2-2bac9f64b472
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.dossier
+  module:
+    - layout_builder
+id: node.dossier.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: dossier
+label: Affichage
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

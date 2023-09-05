@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains media_entity_soundcloud_formatter_pro.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function media_entity_soundcloud_formatter_pro_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the media_entity_soundcloud_formatter_pro module.
+    case 'help.page.media_entity_soundcloud_formatter_pro':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Media entity soundcloud formatter pro.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function media_entity_soundcloud_formatter_pro_theme($existing, $type, $theme, $path) {
+  return [
+    'media_soundcloud_embed_pro' => [
+      'variables' => [
+        'source_id' => NULL,
+        'width' => NULL,
+        'height' => NULL,
+        'color' => NULL,
+        'options' => [],
+      ],
+      'file' => 'media_entity_soundcloud_formatter_pro.theme.inc',
+    ],
+  ];
+}

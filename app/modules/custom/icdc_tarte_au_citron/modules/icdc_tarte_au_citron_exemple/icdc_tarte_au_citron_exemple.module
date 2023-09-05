@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_icdc_tarte_au_citron_SERVICE_ID_alter().
+ */
+function icdc_tarte_au_citron_exemple_icdc_tarte_au_citron_facebookpixel_alter(&$attachments) {
+  $attachments['#attached']['library'][] = 'icdc_tarte_au_citron_exemple/service_facebook_pixel';
+
+  $request     = \Drupal::request();
+  $route_match = \Drupal::routeMatch();
+  $title       = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+
+  $attachments['#attached']['drupalSettings']['icdc_tarte_au_citron_exemple'] = array(
+    'pageName' => $title
+  );
+}

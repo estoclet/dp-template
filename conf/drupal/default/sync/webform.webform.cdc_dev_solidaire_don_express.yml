@@ -1,0 +1,498 @@
+uuid: bbfacdce-7678-42d9-b36e-392aa5a57897
+langcode: fr
+status: open
+dependencies:
+  module:
+    - webform_product
+third_party_settings:
+  webform_product:
+    '':
+      top: ''
+      options:
+        madame: ''
+        monsieur: ''
+    montant:
+      top: ''
+      options:
+        5: '5'
+        10: '10'
+        50: '50'
+        100: '100'
+        Autre: ''
+    entite_select:
+      top: ''
+      options:
+        bpifrance: ''
+        'CDC Arkhineo': ''
+        'CDC Biodiversité': ''
+        'CDC Climat': ''
+        'CDC Fast': ''
+        'CDC Infrastructure': ''
+        'CDC International': ''
+        'CDC International Capital': ''
+        'CNP Assurances': ''
+        'Compagnie des Alpes': ''
+        Egis: ''
+        'Etablissement public': ''
+        'France Brevets': ''
+        'Groupe SNI': ''
+        Icade: ''
+        'Informatique CDC': ''
+        Novethic: ''
+        'Qualium Investissement': ''
+        Scet: ''
+        'Société forestière': ''
+        Transdev: ''
+    civilite:
+      top: ''
+      options:
+        madame: ''
+        monsieur: ''
+    montant_total:
+      top: ''
+    processed_text:
+      top: ''
+    entite_d_appartenance:
+      top: ''
+    rester_en_contact:
+      top: ''
+    champ_adresse:
+      top: ''
+    disclaimer_data:
+      top: ''
+    actions:
+      top: ''
+    champ_nom:
+      top: ''
+    champ_prenom:
+      top: ''
+    champ_complement_adresse:
+      top: ''
+    champ_code_postal:
+      top: ''
+    champ_ville:
+      top: ''
+    champ_pays:
+      top: ''
+    telephone:
+      top: ''
+    e_mail:
+      top: ''
+    markup_01:
+      top: ''
+    disclaimer:
+      top: ''
+    don_container_etape_1:
+      top: ''
+    don_coordonnees:
+      top: ''
+    mail_test:
+      top: ''
+    hiddenmail:
+      top: ''
+    hidden_mail:
+      top: ''
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: cdc_dev_solidaire_don_express
+title: 'Faire un don à CDC Développement solidaire'
+description: ''
+category: ''
+elements: |-
+  processed_text:
+    '#type': processed_text
+    '#text': '<h1>Faire un don à CDC Développement Solidaire</h1>'
+    '#format': webform_default
+  markup_01:
+    '#type': webform_markup
+    '#markup': '<p><strong>Tous les champs précédés d''une étoile (</strong><span class="red"><strong>*</strong></span><strong>) sont obligatoires</strong></p>'
+  don_container_etape_1:
+    '#type': fieldset
+    '#title': 'Etape 1 : Faire un don à CDC Développement solidaire'
+    groupe_membre:
+      '#type': radios
+      '#title': 'Faites-vous partie du groupe Caisse Des Dépôts ?'
+      '#options':
+        oui: oui
+        non: non
+    entite_d_appartenance:
+      '#type': textfield
+      '#title': 'Indiquez votre entité d’appartenance'
+      '#states':
+        visible:
+          ':input[name="groupe_membre"]':
+            value: oui
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    montant:
+      '#type': radios
+      '#title': 'Indiquer votre montant'
+      '#options':
+        5: '5 €'
+        10: '10 €'
+        50: '50 €'
+        100: '100 €'
+        Autre: Autre
+    votre_montant:
+      '#type': number
+      '#title': 'Votre montant'
+      '#states':
+        visible:
+          ':input[name="montant"]':
+            value: Autre
+    montant_total:
+      '#type': webform_computed_twig
+      '#title': 'montant total'
+      '#display_on': none
+      '#template': |2-
+            {% if data.montant == 'Autre'  %}
+              {{data.votre_montant * 1}}
+            {% else %}
+              {{data.montant * 1}}
+            {% endif %}
+      '#store': true
+      '#ajax': true
+    disclaimer:
+      '#type': webform_message
+      '#message_type': info
+      '#message_message': '<p><strong>Bénéficiez d''une réduction fiscale.</strong></p><p>Les cotisations et les dons effectués au profit de CDC Développement solidaire ouvrent droit à une réduction d’impôt égale à 66&nbsp;% du montant des sommes versées, retenues dans la limite d’un plafond égal à 20&nbsp;% du revenu imposable du donateur (l’excédent éventuel peut être reporté sur les cinq années suivantes)</p>'
+  don_coordonnees:
+    '#type': fieldset
+    '#title': 'Etape 2 : Votre identité et vos coordonnées'
+    civilite:
+      '#type': select
+      '#title': 'Civilité :'
+      '#options':
+        M.: M.
+        Mme: Mme
+      '#required': true
+    champ_nom:
+      '#type': textfield
+      '#title': 'Nom :'
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      '#required': true
+    champ_prenom:
+      '#type': textfield
+      '#title': 'Prénom :'
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      '#required': true
+    rester_en_contact:
+      '#type': checkbox
+      '#title': 'Je souhaite un reçu fiscal ou rester en contact avec CDC Développement Solidaire'
+    champ_adresse:
+      '#type': textfield
+      '#title': 'Adresse :'
+      '#states':
+        visible:
+          ':input[name="rester_en_contact"]':
+            checked: true
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      '#required': true
+    champ_complement_adresse:
+      '#type': textfield
+      '#title': 'Complément d''adresse :'
+      '#states':
+        visible:
+          ':input[name="rester_en_contact"]':
+            checked: true
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    champ_code_postal:
+      '#type': textfield
+      '#title': 'Code Postal :'
+      '#required': true
+      '#pattern': '^((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3}$'
+      '#pattern_error': 'Veuillez saisir un code postal valide.'
+      '#states':
+        visible:
+          ':input[name="rester_en_contact"]':
+            checked: true
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    champ_ville:
+      '#type': textfield
+      '#title': 'Ville :'
+      '#states':
+        visible:
+          ':input[name="rester_en_contact"]':
+            checked: true
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      '#required': true
+    champ_pays:
+      '#type': textfield
+      '#title': 'Pays :'
+      '#states':
+        visible:
+          ':input[name="rester_en_contact"]':
+            checked: true
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    telephone:
+      '#type': tel
+      '#title': 'Téléphone (10 chiffres - Exemple : 0123456789) :'
+      '#pattern': '^0[1-9]([-. ]?[0-9]{2}){4}$'
+      '#pattern_error': 'Veuillez saisir un numéro de téléphone valide.'
+      '#states':
+        visible:
+          ':input[name="rester_en_contact"]':
+            checked: true
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    e_mail:
+      '#type': webform_email_confirm
+      '#title': 'Courriel (exemple : nomprenom@domain.com) :'
+      '#required': true
+      '#pattern': '\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b'
+      '#pattern_error': 'Veuillez saisir une adresse email valide.'
+      '#states':
+        visible:
+          ':input[name="rester_en_contact"]':
+            checked: true
+      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      '#confirm__title': 'Vérification courriel (A noter que ce courriel est important pour vous contacter) :'
+    disclaimer_data:
+      '#type': webform_markup
+      '#states':
+        visible:
+          ':input[name="rester_en_contact"]':
+            checked: true
+      '#markup': '<p>Les coordonnées renseignées ne feront l''objet d''aucune exploitation commerciale.</p>'
+    charte:
+      '#type': checkbox
+      '#title': 'J''ai lu et j''accepte les conditions générales d''utilisation du site.'
+      '#required': true
+  order_status:
+    '#type': textfield
+    '#title': 'Order status'
+    '#access_create_roles':
+      - administrator
+  order_id:
+    '#type': number
+    '#title': 'Order ID'
+    '#access_create_roles':
+      - administrator
+  order_url:
+    '#type': url
+    '#title': 'Order URL'
+    '#access_create_roles':
+      - administrator
+  hidden_mail:
+    '#type': textfield
+    '#title': 'hidden mail'
+    '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+    '#wrapper_attributes':
+      style: 'visibility: hidden;'
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': Soumettre
+css: ''
+javascript: "(function ($, Drupal) {'use strict';$(document).ready(function(){\r\n  'use strict';\r\n  \r\n  function copyMail() {\r\n    var areaA = document.getElementById(\"edit-e-mail-mail-2\");\r\n    var areaB = document.getElementsByName(\"hidden_mail\");\r\n    var valueA = areaA.value;\r\n    var areaB = $(\"[name='hidden_mail']\");\r\n    areaB.val(valueA);\r\n  }\r\n  \r\n  $(':submit[id=\"edit-actions-submit\"]').on('click', function(e){\r\n     copyMail();\r\n  });\r\n\r\n});  \r\n})(jQuery, Drupal);  "
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /cdc_dev_solidaire_don_express
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  cdc_dev_solidaire_don_express:
+    id: webform_product
+    handler_id: cdc_dev_solidaire_don_express
+    label: 'CDC Dev solidaire Don Express'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      store: 1
+      order_type: default
+      order_item_title: '[webform_submission:source-title]'
+      order_item_type: webform
+      route: commerce_checkout.form
+      checkout_step: payment
+      payment_gateway: systempay_paiement_standard
+      payment_method: null
+      order_total: montant_total
+      payment_status: order_status
+      order_id: order_id
+      order_url: order_url
+      total_price: ''
+      billing_first_name: null
+      billing_last_name: null
+      contact_email: hidden_mail
+      debug: false
+variants: {  }

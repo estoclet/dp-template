@@ -1,0 +1,128 @@
+/**
+ * @file
+ * More Links Styling
+ */
+
+/* ---------------- DEFAULT -----------------*/
+%more-link {
+  color: $noir-web;
+  border: 1px solid $noir-web;
+  display: inline-block;
+  background-color: transparent;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: color .75s ease-in-out;
+  z-index: 1;
+  border-radius: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem 2rem;
+  font-size: 1.2rem;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 1.3rem;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -25%;
+    width: 150%;
+    height: 100%;
+    background: rgba($rouge-fond-acc, .9);
+    transition: transform .75s ease-in-out;
+    z-index: -1;
+  }
+
+  &:before {
+    transform: translate3d(100%, 0, 0) skew(20deg);
+    transform-origin: 0 0;
+  }
+
+  &:after {
+    transform: translate3d(-100%, 0, 0) skew(20deg);
+    transform-origin: 100% 100%;
+  }
+
+  &:hover,
+  &:active {
+    color: $white;
+    border-color: $rouge-fond-acc;
+
+    svg {
+      &.ext {
+        fill: $white;
+        path {
+          stroke: $white;
+        }
+      }
+    }
+
+    &:before,
+    &:after {
+      transform: translate3d(0, 0, 0) skew(20deg);
+    }
+  }
+
+  &:visited {
+    text-decoration: none;
+  }
+
+  .bg--dark & {
+    color: $white;
+    border: 1px $white solid;
+
+    svg {
+      &.ext {
+        fill: $white;
+        path {
+          stroke: $white;
+        }
+      }
+    }
+
+    &:before,
+    &:after {
+      background: rgba($white, .8);
+    }
+
+    &:hover,
+    &:active {
+      color: $noir-web;
+      border-color: $gris-clair;
+
+      svg {
+        &.ext {
+          fill: $noir-web;
+          path {
+            stroke: $noir-web;
+          }
+        }
+      }
+    }
+  }
+}
+
+a {
+  &.more-link {
+    @extend %more-link;
+  }
+}
+
+div {
+  &:not(.block-views-blockblog-term-block-view-blog-menu) {
+    .more-link {
+
+      & > a {
+        @extend %more-link;
+      }
+    }
+  }
+}

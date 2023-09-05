@@ -1,0 +1,10 @@
+uuid: 4c2e1fff-e166-453e-a9ee-3a2c2606d73a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.liste
+label: Liste
+targetEntityType: user
+cache: true

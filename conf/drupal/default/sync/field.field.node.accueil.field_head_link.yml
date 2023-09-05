@@ -1,0 +1,23 @@
+uuid: a5676ce9-179b-4587-bf3d-481db33499bc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_head_link
+    - node.type.accueil
+  module:
+    - link
+id: node.accueil.field_head_link
+field_name: field_head_link
+entity_type: node
+bundle: accueil
+label: Lien
+description: 'Saisissez le lien de redirection de la remontée dans l’entête de page.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

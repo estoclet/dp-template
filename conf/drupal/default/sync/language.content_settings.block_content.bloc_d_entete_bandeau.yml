@@ -1,0 +1,11 @@
+uuid: ffb7579b-7a16-46b3-b713-d23aba663787
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_d_entete_bandeau
+id: block_content.bloc_d_entete_bandeau
+target_entity_type_id: block_content
+target_bundle: bloc_d_entete_bandeau
+default_langcode: site_default
+language_alterable: false

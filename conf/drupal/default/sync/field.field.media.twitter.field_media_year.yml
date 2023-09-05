@@ -1,0 +1,24 @@
+uuid: 0dbeefeb-2dcc-4c5d-9f7f-4a96fb30bece
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_year
+    - media.type.twitter
+  module:
+    - datetime
+id: media.twitter.field_media_year
+field_name: field_media_year
+entity_type: media
+bundle: twitter
+label: 'Année de référence'
+description: 'Définissez l''année de référence du média si différente de l''année en cours.'
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

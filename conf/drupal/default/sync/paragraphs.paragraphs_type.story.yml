@@ -1,0 +1,9 @@
+uuid: 88bccebd-73ac-435a-a1d1-55df5a9fe974
+langcode: fr
+status: true
+dependencies: {  }
+id: story
+label: Story
+icon_uuid: null
+description: 'Une story (témoignage) à intégrer à un contenu de type "Parcours de vie".'
+behavior_plugins: {  }

@@ -1,0 +1,30 @@
+uuid: a033206a-6fbd-4cc8-b43f-b8bc7c2b04d8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_document_references
+    - media.type.document
+    - paragraphs.paragraphs_type.pg_insert_document
+_core:
+  default_config_hash: 2j6fJkGRBb1AjHL0JwS324Hunu1bp4GE9mdlzCo88V4
+id: paragraph.pg_insert_document.field_pg_document_references
+field_name: field_pg_document_references
+entity_type: paragraph
+bundle: pg_insert_document
+label: 'Document(s) PDF'
+description: 'Sélectionnez dans la médiathèque du site le ou les documents à afficher dans l''encart.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

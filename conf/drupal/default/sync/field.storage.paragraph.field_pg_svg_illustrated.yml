@@ -1,0 +1,20 @@
+uuid: 55e4f6a8-9127-4cb6-bb91-371cb506ccd3
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.field_pg_svg_illustrated
+field_name: field_pg_svg_illustrated
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

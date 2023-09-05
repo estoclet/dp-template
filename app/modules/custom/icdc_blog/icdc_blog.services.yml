@@ -1,0 +1,6 @@
+services:
+  icdc_blog.twig_extension:
+    arguments: ['@renderer']
+    class: Drupal\icdc_blog\Twig\IcdcBlogTermName
+    tags:
+      - { name: twig.extension }

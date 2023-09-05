@@ -1,0 +1,26 @@
+uuid: dcea6eff-9722-4dae-a632-1c1a9620b5c9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - mini_sites
+    - system
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_minisitemenu
+theme: cdc_bo_theme
+region: sidebar_first
+weight: -15
+provider: null
+plugin: mini_site_menu
+settings:
+  id: mini_site_menu
+  label: 'Mini Site Menu'
+  label_display: '0'
+  provider: mini_sites
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '/*'

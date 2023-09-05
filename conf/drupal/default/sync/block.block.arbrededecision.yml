@@ -1,0 +1,20 @@
+uuid: a0a2e932-afa5-4749-9636-08cc4e463c1e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - icdc_decision_tree
+  theme:
+    - cdc_theme
+id: arbrededecision
+theme: cdc_theme
+region: footer_top
+weight: -14
+provider: null
+plugin: decision_tree_block
+settings:
+  id: decision_tree_block
+  label: 'Arbre de décision'
+  label_display: '0'
+  provider: icdc_decision_tree
+visibility: {  }

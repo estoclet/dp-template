@@ -1,0 +1,18 @@
+uuid: ed95cbba-e5c2-46cd-9e13-74a8f509fafe
+langcode: fr
+status: true
+dependencies:
+  module:
+    - mini_sites
+id: mini_site_page.field_news_list
+field_name: field_news_list
+entity_type: mini_site_page
+type: mini_site_view
+settings: {  }
+module: mini_sites
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

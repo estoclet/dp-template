@@ -1,0 +1,176 @@
+/****************
+VARIABLES
+*****************/
+
+$padding-alert: .5rem 0;
+$margin-alert: 0 0 2rem 0;
+$border-width-alert: 0;
+$border-style-alert: solid;
+$border-color-alert: transparent;
+
+$color-texte-alert-prim: $couleur-bleu-fonce-cc;
+$bg-alert-prim: transparent;
+$border-color-alert-prim: $gris-clair;
+
+$color-texte-alert-second: $noir-web;
+$bg-alert-second: transparent;
+$border-color-alert-second: $gris-clair;
+
+$color-texte-alert-success: $couleur-vert-fonce;
+$bg-alert-success: transparent;
+$border-color-alert-success: $gris-clair;
+
+$color-texte-alert-danger: $couleur-rouge;
+$bg-alert-danger: transparent;
+$border-color-alert-danger: $gris-clair;
+
+$color-texte-alert-warning: $couleur-orange-cc;
+$bg-alert-warning: transparent;
+$border-color-alert-warning: $gris-clair;
+
+$color-texte-alert-info: $couleur-vert-fonce;
+$bg-alert-info: transparent;
+$border-color-alert-info: $gris-clair;
+
+$color-texte-alert-light: $gris-fonce;
+$bg-alert-light: transparent;
+$border-color-alert-light: $gris-clair;
+
+$color-texte-alert-dark: $noir-web;
+$bg-alert-dark: transparent;
+$border-color-alert-dark: $gris-clair;
+
+.alert {
+  position: absolute;
+  padding: $padding-alert;
+  margin: $margin-alert;
+  border-width: $border-width-alert;
+  border-style: $border-style-alert;
+  border-color: $border-color-alert;
+}
+
+.alert-primary {
+  color: $color-texte-alert-prim;
+  background-color: $bg-alert-prim;
+  border-color: $border-color-alert-prim;
+}
+
+.alert-secondary {
+  color: $color-texte-alert-second;
+  background-color: $bg-alert-second;
+  border-color: $border-color-alert-second;
+}
+
+.alert-success {
+  color: $color-texte-alert-success;
+  background-color: $bg-alert-success;
+  border-color: $border-color-alert-success;
+}
+
+.alert-danger {
+  color: $color-texte-alert-danger;
+  background-color: $bg-alert-danger;
+  border-color: $border-color-alert-danger;
+}
+
+.alert-warning {
+  color: $color-texte-alert-warning;
+  background-color: $bg-alert-warning;
+  border-color: $border-color-alert-warning;
+}
+
+.alert-info {
+  color: $color-texte-alert-info;
+  background-color: $bg-alert-info;
+  border-color: $border-color-alert-info;
+}
+
+.alert-light {
+  color: $color-texte-alert-light;
+  background-color: $bg-alert-light;
+  border-color: $border-color-alert-light;
+}
+
+.alert-dark {
+  color: $color-texte-alert-dark;
+  background-color: $bg-alert-dark;
+  border-color: $border-color-alert-dark;
+}
+
+/* ---------------- Message Styling -----------------*/
+.messages-list__item {
+
+  padding: 2rem;
+  margin-bottom: 2rem;
+
+  h2 {
+    @extend %heading3;
+    margin-top: 0;
+  }
+
+  .messages__content {
+    a {
+      position: relative;
+      color: $noir-web;
+      text-decoration: underline;
+
+      text-decoration: underline;
+      background-image: linear-gradient($noir-web, $noir-web);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 2px;
+      transition: background-size cubic-bezier(0, .5, 0, 1) .3s;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background-size: 100% 2px;
+      }
+
+    }
+  }
+}
+
+.messages--status {
+  color: $couleur-vert-fonce;
+  border-color: $couleur-vert-clair-cc $couleur-vert-clair-cc  transparent;  /* LTR */
+  background-color: $couleur-vert-clair;
+  box-shadow: -8px 0 0 #009a93; /* LTR */
+}
+
+.messages--warning {
+  color: #734c00;
+  border-color: #f4daa6 #f4daa6 #f4daa6 transparent;  /* LTR */
+  background-color: #fdf8ed;
+  box-shadow: -8px 0 0 #e09600; /* LTR */
+}
+
+.messages--error {
+  color: #a51b00;
+  border-color: #f9c9bf #f9c9bf #f9c9bf transparent;  /* LTR */
+  background-color: #fcf4f2;
+  box-shadow: -8px 0 0 #e62600; /* LTR */
+
+  .error {
+    color: #a51b00;
+  }
+}
+
+[dir='rtl'] {
+
+  .messages--status {
+    margin-left: 0;
+    border-color: $couleur-vert-clair-cc transparent $couleur-vert-clair-cc $couleur-vert-clair-cc;
+    box-shadow: 8px 0 0 $couleur-vert-fonce-cc;
+  }
+
+  .messages--warning {
+    border-color: #f4daa6 transparent #f4daa6 #f4daa6;
+    box-shadow: 8px 0 0 #e09600;
+  }
+
+  .messages--error {
+    border-color: #f9c9bf transparent #f9c9bf #f9c9bf;
+    box-shadow: 8px 0 0 #e62600;
+  }
+}

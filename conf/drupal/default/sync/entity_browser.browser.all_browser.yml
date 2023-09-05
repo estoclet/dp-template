@@ -1,0 +1,92 @@
+uuid: 0497b160-f86f-485a-b53b-14588de08345
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.custom_media_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: all_browser
+label: 'Navigateur de médias'
+display: iframe
+display_configuration:
+  width: 100%
+  height: '500'
+  link_text: Ajouter
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  aeb73659-4237-4f09-ba8c-97b099f4549e:
+    id: view
+    uuid: aeb73659-4237-4f09-ba8c-97b099f4549e
+    label: Médias
+    weight: 1
+    settings:
+      submit_text: Sélectionner
+      auto_select: false
+      view: custom_media_browser
+      view_display: media_entity_browser_all
+  a50a23cb-325d-4925-b46b-a38b9936da86:
+    id: entity_form
+    uuid: a50a23cb-325d-4925-b46b-a38b9936da86
+    label: 'Créer Audio'
+    weight: 2
+    settings:
+      submit_text: Sauvegarder
+      entity_type: media
+      bundle: audio
+      form_mode: default
+  53ee736c-1dfa-49a3-9074-ed800157e183:
+    id: entity_form
+    uuid: 53ee736c-1dfa-49a3-9074-ed800157e183
+    label: 'Créer Document'
+    weight: 3
+    settings:
+      submit_text: Sauvegarder
+      entity_type: media
+      bundle: document
+      form_mode: default
+  c7b151c0-3595-4211-a313-2bac720d3857:
+    id: entity_form
+    uuid: c7b151c0-3595-4211-a313-2bac720d3857
+    label: 'Créer Image'
+    weight: 4
+    settings:
+      submit_text: Sauvegarder
+      entity_type: media
+      bundle: image
+      form_mode: default
+  024b6a4c-3f3e-469f-b213-22a19a9ed578:
+    id: entity_form
+    uuid: 024b6a4c-3f3e-469f-b213-22a19a9ed578
+    label: 'Créer Instagram'
+    weight: 5
+    settings:
+      submit_text: Sauvegarder
+      entity_type: media
+      bundle: instagram
+      form_mode: default
+  8d6ceeb6-ac58-4d5c-a0a2-0fa8a719c7f5:
+    id: entity_form
+    uuid: 8d6ceeb6-ac58-4d5c-a0a2-0fa8a719c7f5
+    label: 'Créer Twitter'
+    weight: 6
+    settings:
+      submit_text: Sauvegarder
+      entity_type: media
+      bundle: twitter
+      form_mode: default
+  80901466-075b-4a57-ac36-1d3b301f98d6:
+    id: entity_form
+    uuid: 80901466-075b-4a57-ac36-1d3b301f98d6
+    label: 'Créer Vidéo'
+    weight: 7
+    settings:
+      submit_text: Sauvegarder
+      entity_type: media
+      bundle: video
+      form_mode: default

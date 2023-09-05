@@ -1,0 +1,29 @@
+uuid: c9feb05d-6efc-41df-ba42-f58b7e095313
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ctools
+    - mini_sites
+  enforced:
+    module:
+      - pathauto
+_core:
+  default_config_hash: VYOMrLeyYJiQz17ZmIpzufZTPwuCiztf0Sq64YlwFUY
+id: mini_site_page_pattern
+label: 'Mini site page pattern'
+type: 'canonical_entities:mini_site_page'
+pattern: '[mini_site_page:mini_site:entity:name]/[mini_site_page:parents:join-path]/[mini_site_page:name]'
+selection_criteria:
+  77afaca2-5a8c-4ea1-9e49-9c2cf1af8ce1:
+    id: 'entity_bundle:mini_site_page'
+    negate: false
+    uuid: 77afaca2-5a8c-4ea1-9e49-9c2cf1af8ce1
+    context_mapping:
+      mini_site_page: mini_site_page
+    bundles:
+      basic: basic
+      news_list: news_list
+selection_logic: and
+weight: 0
+relationships: {  }

@@ -1,0 +1,8 @@
+services:
+  mini_sites.mini_site_page_content_helper:
+    class: Drupal\mini_sites\MiniSitePageContentHelper
+    arguments: ['@config.factory', '@entity_field.manager']
+
+  mini_sites.mini_site_helper:
+    class: Drupal\mini_sites\MiniSiteHelper
+    arguments: ['@current_route_match']

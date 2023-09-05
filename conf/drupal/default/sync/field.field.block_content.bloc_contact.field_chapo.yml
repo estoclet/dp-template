@@ -1,0 +1,21 @@
+uuid: 4d284ccf-16c0-4ec6-8df8-ea80042e35e7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_contact
+    - field.storage.block_content.field_chapo
+  module:
+    - text
+id: block_content.bloc_contact.field_chapo
+field_name: field_chapo
+entity_type: block_content
+bundle: bloc_contact
+label: Chapô
+description: 'Renseignez si besoin le texte utilisé en chapô de la strate.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

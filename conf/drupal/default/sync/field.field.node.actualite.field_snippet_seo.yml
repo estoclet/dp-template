@@ -1,0 +1,21 @@
+uuid: 98481c50-8d4b-4177-a603-a19254663dc8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_snippet_seo
+    - node.type.actualite
+_core:
+  default_config_hash: IGKk_NWdlF1XC8A7S9UbOJsLXpYBqgY1qt5jttfgKvA
+id: node.actualite.field_snippet_seo
+field_name: field_snippet_seo
+entity_type: node
+bundle: actualite
+label: 'Texte d''accroche'
+description: 'Saisissez une accroche qui sera utilisée dans les remontées de contenus au sein des autres pages du site, par les moteurs de recherche et le partage sur les réseaux sociaux.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

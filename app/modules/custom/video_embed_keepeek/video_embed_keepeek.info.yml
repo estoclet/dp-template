@@ -1,0 +1,7 @@
+name: 'Video Embed Field Keepeek'
+type: module
+description: 'My Awesome Module'
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+dependencies:
+  - video_embed_field

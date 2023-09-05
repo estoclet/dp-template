@@ -1,0 +1,7 @@
+dc1_tweaks.admin.content_user:
+  path: '/admin/content/node/current_user'
+  defaults:
+    _entity_list: 'content_user'
+    _title: 'User content'
+  requirements:
+    _permission: 'administer content types'

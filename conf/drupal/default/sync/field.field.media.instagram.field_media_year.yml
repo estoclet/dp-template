@@ -1,0 +1,24 @@
+uuid: 3a0c4393-25f3-423b-81d0-3feca2ba40eb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_year
+    - media.type.instagram
+  module:
+    - datetime
+id: media.instagram.field_media_year
+field_name: field_media_year
+entity_type: media
+bundle: instagram
+label: 'Année de référence'
+description: 'Définissez l''année de référence du média si différente de l''année en cours.'
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

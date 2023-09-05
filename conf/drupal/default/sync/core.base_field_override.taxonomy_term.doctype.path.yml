@@ -1,0 +1,20 @@
+uuid: 134adf69-0208-4520-b96f-20d94848c970
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.doctype
+  module:
+    - path
+id: taxonomy_term.doctype.path
+field_name: path
+entity_type: taxonomy_term
+bundle: doctype
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

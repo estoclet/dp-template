@@ -1,0 +1,28 @@
+uuid: 860ac1f0-3c1a-435a-a5d1-3a4d9d04fdc1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_media_reference
+    - media.type.image
+    - paragraphs.paragraphs_type.pg_highligted
+id: paragraph.pg_highligted.field_pg_media_reference
+field_name: field_pg_media_reference
+entity_type: paragraph
+bundle: pg_highligted
+label: Illustration
+description: 'Sélectionnez dans la médiathèque du site une image qui servira d''illustration à l''encart.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: 0a664a3f-f98d-4dfb-aeb7-b4a34cd8abea
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_introduction
+    - paragraphs.paragraphs_type.story
+  module:
+    - text
+id: paragraph.story.field_pg_introduction
+field_name: field_pg_introduction
+entity_type: paragraph
+bundle: story
+label: Introduction
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

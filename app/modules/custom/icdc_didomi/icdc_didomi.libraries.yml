@@ -1,0 +1,6 @@
+icdc_didomi:
+  js:
+    js/icdc-didomi.js: {}
+  dependencies:
+    - core/drupal
+    - core/js-cookie

@@ -1,0 +1,8 @@
+uuid: 102fcc94-8956-4e71-ae2c-b62db9a320fc
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_d_entete_bandeau
+label: 'Bloc d''entête - Bandeau'
+revision: 1
+description: ''

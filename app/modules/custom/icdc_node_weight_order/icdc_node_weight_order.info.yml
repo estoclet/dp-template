@@ -1,0 +1,12 @@
+name: 'ICDC Node Weight Order'
+type: module
+description: 'Add weight to node and interface to order them easily'
+core_version_requirement: ^8 || ^9
+package: 'ICDC'
+dependencies:
+  - icdc_toolbox
+  - node
+  - search_api
+  - elasticsearch_connector
+'interface translation project': icdc_node_weight_order
+'interface translation server pattern': modules/custom/icdc_node_weight_order/translations/icdc_node_weight_order-%language.po

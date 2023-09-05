@@ -1,0 +1,23 @@
+uuid: d883f7f4-6d39-40cb-b11b-7a5f3298cbc4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_responsive
+    - paragraphs.paragraphs_type.story
+id: paragraph.story.field_responsive
+field_name: field_responsive
+entity_type: paragraph
+bundle: story
+label: 'Désactiver l''affichage en responsive'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

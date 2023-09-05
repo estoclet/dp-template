@@ -1,0 +1,316 @@
+// @file
+// Color Variables
+
+$white: #fff;
+$black: #000;
+$noir-web: #1f1f1f;
+$gris: #6e6e6e;
+$gris-clair: #f4f5f8;
+$gris-picto: #bdbdbd;
+$gris-moyen: #6e6e6e;
+$gris-fonce: #32303a;
+
+$couleur-rouge: #e30613;
+
+// Couleur charte
+$couleur-beige: #d7c3be;
+$couleur-bleu-clair: #a0b4d2;
+$couleur-violet-clair: #b4aac8;
+$couleur-vert-clair: #aacdc8;
+$couleur-mauve: #820a41;
+$couleur-bleu-fonce: #003264;
+$couleur-violet-fonce: #550055; // sass-lint:disable-line hex-length
+$couleur-vert-fonce: #006464;
+
+$couleur-orange-clair-cc: #f39869;
+$couleur-rose-clair-cc: #e6788c;
+$couleur-mauve-cc: #aa5aa5;
+$couleur-lavande-cc: #5f5faa;
+$couleur-bleu-azur-cc: #82d2fa;
+$couleur-vert-clair-cc: #73c8aa;
+$couleur-orange-cc: #e73446;
+$couleur-rose-cc: #e60087;
+$couleur-violet-cc: #8c2896;
+$couleur-bleu-fonce-cc: #1e46a0;
+$couleur-bleu-clair-cc: #00aafa;
+$couleur-vert-fonce-cc: #009a93;
+
+
+// Couleurs accessible validées fond clair
+$bleu-faisan-clair: #05befa;
+$bleu-emeraude-clair: #18d9c9;
+$corail-clair: #ff666b;
+$ocre-clair: #fba11b;
+
+// Couleurs accessible validées fond sombre avec texte blanc
+$rouge-fond-acc: #e30613;
+$gris-fonce-fond-acc: #32303a;
+$gris-intermediaire-fond-acc: #6e6e6e;
+$violet-fonce-fond-acc: #7a35b4;
+$bleu-fonce-fond-acc: #1e46a0;
+$vert-fonce-fond-acc: #006462;
+
+// Couleurs accessibles pour le contraste
+$white-acc-hg-contrast: #fff;
+$gray-acc-hg-contrast: #343643;
+$yellow-acc-inv-contrast: #ff0;
+$navy-acc-inv-contrast: #000080;
+
+.color__blanc {
+  color: $white;
+}
+
+.bg__blanc {
+  background-color: $white;
+}
+
+.color__noir {
+  color: $black;
+}
+
+.bg__noir {
+  background-color: $black;
+}
+
+.color__cf--rouge {
+  color: $couleur-rouge;
+}
+
+.bg__cf--rouge {
+  background-color: $couleur-rouge;
+}
+
+.color__cf--violetclair {
+  color: $couleur-violet-clair;
+}
+
+.bg__cf--violetclair {
+  background-color: $couleur-violet-clair;
+}
+
+.color__cf--beige {
+  color: $couleur-beige;
+}
+
+.bg__cf--beige {
+  background-color: $couleur-beige;
+}
+
+.color__cf--bleuclair {
+  color: $couleur-bleu-clair;
+}
+
+.bg__cf--bleuclair {
+  background-color: $couleur-bleu-clair;
+}
+
+.color__cf--vertclair {
+  color: $couleur-vert-clair;
+}
+
+.bg__cf--vertclair {
+  background-color: $couleur-vert-clair;
+}
+
+.color__cf--mauve {
+  color: $couleur-mauve;
+}
+
+.bg__cf--mauve {
+  background-color: $couleur-mauve;
+}
+
+.color__cf--bleufonce {
+  color: $couleur-bleu-fonce;
+}
+
+.bg__cf--bleufonce {
+  background-color: $couleur-bleu-fonce;
+}
+
+.color__violetfonce {
+  color: $couleur-violet-fonce;
+}
+
+.bg__cf--violetfonce {
+  background-color: $couleur-violet-fonce;
+}
+
+.color__cf--vertfonce {
+  color: $couleur-vert-fonce;
+}
+
+.bg__cf--vertfonce {
+  background-color: $couleur-vert-fonce;
+}
+
+.color__cc--orangeclair {
+  color: $couleur-orange-clair-cc;
+}
+
+.bg__cc--orangeclair {
+  background-color: $couleur-orange-clair-cc;
+}
+
+.color__cc--roseclair {
+  color: $couleur-rose-clair-cc;
+}
+
+.bg__cc--roseclair {
+  background-color: $couleur-rose-clair-cc;
+}
+
+.color__cc--mauve {
+  color: $couleur-mauve-cc;
+}
+
+.bg__cc--mauve {
+  background-color: $couleur-mauve-cc;
+}
+
+.color__cc--lavande {
+  color: $couleur-lavande-cc;
+}
+
+.bg__cc--lavande {
+  background-color: $couleur-lavande-cc;
+}
+
+.color__cc--bleuazur {
+  color: $couleur-bleu-azur-cc;
+}
+
+.bg__cc--bleuazur {
+  background-color: $couleur-bleu-azur-cc;
+}
+
+.color__cc--vertclair {
+  color: $couleur-vert-clair-cc;
+}
+
+.bg__cc--vertclair {
+  background-color: $couleur-vert-clair-cc;
+}
+
+.color__cc--orange {
+  color: $couleur-orange-cc;
+}
+
+.bg__cc--orange {
+  background-color: $couleur-orange-cc;
+}
+
+.color__cc--rose {
+  color: $couleur-rose-cc;
+}
+
+.bg__cc--rose {
+  background-color: $couleur-rose-cc;
+}
+
+.color__cc--violet {
+  color: $couleur-violet-cc;
+}
+
+.bg__cc--violet {
+  background-color: $couleur-violet-cc;
+}
+
+.color__cc--bleufonce {
+  color: $couleur-bleu-fonce-cc;
+}
+
+.bg__cc--bleufonce {
+  background-color: $couleur-bleu-fonce-cc;
+}
+
+.color__cc--bleuclair {
+  color: $couleur-bleu-clair-cc;
+}
+
+.bg__cc--bleuclair {
+  background-color: $couleur-bleu-clair-cc;
+}
+
+.color__cc--vertfonce {
+  color: $couleur-vert-fonce-cc;
+}
+
+.bg__cc--vertfonce {
+  background-color: $couleur-vert-fonce-cc;
+}
+
+// Style fond clair accesssible
+.bg__gris-clair {
+  background-color: $gris-clair;
+}
+
+.bg__bleu-faisan-clair {
+  background-color: $bleu-faisan-clair;
+}
+
+.bg__bleu-emeraude-clair {
+  background-color: $bleu-emeraude-clair;
+}
+
+.bg__corail-clair {
+  background-color: $corail-clair;
+}
+
+.bg__ocre-clair {
+  background-color: $ocre-clair;
+}
+
+// Style fond foncé accessible
+.bg__rouge-fond-acc,
+.bg__noir-web-acc,
+.bg__gris-fonce-fond-acc,
+.bg__gris-intermediaire-fond-acc,
+.bg__violet-fonce-fond-acc,
+.bg__bleu-fonce-fond-acc,
+.bg__vert-fonce-fond-acc,
+.bg--dark {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  blockquote,
+  .field,
+  div,
+  a {
+    color: $white !important;
+  }
+}
+
+.bg__rouge-fond-acc {
+  background-color: $rouge-fond-acc;
+}
+
+.bg__noir-web-acc {
+  background-color: $noir-web;
+}
+
+.bg__gris-fonce-fond-acc {
+  background-color: $gris-fonce-fond-acc;
+}
+
+.bg__gris-intermediaire-fond-acc {
+  background-color: $gris-intermediaire-fond-acc;
+}
+
+.bg__violet-fonce-fond-acc {
+  background-color: $violet-fonce-fond-acc;
+}
+
+.bg__bleu-fonce-fond-acc {
+  background-color: $bleu-fonce-fond-acc;
+}
+
+.bg__vert-fonce-fond-acc {
+  background-color: $vert-fonce-fond-acc;
+}

@@ -1,0 +1,8 @@
+uuid: 1f90fbd4-50db-4205-8688-d5ac3e644597
+langcode: und
+status: true
+dependencies: {  }
+id: date_full_simple
+label: 'Date complète simple'
+locked: false
+pattern: 'd F Y'

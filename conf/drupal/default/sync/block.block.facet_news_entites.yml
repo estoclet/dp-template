@@ -1,0 +1,29 @@
+uuid: 717191fa-51ed-4cc2-bef4-819764498d51
+langcode: fr
+status: true
+dependencies:
+  config:
+    - facets.facet.news_entites
+  module:
+    - facets
+    - system
+  theme:
+    - cdc_theme
+id: facet_news_entites
+theme: cdc_theme
+region: content_top
+weight: -17
+provider: null
+plugin: 'facet_block:news_entites'
+settings:
+  id: 'facet_block:news_entites'
+  label: 'FACETTE Actualités Entités'
+  label_display: '0'
+  provider: facets
+  block_id: facet_news_entites
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/actualites\r\n"

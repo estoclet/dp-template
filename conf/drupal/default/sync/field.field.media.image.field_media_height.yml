@@ -1,0 +1,25 @@
+uuid: ac97d5ef-451b-4d20-aba0-8f36254f59aa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_height
+    - media.type.image
+_core:
+  default_config_hash: LlAeYfLzh9tHlyLotaefdp_Bmue-3ztnIn3kzYqogsA
+id: media.image.field_media_height
+field_name: field_media_height
+entity_type: media
+bundle: image
+label: Hauteur
+description: 'Ne rien saisir. La valeur de ce champ sera renseignée automatiquement à la fin du téléchargement. La hauteur de l''image envoyée est calculée par le système.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ' pixel|pixels'
+field_type: integer

@@ -1,0 +1,5 @@
+name: 'Icdc Didomi'
+type: module
+description: 'The ICDC Didomi module integrates Didomi''s Consent Management Platform into Drupal'
+core_version_requirement: ^8 || ^9
+package: 'Custom'

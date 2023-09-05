@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_blog.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Render\BubbleableMetadata;
+
+
+/**
+ * Implements hook_help().
+ */
+function icdc_metatags_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_investors module.
+    case 'help.page.icdc_metatags':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Manage custom metatags tokens.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function icdc_metatags_token_info() {
+  $info = [];
+  $info['types']['icdc'] = ['name' => t('ICDC'), 'description' => t('Custom tokens for ICDC')];
+  $info['tokens']['icdc']['logo'][] = 'Site logo path';
+  $info['tokens']['icdc']['logo-url'][] = 'Site logo complete URL';
+
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function  icdc_metatags_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
+
+  if ($type == 'icdc') {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'logo':
+          $replacements[$original] = '';
+          if ($path = theme_get_setting('logo')) {
+            $replacements[$original] = $path['path'];
+          }
+          break;
+        case 'logo-url':
+          $replacements[$original] = '';
+          if ($uri = theme_get_setting('logo.url')) {
+            $host = \Drupal::request()->getSchemeAndHttpHost();
+            $replacements[$original] = $host.$uri;
+          }
+          break;
+      }
+    }
+  }
+
+  return $replacements;
+}

@@ -1,0 +1,6 @@
+name: ICDC Statics Blocks
+type: module
+description: Provide some custom statics blocks
+package: ICDC
+core: 8.x
+core_version_requirement: ^8 || ^9

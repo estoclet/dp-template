@@ -1,0 +1,19 @@
+uuid: 40653da8-a4c1-446b-a916-4afe87738565
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_audio_uri
+    - media.type.audio
+id: media.audio.field_media_audio_uri
+field_name: field_media_audio_uri
+entity_type: media
+bundle: audio
+label: URI
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

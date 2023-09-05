@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains number_formatter.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function number_formatter_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the number_formatter module.
+    case 'help.page.number_formatter':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provide a formatter for number fields') . '</p>';
+      return $output;
+
+    default:
+  }
+}

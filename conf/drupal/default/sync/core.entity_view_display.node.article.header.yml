@@ -1,0 +1,71 @@
+uuid: 35ed6f46-7f76-498c-89e1-10375dc47959
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.header
+    - field.field.node.article.field_background_color
+    - field.field.node.article.field_chapo
+    - field.field.node.article.field_image_teaser_reference
+    - field.field.node.article.field_media_reference
+    - field.field.node.article.field_menu_tag
+    - field.field.node.article.field_metatag
+    - field.field.node.article.field_node_references
+    - field.field.node.article.field_paragraphs
+    - field.field.node.article.field_short_title
+    - field.field.node.article.field_site
+    - field.field.node.article.field_site_page
+    - field.field.node.article.field_site_page_type
+    - field.field.node.article.field_snippet_seo
+    - node.type.article
+  module:
+    - color_field
+    - field_formatter_class
+    - user
+_core:
+  default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
+id: node.article.header
+targetEntityType: node
+bundle: article
+mode: header
+content:
+  field_background_color:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: header
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_chapo: true
+  field_image_teaser_reference: true
+  field_menu_tag: true
+  field_metatag: true
+  field_node_references: true
+  field_paragraphs: true
+  field_short_title: true
+  field_site: true
+  field_site_page: true
+  field_site_page_type: true
+  field_snippet_seo: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

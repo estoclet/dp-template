@@ -1,0 +1,4 @@
+icdc_search.search_modal:
+  version: VERSION
+  js:
+    js/icdc_search_modal.js: {}

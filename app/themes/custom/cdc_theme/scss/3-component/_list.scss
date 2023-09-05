@@ -1,0 +1,118 @@
+/**
+ * @file
+ * File List Styling .
+ */
+
+
+ul {
+
+  .field--name-field-pg-content &,
+  .node--type-gouvernance .field--name-body &,
+  .block-wysiwyg .field--name-body & {
+    list-style: none;
+
+    & > li {
+      display: block;
+      padding-left: 1.7rem;
+      margin-bottom: .5rem;
+      position: relative;
+
+      &::before {
+        content: '';
+        height: .7rem;
+        width: .7rem;
+        position: absolute;
+        top: .7rem;
+        left: 0;
+        background-color: red;
+      }
+
+      & > ul { // level 2
+        margin-top: .5rem;
+
+        & > li {
+
+          &:last-child {
+            margin: 0;
+          }
+
+          &::before {
+            height: .5rem;
+            width: .5rem;
+            border-radius: 50%;
+            top: .8rem;
+          }
+
+          & > ul { // level 3
+
+            & > li {
+              &::before {
+                height: .3rem;
+                width: .3rem;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//numeric list
+
+ol {
+
+  .field--name-field-pg-content & {
+    list-style: none;
+    counter-reset: wysiwyg-list;
+
+    & > li {
+      display: block;
+      counter-increment: wysiwyg-list;
+      margin-bottom: .5rem;
+      position: relative;
+      padding-left: 2.1rem;
+
+      &::before {
+        content: counter(wysiwyg-list) ' .';
+        margin-right: .5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      ol { // level 2
+        margin-top: .5rem;
+
+        & > li {
+
+          &:last-child {
+            margin: 0;
+          }
+
+
+          & > ol {
+
+            & > li {
+
+              &:last-child {
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.block-wysiwyg {
+  &.block-layout-builder {
+    ul {
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+/**
+ * @file
+ * File Component Styling - Default style for file module.
+ */
+
+
+.doc-display {
+  width: 100%;
+  max-width: 665px;
+  margin-bottom: 1.5rem;
+  //margin-top: 15px;
+
+  &.heading {
+    a {
+      font-size: 2rem;
+    }
+  }
+
+  .doc-link-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    button {
+      padding-left: 1rem;
+      padding-right: 0;
+      background: none;
+      border: 0;
+      box-shadow: none;
+
+      .cdcicon {
+        display: block;
+        margin-top: -2px;
+        color: $gris-picto;
+      }
+    }
+  }
+
+  a {
+    display: flex;
+    border-bottom: 2px solid transparent;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $noir-web;
+
+    &:hover,
+    &:focus {
+      color: $couleur-rouge;
+      border-bottom: 2px solid $couleur-rouge;
+      text-decoration: none;
+    }
+  }
+
+  .doc-name {
+    display: inline-block;
+    width: 84%;
+    margin-right: 2rem;
+    line-height: 1.7rem;
+  }
+
+  .doc-info {
+    width: 80px;
+    margin-right: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 1.7rem;
+    font-family: $body-font;
+  }
+
+  .icon-download {
+    font-size: 1.5rem;
+  }
+
+  .doc-desc {
+    margin-top: 1rem;
+    max-width: 590px;
+    color: $gris;
+    font-size: 1.2rem;
+  }
+
+  &.doc-display-collapse {
+    max-width: 690px;
+
+    .doc-link-detail {
+      & > a {
+        max-width: 665px;
+        width: 100%;
+
+        @media (min-width: $screen-md-min) {
+          min-width: 665px;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,30 @@
+uuid: ba71d282-b6c2-49b6-932a-424c5cbe86f1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_media_reference
+    - media.type.instagram
+    - media.type.twitter
+    - paragraphs.paragraphs_type.pg_insert_rs
+id: paragraph.pg_insert_rs.field_pg_media_reference
+field_name: field_pg_media_reference
+entity_type: paragraph
+bundle: pg_insert_rs
+label: Publication
+description: 'Sélectionnez dans la bibliothèque ou ajoutez l''URL d''une publication en provenance de Twitter ou Instagram. La publication s''affichera dans son intégralité au sein de la page.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      instagram: instagram
+      twitter: twitter
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: instagram
+field_type: entity_reference

@@ -1,0 +1,499 @@
+.page-node-type-parcours-de-vie {
+  .region-highlighted {
+    .block-entity-viewnode {
+      margin-bottom: -1rem;
+    }
+  }
+}
+
+.node--type-parcours-de-vie.node--view-mode-full,
+.header-parcours-vie,
+.content-parcours-vie {
+  .wrapper-svg {
+    position: relative;
+
+    & > div {
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      &.field--name-field-pg-svg-illustrated {
+        position: relative;
+        z-index: -1;
+      }
+
+      &.field--name-field-pg-svg-wired {
+        position: absolute;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+}
+
+.story-separator {
+  content: '';
+  width: 1px !important;
+  height: 1px;
+  line-height: 0;
+  max-height: 100%;
+  background-color: $couleur-rouge;
+  border-color: transparent transparent $couleur-rouge;
+  position: relative;
+  z-index: -2;
+  border: solid 1px $couleur-rouge;
+  border-radius: 1px 100%;
+  display: none;
+
+  @media (min-width: $screen-md-min) {
+    display: block;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    border: solid 2px $couleur-rouge;
+    border-radius: 2px 100%;
+  }
+}
+
+
+// Header partagé par la taxonomie et par le type de contenu
+.header-parcours-vie,
+.content-parcours-vie {
+  @extend %xl-wrapper;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 0;
+
+  @media (min-width: $screen-xs-min) {
+    margin-top: 4rem;
+  }
+
+  & > div {
+    @media (min-width: $screen-sm-min) {
+      display: flex;
+      position: relative;
+    }
+
+    .content-left {
+      position: relative;
+      margin-left: 6%;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, .7) 100%);
+      margin-bottom: 4rem;
+
+      @media (min-width: $screen-sm-min) {
+        margin-bottom: 0;
+        width: 50%;
+        background: none;
+      }
+
+      .page-title {
+        margin-top: 0;
+        margin-bottom: 2rem;
+
+        @media (min-width: $screen-xs-min) {
+          margin-top: 6rem;
+        }
+
+        @media (min-width: $screen-sm-min) {
+          padding-right: 25%;
+        }
+
+        @media (min-width: $screen-md-min) {
+          margin-top: 8rem;
+          padding-right: 33%;
+        }
+
+      }
+
+      .field--name-field-pg-text {
+        margin-top: 1rem;
+      }
+
+      .chapo {
+        padding-right: 3rem;
+        padding-bottom: 2rem;
+        margin-bottom: 0;
+
+        @media (min-width: $screen-sm-min) {
+          padding-right: 15%;
+        }
+      }
+
+    }
+
+    .content-full{
+      width: 100%;
+      padding: 0 6%;
+      margin-bottom: 6rem;
+    }
+
+    .wrapper-svg {
+      position: relative;
+      z-index: -1;
+      top: 0;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: $white;
+
+      @media (min-width: $screen-xs-min) {
+        position: absolute;
+      }
+
+
+      @media (min-width: $screen-xl-min) {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        right: 0;
+        width: 100%;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+    }
+  }
+
+  .scroll {
+    position: relative;
+    display: inline-block;
+    margin: 4rem auto;
+    width: 100%;
+    text-align: center;
+    font-size: 1.4rem;
+    color: $gris;
+  }
+
+  .story-separator {
+    position: absolute;
+    bottom: 0;
+    height: 30rem !important;
+    left: calc(50% - 1px);
+
+    @media (min-width: $screen-lg-min) {
+      left: calc(50% - 2px);
+    }
+  }
+}
+
+// Uniquement page de taxonomie
+.view-header-parcours {
+
+  .header-parcours-vie,
+  .content-parcours-vie {
+    & > div {
+
+      .content-left {
+
+        .page-title {
+          margin-bottom: 2rem;
+
+          @media (min-width: $screen-md-min) {
+
+          }
+
+          @media (min-width: $screen-xs-min) {
+            margin-top: 4rem;
+          }
+
+          @media (min-width: $screen-md-min) {
+            margin-top: 6rem;
+            padding-right: 45%;
+          }
+        }
+
+        .chapo {
+          @media (min-width: $screen-sm-min) {
+            padding-right: 25%;
+          }
+        }
+
+        .context {
+          color: $couleur-rouge;
+          font-weight: 600;
+          font-size: 2.3rem;
+          margin-top : 8rem;
+          padding-right: 1.5rem;
+
+          @media (max-width: $screen-lg-max) {
+            font-size: 2.1rem;
+            margin-top : 4rem;
+          }
+
+          @media (max-width: $screen-md-max) {
+            font-size: 1.8rem;
+            margin-top : 2rem;
+          }
+
+          @media (max-width: $screen-sm-max) {
+            font-size: 1.7rem;
+            margin-top : 1rem;
+          }
+        }
+      }
+
+      .wrapper-svg {
+        top: 0;
+
+        @media (min-width: $screen-xs-min) {
+          top: -6rem;
+        }
+      }
+    }
+  }
+}
+
+.node--type-parcours-de-vie {
+  &.node--view-mode-full {
+
+    .field--name-field-pg-story {
+
+      position: relative;
+
+      .story-separator {
+        bottom: 0;
+        left: calc(100% - 1px);
+
+        @media (min-width: $screen-lg-min) {
+          left: calc(100% - 2px);
+        }
+      }
+
+      .paragraph--type--story {
+        position: relative;
+        margin-top: 0;
+        overflow: hidden;
+
+        .wrapper-xxl {
+          @media (min-width: $screen-md-min) {
+            display: flex;
+            justify-content: space-between;
+          }
+
+          .wrapper-svg,
+          .wrapper-texte {
+            width: 100%;
+
+            @media (min-width: $screen-md-min) {
+              width: 50%;
+            }
+          }
+
+          .wrapper-texte {
+            max-width: 630px;
+            margin: 0 auto;
+            padding: 0 3rem 3rem;
+
+            @media (min-width: $screen-md-min) {
+              padding: 10rem 3rem 3rem;
+            }
+          }
+
+          .wrapper-svg {
+            vertical-align: top;
+            line-height: 0;
+            position: relative;
+
+            @media (max-width: $screen-sm-max) {
+              margin: 0 auto;
+            }
+
+            svg {
+              width: 960px;
+              height: 960px;
+              overflow: visible;
+            }
+          }
+        }
+
+        .experience {
+          margin-bottom: 2rem;
+
+          @media (min-width: $screen-sm-min) {
+            display: flex;
+            justify-content: space-between;
+          }
+
+          .experience-identity {
+            font-weight: 700;
+            font-size: 1.8rem;
+            p{
+              margin-bottom: 0;
+            }
+
+            .field--name-field-pg-identity {
+              display: inline-block;
+            }
+
+            .field--name-field-pg-description {
+              font-size: 1.3rem;
+              font-weight: 400;
+              color: $gris-moyen;
+            }
+          }
+
+          .experience-retranscription {
+            display: flex;
+            align-items: center;
+            color: $couleur-rouge;
+            font-weight: 700;
+            font-size: 1.1rem;
+
+            &:before {
+              display: inline-block;
+              margin-right: 5px;
+              content: $cdcicon-type-podcast;
+              font-family: $icomoon-font-family;
+              font-size: 2rem;
+            }
+
+            a {
+              color: $couleur-rouge;
+              font-weight: 700;
+
+              &:hover {
+                color: $couleur-rouge;
+              }
+            }
+          }
+        }
+
+        .field--name-field-pg-audio {
+          margin-bottom: 2rem;
+          padding: 1rem;
+          background: $gris-clair;
+          .soundcloud-content{
+            >p {
+              background-color: $black;
+              text-align: center;
+              margin-bottom: 0;
+              &:first-of-type{
+                padding-bottom: 1.875rem;
+              }
+              &:last-of-type{
+                padding-bottom: .625rem;
+                .btn-primary{
+                  &:focus{
+                    @include focus($white, .2rem, 3px);
+                  }
+                }
+              }
+            }
+          }
+          iframe {
+            border: 0;
+          }
+        }
+
+        .paragraph--type--pg-chiffre {
+          margin-top: 0;
+          color: $couleur-rouge;
+
+          @media (min-width: $screen-sm-min) {
+            display: flex;
+            align-items: center;
+          }
+
+          .field--name-field-pg-key-figure {
+            white-space: nowrap;
+          }
+
+          .field--name-field-pg-key-label {
+            @media (min-width: $screen-sm-min) {
+              margin-left: 2rem;
+            }
+          }
+        }
+
+        .field--name-field-pg-introduction {
+          margin-bottom: 2rem;
+        }
+      }
+
+      & > .field--item {
+
+        &:nth-of-type(odd) {
+          .paragraph--type--story {
+            .wrapper-xxl {
+              @media (min-width: $screen-md-min) {
+                flex-direction: row-reverse;
+              }
+            }
+
+            .story-separator {
+              left: auto;
+              right: 2px;
+            }
+          }
+        }
+      }
+
+      .field--name-field-pg-svg-wired {
+        margin: 0 auto;
+      }
+    }
+
+  }
+}
+
+// Uniquement page de taxonomie
+.block-views-blockcontent-parcours-block-1 {
+  padding: 80px 0;
+
+  .view-content-parcours {
+    @extend %large-wrapper;
+
+    .view-content {
+      text-align: center;
+
+      .views-row {
+        display: inline-block;
+        margin: 0 30px;
+      }
+    }
+  }
+
+  h3 {
+    padding: 0;
+  }
+
+  a {
+    font-weight: 700;
+    font-family: $body-font;
+    color: $noir-web;
+    font-size: 4.8rem;
+
+    @media (max-width: $screen-lg-max) {
+      font-size: 4.2rem;
+    }
+
+    @media (max-width: $screen-md-max) {
+      font-size: 3.8rem;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 3.2rem;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 2.8rem;
+    }
+
+
+    &:hover,
+    &:focus {
+      color: $gris-moyen;
+      background: none;
+    }
+  }
+}

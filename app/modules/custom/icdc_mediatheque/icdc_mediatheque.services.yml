@@ -1,0 +1,5 @@
+services:
+  icdc_mediatheque.ausha_api_service:
+    class: Drupal\icdc_mediatheque\Services\AushaAPIService
+    tags:
+      - { name: icdc_mediatheque }

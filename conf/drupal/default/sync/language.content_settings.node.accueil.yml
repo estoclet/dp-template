@@ -1,0 +1,18 @@
+uuid: e28b48e0-70ad-45d6-9f50-a9e7d8ed6e93
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.accueil
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.accueil
+target_entity_type_id: node
+target_bundle: accueil
+default_langcode: site_default
+language_alterable: true

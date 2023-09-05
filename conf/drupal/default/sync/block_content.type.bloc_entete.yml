@@ -1,0 +1,8 @@
+uuid: 84a18f40-210b-4229-a3cc-16044cc317f2
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_entete
+label: 'Bloc d''entête'
+revision: 1
+description: 'Un bloc utilisé en entête des pages dynamique (exemples page de listing, formulaire).'

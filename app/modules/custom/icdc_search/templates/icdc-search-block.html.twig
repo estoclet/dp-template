@@ -1,0 +1,38 @@
+{#
+/**
+* @file
+* Default theme implementation to display a block.
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+{% set classes = [
+    'icdc-search-block',
+] %}
+<div{{ attributes.addClass(classes) }}>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-nude button-menu button-menu--search" data-toggle="modal" data-target="#icdcSearchBlock" aria-expanded="false" aria-controls="icdcSearchBlock">
+    <span class="cdcicon cdcicon-loupe-2 button-menu__icon" aria-hidden="true"></span><span class="button-menu__label">Recherche</span>
+  </button>
+  <!-- Modal -->
+  <div class="modal modal--full-page fade" id="icdcSearchBlock" tabindex="-1" role="dialog" aria-label="Zone de recherche" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="{% trans %}Fermer la zone de recherche{% endtrans %}">
+            <span aria-hidden="true" class="cdcicon cdcicon-croix modal--full-page-btn-close"></span>
+            Fermer
+          </button>
+        </div>
+        <div class="modal-body search-body">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

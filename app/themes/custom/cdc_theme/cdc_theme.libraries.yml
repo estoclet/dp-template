@@ -1,0 +1,48 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/tiny-slider.css: { preprocess: false, attributes: { data-matomo-href: tiny-slider.css } }
+      css/jquery.mCustomScrollbar.css: { preprocess: false, attributes: { data-matomo-href: jquery.mCustomScrollbar.css } }
+      css/main.css: { preprocess: false, weight: 10 , attributes: { data-matomo-href: main.css } }
+  js:
+    js/polyfills/polyfillClosest.js: {}
+    js/polyfills/polyclip.js: {}
+    js/packages/counterUp/jquery.waypoints.js: {}
+    js/packages/counterUp/jquery.counterup.min.js: {}
+    js/packages/tiny-slider.js: {}
+    js/packages/tiny-slider-A11Y.js: {}
+    js/packages/jquery.mCustomScrollbar.concat.min.js: {}
+    js/packages/soundCloudWidget.api.js: {}
+    js/packages/jquery.drawsvg.min.js: {}
+    js/packages/canvg.js: {}
+    js/packages/masonry.pkgd.min.js: {}
+    js/packages/gsap.min.js: {}
+    js/packages/ScrollMagic.min.js: {}
+    js/main.js: {}
+    js/menu.js: {}
+    js/reading-time.js: {}
+    js/animation.js: {}
+  dependencies:
+  #   - drupal:ckeditor
+  #   - drupal:editor
+  #   - core/drupal.ajax
+  #   - core/drupal
+    - core/jquery.once
+    - core/once
+    - jquery_ui_datepicker/datepicker
+
+bootstrap:
+  remote: http://getbootstrap.com/
+  license:
+    name: MIT
+    gpl-compatible: false
+  js:
+    /libraries/bootstrap/dist/js/bootstrap.js: { minified: true }
+    /libraries/popper.js/dist/umd/popper.min.js: {}
+  css:
+    theme:
+      /libraries/bootstrap/dist/css/bootstrap.css: { weight: 0 }
+  dependencies:
+    - core/jquery
+    - core/modernizr

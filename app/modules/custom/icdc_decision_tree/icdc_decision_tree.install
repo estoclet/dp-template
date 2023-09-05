@@ -1,0 +1,32 @@
+<?php
+
+use Drupal\Core\Config\FileStorage;
+
+/**
+ * Implements hook_install().
+ *
+ * Add root term for decision tree.
+ */
+function icdc_decision_tree_install() {
+  $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->create(
+    [
+      'name' => 'Comment pouvons-nous vous aider ?',
+      'vid' => 'decision_tree',
+      'field_tree_level' => 'parent',
+      'field_tree_keyword' => 'Je souhaite',
+    ]
+  );
+
+  $term->save();
+
+  $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->create(
+    [
+      'name' => 'Comment pouvons-nous vous aider ?',
+      'vid' => 'decision_tree_sponsorship',
+      'field_tree_level' => 'parent',
+      'field_tree_keyword' => 'Je souhaite',
+    ]
+  );
+
+  $term->save();
+}

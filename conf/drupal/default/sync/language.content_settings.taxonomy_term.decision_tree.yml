@@ -1,0 +1,18 @@
+uuid: cc779327-82bd-41ef-92d0-306c19868d04
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.decision_tree
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.decision_tree
+target_entity_type_id: taxonomy_term
+target_bundle: decision_tree
+default_langcode: site_default
+language_alterable: false

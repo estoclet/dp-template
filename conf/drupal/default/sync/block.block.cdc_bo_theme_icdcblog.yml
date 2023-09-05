@@ -1,0 +1,26 @@
+uuid: 5edc208e-44ec-4d43-bc44-94d83b6cb047
+langcode: fr
+status: true
+dependencies:
+  module:
+    - icdc_blog
+    - system
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_icdcblog
+theme: cdc_bo_theme
+region: content
+weight: -20
+provider: null
+plugin: icdc_blog
+settings:
+  id: icdc_blog
+  label: 'ICDC Blog'
+  label_display: '0'
+  provider: icdc_blog
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/blog\r\n/blog/*\r\n!/blog/auteurs\r\n!/blog/auteurs/*"

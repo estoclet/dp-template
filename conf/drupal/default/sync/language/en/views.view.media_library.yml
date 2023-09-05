@@ -1,0 +1,19 @@
+display:
+  default:
+    display_title: Default
+    display_options:
+      title: Media
+      empty:
+        area_text_custom:
+          content: 'No media available.'
+      filters:
+        langcode:
+          expose:
+            label: Language
+  widget_table:
+    display_options:
+      fields:
+        thumbnail__target_id:
+          label: Thumbnail
+        uid:
+          label: Author

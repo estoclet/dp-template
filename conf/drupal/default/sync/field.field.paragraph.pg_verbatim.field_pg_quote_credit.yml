@@ -1,0 +1,21 @@
+uuid: f206f376-1952-4a4d-9d5c-068370621076
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_quote_credit
+    - paragraphs.paragraphs_type.pg_verbatim
+_core:
+  default_config_hash: BOXWCOkNXevGbCAGpxURYYIDuuWNvL3mkKNrh3pYiJg
+id: paragraph.pg_verbatim.field_pg_quote_credit
+field_name: field_pg_quote_credit
+entity_type: paragraph
+bundle: pg_verbatim
+label: Auteur
+description: 'Saisissez l''auteur de la citation. Exemple : Pierre Dupont, directeur'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

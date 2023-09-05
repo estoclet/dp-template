@@ -1,0 +1,18 @@
+uuid: e0092dc4-d09d-4b12-b9d1-83a510fca309
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_home_strate_instit
+id: paragraph.pg_home_strate_instit.created
+field_name: created
+entity_type: paragraph
+bundle: pg_home_strate_instit
+label: 'Écrit le'
+description: 'Heure de création du paragraphe.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

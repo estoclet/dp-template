@@ -1,0 +1,19 @@
+uuid: 0b9c0924-9384-4a9b-afe4-cd703f21691e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - commerce_order
+    - link
+id: commerce_order.field_webform_don_express
+field_name: field_webform_don_express
+entity_type: commerce_order
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

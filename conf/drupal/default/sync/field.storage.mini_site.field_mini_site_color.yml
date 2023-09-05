@@ -1,0 +1,20 @@
+uuid: 67def509-da57-4038-b145-05bfc66aa404
+langcode: fr
+status: true
+dependencies:
+  module:
+    - color_field
+    - mini_sites
+id: mini_site.field_mini_site_color
+field_name: field_mini_site_color
+entity_type: mini_site
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

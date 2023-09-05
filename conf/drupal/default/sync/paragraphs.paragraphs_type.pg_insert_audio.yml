@@ -1,0 +1,16 @@
+uuid: 048dfdf7-0da8-49f2-8aef-ecddfb8d2e5a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - style_options
+_core:
+  default_config_hash: gh1_FkVjxed8Z1EqqaPb64p9LECow6Kg3J8HUL9Sd1Y
+id: pg_insert_audio
+label: 'Encart audio(s)'
+icon_uuid: null
+icon_default: null
+description: 'Un encart avec une mise en forme pré-formatée pour l''affichage d''un ou plusieurs médias audio.'
+behavior_plugins:
+  style_options:
+    enabled: true

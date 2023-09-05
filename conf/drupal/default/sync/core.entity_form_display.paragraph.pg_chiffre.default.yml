@@ -1,0 +1,51 @@
+uuid: 79a280b2-86d5-4d05-90f1-8d4df88e4a01
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pg_chiffre.field_pg_key_figure
+    - field.field.paragraph.pg_chiffre.field_pg_key_figure_alt
+    - field.field.paragraph.pg_chiffre.field_pg_key_label
+    - field.field.paragraph.pg_chiffre.paragraph_view_mode
+    - paragraphs.paragraphs_type.pg_chiffre
+  module:
+    - paragraph_view_mode
+id: paragraph.pg_chiffre.default
+targetEntityType: paragraph
+bundle: pg_chiffre
+mode: default
+content:
+  field_pg_key_figure_alt:
+    type: number
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_pg_key_label:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  paragraph_view_mode:
+    type: paragraph_view_mode
+    weight: -100
+    region: content
+    settings:
+      view_modes:
+        default: Default
+      default_view_mode: default
+      form_mode_bind: true
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_pg_key_figure: true
+  status: true

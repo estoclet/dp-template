@@ -1,0 +1,8 @@
+uuid: 3b20cfcd-8995-4d23-bddc-0d8d41e47bc1
+langcode: fr
+status: true
+dependencies: {  }
+id: unpublished
+label: Dépublié
+published: false
+default_revision: true

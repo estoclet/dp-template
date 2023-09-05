@@ -1,0 +1,352 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\Datetime\DrupalDateTime;
+
+/**
+ * @file
+ * Module DRS  Tweaks.
+ */
+
+
+/**
+ * Provides more twig variables for the file-link.html.twig template.
+ *
+ * Add the "file-link.html.twig" template to your theme and adjust as needed.
+ *
+ * Twig variables:
+ * - {{ fileLinkDisplay.fileBundle }}
+ * - {{ fileLinkDisplay.fileCreatedTime }}
+ * - {{ fileLinkDisplay.fileChangedTime }}
+ * - {{ fileLinkDisplay.fileFid }}
+ * - {{ fileLinkDisplay.fileLangcode }}
+ * - {{ fileLinkDisplay.fileMime }}
+ * - {{ fileLinkDisplay.fileName }}
+ * - {{ fileLinkDisplay.fileOwnerId }}
+ * - {{ fileLinkDisplay.fileOwnerName }}
+ * - {{ fileLinkDisplay.fileOwnerUserPictureUrl }}
+ * - {{ fileLinkDisplay.fileSize }}
+ * - {{ fileLinkDisplay.fileSizeFormatted }}
+ * - {{ fileLinkDisplay.fileStatus }}
+ * - {{ fileLinkDisplay.fileUrl }}
+ * - {{ fileLinkDisplay.fileUuid }}
+ */
+
+function _dc1_tweaks_format_file_size($size) {
+    $mod = 1024;
+    $units = explode(' ','B KB MB GB TB PB');
+    for ($i = 0; $size > $mod; $i++) {
+        $size /= $mod;
+    }
+    return round($size, 2) . ' ' . $units[$i];
+}
+
+function dc1_tweaks_preprocess_file_link(&$variables)
+{
+    if (isset($variables['file'])) {
+        setlocale(LC_TIME, "fr_FR");
+        $fileExtention = pathinfo($variables['file']->getFileUri(), PATHINFO_EXTENSION);
+        $fileName = pathinfo($variables['file']
+            ->getFilename())['filename'];
+
+        $variables['link']['#title'] = $fileName;
+
+        $dateTime = new DrupalDateTime(date("d F Y",$variables['file']->getChangedTime()), new DateTimeZone('UTC'));
+        $date = $dateTime->format('d F Y');
+
+        $filesize_formatted = _dc1_tweaks_format_file_size($variables['file']->getSize());
+
+        $variables['fileLinkDisplay'] = [
+            'fileBundle' => $variables['file']
+                ->bundle(),
+            'fileCreatedTime' => $variables['file']
+                ->getCreatedTime(),
+            'fileChangedTime' => $date,
+            'fileFid' => $variables['file']
+                ->fid->value,
+            'fileLangcode' => $variables['file']
+                ->langcode->value,
+            'fileExtension' => $fileExtention,
+            'fileMime' => $variables['file']
+                ->getMimeType(),
+            'fileName' => $fileName,
+            'fileOwnerId' => $variables['file']
+                ->getOwnerId(),
+            'fileOwnerName' => $variables['file']
+                ->getOwner()->name->value,
+            'fileSize' => $variables['file']
+                ->getSize(),
+            'fileSizeFormatted' => $filesize_formatted,
+            'fileStatus' => $variables['file']
+                ->status->value,
+            'fileUrl' => file_create_url($variables['file']
+                ->getFileUri()),
+            'fileUuid' => $variables['file']
+                ->uuid->value,
+        ];
+
+        $fileFid = $variables['fileLinkDisplay']['fileFid'];
+        $link_options = array(
+            'attributes' => array(
+                'id' => $variables['fileLinkDisplay']['fileFid'].'-link',
+                'aria-labelledby' => $fileFid.'-telecharger '.$fileFid.'-link '.$fileFid.'-ext-poids',
+                'target' => array(
+                    '_blank'
+                ),
+            ),
+        );
+        $variables['link']['#url']->setOptions($link_options);
+    }
+}
+
+function dc1_tweaks_preprocess_media(&$variables)
+{
+    $file = null;
+    if(isset($variables['media']->field_media_document)) {
+      $file = $variables['media']->field_media_document->entity;
+    }
+    if ($file !== null) {
+        $file->setFilename(pathinfo($variables['name'])['filename'] . '.' . pathinfo($file->getFileUri(), PATHINFO_EXTENSION));
+    }
+}
+
+
+function _get_menu($menu_name)
+{
+
+    $menu_tree = \Drupal::menuTree();
+    $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+    $tree = $menu_tree->load($menu_name, $parameters);
+    $manipulators = [
+        // Only show links that are accessible for the current user.
+        ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+        // Use the default sorting of menu links.
+        ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+    ];
+    $tree = $menu_tree->transform($tree, $manipulators);
+    $menu = $menu_tree->build($tree);
+
+    $render_service = \Drupal::service('renderer');
+    return ['#markup' => $render_service->renderPlain($menu)];
+}
+
+function dc1_tweaks_field_widget_paragraphs_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
+    // if($element['#paragraph_type'] == 'image') {
+    //   $form = $element['subform'];
+    //   $form['field_click_behavior']['widget']['#states'] = [
+    //     'invisible' => [
+    //       ':input[name="field_paragraph[0][subform][field_click_image][value]"]' => ['checked' => FALSE],
+    //     ]
+    //   ];
+    //   $form['field_document_source']['widget']['#states'] = [
+    //     'visible' => [
+    //       ':input[name="field_paragraph[0][subform][field_click_image][value]"]' => ['checked' => TRUE],
+    //       'and',
+    //       ':input[name="field_paragraph[0][subform][field_click_behavior]"]' => ['value' => 'document']
+    //     ]
+    //   ];
+    //   $form['field_document']['widget']['#states'] = [
+    //     'visible' => [
+    //       ':input[name="field_paragraph[0][subform][field_click_image][value]"]' => ['checked' => TRUE],
+    //       'and',
+    //       ':input[name="field_paragraph[0][subform][field_click_behavior]"]' => ['value' => 'document'],
+    //       'and',
+    //       ':input[name="field_paragraph[0][subform][field_document_source]"]' => ['value' => 'internal'],
+    //     ]
+    //   ];
+    //   $form['field_external_document']['widget'][0]['#states'] = [
+    //     'visible' => [
+    //       ':input[name="field_paragraph[0][subform][field_click_image][value]"]' => ['checked' => TRUE],
+    //       'and',
+    //       ':input[name="field_paragraph[0][subform][field_click_behavior]"]' => ['value' => 'document'],
+    //       'and',
+    //       ':input[name="field_paragraph[0][subform][field_document_source]"]' => ['value' => 'external'],
+    //     ]
+    //   ];
+    //   $element['subform'] = $form;
+    // }
+  }
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function dc1_tweaks_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+
+    if (isset($form['#id']) && ($form['#id'] == 'views-exposed-form-news-all-news-filter' || $form['#id'] == 'views-exposed-form-events-all-news-filter' || $form['#id'] == 'views-exposed-form-folders-block-1')) {
+
+        if ($form['#id'] == 'views-exposed-form-news-all-news-filter') {
+            $type = 'news';
+        } else if($form['#id'] == 'views-exposed-form-events-all-news-filter'){
+            $type = 'event';
+        } else{
+            $type = 'folders';
+        }
+
+        $options = getYearsFilter($type);
+
+        $form['field_year_value'] = [
+            '#title' => new TranslatableMarkup('Année'),
+            '#type' => 'select',
+            '#options' => $options,
+            '#size' => NULL,
+            '#default_value' => '',
+        ];
+    }
+
+    if ($form['#id'] == 'views-exposed-form-elasticsearch-dc1-page-1') {
+        $options_remove = ['page', 'custom_pages', 'homepage', 'custom_pages', 'books', 'les_breves', 'the_studies', 'statistics'];
+        foreach ($options_remove as $options_remove) {
+            unset($form['type']['#options'][$options_remove]);
+        }
+
+        unset($form['search_api_fulltext']['#size']);
+
+        $form['type']['#options']['publication'] = 'Publication';
+        array_unshift($form['#submit'], 'custom_submit_search_form');
+    }
+
+
+}
+
+
+function custom_submit_search_form($form, &$form_state)
+{
+
+
+    if ($form_state->getValue('type')['publication'] === 'publication') {
+        $form_state->setValue(['type', 'publication'], 0);
+        $form_state->setValue(['type', 'books'], 'books');
+        $form_state->setValue(['type', 'les_breves'], 'les_breves');
+        $form_state->setValue(['type', 'the_studies'], 'the_studies');
+        $form_state->setValue(['type', 'statistics'], 'statistics');
+        $form_state->setValue(['type', 'archives'], 'archives');
+    }
+
+}
+
+function dc1_tweaks_node_presave(Drupal\node\NodeInterface $node)
+{
+
+    $bundle = $node->bundle();
+    if ($bundle == 'event') {
+        $date = $node->get('field_date_start')->value;
+        $cid = 'dc1_tweaks:' . $bundle . ':year';
+        $data = \Drupal::cache()->get($cid);
+        if ($data) {
+            $options = $data->data;
+            if ($date) {
+                $year = dateToYear($date);
+                if (!isset($options[$year])) {
+                    Cache::invalidateTags(['node:' . $bundle . ':year']);
+                }
+            }
+        }
+        if ($date) {
+            $node->set('field_year', dateToYear($date));
+        }
+    }
+
+    if ($node->bundle() == 'news' || $node->bundle() == 'folders' ) {
+        $year = date("Y");
+        $cid = 'dc1_tweaks:' . $bundle . ':year';
+        $data = \Drupal::cache()->get($cid);
+        if ($data) {
+            $options = $data->data;
+            if (!isset($options[$year])) {
+                Cache::invalidateTags(['node:' . $bundle . ':year']);
+            }
+        }
+        $node->set('field_year', $year);
+    }
+
+
+}
+
+
+function dc1_tweaks_preprocess_menu(&$variables, $hook)
+{
+    if ($hook == 'menu__main') {
+        foreach ($variables['items'] as $key => $item) {
+            try {
+                $entity = \Drupal::service('entity.repository')->loadEntityByUuid('menu_link_content', str_replace('menu_link_content:', '', $key));
+
+            } catch (PluginNotFoundException $e) {
+                return 'Impossible load entity';
+            }
+
+            if (!is_null($entity)) {
+                $variables['items'][$key]['is_expanded'] = $entity->isExpanded();
+            }
+            if ($variables['items'][$key]['is_expanded'] == FALSE) {
+                unset($variables['items'][$key]['below']);
+            }
+        }
+    }
+}
+
+
+function dc1_tweaks_form_alter(&$form, &$form_state, $form_id)
+{
+
+    if ($form_id == 'node_homepage_edit_form' || $form_id == 'node_domaine_landing_edit_form') {
+        $form['#attached']['library'][] = 'dc1_tweaks/backoffice-display-field';
+    }
+}
+
+
+function getYearsFilter($type)
+{
+
+    $options = &drupal_static(__FUNCTION__);
+    if (is_null($options)) {
+        $cid = 'dc1_tweaks:' . $type . ':year';
+        $data = \Drupal::cache()->get($cid);
+
+        if (!$data) {
+            $options = [];
+            $options[''] = new TranslatableMarkup('Sélectionner…');
+            $query = \Drupal::entityQuery('node');
+            $query
+                ->condition('type', $type)
+                ->condition('status', 1)
+                ->sort('field_year', 'ASC');
+            $result = $query->execute();
+
+            if ($result) {
+                $nodes = Node::loadMultiple($result);
+
+                foreach ($nodes as $node) {
+                    $year = $node->field_year->value;
+                    if (!isset($options[$year])) {
+                        $options[$year] = $year;
+                    }
+                }
+            }
+
+            $cache_tags = ['node:' . $type . ':year'];
+            \Drupal::cache()->set($cid, $options, CacheBackendInterface::CACHE_PERMANENT, $cache_tags);
+        } else {
+            $options = $data->data;
+
+        }
+
+
+    }
+    return $options;
+}
+
+
+function dateToYear($date)
+{
+    $dateTime = new DrupalDateTime($date, new DateTimeZone('UTC'));
+    return $dateTime->format('Y');
+}
+
+function dc1_tweaks_js_alter(&$javascript) {
+    // Override Extlink module Js File for accessibility
+    $javascript['modules/contrib/extlink/extlink.js']['data'] = drupal_get_path('module', 'dc1_tweaks') . '/js/extlink-override.js';
+}

@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Theme override to display a single Drupal page while offline.
+ *
+ * All available variables are mirrored in page.html.twig.
+ * Some may be blank but they are provided for consistency.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+
+<main role="main" class="main-container">
+  <div class="wrapper-large">
+      {% block content %}
+        <a id="main-content"></a>
+        <img alt="Accueil" src="/themes/custom/cdc_theme/images/logo.png">
+        <h1>{% trans %}Ce site est momentanément indisponible{% endtrans %}</h1>
+        <p>{% trans %}Pour raison de maintenance ce service est temporairement indisponible. Veuillez nous excuser pour la gêne occasionnée.{% endtrans %}</p>
+        <div class="social-media">
+          <h3 class="social-media-title">Nous suivre</h3>
+          <nav role="navigation" aria-labelledby="block-reseauxsociaux-menu" id="block-reseauxsociaux" class="contextual-region">
+            <ul class="nav navbar-rs">
+              <li class="nav-item">
+                <a href="https://www.facebook.com/GroupeCaissedesDepots" class="nav-link cdcicon cdcicon-fb" target="_blank" title="{% trans %}Suivez-nous sur Facebook{% endtrans %}"><span class="sr-only">{% trans %}Suivez-nous sur Facebook{% endtrans %}</span></a>
+              </li>
+              <li class="nav-item">
+                <a href="https://twitter.com/caissedesdepots" class="nav-link cdcicon cdcicon-twitter" target="_blank" title="{% trans %}Suivez-nous sur Twitter{% endtrans %}"><span class="sr-only">{% trans %}Suivez-nous sur Twitter{% endtrans %}</span></a>
+              </li>
+              <li class="nav-item">
+                <a href="https://fr.linkedin.com/company/groupe-caisse-des-dépôts" class="nav-link cdcicon cdcicon-linkedin" target="_blank" title="{% trans %}Suivez-nous sur LinkedIn{% endtrans %}"><span class="sr-only">{% trans %}Suivez-nous sur LinkedIn{% endtrans %}</span></a>
+              </li>
+              <!-- <li class="nav-item">
+                <a href="https://fr.viadeo.com/fr/company/groupe-caisse-des-depots" class="nav-link cdcicon cdcicon-viadeo" target="_blank" title="{% trans %}Suivez-nous sur Viadeo{% endtrans %}"><span class="sr-only">{% trans %}Suivez-nous sur Viadeo{% endtrans %}</span></a>
+              </li> -->
+              <li class="nav-item">
+                <a href="https://www.youtube.com/channel/UCY5Dvh36sBz8SoLSdw4ddIg" class="nav-link cdcicon cdcicon-youtube" target="_blank" title="{% trans %}Suivez-nous sur Youtube{% endtrans %}"><span class="sr-only">{% trans %}Suivez-nous sur Youtube{% endtrans %}</span></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      {% endblock %}
+  </div>
+</main>

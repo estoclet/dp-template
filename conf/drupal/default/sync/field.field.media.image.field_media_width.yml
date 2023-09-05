@@ -1,0 +1,25 @@
+uuid: 65d3b0b3-1bb4-46f5-997f-30a746c9bc25
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_width
+    - media.type.image
+_core:
+  default_config_hash: _mFrewSo4-xW81-R9B0zw4Wrz5vHAKJ4oaLLfU_53f4
+id: media.image.field_media_width
+field_name: field_media_width
+entity_type: media
+bundle: image
+label: Largeur
+description: 'Ne rien saisir. La valeur de ce champ sera renseignée automatiquement à la fin du téléchargement. La largeur de l''image envoyée est calculée par le système.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ' pixel|pixels'
+field_type: integer

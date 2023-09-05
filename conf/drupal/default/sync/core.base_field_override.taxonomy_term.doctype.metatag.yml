@@ -1,0 +1,18 @@
+uuid: f3a761b6-0763-4a51-92c2-4d0514923d56
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.doctype
+id: taxonomy_term.doctype.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: doctype
+label: 'Balises meta (Meta tags)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

@@ -1,0 +1,10 @@
+uuid: 804eab18-c27f-472e-bf45-5318778e3c30
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.link
+label: Lien
+targetEntityType: media
+cache: true

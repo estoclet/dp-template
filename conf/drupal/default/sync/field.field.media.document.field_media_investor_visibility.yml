@@ -1,0 +1,25 @@
+uuid: 8601bdd9-fff1-4679-a412-894bb21fcf5c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_investor_visibility
+    - media.type.document
+_core:
+  default_config_hash: OUHXWs3nF4Z9cMWen9Ks0FtR7L2pzG6dnb2dF8ba-OE
+id: media.document.field_media_investor_visibility
+field_name: field_media_investor_visibility
+entity_type: media
+bundle: document
+label: 'Afficher dans l''espace investisseur'
+description: 'Cochez l''option si le document doit remonter dans les listings dédiés aux relations investisseurs.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

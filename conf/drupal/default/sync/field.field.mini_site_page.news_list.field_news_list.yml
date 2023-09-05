@@ -1,0 +1,24 @@
+uuid: 261c4429-2b09-47ae-b6d4-80f607e0ffc0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.mini_site_page.field_news_list
+    - mini_sites.mini_site_page_type.news_list
+  module:
+    - mini_sites
+id: mini_site_page.news_list.field_news_list
+field_name: field_news_list
+entity_type: mini_site_page
+bundle: news_list
+label: Liste
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  view_id: mini_site
+  view_display: page_1
+  view_target_bundle: actualite
+field_type: mini_site_view

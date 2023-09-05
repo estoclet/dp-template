@@ -1,0 +1,33 @@
+uuid: cec99a12-d107-42c0-a1a1-00b37ebc7042
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_blog_type_list
+field_name: field_blog_type_list
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: article
+      label: article
+    -
+      value: study
+      label: étude
+    -
+      value: video
+      label: vidéo
+    -
+      value: podcast
+      label: podcast
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,10 @@
+uuid: ec24ecfb-6744-45c6-95c6-cb4c2eb3b562
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.mediatheque
+label: 'Médiathèque CDC'
+targetEntityType: media
+cache: true

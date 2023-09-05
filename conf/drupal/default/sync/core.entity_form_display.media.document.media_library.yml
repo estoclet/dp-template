@@ -1,0 +1,55 @@
+uuid: 45cb25ba-7d66-4ab9-be35-291eac5e1886
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.document.field_media_date
+    - field.field.media.document.field_media_description
+    - field.field.media.document.field_media_doctype_reference
+    - field.field.media.document.field_media_entite_references
+    - field.field.media.document.field_media_file
+    - field.field.media.document.field_media_investor_reference
+    - field.field.media.document.field_media_investor_visibility
+    - field.field.media.document.field_media_mine
+    - field.field.media.document.field_media_perimeter_reference
+    - field.field.media.document.field_media_press_references
+    - field.field.media.document.field_media_press_visibility
+    - field.field.media.document.field_media_search_visibility
+    - field.field.media.document.field_media_size
+    - field.field.media.document.field_media_theque_visibility
+    - media.type.document
+id: media.document.media_library
+targetEntityType: media
+bundle: document
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_date: true
+  field_media_description: true
+  field_media_doctype_reference: true
+  field_media_entite_references: true
+  field_media_file: true
+  field_media_investor_reference: true
+  field_media_investor_visibility: true
+  field_media_mine: true
+  field_media_perimeter_reference: true
+  field_media_press_references: true
+  field_media_press_visibility: true
+  field_media_search_visibility: true
+  field_media_size: true
+  field_media_theque_visibility: true
+  langcode: true
+  path: true
+  status: true
+  translation: true
+  uid: true

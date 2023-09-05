@@ -1,0 +1,44 @@
+/**
+ * @file
+ * Views Styling
+ */
+
+/* ---------------- DEFAULT -----------------*/
+.view-footer {
+  margin-top: 4rem;
+
+  @media (max-width: $screen-md-max) {
+    margin-top: 3rem;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    margin-top: 2rem;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    margin-top: 1.5rem;
+  }
+}
+
+.views-element-container {
+  &.form-group {
+    margin-bottom: 0;
+  }
+}
+
+.region-content {
+  .views-element-container {
+
+    [class*='view-display-id-page_'],
+    .view-display-id-block_1 {
+      .view-content {
+        @extend %large-wrapper;
+      }
+    }
+  }
+}
+
+/* ---------------- CUSTOM -----------------*/
+@import 'view-blog';
+@import 'view-mediatheque';
+@import 'view-news-blocs';

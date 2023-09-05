@@ -1,0 +1,11 @@
+uuid: 3aefff06-9441-425f-9799-752e795060ee
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: iLvDYq_ZDUYeq--W3Q2XeLxxwz8rX9RKMQS7ZfWWUTw
+id: pg_insert_node
+label: 'Contenu(s) transverse(s)'
+icon_uuid: null
+description: 'Un encart contextualisé composé d''une ou plusieurs remontées de contenus du site.'
+behavior_plugins: {  }

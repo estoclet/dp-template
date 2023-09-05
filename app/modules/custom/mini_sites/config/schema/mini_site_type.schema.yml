@@ -1,0 +1,22 @@
+mini_sites.mini_site_type.*:
+  type: config_entity
+  label: 'Mini site type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    menu_type:
+      type: string
+      label: 'Menu Type'
+    uuid:
+      type: string
+    allow_page_type:
+      type: sequence
+      label: 'Page types allowed'
+      sequence:
+        target_id:
+          type: string
+          label: 'Value'

@@ -1,0 +1,18 @@
+uuid: 64d73874-e91f-4666-b373-ad3b1c5b34e9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_contact
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.bloc_contact
+target_entity_type_id: block_content
+target_bundle: bloc_contact
+default_langcode: site_default
+language_alterable: true

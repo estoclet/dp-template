@@ -1,0 +1,23 @@
+uuid: 466162f9-d296-495f-8c15-7d97d9079480
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_d_entete_bandeau
+    - field.storage.block_content.field_no_margin_bandeau
+id: block_content.bloc_d_entete_bandeau.field_no_margin_bandeau
+field_name: field_no_margin_bandeau
+entity_type: block_content
+bundle: bloc_d_entete_bandeau
+label: 'Supprimer les marges'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

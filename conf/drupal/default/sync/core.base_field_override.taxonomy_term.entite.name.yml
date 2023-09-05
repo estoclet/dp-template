@@ -1,0 +1,18 @@
+uuid: c5c352e9-588b-419f-b2c6-0da47be3ac42
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.entite
+id: taxonomy_term.entite.name
+field_name: name
+entity_type: taxonomy_term
+bundle: entite
+label: Nom
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

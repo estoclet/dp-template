@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Contains apercu_view_mode.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function apercu_view_mode_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the apercu_view_mode module.
+    case 'help.page.apercu_view_mode':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Permet de pouvoir visualiser un mode de rendu d&#039;&#039;un type de contenu.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function apercu_view_mode_preprocess_html(&$variables) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if($route_name === 'apercu_view_mode.apercu') {
+    if(!empty($variables['page'])) {
+      foreach ($variables['page'] as $key => $region) {
+        if (substr($key, 0, 1) !== '#' && $key !== 'content') {
+          unset($variables['page'][$key]);
+        }
+      }
+    }
+    if(!empty($variables['page_top'])) {
+      foreach ($variables['page_top'] as $key => $region) {
+        unset($variables['page_top'][$key]);
+      }
+    }
+    if(!empty($variables['page_bottom'])) {
+      foreach ($variables['page_bottom'] as $key => $region) {
+        unset($variables['page_bottom'][$key]);
+      }
+    }
+  }
+}

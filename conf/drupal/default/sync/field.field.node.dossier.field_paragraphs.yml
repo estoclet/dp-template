@@ -1,0 +1,62 @@
+uuid: 6d8e7f40-57bf-48d8-bed4-af92761293cd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.dossier
+  module:
+    - entity_reference_revisions
+id: node.dossier.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: dossier
+label: Contenu
+description: 'Sélectionnez et agencez un ou plusieurs composants pour composer l''intérieur de la page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      pg_advanced_text:
+        weight: 13
+        enabled: false
+      pg_chiffre:
+        weight: 14
+        enabled: false
+      pg_highligted:
+        weight: 15
+        enabled: false
+      pg_insert_audio:
+        weight: 16
+        enabled: false
+      pg_insert_document:
+        weight: 17
+        enabled: false
+      pg_insert_image:
+        weight: 18
+        enabled: false
+      pg_insert_node:
+        weight: 19
+        enabled: false
+      pg_insert_rs:
+        weight: 20
+        enabled: false
+      pg_insert_video:
+        weight: 21
+        enabled: false
+      pg_text:
+        weight: 22
+        enabled: false
+      pg_verbatim:
+        weight: 23
+        enabled: false
+      wysiwyg_personnalise:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

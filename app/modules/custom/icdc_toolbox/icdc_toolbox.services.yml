@@ -1,0 +1,6 @@
+services:
+  icdc_toolbox.route_subscriber:
+    class: Drupal\icdc_toolbox\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+    arguments: ['@module_handler']

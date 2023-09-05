@@ -1,0 +1,4 @@
+name: Year
+widget:
+  config:
+    default_option_label: Year

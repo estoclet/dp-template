@@ -1,0 +1,22 @@
+uuid: a3d7c531-16ab-410d-9cc2-8e8c40a86a4d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_advanced_text
+id: paragraph.pg_advanced_text.status
+field_name: status
+entity_type: paragraph
+bundle: pg_advanced_text
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

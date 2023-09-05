@@ -1,0 +1,9 @@
+access_config:
+  css:
+    theme :
+      css/accessconfig.min.css: {}
+  js:
+    js/accessconfig.min.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings

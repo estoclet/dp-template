@@ -1,0 +1,65 @@
+/**
+ * @file
+ * Paragraphs Component Styling
+ */
+
+div {
+  &[class*='field--name-field-paragraph'],
+  .field--item {
+
+    & > .paragraph {
+      margin-bottom: 0;
+
+      .media-content {
+
+        .col-xs-12 {
+          margin: 0 0 $vertical-gutter-large/2;
+
+          & + .col-xs-12 {
+            margin: $vertical-gutter-large/2 0 0;
+          }
+        }
+      }
+    }
+
+    .field--item {
+      .paragraph {
+        @extend %responsive-large--margin-top;
+
+        &.paragraph--view-mode--accordion {
+          margin-top: 2rem;
+        }
+      }
+    }
+
+    & + .field--item {
+      & > .paragraph {
+        @extend %responsive-medium--margin-top;
+      }
+    }
+  }
+}
+
+.no_margin_tb{
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  h2{
+    margin-top: 0;
+  }
+}
+.no_margin_immersive{
+  margin-bottom: 0 !important;
+}
+.no_margin_simple{
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@import 'pg-highligted';
+@import 'pg-insert-node';
+@import 'pg-insert-image';
+@import 'pg-insert-video';
+@import 'pg-insert-document';
+@import 'pg-insert-audio';

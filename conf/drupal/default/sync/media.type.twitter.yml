@@ -1,0 +1,27 @@
+uuid: 4ab08ef7-b014-4213-8271-d2c7643f5f1a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - crop
+    - media_entity_twitter
+third_party_settings:
+  crop:
+    image_field: null
+id: twitter
+label: Twitter
+description: ''
+source: twitter
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_link
+  use_twitter_api: false
+  consumer_key: ''
+  consumer_secret: ''
+  oauth_access_token: ''
+  oauth_access_token_secret: ''
+  generate_thumbnails: false
+field_map:
+  id: field_tweet_id
+  user: field_twitter_user_information

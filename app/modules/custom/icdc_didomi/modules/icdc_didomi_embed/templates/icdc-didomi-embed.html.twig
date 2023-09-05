@@ -1,0 +1,16 @@
+{% if content.provider.constent %}
+	<div data-blocked-content="{{content.provider.vendor.id}}">
+		<span class="icon icon-refus ftz-6 mb-2.5" aria-hidden="true"></span>
+		<p class="d-sm-block text-center lead">{{content.provider.notice.content|raw|t}}</p>
+		<p class="mt-2">
+			<button class="js-preferences-show btn btn-secondary" onclick="Didomi.preferences.show('vendors');">{{content.provider.notice.button|raw|t}}</button>
+		</p>
+	</div>
+
+	<script id="{{content.parent_id}}" type="didomi/html" data-vendor="{{content.provider.vendor.id}}">
+		{{content.iframe_code|raw}}
+	</script>
+
+{% else %}
+	{{content.iframe_code|raw}}
+{% endif %}

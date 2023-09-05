@@ -1,0 +1,19 @@
+uuid: 344276bf-0424-4204-be00-020564bae16a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_instagram_id
+    - media.type.instagram
+id: media.instagram.field_instagram_id
+field_name: field_instagram_id
+entity_type: media
+bundle: instagram
+label: 'Instagram ID'
+description: 'Ne rien saisir. La valeur de ce champ sera renseignée automatiquement.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

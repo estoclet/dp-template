@@ -1,0 +1,12 @@
+name: 'ICDC Blog'
+type: module
+description: 'Manage blog for ICDC.'
+core_version_requirement: ^8 || ^9
+package: 'ICDC'
+dependencies:
+  - path
+  - drupal:views
+  - drupal:taxonomy
+
+'interface translation project': icdc_blog
+'interface translation server pattern': modules/custom/icdc_blog/translations/icdc_blog-%language.po

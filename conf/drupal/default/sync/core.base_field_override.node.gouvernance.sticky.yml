@@ -1,0 +1,22 @@
+uuid: b00b060e-acdc-4f2f-8cbc-eb54a1387184
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.gouvernance
+id: node.gouvernance.sticky
+field_name: sticky
+entity_type: node
+bundle: gouvernance
+label: 'Epinglé en haut des listes'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

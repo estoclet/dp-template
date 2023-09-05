@@ -1,0 +1,38 @@
+/**
+ * @file
+ * Modal Component Styling
+ */
+
+/* ---------------- DEFAULT FULL WIDTH -----------------*/
+
+$top-modal-full-page: 0;
+$padding-right-modal-full-page: 0 ; // sass-lint:disable-line no-important
+$height-modal-full-page: 100%;
+$width-modal-dialog-full-page: 100%;
+$padding-modal-dialog-full-page: 0;
+$margin-modal-dialog-full-page: 0;
+$border-radius-modal-content-full-page: 0;
+$background-modal-content-full-page: rgba(255, 255, 255, 1);
+$z-index-modal-backdrop: 1;
+
+.modal--full-page {
+  top: $top-modal-full-page; //height of pre-header
+  padding-right: $padding-right-modal-full-page !important;
+
+  .modal-dialog {
+    width: $width-modal-dialog-full-page;
+    padding: $padding-modal-dialog-full-page;
+    margin: $margin-modal-dialog-full-page;
+    height: $height-modal-full-page;
+  }
+
+  .modal-content {
+    border-radius: $border-radius-modal-content-full-page;
+    height: $height-modal-full-page;
+    background: $background-modal-content-full-page;
+  }
+}
+
+.modal-backdrop {
+  z-index: $z-index-modal-backdrop;
+}

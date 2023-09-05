@@ -1,0 +1,52 @@
+uuid: d90de640-8cd5-40dc-b2d8-b189e9f96028
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.custom_media_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: socials_browser
+label: 'Navigateur réseaux sociaux'
+display: modal
+display_configuration:
+  width: '1920'
+  height: '1200'
+  link_text: Ajouter
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  f7501f0a-0342-4131-8a3b-1f43f9ca8f05:
+    id: view
+    uuid: f7501f0a-0342-4131-8a3b-1f43f9ca8f05
+    label: 'Réseaux sociaux'
+    weight: 1
+    settings:
+      submit_text: Sélectionner
+      auto_select: false
+      view: custom_media_browser
+      view_display: entity_browser_1
+  103bcb74-30c0-4634-b984-efb8f3d843a8:
+    id: entity_form
+    uuid: 103bcb74-30c0-4634-b984-efb8f3d843a8
+    label: 'Nouveau post Instagram'
+    weight: 2
+    settings:
+      submit_text: Enregistrer
+      entity_type: media
+      bundle: instagram
+      form_mode: default
+  d7607599-cee2-45b1-9ba4-60c5bb43b4cb:
+    id: entity_form
+    uuid: d7607599-cee2-45b1-9ba4-60c5bb43b4cb
+    label: 'Nouveau Tweet'
+    weight: 3
+    settings:
+      submit_text: Enregistrer
+      entity_type: media
+      bundle: twitter
+      form_mode: default

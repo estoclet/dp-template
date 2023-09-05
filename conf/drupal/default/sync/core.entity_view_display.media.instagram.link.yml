@@ -1,0 +1,62 @@
+uuid: b29a0139-14d1-45b1-a0f8-3a0e650239bc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.link
+    - field.field.media.instagram.field_copies_thumbnail
+    - field.field.media.instagram.field_instagram_id
+    - field.field.media.instagram.field_instagram_legende
+    - field.field.media.instagram.field_instagram_shortcode
+    - field.field.media.instagram.field_instagram_thumb_link
+    - field.field.media.instagram.field_instagram_type
+    - field.field.media.instagram.field_instagram_username
+    - field.field.media.instagram.field_media_date
+    - field.field.media.instagram.field_media_link
+    - field.field.media.instagram.field_media_perimeter_reference
+    - field.field.media.instagram.field_media_year
+    - media.type.instagram
+  module:
+    - layout_builder
+    - link
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.instagram.link
+targetEntityType: media
+bundle: instagram
+mode: link
+content:
+  field_media_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_copies_thumbnail: true
+  field_instagram_id: true
+  field_instagram_legende: true
+  field_instagram_shortcode: true
+  field_instagram_thumb_link: true
+  field_instagram_type: true
+  field_instagram_username: true
+  field_media_date: true
+  field_media_perimeter_reference: true
+  field_media_year: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

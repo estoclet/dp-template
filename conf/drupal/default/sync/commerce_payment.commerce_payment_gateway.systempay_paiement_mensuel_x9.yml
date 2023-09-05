@@ -1,0 +1,47 @@
+uuid: 6a73677d-fbda-4ce9-9ac6-492479d36253
+langcode: fr
+status: false
+dependencies:
+  module:
+    - commerce_systempay
+id: systempay_paiement_mensuel_x9
+label: 'Systempay - Cdc dev solidaire - Paiement mensuel X9'
+weight: null
+plugin: systempay_multi
+configuration:
+  display_label: 'Paiement par carte de credit'
+  mode: TEST
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  payment_options:
+    first: ''
+    count: '9'
+    period: '30'
+  gateway_access:
+    site_id: '71463631'
+    key_test: '4786394833405360'
+    key_prod: '5614131839451393'
+    ctx_mode: TEST
+    sign_algo: SHA-1
+    platform_url: 'https://paiement.systempay.fr/vads-payment/'
+  payment_page:
+    language: fr
+    available_languages:
+      fr: fr
+    capture_delay: ''
+    validation_mode: ''
+    payment_cards:
+      MASTERCARD: MASTERCARD
+      VISA: VISA
+  selective_threeds:
+    threeds_min_amount: ''
+  return_to_shop:
+    redirect_enabled: '0'
+    redirect_success_timeout: '5'
+    redirect_success_message: 'Redirection to shop in a few seconds...'
+    redirect_error_timeout: '5'
+    redirect_error_message: 'Redirection to shop in a few seconds...'
+    return_mode: GET
+conditions: {  }
+conditionOperator: AND

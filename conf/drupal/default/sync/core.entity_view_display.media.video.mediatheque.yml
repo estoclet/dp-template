@@ -1,0 +1,90 @@
+uuid: 6df97030-5894-461d-9b86-2d6eea8d4383
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.mediatheque
+    - field.field.media.video.field_media_caption
+    - field.field.media.video.field_media_credential
+    - field.field.media.video.field_media_date
+    - field.field.media.video.field_media_perimeter_reference
+    - field.field.media.video.field_media_theque_visibility
+    - field.field.media.video.field_media_video_embed_field
+    - field.field.media.video.field_media_year
+    - field.field.media.video.field_textual_transcription
+    - media.type.video
+  module:
+    - datetime
+    - field_formatter_class
+    - icdc_didomi_video_embed
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.video.mediatheque
+targetEntityType: media
+bundle: video
+mode: mediatheque
+content:
+  field_media_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_media_credential:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: date_full_simple
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+  field_media_video_embed_field:
+    type: video_embed_field_formatter
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_perimeter_reference: true
+  field_media_theque_visibility: true
+  field_media_year: true
+  field_textual_transcription: true
+  langcode: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,126 @@
+$svg-xl-width: 808px;
+$svg-xl-height: 813px;
+$svg-s-width: 235px;
+$svg-s-height: 236px;
+$svg-xs-width: 200px;
+$svg-xs-height: 202px;
+
+.block-entete-blog {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+
+  .wrapper-large {
+
+    @media (min-width: $screen-sm-min) {
+      min-height: 370px;
+    }
+
+    @media (min-width: $screen-xl-min) {
+      min-height: 490px;
+    }
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+    max-width: 50%;
+  }
+
+  .field--name-field-subtitle {
+    margin-bottom: 2rem;
+    font-size: 2.8rem;
+    font-weight: 700;
+    max-width: 50%;
+
+    @media (min-width: $screen-xs-min) {
+      max-width: 627px;
+      width: 50%;
+    }
+  }
+
+  .field--name-field-chapo {
+    background-color: $white;
+
+    @media (min-width: $screen-sm-min) {
+      max-width: 50%;
+      background-color: transparent;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      // max-width: 627px;
+      max-width: 470px;
+      width: 50%;
+    }
+  }
+
+  .svg-secondary {
+
+    .image-wrapper {
+      position: absolute;
+      overflow: hidden;
+      z-index: -1;
+      vertical-align: top;
+      max-width: 49%;
+      bottom: 2rem;
+      right: 0;
+      width: 50vh;
+      height: 100%;
+
+      @media (min-width: 1400px) {
+        width: 65vh;
+        height: 100%;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        top: 0;
+        bottom: auto;
+        width: $svg-s-width;
+        height: $svg-s-height;
+      }
+
+      @media (max-width: 479px) {
+        width: $svg-xs-width;
+        height: $svg-xs-height;
+      }
+
+      @media (min-width: $screen-xl-min) {
+        width: $svg-xl-width;
+        height: $svg-xl-height;
+      }
+    }
+
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+      margin: 0;
+      overflow: hidden;
+      vertical-align: top;
+      width: $svg-xl-width;
+      height: $svg-xl-height;
+    }
+  }
+}
+
+.contextual-region { // admin only
+  .svg-secondary {
+    .image-wrapper {
+      @media (min-width: $screen-md-min) {
+        margin-top: -14rem;
+      }
+    }
+  }
+}
+
+//Variante avec sticky header
+.sticky-header {
+  & + .main-container {
+    .block-entete-blog {
+      .wrapper-large {
+        @media (min-width: $screen-sm-min) {
+          min-height: 565px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+uuid: c75e0d95-cbf3-4578-871f-041875a83e2c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_breadcrumbs
+theme: cdc_bo_theme
+region: breadcrumb
+weight: -11
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Fil d''ariane'
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '<front>'

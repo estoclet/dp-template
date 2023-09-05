@@ -1,0 +1,12 @@
+name: 'Mini Sites'
+type: module
+description: 'Mini sites'
+core_version_requirement: ^8 || ^9 
+package: 'Custom'
+configure: mini_sites.admin_settings_form
+dependencies:
+  - link
+  - options
+  - path
+  - text
+  - user

@@ -1,0 +1,70 @@
+
+/**
+ * @file
+ * Social Links Styling
+ */
+
+/* ---------------- Share Links  -----------------*/
+
+.social-buttons {
+
+  .social-buttons-title {
+    display: inherit;
+  }
+
+  .social-buttons-links {
+    display: flex;
+  }
+
+}
+
+/* ---------------- Client Social Media Links  -----------------*/
+
+.social-media {
+  margin-bottom: 6rem;
+
+  &-title {
+    .footer & {
+      @extend %menu-footer-title;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0 0 3rem;
+    }
+  }
+
+  .nav-link {
+    span {
+      font-size: 1rem;
+      font-family: $body-font, sans-serif;
+    }
+  }
+}
+
+
+/* ---------------- Twitter feed  -----------------*/
+
+.EmbeddedTweet {
+  max-width: 100% !important; // sass-lint:disable-line no-important
+}
+
+.Tweet-body {
+  font-family: fantasy !important; // sass-lint:disable-line no-important
+}
+
+.Tweet-text {
+  white-space: normal !important; // sass-lint:disable-line no-important
+}
+
+.resize-sensor {
+  display: none !important; // sass-lint:disable-line no-important
+  width: 0 !important; // sass-lint:disable-line no-important
+  overflow: hidden !important; // sass-lint:disable-line no-important
+}
+
+/* ---------------- Instagram feed  -----------------*/
+
+
+.instagram-media  {
+  width: 100% !important; // sass-lint:disable-line no-important
+  max-width: 100% !important; // sass-lint:disable-line no-important
+}

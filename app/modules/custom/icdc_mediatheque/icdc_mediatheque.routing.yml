@@ -1,0 +1,24 @@
+icdc_mediatheque.autocomplete.image_credidentials:
+  path: '/admin/icdc_mediatheque/autocomplete/image_credidentials'
+  defaults:
+    _controller: '\Drupal\icdc_mediatheque\Controller\ImageCredidentialsSearch::handleAutocomplete'
+    _format: json
+  requirements:
+    _permission: 'access content'
+
+icdc_mediatheque.ckeditor_plugin:
+  path: '/icdc_mediatheque/dialog/{filter_format}'
+  defaults:
+    _form: '\Drupal\icdc_mediatheque\Form\ImageCredidentialsCKEditorDialog'
+    _title: "Insérer un crédit d'image"
+  requirements:
+    _access: 'TRUE'
+icdc_mediatheque.ausha_api:
+  path: '/admin/config/ausha_api/connector_form'
+  defaults:
+    _form: '\Drupal\icdc_mediatheque\Form\AushaAPIConnectorForm'
+    _title: "Contribution des informations de connexion à l'API Ausha"
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

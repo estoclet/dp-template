@@ -1,0 +1,81 @@
+/**
+ * @file
+ * Footer Styling
+ */
+
+.footer {
+  position: relative;
+  z-index: 30;
+  padding: 0;
+  background-color: $white;
+  &.margin-progress{
+    margin-top: 8rem;
+    @media (max-width: $screen-sm-max) {
+      margin-top: 10rem;
+    }
+    @media (max-width: $screen-xs-max) {
+      margin-top: 0;
+    }
+  }
+  &--nav {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    @media (max-width: $screen-lg-max) {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    @media (max-width: $screen-md-max) {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+  }
+}
+
+// .region-footer-second {
+//   padding-right: 15px;
+//   @media (max-width: $screen-sm-max) {
+//     padding-left: 15px;
+//   }
+// }
+
+.region-footer-third {
+  border-top: 1px solid $gris-moyen;
+
+  .navbar-secondary--footer {
+    @extend %xl-wrapper;
+  }
+}
+
+.site-footer__top {
+  & > .container {
+    @extend %xl-wrapper;
+  }
+}
+
+.footer,
+.footer{
+  .navbar{
+    &-secondary{
+       .navbar{
+         &-nav{
+            > li:not(:last-child){
+              > a,
+              > span{
+                &:focus{
+                  @include focus($black, 0, 1px);
+                }
+              }
+            }
+         }
+       }
+    }
+  }
+}

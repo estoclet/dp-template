@@ -1,0 +1,31 @@
+display:
+  default:
+    display_options:
+      fields:
+        in_draft:
+          label: Brouillon
+        created:
+          label: Créé
+  embed_administer:
+    display_options:
+      fields:
+        in_draft:
+          label: Brouillon
+        created:
+          label: Créé
+  embed_manage:
+    display_options:
+      fields:
+        in_draft:
+          label: Brouillon
+        created:
+          label: Créé
+        edit_webform_submission:
+          text: modifier
+  embed_review:
+    display_options:
+      fields:
+        in_draft:
+          label: Brouillon
+        created:
+          label: Créé

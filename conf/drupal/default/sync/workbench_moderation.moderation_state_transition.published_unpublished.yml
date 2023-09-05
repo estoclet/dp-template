@@ -1,0 +1,12 @@
+uuid: bfa309af-ed58-43a3-af42-6b6bcad3a391
+langcode: fr
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.published
+    - workbench_moderation.moderation_state.unpublished
+id: published_unpublished
+label: Dépublié
+stateFrom: published
+stateTo: unpublished
+weight: 1

@@ -1,0 +1,20 @@
+uuid: 2473a279-c442-4ce4-a685-af0f85d88f68
+langcode: fr
+status: true
+dependencies:
+  module:
+    - icdc_statics_blocks
+  theme:
+    - cdc_theme
+id: logosdesjo2024
+theme: cdc_theme
+region: footer_top
+weight: 0
+provider: null
+plugin: olympic_logos_block
+settings:
+  id: olympic_logos_block
+  label: 'Logos des JO 2024'
+  label_display: '0'
+  provider: icdc_statics_blocks
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 9ca97888-0d8b-4e6d-a533-de043961c7d0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.parcours_de_vie
+id: node.parcours_de_vie.promote
+field_name: promote
+entity_type: node
+bundle: parcours_de_vie
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

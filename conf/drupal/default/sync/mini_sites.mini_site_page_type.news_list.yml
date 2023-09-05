@@ -1,0 +1,8 @@
+uuid: 165b0d32-ed38-4efb-9084-99dfdfa48972
+langcode: fr
+status: true
+dependencies: {  }
+id: news_list
+label: 'Liste d''actualité'
+mini_site: null
+weight: null

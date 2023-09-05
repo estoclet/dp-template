@@ -1,0 +1,21 @@
+uuid: 5ad37857-040e-4f2f-90a7-1cffcc3e3ebf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_date
+    - media.type.ausha
+  module:
+    - datetime
+id: media.ausha.field_media_date
+field_name: field_media_date
+entity_type: media
+bundle: ausha
+label: 'Date de référence du document'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

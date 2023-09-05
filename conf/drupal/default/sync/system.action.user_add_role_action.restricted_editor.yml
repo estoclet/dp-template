@@ -1,0 +1,14 @@
+uuid: 8c0da7b7-0f5a-44f8-a266-e50d421ce02d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.restricted_editor
+  module:
+    - user
+id: user_add_role_action.restricted_editor
+label: 'Ajouter le rôle Rédacteur restreint aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: restricted_editor

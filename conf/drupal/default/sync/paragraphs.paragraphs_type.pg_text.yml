@@ -1,0 +1,11 @@
+uuid: d4bdda15-0a6e-4837-bc8c-33addbc162b8
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xxn82zzFH0DR002cBema4ocDKgC3877DgUIJ--AQtuo
+id: pg_text
+label: Texte
+icon_uuid: null
+description: 'Un contenu avec une mise en forme libre en utilisant l'' éditeur WYSIWYG.'
+behavior_plugins: {  }

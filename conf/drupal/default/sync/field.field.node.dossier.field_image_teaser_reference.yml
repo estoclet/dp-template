@@ -1,0 +1,28 @@
+uuid: 439920b9-4cc3-4ea7-9661-df4013b0f602
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_teaser_reference
+    - media.type.image
+    - node.type.dossier
+id: node.dossier.field_image_teaser_reference
+field_name: field_image_teaser_reference
+entity_type: node
+bundle: dossier
+label: 'Vignette d''illustration'
+description: '<p>Ajouter l''image d''illustration à afficher dans la remontée de l''accroche de cette page dans une autre page du site ainsi que dans les partages sur réseaux sociaux.</p>'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

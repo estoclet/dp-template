@@ -1,0 +1,7 @@
+uuid: 72861875-e5b7-4c8a-80cf-5b42a71a78b4
+langcode: fr
+status: false
+dependencies: {  }
+formId: webform_submission_admin_add_form
+captchaType: recaptcha/reCAPTCHA
+label: webform_submission_admin_add_form

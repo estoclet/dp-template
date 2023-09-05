@@ -1,0 +1,11 @@
+uuid: 4d4840d3-a08e-419c-8ec4-c3e200141b3b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_webform
+id: block_content.bloc_webform
+target_entity_type_id: block_content
+target_bundle: bloc_webform
+default_langcode: site_default
+language_alterable: false

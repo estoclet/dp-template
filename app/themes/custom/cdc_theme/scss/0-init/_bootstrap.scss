@@ -1,0 +1,39 @@
+/**
+ * @file
+ * Breakpoint Variables
+ */
+
+$default-max-width: 150rem;
+$article-max-width: 1530px;
+
+.node--type-article,
+.node--type-blog,
+.node--type-gouvernance,
+.node--type-actualite,
+.node--type-dossier,
+.page-node-type-page {
+
+  .container {
+    max-width: 100%;
+
+    @media (min-width: $screen-xl-min) {
+      width: $article-max-width;
+    }
+  }
+
+}
+
+.row-mosaic {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > div {
+    @extend %responsive-large--margin-top;
+  }
+}
+
+.layout--twocol-section {
+  @media (max-width: $screen-xs-max) {
+    display: block;
+  }
+}

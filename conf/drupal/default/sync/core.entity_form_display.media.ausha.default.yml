@@ -1,0 +1,134 @@
+uuid: 3c61db57-f25e-41f3-b123-2143a1efde1b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.media.ausha.field_media_audio_embed
+    - field.field.media.ausha.field_media_audio_id
+    - field.field.media.ausha.field_media_audio_playlist
+    - field.field.media.ausha.field_media_audio_stream
+    - field.field.media.ausha.field_media_audio_track
+    - field.field.media.ausha.field_media_audio_uri
+    - field.field.media.ausha.field_media_caption
+    - field.field.media.ausha.field_media_credential
+    - field.field.media.ausha.field_media_date
+    - field.field.media.ausha.field_media_link
+    - field.field.media.ausha.field_media_perimeter_reference
+    - field.field.media.ausha.field_media_theque_visibility
+    - field.field.media.ausha.field_media_year
+    - field.field.media.ausha.field_podcast_id
+    - media.type.ausha
+  module:
+    - datetime
+    - path
+    - workbench_moderation
+id: media.ausha.default
+targetEntityType: media
+bundle: ausha
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_audio_embed:
+    type: string_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_caption:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_credential:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_date:
+    type: datetime_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_perimeter_reference:
+    type: entity_reference_autocomplete
+    weight: 6
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_theque_visibility:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_media_year:
+    type: datetime_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 12
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_media_audio_id: true
+  field_media_audio_playlist: true
+  field_media_audio_stream: true
+  field_media_audio_track: true
+  field_media_audio_uri: true
+  field_media_link: true
+  field_podcast_id: true

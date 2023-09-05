@@ -1,0 +1,29 @@
+uuid: c4c34373-ce35-4948-be52-9a1e36e7dee8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - facets.facet.news_thematic
+  module:
+    - facets
+    - system
+  theme:
+    - cdc_theme
+id: facet_news_thematic
+theme: cdc_theme
+region: content_top
+weight: -18
+provider: null
+plugin: 'facet_block:news_thematic'
+settings:
+  id: 'facet_block:news_thematic'
+  label: 'FACETTE Actualités Thématiques'
+  label_display: '0'
+  provider: facets
+  block_id: facet_news_thematic
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /actualites

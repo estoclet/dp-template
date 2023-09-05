@@ -1,0 +1,11 @@
+uuid: c20783f3-45d4-493e-8526-681819ef3d1c
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AT7-vFm-zXM7pqKJAfxiNuDIZZP9NMCO4dyW2P-kio0
+id: pg_highligted
+label: 'Mise en avant illustrée'
+icon_uuid: null
+description: 'Une mise en avant avec une mise en forme pré-formatée.'
+behavior_plugins: {  }

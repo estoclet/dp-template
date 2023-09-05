@@ -1,0 +1,19 @@
+uuid: 5d9a4e97-385e-4118-a77b-9637796a4f65
+langcode: fr
+status: false
+dependencies: {  }
+id: va
+label: Va
+description: ''
+weight: 0
+folder: ../config/va
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - elasticsearch_connector.cluster.elastic
+  - webform.webform.admin
+  - webform.webform.mediation
+  - webform.webform.mediation_consomation
+graylist_dependents: true
+graylist_skip_equal: false

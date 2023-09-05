@@ -1,0 +1,62 @@
+uuid: fc31ddc0-2bbd-46cc-97e1-2fbe93be82a1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_entete
+    - field.field.block_content.bloc_entete.field_chapo
+    - field.field.block_content.bloc_entete.field_media_reference
+    - field.field.block_content.bloc_entete.field_responsive
+    - field.field.block_content.bloc_entete.field_subtitle
+  module:
+    - field_formatter_class
+    - text
+id: block_content.bloc_entete.default
+targetEntityType: block_content
+bundle: bloc_entete
+mode: default
+content:
+  field_chapo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: header
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+  field_responsive:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 4
+    region: content
+  field_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,118 @@
+.node--type-actualite {
+  .heading{
+    display: grid;
+
+    .infos{
+      grid-row: 1
+    }
+  }
+  .field--name-field-chapo {
+    @extend %chapo;
+  }
+
+  &.node--view-mode-full {
+    .field--name-field-paragraphs {
+      & > .field--item {
+        &:nth-of-type(1) {
+          .paragraph {
+            margin-top: 0;
+
+            & > h2 {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.node--view-mode-header {
+    @extend %responsive-large--margin-bottom;
+    text-align: center;
+    margin-top: 30px;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 60px;
+    }
+
+    @media (max-width: $screen-lg-max) {
+      margin-bottom: 2rem;
+    }
+
+    .date {
+      @extend %date-large;
+      text-transform: none;
+    }
+
+    h1 {
+      margin: 10px auto;
+    }
+
+    .field--name-field-media-reference {
+      max-width: 1024px;
+      margin: 6rem auto 0;
+
+      @media (max-width: $screen-lg-max) {
+        margin-top: 4rem;
+      }
+
+      @media (max-width: $screen-md-max) {
+        margin-top: 3rem;
+      }
+
+      @media (max-width: $screen-md-max) {
+        margin-top: 2rem;
+      }
+
+      @media (max-width: $screen-xs-max) {
+        margin-top: 1.5rem;
+      }
+
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &.node--view-mode-contextual-feed {
+    margin-bottom: 4rem;
+
+    @media (max-width: $screen-md-max) {
+      margin-top: 3rem;
+    }
+
+    @media (max-width: $screen-md-max) {
+      margin-top: 2rem;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &.node--view-mode-teaser {
+    .field--name-field-media-credential{
+      margin-top: -1.4rem;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: $screen-lg-max) {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &.node--view-mode-list{
+    .right-side >div{
+      display: grid;
+    }
+    .infos{
+      grid-row: 1;
+      display: grid;
+    }
+    .tag{
+      float: left;
+      margin-top: 4px;
+    }
+  }
+}

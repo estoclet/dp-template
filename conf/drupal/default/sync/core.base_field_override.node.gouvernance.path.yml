@@ -1,0 +1,20 @@
+uuid: e1f125ab-5c9d-4df1-ae19-5ad2fe5e2dd9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.gouvernance
+  module:
+    - path
+id: node.gouvernance.path
+field_name: path
+entity_type: node
+bundle: gouvernance
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,5 @@
+name: 'Apercu view mode'
+type: module
+description: 'Permet de pouvoir visualiser un mode de rendu d''un type de contenu.'
+core_version_requirement: ^8 || ^9
+package: 'Apercu view mode'

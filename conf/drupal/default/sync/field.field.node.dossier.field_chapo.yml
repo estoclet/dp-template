@@ -1,0 +1,19 @@
+uuid: 277abf59-1c5d-453a-ba2c-f6ac572ffc95
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_chapo
+    - node.type.dossier
+id: node.dossier.field_chapo
+field_name: field_chapo
+entity_type: node
+bundle: dossier
+label: Chapô
+description: 'Saisissez le chapô du dossier qui sera affiché dans l’entête.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

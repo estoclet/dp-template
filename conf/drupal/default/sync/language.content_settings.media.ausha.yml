@@ -1,0 +1,11 @@
+uuid: b4420c9c-7d4a-4612-9991-2c338b0de8ce
+langcode: fr
+status: true
+dependencies:
+  config:
+    - media.type.ausha
+id: media.ausha
+target_entity_type_id: media
+target_bundle: ausha
+default_langcode: site_default
+language_alterable: false

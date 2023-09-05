@@ -1,0 +1,66 @@
+uuid: 2e6c745e-c8e0-4017-8504-ac6129230647
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.link
+    - field.field.user.user.commerce_remote_id
+    - field.field.user.user.field_biopic
+    - field.field.user.user.field_entite_reference
+    - field.field.user.user.field_function
+    - field.field.user.user.field_last_password_reset
+    - field.field.user.user.field_media_reference
+    - field.field.user.user.field_password_expiration
+    - field.field.user.user.field_pending_expire_sent
+    - field.field.user.user.field_user_firstname
+    - field.field.user.user.field_user_lastname
+    - field.field.user.user.field_user_linkedin
+    - field.field.user.user.user_picture
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.link
+targetEntityType: user
+bundle: user
+mode: link
+content:
+  field_user_firstname:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_user_lastname:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  commerce_remote_id: true
+  customer_profiles: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_biopic: true
+  field_entite_reference: true
+  field_function: true
+  field_last_password_reset: true
+  field_media_reference: true
+  field_password_expiration: true
+  field_pending_expire_sent: true
+  field_user_linkedin: true
+  langcode: true
+  member_for: true
+  search_api_excerpt: true
+  user_picture: true

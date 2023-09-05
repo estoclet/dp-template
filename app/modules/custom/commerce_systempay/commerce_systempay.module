@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © Lyra Network.
+ * This file is part of Systempay for Drupal Commerce. See COPYING.md for license details.
+ *
+ * @package   Systempay
+ * @author    Lyra Network <contact@lyra-network.com>
+ * @copyright Lyra Network
+ * @license   http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL v2)
+ */
+use Drupal\commerce_systempay\Tools;
+
+function commerce_systempay_commerce_payment_gateway_info_alter(&$definitions)
+{
+    if (! Tools::$pluginFeatures['multi']) {
+        unset($definitions['systempay_multi']);
+    }
+
+    if (! Tools::$pluginFeatures['paypal']) {
+        unset($definitions['systempay_paypal']);
+    }
+}

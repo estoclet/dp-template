@@ -1,0 +1,23 @@
+<div id="{{ id }}">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2 class="panel-title">
+        <a data-toggle="collapse"  data-target="#collapseicdcDecisionTree">{{ title }} <span class="cdcicon cdcicon-chevron" aria-hidden="true"></span><span class="sr-only">Déplier</span></a>
+      </h2>
+    </div>
+    <div id="collapseicdcDecisionTree" class="decision-tree-body panel-collapse collapse">
+      <div class="panel-body">
+        <p>{{ decision_tree[root].keyword }}</p>
+        {% if decision_tree[root].children|length > 0 %}
+          <ul>
+            {% for item in decision_tree[root].children %}
+              <li>
+                <button class="rebuildTree" data-tid="{{ item.tid }}" title="{{ item.title_attr }}">{{ item.name }}</button>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

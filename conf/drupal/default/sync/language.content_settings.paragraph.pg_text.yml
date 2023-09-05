@@ -1,0 +1,18 @@
+uuid: 75742f7e-1eb5-46ff-806e-4c243f00b3da
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_text
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: paragraph.pg_text
+target_entity_type_id: paragraph
+target_bundle: pg_text
+default_langcode: site_default
+language_alterable: true

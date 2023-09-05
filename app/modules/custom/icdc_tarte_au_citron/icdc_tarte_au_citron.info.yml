@@ -1,0 +1,11 @@
+name: ICDC Tarte au citron
+description: Manage features which use cookies (ads, social networks, videos, other contrib modules who print data in your pages)
+type: module
+package: 'ICDC'
+version: 8.x-1.0
+core_version_requirement: ^8 || ^9
+libraries:
+    - icdc_tarte_au_citron/icdc_tarte_au_citron
+
+'interface translation project': icdc_tarte_au_citron
+'interface translation server pattern': modules/custom/icdc_tarte_au_citron/translations/icdc_tarte_au_citron-%language.po

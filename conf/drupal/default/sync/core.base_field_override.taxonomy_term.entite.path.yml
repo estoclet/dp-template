@@ -1,0 +1,20 @@
+uuid: 7d58612f-f37f-42ed-bf47-09c9285d33ad
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.entite
+  module:
+    - path
+id: taxonomy_term.entite.path
+field_name: path
+entity_type: taxonomy_term
+bundle: entite
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

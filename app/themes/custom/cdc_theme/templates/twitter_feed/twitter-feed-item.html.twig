@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a tweet.
+ *
+ * Available variables:
+ * - tweet: The tweet class provide by twitter API
+ * - url: The tweet url
+ * - retweet: (optional) The retweeted user.
+ *   - retweet.url : the user url
+ *   - retweet.name : the user name
+ *   - retweet.profile_image_url : the profil image url
+ *   - retweet.screen_name : the screen name
+ * - avatar: (optional) The user's avatar.
+ *   - avatar.url : the user url
+ *   - avatar.name : the user name
+ *   - avatar.profile_image_url : the profil image url
+ *   - avatar.screen_name : the screen name
+ * - text : the tweet content
+ * - date : the date
+ *   - date.stamp : the date timestamp
+ *   - date.clean : the formatted date
+ *
+ * @see template_preprocess_twitter_feed_item()
+ * @ingroup themeable
+ */
+#}
+{% if retweet %}
+  <div class="retweet">
+    <a href="{{ retweet.url }}" target="_blank">{{ retweet.name }}</a> {% trans %} has retweeted {% endtrans %}
+  </div>
+{% endif %}
+{% if avatar %}
+  <div class="avatar">
+    <img src="{{ avatar.profile_image_url }}" alt="{{ avatar.name }}" />
+    <span>{{ avatar.name }}</span>
+    <a href="{{ avatar.url }}" target="_blank">@{{ avatar.screen_name }}</a>
+  </div>
+{% endif %}
+<div class="tweet">{{ text }}</div>
+<a href="{{ url }}" target="_blank">{% trans %} See the tweet {% endtrans %}</a>
+<time class="timeago" datetime="{{ date.stamp }}">{{ date.clean }}</time>

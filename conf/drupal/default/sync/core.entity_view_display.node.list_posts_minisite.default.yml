@@ -1,0 +1,41 @@
+uuid: ac5c86a9-24fb-4232-937d-80bd6eb88560
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.list_posts_minisite.body
+    - field.field.node.list_posts_minisite.field_posts_list
+    - field.field.node.list_posts_minisite.field_site
+    - field.field.node.list_posts_minisite.field_site_page
+    - field.field.node.list_posts_minisite.field_site_page_type
+    - node.type.list_posts_minisite
+  module:
+    - block_field
+    - user
+id: node.list_posts_minisite.default
+targetEntityType: node
+bundle: list_posts_minisite
+mode: default
+content:
+  field_posts_list:
+    type: block_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_site: true
+  field_site_page: true
+  field_site_page_type: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,101 @@
+uuid: a3fb345f-7aa6-4f6a-8b07-81960580b8d1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list
+    - field.field.node.dossier.field_chapo
+    - field.field.node.dossier.field_dark_header_checkbox
+    - field.field.node.dossier.field_image_teaser_reference
+    - field.field.node.dossier.field_media_reference
+    - field.field.node.dossier.field_metatag
+    - field.field.node.dossier.field_no_margin
+    - field.field.node.dossier.field_node_references
+    - field.field.node.dossier.field_paragraphs
+    - field.field.node.dossier.field_short_title
+    - field.field.node.dossier.field_snippet_seo
+    - field.field.node.dossier.field_sommaire
+    - field.field.node.dossier.field_thematic_references
+    - field.field.node.dossier.layout_builder__layout
+    - node.type.dossier
+  module:
+    - advanced_text_formatter
+    - field_formatter_class
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.dossier.list
+targetEntityType: node
+bundle: dossier
+mode: list
+content:
+  field_image_teaser_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  field_short_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+  field_snippet_seo:
+    type: advanced_text
+    label: hidden
+    settings:
+      trim_length: '230'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: php
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - em
+        - i
+        - strong
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
+  social_simple_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_chapo: true
+  field_dark_header_checkbox: true
+  field_media_reference: true
+  field_metatag: true
+  field_no_margin: true
+  field_node_references: true
+  field_paragraphs: true
+  field_sommaire: true
+  field_thematic_references: true
+  langcode: true
+  layout_builder__layout: true
+  links: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

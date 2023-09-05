@@ -1,0 +1,31 @@
+.maintenance-page {
+
+  .main-container {
+    margin-top: 80px;
+    text-align: center;
+
+    h3 {
+      display: inline-block;
+      margin: 0 2rem 0 0;
+    }
+
+    p {
+      margin-bottom: 3rem;
+    }
+
+    .social-media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    nav {
+      display: inline-block;
+    }
+
+    .navbar-rs {
+      justify-content: center;
+    }
+  }
+}

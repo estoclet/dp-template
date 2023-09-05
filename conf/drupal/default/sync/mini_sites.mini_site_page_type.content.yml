@@ -1,0 +1,8 @@
+uuid: 2490d4f2-5c32-4d97-8016-b1b86a36673f
+langcode: fr
+status: true
+dependencies: {  }
+id: content
+label: Contenu
+mini_site: null
+weight: null

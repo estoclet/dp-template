@@ -1,0 +1,22 @@
+uuid: ca5f0dcf-15b7-41b2-be5b-7ac268665735
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.story
+id: paragraph.story.status
+field_name: status
+entity_type: paragraph
+bundle: story
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

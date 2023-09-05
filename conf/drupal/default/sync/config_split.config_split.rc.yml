@@ -1,0 +1,19 @@
+uuid: f9451977-2b39-44cb-930a-51d5316e45d2
+langcode: fr
+status: false
+dependencies: {  }
+id: rc
+label: Rc
+description: ''
+weight: 0
+folder: ../config/rc
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - elasticsearch_connector.cluster.elastic
+  - webform.webform.admin
+  - webform.webform.mediation
+  - webform.webform.mediation_consomation
+graylist_dependents: true
+graylist_skip_equal: false

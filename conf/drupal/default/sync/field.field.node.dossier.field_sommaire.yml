@@ -1,0 +1,21 @@
+uuid: 92a746c0-4b56-4816-b65c-406974bfe5dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sommaire
+    - node.type.dossier
+  module:
+    - text
+id: node.dossier.field_sommaire
+field_name: field_sommaire
+entity_type: node
+bundle: dossier
+label: Sommaire
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,23 @@
+uuid: e6776bd8-9bc2-4905-8782-4fe073f40eb9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_key_figure_alt
+    - paragraphs.paragraphs_type.pg_chiffre
+id: paragraph.pg_chiffre.field_pg_key_figure_alt
+field_name: field_pg_key_figure_alt
+entity_type: paragraph
+bundle: pg_chiffre
+label: 'Chiffre alt'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

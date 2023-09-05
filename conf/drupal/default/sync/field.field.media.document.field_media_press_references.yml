@@ -1,0 +1,27 @@
+uuid: db6dc5aa-112a-48b3-9de5-12fc358c6ca0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_press_references
+    - media.type.document
+id: media.document.field_media_press_references
+field_name: field_media_press_references
+entity_type: media
+bundle: document
+label: 'Document(s) presse annexe(s)'
+description: '<p>Reliez des documents presse à ce média afin d’afficher la relation aux internautes.</p>'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

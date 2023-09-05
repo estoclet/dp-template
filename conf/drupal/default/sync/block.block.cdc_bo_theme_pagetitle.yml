@@ -1,0 +1,25 @@
+uuid: 80120ba3-eff4-4be2-a148-19cec9d60210
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_pagetitle
+theme: cdc_bo_theme
+region: highlighted
+weight: -22
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: visible
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/blog\r\n/blog/*\r\n<front>\r\n/node/*"

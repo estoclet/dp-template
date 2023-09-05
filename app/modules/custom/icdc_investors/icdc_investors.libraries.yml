@@ -1,0 +1,5 @@
+investors_modal:
+  js:
+    js/investors_modal.js: {}
+  dependencies:
+    - core/drupal

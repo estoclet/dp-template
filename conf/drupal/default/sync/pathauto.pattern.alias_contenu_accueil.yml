@@ -1,0 +1,32 @@
+uuid: 22f2ff4c-66d5-4073-811e-5e09e6c6ec7f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - mini_sites
+    - node
+id: alias_contenu_accueil
+label: 'Alias des contenus de type Page d''accueil'
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parent:parents]/[node:field_short_title]'
+selection_criteria:
+  c360ccd4-235a-4ed7-a3e6-e1a79012ccc3:
+    id: node_type
+    negate: false
+    uuid: c360ccd4-235a-4ed7-a3e6-e1a79012ccc3
+    context_mapping:
+      node: node
+    bundles:
+      accueil: accueil
+  faedf872-6808-4331-a1d7-4dd11d59a4c6:
+    id: mini_site_page_content
+    negate: false
+    uuid: faedf872-6808-4331-a1d7-4dd11d59a4c6
+    context_mapping:
+      node: node
+    mini_site_page_content: 'no'
+    mini_site_page_content_bundles: {  }
+    mini_site_page_content_home: 'no'
+selection_logic: and
+weight: -5
+relationships: {  }

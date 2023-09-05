@@ -1,0 +1,12 @@
+uuid: 74e6879e-ab6e-462a-a074-1b6e2e43c328
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: nH3UaRDbIG2oaY6QDkeclp3MRkLXfUwfWNIdBuSLjgs
+id: webform
+label: Webform
+traits: {  }
+locked: false
+purchasableEntityType: ''
+orderType: default

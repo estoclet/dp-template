@@ -1,0 +1,111 @@
+uuid: 213cdd19-9b96-4a16-878d-f8ef8dc11f6f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_contact
+    - entity_browser.browser.multimedia_browser
+    - field.field.block_content.bloc_contact.field_address
+    - field.field.block_content.bloc_contact.field_animation
+    - field.field.block_content.bloc_contact.field_chapo
+    - field.field.block_content.bloc_contact.field_email
+    - field.field.block_content.bloc_contact.field_link
+    - field.field.block_content.bloc_contact.field_media_reference
+    - field.field.block_content.bloc_contact.field_phone
+    - field.field.block_content.bloc_contact.field_responsive
+  module:
+    - entity_browser
+    - link
+    - text
+    - workbench_moderation
+id: block_content.bloc_contact.default
+targetEntityType: block_content
+bundle: bloc_contact
+mode: default
+content:
+  field_address:
+    type: string_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 4
+      placeholder: ''
+    third_party_settings:
+      advanced_text_formatter:
+        show_token_tree: 0
+  field_animation:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_chapo:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_email:
+    type: email_default
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 8
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_media_reference:
+    type: entity_browser_entity_reference
+    weight: 7
+    region: content
+    settings:
+      entity_browser: multimedia_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: default
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_phone:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_responsive:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

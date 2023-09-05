@@ -1,0 +1,28 @@
+uuid: 8c41e584-9159-453b-b6da-6b6974455543
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+    - user
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_messages
+theme: cdc_bo_theme
+region: highlighted
+weight: -17
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Messages de statut'
+  label_display: '0'
+  provider: system
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      administrator: administrator

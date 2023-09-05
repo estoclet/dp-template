@@ -1,0 +1,90 @@
+uuid: 9db169a6-0045-493a-9ca9-6bc9c54f6838
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.article
+    - paragraphs.paragraphs_type.pg_advanced_text
+    - paragraphs.paragraphs_type.pg_highligted
+    - paragraphs.paragraphs_type.pg_insert_audio
+    - paragraphs.paragraphs_type.pg_insert_document
+    - paragraphs.paragraphs_type.pg_insert_image
+    - paragraphs.paragraphs_type.pg_insert_node
+    - paragraphs.paragraphs_type.pg_insert_rs
+    - paragraphs.paragraphs_type.pg_insert_video
+    - paragraphs.paragraphs_type.pg_text
+    - paragraphs.paragraphs_type.pg_verbatim
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: oJOIqt0VT0CnxmdelgLOS1Hieh_SxD5GBgcoS7lr1Tw
+id: node.article.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: article
+label: Contenu
+description: '<p>Sélectionnez et agencez un ou plusieurs composants pour composer l''intérieur de la page.</p>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      pg_advanced_text: pg_advanced_text
+      pg_highligted: pg_highligted
+      pg_insert_audio: pg_insert_audio
+      pg_insert_document: pg_insert_document
+      pg_insert_image: pg_insert_image
+      pg_insert_node: pg_insert_node
+      pg_insert_video: pg_insert_video
+      pg_insert_rs: pg_insert_rs
+      pg_text: pg_text
+      pg_verbatim: pg_verbatim
+    negate: 0
+    target_bundles_drag_drop:
+      pg_advanced_text:
+        weight: 11
+        enabled: true
+      pg_chiffre:
+        weight: 11
+        enabled: false
+      pg_highligted:
+        weight: 12
+        enabled: true
+      pg_home_strate_instit:
+        weight: 18
+        enabled: false
+      pg_insert_audio:
+        weight: 13
+        enabled: true
+      pg_insert_document:
+        weight: 14
+        enabled: true
+      pg_insert_image:
+        weight: 15
+        enabled: true
+      pg_insert_node:
+        weight: 16
+        enabled: true
+      pg_insert_rs:
+        weight: 19
+        enabled: true
+      pg_insert_video:
+        weight: 18
+        enabled: true
+      pg_text:
+        weight: 19
+        enabled: true
+      pg_verbatim:
+        weight: 20
+        enabled: true
+      story:
+        weight: 27
+        enabled: false
+      wysiwyg_personnalise:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

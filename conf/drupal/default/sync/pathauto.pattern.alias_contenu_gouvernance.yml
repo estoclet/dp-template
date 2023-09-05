@@ -1,0 +1,32 @@
+uuid: bd8e3853-5402-407e-be67-edfa5947114b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - mini_sites
+    - node
+id: alias_contenu_gouvernance
+label: 'Alias des contenus de type Gouvernance'
+type: 'canonical_entities:node'
+pattern: 'gouvernance/[current-page:title]'
+selection_criteria:
+  bb7fb68d-e18d-46b9-bc7f-5f7b27ae6308:
+    id: node_type
+    negate: false
+    uuid: bb7fb68d-e18d-46b9-bc7f-5f7b27ae6308
+    context_mapping:
+      node: node
+    bundles:
+      gouvernance: gouvernance
+  0f6cf525-367e-4ba3-8fe4-bd8321af73b1:
+    id: mini_site_page_content
+    negate: false
+    uuid: 0f6cf525-367e-4ba3-8fe4-bd8321af73b1
+    context_mapping:
+      node: node
+    mini_site_page_content: 'no'
+    mini_site_page_content_bundles: {  }
+    mini_site_page_content_home: 'no'
+selection_logic: and
+weight: -5
+relationships: {  }

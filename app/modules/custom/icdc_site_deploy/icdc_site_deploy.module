@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_site_deploy.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_site_deploy_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_site_deploy module.
+    case 'help.page.icdc_site_deploy':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Generate menu links') . '</p>';
+      return $output;
+
+    default:
+  }
+}

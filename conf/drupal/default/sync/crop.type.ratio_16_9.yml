@@ -1,0 +1,12 @@
+uuid: 9ab0941b-3e4a-4c33-b540-3ecf9c7e41e4
+langcode: fr
+status: true
+dependencies: {  }
+label: 'WYSIWYG Ratio 16:9'
+id: ratio_16_9
+description: ''
+aspect_ratio: '16:9'
+soft_limit_width: 320
+soft_limit_height: 180
+hard_limit_width: null
+hard_limit_height: null

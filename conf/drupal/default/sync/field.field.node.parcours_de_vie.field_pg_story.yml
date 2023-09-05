@@ -1,0 +1,67 @@
+uuid: d8d1c354-fae9-4459-888d-575d5175c599
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pg_story
+    - node.type.parcours_de_vie
+    - paragraphs.paragraphs_type.story
+  module:
+    - entity_reference_revisions
+id: node.parcours_de_vie.field_pg_story
+field_name: field_pg_story
+entity_type: node
+bundle: parcours_de_vie
+label: 'Story parcours de vie'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      story: story
+    negate: 0
+    target_bundles_drag_drop:
+      pg_advanced_text:
+        weight: 14
+        enabled: false
+      pg_chiffre:
+        weight: 15
+        enabled: false
+      pg_highligted:
+        weight: 16
+        enabled: false
+      pg_insert_audio:
+        weight: 17
+        enabled: false
+      pg_insert_document:
+        weight: 18
+        enabled: false
+      pg_insert_image:
+        weight: 19
+        enabled: false
+      pg_insert_node:
+        weight: 20
+        enabled: false
+      pg_insert_rs:
+        weight: 21
+        enabled: false
+      pg_insert_video:
+        weight: 22
+        enabled: false
+      pg_text:
+        weight: 23
+        enabled: false
+      pg_verbatim:
+        weight: 24
+        enabled: false
+      story:
+        weight: 25
+        enabled: true
+      wysiwyg_personnalise:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,8 @@
+name: 'ICDC Didomi Video Embed'
+type: module
+description: 'Video Embed Integration with Didomi Consent Management Platform.'
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+dependencies:
+  - icdc_didomi_embed
+  - video_embed_field

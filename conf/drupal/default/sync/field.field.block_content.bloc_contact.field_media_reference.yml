@@ -1,0 +1,30 @@
+uuid: 91f56784-4937-4345-b46d-e55f9195a490
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_contact
+    - field.storage.block_content.field_media_reference
+    - media.type.image
+    - media.type.video
+id: block_content.bloc_contact.field_media_reference
+field_name: field_media_reference
+entity_type: block_content
+bundle: bloc_contact
+label: 'Média d''illustration'
+description: 'Sélectionnez une image ou une vidéo d’illustration.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

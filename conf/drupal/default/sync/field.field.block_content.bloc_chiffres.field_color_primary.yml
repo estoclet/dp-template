@@ -1,0 +1,22 @@
+uuid: 3661792e-22dd-4b29-96ce-48628fe5cb0a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_chiffres
+    - field.storage.block_content.field_color_primary
+  module:
+    - color_field
+id: block_content.bloc_chiffres.field_color_primary
+field_name: field_color_primary
+entity_type: block_content
+bundle: bloc_chiffres
+label: 'Couleur d’arrière-plan ( à supprimer)'
+description: 'Champ à supprimer - ne permet pas d''avoir une classe'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

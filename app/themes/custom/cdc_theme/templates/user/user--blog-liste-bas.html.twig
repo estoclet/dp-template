@@ -1,0 +1,53 @@
+{% if "blog_editor" in user.getroles(TRUE)  %}
+	{% set firstname = user.field_user_firstname.value %}
+	{% set lastname = user.field_user_lastname.value %}
+	{% set authorURL = path('view.blog.page_blog_author', { 'arg_0': (firstname ~ '_' ~ lastname)|drupal_escape })  %}
+	{% set fullname = firstname~' '~lastname %}
+	{% set fonction = user.field_function.value %}
+	{% set linkedin = user.field_user_linkedin.uri %}
+{% endif %}
+
+{% set firstname = user.field_user_firstname.value %}
+{% set lastname = user.field_user_lastname.value %}
+{% set authorURL = path('view.blog.page_blog_author', { 'arg_0': (firstname ~ '_' ~ lastname)|drupal_escape })  %}
+{% set fullname = firstname~' '~lastname %}
+{%
+    set portrait = {
+
+    '#theme':      'image_style',
+    '#style_name': 'auteur',
+    '#uri':        content.field_media_reference[0]['#media'].field_media_image.entity.uri.value,
+    '#alt':        fullname,
+    '#width':      content.field_media_reference.entity.field_media_image.entity.width,
+    '#height':     content.field_media_reference.entity.field_media_image.entity.height,
+    '#attributes': { class: 'img-circle' },
+  }
+%}
+
+
+
+<div class="auteur-description">
+  {% if user.field_media_reference is not empty %}
+		<a href="{{ authorURL }}" rel="bookmark" title="{{ fullname }}">{{ portrait }}</a>
+	{% endif %}
+	{% if authorURL is not empty %}
+		<div class="auteur-infos">
+			<a href="{{ authorURL }}" rel="author">
+				<div class="auteur">{{ fullname }}</div>
+        {% if user.field_entite_reference is not empty %}
+          <div class="auteur-entite">{{ user.field_entite_reference.entity.name.value }}</div>
+				{% endif %}
+				{% if fonction is not empty %}
+					<div class="auteur-fonction">{{ fonction }}</div>
+				{% endif %}
+			</a>
+			{% if linkedin is not empty %}
+				<div class="auteur-linkedin">
+					<a href="{{ linkedin }}" title="{% trans %}Suivre sur Linkedin{% endtrans %}" class="icon">
+						<i class="cdcicon cdcicon-linkedin" aria-hidden="true"></i>
+					</a>
+				</div>
+			{% endif %}
+		</div>
+	{% endif %}
+</div>

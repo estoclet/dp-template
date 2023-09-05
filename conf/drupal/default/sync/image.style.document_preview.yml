@@ -1,0 +1,15 @@
+uuid: 9ff75a8a-6563-4115-928f-702e996af734
+langcode: fr
+status: true
+dependencies: {  }
+name: document_preview
+label: 'Document preview (293*412)'
+effects:
+  2e4abb16-c66c-4c2e-be89-1e7fe95fd897:
+    uuid: 2e4abb16-c66c-4c2e-be89-1e7fe95fd897
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 293
+      height: 412
+      anchor: center-center

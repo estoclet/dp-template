@@ -1,0 +1,10 @@
+uuid: 3094093f-f4c7-4e3e-b3d2-45209a164e74
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.contextual_feed
+label: 'Remontée contextuelle'
+targetEntityType: media
+cache: true

@@ -1,0 +1,48 @@
+uuid: 524ec24c-14fa-4c90-8187-4ff999e241f3
+langcode: fr
+status: true
+dependencies: {  }
+id: menu_footer
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: init_content
+label: 'Menu Footer'
+source:
+  plugin: csv
+  path: 'public://icdc_migration/menu_footer.csv'
+  ids:
+    - id
+  delimiter: ;
+process:
+  menu_name:
+    plugin: default_value
+    default_value: footer
+  title: title
+  description: description
+  link/uri:
+    -
+      plugin: migration_lookup
+      migration: nodes
+      no_stub: true
+      source: node
+    -
+      plugin: icdc_default_uri
+      default_value: 'route:<nolink>'
+      entity_type: node
+    -
+      plugin: link_uri
+  link/options/attributes/target: target
+  weight: weight
+  enabled: enabled
+  expanded: expanded
+  parent:
+    plugin: menu_link_parent
+    source:
+      - parent
+destination:
+  plugin: 'entity:menu_link_content'
+migration_dependencies:
+  required:
+    - nodes

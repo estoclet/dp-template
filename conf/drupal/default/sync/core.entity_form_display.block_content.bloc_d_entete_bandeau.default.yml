@@ -1,0 +1,97 @@
+uuid: 8f734162-3ae4-4b85-bfa8-c70e31bbd55f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_d_entete_bandeau
+    - entity_browser.browser.all_browser
+    - field.field.block_content.bloc_d_entete_bandeau.field_chapo
+    - field.field.block_content.bloc_d_entete_bandeau.field_color_primary_bandeau
+    - field.field.block_content.bloc_d_entete_bandeau.field_color_secondary
+    - field.field.block_content.bloc_d_entete_bandeau.field_dark_header_checkbox
+    - field.field.block_content.bloc_d_entete_bandeau.field_media_bandeau
+    - field.field.block_content.bloc_d_entete_bandeau.field_no_margin_bandeau
+    - field.field.block_content.bloc_d_entete_bandeau.field_type_dentete
+  module:
+    - color_field
+    - entity_browser
+    - text
+    - workbench_moderation
+id: block_content.bloc_d_entete_bandeau.default
+targetEntityType: block_content
+bundle: bloc_d_entete_bandeau
+mode: default
+content:
+  field_chapo:
+    type: text_textarea
+    weight: 26
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_color_primary_bandeau:
+    type: color_field_widget_box
+    weight: 6
+    region: content
+    settings:
+      default_colors: '#ffffff,#f4f5f8,#05befa,#18d9c9,#ff666b,#fba11b,#e30613,#1f1f1f,#32303a,#6e6e6e,#7a35b4,#1e46a0,#006462'
+    third_party_settings: {  }
+  field_color_secondary:
+    type: color_field_widget_box
+    weight: 7
+    region: content
+    settings:
+      default_colors: '#ffffff,#f4f5f8,#05befa,#18d9c9,#ff666b,#fba11b,#e30613,#1f1f1f,#32303a,#6e6e6e,#7a35b4,#1e46a0,#006462'
+    third_party_settings: {  }
+  field_dark_header_checkbox:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_media_bandeau:
+    type: entity_browser_entity_reference
+    weight: 3
+    region: content
+    settings:
+      entity_browser: all_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: header
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_no_margin_bandeau:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_type_dentete:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

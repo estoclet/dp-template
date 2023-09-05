@@ -1,0 +1,23 @@
+uuid: 00c50570-35e5-467c-b818-03de26f5e388
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.mini_site_page.field_body
+    - mini_sites.mini_site_page_type.basic
+  module:
+    - text
+_core:
+  default_config_hash: 3JRGiZ_RsiZMmkalmlPw1suHa6YXr48doLiUsaUhGJk
+id: mini_site_page.basic.field_body
+field_name: field_body
+entity_type: mini_site_page
+bundle: basic
+label: Body
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

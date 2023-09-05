@@ -1,0 +1,28 @@
+uuid: 9ea9ad34-0f67-4e50-8112-36a7008f3eaa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_teaser_reference
+    - media.type.image
+    - node.type.parcours_de_vie
+id: node.parcours_de_vie.field_image_teaser_reference
+field_name: field_image_teaser_reference
+entity_type: node
+bundle: parcours_de_vie
+label: 'Vignette d''illustration'
+description: '<p>Ajoutez l''image qui sera affichée dans la remontée de cette page sur une autre page du site ainsi que sur les réseaux sociaux.</p>'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

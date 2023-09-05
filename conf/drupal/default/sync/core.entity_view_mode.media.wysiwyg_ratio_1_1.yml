@@ -1,0 +1,10 @@
+uuid: c6231fb4-9ed5-4c65-9ede-7a09e5b2b312
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.wysiwyg_ratio_1_1
+label: 'WYSIWYG Recadrage 1:1'
+targetEntityType: media
+cache: true

@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a media item.
+ *
+ * Available variables:
+ * - media: The media item, with limited access to object properties and
+ *   methods. Only method names starting with "get", "has", or "is" and
+ *   a few common methods such as "id", "label", and "bundle" are available.
+ *   For example:
+ *   - entity.getEntityTypeId() will return the entity type ID.
+ *   - entity.hasField('field_example') returns TRUE if the entity includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   Calling other methods, such as entity.delete(), will result in
+ *   an exception.
+ *   See \Drupal\Core\Entity\EntityInterface for a full list of methods.
+ * - name: Name of the media item.
+ * - content: Media content.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - attributes: HTML attributes for the containing element.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ *
+ * @see template_preprocess_media()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set url = file_url(media.field_media_file.entity.uri.value) %}
+{% set description = media.field_media_description.value %}
+{% set mime = media.field_media_mine.value|slice(-3, 3) %}
+{% set size = media.field_media_size.value/1000 %}
+{% set sizeformat = size|round %}
+<div {{ attributes.addClass('wrapper-communique-presse') }} >
+  <div class="doc-display heading">
+      <a href="{{ url }}" download="{{ name }}">
+        <span class="doc-name">{{ name }}</span>
+        <span class="doc-info">{{ mime }} - {{ sizeformat }}{%trans %}k {% endtrans %} </span>
+        <span class="cdcicon cdcicon-download icon-download" aria-hidden="true"></span>
+      </a>
+  </div>
+  <div class="content-date">
+    {% if media.field_media_doctype_reference.isEmpty() == false %}
+      <span class="tag blog-type icon-tag {{ media.field_media_doctype_reference.entity.getName()|lower|replace({'à':'a','á':'a','â':'a','ç':'c','é':'e','è':'e','ê':'e','ë':'e','ì':'i','í':'i','î':'i','ï':'i','ñ':'n','ò':'o','ó':'o','ô':'o','œ':'oe','ù':'u','ú':'u','û':'u','ü':'u','ý':'y','ÿ':'y'})  }}">{{ media.field_media_doctype_reference.entity.getName() }}
+      </span>
+    {% endif %}
+    <time class="date">{{ content.field_media_date }}</time>
+  </div>
+  {% if media.field_media_press_references is not empty %}
+    <ul class="file-attached row">
+      {% for key, item in media.field_media_press_references %}
+        <li class="attachment-{{ key + 1 }} col-xs-12">{{ content.field_media_press_references[key] }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

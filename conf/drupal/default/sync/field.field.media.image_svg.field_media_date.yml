@@ -1,0 +1,24 @@
+uuid: 4dcd2ec9-a29d-402f-bc2e-398ea1cb49a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_date
+    - media.type.image_svg
+  module:
+    - datetime
+id: media.image_svg.field_media_date
+field_name: field_media_date
+entity_type: media
+bundle: image_svg
+label: 'Date de référence du document'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

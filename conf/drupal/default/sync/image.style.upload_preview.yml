@@ -1,0 +1,15 @@
+uuid: 2c1fd749-a2a2-4869-bd59-f8471d0d24bc
+langcode: fr
+status: true
+dependencies: {  }
+name: upload_preview
+label: 'Upload preview  (hauteur:400px)'
+effects:
+  65b56471-bb4d-469c-bd30-1201d2a321a5:
+    uuid: 65b56471-bb4d-469c-bd30-1201d2a321a5
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 400
+      upscale: false

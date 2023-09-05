@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_investors.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_investors_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_investors module.
+    case 'help.page.icdc_investors':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Manage investors modal.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function icdc_investors_theme() {
+  return [
+    'investors_modal_block' => [
+      'variables' => [
+        'description' => NULL,
+        'btn_resident_label' => NULL,
+        'btn_non_resident_label' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+  ];
+}

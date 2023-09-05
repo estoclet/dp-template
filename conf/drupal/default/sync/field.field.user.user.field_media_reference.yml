@@ -1,0 +1,29 @@
+uuid: f6c1a79c-230b-481a-b4cc-791dab945212
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_media_reference
+    - media.type.image
+  module:
+    - user
+id: user.user.field_media_reference
+field_name: field_media_reference
+entity_type: user
+bundle: user
+label: 'Portrait officiel'
+description: '<p>Ajoutez une image qui sera utilisée comme portrait. Attention cette image peut apparaître sur le site (auteur de blog).</p>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

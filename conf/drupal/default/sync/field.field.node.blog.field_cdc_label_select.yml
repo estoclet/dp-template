@@ -1,0 +1,21 @@
+uuid: 85b36dc6-1a1e-45e9-880c-e76483f56909
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cdc_label_select
+    - node.type.blog
+  module:
+    - options
+id: node.blog.field_cdc_label_select
+field_name: field_cdc_label_select
+entity_type: node
+bundle: blog
+label: 'Label CDC'
+description: 'Sélectionnez le label Caisse des Dépôts associé à l’article.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

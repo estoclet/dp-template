@@ -1,0 +1,19 @@
+uuid: 74703344-ed96-46a2-bdc7-c5b72531959a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_contact
+    - field.storage.block_content.field_email
+id: block_content.bloc_contact.field_email
+field_name: field_email
+entity_type: block_content
+bundle: bloc_contact
+label: Courriel
+description: 'Renseignez le courriel du contact.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

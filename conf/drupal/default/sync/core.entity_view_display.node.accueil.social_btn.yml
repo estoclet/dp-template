@@ -1,0 +1,62 @@
+uuid: 18278add-ac56-4ba7-9853-3b1fdad30fa8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.social_btn
+    - field.field.node.accueil.field_color_primary
+    - field.field.node.accueil.field_head_background
+    - field.field.node.accueil.field_head_image_reference
+    - field.field.node.accueil.field_head_link
+    - field.field.node.accueil.field_head_text
+    - field.field.node.accueil.field_head_title
+    - field.field.node.accueil.field_image_teaser_reference
+    - field.field.node.accueil.field_media_reference
+    - field.field.node.accueil.field_metatag
+    - field.field.node.accueil.field_short_title
+    - field.field.node.accueil.field_site
+    - field.field.node.accueil.field_site_page
+    - field.field.node.accueil.field_site_page_type
+    - field.field.node.accueil.field_snippet_seo
+    - field.field.node.accueil.layout_builder__layout
+    - node.type.accueil
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.accueil.social_btn
+targetEntityType: node
+bundle: accueil
+mode: social_btn
+content:
+  social_simple_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_color_primary: true
+  field_head_background: true
+  field_head_image_reference: true
+  field_head_link: true
+  field_head_text: true
+  field_head_title: true
+  field_image_teaser_reference: true
+  field_media_reference: true
+  field_metatag: true
+  field_short_title: true
+  field_site: true
+  field_site_page: true
+  field_site_page_type: true
+  field_snippet_seo: true
+  langcode: true
+  layout_builder__layout: true
+  links: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

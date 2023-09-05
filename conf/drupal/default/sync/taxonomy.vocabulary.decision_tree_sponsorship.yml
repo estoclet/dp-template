@@ -1,0 +1,8 @@
+uuid: 64cf7a0e-9593-4e5a-b745-5656ce0142b3
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Arbre de décision mécénat'
+vid: decision_tree_sponsorship
+description: 'Configuration des niveaux de l’arbre de décision dédié aux appels à projets mécénat.'
+weight: 0

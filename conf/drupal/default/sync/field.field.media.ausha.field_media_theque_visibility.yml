@@ -1,0 +1,23 @@
+uuid: 25042e7b-1f07-4a90-9d3e-17f7ba7ffa77
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_theque_visibility
+    - media.type.ausha
+id: media.ausha.field_media_theque_visibility
+field_name: field_media_theque_visibility
+entity_type: media
+bundle: ausha
+label: 'Afficher dans la médiathèque'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

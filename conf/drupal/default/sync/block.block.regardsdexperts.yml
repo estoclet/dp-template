@@ -1,0 +1,30 @@
+uuid: 0d85d5f4-c585-4c78-bee8-cedf83d25ff0
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:bloc_d_entete_bandeau:1f1bad24-1357-41a9-86af-e23cd2f67713'
+  module:
+    - block_content
+    - system
+  theme:
+    - cdc_theme
+id: regardsdexperts
+theme: cdc_theme
+region: highlighted
+weight: 0
+provider: null
+plugin: 'block_content:1f1bad24-1357-41a9-86af-e23cd2f67713'
+settings:
+  id: 'block_content:1f1bad24-1357-41a9-86af-e23cd2f67713'
+  label: 'REGARD(s) D''EXPERT(s) '
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/blog\r\n/blog/*\r\n/blog/tag/*\r\n/blog/auteur/*\r\n!/blog/article/*"

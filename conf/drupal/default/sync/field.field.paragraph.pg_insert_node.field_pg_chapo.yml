@@ -1,0 +1,23 @@
+uuid: a4b0ec72-39af-47b0-a111-5a411e4adf01
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_chapo
+    - paragraphs.paragraphs_type.pg_insert_node
+  module:
+    - text
+_core:
+  default_config_hash: uqjeURWFvQVdhDAIJBzG2X6iP64s2353fP6KKDRbhAk
+id: paragraph.pg_insert_node.field_pg_chapo
+field_name: field_pg_chapo
+entity_type: paragraph
+bundle: pg_insert_node
+label: Chapô
+description: 'Saisissez le texte utilisé comme chapô de l''encart.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

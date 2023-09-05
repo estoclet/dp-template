@@ -1,0 +1,23 @@
+uuid: 3ba64f63-0629-4872-a6e5-2eecc79736c5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blog_type_list
+    - node.type.blog
+  module:
+    - options
+id: node.blog.field_blog_type_list
+field_name: field_blog_type_list
+entity_type: node
+bundle: blog
+label: 'Type d''article'
+description: 'Définissez le type de l’article.'
+required: true
+translatable: true
+default_value:
+  -
+    value: article
+default_value_callback: ''
+settings: {  }
+field_type: list_string

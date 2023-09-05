@@ -1,0 +1,77 @@
+providers:
+  youtube:
+    domains:
+    - youtube.com
+    - youtu.be
+    constent: TRUE
+    vendor:
+      id: 'c:youtube'
+    notice:
+      content: "Si vous souhaitez continuer et lire nos vidéos,<br />vous devez nous donner votre accord en cliquant sur le bouton ci-dessous."
+      button: 'Voir les cookies'
+  youtube_playlist:
+    domains:
+    - youtube.com
+    - youtu.be
+    constent: TRUE
+    vendor:
+      id: 'c:youtube'
+    notice:
+      content: "Si vous souhaitez continuer et lire nos vidéos,<br />vous devez nous donner votre accord en cliquant sur le bouton ci-dessous."
+      button: 'Voir les cookies'
+  soundcloud:
+    domains:
+    - soundcloud.com
+    constent: TRUE
+    vendor:
+      id: 'c:soundcloud-zwnLCUDR'
+    notice:
+      content: "Si vous souhaitez continuer et lire nos podcats,<br />vous devez nous donner votre accord en cliquant sur le bouton ci-dessous."
+      button: 'Voir les cookies'
+  ausha:
+    domains:
+    - player.ausha.co
+    constent: TRUE
+    vendor:
+      id: 'c:auscha_cdc'
+    notice:
+      content: "Si vous souhaitez continuer et lire nos podcats,<br />vous devez nous donner votre accord en cliquant sur le bouton ci-dessous."
+      button: 'Voir les cookies'
+  bdt:
+    domains:
+    - bt3.local
+    - di.cdc.fr
+    - bdt.dd
+    cookies:
+      bdt_themed_list:
+        name: 'bdt_themed_list'
+        constent: TRUE
+        purposeId: 'personalization'
+      bdt_event.display:
+        name: 'bdt_event.display'
+        constent: TRUE
+        purposeId: 'personalization'
+      bdt_eloquant_bdt_refuse_all_participation:
+        name: 'bdt_refuse_all_participation'
+        constent: TRUE
+        purposeId: 'personalization'
+      bdt_eloquant_bdt_refuse_participation:
+        name: 'bdt_refuse_participation_'
+        constent: TRUE
+        purposeId: 'personalization'
+      bdt_eloquant_bdt_has_participated:
+        name: 'bdt_has_participated_'
+        constent: TRUE
+        purposeId: 'personalization'
+      bdt_notaries_directory.display:
+        name: 'bdt_notaries_directory.display'
+        constent: TRUE
+        purposeId: 'personalization'
+      NAV_SEG:
+        name: 'NAV_SEG'
+        constent: TRUE
+        purposeId: 'personalization'
+      bdt_alter:
+        name: 'bdt_alert_'
+        constent: TRUE
+        purposeId: 'personalization'

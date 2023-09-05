@@ -1,0 +1,33 @@
+uuid: 6647091d-7475-4a75-ab69-b6576e3b6f0b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+    - node.type.actualite
+    - node.type.article
+  module:
+    - content_translation
+    - filter
+    - icdc_toolbox
+    - icdc_users
+    - node
+    - taxonomy
+id: restricted_editor
+label: 'Rédacteur restreint'
+weight: 4
+is_admin: null
+permissions:
+  - 'access taxonomy overview'
+  - 'create actualite content'
+  - 'create article content'
+  - 'delete own actualite content'
+  - 'delete own article content'
+  - 'edit any actualite content'
+  - 'edit own actualite content'
+  - 'edit own article content'
+  - 'icdc toolbox clear cache'
+  - 'set user password'
+  - 'translate actualite node'
+  - 'translate article node'
+  - 'use text format restricted_html'

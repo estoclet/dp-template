@@ -1,0 +1,20 @@
+uuid: 6654e843-95f5-4ce6-8434-7f697fd88dcc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.course_of_life
+id: taxonomy_term.course_of_life.moderation_state
+field_name: moderation_state
+entity_type: taxonomy_term
+bundle: course_of_life
+label: 'État de modération'
+description: 'L''état de modération de cet élément de contenu.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

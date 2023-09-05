@@ -1,0 +1,19 @@
+uuid: 08ae4bde-8f8f-4f29-8376-9c0ad2b6b2a5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_mine
+    - media.type.image_svg
+id: media.image_svg.field_media_mine
+field_name: field_media_mine
+entity_type: media
+bundle: image_svg
+label: 'Type Mime'
+description: 'Ne rien saisir. La valeur de ce champ sera renseignée automatiquement à la fin du téléchargement. Le type mine est détecté par le système.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

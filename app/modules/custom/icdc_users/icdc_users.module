@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_users.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_users_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_users module.
+    case 'help.page.icdc_users':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('User module management') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function icdc_users_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if($form_id == 'user_form') {
+    // Get the current user
+    $user = \Drupal::currentUser();
+    // Check for permission
+    if(!$user->hasPermission('set user password')) {
+      // Remove password fields
+      unset($form['account']['pass']);
+      $form['account']['current_pass']['#description'] = t('Requis si vous souhaitez changer d\'adresse de courriel');
+    };
+  }
+}
+
+
+
+

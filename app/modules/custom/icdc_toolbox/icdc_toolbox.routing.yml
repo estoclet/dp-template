@@ -1,0 +1,15 @@
+icdc_toolbox.icdc_toolbox_admin_controller_icdc_admin_menu:
+  path: '/admin/cdc'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Administration CDC'
+  requirements:
+    _access: 'TRUE'
+
+icdc_toolbox.version:
+  path: '/admin/cdc/version'
+  defaults:
+    _controller: '\Drupal\icdc_toolbox\Controller\VersionController::content'
+    _title: 'Version'
+  requirements:
+    _permission: 'access administration pages'

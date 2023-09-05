@@ -1,0 +1,18 @@
+uuid: 64c87044-586e-42e3-8aa1-0c4cdafbfdee
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.dossier
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.dossier
+target_entity_type_id: node
+target_bundle: dossier
+default_langcode: site_default
+language_alterable: false

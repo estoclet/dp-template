@@ -1,0 +1,27 @@
+uuid: 8f72f37e-3783-4e42-8705-99735ed4c3a5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_node_references
+    - node.type.blog
+id: node.blog.field_node_references
+field_name: field_node_references
+entity_type: node
+bundle: blog
+label: 'Articles connexes'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      blog: blog
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

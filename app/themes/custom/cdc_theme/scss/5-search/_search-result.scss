@@ -1,0 +1,196 @@
+/**
+ * @file
+ * Search Result Styling
+ */
+
+.view-recherche {
+  .view-header {
+    margin-bottom: 40px;
+    font-family: $font-roboto;
+    font-size: 2.5rem;
+
+    @media (min-width: $screen-sm-min) {
+      font-size: 2.7rem;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 3rem;
+    }
+  }
+
+  .view-filters {
+    margin-bottom: 40px;
+
+    .views-exposed-form {
+      max-width: 1110px;
+      margin: 0 auto;
+
+      .form-item-search-api-fulltext {
+        @media (min-width: $screen-sm-min) {
+          width: calc(100% - 65px);
+        }
+      }
+    }
+  }
+
+
+  .control-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
+  input {
+    &.form-control {
+      &:focus{
+        @include focus($gris-moyen, 0, 3px);
+      }
+
+      width: 100%;
+      height: 64px;
+      border: 1px solid $gris;
+      border-radius: 2px;
+      background: $white;
+
+      @media (min-width: $screen-sm-min) {
+        border-right: 0;
+      }
+    }
+  }
+
+  .form-actions {
+    position: relative;
+    vertical-align: bottom;
+    margin-top: 20px;
+
+    @media (min-width: $screen-sm-min) {
+      margin-top: 0;
+    }
+
+    &:before {
+      content: $cdcicon-loupe;
+      font-family: $icomoon-font-family;
+      position: absolute;
+      z-index: 99;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      font-size: 2.4rem;
+      background: $couleur-rouge;
+
+      @media (min-width: $screen-sm-min) {
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    button {
+      &:focus{
+        @include focus($gris-moyen, 0, 3px);
+      }
+
+      padding: 0;
+      z-index: 99;
+      width: 100%;
+      height: 64px;
+      margin-bottom: 0;
+      margin-top: 0;
+      background: none !important;
+      border-radius: 2px;
+      border: 1px solid $gris;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $white;
+      text-indent: -9999px;
+
+      @media (min-width: $screen-sm-min) {
+        width: 64px;
+        margin-left: -5px;
+        border-left: 0;
+      }
+
+      &:hover {
+        background: $couleur-rouge;
+      }
+    }
+  }
+
+  .view-content {
+    & > .views-row {
+      margin-bottom: 40px;
+    }
+
+    .node--view-mode-list {
+      margin-bottom: 0;
+    }
+  }
+
+  //Communique de presse
+  .wrapper-communique-presse {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $gris-picto;
+    display: grid;
+
+    .content-date{
+      grid-row: 1;
+      display: flex;
+      .blog-type{
+        margin-right: 1.5rem;
+      }
+    }
+
+    .file-attached {
+      padding: 0;
+      list-style: none;
+
+      &.row {
+        margin-right: 0;
+        margin-left: 0;
+
+
+        & > li[class*='col-'] {
+          padding: 0;
+        }
+      }
+
+      .doc-display {
+        margin-top: 15px;
+      }
+    }
+
+    .doc-display.heading {
+      @extend %heading3;
+      margin-top: 20px;
+      margin-bottom: 0;
+      padding: 0;
+
+      a {
+        padding-bottom: 2px;
+        background: none;
+      }
+
+      .doc-name {
+        line-height: 2.8rem;
+      }
+    }
+
+    .doc-display {
+      max-width: 100%;
+
+      .doc-name {
+        width: 90%;
+      }
+    }
+  }
+}

@@ -1,0 +1,213 @@
+.page-node-type-accueil {
+
+  .header-navigation-secondary,
+  .region-header > nav,
+  .branding-home .slogan {
+    position: relative;
+    z-index: 10;
+
+  }
+
+  &.modal-layer-search-open {
+    .region-header > nav,
+    .branding-home .slogan {
+      z-index: 0;
+    }
+  }
+
+  .region-header {
+    padding-bottom: 0;
+    align-items: flex-start;
+
+    @media (min-width: $screen-sm-min) {
+      height: calc(100vh - 40px);
+    }
+
+    & > nav {
+      &:nth-of-type(1) {
+        margin-left: 3rem;
+
+        @media (min-width: $screen-md-min) {
+          margin-left: 4rem;
+        }
+
+        @media (min-width: $screen-lg-min) {
+          margin-left: 6rem;
+        }
+
+        @media (min-width: $screen-xl-min) {
+          margin-left: 8rem;
+        }
+      }
+    }
+  }
+
+  .region-highlighted {
+    @extend %xl-wrapper;
+    padding: 0;
+    vertical-align: top;
+
+    &:after {
+      display: block;
+      clear: both;
+    }
+
+    .block-entity-viewnode {
+      position: absolute;
+      bottom: 0;
+      z-index: 0;
+      margin: 0 auto;
+      vertical-align: top;
+      text-align: right;
+      right: 0;
+      overflow: hidden;
+
+      @media (max-width: $screen-xs-max) {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        max-width: 100%;
+        padding-bottom: 0;
+      }
+
+      .node--type-accueil {
+        position: relative;
+
+        .svg-wrapper {
+          position: relative;
+          bottom: 0;
+          max-width: 100%;
+
+          @media (max-width: $screen-xs-max) {
+            display: none;
+          }
+
+          .svg-home {
+            max-width: 100%;
+            max-height: 100%;
+            display: none; // display set when size his calculated in js
+
+            @media (max-width: $screen-xs-max) {
+              width: 940px;
+              height: 1581px;
+            }
+          }
+
+          svg {
+            width: 940px;
+            height: 1581px;
+            max-width: 100%;
+            margin: 0;
+            overflow: hidden;
+            vertical-align: top;
+            position: relative;
+            z-index: 1;
+          }
+
+          img {
+            width: 940px;
+            height: 1581px;
+            max-width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+
+        .header-text-home {
+          background-position: center center;
+          background-size: cover;
+          padding: 4rem 3rem;
+          text-align: left;
+
+          @media (min-width: $screen-sm-min) {
+            position: absolute;
+            z-index: 1;
+            padding: 0;
+            margin-left: 10%;
+            text-align: left;
+            bottom: 10%;
+            max-width: 500px;
+            width: 90%;
+            background: none !important;
+          }
+
+          &.bg--dark{
+            &::after {
+              @media (max-width: $screen-xs-max) {
+                background: linear-gradient(0deg, rgba(0, 0, 0, .75) 0%, rgba(0, 0, 0, 0) 100%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: 0;
+                content: '';
+              }
+            }
+          }
+
+          h2 {
+            @extend %heading1-light;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+          }
+
+          .field--name-field-head-text {
+            @extend %chapo;
+            margin: 0 0 10px;
+            display: block;
+            position: relative;
+            z-index: 1;
+
+            @media (max-width: $screen-xs-min) {
+              display: none;
+            }
+
+            @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+              display: none;
+            }
+          }
+
+          .field--name-field-head-link {
+            a {
+              &:focus{
+                @include focus($white, .2rem, 3px);
+              }
+
+              &:hover {
+                color: $noir-web !important;
+              }
+            }
+          }
+
+          >.field--name-field-media-credential{
+            position: relative;
+            z-index: 1;
+
+          @media (min-width: $screen-sm-min) {
+            display: none;
+          }
+
+          }
+        }
+
+        >.field--name-field-media-credential{
+          padding-right: 1.5rem;
+          padding-left: 1.5rem;
+
+          @media (max-width: $screen-xs-max) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.node--type-accueil {
+  &.node--view-mode-full {
+    margin-bottom: 0;
+  }
+}

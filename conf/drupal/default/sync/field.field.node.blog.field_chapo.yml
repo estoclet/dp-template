@@ -1,0 +1,19 @@
+uuid: f675429b-3c7a-4a6f-8ff6-d0e01c79f57c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_chapo
+    - node.type.blog
+id: node.blog.field_chapo
+field_name: field_chapo
+entity_type: node
+bundle: blog
+label: Chapô
+description: 'Saisissez le chapô de la page'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

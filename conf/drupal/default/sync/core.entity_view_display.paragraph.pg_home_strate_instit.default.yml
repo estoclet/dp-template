@@ -1,0 +1,82 @@
+uuid: e4d67c03-c1fc-4bfe-9b48-3878b22ed47c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pg_home_strate_instit.field_background_color
+    - field.field.paragraph.pg_home_strate_instit.field_pg_chapo
+    - field.field.paragraph.pg_home_strate_instit.field_pg_image_reference
+    - field.field.paragraph.pg_home_strate_instit.field_pg_link
+    - field.field.paragraph.pg_home_strate_instit.field_pg_surtitle
+    - field.field.paragraph.pg_home_strate_instit.field_pg_title
+    - paragraphs.paragraphs_type.pg_home_strate_instit
+  module:
+    - color_field
+    - field_formatter_class
+    - link
+    - text
+id: paragraph.pg_home_strate_instit.default
+targetEntityType: paragraph
+bundle: pg_home_strate_instit
+mode: default
+content:
+  field_background_color:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_pg_chapo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_pg_image_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 4
+    region: content
+  field_pg_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_pg_surtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_pg_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  search_api_excerpt: true

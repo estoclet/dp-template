@@ -1,0 +1,7 @@
+name: Media Entity Soundcloud Formatter Pro
+type: module
+description: Media entity soundcloud formatter pro.
+core_version_requirement: ^8 || ^9
+package: Media
+dependencies:
+  - media_entity_soundcloud

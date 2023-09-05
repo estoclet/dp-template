@@ -1,0 +1,21 @@
+uuid: 81658479-e677-4090-8aac-ef8d1a80755e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site_page
+    - node.type.actualite
+id: node.actualite.field_site_page
+field_name: field_site_page
+entity_type: node
+bundle: actualite
+label: 'Site page'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:mini_site_page'
+  handler_settings: {  }
+field_type: entity_reference

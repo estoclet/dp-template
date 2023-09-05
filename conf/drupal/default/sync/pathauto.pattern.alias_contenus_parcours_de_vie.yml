@@ -1,0 +1,32 @@
+uuid: 75698d49-9a3b-46e6-a7b1-d35b738afdc0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - mini_sites
+    - node
+id: alias_contenus_parcours_de_vie
+label: 'Alias des contenus de type parcours de vie'
+type: 'canonical_entities:node'
+pattern: '[node:field_pg_tag_reference:entity:name]/[node:title]'
+selection_criteria:
+  ecb69840-a1cd-4a2c-a8c3-41223639f706:
+    id: node_type
+    negate: false
+    uuid: ecb69840-a1cd-4a2c-a8c3-41223639f706
+    context_mapping:
+      node: node
+    bundles:
+      parcours_de_vie: parcours_de_vie
+  99df9823-1d6b-48ab-ac62-9ab03511dca8:
+    id: mini_site_page_content
+    negate: false
+    uuid: 99df9823-1d6b-48ab-ac62-9ab03511dca8
+    context_mapping:
+      node: node
+    mini_site_page_content: na
+    mini_site_page_content_bundles: {  }
+    mini_site_page_content_home: 'no'
+selection_logic: and
+weight: -5
+relationships: {  }

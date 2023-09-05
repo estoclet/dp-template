@@ -1,0 +1,10 @@
+uuid: bb6f3851-c149-4340-85cd-846a0e228f6c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.folded
+label: Replié
+targetEntityType: paragraph
+cache: true

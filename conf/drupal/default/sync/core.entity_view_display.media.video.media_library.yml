@@ -1,0 +1,52 @@
+uuid: ddc67923-353f-4db6-a870-d854cc5af515
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.video.field_media_caption
+    - field.field.media.video.field_media_credential
+    - field.field.media.video.field_media_date
+    - field.field.media.video.field_media_perimeter_reference
+    - field.field.media.video.field_media_theque_visibility
+    - field.field.media.video.field_media_video_embed_field
+    - field.field.media.video.field_media_year
+    - field.field.media.video.field_textual_transcription
+    - image.style.miniature
+    - media.type.video
+  module:
+    - field_formatter_class
+    - video_embed_field
+id: media.video.media_library
+targetEntityType: media
+bundle: video
+mode: media_library
+content:
+  field_media_video_embed_field:
+    type: video_embed_field_thumbnail
+    label: hidden
+    settings:
+      image_style: miniature
+      link_image_to: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_caption: true
+  field_media_credential: true
+  field_media_date: true
+  field_media_perimeter_reference: true
+  field_media_theque_visibility: true
+  field_media_year: true
+  field_textual_transcription: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

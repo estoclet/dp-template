@@ -1,0 +1,18 @@
+mini_sites.mini_site_page_type.*:
+  type: config_entity
+  label: 'Mini site page type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    mini_site:
+      type: string
+      label: 'Mini site'
+    weight:
+      type: integer
+      label: 'Weight'

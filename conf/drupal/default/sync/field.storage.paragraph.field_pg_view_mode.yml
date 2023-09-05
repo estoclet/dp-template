@@ -1,0 +1,19 @@
+uuid: bac130b5-1dc5-4d5e-af26-800d4c382263
+langcode: fr
+status: true
+dependencies:
+  module:
+    - entity_dynamic_rendering
+    - paragraphs
+id: paragraph.field_pg_view_mode
+field_name: field_pg_view_mode
+entity_type: paragraph
+type: view_mode_item
+settings: {  }
+module: entity_dynamic_rendering
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

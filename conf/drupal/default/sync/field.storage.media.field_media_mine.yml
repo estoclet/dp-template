@@ -1,0 +1,23 @@
+uuid: 8b1a062a-a726-4195-848b-72d6b5227365
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: tOtrkbLoZ6y-vdgoVMKqlDrzzK2VFMxRx8hYWadP4l4
+id: media.field_media_mine
+field_name: field_media_mine
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

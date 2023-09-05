@@ -1,0 +1,506 @@
+<?php
+
+/**
+ * @file
+ * Contains mini_sites.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\mini_sites\Entity\MiniSiteType;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\Core\Form\FormState;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+use Drupal\mini_sites\Entity\MiniSitePage;
+use Drupal\Core\Url;
+use Drupal\Core\Field\BaseFieldDefinition;
+/**
+ * Implements hook_help().
+ */
+function mini_sites_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the mini_sites module.
+    case 'help.page.mini_sites':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Mini sites') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mini_sites_theme() {
+  $theme = [];
+  $theme['mini_site_menu'] = [
+    'render element' => 'menu',
+  ];
+  $theme['mini_site'] = [
+    'render element' => 'elements',
+    'file' => 'mini_site.page.inc',
+    'template' => 'mini_site',
+  ];
+  $theme['mini_site_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'mini_site.page.inc',
+  ];
+  $theme['mini_site_page'] = [
+    'render element' => 'elements',
+    'file' => 'mini_site_page.page.inc',
+    'template' => 'mini_site_page',
+  ];
+  $theme['mini_site_page_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'mini_site_page.page.inc',
+  ];
+  return $theme;
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function mini_sites_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if(\Drupal::getContainer()->get('mini_sites.mini_site_helper')->getCurrentMiniSite()) {
+    $suggestions[] = 'page__mini_site';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function mini_sites_theme_suggestions_mini_site(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#mini_site'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'mini_site__' . $sanitized_view_mode;
+  $suggestions[] = 'mini_site__' . $entity->bundle();
+  $suggestions[] = 'mini_site__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'mini_site__' . $entity->id();
+  $suggestions[] = 'mini_site__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function mini_sites_theme_suggestions_mini_site_page(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#mini_site_page'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'mini_site_page__' . $sanitized_view_mode;
+  $suggestions[] = 'mini_site_page__' . $entity->bundle();
+  $suggestions[] = 'mini_site_page__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'mini_site_page__' . $entity->id();
+  $suggestions[] = 'mini_site_page__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function mini_sites_menu_links_discovered_alter(&$links) {
+  /** @var $entityTypeManager \Drupal\Core\Entity\EntityTypeManager*/
+  $entityTypeManager = \Drupal::entityTypeManager();
+
+  $links['mini_sites.add_mini_site'] = [
+    'title' => t('Add Mini site'),
+    'provider' => 'mini_sites',
+    'route_name' => 'entity.mini_site.add_page',
+    'menu_name' => 'admin',
+    'parent' => 'system.admin_content',
+  ];
+  // Add node links for each media type.
+  foreach ($entityTypeManager->getStorage('mini_site_type')
+             ->loadMultiple() as $type) {
+    $links['mini_sites.add.' . $type->id()] = [
+      'title' => $type->label(),
+      'provider' => 'mini_sites',
+      'route_name' => 'entity.mini_site.add_form',
+      'parent' => 'mini_sites.add_mini_site',
+      'route_parameters' => ['mini_site_type' => $type->id()],
+    ];
+  }
+}
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function mini_sites_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  $idEntity = $entity->getEntityType()->id();
+  if($idEntity === 'mini_site') {
+    $operations['manage-pages'] = [
+      'title' => t('Manage navigation'),
+      'weight' => -1,
+      'url' => Url::fromRoute("entity.mini_site_page.collection", array(
+        'mini_site' => $entity->id(),
+      )),
+    ];
+  }
+}
+
+/**
+ * Implements hook_entity_base_field_info().
+ */
+function mini_sites_entity_base_field_info(EntityTypeInterface $entity_type) {
+  $moduleHandler = \Drupal::moduleHandler();
+  if ($moduleHandler->moduleExists('path') && $entity_type->id() === 'mini_site_page') {
+    $fields = [];
+    $fields['path'] = BaseFieldDefinition::create('path')
+      ->setLabel(t('URL alias'))
+      ->setTranslatable(TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'path',
+        'weight' => 30,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setComputed(TRUE);
+    return $fields;
+  }
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function mini_sites_entity_extra_field_info() {
+  $extra = [];
+
+  foreach (MiniSiteType::loadMultiple() as $miniSiteType) {
+    $extra['mini_site'][$miniSiteType->id()]['display']['mini_site_menu'] = [
+      'label' => t('Menu'),
+      'description' => t('Menu.'),
+      'weight' => 0,
+      'visible' => TRUE,
+    ];
+    $extra['mini_site'][$miniSiteType->id()]['display']['mini_site_page_content'] = [
+      'label' => t('Page Content'),
+      'description' => t('Page Content.'),
+      'weight' => 0,
+      'visible' => TRUE,
+    ];
+  }
+  return $extra;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function mini_sites_preprocess_page(&$variables) {
+  $routeName = \Drupal::routeMatch()->getRouteName();
+  if(in_array($routeName, ['entity.mini_site.canonical', 'entity.mini_site_page.canonical', 'layout_builder.overrides.node.view']) ||
+    ($routeName === 'entity.node.canonical' && $variables['node']->hasField('field_site') && $variables['node']->hasField('field_site') && !empty($variables['node']->field_site->target_id))) {
+    $block_available = \Drupal::config('mini_sites.settings')->get('block_ids') ?: [];
+    foreach(\Drupal\Core\Render\Element::children($variables['page']) as $currentRegion) {
+      if($currentRegion == 'content') {
+        continue;
+      }
+      foreach (\Drupal\Core\Render\Element::children($variables['page'][$currentRegion]) as $currentChild) {
+        if(!in_array($currentChild, $block_available)) {
+          unset($variables['page'][$currentRegion][$currentChild]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function mini_sites_mini_site_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  /** @var $miniSitePageStorage \Drupal\mini_sites\MiniSitePageStorage */
+//  $miniSitePageStorage = \Drupal::entityTypeManager()->getStorage('mini_site_page');
+//  $flatTree = $miniSitePageStorage->loadTree($entity->id());
+//  $miniSitePageEntity = !empty($build['#current_page']) ? $build['#current_page'] : NULL;
+//  if(empty($miniSitePageEntity) && !empty($flatTree)) {
+//    $miniSitePageEntity = MiniSitePage::load($flatTree[0]->id);
+//  }
+//  if ($display->getComponent('mini_site_menu')) {
+//    $index=array();
+//    $tree=array();
+//    foreach ($flatTree as $key => $currentItem) {
+//      if($currentItem->type === 'link' && ($page = MiniSitePage::load($currentItem->id))) {
+//        $value = $page->get('field_link')->getValue()[0];
+//        $linkObj = Link::fromTextAndUrl($currentItem->name, Url::fromUri($value['uri']));
+//      }
+//      else if($entity->getMenuType() === 'anchor') {
+//        $linkObj = Link::createFromRoute($currentItem->name, 'entity.mini_site.canonical', ['mini_site' => $currentItem->mini_site], ['fragment' => $currentItem->name]);
+//      }
+//      else {
+//        $active = $miniSitePageEntity && $miniSitePageEntity->id() == $currentItem->id;
+//        if($key == 0) {
+//          $linkObj = Link::createFromRoute($currentItem->name, 'entity.mini_site.canonical', ['mini_site' => $currentItem->mini_site], ['attributes' => ['class' => $active ? 'active' : '' ]]);
+//        }
+//        else {
+//          $linkObj = Link::createFromRoute($currentItem->name, 'entity.mini_site_page.canonical', ['mini_site_page' => $currentItem->id], ['attributes' => ['class' => $active ? 'active' : '' ]]);
+//        }
+//      }
+//
+//      $elem = [
+//        'link' => $linkObj->toRenderable(),
+//        'children' => []
+//      ];
+//      if($linkObj->getUrl()->isExternal()) {
+//        $elem['link']['#attributes'] = [
+//          'target' => '_blank'
+//        ];
+//      }
+//      if ($currentItem->parents[0] == 0) {
+//        $tree[$currentItem->id] = $elem;
+//        $index[$currentItem->id] = &$tree[$currentItem->id];
+//      } else if (isset($index[$currentItem->parents[0]])) {
+//        $index[$currentItem->parents[0]]['children'][$currentItem->id] = $elem;
+//        $index[$currentItem->id]=&$index[$currentItem->parents[0]]['children'][$currentItem->id];
+//      }
+//    }
+//
+//    $build['mini_site_menu'] = [
+//      '#theme' => 'item_list',
+//      '#items' => $tree
+//    ];
+//  }
+//
+//  if($display->getComponent('mini_site_page_content')) {
+//    $build['mini_site_page_content'] = [];
+//    $view_builder = \Drupal::entityTypeManager()->getViewBuilder('mini_site_page');
+//    if($entity->getMenuType() === 'anchor') {
+//      foreach ($flatTree as $key => $currentItem) {
+//        $currentMiniSitePageEntity = $miniSitePageStorage->load($currentItem->id);
+//        $build['mini_site_page_content']['page_' . $currentItem->id] = $view_builder->view($currentMiniSitePageEntity, $view_mode);
+//        $build['mini_site_page_content']['page_' . $currentItem->id]['#pre_render'][] = 'mini_site_prerender_page';
+//      }
+//    }
+//    else {
+//      //check if we show content of a content view page.
+//      $nodeEntity = !empty($build['#current_node']) ? $build['#current_node'] : NULL;
+//      if(!empty($nodeEntity)) {
+//        $build['mini_site_page_content'] = \Drupal::entityTypeManager()->getViewBuilder('node')->view($nodeEntity);
+//      }
+//      else if(!empty($miniSitePageEntity)) {
+//        $build['mini_site_page_content'] = $view_builder->view($miniSitePageEntity, $view_mode);
+//      }
+//    }
+//  }
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function mini_sites_token_info() {
+  $info = [];
+
+  $info['tokens']['mini_site_page']['parents'] = [
+    'name' => t('Path tree'),
+    'description' => t('The path tree from current page to root page.'),
+    'type' => 'array'
+  ];
+
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function mini_sites_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
+  if ($type === 'mini_site_page') {
+    /** @var $mini_site_page_storage \Drupal\mini_sites\MiniSitePageStorage */
+    $mini_site_page_storage = \Drupal::getContainer()->get('entity_type.manager')->getStorage('mini_site_page');
+    $miniSitePageEntity = $data['mini_site_page'];
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'parents:join-path':
+          $parents = $mini_site_page_storage->loadAllParents($miniSitePageEntity->id());
+          if(!empty($parents)) {
+            $parents = array_reverse($parents);
+            array_pop($parents);
+            $values = [];
+            foreach ($parents as $currentItem) {
+              $value = \Drupal::service('pathauto.alias_cleaner')->cleanString($currentItem->getName(), $options);
+              $values[] = $value;
+            }
+            $replacements[$original] = implode('/', $values);
+          }
+          break;
+      }
+    }
+  }
+  return $replacements;
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for \Drupal\node\NodeForm.
+ *
+ * Move fields to an advanced tab like other node settings.
+ */
+function mini_sites_form_node_form_alter(&$form, FormState $form_state, $form_id) {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $form_state->getFormObject()->getEntity();
+  $type = $node->type->entity;
+  $node_types_enabled = \Drupal::config('mini_sites.settings')->get('node_type_field_site.node_types') ?: [];
+  $node_type_enabled = in_array($type->id(), $node_types_enabled);
+
+  $form['site'] = [
+    '#type' => 'details',
+    '#title' => t('Site settings'),
+    '#open' => TRUE,
+    '#group' => isset($form['additional_settings']) ? 'additional_settings' : 'advanced',
+    '#attributes' => [
+      'class' => ['node-form-options'],
+    ],
+    '#attached' => [
+      'library' => ['node/drupal.node'],
+    ],
+    '#weight' => 100,
+    '#optional' => TRUE,
+  ];
+
+  // Move to the tab container the site related form elements.
+  if (isset($form['field_site'])) {
+    $form['field_site']['#group'] = 'site';
+  }
+
+  if (!$node_type_enabled) {
+    $form['site']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * @see \Drupal\pathauto\Form\PatternEditForm
+ */
+function mini_sites_form_pathauto_pattern_form_alter(&$form, FormStateInterface $form_state) {
+  /** @var \Drupal\pathauto\Entity\PathautoPattern $entity */
+  $entity = $form_state->getFormObject()->getEntity();
+
+  if ($entity->get('type') == 'canonical_entities:node') {
+    // Search the Pathauto pattern for our event_list condition.
+    foreach ($entity->getSelectionConditions() as $candidate) {
+      if ($candidate->getPluginId() == 'mini_site_page_content') {
+        $condition = $candidate;
+        break;
+      }
+    }
+
+    // If we could not find a configured condition, create an empty one.
+    if (empty($condition)) {
+      /** @var \Drupal\Core\Condition\ConditionManager $condition_manager */
+      $condition_manager = \Drupal::service('plugin.manager.condition');
+      $condition = $condition_manager->createInstance('mini_site_page_content');
+    }
+
+    // Add the condition plugin form to the form, removing the negate checkbox.
+    $condition_form = $condition->buildConfigurationForm($form['pattern_container'], $form_state);
+    unset($condition_form['negate']);
+    $form['pattern_container'] += $condition_form;
+
+    // Add our submit handler after ::submit but before ::save.
+    $offset = array_search('::submit', $form['actions']['submit']['#submit']) + 1;
+    array_splice($form['actions']['submit']['#submit'], $offset, 0 , 'mini_sites_pathauto_pattern_submit');
+  }
+}
+
+/**
+ * Submit handler for form ID pathauto_pattern_form.
+ *
+ * @see mini_sites_form_pathauto_pattern_form_alter()
+ */
+function mini_sites_pathauto_pattern_submit($form, FormStateInterface $form_state) {
+  /** @var \Drupal\pathauto\Entity\PathautoPattern $entity */
+  $entity = $form_state->getFormObject()->getEntity();
+  foreach ($entity->getSelectionConditions() as $condition_id => $condition) {
+    if ($condition->getPluginId() == 'mini_site_page_content') {
+      $entity->removeSelectionCondition($condition_id);
+    }
+  }
+
+  if ($mini_site_page_content = $form_state->getValue('mini_site_page_content')) {
+     $entity->addSelectionCondition([
+      'id' => 'mini_site_page_content',
+      'mini_site_page_content' => $mini_site_page_content,
+      'mini_site_page_content_bundles' => array_filter($form_state->getValue('mini_site_page_content_bundles')),
+      'negate' => FALSE,
+      'context_mapping' => [
+        'node' => 'node',
+      ],
+    ]);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave().
+ */
+function mini_sites_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if($entity->hasField('field_site')){
+    if(empty($entity->field_site->target_id)) {
+      \Drupal::service('mini_sites.mini_site_page_content_helper')->cleanSitePage($entity);
+    }
+    else {
+      \Drupal::service('mini_sites.mini_site_page_content_helper')->setPage($entity);
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function mini_sites_mini_site_page_delete(Drupal\Core\Entity\EntityInterface $entity) {
+  \Drupal::service('mini_sites.mini_site_page_content_helper')->deletePage($entity);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function mini_sites_mini_site_page_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  \Drupal::service('mini_sites.mini_site_page_content_helper')->savePage($entity);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function mini_sites_mini_site_page_update(Drupal\Core\Entity\EntityInterface $entity) {
+  \Drupal::service('mini_sites.mini_site_page_content_helper')->savePage($entity);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+function mini_sites_mini_site_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  if(!empty($entity->home->target_id) && ($node = \Drupal\node\Entity\Node::load($entity->home->target_id))) {
+    $node->field_site->target_id = $entity->id();
+    $node->save();//to call presave hook
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function mini_sites_mini_site_update(Drupal\Core\Entity\EntityInterface $entity) {
+  if(isset($entity->original) && !empty($entity->original->home->target_id) && ($oldNode = \Drupal\node\Entity\Node::load($entity->original->home->target_id))) {
+    $oldNode->save();//to call presave hook
+  }
+  if(!empty($entity->home->target_id) && ($newNode = \Drupal\node\Entity\Node::load($entity->home->target_id))) {
+    $newNode->field_site->target_id = $entity->id();
+    $newNode->save();//to call presave hook
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function mini_sites_mini_site_delete(Drupal\Core\Entity\EntityInterface $entity) {
+  if(!empty($entity->home->target_id) && ($node = \Drupal\node\Entity\Node::load($entity->home->target_id))) {
+    $node->save();//to call presave hook
+  }
+}

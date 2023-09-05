@@ -1,0 +1,95 @@
+uuid: a0098364-5eda-45db-a765-3eeecedb1b9f
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.media.thumbnail
+    - field.field.media.audio.field_media_audio_embed
+    - field.field.media.audio.field_media_audio_id
+    - field.field.media.audio.field_media_audio_playlist
+    - field.field.media.audio.field_media_audio_track
+    - field.field.media.audio.field_media_audio_uri
+    - field.field.media.audio.field_media_caption
+    - field.field.media.audio.field_media_credential
+    - field.field.media.audio.field_media_date
+    - field.field.media.audio.field_media_link
+    - field.field.media.audio.field_media_perimeter_reference
+    - field.field.media.audio.field_media_theque_visibility
+    - field.field.media.audio.field_media_year
+    - media.type.audio
+  module:
+    - datetime
+    - media_entity_soundcloud
+id: media.audio.thumbnail
+targetEntityType: media
+bundle: audio
+mode: thumbnail
+content:
+  field_media_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_media_credential:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_media_link:
+    type: soundcloud_embed
+    label: hidden
+    settings:
+      type: visual
+      width: 100%
+      height: '450'
+      options: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_media_perimeter_reference:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_year:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_audio_embed: true
+  field_media_audio_id: true
+  field_media_audio_playlist: true
+  field_media_audio_track: true
+  field_media_audio_uri: true
+  field_media_date: true
+  field_media_theque_visibility: true
+  langcode: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

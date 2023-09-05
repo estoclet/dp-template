@@ -1,0 +1,24 @@
+uuid: 2d9bb0d3-38cf-4f45-9b60-d6c93f61316b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_date
+    - media.type.video
+  module:
+    - datetime
+id: media.video.field_media_date
+field_name: field_media_date
+entity_type: media
+bundle: video
+label: 'Date de référence du document'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,47 @@
+uuid: db128fd0-3ff8-46ae-a0c0-848a3d77b707
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wysiwyg_personnalise.field_background_color
+    - field.field.paragraph.wysiwyg_personnalise.field_pg_content
+    - field.field.paragraph.wysiwyg_personnalise.field_responsive
+    - paragraphs.paragraphs_type.wysiwyg_personnalise
+  module:
+    - color_field
+    - text
+id: paragraph.wysiwyg_personnalise.default
+targetEntityType: paragraph
+bundle: wysiwyg_personnalise
+mode: default
+content:
+  field_background_color:
+    type: color_field_widget_box
+    weight: 1
+    region: content
+    settings:
+      default_colors: '#FFFFFF, #F4F5F8, #05BEFA, #18D9C9, #FF666B, #FBA11B, #E30613, #1F1F1F, #32303A, #6E6E6E, #7A35B4, #1E46A0, #006462'
+    third_party_settings: {  }
+  field_pg_content:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_responsive:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

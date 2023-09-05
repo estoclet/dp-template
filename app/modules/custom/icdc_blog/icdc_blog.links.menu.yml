@@ -1,0 +1,5 @@
+icdc_blog.they_publish:
+  title: 'Bloc "Ils publient"'
+  route_name: icdc_blog.they_publish
+  parent: icdc_toolbox.icdc_admin_menu
+  description: 'Choix manuel des auteurs.'

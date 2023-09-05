@@ -1,0 +1,26 @@
+$gray-focus: #6e6e6e;
+$white-hg-contrast: #fff;
+$yellow-inv-contrast: #FF0;
+
+
+@mixin focus-access {
+  outline-style: solid;
+  outline-width: 3px;
+  outline-color: $gray-focus;
+}
+
+@mixin focus-access-hg-contrast {
+  outline-style: solid;
+  outline-width: 3px;
+  outline-color: $white-hg-contrast !important;
+}
+
+@mixin focus-access-inv-contrast {
+  outline-style: solid;
+  outline-width: 3px;
+  outline-color: $yellow-inv-contrast !important;
+}
+
+@mixin focus-access-offset {
+  outline-offset: .5rem;
+}

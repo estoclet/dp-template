@@ -1,0 +1,30 @@
+uuid: 407cc7c6-e4d5-4cfa-bc2d-ef8d6ecebaff
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_video_references
+    - media.type.video
+    - paragraphs.paragraphs_type.pg_insert_video
+_core:
+  default_config_hash: DRJWcbw2rSUT-jWgwgE3rVmCRDAvOIyRekkcedyKXJ8
+id: paragraph.pg_insert_video.field_pg_video_references
+field_name: field_pg_video_references
+entity_type: paragraph
+bundle: pg_insert_video
+label: Vidéo(s)
+description: 'Sélectionnez dans la médiathèque du site le ou les fichiers vidéo à afficher dans l''encart.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

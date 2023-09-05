@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_node_weight_order.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use \Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_node_weight_order_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_node_weight_order module.
+    case 'help.page.icdc_node_weight_order':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Add weight to node and interface to order them easily') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_search_api_backend_info_alter().
+ */
+function icdc_node_weight_order_search_api_backend_info_alter(array &$backend_info) {
+  // Elastic Search backend.
+  // See https://www.drupal.org/node/2906735
+  if (isset($backend_info['elasticsearch'])) {
+    $backend_info['elasticsearch']['class'] = '\Drupal\icdc_node_weight_order\Plugin\search_api\backend\IcdcNodeWeightOrderElasticsearchBackend';
+  }
+}

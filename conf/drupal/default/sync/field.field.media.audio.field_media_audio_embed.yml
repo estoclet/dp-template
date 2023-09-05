@@ -1,0 +1,19 @@
+uuid: 3e402878-b492-409f-ad01-516eb71d0cb7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_audio_embed
+    - media.type.audio
+id: media.audio.field_media_audio_embed
+field_name: field_media_audio_embed
+entity_type: media
+bundle: audio
+label: 'Embed HTML'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

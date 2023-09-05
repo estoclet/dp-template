@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: pbeJCJUlmcdwvN8xH1auW6vxsR_EHOuuV56dNiq5VVs
+langcode: fr
+uuid: a897f60d-268d-4572-8713-6422ef54fda1
+name: 'Groupe Caisse des Dépôts'
+mail: LD-DEI-CDMEDIA@caissedesdepots.fr
+slogan: 'Ensemble, faisons grandir la France'
+page:
+  403: ''
+  404: ''
+  front: /node/41
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: fr
+mail_notification: no-reply@groupecaissedesdepots.fr

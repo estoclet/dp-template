@@ -1,0 +1,20 @@
+entity.mini_site.add_form:
+  route_name: entity.mini_site.add_page
+  title: 'Add Mini site'
+  appears_on:
+    - entity.mini_site.collection
+entity.mini_site_type.add_form:
+  route_name: entity.mini_site_type.add_form
+  title: 'Add Mini site type'
+  appears_on:
+    - entity.mini_site_type.collection
+entity.mini_site_page.add_form:
+  route_name: entity.mini_site_page.add_page
+  title: 'Add item'
+  appears_on:
+    - entity.mini_site_page.collection
+entity.mini_site_page_type.add_form:
+  route_name: entity.mini_site_page_type.add_form
+  title: 'Add Mini site page type'
+  appears_on:
+    - entity.mini_site_page_type.collection

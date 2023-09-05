@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_search.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\views\ViewExecutable;
+use Drupal\search_api\Entity\Index;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_search_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_search module.
+    case 'help.page.icdc_search':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module about ICDC search.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function icdc_search_views_pre_render(ViewExecutable $view) {
+  $moduleHandler = \Drupal::service('module_handler');
+  if (isset($view) && (in_array($view->storage->id(),  ['recherche', 'news'])) && $moduleHandler->moduleExists('social_simple')) {
+    $view->element['#attached']['library'][] = 'social_simple/buttons';
+  }
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function icdc_search_views_data_alter(array &$data) {
+  //Fix bug with xss filter from rendered item field which store view mode in index.
+  $indexes = Index::loadMultiple();
+  foreach($indexes as $index) {
+    $fields = $index->getFields(FALSE);
+    $fields = \Drupal::service('search_api.fields_helper')
+      ->filterForPropertyPath($fields, NULL, 'rendered_item');
+    foreach ($fields as $fieldId => $field) {
+      if(!empty($data['search_api_index_' . $index->id()][$fieldId])) {
+        unset($data['search_api_index_' . $index->id()][$fieldId]['field']['filter_type']);
+        $data['search_api_index_' . $index->id()][$fieldId]['field']['id'] = 'icdc_search_api_rendered_item';
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function icdc_search_theme() {
+  return [
+    'icdc_search_block' => [
+      'variables' => [
+        'title' => '',
+        'content' => '',
+      ],
+      'render element' => 'children',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_views_data().
+ */
+function icdc_search_views_data() {
+  $data['views']['result_multiple'] = [
+    'title' => t('Result summary (multiple)'),
+    'help' => t('Shows result summary, for example the items per page.'),
+    'area' => [
+      'id' => 'result_multiple',
+    ],
+  ];
+
+  return $data;
+}

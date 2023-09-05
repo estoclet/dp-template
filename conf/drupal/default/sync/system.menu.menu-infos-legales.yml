@@ -1,0 +1,8 @@
+uuid: 1a3c6647-4c3c-4e07-b187-b4c62aa3d01c
+langcode: fr
+status: true
+dependencies: {  }
+id: menu-infos-legales
+label: 'Informations légales'
+description: 'Liens liés aux informations légales.'
+locked: false

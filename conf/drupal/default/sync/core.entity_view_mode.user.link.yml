@@ -1,0 +1,10 @@
+uuid: 638f3d70-07a0-47d1-95d7-1269e5962c9a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.link
+label: Lien
+targetEntityType: user
+cache: true

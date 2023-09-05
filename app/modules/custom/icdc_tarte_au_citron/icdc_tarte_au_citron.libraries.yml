@@ -1,0 +1,58 @@
+tarte_au_citron_lib:
+  header: true
+  version: 0
+  js:
+    js/tarteaucitron.js: {preprocess: false, weight: -100000}
+
+tarte_au_citron:
+  version: 0
+  js:
+    js/advertising.js: {preprocess: false}
+    js/initialisation.js: {preprocess: false}
+  dependencies:
+    - icdc_tarte_au_citron/tarte_au_citron_lib
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+services_icdcmatomo:
+  version: 0
+  js:
+    js/services/icdc_matomo.js: {preprocess: false}
+  dependencies:
+    - icdc_tarte_au_citron/tarte_au_citron
+
+services_instagram:
+  version: 0
+  js:
+    js/services/instagram.js: {preprocess: false}
+  dependencies:
+    - icdc_tarte_au_citron/tarte_au_citron
+
+services_keepeek:
+  version: 0
+  js:
+    js/services/keepeek.js: {preprocess: false}
+  dependencies:
+    - icdc_tarte_au_citron/tarte_au_citron
+
+services_recaptcha_drupal:
+  version: 0
+  js:
+    js/services/recaptcha_drupal.js: {preprocess: false}
+  dependencies:
+    - icdc_tarte_au_citron/tarte_au_citron
+
+services_twitter_drupal:
+  version: 0
+  js:
+    js/services/twitter_drupal.js: {preprocess: false}
+  dependencies:
+    - icdc_tarte_au_citron/tarte_au_citron
+
+services_youtube_drupal:
+  version: 0
+  js:
+    js/services/youtube_drupal.js: {preprocess: false}
+  dependencies:
+    - icdc_tarte_au_citron/tarte_au_citron

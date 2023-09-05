@@ -1,0 +1,18 @@
+uuid: ca7b8f11-e85e-4d60-a791-9e649dc41f96
+langcode: fr
+status: true
+dependencies:
+  config:
+    - mini_sites.mini_site_page_type.basic
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: mini_site_page.basic
+target_entity_type_id: mini_site_page
+target_bundle: basic
+default_langcode: site_default
+language_alterable: true

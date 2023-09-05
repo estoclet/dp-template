@@ -1,0 +1,18 @@
+uuid: b3cc6971-e17e-42c8-b1ad-8af0fa2418cf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.doctype
+id: taxonomy_term.doctype.name
+field_name: name
+entity_type: taxonomy_term
+bundle: doctype
+label: Nom
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

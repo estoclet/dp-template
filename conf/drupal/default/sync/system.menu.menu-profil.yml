@@ -1,0 +1,8 @@
+uuid: 68cac748-6782-4cc2-b0da-bd1d4ecccff3
+langcode: fr
+status: true
+dependencies: {  }
+id: menu-profil
+label: 'Navigation profilée'
+description: 'Liens dédiés aux espaces profilés du site.'
+locked: false

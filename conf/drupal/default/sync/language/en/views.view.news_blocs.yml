@@ -1,0 +1,5 @@
+display:
+  default:
+    display_options:
+      title: 'News in brief'
+      use_more_text: 'All news'

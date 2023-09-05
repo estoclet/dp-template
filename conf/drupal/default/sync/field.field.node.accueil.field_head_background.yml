@@ -1,0 +1,22 @@
+uuid: 228b30c1-2436-4ef2-8798-fd9c7b63b7b7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_head_background
+    - node.type.accueil
+  module:
+    - color_field
+id: node.accueil.field_head_background
+field_name: field_head_background
+entity_type: node
+bundle: accueil
+label: 'Couleur d’arrière-plan ( à supprimer)'
+description: 'Sélectionnez la couleur d’arrière-plan dans l’entête de page.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

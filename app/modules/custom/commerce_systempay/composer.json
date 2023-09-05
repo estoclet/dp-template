@@ -1,0 +1,10 @@
+{
+	"name" : "drupal/commerce_systempay",
+	"type" : "drupal-module",
+	"description" : "Provides Systempay payment services integration for Drupal Commerce.",
+	"homepage" : "http://drupal.org/project/commerce_systempay",
+	"license" : "GPL-2.0+",
+	"require" : {
+		"drupal/commerce" : "~2"
+	}
+}

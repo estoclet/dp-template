@@ -1,0 +1,282 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_toolbox.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_toolbox_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_toolbox module.
+    case 'help.page.icdc_toolbox':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/*
+* Implements hook_toolbar_alter()
+*/
+function icdc_toolbox_toolbar_alter(&$items) {
+  $items['administration']['#attached']['library'][] = 'icdc_toolbox/icdc_toolbox';
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function icdc_toolbox_form_alter(&$form, FormStateInterface &$form_state) {
+  if(in_array($form['#id'], ['node-page-edit-form', 'node-page-form'])) {
+    $form['field_no_margin']['#states'] = [
+      'visible' => [
+        ':input[name="field_type_dentete"]' => ['value' => 'immersive']
+      ]
+    ];
+  }
+
+  if($form['#id'] == 'menu-edit-form') {
+    if($form['id']['#default_value'] == 'contact') {
+      $config = \Drupal::config('icdc_toolbox.menu_contact');
+      $display_menu = $config->get('hide_menu');
+      $form['hide_menu'] = [
+        '#type' => 'checkbox',
+        '#title' => 'Masquer le titre de menu',
+        '#default_value' => $display_menu
+      ];
+      $form['indicator'] = [
+        '#type' => 'hidden',
+        '#default_value' => 'contact'
+      ];
+      array_unshift($form['actions']['submit']['#submit'], 'icdc_toolbox_form_menu_submit');
+      array_unshift($form['#submit'], 'icdc_toolbox_form_menu_submit');
+    }
+  }
+
+  if($form['#id'] == 'menu-link-content-menu-link-content-form') {
+    if($form['menu_parent']['#default_value'] == 'footer:') {
+      $config = \Drupal::config('icdc_toolbox.menu_settings');
+      $title = '';
+      $display_menu = 0;
+      if(isset($form['title']['widget'][0])) {
+        $title = $form['title']['widget'][0]['value']['#default_value'];
+        $display_menu = $config->get($title)['hide_link'];
+      }
+      $form['hide_link'] = [
+        '#type' => 'checkbox',
+        '#title' => 'Masquer le titre de menu',
+        '#default_value' => $display_menu
+      ];
+      $form['indicator'] = [
+        '#type' => 'hidden',
+        '#default_value' => 'link_title'
+      ];
+      $form['indicator_title'] = [
+        '#type' => 'hidden',
+        '#default_value' => $title
+      ];
+      array_unshift($form['actions']['submit']['#submit'], 'icdc_toolbox_form_menu_submit');
+      array_unshift($form['#submit'], 'icdc_toolbox_form_menu_submit');
+    }
+  }
+
+  // Only display year in date fields.
+  $form_ids = [
+    'media_video_add_form',
+    'media_video_edit_form',
+    'media_audio_add_form',
+    'media_audio_edit_form',
+    'media_image_add_form',
+    'media_image_edit_form',
+    'media_twitter_add_form',
+    'media_twitter_edit_form',
+    'media_instagram_add_form',
+    'media_instagram_edit_form',
+  ];
+
+  $form_id = $form['#form_id'];
+
+  if (in_array($form_id, $form_ids)) {
+    $form['field_media_year']['widget'][0]['value']['#date_part_order'] = ['year'];
+  }
+
+  // Alter Media Image form to add conditional trigger
+  if (in_array($form_id, ['media_image_add_form', 'media_image_edit_form'])) {
+    _icdc_toolbox_process_form_media_image($form);
+  }
+
+  // Alter Media Document form to add conditional trigger
+  if (in_array($form_id, ['media_document_add_form', 'media_document_edit_form'])) {
+    _icdc_toolbox_process_form_media_document($form);
+  }
+}
+
+function icdc_toolbox_form_menu_submit($form, FormStateInterface $form_state) {
+
+  $values = $form_state->getValues();
+  if($values['indicator'] == 'contact') {
+    $config = \Drupal::service('config.factory')->getEditable('icdc_toolbox.menu_contact');
+    $config_tab = $config->getRawData();
+    $data = $values['hide_menu'] != $config_tab['hide_menu'] ? $values['hide_menu'] : $config_tab['hide_menu'];
+    $config->set('hide_menu', $data)->save();
+  } elseif ($values['indicator'] == 'link_title') {
+    $title = $values['indicator_title'];
+    $config = \Drupal::service('config.factory')->getEditable('icdc_toolbox.menu_settings');
+    $config_tab = $config->getRawData();
+    if(!empty($config_tab)) {
+      if(isset($config_tab[$title]['hide_link'])) {
+        $data = $values['hide_link'] != $config_tab[$title]['hide_link'] ? ['hide_link' => $values['hide_link']] : 'toto';
+        $config->set($title, $data)->save();
+      } else {
+        $data = ['hide_link' => $values['hide_link']];
+        $config->set($title, $data)->save();
+      }
+    } else {
+      $data = ['hide_link' => $values['hide_link']];
+      $config->set($title, $data)->save();
+    }
+  }
+}
+
+
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ */
+function icdc_toolbox_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
+  // Only display year in date fields (in inline entity form).
+  $bundles = [
+    'image',
+    'audio',
+    'video',
+    'twitter',
+    'instagram',
+  ];
+
+  if ($entity_form['#entity_type'] === "media" && in_array($entity_form['#bundle'], $bundles)) {
+    $entity_form['field_media_year']['widget'][0]['value']['#date_part_order'] = ['year'];
+  }
+
+  if($entity_form['#entity_type'] === "media" && $entity_form['#bundle'] === 'image') {
+    _icdc_toolbox_process_form_media_image($entity_form, 'inline_entity_form[field_media_image_type]');
+  }
+
+  if($entity_form['#entity_type'] === "media" && $entity_form['#bundle'] === 'document') {
+    _icdc_toolbox_process_form_media_document($entity_form, 'inline_entity_form[field_media_press_visibility][value]', 'inline_entity_form[field_media_investor_visibility][value]');
+  }
+}
+
+function _icdc_toolbox_process_form_media_document(&$form, $field_name_press = 'field_media_press_visibility[value]', $field_name_investor = 'field_media_investor_visibility[value]') {
+  if(isset($form['field_media_press_references']) && isset($form['field_media_investor_reference'])) {
+    $form['field_media_press_references']['widget']['#states']['visible'] = array(':input[name="' . $field_name_press . '"]' => ['checked' => TRUE]);
+    $form['field_media_investor_reference']['widget']['#states']['visible'] = array(':input[name="' . $field_name_investor . '"]' => ['checked' => TRUE]);
+  }
+}
+
+function _icdc_toolbox_process_form_media_image(&$form, $field_name = 'field_media_image_type') {
+  if(isset($form['field_media_image_type']) && isset($form['field_media_description'])) {
+    $form['field_media_description']['#states']['visible'] = array(':input[name="' . $field_name . '"]' => ['value' => 'informative']);
+    // Target widget instead of field
+    // Core bug : https://www.drupal.org/project/drupal/issues/2855139 (Fix #27)
+    $form['field_media_description']['widget']['0']['value']['#states']['required'] = array(':input[name="' . $field_name . '"]' => ['value' => 'informative']);
+  }
+}
+
+function icdc_toolbox_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($view->id() == 'actualite_nav' && $node) {
+    $operator = $view->getDisplay()->display['id'] == 'actualite_next_node' ? '>=' : '<=';
+    foreach ($query->where as &$condition_group) {
+      array_push($condition_group['conditions'], [
+        'field' => 'node_field_data.changed '.$operator.' ' . $node->getChangedTime(),
+        'value' => [],
+        'operator' => 'formula',
+      ]);
+    }
+  }
+  $oups  = null;
+}
+
+function icdc_toolbox_preprocess_html(&$variables) {
+  // Add node id to the body class.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if($node && $node instanceof \Drupal\node\NodeInterface && ($node->bundle() === 'dossier' || ($node->bundle() === 'page' && $node->field_type_dentete->value === 'immersive'))) {
+    $variables['attributes']['class'][] = 'entete-immersive';
+    if (!empty($node->field_dark_header_checkbox->value)) {
+      $variables['attributes']['class'][] = 'couleur-inversee';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function icdc_toolbox_theme($existing, $type, $theme, $path) {
+  return [
+    //Name of the theme hook. This is used in the controller to trigger the hook.
+    'icdc_toolbox_version' => [
+      'variables' => [
+        'version' => '',
+        'version_date' => '',
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_captcha_placement_map().
+ */
+function icdc_toolbox_captcha_placement_map() {
+  return [
+    'webform_submission_admin_add_form' => [
+      'path' => ['elements'],
+      'key' => 'actions',
+    ],
+    'webform_submission_dpo_add_form' => [
+      'path' => ['elements'],
+      'key' => 'actions',
+    ],
+    'webform_submission_mediation_add_form' => [
+      'path' => ['elements'],
+      'key' => 'actions',
+    ],
+    'webform_submission_mediation_consomation_add_form' => [
+      'path' => ['elements'],
+      'key' => 'actions',
+    ],
+  ];
+}
+
+
+/**
+ * Implements hook_link_alter().
+ */
+function icdc_toolbox_link_alter(&$variables) {
+  /**
+   * @var $url \Drupal\Core\Url
+   */
+  $url = $variables['url'];
+  if(!empty($attributes = $url->getOption('attributes')) && isset($attributes['target']) && $attributes['target'] == '_blank' && !empty($attributes['title'])) {
+    $attributes['title'] .= ' - ' . t('New window');
+    $url->setOption('attributes', $attributes);
+    $variables['options']['attributes'] = $attributes;
+  }
+}
+
+/**
+ * Implements hook_webform_element_info_alter().
+ */
+function icdc_toolbox_webform_element_info_alter(array &$definitions) {
+  if(!empty($definitions['managed_file'])) {
+    $definitions['managed_file']['class'] = 'Drupal\icdc_toolbox\Plugin\WebformElement\CustomManagedFile';
+  }
+}

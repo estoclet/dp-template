@@ -1,0 +1,23 @@
+uuid: d3ff5fab-e71b-44ad-b6f7-e204ad2c374c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_view_mode
+    - paragraphs.paragraphs_type.pg_insert_video
+  module:
+    - entity_dynamic_rendering
+id: paragraph.pg_insert_video.field_pg_view_mode
+field_name: field_pg_view_mode
+entity_type: paragraph
+bundle: pg_insert_video
+label: 'Mode d''affichage'
+description: 'Choisissez le mode d''affichage du ou des média(s).'
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: view_mode_item

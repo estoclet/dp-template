@@ -1,0 +1,10 @@
+uuid: 806768d3-6417-405d-b849-90d11f6a1303
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.accordion
+label: Accordéon
+targetEntityType: paragraph
+cache: true

@@ -1,0 +1,20 @@
+uuid: 2c26cc8f-c63c-4add-86f4-bad690fb4d4f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.doctype
+  module:
+    - text
+id: taxonomy_term.doctype.description
+field_name: description
+entity_type: taxonomy_term
+bundle: doctype
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

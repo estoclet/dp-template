@@ -1,0 +1,64 @@
+uuid: 54aac43d-3112-43c0-a5aa-ccaff6a9bd05
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.dossier.field_chapo
+    - field.field.node.dossier.field_dark_header_checkbox
+    - field.field.node.dossier.field_image_teaser_reference
+    - field.field.node.dossier.field_media_reference
+    - field.field.node.dossier.field_metatag
+    - field.field.node.dossier.field_no_margin
+    - field.field.node.dossier.field_node_references
+    - field.field.node.dossier.field_paragraphs
+    - field.field.node.dossier.field_short_title
+    - field.field.node.dossier.field_snippet_seo
+    - field.field.node.dossier.field_sommaire
+    - field.field.node.dossier.field_thematic_references
+    - field.field.node.dossier.layout_builder__layout
+    - node.type.dossier
+  module:
+    - text
+    - user
+id: node.dossier.default
+targetEntityType: node
+bundle: dossier
+mode: default
+content:
+  field_no_margin:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_sommaire:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_chapo: true
+  field_dark_header_checkbox: true
+  field_image_teaser_reference: true
+  field_media_reference: true
+  field_metatag: true
+  field_node_references: true
+  field_paragraphs: true
+  field_short_title: true
+  field_snippet_seo: true
+  field_thematic_references: true
+  langcode: true
+  layout_builder__layout: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

@@ -1,0 +1,83 @@
+uuid: 9ef9af47-9726-4e89-bca2-a218cf01d3c7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_cta_dossier
+    - entity_browser.browser.image_browser
+    - field.field.block_content.bloc_cta_dossier.field_background_color
+    - field.field.block_content.bloc_cta_dossier.field_display_date
+    - field.field.block_content.bloc_cta_dossier.field_media_reference
+    - field.field.block_content.bloc_cta_dossier.field_node_reference
+    - field.field.block_content.bloc_cta_dossier.field_responsive
+  module:
+    - color_field
+    - entity_browser
+    - workbench_moderation
+id: block_content.bloc_cta_dossier.default
+targetEntityType: block_content
+bundle: bloc_cta_dossier
+mode: default
+content:
+  field_background_color:
+    type: color_field_widget_box
+    weight: 4
+    region: content
+    settings:
+      default_colors: '#FFFFFF,#F4F5F8,#05BEFA,#18D9C9,#FF666B,#FBA11B,#E30613,#1F1F1F,#32303A,#6E6E6E,#7A35B4,#1E46A0,#006462'
+    third_party_settings: {  }
+  field_display_date:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_media_reference:
+    type: entity_browser_entity_reference
+    weight: 3
+    region: content
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: default
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_node_reference:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_responsive:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 6
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

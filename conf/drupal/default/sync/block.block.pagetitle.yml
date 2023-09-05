@@ -1,0 +1,25 @@
+uuid: 08bf35eb-6bd5-42ba-88c1-099eed1dbf8e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cdc_theme
+id: pagetitle
+theme: cdc_theme
+region: highlighted
+weight: -22
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: visible
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/blog\r\n/blog/*\r\n<front>\r\n/node/*"

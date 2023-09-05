@@ -1,0 +1,21 @@
+uuid: 912857e9-0f1f-4dda-976f-124c76505b65
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_mine
+    - media.type.document
+_core:
+  default_config_hash: PeUdlcPACT2gUGnPtaKF2eRRFZj1077FzRmwlJ7ruWg
+id: media.document.field_media_mine
+field_name: field_media_mine
+entity_type: media
+bundle: document
+label: 'Type Mime'
+description: 'Ne rien saisir. La valeur de ce champ sera renseigné automatiquement à la fin du téléchargement. Le type mine est détecté par le système.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

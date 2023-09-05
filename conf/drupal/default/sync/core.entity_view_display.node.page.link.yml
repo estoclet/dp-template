@@ -1,0 +1,66 @@
+uuid: 90b3c86f-fd22-41e7-938b-65281087a665
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.link
+    - field.field.node.page.field_chapo
+    - field.field.node.page.field_color_primary
+    - field.field.node.page.field_color_secondary
+    - field.field.node.page.field_dark_header_checkbox
+    - field.field.node.page.field_hide_title
+    - field.field.node.page.field_image_teaser_reference
+    - field.field.node.page.field_media_reference
+    - field.field.node.page.field_menu_tag
+    - field.field.node.page.field_metatag
+    - field.field.node.page.field_no_margin
+    - field.field.node.page.field_short_title
+    - field.field.node.page.field_site
+    - field.field.node.page.field_site_page
+    - field.field.node.page.field_site_page_type
+    - field.field.node.page.field_snippet_seo
+    - field.field.node.page.field_sommaire
+    - field.field.node.page.field_type_dentete
+    - field.field.node.page.layout_builder__layout
+    - node.type.page
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.link
+targetEntityType: node
+bundle: page
+mode: link
+content: {  }
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_chapo: true
+  field_color_primary: true
+  field_color_secondary: true
+  field_dark_header_checkbox: true
+  field_hide_title: true
+  field_image_teaser_reference: true
+  field_media_reference: true
+  field_menu_tag: true
+  field_metatag: true
+  field_no_margin: true
+  field_short_title: true
+  field_site: true
+  field_site_page: true
+  field_site_page_type: true
+  field_snippet_seo: true
+  field_sommaire: true
+  field_type_dentete: true
+  langcode: true
+  layout_builder__layout: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

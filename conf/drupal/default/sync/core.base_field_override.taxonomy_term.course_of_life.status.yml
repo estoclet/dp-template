@@ -1,0 +1,22 @@
+uuid: ebdccc99-599e-4351-9b09-4c49c3907895
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.course_of_life
+id: taxonomy_term.course_of_life.status
+field_name: status
+entity_type: taxonomy_term
+bundle: course_of_life
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

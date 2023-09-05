@@ -1,0 +1,42 @@
+.block-twitter-feed {
+  @extend %large-wrapper;
+
+  h2 {
+    @media (min-width: $screen-md-max) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style: none;
+    width: 480px;
+    max-width: 100%;
+
+    li {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $gris-clair;
+
+      .tweet {
+        a {
+          color: $couleur-bleu-azur-cc;
+          background-image: linear-gradient($couleur-bleu-azur-cc, $couleur-bleu-azur-cc);
+        }
+
+        img {
+          display: block;
+          margin: 1rem auto;
+        }
+      }
+
+      .timeago {
+        display: block;
+        text-align: right;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

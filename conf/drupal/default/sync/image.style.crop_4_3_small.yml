@@ -1,0 +1,25 @@
+uuid: 6808c8eb-5aa1-4300-9678-5110ba5138d5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.ratio_4_3
+  module:
+    - crop
+name: crop_4_3_small
+label: 'Crop 4:3 small (max-width: 738px)'
+effects:
+  8416b168-e940-48aa-abf9-804b04da90dd:
+    uuid: 8416b168-e940-48aa-abf9-804b04da90dd
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: ratio_3_2
+  082cd075-343f-4bad-a55d-91bbcdcf55ea:
+    uuid: 082cd075-343f-4bad-a55d-91bbcdcf55ea
+    id: image_scale
+    weight: 2
+    data:
+      width: 738
+      height: null
+      upscale: false

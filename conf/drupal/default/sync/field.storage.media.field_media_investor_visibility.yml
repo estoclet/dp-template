@@ -1,0 +1,20 @@
+uuid: 19d09d7f-7b94-4a43-b0b3-3a9ca7d54126
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: AhTRG9kysimqbJ3rKsDkJGmWVIse4hm2O0RRU0pARqg
+id: media.field_media_investor_visibility
+field_name: field_media_investor_visibility
+entity_type: media
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

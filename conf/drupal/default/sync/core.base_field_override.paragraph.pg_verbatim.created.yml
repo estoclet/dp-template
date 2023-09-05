@@ -1,0 +1,18 @@
+uuid: 56cf4fa7-4800-4a31-882d-5224efc014ef
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_verbatim
+id: paragraph.pg_verbatim.created
+field_name: created
+entity_type: paragraph
+bundle: pg_verbatim
+label: 'Écrit le'
+description: 'Heure de création du paragraphe.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

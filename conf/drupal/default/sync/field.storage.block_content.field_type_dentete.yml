@@ -1,0 +1,33 @@
+uuid: 173275f5-9a80-4215-a24a-228561fe6418
+langcode: fr
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_type_dentete
+field_name: field_type_dentete
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: defaut
+      label: Défaut
+    -
+      value: bicolore
+      label: 'Faisceau bicolore'
+    -
+      value: image
+      label: 'Faisceau image'
+    -
+      value: immersive
+      label: Immersive
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

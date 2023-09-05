@@ -1,0 +1,17 @@
+uuid: b1453e7c-8969-490d-a0ed-b29480dcc1f7
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: portrait
+label: 'Portrait (220*330)'
+effects:
+  fb2e3532-489b-47d4-8057-7722e6b80aae:
+    uuid: fb2e3532-489b-47d4-8057-7722e6b80aae
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 220
+      height: 330
+      crop_type: focal_point

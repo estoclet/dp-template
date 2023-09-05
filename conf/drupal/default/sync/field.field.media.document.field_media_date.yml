@@ -1,0 +1,24 @@
+uuid: 0ac8843c-80c7-491b-82c6-efcc9616dc3b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_date
+    - media.type.document
+  module:
+    - datetime
+id: media.document.field_media_date
+field_name: field_media_date
+entity_type: media
+bundle: document
+label: 'Date de référence du document'
+description: 'Renseignez la date de référence du document. Cette date pourra être visible sur le site.'
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

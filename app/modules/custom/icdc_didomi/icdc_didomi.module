@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_didomi.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_didomi_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_didomi module.
+    case 'help.page.icdc_didomi':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The ICDC Didomi module integrates Didomi&#039;&#039;s Consent Management Platform into Drupal') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function icdc_didomi_page_attachments(array &$attachments) {
+   $container_manager = \Drupal::service('icdc_didomi.container_manager');
+   $route = \Drupal::routeMatch()->getRouteObject();
+    $is_admin = \Drupal::service('router.admin_context')->isAdminRoute($route);
+  if ($container_manager->isPublished() && $container_manager->pathCheck() && !$is_admin) {
+    $container_manager->getScriptAttachments($attachments);
+    $icdc_didomi_published = TRUE;
+  }
+  else {
+    $icdc_didomi_published = FALSE;
+  }
+  $attachments['#attached']['drupalSettings']['icdcDidomiPublished'] = $icdc_didomi_published;
+
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function icdc_didomi_module_implements_alter(&$implementations, $hook)
+{
+  if ($hook == 'page_attachments') {
+    // Move icdc_didomi_page_attachments() to the end of the list.
+    // \Drupal::moduleHandler()->getImplementations()
+    // iterates through $implementations with a foreach loop which PHP iterates
+    // in the order that the items were added, so to move an item to the end of
+    // the array, we remove it and then add it.
+    $group = $implementations['icdc_didomi'];
+    unset($implementations['icdc_didomi']);
+    $implementations['icdc_didomi'] = $group;
+  }
+}

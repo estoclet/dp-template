@@ -1,0 +1,22 @@
+uuid: 15056851-21a7-4729-8e75-a93093357de5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_insert_document
+id: paragraph.pg_insert_document.status
+field_name: status
+entity_type: paragraph
+bundle: pg_insert_document
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

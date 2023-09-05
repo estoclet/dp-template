@@ -1,0 +1,24 @@
+uuid: 494f6d78-59ee-40bd-ad4d-c61c7b388997
+langcode: fr
+status: true
+dependencies:
+  config:
+    - webform.webform.mediation
+id: text_export
+label: 'text export'
+task_type: export_email_results
+result_set_type: all_submissions
+task_settings:
+  exporter: delimited
+  exporter_settings:
+    delimiter: ;
+    excel: true
+  email_addresses: doromano@gmail.com
+  storage_type: filesystem
+  delete_submissions: false
+  include_attachments: true
+result_set_settings: {  }
+interval:
+  amount: 24
+  multiplier: 3600
+webform: mediation

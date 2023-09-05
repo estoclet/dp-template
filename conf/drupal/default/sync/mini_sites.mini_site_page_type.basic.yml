@@ -1,0 +1,10 @@
+uuid: e08988b5-abc3-4f6c-a7a4-13930af0bfd3
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: K4ZBKbQrhGQY6IaS1igNl9vKnLu5Ils6982uTNUF6x0
+id: basic
+label: Basic
+mini_site: null
+weight: null

@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+{% set firstname = user.field_user_firstname.value %}
+{% set lastname = user.field_user_lastname.value %}
+{% set authorURL = path('view.blog.page_blog_author', { 'arg_0': (firstname ~ '_' ~ lastname)|drupal_escape })  %}
+<article{{ attributes.addClass('profile', 'user-teaser') }}>
+  {% if content %}
+    <a href="{{ authorURL }}" rel="author">
+      <div class="avatar">
+        {{ content.field_media_reference }}
+      </div>
+      <p class="auteur"></p>
+        {% if '#items' in content.field_user_firstname|keys %}
+          {{ content.field_user_firstname['#items'].value }}
+        {% endif %}
+        {% if '#items' in content.field_user_lastname|keys %}
+          {{ content.field_user_lastname['#items'].value }}
+        {% endif %}
+      </p>
+      {% if '#items' in content.field_entite_reference|keys %}
+        <p class="field--name-field-entite-reference">{{ content.field_entite_reference['#items'].value }}</p>
+      {% endif %}
+      {% if '#items' in content.field_function|keys %}
+        <p class="small">{{ content.field_function['#items'].value }}</p>
+      {% endif %}
+    </a>
+    {{ content.field_user_linkedin }}
+  {% endif %}
+</article>

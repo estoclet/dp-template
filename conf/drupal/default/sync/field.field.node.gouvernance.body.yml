@@ -1,0 +1,23 @@
+uuid: a1d233b8-4fac-47e3-a2aa-9eeee6d97c83
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.gouvernance
+  module:
+    - text
+id: node.gouvernance.body
+field_name: body
+entity_type: node
+bundle: gouvernance
+label: Présentation
+description: 'Complétez la présentation de cette personne.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

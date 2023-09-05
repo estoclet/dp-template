@@ -1,0 +1,18 @@
+uuid: 15ec4300-76bb-42fe-9a32-a968b16237d5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - mini_sites.mini_site_page_type.news_list
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: mini_site_page.news_list
+target_entity_type_id: mini_site_page
+target_bundle: news_list
+default_langcode: site_default
+language_alterable: true

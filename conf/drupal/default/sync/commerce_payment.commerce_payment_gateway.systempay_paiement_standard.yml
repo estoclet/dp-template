@@ -1,0 +1,43 @@
+uuid: 83b53660-ae10-4dae-811f-884360788e5d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - commerce_systempay
+id: systempay_paiement_standard
+label: 'Systempay - Cdc dev solidaire - Paiement standard'
+weight: null
+plugin: systempay_standard
+configuration:
+  display_label: 'Payment par carte de crédit'
+  mode: PRODUCTION
+  payment_method_types:
+    - credit_card
+  collect_billing_information: true
+  gateway_access:
+    site_id: '71463631'
+    key_test: '4786394833405360'
+    key_prod: '5614131839451393'
+    ctx_mode: PRODUCTION
+    sign_algo: SHA-1
+    platform_url: 'https://paiement.systempay.fr/vads-payment/'
+  payment_page:
+    language: fr
+    available_languages:
+      fr: fr
+    capture_delay: ''
+    validation_mode: '0'
+    payment_cards:
+      MASTERCARD: MASTERCARD
+      VISA: VISA
+  selective_threeds:
+    threeds_min_amount: ''
+  return_to_shop:
+    redirect_enabled: '1'
+    redirect_success_timeout: '5'
+    redirect_success_message: 'Redirection to shop in a few seconds...'
+    redirect_error_timeout: '5'
+    redirect_error_message: 'Redirection to shop in a few seconds...'
+    return_mode: GET
+conditions: {  }
+conditionOperator: AND

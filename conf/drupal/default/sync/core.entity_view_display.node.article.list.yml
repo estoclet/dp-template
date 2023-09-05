@@ -1,0 +1,110 @@
+uuid: b7000d09-2900-40d2-ae08-9b2e894024f5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.list
+    - field.field.node.article.field_background_color
+    - field.field.node.article.field_chapo
+    - field.field.node.article.field_image_teaser_reference
+    - field.field.node.article.field_media_reference
+    - field.field.node.article.field_menu_tag
+    - field.field.node.article.field_metatag
+    - field.field.node.article.field_node_references
+    - field.field.node.article.field_paragraphs
+    - field.field.node.article.field_short_title
+    - field.field.node.article.field_site
+    - field.field.node.article.field_site_page
+    - field.field.node.article.field_site_page_type
+    - field.field.node.article.field_snippet_seo
+    - node.type.article
+  module:
+    - advanced_text_formatter
+    - field_formatter_class
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
+id: node.article.list
+targetEntityType: node
+bundle: article
+mode: list
+content:
+  field_image_teaser_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+  field_menu_tag:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_short_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  field_snippet_seo:
+    type: advanced_text
+    label: hidden
+    settings:
+      trim_length: '230'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: php
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - em
+        - i
+        - strong
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+  social_simple_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_background_color: true
+  field_chapo: true
+  field_media_reference: true
+  field_metatag: true
+  field_node_references: true
+  field_paragraphs: true
+  field_site: true
+  field_site_page: true
+  field_site_page_type: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

@@ -1,0 +1,22 @@
+uuid: c873dd3c-f3df-421c-b390-9489287570a7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - mini_sites.mini_site_page_type.basic
+id: mini_site_page.basic.status
+field_name: status
+entity_type: mini_site_page
+bundle: basic
+label: Publié
+description: 'A boolean indicating whether the Mini site page is published.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

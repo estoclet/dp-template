@@ -1,0 +1,14 @@
+uuid: 26934ccb-c903-45fb-a370-f1133e096f4f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.restricted_editor
+  module:
+    - user
+id: user_remove_role_action.restricted_editor
+label: 'Enlever le rôle Rédacteur restreint des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: restricted_editor

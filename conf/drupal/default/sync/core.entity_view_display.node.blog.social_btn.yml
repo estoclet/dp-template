@@ -1,0 +1,62 @@
+uuid: 12fbf0bd-42dc-44c5-b9a1-1c0d0f904388
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.social_btn
+    - field.field.node.blog.field_auteur_secondaire
+    - field.field.node.blog.field_blog_tag_references
+    - field.field.node.blog.field_blog_type_list
+    - field.field.node.blog.field_cdc_label_select
+    - field.field.node.blog.field_chapo
+    - field.field.node.blog.field_expertise_references
+    - field.field.node.blog.field_image_teaser_reference
+    - field.field.node.blog.field_media_reference
+    - field.field.node.blog.field_metatag
+    - field.field.node.blog.field_node_references
+    - field.field.node.blog.field_paragraphs
+    - field.field.node.blog.field_reading_time
+    - field.field.node.blog.field_short_title
+    - field.field.node.blog.field_snippet_seo
+    - field.field.node.blog.field_sommaire
+    - node.type.blog
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.blog.social_btn
+targetEntityType: node
+bundle: blog
+mode: social_btn
+content:
+  social_simple_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_auteur_secondaire: true
+  field_blog_tag_references: true
+  field_blog_type_list: true
+  field_cdc_label_select: true
+  field_chapo: true
+  field_expertise_references: true
+  field_image_teaser_reference: true
+  field_media_reference: true
+  field_metatag: true
+  field_node_references: true
+  field_paragraphs: true
+  field_reading_time: true
+  field_short_title: true
+  field_snippet_seo: true
+  field_sommaire: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

@@ -1,0 +1,23 @@
+uuid: dde1924a-8848-4a8b-835b-2594ff5e7f74
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tree_level
+    - taxonomy.vocabulary.decision_tree_sponsorship
+  module:
+    - options
+id: taxonomy_term.decision_tree_sponsorship.field_tree_level
+field_name: field_tree_level
+entity_type: taxonomy_term
+bundle: decision_tree_sponsorship
+label: 'Niveau du terme'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: parent
+default_value_callback: ''
+settings: {  }
+field_type: list_string

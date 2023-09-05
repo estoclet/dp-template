@@ -1,0 +1,7 @@
+icdc_investors.icdc_investors_modale_config_form:
+  title: 'Configuration de la visibilité de la modale investisseur'
+  route_name: entity.block.edit_form
+  route_parameters: { block: 'investorsmodalblock' }
+  description: 'Paramétrage de la modale investisseur'
+  parent: icdc_toolbox.icdc_admin_menu
+  weight: 99

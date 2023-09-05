@@ -1,0 +1,8 @@
+uuid: ad4abe1a-059e-494b-ac3b-1a950c0aac15
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_webform
+label: 'Bloc Webform'
+revision: 1
+description: ''

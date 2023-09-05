@@ -1,0 +1,63 @@
+uuid: c5a1adb7-95d6-4727-8b07-76dcefd11957
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.bounce
+    - field.field.node.actualite.field_chapo
+    - field.field.node.actualite.field_entite_references
+    - field.field.node.actualite.field_image_teaser_reference
+    - field.field.node.actualite.field_interval_date
+    - field.field.node.actualite.field_media_reference
+    - field.field.node.actualite.field_metatag
+    - field.field.node.actualite.field_paragraphs
+    - field.field.node.actualite.field_short_title
+    - field.field.node.actualite.field_site
+    - field.field.node.actualite.field_site_page
+    - field.field.node.actualite.field_site_page_type
+    - field.field.node.actualite.field_snippet_seo
+    - field.field.node.actualite.field_sommaire
+    - field.field.node.actualite.field_thematic_references
+    - node.type.actualite
+  module:
+    - daterange_formatter
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.actualite.bounce
+targetEntityType: node
+bundle: actualite
+mode: bounce
+content:
+  field_interval_date:
+    type: custom_daterange_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_chapo: true
+  field_entite_references: true
+  field_image_teaser_reference: true
+  field_media_reference: true
+  field_metatag: true
+  field_paragraphs: true
+  field_short_title: true
+  field_site: true
+  field_site_page: true
+  field_site_page_type: true
+  field_snippet_seo: true
+  field_sommaire: true
+  field_thematic_references: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

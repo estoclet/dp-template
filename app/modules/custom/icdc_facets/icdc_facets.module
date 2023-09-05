@@ -1,0 +1,156 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_facets.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_facets_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_facets module.
+    case 'help.page.icdc_facets':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('ICDC Facets') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+
+/**
+ * Prepares variables for facets item list templates.
+ *
+ * Default template: facets-item-list.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - items: An array of items to be displayed in the list. Each item can be
+ *     either a string or a render array. If #type, #theme, or #markup
+ *     properties are not specified for child render arrays, they will be
+ *     inherited from the parent list, allowing callers to specify larger
+ *     nested lists without having to explicitly specify and repeat the
+ *     render properties for all nested child lists.
+ *   - title: A title to be prepended to the list.
+ *   - list_type: The type of list to return (e.g. "ul", "ol").
+ *   - wrapper_attributes: HTML attributes to be applied to the list wrapper.
+ *
+ * @see https://www.drupal.org/node/1842756
+ */
+function icdc_facets_preprocess_icdc_facets_item_list(array &$variables) {
+  template_preprocess_item_list($variables);
+}
+
+/**
+ * @see https://www.drupal.org/node/1842756
+ */
+function icdc_facets_preprocess_icdc_facets_block_list(array &$variables) {
+  template_preprocess_item_list($variables);
+}
+
+/**
+ * Implements hook_theme().
+ */
+function icdc_facets_theme($existing, $type, $theme, $path) {
+  return [
+    'icdc_facets_block_list' => [
+      'variables' => [
+        'items' => [],
+        'title' => '',
+        'clear_title' => '',
+        'url' => NULL,
+        'list_type' => 'ul',
+        'wrapper_attributes' => [],
+        'attributes' => []
+      ],
+    ],
+    'icdc_facets_block_item' => [
+      'variables' => [
+        'label' => '',
+        'url' => NULL
+      ],
+    ],
+    'icdc_facets_item_list' => [
+      'variables' => [
+        'facet' => NULL,
+        'items' => [],
+        'title' => '',
+        'list_type' => 'ul',
+        'wrapper_attributes' => [],
+        'attributes' => [],
+        'empty' => NULL,
+        'context' => [],
+      ],
+    ],
+    'icdc_facets_result_item' => [
+      'variables' => [
+        'facet' => NULL,
+        'raw_value' => '',
+        'value' => '',
+        'show_count' => FALSE,
+        'count' => NULL,
+        'is_active' => FALSE,
+      ],
+    ],
+  ];
+}
+
+
+/**
+ * Implements hook_form_alter() for the exposed form.
+ *
+ * fix for exposed filter which clean facets on submit
+ */
+function icdc_facets_form_views_exposed_form_alter(&$form, FormStateInterface $form_state) {
+  $form['form_build_id']['#access'] = FALSE;
+  $form['form_token']['#access'] = FALSE;
+  $form['form_id']['#access'] = FALSE;
+
+  if ($view = $form_state->getStorage()['view']) {
+    if (substr(key($view->getBaseTables()), 0, 17) === 'search_api_index_') {
+      if (\Drupal::moduleHandler()->moduleExists('facets')) {
+        // Get query parameters.
+        $query_parameters = Drupal::request()->query->all();
+        // If any facet query parameters are provided.
+        if (!empty($query_parameters['f'])) {
+          // Iterate through facet query parameters.
+          foreach ($query_parameters['f'] as $key => $value) {
+            // Add hidden form field for facet parameter.
+            $form['f[' . $key . ']'] = [
+              '#type' => 'hidden',
+              '#value' => $value,
+              '#weight' => -1,
+            ];
+          }
+        }
+      }
+
+      if(!empty($form_state->getStorage()['display']['display_options']['filters'])) {
+        foreach($form_state->getStorage()['display']['display_options']['filters'] as $filterId => $filter) {
+          if($filter['exposed'] && $filter['plugin_id'] === 'search_api_date') {
+            $form[$filter['expose']['identifier']] += [
+              '#attributes' => ['class' => ['icdc-facets-datepicker']],
+              '#attached' => [
+                'library' => ['icdc_facets/icdc_facets.date_picker']
+              ],
+            ];
+
+            if($filter['expose']['identifier'] === 'du') {
+              $form[$filter['expose']['identifier']]['#attributes']['class'][] = 'icdc-facets-datepicker-from';
+            }
+            else if($filter['expose']['identifier'] === 'au') {
+              $form[$filter['expose']['identifier']]['#attributes']['class'][] = 'icdc-facets-datepicker-to';
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+uuid: ee880a85-0d0c-41e9-9768-39a15c9d4b77
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_insert_video
+id: paragraph.pg_insert_video.created
+field_name: created
+entity_type: paragraph
+bundle: pg_insert_video
+label: 'Écrit le'
+description: 'Heure de création du paragraphe.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

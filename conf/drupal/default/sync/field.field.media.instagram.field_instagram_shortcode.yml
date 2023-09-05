@@ -1,0 +1,19 @@
+uuid: 9676c7c3-0ab2-4fb4-be4f-aad20d780e80
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_instagram_shortcode
+    - media.type.instagram
+id: media.instagram.field_instagram_shortcode
+field_name: field_instagram_shortcode
+entity_type: media
+bundle: instagram
+label: 'Instagram shortcode'
+description: 'Ne rien saisir. La valeur de ce champ sera renseignée automatiquement.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains access_config.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function access_config_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the access_config module.
+    case 'help.page.access_config':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module about access_config.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function access_config_theme()
+{
+  return [
+    'access_config_block' => [
+      'render element' => 'children',
+    ],
+  ];
+}

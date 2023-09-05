@@ -1,0 +1,75 @@
+body {
+  &.entete-immersive {
+
+    .region-highlighted {
+      .block-entity-viewnode {
+        max-width: 100%;
+        margin-bottom: 0;
+        .node--view-mode-header-immersive,
+        .node--type-dossier.node--view-mode-header{
+          margin-bottom: 6rem;
+          @media (max-width: $screen-lg-max) {
+            margin-bottom: 4rem;
+          }
+          @media (max-width: $screen-md-max) {
+            margin-bottom: 3rem;
+          }
+          @media (max-width: $screen-md-max) {
+            margin-bottom: 2rem;
+          }
+          @media (max-width: $screen-xs-max) {
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  &.couleur-inversee {
+    .main-container {
+      div {
+        &:not(.sticky-menu) {
+          .region-header {
+            .navbar-main {
+              & > li {
+                & > a,
+                & > span {
+                  color: $white;
+                }
+              }
+            }
+
+            .burger-menu {
+              color: $white;
+
+              span {
+                background-color: $white;
+
+                &:before,
+                &:after {
+                  background-color: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .breadcrumb {
+        .breadcrumb-list {
+          li {
+            color: $white;
+
+            a {
+              color: $white;
+            }
+          }
+        }
+      }
+
+      .node--view-mode-header-immersive {
+        color: $white;
+      }
+    }
+  }
+}

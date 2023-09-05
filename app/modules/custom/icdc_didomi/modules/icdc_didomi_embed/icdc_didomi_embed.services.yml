@@ -1,0 +1,9 @@
+services:
+  icdc_didomi_embed.twig.extension:
+    class: Drupal\icdc_didomi_embed\TwigExtension\EmbedTwigExtension
+    arguments: ['@icdc_didomi_embed.provider']
+    tags:
+      - { name: twig.extension }
+  icdc_didomi_embed.provider:
+    class: Drupal\icdc_didomi_embed\Services\EmbedProviderService
+    arguments: []

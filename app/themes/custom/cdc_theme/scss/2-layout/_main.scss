@@ -1,0 +1,73 @@
+/**
+ * @file
+ * Main Layout Styling
+ */
+
+.region-highlighted {
+  .tabs {
+
+    .tabs--primary {
+      @extend %large-wrapper;
+      @extend %responsive-large--margin-bottom;
+    }
+  }
+  .page-header {
+    @extend %large-wrapper;
+    border: 0;
+  }
+  .node--type-accueil .header-text-home{
+    h2{
+      a{
+        &:focus{
+          outline: 0;
+          .field--name-field-head-title{
+            @include focus($white, 0, 3px)
+          }
+        }
+      }
+    }
+  }
+}
+
+.block-help {
+  @extend %large-wrapper;
+}
+
+.layout__region {
+  &:after {
+    clear: both;
+  }
+}
+
+body {
+  &.path-use,
+  &.path-recherche {
+    .region-content  {
+      @extend %large-wrapper;
+      @extend %responsive-large--margin-bottom;
+    }
+  }
+}
+
+.region-content-top {
+  padding: 20px 0 70px;
+  margin-bottom: 40px;
+  background: $gris-clair;
+}
+
+//Back to Top
+#backtotop {
+  background-image: url('../images/backtotop.png');
+  background-size: auto;
+  bottom: 13rem;
+  z-index: 999;
+}
+
+//Layout Builder
+.node-accueil-layout-builder-form {
+  position: relative;
+}
+
+.d-none{
+  display: none!important;
+}

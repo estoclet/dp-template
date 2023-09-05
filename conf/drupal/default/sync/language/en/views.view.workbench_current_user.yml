@@ -1,0 +1,20 @@
+label: "\r\nWorkbench: utilisateur actuel"
+description: 'Informations sur l''utilisateur actuel.'
+display:
+  default:
+    display_options:
+      fields:
+        edit_user:
+          text: 'Modifier mon profil'
+        access:
+          label: 'Dernière visite'
+        roles:
+          label: 'Rôles assignés'
+      header:
+        area:
+          content:
+            value: '<h3>Profil {{ name }}</h3>'
+  block_1:
+    display_title: "\r\nBloc de vue d'ensemble"
+    display_options:
+      display_description: 'Affiche des informations sur l''utilisateur actuel.'

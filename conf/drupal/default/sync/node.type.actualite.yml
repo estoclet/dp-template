@@ -1,0 +1,54 @@
+uuid: 38dbe930-79fc-44e4-ae14-64097456aecf
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+    - social_simple
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: always
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: schedule
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: true
+    show_message_after_update: true
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: false
+  social_simple:
+    share: 1
+    title: Partager
+    networks:
+      twitter: twitter
+      facebook: facebook
+      linkedin: linkedin
+      mail: mail
+    hashtags: '0'
+    forward_integration: null
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+      - unpublished
+    default_moderation_state: draft
+_core:
+  default_config_hash: 33Eh4Xq9vnERJPTvT3eSYodiMcnxCP8HawMeFdeZSE0
+name: Actualité
+type: actualite
+description: 'Ajouter une actualité ou un évènement.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

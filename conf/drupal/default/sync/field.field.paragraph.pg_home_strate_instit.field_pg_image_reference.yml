@@ -1,0 +1,28 @@
+uuid: 9bd09897-8838-41f4-85c8-f82f6522993a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_image_reference
+    - media.type.image
+    - paragraphs.paragraphs_type.pg_home_strate_instit
+id: paragraph.pg_home_strate_instit.field_pg_image_reference
+field_name: field_pg_image_reference
+entity_type: paragraph
+bundle: pg_home_strate_instit
+label: Image
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

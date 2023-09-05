@@ -1,0 +1,7 @@
+id;title;description;href;class;target;weight;enabled
+1;Facebook;Suivez-nous sur Facebook;https://www.facebook.com/GroupeCaissedesDepots;cdcicon-fb;_blank;1;1
+2;Twitter;Suivez-nous sur Twitter;https://twitter.com/caissedesdepots;cdcicon-twitter;_blank;2;1
+3;Linkedin;Suivez-nous sur LinkedIn;https://fr.linkedin.com/company/groupe-caisse-des-dépôts;cdcicon-linkedin;_blank;3;1
+4;Instagram;Suivez-nous sur Instagram;internal:/;cdcicon-instagram;_blank;4;0
+5;Viadeo;Suivez-nous sur Viadeo;https://fr.viadeo.com/fr/company/groupe-caisse-des-depots;cdcicon-viadeo;_blank;5;1
+6;Youtube;Suivez-nous sur Youtube;https://www.youtube.com/channel/UCY5Dvh36sBz8SoLSdw4ddIg;cdcicon-youtube;_blank;6;1

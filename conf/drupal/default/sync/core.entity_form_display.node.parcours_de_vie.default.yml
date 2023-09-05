@@ -1,0 +1,285 @@
+uuid: 5ca967d2-29cc-4a9d-aff5-f4826e50d07a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.image_svg_browser
+    - field.field.node.parcours_de_vie.field_chapo
+    - field.field.node.parcours_de_vie.field_image_teaser_reference
+    - field.field.node.parcours_de_vie.field_metatag
+    - field.field.node.parcours_de_vie.field_pg_story
+    - field.field.node.parcours_de_vie.field_pg_svg_illustrated
+    - field.field.node.parcours_de_vie.field_pg_svg_wired
+    - field.field.node.parcours_de_vie.field_pg_tag_reference
+    - field.field.node.parcours_de_vie.field_short_title
+    - field.field.node.parcours_de_vie.field_snippet_seo
+    - node.type.parcours_de_vie
+  module:
+    - entity_browser
+    - field_group
+    - metatag
+    - paragraphs
+    - path
+    - scheduler
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_entete_page:
+      children:
+        - field_chapo
+        - field_pg_svg_wired
+        - field_pg_svg_illustrated
+      label: "Entête de page\t"
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: tab
+      format_settings:
+        classes: ''
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_corps_page:
+      children:
+        - field_pg_story
+      label: 'Corps de page'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: tab
+      format_settings:
+        classes: ''
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_gestion_langue:
+      children:
+        - langcode
+      label: 'Gestion de la langue'
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: tab
+      format_settings:
+        classes: ''
+        id: ''
+        formatter: closed
+        description: '<p><strong>Attention</strong> ne modifier uniquement que si ce contenu n''a pas vocation à être traduit.  Pour traduire ce contenu en anglais passer par l''onglet <strong>Traduire</strong></p>'
+        required_fields: true
+    group_properties:
+      children:
+        - title
+        - field_pg_tag_reference
+      label: Propriétés
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: tab
+      format_settings:
+        classes: ''
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+    group_teaser:
+      children:
+        - field_image_teaser_reference
+        - field_short_title
+        - field_snippet_seo
+      label: 'Résumé (SEO)'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: tab
+      format_settings:
+        classes: ''
+        id: ''
+        formatter: open
+        description: ''
+        required_fields: true
+id: node.parcours_de_vie.default
+targetEntityType: node
+bundle: parcours_de_vie
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_chapo:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_image_teaser_reference:
+    type: entity_browser_entity_reference
+    weight: 18
+    region: content
+    settings:
+      entity_browser: image_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: thumbnail
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_metatag:
+    type: metatag_firehose
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_pg_story:
+    type: entity_reference_paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Témoignage
+      title_plural: Témoignages
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: story
+    third_party_settings: {  }
+  field_pg_svg_illustrated:
+    type: entity_browser_entity_reference
+    weight: 4
+    region: content
+    settings:
+      entity_browser: image_svg_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: default
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_pg_svg_wired:
+    type: entity_browser_entity_reference
+    weight: 3
+    region: content
+    settings:
+      entity_browser: image_svg_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      field_widget_replace: false
+      open: true
+      field_widget_display_settings:
+        view_mode: default
+      selection_mode: selection_append
+    third_party_settings: {  }
+  field_pg_tag_reference:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_short_title:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_snippet_seo:
+    type: string_textarea
+    weight: 20
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 11
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  publish_state:
+    type: scheduler_moderation
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  unpublish_state:
+    type: scheduler_moderation
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  promote: true
+  status: true

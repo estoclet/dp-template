@@ -1,0 +1,236 @@
+uuid: f20f6cd2-f791-4133-9bd6-07923dd17571
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.magazine.field_media_date
+    - field.field.media.magazine.field_media_description
+    - field.field.media.magazine.field_media_doctype_reference
+    - field.field.media.magazine.field_media_entite_references
+    - field.field.media.magazine.field_media_file
+    - field.field.media.magazine.field_media_file_1
+    - field.field.media.magazine.field_media_investor_visibility
+    - field.field.media.magazine.field_media_mine
+    - field.field.media.magazine.field_media_perimeter_reference
+    - field.field.media.magazine.field_media_press_references
+    - field.field.media.magazine.field_media_press_visibility
+    - field.field.media.magazine.field_media_search_visibility
+    - field.field.media.magazine.field_media_size
+    - field.field.media.magazine.field_media_theque_visibility
+    - media.type.magazine
+  module:
+    - datetime
+    - field_group
+    - file
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_classification:
+      children:
+        - field_media_entite_references
+        - field_media_perimeter_reference
+        - field_media_doctype_reference
+      label: Classification
+      region: content
+      parent_name: ''
+      weight: 6
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        id: ''
+        description: ''
+        required_fields: true
+    group_visibilite:
+      children:
+        - status
+        - field_media_search_visibility
+        - field_media_investor_visibility
+        - field_media_press_visibility
+        - field_media_theque_visibility
+        - field_media_press_references
+      label: Visibilité
+      region: content
+      parent_name: ''
+      weight: 7
+      format_type: html_element
+      format_settings:
+        classes: ''
+        id: ''
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: collapsible
+        speed: fast
+        required_fields: true
+    group_gestion_de_la_langue:
+      children:
+        - langcode
+        - translation
+      label: 'Gestion de la langue'
+      region: content
+      parent_name: ''
+      weight: 8
+      format_type: tab
+      format_settings:
+        classes: ''
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: media.magazine.default
+targetEntityType: media
+bundle: magazine
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_date:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_description:
+    type: string_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_doctype_reference:
+    type: entity_reference_autocomplete
+    weight: 18
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_entite_references:
+    type: entity_reference_autocomplete
+    weight: 16
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_file:
+    type: file_generic
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_media_investor_visibility:
+    type: boolean_checkbox
+    weight: 14
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_media_mine:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_perimeter_reference:
+    type: entity_reference_autocomplete
+    weight: 17
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_press_references:
+    type: entity_reference_autocomplete
+    weight: 17
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_press_visibility:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_media_search_visibility:
+    type: boolean_checkbox
+    weight: 13
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_media_size:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_media_theque_visibility:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 9
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  field_media_file_1: true
+  path: true

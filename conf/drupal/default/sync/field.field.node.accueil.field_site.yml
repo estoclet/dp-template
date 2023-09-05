@@ -1,0 +1,21 @@
+uuid: 813c3802-d7b0-4592-982c-7c2ebbda8f88
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site
+    - node.type.accueil
+id: node.accueil.field_site
+field_name: field_site
+entity_type: node
+bundle: accueil
+label: Site
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:mini_site'
+  handler_settings: {  }
+field_type: entity_reference

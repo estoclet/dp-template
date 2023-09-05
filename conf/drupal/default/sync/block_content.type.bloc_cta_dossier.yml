@@ -1,0 +1,8 @@
+uuid: 5ca6bac2-5017-4a81-b9f0-74642fa50329
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_cta_dossier
+label: 'CTA dossier (accueil)'
+revision: 1
+description: ''

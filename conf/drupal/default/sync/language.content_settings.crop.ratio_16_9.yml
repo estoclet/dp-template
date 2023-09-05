@@ -1,0 +1,11 @@
+uuid: 2034a84b-cc93-4c32-a2eb-7dac38eb5c85
+langcode: fr
+status: true
+dependencies:
+  config:
+    - crop.type.ratio_16_9
+id: crop.ratio_16_9
+target_entity_type_id: crop
+target_bundle: ratio_16_9
+default_langcode: site_default
+language_alterable: false

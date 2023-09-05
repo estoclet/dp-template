@@ -1,0 +1,74 @@
+uuid: 5df16d37-e8fc-4bd5-ab83-39cbe572f103
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.header
+    - field.field.node.parcours_de_vie.field_chapo
+    - field.field.node.parcours_de_vie.field_pg_story
+    - field.field.node.parcours_de_vie.field_pg_svg_illustrated
+    - field.field.node.parcours_de_vie.field_pg_svg_wired
+    - field.field.node.parcours_de_vie.field_pg_tag_reference
+    - node.type.parcours_de_vie
+  module:
+    - field_formatter_class
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.parcours_de_vie.header
+targetEntityType: node
+bundle: parcours_de_vie
+mode: header
+content:
+  field_chapo:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_pg_svg_illustrated:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_pg_svg_wired:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_pg_tag_reference:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_image_teaser_reference: true
+  field_metatag: true
+  field_pg_story: true
+  field_short_title: true
+  field_snippet_seo: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

@@ -1,0 +1,10 @@
+iframe_resizing:
+  css:
+    theme:
+      css/apercu.view.mode.css: {}
+  js:
+    js/apercu_view_mode.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once

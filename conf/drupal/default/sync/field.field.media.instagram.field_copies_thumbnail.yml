@@ -1,0 +1,38 @@
+uuid: 96ce32df-1625-4a29-a6a6-3a4f0c7f0226
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_copies_thumbnail
+    - media.type.instagram
+  module:
+    - image
+id: media.instagram.field_copies_thumbnail
+field_name: field_copies_thumbnail
+entity_type: media
+bundle: instagram
+label: 'Copies thumbnail'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

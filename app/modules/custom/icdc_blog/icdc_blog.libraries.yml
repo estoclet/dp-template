@@ -1,0 +1,3 @@
+icdc_blog:
+  dependencies:
+    - core/drupal

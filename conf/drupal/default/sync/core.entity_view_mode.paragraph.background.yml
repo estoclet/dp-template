@@ -1,0 +1,10 @@
+uuid: 513ebacd-e55c-45c3-88d7-0c19685441de
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.background
+label: Arrière-plan
+targetEntityType: paragraph
+cache: true

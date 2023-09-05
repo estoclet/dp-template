@@ -1,0 +1,23 @@
+uuid: aa18e18b-a718-410b-b70c-0fdb21a41c54
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_dentete
+    - node.type.page
+  module:
+    - options
+id: node.page.field_type_dentete
+field_name: field_type_dentete
+entity_type: node
+bundle: page
+label: 'Type d’entête'
+description: 'Définissez le type de page. La sélection orientera le type d’entête utilisée.'
+required: true
+translatable: false
+default_value:
+  -
+    value: defaut
+default_value_callback: ''
+settings: {  }
+field_type: list_string

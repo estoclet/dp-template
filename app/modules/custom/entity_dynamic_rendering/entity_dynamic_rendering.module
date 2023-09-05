@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Contains entity_dynamic_rendering.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityFieldManagerInterface;
+
+/**
+ * Implements hook_help().
+ */
+function entity_dynamic_rendering_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the entity_dynamic_rendering module.
+    case 'help.page.entity_dynamic_rendering':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module allow users to select which view mode will be rendered when adding referenced entity into entity.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function entity_dynamic_rendering_form_field_ui_field_storage_add_form_alter(
+  &$form,
+  \Drupal\Core\Form\FormStateInterface $form_state,
+  $form_id
+) {
+  $buildInfos = $form_state->getBuildInfo()['args'];
+  $entityManager = \Drupal::service('entity_field.manager');
+  $field_storage_definitions = $entityManager->getFieldDefinitions($buildInfos[0], $buildInfos[1]);
+  // $field_storage_definitions = \Drupal::entityManager()->getFieldDefinitions($buildInfos[0], $buildInfos[1]);
+  $has_field_view_mode = FALSE;
+  foreach($field_storage_definitions as $field_name => $field_object) {
+    if($field_object->getType() == 'view_mode_item') {
+      $has_field_view_mode = TRUE;
+      break;
+    }
+  }
+
+  if($has_field_view_mode) {
+    if(isset($form['add']['new_storage_type']['#options'][(string) t('Reference')]['view_mode_item'])){
+      unset($form['add']['new_storage_type']['#options'][(string) t('Reference')]['view_mode_item']);
+    }
+    $view_mode_fields = \Drupal::service('entity_field.manager')->getFieldMapByFieldType('view_mode_item');
+    foreach($view_mode_fields as $entity_name) {
+      foreach($entity_name as $field_name => $field_def) {
+        if(isset($form['add']['existing_storage_name']['#options'][$field_name])){
+          unset($form['add']['existing_storage_name']['#options'][$field_name]);
+        }
+      }
+    }
+  }
+}

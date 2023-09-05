@@ -1,0 +1,10 @@
+uuid: 9ce5294e-9f71-4656-a4ac-26bb4681e5d2
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+id: media.header
+label: Entête
+targetEntityType: media
+cache: true

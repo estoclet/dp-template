@@ -1,0 +1,21 @@
+uuid: 1d064603-569b-4859-9579-ad0e47c9b3f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sommaire
+    - node.type.actualite
+  module:
+    - text
+id: node.actualite.field_sommaire
+field_name: field_sommaire
+entity_type: node
+bundle: actualite
+label: Sommaire
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

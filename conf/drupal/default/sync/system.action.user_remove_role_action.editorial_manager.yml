@@ -1,0 +1,14 @@
+uuid: 812a4826-905f-4c80-a6e3-ed74eb8aa395
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.editorial_manager
+  module:
+    - user
+id: user_remove_role_action.editorial_manager
+label: 'Enlever le rôle Responsable éditorial des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: editorial_manager

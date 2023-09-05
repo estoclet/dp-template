@@ -1,0 +1,21 @@
+uuid: 65d59701-01e4-4edc-a612-e2a524897744
+langcode: fr
+status: true
+dependencies:
+  module:
+    - link
+    - mini_sites
+_core:
+  default_config_hash: QkdMriTCBsiGZ6abYterDk2lMvZGKWJZeLcDRAiGzjQ
+id: mini_site_page.field_link
+field_name: field_link
+entity_type: mini_site_page
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

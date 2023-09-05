@@ -1,0 +1,583 @@
+<?php
+
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Link;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\user\Entity\User;
+use Drupal\node\Entity\Node;
+
+
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Preprocess file link.
+ * @param array $variables
+ */
+function cdc_theme_preprocess_file_link(array &$variables)
+{
+  $references = file_get_file_references($variables['file']);
+
+  if (!empty($references)) {
+    $media = reset(reset($references)['media']);
+    if ($media->bundle() === 'document') {
+      $uri = file_create_url($variables['file']->getFileUri());
+      $link = Link::fromTextAndUrl($media->name->value, Url::fromUri($uri, [
+        'attributes' => [
+          'target' => '_blank',
+          'alt' => $media->field_media_description->value,
+        ]
+      ]));
+      $variables['link'] = $link->toString();
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cdc_theme_preprocess_page_title(&$variables) {
+  $request = \Drupal::request();
+
+  // Désactive les titre des pages erreurs
+  // If there is HTTP Exception..
+  if ($exception = $request->attributes->get('exception')) {
+    // Get the status code.
+    $status_code = $exception->getStatusCode();
+    if (in_array($status_code, array(401, 403, 404))) {
+      $variables['title'] = '';
+    }
+  }
+  /**
+   * @var $term \Drupal\taxonomy\Entity\Term
+   */
+  if(!empty($request->attributes->get('taxonomy_term'))) {
+    $term = $request->attributes->get('taxonomy_term');
+    if ($term->bundle() === 'course_of_life') {
+      $variables['title'] = '';
+    }
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cdc_theme_preprocess_html(&$variables) {
+  if(isset($variables['is_front']) && $variables['is_front']) {
+    $variables['head_title']['title'] = 'Groupe Caisse des Dépôts | Ensemble, faisons grandir la France';
+  }
+  // $block_id = 2613;
+  // $block_content = \Drupal\block_content\Entity\BlockContent::load($block_id);
+
+  // if($block_content->get('field_type_dentete')->getString() === 'immersive') {
+  //   $variables['attributes']['class'][] = 'entete-immersive';
+  //   if (!empty($block_content->get('field_dark_header_checkbox')->getString())) {
+  //     $variables['attributes']['class'][] = 'couleur-inversee';
+  //   }
+  // }
+}
+
+function cdc_theme_preprocess_views_view(&$variables)
+{
+    $view = $variables['view'];
+    switch ($view->storage->id()) {
+      case 'news_blocs':
+        if(in_array('more', array_keys($variables))) {
+          $more_link_title = !empty($variables['more']['#title']) ? str_replace(' ', '-',strtolower($variables['more']['#title'])) : '';
+          $variables['more'] += [
+            '#options' => [
+              'attributes' => ['id' => $more_link_title]
+            ]
+          ];
+        }
+    }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function cdc_theme_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  $node = $variables['elements']['#node'];
+  $viewmode = $variables['elements']['#view_mode'];
+  $type = $node->getType();
+
+  switch ($type) {
+    case "page":
+      $cat = $node->get('field_type_dentete')->value;
+      break;
+    case "blog":
+      $cat = $node->get('field_blog_type_list')->value;
+      break;
+  }
+  if(!empty($cat)) {
+    $suggestions[] = 'node__' .$type. '__' .$viewmode. '__' . $cat;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function cdc_theme_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+  /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = $variables['elements']['#taxonomy_term'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  // Add view mode theme suggestions.
+  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_alter().
+ */
+function cdc_theme_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+  $suggestions[] = 'views_view__' . $view->id();
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_alter().
+ */
+function cdc_theme_preprocess_page(&$variables){
+  $path = \Drupal::service('path.current')->getPath();
+  if ($path == '/blog/co-auteurs' && isset($variables['page']['content']['icdcblog'])) {
+    unset($variables['page']['content']['icdcblog']);
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function cdc_theme_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $content = $variables['elements']['content'];
+  $id = $variables['elements']['#configuration']['id'];
+  $is_front = \Drupal::service('path.matcher')->isFrontPage();
+  // Block suggestions for custom block bundles.
+
+  if (isset($variables['elements']['content']['#block_content'])) {
+    $bundle = $content['#block_content']->bundle();
+    $view_mode = $content['#view_mode'];
+    $suggestions[] = 'block__' . $bundle;
+    $suggestions[] = 'block__' . $view_mode;
+    $suggestions[] = 'block__' . $bundle . '__' . $view_mode;
+
+    // Bloc chiffre - Adding theme suggestion on counting reference
+    if($bundle == 'bloc_chiffres' && !empty($variables['elements']['content']['field_paragraph_references'])){
+      $count = count($variables['elements']['content']['#block_content']->get('field_paragraph_references')->getValue());
+      $suggestions[] = 'block__' .  $bundle.'__'. $count  . '_ref';
+      $suggestions[] = 'block__' .  $bundle.'__' . $view_mode .'__'. $count  . '_ref';
+    }
+    // Bloc comex - Adding theme suggestion on counting reference
+    if($bundle == 'bloc_comex' && !empty($variables['elements']['content']['field_gouvernance_references'])){
+      $count = count($variables['elements']['content']['#block_content']->get('field_gouvernance_references')->getValue());
+      $suggestions[] = 'block__' .  $bundle.'__'. $count  . '_ref';
+      $suggestions[] = 'block__' .  $bundle.'__' . $view_mode .'__'. $count  . '_ref';
+    }
+
+    if($bundle == 'bloc_paragraphe' && !empty($variables['elements']['content']['field_paragraph_reference'][0]['#paragraph'])) {
+      $paragraph = $variables['elements']['content']['field_paragraph_reference'][0]['#paragraph'];
+      $suggestions[] = 'block__' .  $bundle.'__'. $paragraph->bundle();
+      $suggestions[] = 'block__' .  $bundle.'__'. $paragraph->bundle() . '__' . $view_mode;
+    }
+  }
+  if (!empty($id)) {
+    if (!empty($is_front)) {
+      $suggestions[] = 'block__' . $id . '__front';
+    }
+    else {
+      $suggestions[] = 'block__' . $id. '__default';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function cdc_theme_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $view_mode = $variables['elements']['#view_mode'];
+  $parent = $paragraph->getParentEntity();
+  $bundle = $paragraph->bundle();
+  $default = 'paragraph__' .  $bundle;
+
+  // Set parent type
+  if ($parent) {
+    $default = 'paragraph__' . $parent->bundle() . '__' . $bundle . '__' .$view_mode;
+    $suggestions[] = $default;
+  }
+  //Encart PDF
+  if($bundle == "pg_insert_document") {
+    $count = count($variables['elements']['#paragraph']->get('field_pg_document_references')->getValue());
+    $suggestions[] = $default.'__'. $count  . '_ref';
+  }
+
+  //Encart Audio
+  if($bundle == "pg_insert_audio") {
+    $count = count($variables['elements']['#paragraph']->get('field_pg_audio_references')->getValue());
+    $suggestions[] = $default.'__'. $count  . '_ref';
+  }
+
+  //Encart Image
+  if($bundle == "pg_insert_image") {
+    $count = count($variables['elements']['#paragraph']->get('field_pg_image_references')->getValue());
+    $suggestions[] = $default.'__'. $count  . '_ref';
+  }
+
+  //Encart Video
+  if($bundle == "pg_insert_video") {
+    $count = count($variables['elements']['#paragraph']->get('field_pg_video_references')->getValue());
+    $suggestions[] = $default.'__'. $count  . '_ref';
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_field().
+ *
+ * @param $variables
+ * @param $hook
+ */
+function cdc_theme_preprocess_field__field_background_color(&$variables, $hook) {
+  if (isset($variables['items'][0]['content']['#markup'])) {
+    if ($color = cdc_theme_get_color_correlation($variables['items'][0]['content']['#markup'])) {
+      $variables['items'][0]['content']['#markup'] = $color;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ *
+ * @param $variables
+ * @param $hook
+ */
+function cdc_theme_preprocess_field__field_bgcolor(&$variables, $hook) {
+  if (isset($variables['items'][0]['content']['#markup'])) {
+    if ($color = cdc_theme_get_color_correlation($variables['items'][0]['content']['#markup'])) {
+      $variables['items'][0]['content']['#markup'] = $color;
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function cdc_theme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Get Request Object.
+  $request = \Drupal::request();
+  // If there is HTTP Exception..
+  if ($exception = $request->attributes->get('exception')) {
+    // Get the status code.
+    $status_code = $exception->getStatusCode();
+    if (in_array($status_code, array(401, 403, 404))) {
+      $suggestions[] = 'page__' . $status_code;
+    }
+  }
+}
+
+function cdc_theme_get_color_correlation($color) {
+  $color = strtoupper($color);
+
+  $table = [
+    '#000000' => 'bg__noir',
+    '#FFFFFF' => 'bg__blanc',
+    '#D7C3BE' => 'bg__cf--beige',
+    '#A0B4D2' => 'bg__cf--bleuclair',
+    '#B4AAC8' => 'bg__cf--violetclair',
+    '#AACDC8' => 'bg__cf--vertclair',
+    '#820A41' => 'bg__cf--mauve',
+    '#003264' => 'bg__cf--bleufonce',
+    '#550055' => 'bg__cf--violetfonce',
+    '#006464' => 'bg__cf--vertfonce',
+    '#F39869' => 'bg__cc--orangeclair',
+    '#E67BBC' => 'bg__cc--roseclair',
+    '#AA5AA5' => 'bg__cc--mauve',
+    '#5F5FAA' => 'bg__cc--lavande',
+    '#82D2FA' => 'bg__cc--bleuazur',
+    '#73CBAA' => 'bg__cc--vertclair',
+    '#E73446' => 'bg__cc--orange',
+    '#E600B7' => 'bg__cc--rose',
+    '#8C2896' => 'bg__cc--violet',
+    '#00AAFA' => 'bg__cc--bleuclair',
+    '#009A93' => 'bg__cc--vertfonce',
+    '#F4F5F8' => 'bg__gris-clair',
+    '#05BEFA' => 'bg__bleu-faisan-clair',
+    '#18D9C9' => 'bg__bleu-emeraude-clair',
+    '#FF666B' => 'bg__corail-clair',
+    '#FBA11B' => 'bg__ocre-clair',
+    '#E30613' => 'bg__rouge-fond-acc bg--dark',
+    '#1F1F1F' => 'bg__noir-web-acc bg--dark',
+    '#32303A' => 'bg__gris-fonce-fond-acc bg--dark',
+    '#6E6E6E' => 'bg__gris-intermediaire-fond-acc bg--dark',
+    '#7A35B4' => 'bg__violet-fonce-fond-acc bg--dark',
+    '#1E46A0' => 'bg__bleu-fonce-fond-acc bg--dark',
+    '#006462' => 'bg__vert-fonce-fond-acc bg--dark',
+  ];
+
+  return array_key_exists($color, $table) ? $table[$color] : FALSE;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cdc_theme_preprocess_media(&$variables) {
+  $media = $variables['elements']['#media'];
+  if($media && $media->bundle() === 'image' && $media->field_media_image_type->value === 'informative' && !empty($media->field_media_description->value) && isset($variables['content']['field_media_image'][0]['#item_attributes'])) {
+    $variables['content']['field_media_image'][0]['#item_attributes']['alt'] = [$media->field_media_description->value];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cdc_theme_preprocess_node(&$variables) {
+  if (!empty($variables['node']) && $variables['node'] instanceof \Drupal\node\NodeInterface) {
+    $user = $variables['node']->getOwner();
+    if($user) {
+      $variables['author_name_string'] = $user->label();
+    }
+    else {
+      $variables['author_name_string'] = t('Anonymous');
+    }
+  }
+  if(isset($variables['attributes']['role'])) {
+    unset($variables['attributes']['role']);
+  }
+  $variables['label_attribute'] = '';
+  if(!empty($variables['label'])) {
+    $variables['label_attribute'] = \Drupal::service('renderer')->render($variables['label']);
+    $variables['label_attribute'] = trim(strip_tags($variables['label_attribute']));
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cdc_theme_preprocess_block(&$variables) {
+  //needed to prevent showing title when no reference is set in the node field field_node_references
+  if(!empty($variables['elements']['#id']) && $variables['elements']['#id'] === 'entityviewcontenu_2') {
+    $node = isset($variables['content']['#node']) && $variables['content']['#node'] instanceof \Drupal\node\NodeInterface ? $variables['content']['#node'] : NULL;
+    if($node && $node->hasField('field_node_references') && ($node_related = $node->field_node_references->getValue())) {
+      if(!empty($node_related[0]['target_id'])) {
+        $variables['label'] = t('Read also');
+        $variables['title_attributes'] = new \Drupal\Core\Template\Attribute();
+        $variables['title_attributes']->addClass(['block-title']);
+      }
+    }
+  }
+  if (isset($variables['elements']['content']['#block_content'])) {
+    $bundle = $variables['elements']['content']['#block_content']->bundle();
+    // Add class on bloc paragraph
+    if ($bundle == 'bloc_paragraphe' && !empty($variables['elements']['content']['field_paragraph_reference'][0]['#paragraph'])) {
+      $paragraph = $variables['elements']['content']['field_paragraph_reference'][0]['#paragraph'];
+      $pg_bundle = $paragraph->bundle();
+      $pg_view_mode = $variables["elements"]["content"]["field_paragraph_reference"][0]["#view_mode"];
+      $variables['attributes']['class'][] = 'block--' . str_replace("_","-",$bundle) . '--' . str_replace("_","-",$pg_bundle);
+      if($pg_view_mode != "") {
+        $variables['attributes']['class'][] = 'block--' . str_replace("_","-",$bundle) . '--' . str_replace("_","-",$pg_bundle). '--' . str_replace("_","-",$pg_view_mode);
+      }
+    }
+  }
+  if(!empty($variables['elements']['#id']) && $variables['elements']['#id'] === 'bloc_d_entete_bandeau') {
+      var_dmp($variables['content']['field_type_dentete']); exit;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function cdc_theme_preprocess_breadcrumb(&$variables) {
+  $cache = FALSE;
+  $route_match = \Drupal::routeMatch();
+  $breadcrumb = &$variables['breadcrumb'];
+  if (preg_match('/view\./', $route_match->getRouteName())
+    || "entity.taxonomy_term.canonical" == $route_match->getRouteName()) {
+    $view_id = $route_match->getMasterRouteMatch()->getParameter('view_id');
+    if (in_array($view_id, array('blog', 'blog_authors', 'recherche', 'news'))) {
+      $display_id = $route_match->getMasterRouteMatch()->getParameter('display_id');
+      switch($display_id) {
+        case "page_blog_author":
+          _cdc_theme_set_breadcrumb_views_page_blog_author($breadcrumb);
+          break;
+        case "page_taxonomy_blog":
+          _cdc_theme_set_breadcrumb_views_page_taxonomy_blog($breadcrumb);
+          break;
+        case "page_blog_by_tag":
+          _cdc_theme_set_breadcrumb_views_page_blog_tag($breadcrumb);
+          break;
+        case "page_1":
+          _cdc_theme_set_breadcrumb_views_page_recherche($breadcrumb);
+          break;
+        case "page_actualites":
+          _cdc_theme_set_breadcrumb_views_page_news($breadcrumb);
+          break;
+      }
+      $cache = TRUE;
+    }
+  }elseif ($route_match->getRouteName() == 'entity.node.canonical') {
+    $cache = TRUE;
+    /* @var \Drupal\node\NodeInterface $node */
+    $node = $route_match->getParameter('node');
+    switch ($node->getType()) {
+      case 'blog':
+        _cdc_theme_set_breadcrumb_ct_blog($breadcrumb);
+        break;
+      case 'actualite':
+        _cdc_theme_set_breadcrumb_ct_actualite($breadcrumb, $node);
+        break;
+
+    }
+  }
+
+  // Enable cache context.
+  if ($cache) {
+    $variables['#cache']['contexts'][] = 'url';
+    $variables['#cache']['contexts'][] = 'route.name';
+  }
+}
+
+/*
+ * Alter breadcrumb blog page.
+ */
+function _cdc_theme_set_breadcrumb_ct_blog(&$breadcrumb) {
+  if (count($breadcrumb) == 4) {
+    unset($breadcrumb[2]);
+  }
+}
+
+/*
+ * Alter breadcrumb actualite page.
+ */
+function _cdc_theme_set_breadcrumb_ct_actualite(&$breadcrumb, \Drupal\node\NodeInterface $node) {
+  if (count($breadcrumb) == 2) {
+    $breadcrumb[] = [
+      'text' => Link::createFromRoute($node->getTitle(), '<nolink>')
+    ];
+  }
+}
+
+/*
+ * Alter breadcrumb search page.
+ */
+function _cdc_theme_set_breadcrumb_views_page_recherche(&$breadcrumb) {
+  if (count($breadcrumb) == 1) {
+    $breadcrumb[] = [
+      'text' => Link::createFromRoute(t('Search', [], ['context' => 'cdc_theme']), '<nolink>')
+    ];
+  }
+}
+
+/*
+ * Alter breadcrumb search page.
+ */
+function _cdc_theme_set_breadcrumb_views_page_news(&$breadcrumb) {
+  if (count($breadcrumb) == 1) {
+    $breadcrumb[] = [
+      'text' => Link::createFromRoute(t('News'), '<nolink>')
+    ];
+  }
+}
+
+/*
+ * Alter breadcrumb page blog author.
+ */
+function _cdc_theme_set_breadcrumb_views_page_blog_author(&$breadcrumb) {
+  $route_match = \Drupal::routeMatch();
+  $slug = $route_match->getMasterRouteMatch()->getParameter('arg_0');
+  if ($uid = _icdc_blog_get_uid_from_slug($slug)) {
+    if (count($breadcrumb) == 3) {
+      $author = User::load($uid);
+      $author_name = $author->field_user_firstname->value.' '.$author->field_user_lastname->value;
+      $breadcrumb[] = [
+        'text' => Link::createFromRoute($author_name, '<nolink>')
+      ];
+    }
+  }
+}
+
+/*
+ * Alter breadcrumb page blog tag.
+ */
+function _cdc_theme_set_breadcrumb_views_page_blog_tag(&$breadcrumb) {
+  $route_match = \Drupal::routeMatch();
+  if ($arg = $route_match->getMasterRouteMatch()->getParameter('arg_0')) {
+    $term = icdc_blog_getTidByName($arg, 'blog_tag');
+    if ($term = Term::load($term)) {
+      if (count($breadcrumb) == 3) {
+        $breadcrumb = array_slice($breadcrumb, 0, -1);
+        $breadcrumb[] = [
+          'text' => Link::createFromRoute($term->name->value, '<nolink>')
+        ];
+      }
+    }
+  }
+}
+
+/*
+ * Alter breadcrumb page taxonomy blog.
+ */
+function _cdc_theme_set_breadcrumb_views_page_taxonomy_blog(&$breadcrumb) {
+  $route_match = \Drupal::routeMatch();
+  if ($arg = $route_match->getMasterRouteMatch()->getParameter('arg_0')) {
+    $term = icdc_blog_getTidByName($arg, 'expertise_area');
+    if ($term = Term::load($term)) {
+      $breadcrumb[] = [
+        'text' => Link::createFromRoute($term->name->value, '<nolink>')
+      ];
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_container().
+ */
+function cdc_theme_preprocess_container(&$variables) {
+  if(empty($variables['attributes']) || empty($variables['attributes']['class']) || !is_array($variables['attributes']['class'])) {
+    return;
+  }
+  $moduleHandler = \Drupal::service('module_handler');
+  $user = \Drupal::currentUser();
+  $tarteaucitron_enabled = $moduleHandler->moduleExists('icdc_tarte_au_citron') && !$user->hasPermission('bypass tarte au citron');
+  $serviceManager = $tarteaucitron_enabled ? \Drupal::getContainer()->get('icdc_tarte_au_citron.services_manager') : NULL;
+
+  $process = FALSE;
+  $provider = '';
+  if((!$tarteaucitron_enabled || !$serviceManager->isServiceEnabled('youtube_drupal')) && in_array('video-embed-field-provider-youtube', $variables['attributes']['class'])) {
+    $process = TRUE;
+    $provider = 'youtube';
+  }
+  if((!$tarteaucitron_enabled || !$serviceManager->isServiceEnabled('keepeek')) && in_array('video-embed-field-provider-keepeek', $variables['attributes']['class'])) {
+    $process = TRUE;
+    $provider = 'keepeek';
+  }
+
+  if($process) {
+    if($provider == "youtube") {
+      $variables['element']['children'] = [
+        '#type' => 'html_tag',
+        '#tag' => 'div',
+        '#attributes' => [
+          'class' => [$provider . '_player']
+        ],
+        '#value' => $variables['element']['#children']
+      ];
+
+      /**
+       * @var $renderer \Drupal\Core\Render\Renderer
+       */
+      $renderer = \Drupal::service('renderer');
+      $variables['children'] = $renderer->render($variables['element']['children']);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+uuid: 0d173091-ed86-47b2-b98c-5d365f07f0db
+langcode: fr
+status: true
+dependencies: {  }
+label: 'WYSIWYG Ratio 1:1'
+id: ratio_1_1
+description: ''
+aspect_ratio: '1:1'
+soft_limit_width: 230
+soft_limit_height: 230
+hard_limit_width: null
+hard_limit_height: null

@@ -1,0 +1,75 @@
+uuid: 10e37d67-eed4-4312-bf87-d0ca66fb866e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_date
+    - search_api.server.bdd
+  module:
+    - media
+    - search_api
+    - icdc_facets
+    - icdc_mediatheque
+    - icdc_node_weight_order
+id: mediatheque
+name: Mediatheque
+description: ''
+read_only: false
+field_settings:
+  bundle:
+    label: 'Type de média'
+    datasource_id: 'entity:media'
+    property_path: bundle
+    type: string
+    dependencies:
+      module:
+        - media
+  field_media_date:
+    label: 'Date de référence du document'
+    datasource_id: 'entity:media'
+    property_path: field_media_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.media.field_media_date
+  langcode:
+    label: Langue
+    datasource_id: 'entity:media'
+    property_path: langcode
+    type: string
+    dependencies:
+      module:
+        - media
+  media_facet_year:
+    label: 'ICDC Media Facet Year'
+    property_path: media_facet_year
+    type: string
+datasource_settings:
+  'entity:media':
+    bundles:
+      default: true
+      selected:
+        - image_svg
+        - instagram
+        - twitter
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  icdc_facets_date_field: {  }
+  icdc_facets_date_range_field: {  }
+  icdc_node_order: {  }
+  language_with_fallback: {  }
+  media_facet_year: {  }
+  media_show_in_mediatheque: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+server: bdd

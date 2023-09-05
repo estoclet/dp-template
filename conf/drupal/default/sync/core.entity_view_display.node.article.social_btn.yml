@@ -1,0 +1,60 @@
+uuid: 7d6c55b1-a944-457c-969e-eef18c63e7c2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.social_btn
+    - field.field.node.article.field_background_color
+    - field.field.node.article.field_chapo
+    - field.field.node.article.field_image_teaser_reference
+    - field.field.node.article.field_media_reference
+    - field.field.node.article.field_menu_tag
+    - field.field.node.article.field_metatag
+    - field.field.node.article.field_node_references
+    - field.field.node.article.field_paragraphs
+    - field.field.node.article.field_short_title
+    - field.field.node.article.field_site
+    - field.field.node.article.field_site_page
+    - field.field.node.article.field_site_page_type
+    - field.field.node.article.field_snippet_seo
+    - node.type.article
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
+id: node.article.social_btn
+targetEntityType: node
+bundle: article
+mode: social_btn
+content:
+  social_simple_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_background_color: true
+  field_chapo: true
+  field_image_teaser_reference: true
+  field_media_reference: true
+  field_menu_tag: true
+  field_metatag: true
+  field_node_references: true
+  field_paragraphs: true
+  field_short_title: true
+  field_site: true
+  field_site_page: true
+  field_site_page_type: true
+  field_snippet_seo: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

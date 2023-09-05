@@ -1,0 +1,36 @@
+uuid: 72e604db-c00a-4019-a5a0-772a8a093e77
+langcode: fr
+status: true
+dependencies:
+  config:
+    - image.style.crop_16_9
+    - image.style.crop_16_9_medium
+    - image.style.crop_16_9_small
+    - image.style.crop_16_9_large
+  theme:
+    - cdc_theme
+id: ratio_16_9_adaptatif
+label: 'Ratio 16:9 adaptatif'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: crop_16_9
+    breakpoint_id: cdc_theme.extra
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: crop_16_9_large
+    breakpoint_id: cdc_theme.large
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: crop_16_9_medium
+    breakpoint_id: cdc_theme.medium
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: crop_16_9_small
+    breakpoint_id: cdc_theme.small
+    multiplier: 1x
+breakpoint_group: cdc_theme
+fallback_image_style: crop_16_9

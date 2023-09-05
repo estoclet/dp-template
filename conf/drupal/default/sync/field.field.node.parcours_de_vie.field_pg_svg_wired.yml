@@ -1,0 +1,28 @@
+uuid: 49961d9e-497e-42cc-bfa8-1458f400e5ba
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pg_svg_wired
+    - media.type.image_svg
+    - node.type.parcours_de_vie
+id: node.parcours_de_vie.field_pg_svg_wired
+field_name: field_pg_svg_wired
+entity_type: node
+bundle: parcours_de_vie
+label: 'SVG filaire'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image_svg: image_svg
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

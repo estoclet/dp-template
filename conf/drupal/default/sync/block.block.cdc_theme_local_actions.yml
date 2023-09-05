@@ -1,0 +1,20 @@
+uuid: 7aa123cb-5b52-4dcc-a16a-4fab7d5b6495
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - cdc_theme
+_core:
+  default_config_hash: ffxthelqQF8xcr4GTG4HlaNNsluiHftN0pujmQpW0bQ
+id: cdc_theme_local_actions
+theme: cdc_theme
+region: highlighted
+weight: -15
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Actions d''administration principales'
+  label_display: '0'
+  provider: core
+visibility: {  }

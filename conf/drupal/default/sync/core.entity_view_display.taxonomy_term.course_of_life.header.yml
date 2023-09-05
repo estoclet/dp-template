@@ -1,0 +1,80 @@
+uuid: 220c27a4-1155-448f-9c26-b21774ba6b79
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.header
+    - field.field.taxonomy_term.course_of_life.field_block_terms
+    - field.field.taxonomy_term.course_of_life.field_custom_text
+    - field.field.taxonomy_term.course_of_life.field_pg_chapo
+    - field.field.taxonomy_term.course_of_life.field_pg_context
+    - field.field.taxonomy_term.course_of_life.field_pg_svg_illustrated
+    - field.field.taxonomy_term.course_of_life.field_pg_svg_wired
+    - taxonomy.vocabulary.course_of_life
+  module:
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: taxonomy_term.course_of_life.header
+targetEntityType: taxonomy_term
+bundle: course_of_life
+mode: header
+content:
+  field_block_terms:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_custom_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_pg_chapo:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_pg_context:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_pg_svg_illustrated:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_pg_svg_wired:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  description: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

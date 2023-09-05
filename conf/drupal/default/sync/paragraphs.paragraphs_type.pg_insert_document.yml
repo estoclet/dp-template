@@ -1,0 +1,16 @@
+uuid: 07667694-738b-4eec-a0ab-e86db53e50a1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - style_options
+_core:
+  default_config_hash: fihOO9t3PikLOE_7fRVzE5g33c0cKRrx8bYBPX9GFuE
+id: pg_insert_document
+label: 'Encart PDF(s)'
+icon_uuid: null
+icon_default: null
+description: 'Un encart avec une mise en forme pré-formatée pour l''affichage d''un ou plusieurs documents PDF.'
+behavior_plugins:
+  style_options:
+    enabled: true

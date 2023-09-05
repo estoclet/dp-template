@@ -1,0 +1,77 @@
+uuid: a8c64172-a32b-42ec-bced-4d6c2494df2d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_paragraphe
+    - field.storage.block_content.field_paragraph_reference
+    - paragraphs.paragraphs_type.pg_advanced_text
+    - paragraphs.paragraphs_type.pg_highligted
+    - paragraphs.paragraphs_type.pg_insert_audio
+    - paragraphs.paragraphs_type.pg_insert_document
+    - paragraphs.paragraphs_type.pg_insert_image
+    - paragraphs.paragraphs_type.pg_insert_node
+    - paragraphs.paragraphs_type.pg_insert_rs
+    - paragraphs.paragraphs_type.pg_insert_video
+    - paragraphs.paragraphs_type.pg_verbatim
+  module:
+    - entity_reference_revisions
+id: block_content.bloc_paragraphe.field_paragraph_reference
+field_name: field_paragraph_reference
+entity_type: block_content
+bundle: bloc_paragraphe
+label: Composant
+description: 'Sélectionnez un composant de page.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      pg_advanced_text: pg_advanced_text
+      pg_highligted: pg_highligted
+      pg_insert_audio: pg_insert_audio
+      pg_insert_document: pg_insert_document
+      pg_insert_image: pg_insert_image
+      pg_insert_node: pg_insert_node
+      pg_insert_video: pg_insert_video
+      pg_verbatim: pg_verbatim
+      pg_insert_rs: pg_insert_rs
+    negate: 0
+    target_bundles_drag_drop:
+      pg_advanced_text:
+        weight: 10
+        enabled: true
+      pg_chiffre:
+        weight: 13
+        enabled: false
+      pg_highligted:
+        weight: 11
+        enabled: true
+      pg_insert_audio:
+        weight: 12
+        enabled: true
+      pg_insert_document:
+        weight: 13
+        enabled: true
+      pg_insert_image:
+        weight: 14
+        enabled: true
+      pg_insert_node:
+        weight: 15
+        enabled: true
+      pg_insert_rs:
+        weight: 19
+        enabled: true
+      pg_insert_video:
+        weight: 16
+        enabled: true
+      pg_text:
+        weight: 17
+        enabled: false
+      pg_verbatim:
+        weight: 18
+        enabled: true
+field_type: entity_reference_revisions

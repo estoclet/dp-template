@@ -1,0 +1,70 @@
+uuid: a3830cd3-47f2-4bb1-af9a-6ad919625b88
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.media.video.field_media_caption
+    - field.field.media.video.field_media_credential
+    - field.field.media.video.field_media_date
+    - field.field.media.video.field_media_perimeter_reference
+    - field.field.media.video.field_media_theque_visibility
+    - field.field.media.video.field_media_video_embed_field
+    - field.field.media.video.field_media_year
+    - field.field.media.video.field_textual_transcription
+    - media.type.video
+  module:
+    - icdc_didomi_video_embed
+    - text
+id: media.video.default
+targetEntityType: media
+bundle: video
+mode: default
+content:
+  field_media_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_credential:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_video_embed_field:
+    type: video_embed_field_formatter
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_textual_transcription:
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_date: true
+  field_media_perimeter_reference: true
+  field_media_theque_visibility: true
+  field_media_year: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

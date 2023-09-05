@@ -1,0 +1,29 @@
+uuid: b9260d65-6028-4467-9c72-a7cab7f5b03f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_doctype_reference
+    - media.type.magazine
+    - taxonomy.vocabulary.doctype
+id: media.magazine.field_media_doctype_reference
+field_name: field_media_doctype_reference
+entity_type: media
+bundle: magazine
+label: 'Type de document'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      doctype: doctype
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

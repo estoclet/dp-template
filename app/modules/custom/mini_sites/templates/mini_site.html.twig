@@ -1,0 +1,23 @@
+{#
+/**
+ * @file mini_site.html.twig
+ * Default theme implementation to present Mini site data.
+ *
+ * This template is used when viewing Mini site pages.
+ *
+ *
+ * Available variables:
+ * - url: direct link to mini site
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_mini_site()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('mini_site') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

@@ -1,0 +1,19 @@
+uuid: 7025856e-4634-4306-accc-92d9901516f7
+langcode: fr
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_head_link
+field_name: field_head_link
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

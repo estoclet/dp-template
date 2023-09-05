@@ -1,0 +1,28 @@
+uuid: 3fec98f6-6e9d-46e4-9c86-641e28e7a7e8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_entete
+    - field.storage.block_content.field_media_reference
+    - media.type.image
+id: block_content.bloc_entete.field_media_reference
+field_name: field_media_reference
+entity_type: block_content
+bundle: bloc_entete
+label: 'Image de l’entête'
+description: 'Saisissez l’image qui sera affiché dans l’entête de la page.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

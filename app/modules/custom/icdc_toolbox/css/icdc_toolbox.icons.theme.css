@@ -1,0 +1,7 @@
+.toolbar-icon-icdc-toolbox-icdc-admin-menu:before {
+  background-image: url(../../../../core/misc/icons/787878/cog.svg);
+}
+.toolbar-icon-icdc-toolbox-icdc-admin-menu:active:before,
+.toolbar-icon-icdc-toolbox-icdc-admin-menu.is-active:before {
+  background-image: url(../../../../core/misc/icons/bebebe/cog.svg);
+}

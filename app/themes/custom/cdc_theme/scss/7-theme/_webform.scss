@@ -1,0 +1,401 @@
+/**
+ * @file
+ * Visual styles for webforms
+ */
+
+/* ---------------- DEFAULT -----------------*/
+
+/* ---------------- CUSTOM  -----------------*/
+.path-webform,
+.page-node-type-webform{
+  .webform-submission-mediation-caisse-form,
+  .webform-submission-cdc-dev-solidaire-adhesion-don-form,
+  .webform-submission-cdc-dev-solidaire-don-express-form{
+    padding: 0 1.5rem;
+    @media (min-width: $screen-xs-min) {
+      width: 50%;
+    }
+    .webform-progress{
+      display: none;
+    }
+    input[type='tel']{
+      width: 100%;
+    }
+    .form-item-charte{
+      input[type='checkbox']:checked + label{
+        &::after{
+          left: 2px !important;
+          display: none;
+        }
+        &::before{
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23FFFFFF' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+          background-color: $couleur-rouge;
+          background-size: 10px;
+          background-position: center;
+          background-repeat: no-repeat;
+          border: none;
+          outline: .1rem solid $gris-moyen;
+          border: solid .3rem $white;
+        }
+      }
+    }
+    #edit-actions{
+      text-align: center;
+      margin-bottom: 6rem;
+      button{
+        margin: 0;
+      }
+    }
+    .form-required:after {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin: 0 1em;
+      content: "";
+      vertical-align: super;
+      background-image: url(/core/misc/icons/ee0000/required.svg);
+      background-repeat: no-repeat;
+      background-size: 6px 6px;
+    }
+  }
+  .webform-submission-cdc-dev-solidaire-adhesion-don-form,
+  .webform-submission-cdc-dev-solidaire-don-express-form{
+    margin-bottom: 3rem;
+
+    .select-wrapper{
+      position: relative;
+      &:after {
+        content: $cdcicon-chevron;
+        font-family: $icomoon-font-family;
+        display: block;
+        position: absolute;
+        top: calc(50% - 0.4rem);
+        right: 2.6rem;
+        font-size: 0.8rem;
+      }
+      select{
+        appearance: none;
+      }
+    }
+    .form-item-rester-en-contact,
+    .form-item-statut-validation{
+      input[type='checkbox']:checked + label{
+        &::after{
+          left: 2px !important;
+          display: none;
+        }
+        &::before{
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23FFFFFF' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+          background-color: $couleur-rouge;
+          background-size: 10px;
+          background-position: center;
+          background-repeat: no-repeat;
+          border: none;
+          outline: .1rem solid $gris-moyen;
+          border: solid .3rem $white;
+        }
+      }
+    }
+    #edit-actions-submit{
+      margin-top: 3rem !important;
+    }
+    .form-type-checkbox + .form-item{
+      margin-top: 3rem;
+    }
+  }
+  .webform-submission-mediation-caisse-form{
+    .panel-heading{
+      .panel-title{
+        margin-top: 0;
+        margin-bottom: 2rem;
+        font-family: $font-roboto;
+        font-size: 2.6rem;
+        line-height: 3.2rem;
+      }
+    }
+    .panel-body{
+      .select-wrapper{
+        position: relative;
+        &:after {
+          content: $cdcicon-chevron;
+          font-family: $icomoon-font-family;
+          display: block;
+          position: absolute;
+          top: calc(50% - 0.4rem);
+          right: 2.6rem;
+          font-size: 0.8rem;
+        }
+        select{
+          appearance: none;
+        }
+      }
+      .form-item.form-item-phone{
+        float: none;
+      }
+      .form-type-managed-file{
+        .control-label{
+          font-size: 1.6rem;
+          margin-top: 0;
+          font-weight: 600;
+          .webform-element-help{
+            display: none;
+          }
+        }
+        .form-managed-file{
+          .container-download-files{
+            margin: 0
+          }
+        }
+        .container-input-file{
+          .input-file-trigger{
+            margin: 0;
+          }
+        }
+        .webform-managed-file-placeholder{
+          margin-top: 0;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+    .webform-preview{
+      .panel-body{
+        padding: 2rem;
+        padding-bottom: 1rem;
+        background-color: $gris-clair;
+        margin-bottom: 6rem;
+        .form-group{
+          margin-bottom: 0;
+          font-weight: 700;
+          .control-label, .form-composite legend{
+            display: inline-block;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+
+    #edit-next-step,
+    #edit-next-step2{
+      margin-top: 8rem;
+      margin-bottom: 0;
+
+      p{
+        text-align: center;
+        margin-bottom: 0;
+      }
+    }
+    #edit-actions-exit-form{
+      font-weight: 500 !important;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    #edit-exit-form-mediation{
+      margin-bottom: 8rem !important;
+    }
+  }
+}
+
+.webform-submission-mediation-caisse-add-form{
+  .webform-progress{
+    display: none;
+  }
+}
+
+.messages--status{
+  background-color: #CEE5DD;
+  box-shadow: none;
+  border-left: 1.5rem solid #469788;
+  color: $noir-web;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.messages--error{
+  box-shadow: none;
+  border-left: 1.5rem solid #e62600;
+  color: $noir-web;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.messages--warning{
+  box-shadow: none;
+  border-left: 1.5rem solid #e09600;
+  color: $noir-web;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.path-webform,
+.page-node-type-webform{
+  button{
+    &[name=webform_sub_ko],
+    &#but_webform_exit_ko{
+      float: right;
+      margin-left: 10px;
+    }
+
+    &[name=attached_file_remove_button],
+    &.webform-button--previous{
+      background-color: transparent;
+      color: rgb(31, 31, 31);
+      border: 1px solid rgb(31, 31, 31);
+    }
+  }
+
+  input[name=vous_intervenez_pour_autrui]+label{
+    text-transform: capitalize;
+  }
+
+  .select-wrapper::after{
+    pointer-events: none;
+  }
+
+  .messages__title{
+    display: none;
+  }
+
+  .messages--warning{
+    background-color: #f4f5f8;
+    border-left-color: #23527c;
+  }
+
+  .messages--status{
+    a{
+      color: $black;
+      text-decoration: underline;
+
+      &:hover{
+        font-weight: 600;
+      }
+    }
+  }
+
+  .form-group{
+    font-weight: 500 !important;
+
+    .control-label{
+      font-weight: 700 !important;
+    }
+  }
+
+  #edit-actions--2{
+    margin-bottom: 30px;
+
+    button{
+      margin: 0 .625rem;
+    }
+  }
+
+  #edit-disclaimer-civilite{
+    p strong{
+      color: rgb(31, 31, 31) !important;
+    }
+  }
+
+  #edit-exit-form-mediation,
+  #edit-preview{
+    p{
+      text-align: center;
+    }
+    .modal-body{
+      p{
+        text-align: left;
+      }
+    }
+    .modal-content{
+      text-align: center;
+    }
+
+    .modal-footer{
+      display: flex;
+      flex-direction: column;
+
+      button{
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  #edit-actions-exit-form{
+    background-color: transparent;
+    color: rgb(31,31,31);
+    border: 0;
+  }
+
+  #edit-actions{
+    margin-bottom: 0 !important;
+  }
+  #edit-actions-preview-next{
+    margin-top: 8rem !important;
+  }
+  #edit-actions--2{
+    text-align: center;
+    margin-bottom: 0 !important;
+  }
+  .container-download-files{
+    margin-bottom: 30px !important;
+  }
+
+  .file-link{
+    padding: 0 10px !important;
+  }
+
+  .webform-submission-form .form-item.form-item-lastname,
+  .webform-submission-form .form-item.form-item-firstname,
+  .webform-submission-form .form-item#edit-entity-status--wrapper,
+  .webform-submission-form .form-item.form-type-date{
+    width: 100% !important;
+  }
+
+  @media (min-width: 768px){
+    .webform-submission-form .form-item.form-item-lastname,
+    .webform-submission-form .form-item.form-item-firstname,
+    .webform-submission-form .form-item#edit-entity-status--wrapper,
+    .webform-submission-form .form-item.form-type-date {
+      display: block;
+    }
+
+    .webform-submission-form .form-item.form-item-lastname{
+      float: none;
+    }
+  }
+
+  .messages-list{
+    display: block !important;
+    max-width: 1290px;
+    padding-left: .8rem;
+    padding-right: 0;
+  }
+
+  .webform-submission-form{
+    .messages__content{
+      padding-top: .1rem;
+    }
+  }
+  .messages.messages--info{
+    background-position: 10px center !important;
+  }
+  .panel-danger{
+    display: grid;
+    .alert-danger{
+      grid-row: 2;
+      position: relative;
+      top: -2rem;
+      margin-bottom: 0;
+      padding: 0;
+      strong{
+        font-weight: 500;
+      }
+    }
+    .panel-body{
+      grid-row: 1;
+    }
+  }
+}
+
+.red {
+  color: $couleur-rouge;
+}
+
+

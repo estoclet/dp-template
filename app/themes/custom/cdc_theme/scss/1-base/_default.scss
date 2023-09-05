@@ -1,0 +1,299 @@
+/**
+ * @file
+ * Default Html Tags Styling
+ */
+
+
+/* ---------------- DRUPAL DEFAULT -----------------*/
+html,
+body {
+  //min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+  font-family: $body-font, sans-serif;
+  color: $noir-web;
+  font-size: 1.4rem;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 1.6rem;
+  }
+}
+
+// ************** HEADING **********************/
+h1,
+.heading1,
+%heading1 {
+  font-family: $body-font;
+  font-weight: 700;
+  line-height: 1.218em;
+  font-size: 7.6rem;
+  letter-spacing: -.025em;
+
+  @media (max-width: $screen-lg-max) {
+    font-size: 6.8rem;
+  }
+
+  @media (max-width: $screen-md-max) {
+    font-size: 4.8rem;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 4.2rem;
+  }
+}
+
+.heading1Light,
+%heading1-light {
+  font-family: $body-font;
+  font-weight: 500;
+  line-height: 1.125em;
+  letter-spacing: -.025em;
+  font-size: 4.8rem;
+
+  @media (max-width: $screen-lg-max) {
+    font-size: 4.2rem;
+  }
+
+  @media (max-width: $screen-md-max) {
+    font-size: 3.8rem;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 3.2rem;
+  }
+}
+
+h2,
+.heading2,
+%heading2 {
+  font-family: $font-roboto;
+  font-weight: 400;
+  line-height: 1.266em;
+  font-size: 2.6rem;
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 2.2rem;
+  }
+}
+
+.block-title,
+%block-title {
+  @extend %responsive-medium--margin-bottom;
+  font-family: $body-font;
+  line-height: 1em;
+  font-weight: 700;
+  text-align: left;
+  font-size: 5.8rem;
+
+  @media (max-width: $screen-lg-max) {
+    font-size: 5.5rem;
+  }
+
+  @media (max-width: $screen-md-max) {
+    font-size: 3.8rem;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 3rem;
+  }
+}
+
+
+h3,
+.heading3,
+%heading3 {
+  font-family: $font-roboto;
+  line-height: 1.266em;
+  font-weight: 400;
+  font-size: 2rem;
+
+  @media (max-width: $screen-md-max) {
+    font-size: 1.8rem;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 1.6rem;
+  }
+}
+
+h4,
+.heading4,
+%heading4 {
+  font-family: $font-roboto;
+  font-weight: 400;
+  line-height: 1.666em;
+  font-size: 1.8rem;
+
+  @media (max-width: $screen-md-max) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 1.5rem;
+  }
+}
+
+h5,
+.heading5,
+%heading5 {
+  font-weight: 600;
+  line-height: 1.882em;
+  font-size: 1.78rem;
+
+  @media (max-width: $screen-sm-max) {
+    font-size: 1.5rem;
+  }
+}
+
+h6,
+.heading6,
+%heading6 {
+  font-weight: 700;
+  line-height: 1.9375em;
+  font-size: 1.4rem;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 1.6rem;
+  }
+}
+
+h2,
+h3,
+h4 {
+
+  a {
+    @include progressive-underline;
+  }
+}
+
+/* -------------- PARAGRAPHS -----------------*/
+
+p {
+  margin: 0 0 1rem;
+  line-height: 1.75em;
+  letter-spacing: -.025em;
+
+  &:not(.credit) {
+    &:not(.legende) {
+      &:not(.chapo) {
+        line-height: 1.6em;
+      }
+    }
+  }
+
+  a {
+
+    &:not(.more-link) {
+      position: relative;
+      color: $couleur-rouge;
+
+      text-decoration: underline;
+      background-image: linear-gradient($couleur-rouge, $couleur-rouge);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 2px;
+      transition: background-size cubic-bezier(0, .5, 0, 1) .3s;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background-size: 100% 2px;
+      }
+    }
+  }
+}
+
+/* ---------------- FRAMED ------------------*/
+
+.framed{
+  border: 1px solid $noir-web;
+  background: $gris-clair;
+  padding: 1rem;
+}
+
+/* -------------- BLOCKQUOTE -----------------*/
+blockquote {
+  padding: 0 0 0 65px;
+  margin: 0;
+  font-family: $font-roboto;
+  border: 0;
+  background: url('../images/blockquote.png') no-repeat 0 0 transparent;
+  font-size: 1.6rem;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 1.8rem;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 2rem;
+  }
+}
+
+
+button,
+span[tabindex='0'] {
+  &:focus {
+    outline: 1px dashed $noir-web;
+  }
+}
+/**
+ * Alignment classes for text and block level elements.
+ */
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-justify {
+  text-align: justify;
+}
+
+/**
+ * Alignment classes for block level elements (images, videos, blockquotes, etc.)
+ */
+.align-left {
+  float: left;
+}
+
+.align-right {
+  float: right;
+}
+
+.align-center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/**
+ * Masquer un contenu en version responsive
+ */
+
+@media(max-width:$screen-xs-max){
+  .not_responsive{
+    display: none;
+  }
+}

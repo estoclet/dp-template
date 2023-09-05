@@ -1,0 +1,29 @@
+uuid: 992c6e41-0f8d-4f26-83fe-a34c71cee9b1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - facets.facet.icdc_media_facet_year
+  module:
+    - facets
+    - system
+  theme:
+    - cdc_bo_theme
+id: cdc_bo_theme_icdcmediafacetyear
+theme: cdc_bo_theme
+region: sidebar_first
+weight: -13
+provider: null
+plugin: 'facet_block:icdc_media_facet_year'
+settings:
+  id: 'facet_block:icdc_media_facet_year'
+  label: 'ICDC Media Facet Year'
+  label_display: '0'
+  provider: facets
+  block_id: icdcmediafacetyear
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /mediatheque

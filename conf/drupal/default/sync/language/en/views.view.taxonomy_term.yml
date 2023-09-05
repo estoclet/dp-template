@@ -1,0 +1,7 @@
+label: 'Terme de taxonomie'
+description: 'Contenu associé à un terme de taxonomie donné.'
+display:
+  default:
+    display_title: Default
+  feed_1:
+    display_title: Flux

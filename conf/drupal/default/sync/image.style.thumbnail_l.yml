@@ -1,0 +1,17 @@
+uuid: 6332e9f6-eb5b-4943-a655-b70326436a6e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: thumbnail_l
+label: 'Vignette L (990*660)'
+effects:
+  8620404e-0d78-42f0-bafe-10c099f0c855:
+    uuid: 8620404e-0d78-42f0-bafe-10c099f0c855
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 990
+      height: 660
+      crop_type: focal_point

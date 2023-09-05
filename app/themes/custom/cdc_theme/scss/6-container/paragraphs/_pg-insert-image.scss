@@ -1,0 +1,11 @@
+.paragraph--type--pg-insert-image {
+  &.paragraph--view-mode--default {
+    .field--name-field-media-image {
+      margin-bottom: 40px;
+
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+}

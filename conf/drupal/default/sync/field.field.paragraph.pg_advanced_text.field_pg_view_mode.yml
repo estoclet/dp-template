@@ -1,0 +1,23 @@
+uuid: e3b2869c-899d-419b-bb07-6616950cd637
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_view_mode
+    - paragraphs.paragraphs_type.pg_advanced_text
+  module:
+    - entity_dynamic_rendering
+id: paragraph.pg_advanced_text.field_pg_view_mode
+field_name: field_pg_view_mode
+entity_type: paragraph
+bundle: pg_advanced_text
+label: 'Mode d''affichage'
+description: 'Choississez le mode d’affichage de l’encart.'
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: view_mode_item

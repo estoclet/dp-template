@@ -1,0 +1,41 @@
+uuid: 2b710557-e9a6-43bd-ac3a-3d824837c228
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.restricted_html
+    - node.type.blog
+    - taxonomy.vocabulary.blog_tag
+  module:
+    - content_translation
+    - entity_clone
+    - filter
+    - icdc_toolbox
+    - icdc_users
+    - node
+    - taxonomy
+id: blog_editor
+label: 'Rédacteur Blog'
+weight: 6
+is_admin: null
+permissions:
+  - 'access taxonomy overview'
+  - 'clone media entity'
+  - 'clone node entity'
+  - 'create blog content'
+  - 'create terms in blog_tag'
+  - 'delete any blog content'
+  - 'delete own blog content'
+  - 'delete terms in blog_tag'
+  - 'edit own blog content'
+  - 'edit terms in blog_tag'
+  - 'icdc toolbox clear cache'
+  - 'revert blog revisions'
+  - 'set user password'
+  - 'translate blog node'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'use text format restricted_html'
+  - 'view blog revisions'

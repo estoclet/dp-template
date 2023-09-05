@@ -1,0 +1,31 @@
+<?php
+/**
+ * @file
+ * Custom functions for Views Bootstrap.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\icdc_views_bootstrap\IcdcViewsBootstrap;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_views_bootstrap_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_toolbox module.
+    case 'help.page.icdc_views_bootstrap':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('ICDC Views Bootstrap') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function icdc_views_bootstrap_theme() {
+  return IcdcViewsBootstrap::getThemeHooks();
+}

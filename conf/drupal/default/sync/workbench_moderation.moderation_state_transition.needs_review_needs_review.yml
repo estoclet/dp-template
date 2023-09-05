@@ -1,0 +1,13 @@
+uuid: 5a0400c4-228c-4284-8cf7-e82ee4578b8d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.needs_review
+_core:
+  default_config_hash: 2ZwHY8f7BOw10JPCAwIB5uLRa9Vc6sQcO5XxAMij_n0
+id: needs_review_needs_review
+label: Révision
+stateFrom: needs_review
+stateTo: needs_review
+weight: 0

@@ -1,0 +1,101 @@
+/**
+ * @file
+ * Breakpoint Variables
+ */
+$screen-xl-min: 1560px;
+$screen-lg-max: $screen-xl-min - 1px;
+$screen-lg-min: 1200px;
+$screen-md-max: $screen-lg-min - 1px;
+$screen-md-min: 992px;
+$screen-sm-max: $screen-md-min - 1px;
+$screen-sm-min: 768px;
+$screen-xs-max: $screen-sm-min - 1px;
+$screen-xs-min: 480px;
+
+
+$max-width-wrapper-small: 760px; //Article : texte
+$max-width-wrapper-medium: 1024px; //Article : image, video
+$max-width-wrapper-large: 1290px; //Rubrique : texte
+$max-width-wrapper-xl: 1530px;//Rubrique : image, video
+$max-width-wrapper-xxl: 1920px;//Rubrique : image, video
+
+$vertical-gutter-large: 6rem; // 60px
+$vertical-gutter-small: 2rem; // 20px
+
+.container {
+
+  .wrapper,
+  .wrapper-small,
+  .wrapper-medium,
+  .wrapper-large,
+  .wrapper-xl {
+    @media (max-width: $screen-xs-max) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  @media (min-width: $screen-xl-min) {
+    width: $max-width-wrapper-large;
+  }
+}
+
+// Appliquer directement sans réécriture de template
+.wrapper,
+%wrapper {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  box-sizing: border-box;
+
+  @media (min-width: $screen-xl-min) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.wrapper-small,
+%small-wrapper {
+  @extend %wrapper;
+  max-width: $max-width-wrapper-small;
+}
+
+.wrapper-medium,
+%medium-wrapper {
+  @extend %wrapper;
+  max-width: $max-width-wrapper-medium;
+}
+
+.wrapper-large,
+%large-wrapper {
+  @extend %wrapper;
+  max-width: $max-width-wrapper-large;
+}
+
+.wrapper-xl,
+%xl-wrapper {
+  @extend %wrapper;
+
+  @media (min-width: $screen-sm-min) {
+    max-width: 100%;
+  }
+
+  @media (min-width: $screen-xl-min) {
+    max-width: $max-width-wrapper-xl;
+  }
+}
+
+.wrapper-xxl,
+%xxl-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: $screen-xl-min) {
+    max-width: $max-width-wrapper-xxl;
+  }
+}

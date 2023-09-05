@@ -1,0 +1,14 @@
+uuid: d6c3f6d2-047a-404b-a1d2-cd75545ed37e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.editorial_manager
+  module:
+    - user
+id: user_add_role_action.editorial_manager
+label: 'Ajouter le rôle Responsable éditorial aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: editorial_manager

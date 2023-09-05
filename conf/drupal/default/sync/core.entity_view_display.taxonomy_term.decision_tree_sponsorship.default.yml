@@ -1,0 +1,58 @@
+uuid: c46cf973-77e9-4e71-a05a-27de1b76f53c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.decision_tree_sponsorship.field_tree_keyword
+    - field.field.taxonomy_term.decision_tree_sponsorship.field_tree_level
+    - field.field.taxonomy_term.decision_tree_sponsorship.field_tree_link
+    - taxonomy.vocabulary.decision_tree_sponsorship
+  module:
+    - link
+    - options
+    - text
+id: taxonomy_term.decision_tree_sponsorship.default
+targetEntityType: taxonomy_term
+bundle: decision_tree_sponsorship
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tree_keyword:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_tree_level:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_tree_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

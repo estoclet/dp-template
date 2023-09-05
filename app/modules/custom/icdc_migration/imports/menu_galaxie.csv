@@ -1,0 +1,7 @@
+id;title;description;href;target;weight;enabled;parent
+1;La Banque des Territoires;Le portail de La Banque des Territoires;https://www.banquedesterritoires.fr;_blank;0;1;0
+2;Retraites et Solidarité;Le portail des Retraites et de la Solidarité;https://retraitesolidarite.caissedesdepots.fr;_blank;1;1;0
+3;Consignations;Le portail des Consignations;https://consignations.caissedesdepots.fr;_blank;2;1;0
+4;Bpifrance;Le site de Bpifrance;https://www.bpifrance.fr;_blank;3;1;0
+5;Mon Compte Formation;Le portail du Compte Personnel de Formation;https://moncompteformation.gouv.fr;_blank;4;1;0
+

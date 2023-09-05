@@ -1,0 +1,77 @@
+uuid: 46b8dcd3-637a-40fa-80cf-eeec619d9e82
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlighted
+    - field.field.node.gouvernance.body
+    - field.field.node.gouvernance.field_function
+    - field.field.node.gouvernance.field_image_reference
+    - field.field.node.gouvernance.field_metatag
+    - node.type.gouvernance
+  module:
+    - advanced_text_formatter
+    - field_formatter_class
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.gouvernance.highlighted
+targetEntityType: node
+bundle: gouvernance
+mode: highlighted
+content:
+  body:
+    type: advanced_text
+    label: hidden
+    settings:
+      trim_length: '230'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: php
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - em
+        - i
+        - strong
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+  field_function:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_metatag: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

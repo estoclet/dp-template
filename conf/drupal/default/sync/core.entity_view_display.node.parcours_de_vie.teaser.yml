@@ -1,0 +1,41 @@
+uuid: 72f0aaf9-c44d-4fef-ba35-56af7595768e
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.parcours_de_vie.field_chapo
+    - field.field.node.parcours_de_vie.field_pg_story
+    - field.field.node.parcours_de_vie.field_pg_svg_illustrated
+    - field.field.node.parcours_de_vie.field_pg_svg_wired
+    - field.field.node.parcours_de_vie.field_pg_tag_reference
+    - node.type.parcours_de_vie
+  module:
+    - user
+id: node.parcours_de_vie.teaser
+targetEntityType: node
+bundle: parcours_de_vie
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_chapo: true
+  field_image_teaser_reference: true
+  field_metatag: true
+  field_pg_story: true
+  field_pg_svg_illustrated: true
+  field_pg_svg_wired: true
+  field_pg_tag_reference: true
+  field_short_title: true
+  field_snippet_seo: true
+  langcode: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

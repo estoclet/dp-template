@@ -1,0 +1,29 @@
+uuid: 6449a194-ff3d-42d4-89df-4343a98ef941
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_expertise_references
+    - node.type.blog
+    - taxonomy.vocabulary.expertise_area
+id: node.blog.field_expertise_references
+field_name: field_expertise_references
+entity_type: node
+bundle: blog
+label: 'Territoire d''expertise'
+description: 'Sélectionnez le ou les territoire(s) d’expertise de l’article.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      expertise_area: expertise_area
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

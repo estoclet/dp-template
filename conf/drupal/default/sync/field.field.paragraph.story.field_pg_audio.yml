@@ -1,0 +1,28 @@
+uuid: 61f51e21-cdd4-4311-aa4b-8f2482ae1f48
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_audio
+    - media.type.audio
+    - paragraphs.paragraphs_type.story
+id: paragraph.story.field_pg_audio
+field_name: field_pg_audio
+entity_type: paragraph
+bundle: story
+label: Audio
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      audio: audio
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

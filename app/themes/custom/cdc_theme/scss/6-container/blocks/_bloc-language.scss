@@ -1,0 +1,72 @@
+.block-language {
+  line-height: 1;
+
+  & > ul {
+    position: relative;
+    padding: 5px 0 .75rem 1.5em;
+    margin: 0 0 0 1.5em;
+    list-style: none;
+
+    &:before {
+      content: '';
+      width: 1px;
+      height: 10px;
+      background: $white;
+      position: absolute;
+      left: 0;
+      top: 15px;
+    }
+
+    & > li {
+      padding-left: .75em;
+
+      @media (max-width: $screen-md-max) {
+        padding-left: .25rem;
+      }
+
+      & > a {
+        padding: .75rem .6rem;
+        border-bottom: 2px solid $white;
+      }
+    }
+
+    a {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: $white;
+      text-decoration: none;
+      padding: .75rem 0 .75rem 1.5em;
+
+      @media (max-width: $screen-md-max) {
+        padding-left: 1rem;
+      }
+
+      &.dropdown-toggle {
+        text-transform: capitalize;
+
+        &:focus {
+          outline: 1px solid $white;
+        }
+      }
+    }
+
+    .dropdown-menu {
+      top: 34px;
+      left: 0;
+      padding: 1rem 0;
+      background: $noir-web;
+      border-radius: 0;
+      border: 0;
+      min-width: inherit;
+
+      a {
+        padding-right: 1.5rem;
+
+        &.is-active {
+          display: none;
+        }
+      }
+    }
+  }
+}

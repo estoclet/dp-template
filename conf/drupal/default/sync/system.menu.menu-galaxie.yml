@@ -1,0 +1,8 @@
+uuid: 4516b1d2-4b37-42a3-a98c-f8029968b4c8
+langcode: fr
+status: true
+dependencies: {  }
+id: menu-galaxie
+label: 'Menu galaxie'
+description: 'Liens de la galaxie des sites.'
+locked: false

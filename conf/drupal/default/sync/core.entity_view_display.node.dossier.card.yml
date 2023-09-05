@@ -1,0 +1,87 @@
+uuid: 029d4aa6-b567-4ed1-b5b2-e65aeb1edd5e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.dossier.field_chapo
+    - field.field.node.dossier.field_dark_header_checkbox
+    - field.field.node.dossier.field_image_teaser_reference
+    - field.field.node.dossier.field_media_reference
+    - field.field.node.dossier.field_metatag
+    - field.field.node.dossier.field_no_margin
+    - field.field.node.dossier.field_node_references
+    - field.field.node.dossier.field_paragraphs
+    - field.field.node.dossier.field_short_title
+    - field.field.node.dossier.field_snippet_seo
+    - field.field.node.dossier.field_sommaire
+    - field.field.node.dossier.field_thematic_references
+    - field.field.node.dossier.layout_builder__layout
+    - node.type.dossier
+  module:
+    - advanced_text_formatter
+    - field_formatter_class
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.dossier.card
+targetEntityType: node
+bundle: dossier
+mode: card
+content:
+  field_snippet_seo:
+    type: advanced_text
+    label: hidden
+    settings:
+      trim_length: '180'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: none
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - br
+        - dd
+        - dl
+        - dt
+        - em
+        - i
+        - li
+        - ol
+        - p
+        - strong
+        - u
+        - ul
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_chapo: true
+  field_dark_header_checkbox: true
+  field_image_teaser_reference: true
+  field_media_reference: true
+  field_metatag: true
+  field_no_margin: true
+  field_node_references: true
+  field_paragraphs: true
+  field_short_title: true
+  field_sommaire: true
+  field_thematic_references: true
+  langcode: true
+  layout_builder__layout: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

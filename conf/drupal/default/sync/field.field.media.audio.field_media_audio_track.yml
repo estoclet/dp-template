@@ -1,0 +1,19 @@
+uuid: afa97a13-c0cc-42f0-9a87-f17cf930b1d4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_audio_track
+    - media.type.audio
+id: media.audio.field_media_audio_track
+field_name: field_media_audio_track
+entity_type: media
+bundle: audio
+label: 'Track id'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

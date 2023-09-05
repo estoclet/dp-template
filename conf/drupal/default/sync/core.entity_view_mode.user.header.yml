@@ -1,0 +1,10 @@
+uuid: ef61634f-ff98-40ec-85b4-5bc2dce1e07b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.header
+label: Entête
+targetEntityType: user
+cache: true

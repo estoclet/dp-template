@@ -1,0 +1,26 @@
+uuid: 0fd7e065-7639-4ebb-b2ba-0e5ce97e87bc
+langcode: fr
+status: true
+dependencies:
+  module:
+    - icdc_facets
+    - system
+  theme:
+    - cdc_theme
+id: facet_summury
+theme: cdc_theme
+region: content_top
+weight: -19
+provider: null
+plugin: icdc_facets_label_block
+settings:
+  id: icdc_facets_label_block
+  label: 'FACETTE Etiquettes'
+  label_display: '0'
+  provider: icdc_facets
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/actualites\r\n/communiques-de-presse"

@@ -1,0 +1,5 @@
+name: 'ICDC Matomo'
+type: module
+description: 'Matomo implementation for ICDC'
+core_version_requirement: ^8 || ^9
+package: 'ICDC'

@@ -1,0 +1,71 @@
+uuid: 27f5b85f-8897-41ef-823b-6ca3a8acd31f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_comex
+    - field.field.block_content.bloc_comex.field_animation
+    - field.field.block_content.bloc_comex.field_gouvernance_references
+    - field.field.block_content.bloc_comex.field_link
+    - field.field.block_content.bloc_comex.field_responsive
+  module:
+    - field_formatter_class
+    - link
+id: block_content.bloc_comex.default
+targetEntityType: block_content
+bundle: bloc_comex
+mode: default
+content:
+  field_animation:
+    type: boolean
+    label: hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+  field_gouvernance_references:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: stamp
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_responsive:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

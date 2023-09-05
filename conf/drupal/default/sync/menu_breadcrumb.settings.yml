@@ -1,0 +1,76 @@
+_core:
+  default_config_hash: dp50LLB10ui-pYgDqHSZdREslQ7DqY71aF20tyaas6I
+langcode: fr
+determine_menu: true
+disable_admin_page: true
+append_current_page: true
+current_page_as_link: false
+stop_on_first_match: false
+append_member_page: true
+member_page_as_link: false
+remove_home: false
+add_home: true
+front_title: 0
+exclude_empty_url: false
+derived_active_trail: false
+menu_breadcrumb_menus:
+  main:
+    enabled: 1
+    weight: -10
+    taxattach: 1
+    langhandle: 1
+  admin:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0
+  menu-blog:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0
+  devel:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0
+  menu-infos-legales:
+    enabled: 1
+    weight: 0
+    taxattach: 1
+    langhandle: 1
+  account:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0
+  menu-galaxie:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0
+  menu-profil:
+    enabled: 1
+    weight: 0
+    taxattach: 1
+    langhandle: 1
+  tools:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0
+  footer:
+    enabled: 1
+    weight: 0
+    taxattach: 1
+    langhandle: 1
+  menu-rs:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0
+  workbench:
+    enabled: 0
+    weight: 0
+    taxattach: 0
+    langhandle: 0

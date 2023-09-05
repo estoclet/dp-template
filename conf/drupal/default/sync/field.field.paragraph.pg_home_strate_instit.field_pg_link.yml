@@ -1,0 +1,23 @@
+uuid: 912e60fc-cd4e-4133-a92e-63f7d98e54af
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_link
+    - paragraphs.paragraphs_type.pg_home_strate_instit
+  module:
+    - link
+id: paragraph.pg_home_strate_instit.field_pg_link
+field_name: field_pg_link
+entity_type: paragraph
+bundle: pg_home_strate_instit
+label: Lien
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 1
+field_type: link

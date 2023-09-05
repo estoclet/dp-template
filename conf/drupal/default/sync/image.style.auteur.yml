@@ -1,0 +1,17 @@
+uuid: 6686b0de-787f-47a4-8d9a-d269e316b4d4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - focal_point
+name: auteur
+label: 'Square (230*230)'
+effects:
+  4356c20f-4625-4a4f-b8b0-627f89f59af9:
+    uuid: 4356c20f-4625-4a4f-b8b0-627f89f59af9
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 230
+      height: 230
+      crop_type: focal_point

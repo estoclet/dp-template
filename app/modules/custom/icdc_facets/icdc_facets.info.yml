@@ -1,0 +1,9 @@
+name: 'ICDC Facets'
+type: module
+description: 'ICDC Facets'
+core_version_requirement: ^8 || ^9
+package: 'ICDC'
+dependencies:
+  - facets
+'interface translation project': icdc_facets
+'interface translation server pattern': modules/custom/icdc_facets/translations/icdc_facets-%language.po

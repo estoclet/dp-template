@@ -1,0 +1,63 @@
+uuid: 6f291138-f85c-487a-84e3-01acbfda780d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.image.field_media_caption
+    - field.field.media.image.field_media_credential
+    - field.field.media.image.field_media_date
+    - field.field.media.image.field_media_description
+    - field.field.media.image.field_media_height
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_image_type
+    - field.field.media.image.field_media_mine
+    - field.field.media.image.field_media_perimeter_reference
+    - field.field.media.image.field_media_size
+    - field.field.media.image.field_media_theque_visibility
+    - field.field.media.image.field_media_width
+    - field.field.media.image.field_media_year
+    - image.style.thumbnail
+    - media.type.image
+  module:
+    - svg_image
+id: media.image.media_library
+targetEntityType: media
+bundle: image
+mode: media_library
+content:
+  field_media_image:
+    type: image_image
+    weight: 5
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_caption: true
+  field_media_credential: true
+  field_media_date: true
+  field_media_description: true
+  field_media_height: true
+  field_media_image_type: true
+  field_media_mine: true
+  field_media_perimeter_reference: true
+  field_media_size: true
+  field_media_theque_visibility: true
+  field_media_width: true
+  field_media_year: true
+  langcode: true
+  path: true
+  status: true
+  translation: true
+  uid: true

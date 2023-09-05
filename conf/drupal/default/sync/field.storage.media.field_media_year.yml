@@ -1,0 +1,20 @@
+uuid: 3bc41275-5184-4c14-a360-b8f669885f08
+langcode: fr
+status: true
+dependencies:
+  module:
+    - datetime
+    - media
+id: media.field_media_year
+field_name: field_media_year
+entity_type: media
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

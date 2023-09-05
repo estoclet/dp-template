@@ -1,0 +1,18 @@
+uuid: 5e640744-63c0-42d6-8fe1-2c736dab339f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.gouvernance
+id: node.gouvernance.metatag
+field_name: metatag
+entity_type: node
+bundle: gouvernance
+label: 'Balises meta (Meta tags)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

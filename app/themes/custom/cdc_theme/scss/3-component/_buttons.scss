@@ -1,0 +1,295 @@
+/****************
+VARIABLES
+*****************/
+
+//Primary
+$color-btn-prim: $white;
+$bg-btn-prim: $rouge-fond-acc;
+$border-color-btn-prim: $rouge-fond-acc;
+$color-hover-btn-prim: $couleur-rouge;
+$bg-hover-btn-prim: $white;
+$border-color-hover-btn-prim: $couleur-rouge;
+$color-active-btn-prim: $noir-web;
+$bg-active-btn-prim: $gris-clair;
+$border-color-active-btn-prim: $noir-web;
+
+//Secondary
+$color-btn-second: $noir-web;
+$bg-btn-second: $white;
+$border-color-btn-second: $noir-web;
+$color-hover-btn-second: $white;
+$bg-hover-btn-second: $rouge-fond-acc;
+$border-color-hover-btn-second: $rouge-fond-acc;
+$color-active-btn-second: $white;
+$bg-active-btn-second: $rouge-fond-acc;
+$border-color-active-btn-second: $rouge-fond-acc;
+
+//Nude
+$color-btn-nude: $white;
+$border-color-hover-btn-nude: $white;
+$color-btn-menu: $color-btn-nude;
+$color-btn-menu-hover: $couleur-rouge;
+$font-btn-menu: 'Montserrat', sans-serif;
+$letter-spacing-btn-menu: .05rem;
+$color-btn-menu-separator: $white;
+
+button {
+  outline: 0;
+
+  &:focus {
+    outline: 1px dotted;
+  }
+}
+
+%btn {
+  background: none;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  margin: 1rem 0;
+  font-size: inherit;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle;
+  transition: color .2s;
+  padding: 1rem 2rem;
+
+
+  &:visited,
+  &:active,
+  &:hover {
+    text-decoration: none;
+  }
+
+  .icon-before,
+  .icon {
+
+    &.glyphicon {
+      margin-right: 1rem;
+    }
+  }
+}
+
+%btn-primary {
+  @extend %btn;
+  color: $color-btn-prim;
+  background-color: $bg-btn-prim;
+  border-color: $border-color-btn-prim;
+
+  svg {
+    &.ext {
+      path {
+        fill: none;
+        stroke: $color-btn-prim;
+      }
+    }
+  }
+
+  &:visited {
+    color: $color-btn-prim;
+    background-color: $bg-btn-prim;
+    border-color: $border-color-btn-prim;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-hover-btn-prim;
+    background-color: $bg-hover-btn-prim;
+    border-color: $border-color-hover-btn-prim;
+
+    svg {
+      &.ext {
+        path {
+          fill: none;
+          stroke: $color-hover-btn-prim;
+        }
+      }
+    }
+  }
+}
+
+%btn-secondary {
+  @extend %btn;
+  color: $color-btn-second;
+  background-color: $bg-btn-second;
+  border-color: $border-color-btn-second;
+
+  svg {
+    &.ext {
+      path {
+        fill: none;
+        stroke: $color-btn-second;
+      }
+    }
+  }
+
+  &:visited {
+    color: $color-btn-second;
+    background-color: $bg-btn-second;
+    border-color: $border-color-btn-second;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-hover-btn-second;
+    background-color: $bg-hover-btn-second;
+    border-color: $border-color-hover-btn-second;
+
+    svg {
+      &.ext {
+        path {
+          fill: none;
+          stroke: $color-hover-btn-second;
+        }
+      }
+    }
+  }
+}
+
+.region-content,
+.region-content-top,
+#tarteaucitronRoot {
+
+  .btn {
+    @extend %btn;
+  }
+
+  .btn-primary,
+  .form-submit,
+  .button--primary,
+  .btn--primary {
+    @extend %btn-primary;
+  }
+
+  .btn-secondary,
+  .button--secondary,
+  .btn--secondary {
+    @extend %btn-secondary;
+  }
+}
+
+.field--type-text-long {
+  a {
+
+    &.btn--primary,
+    &.btn--secondary {
+      display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1.3rem;
+    }
+
+    &.btn--primary {
+      @extend %btn-primary;
+    }
+
+    &.btn--secondary {
+      @extend %btn-secondary;
+    }
+  }
+
+}
+
+
+
+.btn-outline-primary,
+%btn-outline-primary {
+  @extend %btn;
+  color: $color-btn-prim;
+  background-color: transparent;
+  border-color: $border-color-btn-prim;
+
+  &:hover {
+    color: $color-hover-btn-prim;
+    background-color: $border-color-btn-prim;
+  }
+
+}
+
+.btn-outline-secondary,
+%btn-outline-secondary {
+  @extend %btn;
+  color: $color-btn-second;
+  background-color: transparent;
+  border-color: $border-color-btn-second;
+
+  &:hover {
+    color: $color-hover-btn-second;
+    background-color: $border-color-btn-second;
+  }
+}
+
+
+.btn-outline-transparent {
+  border-color: transparent;
+}
+
+.btn-nude {
+  color: $color-btn-nude;
+  background-color: transparent;
+  padding: .6rem .75em;
+}
+
+.region-navigation {
+  .btn-nude {
+    padding: .75rem 0 .75rem 1.5em;
+
+    @media (max-width: $screen-md-max) {
+      padding-left: 1rem;
+    }
+
+    .button-menu__label {
+      @media (max-width: $screen-md-max) {
+        display: none;
+      }
+    }
+  }
+}
+
+.button-menu {
+  color: $color-btn-menu;
+  font-family: $font-btn-menu;
+  letter-spacing: $letter-spacing-btn-menu;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: $color-btn-menu;
+
+    .button-menu__label {
+      text-decoration: none;
+      border-bottom: 1px solid $white;
+    }
+  }
+  &:focus {
+    outline: 1px solid $white;
+  }
+  &--tree {
+    &::after {
+      display: inline-block;
+      content: '';
+      height: 1.1rem;
+      width: .1rem;
+      background-color: $color-btn-menu-separator;
+      vertical-align: middle;
+      margin: 0 0 0 3.5rem;
+    }
+  }
+
+  &__icon {
+    padding: 0 1rem;
+    vertical-align: middle;
+    font-size: 2rem;
+  }
+
+  &__label {
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-weight: 600;
+  }
+
+}

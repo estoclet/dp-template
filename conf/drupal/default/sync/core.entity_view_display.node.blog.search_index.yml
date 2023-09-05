@@ -1,0 +1,98 @@
+uuid: 25ce9d3d-c49f-4c41-8970-91731287829a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.blog.field_auteur_secondaire
+    - field.field.node.blog.field_blog_tag_references
+    - field.field.node.blog.field_blog_type_list
+    - field.field.node.blog.field_cdc_label_select
+    - field.field.node.blog.field_chapo
+    - field.field.node.blog.field_expertise_references
+    - field.field.node.blog.field_image_teaser_reference
+    - field.field.node.blog.field_media_reference
+    - field.field.node.blog.field_metatag
+    - field.field.node.blog.field_node_references
+    - field.field.node.blog.field_paragraphs
+    - field.field.node.blog.field_reading_time
+    - field.field.node.blog.field_short_title
+    - field.field.node.blog.field_snippet_seo
+    - field.field.node.blog.field_sommaire
+    - node.type.blog
+  module:
+    - advanced_text_formatter
+    - field_formatter_class
+    - user
+id: node.blog.search_index
+targetEntityType: node
+bundle: blog
+mode: search_index
+content:
+  field_chapo:
+    type: advanced_text
+    label: hidden
+    settings:
+      trim_length: '230'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: none
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - br
+        - dd
+        - dl
+        - dt
+        - em
+        - i
+        - li
+        - ol
+        - p
+        - strong
+        - u
+        - ul
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  field_image_teaser_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_auteur_secondaire: true
+  field_blog_tag_references: true
+  field_blog_type_list: true
+  field_cdc_label_select: true
+  field_color_primary: true
+  field_dark_header_checkbox: true
+  field_expertise_references: true
+  field_media_reference: true
+  field_metatag: true
+  field_node_references: true
+  field_paragraphs: true
+  field_reading_time: true
+  field_short_title: true
+  field_snippet_seo: true
+  field_sommaire: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

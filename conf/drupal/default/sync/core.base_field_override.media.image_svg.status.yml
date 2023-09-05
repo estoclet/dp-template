@@ -1,0 +1,22 @@
+uuid: 9f266130-532f-4d59-8f11-0cf1f8b5f0a6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - media.type.image_svg
+id: media.image_svg.status
+field_name: status
+entity_type: media
+bundle: image_svg
+label: Publié
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

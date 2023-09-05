@@ -1,0 +1,8 @@
+uuid: 1c08ab33-1274-48ba-bc39-6d2ab7993437
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Arbre de décision'
+vid: decision_tree
+description: 'Configuration des niveaux de l’arbre de décision.'
+weight: 0

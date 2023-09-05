@@ -1,0 +1,23 @@
+uuid: e234c3cf-945a-4f86-9332-09d70aa2b922
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_responsive
+    - paragraphs.paragraphs_type.pg_advanced_text
+id: paragraph.pg_advanced_text.field_responsive
+field_name: field_responsive
+entity_type: paragraph
+bundle: pg_advanced_text
+label: 'Désactiver l''affichage en responsive'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

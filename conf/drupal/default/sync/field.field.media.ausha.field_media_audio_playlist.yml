@@ -1,0 +1,19 @@
+uuid: a22582ab-3aae-478b-9a54-9f82efa6b112
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_audio_playlist
+    - media.type.ausha
+id: media.ausha.field_media_audio_playlist
+field_name: field_media_audio_playlist
+entity_type: media
+bundle: ausha
+label: 'Playlist id'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

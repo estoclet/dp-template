@@ -1,0 +1,28 @@
+uuid: 02095420-ad1c-4a2d-a6ba-1e13a7fce118
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_webform
+    - field.field.block_content.bloc_webform.field_webform_integration
+  module:
+    - webform
+id: block_content.bloc_webform.default
+targetEntityType: block_content
+bundle: bloc_webform
+mode: default
+content:
+  field_webform_integration:
+    type: webform_entity_reference_entity_view
+    label: visually_hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

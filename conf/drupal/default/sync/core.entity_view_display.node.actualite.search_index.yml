@@ -1,0 +1,95 @@
+uuid: bf566036-4885-4136-9fa4-f35c9c548735
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.actualite.field_chapo
+    - field.field.node.actualite.field_entite_references
+    - field.field.node.actualite.field_image_teaser_reference
+    - field.field.node.actualite.field_interval_date
+    - field.field.node.actualite.field_media_reference
+    - field.field.node.actualite.field_metatag
+    - field.field.node.actualite.field_paragraphs
+    - field.field.node.actualite.field_short_title
+    - field.field.node.actualite.field_site
+    - field.field.node.actualite.field_site_page
+    - field.field.node.actualite.field_site_page_type
+    - field.field.node.actualite.field_snippet_seo
+    - field.field.node.actualite.field_sommaire
+    - field.field.node.actualite.field_thematic_references
+    - node.type.actualite
+  module:
+    - advanced_text_formatter
+    - field_formatter_class
+    - user
+id: node.actualite.search_index
+targetEntityType: node
+bundle: actualite
+mode: search_index
+content:
+  field_chapo:
+    type: advanced_text
+    label: hidden
+    settings:
+      trim_length: '230'
+      ellipsis: '1'
+      word_boundary: '1'
+      filter: none
+      format: plain_text
+      allowed_html:
+        - a
+        - b
+        - br
+        - dd
+        - dl
+        - dt
+        - em
+        - i
+        - li
+        - ol
+        - p
+        - strong
+        - u
+        - ul
+      use_summary: 0
+      token_replace: 0
+      autop: 0
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  field_image_teaser_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: thumbnail
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_actualite_type_select: true
+  field_entite_references: true
+  field_interval_date: true
+  field_media_reference: true
+  field_metatag: true
+  field_paragraphs: true
+  field_short_title: true
+  field_site: true
+  field_site_page: true
+  field_site_page_type: true
+  field_snippet_seo: true
+  field_sommaire: true
+  field_thematic_references: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  social_simple_buttons: true
+  workbench_moderation_control: true

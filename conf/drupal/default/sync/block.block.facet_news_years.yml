@@ -1,0 +1,29 @@
+uuid: 4d7c8d1e-c7be-4926-9dc8-ac2cafdd5484
+langcode: fr
+status: true
+dependencies:
+  config:
+    - facets.facet.news_years
+  module:
+    - facets
+    - system
+  theme:
+    - cdc_theme
+id: facet_news_years
+theme: cdc_theme
+region: content_top
+weight: -16
+provider: null
+plugin: 'facet_block:news_years'
+settings:
+  id: 'facet_block:news_years'
+  label: 'FACETTE Actualités Années'
+  label_display: '0'
+  provider: facets
+  block_id: facet_news_years
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /actualites

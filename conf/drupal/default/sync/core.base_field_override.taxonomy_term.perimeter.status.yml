@@ -1,0 +1,22 @@
+uuid: c798b278-3162-4d8f-8638-2cbe18defbcd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.perimeter
+id: taxonomy_term.perimeter.status
+field_name: status
+entity_type: taxonomy_term
+bundle: perimeter
+label: Publié
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

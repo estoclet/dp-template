@@ -1,0 +1,30 @@
+uuid: f7348e19-47f7-4b74-8318-c6ccd3cb1896
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pg_image_reference
+    - media.type.image
+    - paragraphs.paragraphs_type.pg_verbatim
+_core:
+  default_config_hash: JJIFSUsI70S78BwvdqvelOLd95vEZJQsvUDcZaXh1fI
+id: paragraph.pg_verbatim.field_pg_image_reference
+field_name: field_pg_image_reference
+entity_type: paragraph
+bundle: pg_verbatim
+label: Portrait
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

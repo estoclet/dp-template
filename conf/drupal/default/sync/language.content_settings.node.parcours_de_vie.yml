@@ -1,0 +1,18 @@
+uuid: fca0a69b-64dc-4a2c-8f26-f2b4a66a471b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.parcours_de_vie
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.parcours_de_vie
+target_entity_type_id: node
+target_bundle: parcours_de_vie
+default_langcode: site_default
+language_alterable: true

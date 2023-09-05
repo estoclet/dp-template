@@ -1,0 +1,62 @@
+uuid: 090cb15e-48b3-4e1b-8c18-c634f9e376b6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.mini_site_page.content.field_content
+    - mini_sites.mini_site_page_type.content
+  module:
+    - mini_sites
+    - path
+id: mini_site_page.content.default
+targetEntityType: mini_site_page
+bundle: content
+mode: default
+content:
+  field_content:
+    type: mini_site_entity_reference_autocomplete
+    weight: 31
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

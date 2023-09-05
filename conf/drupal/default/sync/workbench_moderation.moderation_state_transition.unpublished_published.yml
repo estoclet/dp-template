@@ -1,0 +1,12 @@
+uuid: de86c467-ec5d-4fd6-ba3c-a04a853f43ed
+langcode: fr
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.published
+    - workbench_moderation.moderation_state.unpublished
+id: unpublished_published
+label: Publié
+stateFrom: unpublished
+stateTo: published
+weight: -4

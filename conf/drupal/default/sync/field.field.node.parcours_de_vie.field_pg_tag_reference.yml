@@ -1,0 +1,29 @@
+uuid: 87f39290-d1ad-417a-90dc-19748d98fc8e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pg_tag_reference
+    - node.type.parcours_de_vie
+    - taxonomy.vocabulary.course_of_life
+id: node.parcours_de_vie.field_pg_tag_reference
+field_name: field_pg_tag_reference
+entity_type: node
+bundle: parcours_de_vie
+label: 'Tag référence'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      course_of_life: course_of_life
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

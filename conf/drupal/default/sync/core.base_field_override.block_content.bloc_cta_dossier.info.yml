@@ -1,0 +1,18 @@
+uuid: 4fba74d1-1b70-4aaa-a89e-b3a60fda02ab
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_cta_dossier
+id: block_content.bloc_cta_dossier.info
+field_name: info
+entity_type: block_content
+bundle: bloc_cta_dossier
+label: 'Description du bloc'
+description: 'Une brève description de votre bloc.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 8c7f2f14-a9c2-4d41-828a-22b0c32f123b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_caption
+    - media.type.image
+_core:
+  default_config_hash: IqRE7f76bYMpAr57PXO92upTTOaUANQySleQvIaaNGg
+id: media.image.field_media_caption
+field_name: field_media_caption
+entity_type: media
+bundle: image
+label: Légende
+description: 'Saisissez une légende. Si renseignée, elle sera affichée en front-office.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,56 @@
+uuid: 6388e229-55e6-468c-99d5-b213068bfde3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.image_svg.field_media_date
+    - field.field.media.image_svg.field_media_height
+    - field.field.media.image_svg.field_media_image
+    - field.field.media.image_svg.field_media_mine
+    - field.field.media.image_svg.field_media_size
+    - field.field.media.image_svg.field_media_width
+    - image.style.thumbnail
+    - media.type.image_svg
+  module:
+    - layout_builder
+    - svg_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.image_svg.media_library
+targetEntityType: media
+bundle: image_svg
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_date: true
+  field_media_height: true
+  field_media_image: true
+  field_media_mine: true
+  field_media_size: true
+  field_media_width: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

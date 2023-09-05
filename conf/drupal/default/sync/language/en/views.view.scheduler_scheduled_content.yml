@@ -1,0 +1,32 @@
+display:
+  default:
+    display_options:
+      filters:
+        publish_on:
+          expose:
+            label: 'Publish on'
+          group_info:
+            label: 'Publish on'
+        unpublish_on:
+          expose:
+            label: 'Unpublish on'
+        type:
+          expose:
+            label: Type
+        status:
+          group_info:
+            label: 'Statut de publication'
+        langcode:
+          expose:
+            label: Language
+      fields:
+        name:
+          label: Author
+  overview:
+    display_options:
+      tab_options:
+        title: Contenu
+  user_page:
+    display_options:
+      tab_options:
+        title: Contenu

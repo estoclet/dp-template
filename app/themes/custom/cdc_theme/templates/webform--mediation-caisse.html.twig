@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Theme implementation for a 'webform' element.
+ *
+ * This is an copy of the webform.html.twig theme_wrapper which includes the
+ * 'title_prefix' and 'title_suffix' variables needed for
+ * contextual links to appear.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the webform.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_webform()
+ * @see _webform_form_after_build()
+ *
+ * @ingroup themeable
+ */
+#}
+<form{{attributes}}>
+	{{ title_prefix }}
+	{{ children }}
+	{{ title_suffix }}
+
+	<div id="edit-exit-form-mediation" class="form-item js-form-item form-type-processed-text js-form-type-processed-text form-item- js-form-item- form-no-label form-group">
+		<div class="modal fade" id="exitModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" id="but_webform_mod_close" type="button">
+							<span>×</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Vous êtes sur le point de quitter ce formulaire sans avoir finalisé votre demande.</p>
+						<p>Si vous quittez ce formulaire, vous perdrez l'ensemble des données saisies.</p>
+					</div>
+					<div class="modal-footer">
+						<button class="webform-button--submit button button--primary js-form-submit form-submit btn-primary btn" id="but_webform_exit_ok" type="button">Oui, je souhaite quitter le formulaire</button>
+						<button class="btn btn-default" id="but_webform_exit_ko" type="button">Je continue</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<p>
+			<button class="webform-button--preview button js-form-submit form-submit btn-default btn" id="edit-actions-exit-form" type="submit">Quitter le formulaire de médiation</button>
+		</p>
+	</div>
+
+</form>

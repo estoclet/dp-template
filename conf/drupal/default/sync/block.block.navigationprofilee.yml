@@ -1,0 +1,31 @@
+uuid: 58d1c30c-21e6-48ed-8b59-19677dc58465
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.menu-profil
+  module:
+    - menu_block
+  theme:
+    - cdc_theme
+id: navigationprofilee
+theme: cdc_theme
+region: header
+weight: -18
+provider: null
+plugin: 'menu_block:menu-profil'
+settings:
+  id: 'menu_block:menu-profil'
+  label: 'Navigation profilée'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: false
+  parent: 'menu-profil:'
+  suggestion: menu_profil
+visibility: {  }

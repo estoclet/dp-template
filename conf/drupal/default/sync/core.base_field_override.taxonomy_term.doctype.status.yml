@@ -1,0 +1,22 @@
+uuid: c3b5def7-02ae-41a5-9c83-72133fc9b6cc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.doctype
+id: taxonomy_term.doctype.status
+field_name: status
+entity_type: taxonomy_term
+bundle: doctype
+label: Publié
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

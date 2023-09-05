@@ -1,0 +1,28 @@
+icdc_tarte_au_citron.config:
+  path: '/admin/config/tarte_au_citron'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Tarte au citron'
+  requirements:
+    _permission: 'access administration pages'
+
+icdc_tarte_au_citron.services:
+  path: '/admin/config/tarte_au_citron/services'
+  defaults:
+    _form: '\Drupal\icdc_tarte_au_citron\Form\ConfigurationForm'
+    _title: 'Settings for Tarte au citron module'
+  requirements:
+    _permission: 'administer tarte au citron'
+  options:
+    _admin_route: TRUE
+
+icdc_tarte_au_citron.edit_texts:
+  path: '/admin/config/tarte_au_citron/edit-texts'
+  defaults:
+    _form: '\Drupal\icdc_tarte_au_citron\Form\EditTexts'
+    _title: 'Texts settings for Tarte au citron module'
+  requirements:
+    _permission: 'translate tarte au citron'
+  options:
+    _admin_route: TRUE
+

@@ -1,0 +1,8 @@
+name: 'ICDC site deploy'
+type: module
+description: 'Use to do things on install and updates.'
+core_version_requirement: ^8 || ^9
+package: 'ICDC'
+
+dependencies:
+  - drupal:menu_link_content

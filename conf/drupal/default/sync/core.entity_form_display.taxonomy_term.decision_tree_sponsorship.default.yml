@@ -1,0 +1,63 @@
+uuid: 75deda68-f35b-4273-a0ec-f3a2c5aeb112
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.decision_tree_sponsorship.field_tree_keyword
+    - field.field.taxonomy_term.decision_tree_sponsorship.field_tree_level
+    - field.field.taxonomy_term.decision_tree_sponsorship.field_tree_link
+    - taxonomy.vocabulary.decision_tree_sponsorship
+  module:
+    - link
+    - workbench_moderation
+id: taxonomy_term.decision_tree_sponsorship.default
+targetEntityType: taxonomy_term
+bundle: decision_tree_sponsorship
+mode: default
+content:
+  field_tree_keyword:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tree_level:
+    type: options_buttons
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_tree_link:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true

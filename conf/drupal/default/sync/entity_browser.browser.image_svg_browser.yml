@@ -1,0 +1,42 @@
+uuid: e4d87198-089a-4cff-a591-5edde26151c2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.custom_media_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: image_svg_browser
+label: 'Navigateur d’images SVG'
+display: modal
+display_configuration:
+  width: '1920'
+  height: '1200'
+  link_text: Ajouter
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  ca88a2db-04ff-4e90-8ebb-48637c0a50f7:
+    id: view
+    uuid: ca88a2db-04ff-4e90-8ebb-48637c0a50f7
+    label: Lister
+    weight: 1
+    settings:
+      submit_text: Selectionner
+      auto_select: false
+      view: custom_media_browser
+      view_display: media_entity_browser_image_svg
+  6b714b56-6fd2-49e7-8654-6a688fb17400:
+    id: entity_form
+    uuid: 6b714b56-6fd2-49e7-8654-6a688fb17400
+    label: Créer
+    weight: 2
+    settings:
+      submit_text: Sauvegarder
+      entity_type: media
+      bundle: image_svg
+      form_mode: default

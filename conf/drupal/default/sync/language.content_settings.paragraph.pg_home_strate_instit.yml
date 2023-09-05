@@ -1,0 +1,18 @@
+uuid: bcd09a15-d928-43a2-85b7-5ebd684c5668
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_home_strate_instit
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+id: paragraph.pg_home_strate_instit
+target_entity_type_id: paragraph
+target_bundle: pg_home_strate_instit
+default_langcode: site_default
+language_alterable: true

@@ -1,0 +1,22 @@
+uuid: 1e4de48e-f285-447d-aba8-1d369a4d5c43
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+    - taxonomy
+_core:
+  default_config_hash: rEyV2RcN32XoycWRZuwobByHBbBU-kgcsjL6_ztrV3U
+id: media.field_media_investor_reference
+field_name: field_media_investor_reference
+entity_type: media
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,24 @@
+uuid: 8ec02b58-0d73-4eba-9a72-7284c77278de
+langcode: fr
+status: true
+dependencies:
+  module:
+    - crop
+    - media_entity_instagram
+third_party_settings:
+  crop:
+    image_field: null
+id: instagram
+label: Instagram
+description: ''
+source: instagram
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_link
+field_map:
+  id: field_instagram_id
+  type: field_instagram_type
+  thumbnail: field_instagram_thumb_link
+  username: field_instagram_username
+  caption: field_instagram_legende

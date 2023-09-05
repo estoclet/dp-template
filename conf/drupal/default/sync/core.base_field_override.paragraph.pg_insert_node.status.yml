@@ -1,0 +1,22 @@
+uuid: d9b243ad-1195-4d5d-ae8b-63bdb71ec90a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_insert_node
+id: paragraph.pg_insert_node.status
+field_name: status
+entity_type: paragraph
+bundle: pg_insert_node
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

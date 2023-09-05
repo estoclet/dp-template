@@ -1,0 +1,29 @@
+uuid: 8c43388b-0c8e-45f7-849e-cdcce5328ab9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_perimeter_reference
+    - media.type.ausha
+    - taxonomy.vocabulary.perimeter
+id: media.ausha.field_media_perimeter_reference
+field_name: field_media_perimeter_reference
+entity_type: media
+bundle: ausha
+label: 'Périmètre métier'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      perimeter: perimeter
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

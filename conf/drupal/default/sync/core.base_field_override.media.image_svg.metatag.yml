@@ -1,0 +1,18 @@
+uuid: c1407d9a-c650-415b-9219-c2e80ccad399
+langcode: fr
+status: true
+dependencies:
+  config:
+    - media.type.image_svg
+id: media.image_svg.metatag
+field_name: metatag
+entity_type: media
+bundle: image_svg
+label: 'Balises meta (Meta tags)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

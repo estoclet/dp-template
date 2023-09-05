@@ -1,0 +1,29 @@
+uuid: a7b55301-9408-4094-b415-e69455c30d84
+langcode: fr
+status: true
+dependencies:
+  config:
+    - facets.facet.icdc_media_facet_type
+  module:
+    - facets
+    - system
+  theme:
+    - cdc_theme
+id: icdcmediafacettype
+theme: cdc_theme
+region: content_top
+weight: -14
+provider: null
+plugin: 'facet_block:icdc_media_facet_type'
+settings:
+  id: 'facet_block:icdc_media_facet_type'
+  label: 'ICDC Media Facet Type'
+  label_display: '0'
+  provider: facets
+  block_id: icdcmediafacettype
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /mediatheque

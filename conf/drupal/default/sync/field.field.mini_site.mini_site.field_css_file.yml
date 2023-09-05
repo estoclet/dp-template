@@ -1,0 +1,27 @@
+uuid: 6ca8bf99-6a63-4b0e-92bc-2dfcbd8c0c8b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.mini_site.field_css_file
+    - mini_sites.mini_site_type.mini_site
+  module:
+    - file
+id: mini_site.mini_site.field_css_file
+field_name: field_css_file
+entity_type: mini_site
+bundle: mini_site
+label: 'Fichier css'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: mini-sites
+  file_extensions: css
+  max_filesize: ''
+  description_field: false
+field_type: file

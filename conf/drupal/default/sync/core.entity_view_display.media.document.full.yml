@@ -1,0 +1,99 @@
+uuid: 51770a57-9b19-4fe6-8016-baf2c80e92c0
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.media.full
+    - field.field.media.document.field_media_date
+    - field.field.media.document.field_media_description
+    - field.field.media.document.field_media_doctype_reference
+    - field.field.media.document.field_media_entite_references
+    - field.field.media.document.field_media_file
+    - field.field.media.document.field_media_investor_reference
+    - field.field.media.document.field_media_investor_visibility
+    - field.field.media.document.field_media_mine
+    - field.field.media.document.field_media_perimeter_reference
+    - field.field.media.document.field_media_press_references
+    - field.field.media.document.field_media_press_visibility
+    - field.field.media.document.field_media_search_visibility
+    - field.field.media.document.field_media_size
+    - field.field.media.document.field_media_theque_visibility
+    - image.style.thumbnail_xl
+    - media.type.document
+  module:
+    - file
+    - svg_image
+    - user
+id: media.document.full
+targetEntityType: media
+bundle: document
+mode: full
+content:
+  created:
+    type: timestamp
+    label: hidden
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_media_file:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_media_press_references:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail_xl
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: ''
+        height: ''
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  uid:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_date: true
+  field_media_description: true
+  field_media_doctype_reference: true
+  field_media_entite_references: true
+  field_media_investor_reference: true
+  field_media_investor_visibility: true
+  field_media_mine: true
+  field_media_perimeter_reference: true
+  field_media_press_visibility: true
+  field_media_search_visibility: true
+  field_media_size: true
+  field_media_theque_visibility: true
+  langcode: true
+  name: true
+  search_api_excerpt: true

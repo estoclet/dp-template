@@ -1,0 +1,91 @@
+uuid: 5d970d8e-7983-4dd1-a2a1-8dc51f97315c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.wysiwyg
+    - field.field.media.image.field_media_caption
+    - field.field.media.image.field_media_credential
+    - field.field.media.image.field_media_date
+    - field.field.media.image.field_media_description
+    - field.field.media.image.field_media_height
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_image_type
+    - field.field.media.image.field_media_mine
+    - field.field.media.image.field_media_perimeter_reference
+    - field.field.media.image.field_media_size
+    - field.field.media.image.field_media_theque_visibility
+    - field.field.media.image.field_media_width
+    - field.field.media.image.field_media_year
+    - image.style.crop_libre
+    - media.type.image
+  module:
+    - field_formatter_class
+    - layout_builder
+    - svg_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.image.wysiwyg
+targetEntityType: media
+bundle: image
+mode: wysiwyg
+content:
+  field_media_caption:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 2
+    region: content
+  field_media_credential:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 1
+    region: content
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: crop_libre
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  created: true
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_media_date: true
+  field_media_description: true
+  field_media_height: true
+  field_media_image_type: true
+  field_media_mine: true
+  field_media_perimeter_reference: true
+  field_media_size: true
+  field_media_theque_visibility: true
+  field_media_width: true
+  field_media_year: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

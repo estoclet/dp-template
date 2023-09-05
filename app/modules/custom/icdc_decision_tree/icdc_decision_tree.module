@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @file
+ * Contains icdc_decision_tree.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function icdc_decision_tree_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the icdc_decision_tree module.
+    case 'help.page.icdc_decision_tree':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module about ICDC decision tree.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function icdc_decision_tree_form_alter(&$form, FormStateInterface &$form_state) {
+  $form_ids = [
+    'taxonomy_term_decision_tree_form',
+    'taxonomy_term_decision_tree_sponsorship_form',
+  ];
+
+  if (in_array($form['#form_id'], $form_ids)) {
+    $form['field_tree_keyword']['#states'] = [
+      'visible' => [
+        ':input[name="field_tree_level"]' => ['value' => 'parent'],
+      ],
+    ];
+
+    $form['field_tree_link']['#states'] = [
+      'visible' => [
+        ':input[name="field_tree_level"]' => ['value' => 'final'],
+      ],
+    ];
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function icdc_decision_tree_theme() {
+  return [
+    'decision_tree_block' => [
+      'variables' => [
+        'decision_tree' => NULL,
+        'root' => NULL,
+        'id' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    'decision_tree_page' => [
+      'variables' => [
+        'decision_tree' => NULL,
+        'root' => NULL,
+        'id' => NULL,
+        'title' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    'decision_tree_accordion' => [
+      'variables' => [
+        'decision_tree' => NULL,
+        'id' => NULL,
+        'title' => NULL,
+        'open' => NULL,
+      ],
+      'render element' => 'children',
+    ],
+    'decision_tree_button_block' => [
+      'variables' => [
+        'content' => NULL
+      ],
+      'render element' => 'children',
+    ],
+  ];
+}
+

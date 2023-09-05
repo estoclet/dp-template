@@ -1,0 +1,40 @@
+uuid: f0ef8af1-ffe0-425f-84ab-eff8a7b36ba8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.perimeter
+  module:
+    - text
+    - workbench_moderation
+id: taxonomy_term.perimeter.default
+targetEntityType: taxonomy_term
+bundle: perimeter
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  path: true

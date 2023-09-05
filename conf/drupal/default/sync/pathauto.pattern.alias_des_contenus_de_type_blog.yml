@@ -1,0 +1,32 @@
+uuid: 8aa0904a-a3ce-4f59-a93b-2d43fa7d46a1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - mini_sites
+    - node
+id: alias_des_contenus_de_type_blog
+label: 'Alias des contenus de type Blog'
+type: 'canonical_entities:node'
+pattern: 'blog/article/[node:field_short_title]'
+selection_criteria:
+  a60a8210-0b83-4127-af7e-f51364629ddb:
+    id: node_type
+    negate: false
+    uuid: a60a8210-0b83-4127-af7e-f51364629ddb
+    context_mapping:
+      node: node
+    bundles:
+      blog: blog
+  861f46ab-7bf2-44aa-ad36-1afbb9cf80c8:
+    id: mini_site_page_content
+    negate: false
+    uuid: 861f46ab-7bf2-44aa-ad36-1afbb9cf80c8
+    context_mapping:
+      node: node
+    mini_site_page_content: 'no'
+    mini_site_page_content_bundles: {  }
+    mini_site_page_content_home: 'no'
+selection_logic: and
+weight: -5
+relationships: {  }

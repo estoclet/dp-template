@@ -1,0 +1,23 @@
+uuid: 75c6a027-5453-49bc-a276-0edb988ccb7e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_swipe_horizontal
+    - field.storage.block_content.field_responsive
+id: block_content.bloc_swipe_horizontal.field_responsive
+field_name: field_responsive
+entity_type: block_content
+bundle: bloc_swipe_horizontal
+label: 'Désactiver l''affichage en responsive'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

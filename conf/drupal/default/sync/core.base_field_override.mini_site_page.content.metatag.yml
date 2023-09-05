@@ -1,0 +1,18 @@
+uuid: 2ac31f13-7a00-406e-8f86-b38a7bc78516
+langcode: fr
+status: true
+dependencies:
+  config:
+    - mini_sites.mini_site_page_type.content
+id: mini_site_page.content.metatag
+field_name: metatag
+entity_type: mini_site_page
+bundle: content
+label: 'Balises meta (Meta tags)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

@@ -1,0 +1,28 @@
+uuid: c28ef6a4-cdbe-4f58-bfa8-7f7a47d55e28
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pg_svg_illustrated
+    - media.type.image_svg
+    - node.type.parcours_de_vie
+id: node.parcours_de_vie.field_pg_svg_illustrated
+field_name: field_pg_svg_illustrated
+entity_type: node
+bundle: parcours_de_vie
+label: 'SVG illustré'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image_svg: image_svg
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

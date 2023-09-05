@@ -1,0 +1,22 @@
+uuid: 14a4e445-7cf4-4270-8e52-d38bc9cf4fed
+langcode: fr
+status: true
+dependencies:
+  module:
+    - media
+    - taxonomy
+_core:
+  default_config_hash: x0jzjGMuDJN8ipFSJE7JpKID7y278zO-gNJ_mLzf3_I
+id: media.field_media_perimeter_reference
+field_name: field_media_perimeter_reference
+entity_type: media
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

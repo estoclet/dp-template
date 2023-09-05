@@ -1,0 +1,43 @@
+uuid: af4beb1d-760a-4b4e-8751-fe6f7f4c4b75
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.list_posts_minisite.body
+    - field.field.node.list_posts_minisite.field_posts_list
+    - field.field.node.list_posts_minisite.field_site
+    - field.field.node.list_posts_minisite.field_site_page
+    - field.field.node.list_posts_minisite.field_site_page_type
+    - node.type.list_posts_minisite
+  module:
+    - text
+    - user
+id: node.list_posts_minisite.teaser
+targetEntityType: node
+bundle: list_posts_minisite
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  field_posts_list: true
+  field_site: true
+  field_site_page: true
+  field_site_page_type: true
+  langcode: true
+  search_api_excerpt: true

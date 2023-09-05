@@ -1,0 +1,23 @@
+uuid: e1911ad3-611c-48db-ad36-71a24384d26c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_paragraphe
+    - field.storage.block_content.field_animation
+id: block_content.bloc_paragraphe.field_animation
+field_name: field_animation
+entity_type: block_content
+bundle: bloc_paragraphe
+label: 'Animer le titre'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

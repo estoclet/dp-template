@@ -1,0 +1,29 @@
+uuid: b0b9412b-000c-4f7b-bbf3-b43d0efcc2b3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - facets.facet.press_releases_date
+  module:
+    - facets
+    - system
+  theme:
+    - cdc_theme
+id: facet_press_releases_date
+theme: cdc_theme
+region: content_top
+weight: -13
+provider: null
+plugin: 'facet_block:press_releases_date'
+settings:
+  id: 'facet_block:press_releases_date'
+  label: 'FACETTE Communiqués de presse Date'
+  label_display: '0'
+  provider: facets
+  block_id: facet_press_releases_date
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /communiques-de-presse

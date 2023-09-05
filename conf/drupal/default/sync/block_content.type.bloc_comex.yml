@@ -1,0 +1,8 @@
+uuid: 36338a9a-9fbc-4e34-8d9a-b02af8740033
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_comex
+label: 'Bloc Comex'
+revision: 1
+description: 'Un bloc pour remonter des membres de la gouvernance. '

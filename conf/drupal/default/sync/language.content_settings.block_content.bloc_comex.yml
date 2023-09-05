@@ -1,0 +1,18 @@
+uuid: cf1040a3-9dc1-4ca4-ae09-9f20d6498789
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_comex
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.bloc_comex
+target_entity_type_id: block_content
+target_bundle: bloc_comex
+default_langcode: site_default
+language_alterable: true

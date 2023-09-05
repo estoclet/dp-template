@@ -1,0 +1,89 @@
+uuid: a1633a16-b4fd-4220-872f-5fd2622438de
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_chiffres
+    - field.field.block_content.bloc_chiffres.field_animation
+    - field.field.block_content.bloc_chiffres.field_background_color
+    - field.field.block_content.bloc_chiffres.field_chapo
+    - field.field.block_content.bloc_chiffres.field_color_primary
+    - field.field.block_content.bloc_chiffres.field_link
+    - field.field.block_content.bloc_chiffres.field_paragraph_references
+    - field.field.block_content.bloc_chiffres.field_responsive
+  module:
+    - color_field
+    - link
+    - paragraphs
+    - text
+    - workbench_moderation
+id: block_content.bloc_chiffres.default
+targetEntityType: block_content
+bundle: bloc_chiffres
+mode: default
+content:
+  field_animation:
+    type: boolean_checkbox
+    weight: 0
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_background_color:
+    type: color_field_widget_box
+    weight: 6
+    region: content
+    settings:
+      default_colors: '#FFFFFF,#F4F5F8,#05BEFA,#18D9C9,#FF666B,#FBA11B,#E30613,#1F1F1F,#32303A,#6E6E6E,#7A35B4,#1E46A0,#006462'
+    third_party_settings: {  }
+  field_chapo:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_paragraph_references:
+    type: entity_reference_paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: 'chiffre clé'
+      title_plural: 'chiffres clé'
+      edit_mode: open
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: pg_chiffre
+    third_party_settings: {  }
+  field_responsive:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_color_primary: true
+  langcode: true

@@ -1,0 +1,50 @@
+{#
+/**
+* @file
+* Default theme implementation to display a block.
+*
+* @see template_preprocess_block()
+*
+* @ingroup themeable
+*/
+#}
+{% set classes = [
+  'icdc-decision-tree',
+] %}
+<div{{ attributes.addClass(classes) }}>
+  <!-- Button trigger modal -->
+    <button type="button" class="btn btn-nude button-menu button-menu--tree" data-toggle="modal" data-target="#icdcDecisionTree">
+      <span class="cdcicon cdcicon-aide-2 button-menu__icon" aria-hidden="true"></span>
+      <span class="button-menu__label">Aide</span>
+    </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="{{ id }}" tabindex="-1" role="dialog" aria-labelledby="treeLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="treeLabel">{{ decision_tree[root].name }}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="icon-close"></i>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body decision-tree-body">
+          <p>{{ decision_tree[root].keyword }}</p>
+          {% if decision_tree[root].children|length > 0 %}
+            <ul>
+              {% for item in decision_tree[root].children %}
+                <li>
+                  <button class="rebuildTree" data-tid="{{ item.tid }}"
+                          title="{{ item.title_attr }}">{{ item.name }}</button>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

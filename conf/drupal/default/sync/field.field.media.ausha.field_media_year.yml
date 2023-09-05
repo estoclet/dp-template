@@ -1,0 +1,21 @@
+uuid: be878888-d8d0-4188-86b8-63d544041f82
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_year
+    - media.type.ausha
+  module:
+    - datetime
+id: media.ausha.field_media_year
+field_name: field_media_year
+entity_type: media
+bundle: ausha
+label: 'Année de référence'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

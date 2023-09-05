@@ -1,0 +1,22 @@
+uuid: 08474d44-1655-4db0-94f6-63f812f28f0f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.wysiwyg_personnalise
+id: paragraph.wysiwyg_personnalise.status
+field_name: status
+entity_type: paragraph
+bundle: wysiwyg_personnalise
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

@@ -1,0 +1,10 @@
+uuid: 9a01f84a-6685-4c1c-a997-ae967cbc5862
+langcode: fr
+status: true
+dependencies: {  }
+id: node__actualite
+label: 'Contenu: Actualité'
+tags:
+  keywords: '[node:field_expertise_references],[node:field_blog_tag_references]'
+  article_tag: '[node:field_entite_references],[node:field_thematic_references]'
+  og_type: article

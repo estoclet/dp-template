@@ -1,0 +1,20 @@
+uuid: 1709f442-94cf-49b0-a94f-1907694bc1b5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_function
+  module:
+    - user
+id: user.user.field_function
+field_name: field_function
+entity_type: user
+bundle: user
+label: Fonction
+description: 'Renseignez la fonction ou le poste occupé.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

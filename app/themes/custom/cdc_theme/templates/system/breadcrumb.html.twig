@@ -1,0 +1,18 @@
+{% if breadcrumb %}
+  <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+    <p id="system-breadcrumb" class="visually-hidden">{% trans %}You are here{% endtrans %} :</p>
+    <ul class="breadcrumb-list">
+      {% for item in breadcrumb %}
+          {% if item.url %}
+            <li class="breadcrumb-item">
+              <a href="{{ item.url }}" class="breadcrumb__link">{{ item.text }}</a>
+            </li>
+          {% else %}
+            <li class="breadcrumb-item">
+              {{ item.text }}
+            </li>
+          {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}

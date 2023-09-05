@@ -1,0 +1,123 @@
+@media print {
+
+  * {
+    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    background-color: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    padding-top: 0;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group; /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  a,
+  .link {
+    color: #000;
+  }
+
+  .button,
+  .button--primary {
+    background: none !important;
+  }
+
+  .messages {
+    border-width: 1px;
+    border-color: #999;
+  }
+
+  .is-collapse-enabled {
+
+    .tabs {
+      max-height: 999em;
+    }
+  }
+
+  .is-horizontal {
+
+    .tabs__tab {
+      margin: 0 4px !important;
+      border-radius: 4px 4px 0 0 !important;
+    }
+  }
+
+  .dropbutton-multiple {
+
+    .dropbutton {
+      .secondary-action {
+        display: block;
+      }
+    }
+  }
+
+  .js {
+
+    .dropbutton-widget /* Splitbuttons */ {
+      position: relative;
+    }
+
+    td {
+      .dropbutton-widget /* Splitbuttons */ {
+        position: relative;
+      }
+    }
+
+    .dropbutton {
+      .dropbutton-toggle {
+        display: none;
+      }
+    }
+
+    .dropbutton-multiple {
+      .dropbutton-widget {
+        border-radius: 4px;
+        background: none;
+      }
+    }
+  }
+
+  .form-autocomplete,
+  .form-text,
+  .form-tel,
+  .form-email,
+  .form-url,
+  .form-search,
+  .form-number,
+  .form-color,
+  .form-file,
+  .form-textarea,
+  .form-select {
+    border-width: 1px;
+  }
+}

@@ -1,0 +1,23 @@
+uuid: b1d04939-3c89-4b27-967d-a7c85f23a49f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: alias_term_course_of_life
+label: 'Alias des urls des termes de taxonomy jusqu''au parent de type parcours de vie'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:parents:join-path]/[term:name]'
+selection_criteria:
+  9b4194bf-b4b4-4228-b5fb-5d63fc05be64:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 9b4194bf-b4b4-4228-b5fb-5d63fc05be64
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      course_of_life: course_of_life
+selection_logic: and
+weight: -5
+relationships: {  }

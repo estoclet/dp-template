@@ -1,0 +1,23 @@
+uuid: 7c56d899-045b-42c8-8ed6-846e0aced804
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_swipe_horizontal
+    - field.storage.block_content.field_animation
+id: block_content.bloc_swipe_horizontal.field_animation
+field_name: field_animation
+entity_type: block_content
+bundle: bloc_swipe_horizontal
+label: 'Animer le titre'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

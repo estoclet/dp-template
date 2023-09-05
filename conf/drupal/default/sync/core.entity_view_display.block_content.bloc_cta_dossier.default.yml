@@ -1,0 +1,76 @@
+uuid: 68b04f3e-19a4-4f2d-b450-4eca7516fede
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_cta_dossier
+    - field.field.block_content.bloc_cta_dossier.field_background_color
+    - field.field.block_content.bloc_cta_dossier.field_display_date
+    - field.field.block_content.bloc_cta_dossier.field_media_reference
+    - field.field.block_content.bloc_cta_dossier.field_node_reference
+    - field.field.block_content.bloc_cta_dossier.field_responsive
+  module:
+    - color_field
+    - field_formatter_class
+id: block_content.bloc_cta_dossier.default
+targetEntityType: block_content
+bundle: bloc_cta_dossier
+mode: default
+content:
+  field_background_color:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_display_date:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_media_reference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_node_reference:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 3
+    region: content
+  field_responsive:
+    type: boolean
+    label: visually_hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    weight: 4
+    region: content
+hidden:
+  entity_print_view_epub: true
+  entity_print_view_pdf: true
+  entity_print_view_word_docx: true
+  langcode: true
+  search_api_excerpt: true

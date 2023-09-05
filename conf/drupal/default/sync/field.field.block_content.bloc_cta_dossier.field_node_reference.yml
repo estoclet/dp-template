@@ -1,0 +1,28 @@
+uuid: c3546c19-8839-4ddb-8e97-831589c789d6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_cta_dossier
+    - field.storage.block_content.field_node_reference
+    - node.type.dossier
+id: block_content.bloc_cta_dossier.field_node_reference
+field_name: field_node_reference
+entity_type: block_content
+bundle: bloc_cta_dossier
+label: Dossier
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      dossier: dossier
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

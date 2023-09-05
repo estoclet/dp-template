@@ -1,0 +1,18 @@
+uuid: f4e8363c-8669-494b-8571-0fce32087a2c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pg_advanced_text
+id: paragraph.pg_advanced_text.created
+field_name: created
+entity_type: paragraph
+bundle: pg_advanced_text
+label: 'Écrit le'
+description: 'Heure de création du paragraphe.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

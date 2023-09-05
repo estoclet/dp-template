@@ -1,0 +1,21 @@
+uuid: b07f0ab1-856c-4a50-84ba-0218d4a8ff9d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site
+    - node.type.article
+id: node.article.field_site
+field_name: field_site
+entity_type: node
+bundle: article
+label: Site
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:mini_site'
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,22 @@
+uuid: 8ec67e5b-53b3-41ba-9e3d-799c9b67f4ed
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.mini_site.field_mini_site_color
+    - mini_sites.mini_site_type.mini_site
+  module:
+    - color_field
+id: mini_site.mini_site.field_mini_site_color
+field_name: field_mini_site_color
+entity_type: mini_site
+bundle: mini_site
+label: 'Couleur d’arrière-plan'
+description: 'Définissez la couleur d''arrière-plan de l''entête.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

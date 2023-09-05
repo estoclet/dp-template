@@ -1,0 +1,266 @@
+<?php
+
+use Drupal\Core\Language\LanguageInterface;
+use Drupal\icdc_tarte_au_citron\Plugin\Field\FieldFormatter\TwitterEmbedFormatter;
+use Drupal\icdc_tarte_au_citron\Plugin\Field\FieldFormatter\InstagramEmbedFormatter;
+use Drupal\icdc_tarte_au_citron\ServicePluginBase;
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function icdc_tarte_au_citron_page_attachments_alter(array &$attachments) {
+  if (!_icdc_tarte_au_citron_is_needed()) {
+    return;
+  }
+  $config = \Drupal::config('icdc_tarte_au_citron.settings');
+  $data = $config->get();
+
+  $attachments['#attached']['library'][] = 'icdc_tarte_au_citron/tarte_au_citron';
+
+  //attach library services
+  $serviceManager = \Drupal::getContainer()
+    ->get('icdc_tarte_au_citron.services_manager');
+  $enabledServices = $serviceManager->getServices(TRUE);
+
+  $data['user'] = [];
+  foreach ($enabledServices as $currentService) {
+    /**
+     * @var $currentService ServicePluginBase
+     */
+    $currentService->addJs($attachments, $data['user']);
+    \Drupal::moduleHandler()
+      ->alter('icdc_tarte_au_citron_' . $currentService->getPluginId(), $attachments);
+  }
+  if (!empty($data['services'])) {
+    $data['services'] = array_keys($data['services']);
+    unset($data['services_settings']);
+  }
+
+  //Translate labels
+  $data['texts'] = \Drupal::config('icdc_tarte_au_citron.texts.settings')->get();
+  $langcode = \Drupal::languageManager()->getCurrentLanguage(LanguageInterface::TYPE_URL)->getId();
+  foreach($data['texts'] as $keyText => $valText) {
+    if(strpos($keyText, '_') !== FALSE && $keyText != 'adblock_call') {
+      list($parentKeyText, $subKeyText) = explode('_', $keyText);
+      unset($data['texts'][$keyText]);
+      $data['texts'][$parentKeyText][$subKeyText] = t($valText, [], ['langcode' => $langcode]);
+    }
+    else {
+      $data['texts'][$keyText] = t($valText, [], ['langcode' => $langcode]);
+    }
+  }
+  $attachments['#attached']['drupalSettings']['icdc_tarte_au_citron'] = $data;
+
+  //check icdc_matomo module enabled and icdc_matomo tarte_au_citron service enabled
+  //removing tags add by matomo
+  if (\Drupal::moduleHandler()
+      ->moduleExists('icdc_matomo') && array_key_exists('icdc_matomo', $enabledServices)) {
+    foreach ($attachments['#attached']['html_head'] as $currentHeadIndex => $currentHead) {
+      if (!empty($currentHead[1]) && in_array($currentHead[1], [
+          'matomo-script-link',
+          'matomo-script-link-prefetch',
+          'matomo-script'
+        ])) {
+        unset($attachments['#attached']['html_head'][$currentHeadIndex]);
+      }
+    }
+    $attachments['#attached']['html_head'] = array_values($attachments['#attached']['html_head']);
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function icdc_tarte_au_citron_theme($existing, $type, $theme, $path) {
+  $themes = [];
+  $serviceManager = \Drupal::getContainer()->get('icdc_tarte_au_citron.services_manager');
+  if($serviceManager->isServiceEnabled('youtube_drupal')) {
+    $themes['icdc_tarte_au_citron_video_embed_iframe_youtube'] = [
+      'variables' => [
+        'videoId' => '',
+        'width' => '',
+        'height' => '',
+        'attributes' => [],
+      ],
+      'template' => 'icdc-tarte-au-citron-video-embed-iframe'
+    ];
+  }
+  if($serviceManager->isServiceEnabled('dailymotion')) {
+    $themes['icdc_tarte_au_citron_video_embed_iframe_dailymotion'] = [
+      'variables' => [
+        'videoId' => '',
+        'width' => '',
+        'height' => '',
+        'attributes' => [],
+      ],
+      'template' => 'icdc-tarte-au-citron-video-embed-iframe'
+    ];
+  }
+  if($serviceManager->isServiceEnabled('vimeo')) {
+    $themes['icdc_tarte_au_citron_video_embed_iframe_vimeo'] = [
+      'variables' => [
+        'videoId' => '',
+        'width' => '',
+        'height' => '',
+        'attributes' => [],
+      ],
+      'template' => 'icdc-tarte-au-citron-video-embed-iframe'
+    ];
+  }
+  if($serviceManager->isServiceEnabled('keepeek')) {
+    $themes['icdc_tarte_au_citron_video_embed_iframe_keepeek'] = [
+      'variables' => [
+        'videoId' => '',
+        'width' => '',
+        'height' => '',
+        'attributes' => [],
+      ],
+      'template' => 'icdc-tarte-au-citron-video-embed-iframe'
+    ];
+  }
+
+  return $themes;
+}
+
+/**
+ * Implements hook_field_formatter_info_alter().
+ */
+function icdc_tarte_au_citron_field_formatter_info_alter(array &$info) {
+  $info['twitter_embed']['class'] = TwitterEmbedFormatter::class;
+  $info['instagram_embed']['class'] = InstagramEmbedFormatter::class;
+}
+
+function _icdc_tarte_au_citron_is_needed() {
+  $user = \Drupal::currentUser();
+  return !$user->hasPermission('bypass tarte au citron');
+}
+
+/**
+ * Implements hook_preprocess_container().
+ */
+function icdc_tarte_au_citron_preprocess_container(&$variables) {
+  if (!_icdc_tarte_au_citron_is_needed()) {
+    return;
+  }
+
+  if(empty($variables['attributes']) || empty($variables['attributes']['class']) || !is_array($variables['attributes']['class'])) {
+    return;
+  }
+  $serviceManager = \Drupal::getContainer()->get('icdc_tarte_au_citron.services_manager');
+  $process = FALSE;
+  if($serviceManager->isServiceEnabled('youtube_drupal') && in_array('video-embed-field-provider-youtube', $variables['attributes']['class'])) {
+    /**
+     * @var $attributes \Drupal\Core\Template\Attribute
+     */
+    $attributes = $variables['element']['children']['#attributes']->toArray();
+    $variables['element']['children'] = [
+      '#theme' => 'icdc_tarte_au_citron_video_embed_iframe_youtube',
+      '#videoId' => preg_replace('#^https://www\.youtube\.com/embed/(.+)$#i', "$1", $variables['element']['children']['#url']),
+      '#width' => $attributes['width'],
+      '#height' => $attributes['height'],
+      '#attributes' => [
+        'class' => ['youtube_player'],
+        'title' => t('Video %provider', ['%provider' => 'Youtube']),
+        'theme' => 'light',
+        'controls' => 0,
+        'showinfo' => 0,
+        'rel' => $variables['element']['children']['#query']['rel'],
+        'autoplay' => $variables['element']['children']['#query']['autoplay'] ? 1 : 0,
+      ],
+    ];
+    $process = TRUE;
+  }
+  if($serviceManager->isServiceEnabled('dailymotion') && in_array('video-embed-field-provider-dailymotion', $variables['attributes']['class'])) {
+    preg_match('#^//www\.dailymotion\.com/embed/video/([a-z0-9]+)\?autoPlay=([0-9]+)#i', $variables['element']['children']['#attributes']['src'], $matches);
+    $variables['element']['children'] = [
+      '#theme' => 'icdc_tarte_au_citron_video_embed_iframe_dailymotion',
+      '#videoId' => $matches[1],
+      '#width' => $variables['element']['children']['#attributes']['width'],
+      '#height' => $variables['element']['children']['#attributes']['height'],
+      '#attributes' => [
+        'class' => ['dailymotion_player'],
+        'title' => t('Video %provider', ['%provider' => 'Dailymotion']),
+        'showinfo' => 0,
+        'autoplay' => $matches[2],
+      ],
+    ];
+    $process = TRUE;
+  }
+
+  if($serviceManager->isServiceEnabled('vimeo') && in_array('video-embed-field-provider-vimeo', $variables['attributes']['class'])) {
+    $variables['element']['children'] = [
+      '#theme' => 'icdc_tarte_au_citron_video_embed_iframe_vimeo',
+      '#videoId' => preg_replace('#^https:\/\/player\.vimeo\.com\/video\/([0-9]+)#', "$1", $variables['element']['children']['#url']),
+      '#width' => $variables['element']['children']['#attributes']['width'],
+      '#height' => $variables['element']['children']['#attributes']['height'],
+      '#attributes' => [
+        'class' => ['vimeo_player'],
+        'title' => t('Video %provider', ['%provider' => 'Vimeo']),
+        'showinfo' => 0,
+        'autoplay' => 0,
+      ],
+    ];
+    $process = TRUE;
+  }
+  if($serviceManager->isServiceEnabled('keepeek') && in_array('video-embed-field-provider-keepeek', $variables['attributes']['class'])) {
+    $variables['element']['children'] = [
+      '#theme' => 'icdc_tarte_au_citron_video_embed_iframe_keepeek',
+      '#videoId' => preg_replace('#^https:\/\/picteo\-bo\.caissedesdepots\.fr\/([a-zA-Z0-9]+)#', "$1", $variables['element']['children']['#url']),
+      '#attributes' => [
+        'class' => ['keepeek_player'],
+        'title' => t('Video %provider', ['%provider' => 'Keepeek']),
+        '#width' => $variables['element']['children']['#attributes']['storage']['width'],
+        '#height' => $variables['element']['children']['#attributes']['storage']['height'],
+        'frameborder' => 0,
+        'allowfullscreen' => 'allowfullscreen',
+        'border' => 0,
+      ],
+    ];
+    $process = TRUE;
+  }
+
+  if($process) {
+    /**
+     * @var $renderer \Drupal\Core\Render\Renderer
+     */
+    $renderer = \Drupal::service('renderer');
+    $variables["children"] = $renderer->render($variables['element']['children']);
+  }
+}
+
+/**
+ * Implements hook_library_info_alter().
+ */
+function icdc_tarte_au_citron_library_info_alter(&$libraries, $extension) {
+  if (!_icdc_tarte_au_citron_is_needed()) {
+    return;
+  }
+
+  if ($extension === 'video_embed_field') {
+    unset($libraries['lazy-load']['js']['js/video-embed-field.lazyLoad.js']);
+    $libraries['lazy-load']['js']['/' . drupal_get_path('module', 'icdc_tarte_au_citron') . '/js/tarte-au-citron-video-embed-field.lazyLoad.js'] = [];
+  }
+}
+
+function _icdc_tarte_au_citron_manage_captcha(&$element, \Drupal\Core\Form\FormStateInterface $form_state, &$complete_form) {
+  if (!_icdc_tarte_au_citron_is_needed()) {
+    return;
+  }
+
+  $serviceManager = \Drupal::getContainer()
+      ->get('icdc_tarte_au_citron.services_manager');
+  if ($serviceManager->isServiceEnabled('recaptcha_drupal') && $element['#captcha_type'] === 'recaptcha/reCAPTCHA' && isset($element['captcha_widgets']['recaptcha_widget'])) {
+    unset($element['captcha_widgets']['recaptcha_widget']['#attached']['html_head']);
+  }
+  return $element;
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function icdc_tarte_au_citron_element_info_alter(array &$info) {
+  $serviceManager = \Drupal::getContainer()->get('icdc_tarte_au_citron.services_manager');
+  if(isset($info['captcha']) && $serviceManager->isServiceEnabled('recaptcha_drupal') && \Drupal::moduleHandler()->moduleExists('recaptcha')) {
+    $info['captcha']['#process'][] = '_icdc_tarte_au_citron_manage_captcha';
+  }
+}
